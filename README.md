@@ -4,12 +4,11 @@ SPDX-FileCopyrightText: 2023 Deutsche Telekom AG
 SPDX-License-Identifier: CC0-1.0    
 -->
 
-# my-sample-project
+# Pixelshades 
 
 ## About
 
-This project is ...
-<!-- TODO -->
+This project is a cross Framework Component Library and Design System. It is used to create a consistent look and feel for the different applications through mutliple platforms and web frameworks..
 
 ## Code of Conduct
 
