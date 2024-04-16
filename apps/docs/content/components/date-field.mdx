@@ -1,0 +1,50 @@
+---
+title: Datefield
+description: Displays a Datefield
+
+
+slug: date-field
+---
+
+<ComponentPreview name="date-field/preview" />
+
+### Usage
+
+```bash
+import { DateField } from "@dv/ui/components"
+```
+
+
+
+
+
+### API Reference
+
+In addition to all the props defined as `HTMLAttributes<HTMLSpanElement>`, `Badge` component also includes the following props:
+
+<ApiTable
+  content={[
+    [{ value: "label" }, { value: "ReactNode" }, {}],
+    [
+      { value: "granularity" },
+      {
+        value: "Granularity",
+        description:
+          '"day" | "hour" | "minute" | "second"',
+      },
+      { value: '"day"' },
+    ],
+    [{ value: "defaultValue" }, { value: 'DateValue' }, { value: null }],
+    [{ value: "hideTimeZone" }, { value: 'boolean', description: "When a Date with a Timezone is provided the Timezone abreviation is displayed per default, this can be hidden with this prop." }, { value: "false" }],
+  ]}
+/>
+
+## Examples
+
+### Granularity
+
+You can change the granularity of what the DateField can display as seen here
+
+<ComponentPreview name="date-field/granularity" />
+
+

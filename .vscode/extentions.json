@@ -1,0 +1,9 @@
+{
+	"recommendations": [
+		"biomejs.biome",
+		"WallabyJs.console-ninja",
+		"bradlc.vscode-tailwindcss",
+		"stivo.tailwind-fold",
+		"unifiedjs.vscode-mdx"
+	]
+}

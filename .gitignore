@@ -1,3 +1,11 @@
 # SPDX-FileCopyrightText: 2023 Deutsche Telekom AG
 #
 # SPDX-License-Identifier: CC0-1.0
+
+.turbo
+node_modules
+dist
+.DS_Store
+.idea
+*.log
+.velite

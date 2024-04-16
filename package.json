@@ -1,0 +1,23 @@
+{
+  "name": "pixelshades-mono",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.7.0",
+    "@dv/typescript-config": "workspace:*",
+    "concurrently": "^8.2.2",
+    "turbo": "latest"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "bun@1.0.28",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

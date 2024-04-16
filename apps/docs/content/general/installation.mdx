@@ -1,0 +1,39 @@
+---
+title: Installation
+description: How to install DV UI
+
+slug: installation
+---
+
+
+### Add Package
+
+```bash
+npm install @dv/ui
+```
+
+
+### Extend Tailwind Config
+
+```ts
+import type { Config } from "tailwindcss"
+
+import { dvPlugin } from "@dv/ui/tailwind"
+
+const config: Config = {
+	darkMode: ["class"],
+	content: [
+		"../../packages/ui/**/*.{js,ts,jsx,tsx}",
+		"./src/stories/**/*.{js,ts,jsx,tsx,mdx}",
+		"./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+		"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+	],
+	theme: {
+		extend: {},
+	},
+	plugins: [dvPlugin],
+}
+
+export default config
+```
