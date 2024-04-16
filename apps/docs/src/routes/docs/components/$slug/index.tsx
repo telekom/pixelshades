@@ -1,10 +1,14 @@
 import { components } from "#site/content"
 
 import {
-	Badge,
+	DataList,
+	DataListItem,
+	DataListLabel,
+	DataListValue,
 	Heading,
 	HeadingLevel,
 	If,
+	Link,
 	Tab,
 	TabPanel,
 	TableOfContents,
@@ -12,7 +16,7 @@ import {
 	TabsList,
 	Typography,
 } from "@dv/ui/components"
-import { ExternalLinkIcon } from "@dv/ui/icons"
+import { GithubIcon } from "@dv/ui/icons"
 import { cn } from "@dv/ui/utils"
 
 import { createFileRoute } from "@tanstack/react-router"
@@ -53,19 +57,48 @@ function ComponentPage() {
 					<Heading className="mb-4">{component.title}</Heading>
 
 					<Typography className="text-subtle-foreground">{component.description}</Typography>
+
+					<div className="my-layout-md">
+						<DataList>
+							<DataListItem>
+								<DataListLabel>Import</DataListLabel>
+								<DataListValue>
+									<code>
+										import {"{ "}
+										{component.title}
+										{" }"} from "@dv/ui/components"
+									</code>
+								</DataListValue>
+							</DataListItem>
+							<DataListItem>
+								<DataListLabel>Source</DataListLabel>
+								<DataListValue>
+									<GithubIcon className="size-3" />
+									<Link
+										className="text-foreground"
+										href={`https://github.com/telekom/pixelshades/tree/main/packages/ui/src/components/ui/${component.slug}`}
+									>
+										View Source Code
+									</Link>
+								</DataListValue>
+							</DataListItem>
+							<If condition={component.docLink}>
+								{(docLink) => (
+									<DataListItem>
+										<DataListLabel>Docs</DataListLabel>
+										<DataListValue>
+											<AdopeLogo className="size-3" />
+											<Link className="text-foreground" href={docLink}>
+												View Docs
+											</Link>
+										</DataListValue>
+									</DataListItem>
+								)}
+							</If>
+						</DataList>
+					</div>
 				</div>
 
-				<If condition={component.docLink}>
-					<a href={component.docLink!} target="_blank" rel="noreferrer">
-						<Badge
-							before={<AdopeLogo className="size-3" />}
-							after={<ExternalLinkIcon className="size-3" />}
-							variant="outline"
-						>
-							Docs
-						</Badge>
-					</a>
-				</If>
 				<Tabs variant="pill">
 					<TabsList className="mb-layout-xs">
 						<Tab id="docs">Docs</Tab>

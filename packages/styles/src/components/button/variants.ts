@@ -31,7 +31,7 @@ export const buttonVariants = tv({
 			icon: { button: "size-9 rounded-md" },
 			xs: { button: "h-7 px-1 text-xs rounded-md" },
 			sm: { button: "h-8 px-2 text-xs rounded-md gap-0.5" },
-			md: { button: "h-9 px-3 py-2 rounded-md gap-1" },
+			md: { button: "h-9 px-md py-2 rounded-md gap-1" },
 			lg: { button: "h-10 px-8 rounded-md gap-md" },
 		},
 	},

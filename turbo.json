@@ -13,6 +13,10 @@
 				"!.next/cache/**"
 			]
 		},
+		"@dv/styles#build": {
+			"cache": true,
+			"persistent": false
+		},
 		"dev": {
 			"cache": false,
 			"persistent": true

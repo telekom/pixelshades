@@ -80,6 +80,12 @@
         "default": "./dist/es/components/command/index.mjs"
       }
     },
+    "./components/data-list": {
+      "import": {
+        "types": "./dist/es/components/data-list/index.d.mts",
+        "default": "./dist/es/components/data-list/index.mjs"
+      }
+    },
     "./components/date-field": {
       "import": {
         "types": "./dist/es/components/date-field/index.d.mts",
