@@ -85,7 +85,7 @@ function ComponentPage() {
 							<If condition={component.docLink}>
 								{(docLink) => (
 									<DataListItem>
-										<DataListLabel>Docs</DataListLabel>
+										<DataListLabel>Aria Docs</DataListLabel>
 										<DataListValue>
 											<AdopeLogo className="size-3" />
 											<Link className="text-foreground" href={docLink}>
