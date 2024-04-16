@@ -10,3 +10,4 @@ dist
 *.log
 .velite
 apps/docs/tsconfig.tsbuildinfo
+apps/docs/tsconfig.tsbuildinfo
