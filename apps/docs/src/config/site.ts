@@ -1,5 +1,5 @@
 export const siteConfig = {
-	name: "DV Fullstack Chapter Docs",
+	name: "Pixelshades",
 	url: "https://docs.dv-fullstack.com",
 	ogImage: "https://docs.dv-fullstack.com/og.jpg",
 	description: "",
