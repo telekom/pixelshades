@@ -113,7 +113,7 @@ function ComponentPage() {
 							<TableOfContents toc={component.toc} />
 						</div>
 					</TabPanel>
-					<TabPanel id="props">
+					<TabPanel id="props" className="w-full">
 						<PropsTable slug={component.slug} />
 					</TabPanel>
 				</Tabs>

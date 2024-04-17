@@ -21,8 +21,13 @@ export function SiteHeader() {
 								setOpen(true)
 							}}
 							className={"self-end text-subtle-foreground"}
+							after={
+								<span className="ml-md flex items-center text-sm text-subtle-foreground">
+									<Command size={"1rem"} /> + K
+								</span>
+							}
 						>
-							Search... <Command size={"1rem"} /> K
+							Search...
 						</Button>
 						<SearchDialog open={open} handleOpenChange={setOpen} />
 					</div>

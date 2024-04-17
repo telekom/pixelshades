@@ -30,10 +30,12 @@ export function ComponentPreview({
 					<Tab id="preview">Preview</Tab>
 					<Tab id="code">Code</Tab>
 				</TabsList>
-				<div className="flex w-full gap-md">
-					<TabPanel id="preview" className="flex min-h-[200px] w-full flex-row border bg-subtle/10 p-3">
-						<div className="flex h-full min-h-[200px] w-full items-center justify-center p-12">
-							<component.component />
+				<div className="flex w-full gap-md pt-layout-xs">
+					<TabPanel id="preview" className="w-full">
+						<div className="flex min-h-[200px] w-full border bg-subtle/10 p-3">
+							<div className="flex h-full min-h-[200px] w-full items-center justify-center p-12">
+								<component.component />
+							</div>
 						</div>
 					</TabPanel>
 					<TabPanel id="code" className="w-full">

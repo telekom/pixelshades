@@ -35,7 +35,7 @@ export const PropsTable = ({ slug }: PropsTableProps) => {
 	return (
 		<div className="flex h-full w-full flex-col gap-md">
 			{props.map((prop) => (
-				<div className="space-y-layout-sm" key={prop.description}>
+				<div className="w-full space-y-layout-sm" key={prop.description}>
 					<Typography className="text-xl">
 						{prop.displayName.includes("Unstyled")
 							? prop.displayName.replace("Unstyled", "")
