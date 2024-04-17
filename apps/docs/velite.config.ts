@@ -23,6 +23,7 @@ export default defineConfig({
 					docLink: s.string().optional(),
 					apiReferenceLink: s.string().optional(),
 					toc: s.toc(),
+					primaryTag: s.string().optional(),
 				})
 				.transform((data) => ({ ...data, permalink: `/docs/components/${data.slug}` })),
 		},

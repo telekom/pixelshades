@@ -50,6 +50,8 @@ function ComponentPage() {
 		return "Not Found"
 	}
 
+	console.log(component.toc)
+
 	return (
 		<HeadingLevel>
 			<main className={"prose lg:prose-lg dark:prose-invert flex flex-col gap-lg py-6"}>
@@ -105,12 +107,14 @@ function ComponentPage() {
 						<Tab id="props">Props</Tab>
 					</TabsList>
 
-					<TabPanel id="docs" className={cn("relative grid grid-cols-12 gap-layout-sm")}>
+					<TabPanel id="docs" className={cn("relative grid w-full grid-cols-12 gap-layout-sm")}>
 						<div className="col-span-9 w-full">
 							<MDXContent code={component.content} />
 						</div>
 						<div className="sticky top-16 col-span-3 self-start">
-							<TableOfContents toc={component.toc} />
+							<If condition={component.toc.length > 0}>
+								<TableOfContents toc={component.toc} />
+							</If>
 						</div>
 					</TabPanel>
 					<TabPanel id="props" className="w-full">

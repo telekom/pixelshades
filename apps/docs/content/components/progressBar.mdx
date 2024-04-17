@@ -3,7 +3,7 @@ title: Progress Bar
 description: Displays a progress bar
 
 
-slug: progressBar
+slug: progress-bar
 ---
 
 <ComponentPreview name="progressBar/preview" />
@@ -24,23 +24,4 @@ slug: progressBar
 
 <ComponentPreview name="progressBar/labeling" />
 
-### API Reference
 
-In addition to all the props defined as `HTMLAttributes<HTMLSpanElement>`, `ProgressBar` component also includes the following props:
-
-<ApiTable
-    content={[
-        [{ value: "variants" }, {value: "BadgeVariants", description: '"default" | "info" | "alert" | "outline"'}, { value: '"default"' }],
-        [{ value: "size" }, { value: '"xs" | "sm" | "md" | "xl"' }, { value: '"md"' }],
-        [{ value: "label" }, { value: "string | (values: ProgressBarRenderProps) => string" }, {value: "-"}],
-        [{ value: "description" }, { value: "ReactNode | (values: ProgressBarRenderProps) => ReactNode" }, {value: "-"}],
-        [{ value: "formatOptions" }, { value: "Intl.NumberFormatOptions" }, {value: "{style: 'percent'}"}],
-        [{ value: "valueLabel" }, { value: "ReactNode" }, {value: "-"}],
-        [{ value: "value" }, { value: "number" }, {value: "0"}],
-        [{ value: "minValue" }, { value: "number" }, {value: "0"}],
-        [{ value: "maxValue" }, { value: "number" }, {value: "100"}],
-        [{ value: "children" }, { value: "ReactNode | (values: ProgressBarRenderProps) => ReactNode" }, {value: "-"}],
-        [{ value: "className" }, { value: "string | (values: ProgressBarRenderProps) => string" }, {value: "-"}],
-        [{ value: "style" }, { value: "CSSProperties | (values: ProgressBarRenderProps) => CSSProperties" }, {value: "-"}],
-    ]}
-/>

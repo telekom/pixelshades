@@ -13,6 +13,7 @@ const sidebarItems: SidebarNavItem[] = []
 const componentItems: SidebarNavItem[] = components.map((component) => ({
 	title: component.title,
 	href: component.permalink,
+	label: component.primaryTag,
 	items: [],
 }))
 

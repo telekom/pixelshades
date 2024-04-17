@@ -32,7 +32,7 @@ const ComboBox = <T extends object>({
 	children,
 	...props
 }: ComboBoxProps<T>) => (
-	<AriaComboBox className={root({ className })} {...props}>
+	<AriaComboBox className={root({ className })} {...props} shouldFocusWrap>
 		<Label className="text-foreground">{label}</Label>
 		<div className="relative flex w-fit items-center rounded-2xl bg-background">
 			<Input className={input()} />

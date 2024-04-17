@@ -1,10 +1,10 @@
 import { Command as CommandIcon } from "lucide-react"
-import { type ReactNode, useMemo } from "react"
+import { type ReactNode, useMemo, useRef } from "react"
 import {
 	Header as AriaHeader,
+	ListBox as AriaListBox,
+	ListBoxItem as AriaListBoxItem,
 	Section as AriaSection,
-	ListBox,
-	ListBoxItem,
 	type ListBoxItemProps,
 	type SectionProps,
 } from "react-aria-components"
@@ -88,17 +88,18 @@ const UnstyledCommand = ({
 					<CommandIcon className="size-4" /> {shortcut[1]?.charAt(shortcut[1].length - 1)}
 				</CommandTrigger>
 			</If>
-			<Dialog isOpen={open} onOpenChange={setOpen} className={className}>
-				<DialogContent className="flex flex-col items-start">
-					{searchField}
+			<Dialog isOpen={open} onOpenChange={setOpen} className={className} aria-label="Command Dialog">
+				<DialogContent className="flex w-full flex-col items-start">
+					<div className="sticky w-full">{searchField}</div>
 
-					<ListBox
+					<AriaListBox
 						className={"flex flex-col items-start gap-4 font-light text-primary-foreground text-xs"}
 						orientation="vertical"
+						selectionMode="single"
 						aria-label="Components Search Results"
 					>
 						{children}
-					</ListBox>
+					</AriaListBox>
 				</DialogContent>
 			</Dialog>
 		</CommandContext.Provider>
@@ -211,28 +212,32 @@ type CommandItemProps = Omit<ListBoxItemProps, "children" | "textValue"> & {
 	after?: React.ReactElement<HTMLElement>
 }
 
-function fullTextSearch(data: string[], searchTerm: string) {
-	const searchResults = []
-	const matchedChars: any[] = []
-	// Loop through each object in the data array
-	for (const item of data) {
-		// Convert all object values to lowercase strings for case-insensitive search
-		const values = Object.values(item).map((value) => String(value).toLowerCase())
-		// Check if any of the values contain the search term
-		const valueContainsSearchTerm = values.some((value, index) => {
-			if (searchTerm.toLowerCase().split("").includes(value)) {
-				matchedChars.push(item.charAt(index))
-				return true
-			}
+/** Displays a command item. */
+const UnstyledCommandItem = ({ children, before, searchValues = [], after, ...props }: CommandItemProps) => {
+	const { searchValue: searchInputValue, disableIntegratedSearch } = useCommand()
 
-			return false
-		})
+	const isMatched = useMemo(
+		() => isMatching({ searchInputValue, searchValues, disableIntegratedSearch }),
+		[searchInputValue, searchValues, disableIntegratedSearch],
+	)
 
-		if (valueContainsSearchTerm) {
-			searchResults.push(item)
-		}
+	if (!isMatched.matching) {
+		return null
 	}
-	return { result: searchResults, matchedChars: matchedChars }
+
+	return (
+		<AriaListBoxItem {...props} textValue={searchValues?.join(".") || ""}>
+			<>
+				<If condition={before}>
+					<RenderSlot item={before!} className={icon()} />
+				</If>
+				{children}
+				<If condition={after}>
+					<RenderSlot item={after!} className={icon()} />
+				</If>
+			</>
+		</AriaListBoxItem>
+	)
 }
 
 const isMatching = ({
@@ -257,33 +262,31 @@ const isMatching = ({
 	)
 	return { matching: matchedValues.result.length > 0, matchedCharacters: matchedValues.matchedChars }
 }
-/** Displays a command item. */
-const UnstyledCommandItem = ({ children, before, searchValues, after, ...props }: CommandItemProps) => {
-	const { searchValue: searchInputValue, disableIntegratedSearch } = useCommand()
 
-	const isMatched = useMemo(
-		() => isMatching({ searchInputValue, searchValues, disableIntegratedSearch }),
-		[searchInputValue, searchValues, disableIntegratedSearch],
-	)
+function fullTextSearch(data: string[], searchTerm: string) {
+	const searchResults = []
+	const matchedChars: any[] = []
+	// Loop through each object in the data array
+	for (const item of data) {
+		// Convert all object values to lowercase strings for case-insensitive search
+		const values = Object.values(item).map((value) => String(value).toLowerCase())
+		// Check if any of the values contain the search term
+		const valueContainsSearchTerm = values.some((value, index) => {
+			if (searchTerm.toLowerCase().split("").includes(value)) {
+				matchedChars.push(item.charAt(index))
+				return true
+			}
 
-	if (!isMatched.matching) {
-		return null
+			return false
+		})
+
+		if (valueContainsSearchTerm) {
+			searchResults.push(item)
+		}
 	}
-
-	return (
-		<ListBoxItem {...props} textValue={searchValues?.join(".")}>
-			<>
-				<If condition={before}>
-					<RenderSlot item={before!} className={icon()} />
-				</If>
-				{children}
-				<If condition={after}>
-					<RenderSlot item={after!} className={icon()} />
-				</If>
-			</>
-		</ListBoxItem>
-	)
+	return { result: searchResults, matchedChars: matchedChars }
 }
+
 /** Displays a command with a title and a list of actions. */
 const Command = withProvider(UnstyledCommand, "command")
 const CommandItemDescription = withContext(UnstyledCommandItemDescription, "itemDescription")

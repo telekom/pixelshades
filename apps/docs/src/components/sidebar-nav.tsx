@@ -1,5 +1,6 @@
 "use client"
 
+import { Badge } from "@dv/ui/components"
 import { cn } from "@dv/ui/utils"
 import { Link } from "@tanstack/react-router"
 import type { SidebarNavItem } from "~/config/docs"
@@ -29,12 +30,13 @@ export function DocsSidebarNavItems({ items }: DocsSidebarNavItemsProps) {
 	return items?.length ? (
 		<div className="grid grid-flow-row auto-rows-max text-sm">
 			{items.map((item) =>
+				// biome-ignore lint/correctness/useJsxKeyInIterable: <explanation>
 				item.href && !item.disabled ? (
 					<Link
 						key={item.href}
 						to={item.href as any}
 						className={cn(
-							"group flex w-full items-center rounded-md border border-transparent px-2 py-1 text-subtle-foreground hover:underline",
+							"group flex w-full items-center justify-between rounded-md border border-transparent px-2 py-1 text-subtle-foreground hover:underline",
 							item.disabled && "cursor-not-allowed opacity-60",
 						)}
 						activeProps={{
@@ -44,11 +46,7 @@ export function DocsSidebarNavItems({ items }: DocsSidebarNavItemsProps) {
 						rel={item.external ? "noreferrer" : ""}
 					>
 						{item.title}
-						{item.label && (
-							<span className="ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-[#000000] text-xs leading-none no-underline group-hover:no-underline">
-								{item.label}
-							</span>
-						)}
+						{item.label && <Badge size="sm">{item.label}</Badge>}
 					</Link>
 				) : (
 					<span
@@ -59,11 +57,7 @@ export function DocsSidebarNavItems({ items }: DocsSidebarNavItemsProps) {
 						)}
 					>
 						{item.title}
-						{item.label && (
-							<span className="ml-2 rounded-md bg-subtle px-1.5 py-0.5 text-subtle-foreground text-xs leading-none no-underline group-hover:no-underline">
-								{item.label}
-							</span>
-						)}
+						{item.label && <Badge size="sm">{item.label}</Badge>}
 					</span>
 				),
 			)}
