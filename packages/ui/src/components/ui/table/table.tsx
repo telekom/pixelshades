@@ -1,11 +1,11 @@
 import {
+	Cell as AriaCell,
+	type CellProps as AriaCellProps,
 	Column as AriaColumn,
 	Table as AriaTable,
 	TableBody as AriaTableBody,
 	type TableProps as AriaTableProps,
 	TableHeader as AriaTableheader,
-	Cell,
-	type CellProps,
 	Collection,
 	type ColumnProps,
 	Row,
@@ -16,28 +16,23 @@ import {
 
 import { tableVariants } from "@dv/styles/components/table"
 import { ChevronDown, ChevronUp, Menu } from "lucide-react"
+import { createStyleContext } from "../../../utils/create-style-context"
 import { Button } from "../button"
 import { Checkbox } from "../checkbox"
 
-const { root, header, column, row, cell } = tableVariants()
+const { header, column, row } = tableVariants()
+
+const { withContext, withProvider } = createStyleContext(tableVariants)
 
 const TableBody = AriaTableBody
 
-export type TableProps = AriaTableProps & {
-	className?: string
-}
+export type TableProps = AriaTableProps
 
-const Table = ({ children, className, ...props }: TableProps) => (
-	<AriaTable {...props} className={root({ className })}>
-		{children}
-	</AriaTable>
-)
+const Table = withProvider(AriaTable, "root")
 
-const TableCell = ({ children, className, ...props }: CellProps & { className?: string }) => (
-	<Cell {...props} className={cell({ className })}>
-		{children}
-	</Cell>
-)
+export type TableCellProps = AriaCellProps
+
+const TableCell = withContext(AriaCell, "cell")
 
 const TableColumn = ({ children, className, ...props }: ColumnProps & { className?: string }) => (
 	<AriaColumn {...props} className={column({ className })}>
@@ -89,16 +84,16 @@ const TableRow = <T extends object>({
 	return (
 		<Row id={id} {...props} className={row({ className })}>
 			{allowsDragging && (
-				<Cell className="ring-focus data-[focus-visible]:ring-2">
+				<AriaCell className="ring-focus data-[focus-visible]:ring-2">
 					<Button className="bg-transparent" slot="drag">
-						<Menu className="h-4 w-4 text-fg" />
+						<Menu className="size-4 text-foreground" />
 					</Button>
-				</Cell>
+				</AriaCell>
 			)}
 			{selectionBehavior === "toggle" && (
-				<Cell className="">
+				<AriaCell>
 					<Checkbox slot="selection" />
-				</Cell>
+				</AriaCell>
 			)}
 			<Collection items={columns}>{children}</Collection>
 		</Row>

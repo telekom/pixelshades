@@ -52,7 +52,7 @@ export const PropsTable = ({ slug }: PropsTableProps) => {
 							}}
 						</If>
 					</Typography>
-					<Table className="w-full" aria-label={prop.displayName}>
+					<Table className="w-full bg-subtle/10" aria-label={prop.displayName}>
 						<TableHeader>
 							<TableColumn isRowHeader>Name</TableColumn>
 							<TableColumn>Type</TableColumn>
