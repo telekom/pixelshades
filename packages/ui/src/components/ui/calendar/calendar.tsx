@@ -14,7 +14,7 @@ import {
 	Text,
 } from "react-aria-components"
 
-import { calendarVariants } from "@dv/styles/components/calendar"
+import { calendarVariants } from "@pixelshades/styles/components/calendar"
 
 const { root, header, heading, gridHeaderCell, cell, grid, iconButton } = calendarVariants()
 

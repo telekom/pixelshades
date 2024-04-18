@@ -12,7 +12,7 @@ import {
 
 import { ChevronDownIcon } from "lucide-react"
 
-import { datePickerVariants } from "@dv/styles/components/date-picker"
+import { datePickerVariants } from "@pixelshades/styles/components/date-picker"
 import { If } from "../../utils"
 import { Calendar } from "../calendar"
 import { Label } from "../label"

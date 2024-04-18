@@ -20,7 +20,7 @@
     "react-stately": "^3.30.1",
     "tailwind-merge": "^2.2.2",
     "tailwind-variants": "0.2.1",
-    "@dv/styles": "workspace:*"
+    "@pixelshades/styles": "workspace:*"
   },
   "peerDependencies": {
     "react": ">18.0.0",
@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "react-docgen": "^7.0.3",
-    "@dv/typescript-config": "workspace:*",
+    "@pixelshades/typescript-config": "workspace:*",
     "@tailwindcss/typography": "^0.5.12",
     "@turbo/gen": "^1.13.2",
     "@types/node": "^20.12.7",

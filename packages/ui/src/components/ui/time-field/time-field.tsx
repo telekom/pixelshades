@@ -1,7 +1,7 @@
 import type { TimeFieldProps as AriaTimeFieldProps, TimeValue } from "react-aria-components"
 import { TimeField as AriaTimeField, DateInput, DateSegment, Text } from "react-aria-components"
 
-import { dateFieldVariants } from "@dv/styles/components/date-field"
+import { dateFieldVariants } from "@pixelshades/styles/components/date-field"
 import type { ReactNode } from "react"
 import { Label } from "../label"
 

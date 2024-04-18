@@ -1,4 +1,4 @@
-import { inputVariants } from "@dv/styles/components/input"
+import { inputVariants } from "@pixelshades/styles/components/input"
 import { forwardRef } from "react"
 import { Input as AriaInput, type InputProps as AriaInputProps } from "react-aria-components"
 

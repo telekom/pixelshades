@@ -6,7 +6,7 @@ import {
 	type RadioGroupProps,
 } from "react-aria-components"
 
-import { labelVariants } from "@dv/styles/components/label"
+import { labelVariants } from "@pixelshades/styles/components/label"
 import { cn } from "../../../utils"
 
 const RadioGroup = ({ className, orientation = "vertical", ...props }: RadioGroupProps) => {

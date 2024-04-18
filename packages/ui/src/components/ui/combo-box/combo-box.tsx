@@ -10,7 +10,7 @@ import {
 	Text,
 } from "react-aria-components"
 
-import { comboboxVaraints } from "@dv/styles/components/combo-box"
+import { comboboxVaraints } from "@pixelshades/styles/components/combo-box"
 import { ChevronDown } from "lucide-react"
 import type React from "react"
 

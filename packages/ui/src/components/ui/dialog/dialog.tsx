@@ -1,4 +1,4 @@
-import { dialogVariants } from "@dv/styles/components/dialog"
+import { dialogVariants } from "@pixelshades/styles/components/dialog"
 import type React from "react"
 import {
 	Dialog as AriaDialogContent,

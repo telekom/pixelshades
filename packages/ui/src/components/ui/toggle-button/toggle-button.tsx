@@ -7,7 +7,7 @@ import { createStyleContext } from "../../../utils/create-style-context"
 import { RenderSlot } from "../../../utils/jsx"
 import { If } from "../../utils"
 
-import { toggleVariants } from "@dv/styles/components/toggle-button"
+import { toggleVariants } from "@pixelshades/styles/components/toggle-button"
 
 const { withContext, withProvider } = createStyleContext(toggleVariants)
 

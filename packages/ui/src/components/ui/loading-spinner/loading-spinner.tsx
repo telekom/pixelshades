@@ -1,4 +1,4 @@
-import { loadingSpinnerVariants } from "@dv/styles/components/loading-spinner"
+import { loadingSpinnerVariants } from "@pixelshades/styles/components/loading-spinner"
 import { LoaderCircle } from "lucide-react"
 import type React from "react"
 import type { VariantProps } from "tailwind-variants"

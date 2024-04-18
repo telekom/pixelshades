@@ -1043,7 +1043,7 @@ export function Example() {
   },
   "separator/preview": {
 	  component: lazy(() => import("~/examples/separator/preview.tsx")),
-	  code: `import { Separator } from "@dv/ui/components"
+	  code: `import { Separator } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (

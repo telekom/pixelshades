@@ -22,7 +22,7 @@
 		"paths": {
 			"~/*": ["./src/*"],
 			"@pixelshades/ui/*": ["../../packages/ui/src/*"],
-			"@dv/styles/components/*": ["../../packages/styles/src/components/*"],
+			"@pixelshades/styles/components/*": ["../../packages/styles/src/components/*"],
 			"#site/content": ["./.velite"]
 		}
 	},

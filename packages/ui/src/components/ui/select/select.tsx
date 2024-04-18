@@ -10,7 +10,7 @@ import {
 	Text,
 } from "react-aria-components"
 
-import { selectVariants } from "@dv/styles/components/select"
+import { selectVariants } from "@pixelshades/styles/components/select"
 import { ChevronDown } from "lucide-react"
 import type React from "react"
 

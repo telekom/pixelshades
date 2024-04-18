@@ -1,4 +1,4 @@
-import { typographyVariants } from "@dv/styles/components/typography"
+import { typographyVariants } from "@pixelshades/styles/components/typography"
 import type { ReactNode } from "react"
 import type { VariantProps } from "tailwind-variants"
 

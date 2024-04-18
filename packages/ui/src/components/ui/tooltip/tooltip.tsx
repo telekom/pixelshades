@@ -1,4 +1,4 @@
-import { tooltipVariants } from "@dv/styles/components/tooltip"
+import { tooltipVariants } from "@pixelshades/styles/components/tooltip"
 import { InfoIcon } from "lucide-react"
 import {
 	Tooltip as AriaTooltip,

@@ -12,7 +12,7 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			"@pixelshades/ui": path.resolve(__dirname, "../../packages/ui/src"),
-			"@dv/styles/components": path.resolve(__dirname, "../../packages/styles/src/components"),
+			"@pixelshades/styles/components": path.resolve(__dirname, "../../packages/styles/src/components"),
 			// Add more package aliases as needed
 		},
 	},

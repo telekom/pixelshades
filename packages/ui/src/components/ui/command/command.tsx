@@ -9,7 +9,7 @@ import {
 	type SectionProps,
 } from "react-aria-components"
 
-import { commandVariants } from "@dv/styles/components/command"
+import { commandVariants } from "@pixelshades/styles/components/command"
 import { useControllableState } from "../../../hooks/use-controlled-state"
 import { type Keys, useKeyPress } from "../../../hooks/use-keypress"
 import { createStyleContext } from "../../../utils/create-style-context"

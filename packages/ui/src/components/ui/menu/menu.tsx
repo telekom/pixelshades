@@ -1,4 +1,4 @@
-import { menuVariants } from "@dv/styles/components/menu"
+import { menuVariants } from "@pixelshades/styles/components/menu"
 import type { HTMLAttributes } from "react"
 
 import {

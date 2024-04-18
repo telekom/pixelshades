@@ -1,6 +1,6 @@
 import type { VariantProps } from "tailwind-variants"
 
-import { badgeVariants } from "@dv/styles/components/badge"
+import { badgeVariants } from "@pixelshades/styles/components/badge"
 import type { HTMLAttributes } from "react"
 import { RenderSlot, forwardRef } from "../../../utils/jsx"
 import { If } from "../../utils"

@@ -2,7 +2,7 @@ import ariaPlugin from "tailwindcss-react-aria-components"
 import { fontFamily } from "tailwindcss/defaultTheme.js"
 import plugin from "tailwindcss/plugin.js"
 
-export const dvPlugin = plugin(
+export const pixelShadesPlugin = plugin(
 	({ addUtilities, addBase }) => {
 		// Call the ariaPlugin and add its utilities
 		// You can add your own utilities or call other plugins here
