@@ -1041,6 +1041,28 @@ export function Example() {
 }
 `,
   },
+  "separator/preview": {
+	  component: lazy(() => import("~/examples/separator/preview.tsx")),
+	  code: `import { Separator } from "@dv/ui/components"
+
+export function Example() {
+	return (
+		<div className="flex flex-col">
+			<div className="flex flex-col">
+				Content above
+				<Separator />
+				Content below
+			</div>
+			<div className="mt-5 flex h-10 items-center">
+				Content left
+				<Separator orientation="vertical" />
+				Content right
+			</div>
+		</div>
+	)
+}
+`,
+  },
   "switch/preview": {
 	  component: lazy(() => import("~/examples/switch/preview.tsx")),
 	  code: `import { Switch } from "@pixelshades/ui/components"

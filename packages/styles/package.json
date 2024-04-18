@@ -164,6 +164,12 @@
         "default": "./dist/es/components/select/index.mjs"
       }
     },
+    "./components/separator": {
+      "import": {
+        "types": "./dist/es/components/separator/index.d.mts",
+        "default": "./dist/es/components/separator/index.mjs"
+      }
+    },
     "./components/switch": {
       "import": {
         "types": "./dist/es/components/switch/index.d.mts",
