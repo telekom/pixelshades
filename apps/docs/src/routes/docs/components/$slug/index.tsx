@@ -68,7 +68,7 @@ function ComponentPage() {
 									<code>
 										import {"{ "}
 										{component.title}
-										{" }"} from "@dv/ui/components"
+										{" }"} from "@pixelshades/ui/components"
 									</code>
 								</DataListValue>
 							</DataListItem>
