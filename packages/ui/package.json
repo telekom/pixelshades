@@ -1,7 +1,7 @@
 {
   "name": "@pixelshades/ui",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.1-alpha.0",
+  "private": false,
   "type": "module",
   "scripts": {
     "lint": "eslint . --max-warnings 0",
