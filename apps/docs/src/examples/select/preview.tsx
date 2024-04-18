@@ -1,4 +1,4 @@
-import { Select, SelectItem } from "@dv/ui/components"
+import { Select, SelectItem } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (

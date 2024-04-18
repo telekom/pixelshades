@@ -1,4 +1,4 @@
-import { Heading, HeadingLevel } from "@dv/ui/components"
+import { Heading, HeadingLevel } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (

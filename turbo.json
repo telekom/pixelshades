@@ -21,7 +21,7 @@
 			"cache": false,
 			"persistent": true
 		},
-		"@dv/ui#dev": {
+		"@pixelshades/ui#dev": {
 			"cache": false,
 			"persistent": true
 		}

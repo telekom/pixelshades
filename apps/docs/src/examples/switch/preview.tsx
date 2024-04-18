@@ -1,4 +1,4 @@
-import { Switch } from "@dv/ui/components"
+import { Switch } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return <Switch />

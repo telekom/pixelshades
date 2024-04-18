@@ -10,7 +10,7 @@ import {
 	Label,
 	Select,
 	SelectItem,
-} from "@dv/ui/components"
+} from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (

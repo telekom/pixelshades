@@ -1,4 +1,4 @@
-import { Button, Menu, MenuContent, MenuHeader, MenuItem, MenuSection, MenuSeperator } from "@dv/ui/components"
+import { Button, Menu, MenuContent, MenuHeader, MenuItem, MenuSection, MenuSeperator } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (

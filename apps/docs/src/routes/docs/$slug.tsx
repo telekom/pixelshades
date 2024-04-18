@@ -1,6 +1,6 @@
 import { general_pages } from "#site/content"
 
-import { Heading, HeadingLevel, Typography } from "@dv/ui/components"
+import { Heading, HeadingLevel, Typography } from "@pixelshades/ui/components"
 
 import { createFileRoute, notFound } from "@tanstack/react-router"
 import { MDXContent } from "~/components/mdx-content"

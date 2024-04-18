@@ -1,4 +1,4 @@
-import { Calendar } from "@dv/ui/components"
+import { Calendar } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (

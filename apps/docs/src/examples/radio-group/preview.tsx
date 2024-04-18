@@ -1,4 +1,4 @@
-import { Label, Radio, RadioGroup } from "@dv/ui/components"
+import { Label, Radio, RadioGroup } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (

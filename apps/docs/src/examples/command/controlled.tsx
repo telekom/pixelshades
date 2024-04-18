@@ -7,8 +7,8 @@ import {
 	CommandItemTitle,
 	CommandSearch,
 	Typography,
-} from "@dv/ui/components"
-import { Apple, CommandIcon, GlassWater } from "@dv/ui/icons"
+} from "@pixelshades/ui/components"
+import { Apple, CommandIcon, GlassWater } from "@pixelshades/ui/icons"
 import { useState } from "react"
 
 export default function Example() {

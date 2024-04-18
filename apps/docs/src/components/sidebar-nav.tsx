@@ -1,7 +1,7 @@
 "use client"
 
-import { Badge } from "@dv/ui/components"
-import { cn } from "@dv/ui/utils"
+import { Badge } from "@pixelshades/ui/components"
+import { cn } from "@pixelshades/ui/utils"
 import { Link } from "@tanstack/react-router"
 import type { SidebarNavItem } from "~/config/docs"
 

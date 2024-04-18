@@ -1,4 +1,4 @@
-import { Typography } from "@dv/ui/components"
+import { Typography } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (

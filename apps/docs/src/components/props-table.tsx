@@ -8,7 +8,7 @@ import {
 	TableHeader,
 	TableRow,
 	Typography,
-} from "@dv/ui/components"
+} from "@pixelshades/ui/components"
 import props from "~/lib/props.json"
 
 export type PropsTableProps = {

@@ -1,8 +1,8 @@
 "use client"
 
-import { Button, type ButtonProps, Menu, MenuContent, MenuItem, type MenuProps } from "@dv/ui/components"
-import { CheckIcon, CopyIcon } from "@dv/ui/icons"
-import { cn } from "@dv/ui/utils"
+import { Button, type ButtonProps, Menu, MenuContent, MenuItem, type MenuProps } from "@pixelshades/ui/components"
+import { CheckIcon, CopyIcon } from "@pixelshades/ui/icons"
+import { cn } from "@pixelshades/ui/utils"
 import { useCallback, useEffect, useState } from "react"
 import type { NpmCommands } from "~/lib/rehype/types/units"
 

@@ -1,4 +1,4 @@
-import { Tab, TabPanel, Tabs, TabsList } from "@dv/ui/components"
+import { Tab, TabPanel, Tabs, TabsList } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (

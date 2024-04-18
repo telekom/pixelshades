@@ -1,4 +1,4 @@
-import { Checkbox, Label } from "@dv/ui/components"
+import { Checkbox, Label } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
