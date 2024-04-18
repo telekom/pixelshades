@@ -1,6 +1,6 @@
+import { cn } from "@dv/ui/utils"
 import { tv } from "tailwind-variants"
 import { buttonVariants } from "../button"
-import { cn } from "@dv/ui/utils"
 
 export const buttonGroupVariants = tv({
 	slots: {
@@ -18,11 +18,6 @@ export const buttonGroupVariants = tv({
 	},
 	variants: {
 		...buttonVariants.variants,
-		// variants: {
-		// 	...buttonVariants.variants.variant,
-		// 	outline: "first:bg-red-500 last:bg-red-500 ",
-		// 	// solid: "solid",
-		// },
 		variant: {
 			...buttonVariants.variants.variant,
 		},
