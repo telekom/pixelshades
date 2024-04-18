@@ -126,6 +126,66 @@ export function Example() {
 }
 `,
   },
+  "button-group/orientation": {
+	  component: lazy(() => import("~/examples/button-group/orientation.tsx")),
+	  code: `import { Button, ButtonGroup } from "@dv/ui/components"
+
+export function Example() {
+	return (
+		<ButtonGroup orientation="vertical">
+			<Button>One</Button>
+			<Button>Two</Button>
+			<Button>Three</Button>
+		</ButtonGroup>
+	)
+}
+`,
+  },
+  "button-group/preview": {
+	  component: lazy(() => import("~/examples/button-group/preview.tsx")),
+	  code: `import { Button, ButtonGroup } from "@dv/ui/components"
+
+export function Example() {
+	return (
+		<ButtonGroup variant="outline">
+			<Button>One</Button>
+			<Button>Two</Button>
+			<Button>Three</Button>
+		</ButtonGroup>
+	)
+}
+`,
+  },
+  "button-group/variants": {
+	  component: lazy(() => import("~/examples/button-group/variants.tsx")),
+	  code: `import { Button, ButtonGroup, Heading } from "@dv/ui/components"
+
+export function Example() {
+	return (
+		<div className="flex flex-col gap-4">
+			<Heading level={3}>Solid Button Group</Heading>
+			<ButtonGroup variant="solid">
+				<Button>One</Button>
+				<Button>Two</Button>
+				<Button>Three</Button>
+			</ButtonGroup>
+			<Heading level={3}>Ghost Button Group</Heading>
+			<ButtonGroup variant="ghost">
+				<Button>One</Button>
+				<Button>Two</Button>
+				<Button>Three</Button>
+			</ButtonGroup>
+			<Heading level={3}>Outline Button Group</Heading>
+			<ButtonGroup variant="outline">
+				<Button>One</Button>
+				<Button>Two</Button>
+				<Button>Three</Button>
+			</ButtonGroup>
+		</div>
+	)
+}
+`,
+  },
   "calendar/custom-duration": {
 	  component: lazy(() => import("~/examples/calendar/custom-duration.tsx")),
 	  code: `import { Calendar } from "@dv/ui/components"

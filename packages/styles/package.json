@@ -50,6 +50,12 @@
         "default": "./dist/es/components/button/index.mjs"
       }
     },
+    "./components/button-group": {
+      "import": {
+        "types": "./dist/es/components/button-group/index.d.mts",
+        "default": "./dist/es/components/button-group/index.mjs"
+      }
+    },
     "./components/calendar": {
       "import": {
         "types": "./dist/es/components/calendar/index.d.mts",
