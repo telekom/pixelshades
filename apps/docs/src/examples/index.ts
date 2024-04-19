@@ -56,7 +56,7 @@ import { MoveRightIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
-		<Breadcrumbs separator={<MoveRightIcon className="size-4 text-accent" />}>
+		<Breadcrumbs separator={<MoveRightIcon className="size-4 text-subtle" />}>
 			<Breadcrumb>Products</Breadcrumb>
 			<Breadcrumb>Product</Breadcrumb>
 			<Breadcrumb last>Product A</Breadcrumb>
@@ -77,6 +77,15 @@ export function Example() {
 			<Breadcrumb last>Product A</Breadcrumb>
 		</Breadcrumbs>
 	)
+}
+`,
+  },
+  "button/ghost": {
+	  component: lazy(() => import("~/examples/button/ghost.tsx")),
+	  code: `import { Button } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Button variant="ghost">Button</Button>
 }
 `,
   },

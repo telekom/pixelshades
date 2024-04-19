@@ -17,10 +17,10 @@ export const buttonVariants = tv({
 				icon: "text-primary-foreground",
 			},
 			outline: {
-				button: "border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground",
-				icon: "text-accent",
+				button: "border border-input bg-transparent shadow-sm hover:bg-subtle hover:text-subtle-foreground",
+				icon: "text-subtle",
 			},
-			ghost: { button: "hover:bg-accent hover:text-accent-foreground", icon: "" },
+			ghost: { button: "hover:bg-subtle hover:text-subtle-foreground", icon: "" },
 			link: { button: "text-primary underline-offset-4 hover:underline", icon: "" },
 			subtle: { button: "bg-subtle text-subtle-foreground shadow-sm hover:bg-subtle/80", icon: "" },
 			destructive: {

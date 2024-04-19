@@ -58,10 +58,6 @@ export const pixelShadesPlugin = plugin(
 						DEFAULT: "hsl(var(--subtle))",
 						foreground: "hsl(var(--subtle-foreground))",
 					},
-					accent: {
-						DEFAULT: "hsl(var(--accent))",
-						foreground: "hsl(var(--accent-foreground))",
-					},
 					popover: {
 						DEFAULT: "hsl(var(--popover))",
 						foreground: "hsl(var(--popover-foreground))",
