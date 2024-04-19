@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import type { SelectProps as AriaSelectProps, ListBoxItemProps } from "react-aria-components"
 import {
 	Select as AriaSelect,

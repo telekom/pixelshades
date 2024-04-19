@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { type ComponentProps, type ElementType, createContext, forwardRef, useContext } from "react"
 import { cn } from "."
 

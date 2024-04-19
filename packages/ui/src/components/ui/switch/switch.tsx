@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { switchVariants } from "@pixelshades/styles/components/switch"
 import type { ReactNode } from "react"
 

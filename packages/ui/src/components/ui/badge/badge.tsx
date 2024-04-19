@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import type { VariantProps } from "tailwind-variants"
 
 import { badgeVariants } from "@pixelshades/styles/components/badge"

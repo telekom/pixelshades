@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { progressBarVariants } from "@pixelshades/styles/components/progress-bar"
 import type React from "react"
 import type { ProgressBarProps as AriaProgressBarProps } from "react-aria-components"

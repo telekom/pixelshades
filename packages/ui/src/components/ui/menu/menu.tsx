@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { menuVariants } from "@pixelshades/styles/components/menu"
 import type { HTMLAttributes } from "react"
 

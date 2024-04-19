@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { loadingSpinnerVariants } from "@pixelshades/styles/components/loading-spinner"
 import { LoaderCircle } from "lucide-react"
 import type React from "react"

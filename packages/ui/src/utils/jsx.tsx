@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { Slot } from "@radix-ui/react-slot"
 import React, { type ReactElement, isValidElement } from "react"
 import { cn } from "."

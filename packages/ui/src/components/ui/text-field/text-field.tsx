@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { textFieldVariants } from "@pixelshades/styles/components/text-field"
 import type { TextFieldProps as AriaTextFieldProps } from "react-aria-components"
 import { TextField as AriaTextField, Input, Text } from "react-aria-components"

@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { dataListVariants } from "@pixelshades/styles/components/data-list"
 import type { HTMLAttributes } from "react"
 import { createStyleContext } from "../../../utils/create-style-context"

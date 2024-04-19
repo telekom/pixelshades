@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import type { TimeFieldProps as AriaTimeFieldProps, TimeValue } from "react-aria-components"
 import { TimeField as AriaTimeField, DateInput, DateSegment, Text } from "react-aria-components"
 

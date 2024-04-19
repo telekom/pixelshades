@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { dialogVariants } from "@pixelshades/styles/components/dialog"
 import type React from "react"
 import {

@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { Button, Tooltip, TooltipContent, TooltipRoot } from "@pixelshades/ui/components"
 import type { Meta, StoryObj } from "@storybook/react"
 import { SaveIcon } from "lucide-react"

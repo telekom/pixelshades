@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { forwardRef } from "../../../utils/jsx"
 
 import { headingVariants } from "@pixelshades/styles/components/heading"

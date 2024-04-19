@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import type { DateFieldProps as AriaDateFieldProps, DateValue } from "react-aria-components"
 import { DateField as AriaDateField, DateInput, DateSegment, Text } from "react-aria-components"
 
