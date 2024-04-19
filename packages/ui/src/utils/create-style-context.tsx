@@ -40,8 +40,15 @@ export const createStyleContext = <StylesFunction extends Recipe, Slot extends k
 		return Comp
 	}
 
+	const useStyleContext = () => {
+		const context = useContext(StyleContext)
+
+		return context
+	}
+
 	return {
 		withProvider,
 		withContext,
+		useStyleContext,
 	}
 }

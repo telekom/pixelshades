@@ -126,13 +126,78 @@ export function Example() {
 }
 `,
   },
+  "button-group/ghost": {
+	  component: lazy(() => import("~/examples/button-group/ghost.tsx")),
+	  code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<ButtonGroup variant="ghost">
+			<Button>One</Button>
+			<Button>Two</Button>
+			<Button>Three</Button>
+		</ButtonGroup>
+	)
+}
+`,
+  },
+  "button-group/link": {
+	  component: lazy(() => import("~/examples/button-group/link.tsx")),
+	  code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<ButtonGroup variant="link">
+			<Button>One</Button>
+			<Button>Two</Button>
+			<Button>Three</Button>
+		</ButtonGroup>
+	)
+}
+`,
+  },
   "button-group/orientation": {
 	  component: lazy(() => import("~/examples/button-group/orientation.tsx")),
 	  code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
-		<ButtonGroup orientation="vertical">
+		<div className="flex flex-row gap-layout-sm">
+			<ButtonGroup orientation="vertical">
+				<Button>One</Button>
+				<Button>Two</Button>
+				<Button>Three</Button>
+			</ButtonGroup>
+
+			<ButtonGroup orientation="vertical" variant="outline">
+				<Button>One</Button>
+				<Button>Two</Button>
+				<Button>Three</Button>
+			</ButtonGroup>
+
+			<ButtonGroup orientation="vertical" variant="ghost">
+				<Button>One</Button>
+				<Button>Two</Button>
+				<Button>Three</Button>
+			</ButtonGroup>
+
+			<ButtonGroup orientation="vertical" variant="link">
+				<Button>One</Button>
+				<Button>Two</Button>
+				<Button>Three</Button>
+			</ButtonGroup>
+		</div>
+	)
+}
+`,
+  },
+  "button-group/outline": {
+	  component: lazy(() => import("~/examples/button-group/outline.tsx")),
+	  code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<ButtonGroup variant="outline">
 			<Button>One</Button>
 			<Button>Two</Button>
 			<Button>Three</Button>
@@ -148,6 +213,21 @@ export function Example() {
 export function Example() {
 	return (
 		<ButtonGroup variant="outline">
+			<Button>One</Button>
+			<Button>Two</Button>
+			<Button>Three</Button>
+		</ButtonGroup>
+	)
+}
+`,
+  },
+  "button-group/solid": {
+	  component: lazy(() => import("~/examples/button-group/solid.tsx")),
+	  code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<ButtonGroup variant="solid">
 			<Button>One</Button>
 			<Button>Two</Button>
 			<Button>Three</Button>

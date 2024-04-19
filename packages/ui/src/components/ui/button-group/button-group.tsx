@@ -13,7 +13,7 @@ interface ButtonGroupProps {
 const { withProvider } = buttonGroupContext
 
 /** Displays a group of buttons with matching styles. */
-const UnstyledButtonGroup = ({ children, className, ...props }: ButtonGroupProps) => {
+const UnstyledButtonGroup = ({ children, ...props }: ButtonGroupProps) => {
 	return <div {...props}>{children}</div>
 }
 
