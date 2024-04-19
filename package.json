@@ -5,7 +5,9 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
+    "verify-compliace": "pipx run reuse lint",
     "bump-versions": "bun changeset version && bun install",
+    "publish": "turbo run build && changeset version && changeset publish --access public",
     "commit": "cz"
   },
   "devDependencies": {

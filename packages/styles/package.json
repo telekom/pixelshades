@@ -1,8 +1,11 @@
 {
   "name": "@pixelshades/styles",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.1",
+  "private": false,
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "bunchee",
     "dev": "bunchee --watch --no-clean"
