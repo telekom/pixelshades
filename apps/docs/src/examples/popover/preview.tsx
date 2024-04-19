@@ -1,4 +1,4 @@
-import { Button, Input, Label, Popover, PopoverTrigger } from "@dv/ui/components"
+import { Button, Input, Label, Popover, PopoverTrigger } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (

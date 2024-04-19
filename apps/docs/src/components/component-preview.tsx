@@ -1,7 +1,7 @@
 "use client"
 
-import { Tab, TabPanel, Tabs, TabsList } from "@dv/ui/components"
-import { cn } from "@dv/ui/utils"
+import { Tab, TabPanel, Tabs, TabsList } from "@pixelshades/ui/components"
+import { cn } from "@pixelshades/ui/utils"
 import type * as React from "react"
 import { Demos } from "../examples"
 

@@ -1,5 +1,5 @@
-import { Breadcrumb, Breadcrumbs } from "@dv/ui/components"
-import { MoveRightIcon } from "@dv/ui/icons"
+import { Breadcrumb, Breadcrumbs } from "@pixelshades/ui/components"
+import { MoveRightIcon } from "@pixelshades/ui/icons"
 
 export default function Example() {
 	return (

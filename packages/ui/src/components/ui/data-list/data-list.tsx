@@ -1,4 +1,4 @@
-import { dataListVariants } from "@dv/styles/components/data-list"
+import { dataListVariants } from "@pixelshades/styles/components/data-list"
 import type { HTMLAttributes } from "react"
 import { createStyleContext } from "../../../utils/create-style-context"
 import { forwardRef } from "../../../utils/jsx"

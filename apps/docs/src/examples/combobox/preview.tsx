@@ -1,4 +1,4 @@
-import { ComboBox, ComboBoxItem } from "@dv/ui/components"
+import { ComboBox, ComboBoxItem } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (

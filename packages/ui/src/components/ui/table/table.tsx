@@ -14,7 +14,7 @@ import {
 	useTableOptions,
 } from "react-aria-components"
 
-import { tableVariants } from "@dv/styles/components/table"
+import { tableVariants } from "@pixelshades/styles/components/table"
 import { ChevronDown, ChevronUp, Menu } from "lucide-react"
 import { createStyleContext } from "../../../utils/create-style-context"
 import { Button } from "../button"

@@ -1,6 +1,6 @@
 import { forwardRef } from "../../../utils/jsx"
 
-import { headingVariants } from "@dv/styles/components/heading"
+import { headingVariants } from "@pixelshades/styles/components/heading"
 import { type ElementType, createElement, useContext } from "react"
 import type { Props } from "../../../utils/types"
 import { HeadingContext } from "./heading-context"

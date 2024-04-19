@@ -1,4 +1,4 @@
-import { Breadcrumb, Breadcrumbs } from "@dv/ui/components"
+import { Breadcrumb, Breadcrumbs } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (

@@ -1,4 +1,4 @@
-import { Highlight, Input, Label, Typography } from "@dv/ui/components"
+import { Highlight, Input, Label, Typography } from "@pixelshades/ui/components"
 import { useState } from "react"
 
 export default function Example() {

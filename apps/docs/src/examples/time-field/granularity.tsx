@@ -1,4 +1,4 @@
-import { TimeField } from "@dv/ui/components"
+import { TimeField } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (

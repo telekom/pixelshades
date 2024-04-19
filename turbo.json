@@ -13,7 +13,7 @@
 				"!.next/cache/**"
 			]
 		},
-		"@dv/styles#build": {
+		"@pixelshades/styles#build": {
 			"cache": true,
 			"persistent": false
 		},
@@ -21,7 +21,7 @@
 			"cache": false,
 			"persistent": true
 		},
-		"@dv/ui#dev": {
+		"@pixelshades/ui#dev": {
 			"cache": false,
 			"persistent": true
 		}

@@ -1,4 +1,4 @@
-import { Button, ButtonGroup } from "@dv/ui/components"
+import { Button, ButtonGroup } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (

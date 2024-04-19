@@ -1,5 +1,5 @@
-import { DataList, DataListItem, DataListLabel, DataListValue, Link } from "@dv/ui/components"
-import { GithubIcon } from "@dv/ui/icons"
+import { DataList, DataListItem, DataListLabel, DataListValue, Link } from "@pixelshades/ui/components"
+import { GithubIcon } from "@pixelshades/ui/icons"
 
 export default function Example() {
 	return (
@@ -10,7 +10,7 @@ export default function Example() {
 					<code>
 						import {"{ "}
 						Button
-						{" }"} from "@dv/ui/components"
+						{" }"} from "@pixelshades/ui/components"
 					</code>
 				</DataListValue>
 			</DataListItem>

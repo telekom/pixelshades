@@ -6,7 +6,7 @@ import {
 	CommandSearch,
 	If,
 	Typography,
-} from "@dv/ui/components"
+} from "@pixelshades/ui/components"
 import { components, dvds_pages } from "#site/content"
 
 import Fuse, { type FuseResultMatch } from "fuse.js"
@@ -14,7 +14,7 @@ import { Highlight } from "../../../../packages/ui/src/components/ui/highlight"
 
 import { useState } from "react"
 
-import { Component, StickyNote } from "@dv/ui/icons"
+import { Component, StickyNote } from "@pixelshades/ui/icons"
 
 type SearchDialogProps = {
 	open?: boolean

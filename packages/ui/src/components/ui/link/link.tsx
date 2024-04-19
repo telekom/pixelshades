@@ -1,6 +1,6 @@
 import { Link as AriaLink, type LinkProps as AriaLinkProps } from "react-aria-components"
 
-import { linkVariants } from "@dv/styles/components/link"
+import { linkVariants } from "@pixelshades/styles/components/link"
 import type { VariantProps } from "tailwind-variants"
 import { cn } from "../../../utils"
 

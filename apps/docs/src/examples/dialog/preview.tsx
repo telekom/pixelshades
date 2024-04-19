@@ -8,7 +8,7 @@ import {
 	DialogTrigger,
 	Input,
 	Label,
-} from "@dv/ui/components"
+} from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (

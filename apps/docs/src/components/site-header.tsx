@@ -1,5 +1,5 @@
-import { Button } from "@dv/ui/components"
-import { Command } from "@dv/ui/icons"
+import { Button } from "@pixelshades/ui/components"
+import { Command } from "@pixelshades/ui/icons"
 import { useEffect, useState } from "react"
 import { MainNav } from "./main-nav"
 import { SearchDialog } from "./search-dialog"

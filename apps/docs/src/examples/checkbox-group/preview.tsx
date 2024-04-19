@@ -1,4 +1,4 @@
-import { Checkbox, CheckboxGroup } from "@dv/ui/components"
+import { Checkbox, CheckboxGroup } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (

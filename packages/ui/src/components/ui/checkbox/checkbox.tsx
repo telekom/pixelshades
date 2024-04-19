@@ -2,7 +2,7 @@ import { Check } from "lucide-react"
 
 import { type ElementRef, forwardRef } from "react"
 
-import { checkboxVariant } from "@dv/styles/components/checkbox"
+import { checkboxVariant } from "@pixelshades/styles/components/checkbox"
 import { type CheckboxProps as AriaCheckBoxProps, Checkbox as AriaCheckbox } from "react-aria-components"
 import type { VariantProps } from "tailwind-variants"
 

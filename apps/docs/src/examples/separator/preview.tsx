@@ -1,4 +1,4 @@
-import { Separator } from "@dv/ui/components"
+import { Separator } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (

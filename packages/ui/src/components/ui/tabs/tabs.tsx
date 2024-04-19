@@ -9,7 +9,7 @@ import {
 	type TabsProps,
 } from "react-aria-components"
 
-import { tabsVariants } from "@dv/styles/components/tabs"
+import { tabsVariants } from "@pixelshades/styles/components/tabs"
 import { createStyleContext } from "../../../utils/create-style-context"
 
 const { withContext, withProvider } = createStyleContext(tabsVariants)

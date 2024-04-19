@@ -1,5 +1,5 @@
-import { Button, TooltipContent, TooltipRoot } from "@dv/ui/components"
-import { SaveIcon } from "@dv/ui/icons"
+import { Button, TooltipContent, TooltipRoot } from "@pixelshades/ui/components"
+import { SaveIcon } from "@pixelshades/ui/icons"
 
 export default function Example() {
 	return (

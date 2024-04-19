@@ -1,4 +1,4 @@
-import { checkboxGroup } from "@dv/styles/components/checkbox-group"
+import { checkboxGroup } from "@pixelshades/styles/components/checkbox-group"
 import type { ReactNode } from "react"
 import type { CheckboxGroupProps as AriaCheckboxGroupProps } from "react-aria-components"
 import { CheckboxGroup as AriaCheckboxGroup, Text } from "react-aria-components"

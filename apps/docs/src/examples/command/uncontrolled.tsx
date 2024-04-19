@@ -5,8 +5,8 @@ import {
 	CommandItemDescription,
 	CommandItemTitle,
 	CommandSearch,
-} from "@dv/ui/components"
-import { Apple, GlassWater } from "@dv/ui/icons"
+} from "@pixelshades/ui/components"
+import { Apple, GlassWater } from "@pixelshades/ui/icons"
 
 export default function Example() {
 	const fruits = [

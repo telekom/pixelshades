@@ -15,9 +15,9 @@ import {
 	Tabs,
 	TabsList,
 	Typography,
-} from "@dv/ui/components"
-import { GithubIcon } from "@dv/ui/icons"
-import { cn } from "@dv/ui/utils"
+} from "@pixelshades/ui/components"
+import { GithubIcon } from "@pixelshades/ui/icons"
+import { cn } from "@pixelshades/ui/utils"
 
 import { createFileRoute } from "@tanstack/react-router"
 import { z } from "zod"

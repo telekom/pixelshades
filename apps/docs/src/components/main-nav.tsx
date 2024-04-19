@@ -1,7 +1,7 @@
-import { cn } from "@dv/ui/utils"
+import { cn } from "@pixelshades/ui/utils"
 import { siteConfig } from "~/config/site"
 
-import { FlameIcon } from "@dv/ui/icons"
+import { FlameIcon } from "@pixelshades/ui/icons"
 import { Link } from "@tanstack/react-router"
 
 export function MainNav() {

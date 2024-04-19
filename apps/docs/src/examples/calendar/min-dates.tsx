@@ -1,5 +1,5 @@
-import { Calendar } from "@dv/ui/components"
 import { getLocalTimeZone, today } from "@internationalized/date"
+import { Calendar } from "@pixelshades/ui/components"
 
 export default function Example() {
 	const now = today(getLocalTimeZone())

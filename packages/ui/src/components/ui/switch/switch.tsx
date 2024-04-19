@@ -1,4 +1,4 @@
-import { switchVariants } from "@dv/styles/components/switch"
+import { switchVariants } from "@pixelshades/styles/components/switch"
 import type { ReactNode } from "react"
 
 import { Switch as AriaSwitch, type SwitchProps as AriaSwitchProps, Label } from "react-aria-components"

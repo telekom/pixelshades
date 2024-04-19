@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss"
 
-import { dvPlugin } from "@dv/ui/tailwind"
+import { pixelShadesPlugin } from "@pixelshades/ui/tailwind"
 
 const config: Config = {
 	darkMode: ["class"],
@@ -8,7 +8,7 @@ const config: Config = {
 		"../../packages/ui/**/*.{js,ts,jsx,tsx}",
 		"../../packages/styles/**/*.{js,ts,jsx,tsx}",
 		"./src/**/*.{js,ts,jsx,tsx}",
-		"../../node_modules/@dv/ui/dist/es/**/*.{js,ts,jsx,tsx}",
+		"../../node_modules/@pixelshades/ui/dist/es/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
 		extend: {
@@ -28,7 +28,7 @@ const config: Config = {
 			},
 		},
 	},
-	plugins: [dvPlugin],
+	plugins: [pixelShadesPlugin as any],
 }
 
 export default config

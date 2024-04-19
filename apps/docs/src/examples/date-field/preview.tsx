@@ -1,4 +1,4 @@
-import { DateField } from "@dv/ui/components"
+import { DateField } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return <DateField label="Start Date" />

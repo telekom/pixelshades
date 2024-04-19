@@ -1,4 +1,4 @@
-import { Button, Tooltip, TooltipContent, TooltipRoot } from "@dv/ui/components"
+import { Button, Tooltip, TooltipContent, TooltipRoot } from "@pixelshades/ui/components"
 import type { Meta, StoryObj } from "@storybook/react"
 import { SaveIcon } from "lucide-react"
 import { Inter } from "next/font/google"

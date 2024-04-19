@@ -4,7 +4,7 @@ import type {
 } from "react-aria-components"
 import { Breadcrumb as AriaBreadcrumb, Breadcrumbs as AriaBreadcrumbs } from "react-aria-components"
 
-import { breadcrumbsVariants } from "@dv/styles/components/breadcrumbs"
+import { breadcrumbsVariants } from "@pixelshades/styles/components/breadcrumbs"
 import { ChevronRightIcon } from "lucide-react"
 import type React from "react"
 import { type ReactElement, createContext, useContext } from "react"

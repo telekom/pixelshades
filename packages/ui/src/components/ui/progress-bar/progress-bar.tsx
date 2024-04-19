@@ -1,4 +1,4 @@
-import { progressBarVariants } from "@dv/styles/components/progress-bar"
+import { progressBarVariants } from "@pixelshades/styles/components/progress-bar"
 import type React from "react"
 import type { ProgressBarProps as AriaProgressBarProps } from "react-aria-components"
 import { Label as AriaLabel, ProgressBar as AriaProgressBar } from "react-aria-components"

@@ -2,7 +2,7 @@ import type React from "react"
 import { forwardRef } from "react"
 import type { VariantProps } from "tailwind-variants"
 
-import { buttonVariants } from "@dv/styles/components/button"
+import { buttonVariants } from "@pixelshades/styles/components/button"
 
 import { Button as AriaButton, type ButtonProps as AriaButtonProps } from "react-aria-components"
 import { RenderSlot } from "../../../utils/jsx"
