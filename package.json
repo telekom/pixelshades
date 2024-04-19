@@ -4,13 +4,17 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
-    "lint": "turbo lint"
+    "lint": "turbo lint",
+    "bump-versions": "bun changeset version && bun install",
+    "commit": "cz"
   },
   "devDependencies": {
     "@biomejs/biome": "1.7.0",
+    "@changesets/cli": "^2.27.1",
     "@pixelshades/typescript-config": "workspace:*",
     "concurrently": "^8.2.2",
-    "turbo": "latest"
+    "cz-conventional-changelog": "^3.3.0",
+    "turbo": "1.13.2"
   },
   "engines": {
     "node": ">=18"
@@ -19,5 +23,10 @@
   "workspaces": [
     "packages/*",
     "apps/*"
-  ]
+  ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
 }
