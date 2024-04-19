@@ -15,7 +15,7 @@ const Typography = <T extends React.ElementType = "p">({
 	children,
 	...elementProps
 }: TypographyProps<T>) => {
-	const Component = as || "button"
+	const Component = as || "p"
 
 	const classes = typographyVariants({ size, className })
 	return (
