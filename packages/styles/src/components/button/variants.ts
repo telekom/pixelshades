@@ -17,7 +17,7 @@ export const buttonVariants = tv({
 				icon: "text-primary-foreground",
 			},
 			outline: {
-				button: "border border-input bg-transparent shadow-sm hover:bg-subtle hover:text-subtle-foreground",
+				button: "border border-border bg-transparent shadow-sm hover:bg-subtle hover:text-subtle-foreground",
 				icon: "text-subtle",
 			},
 			ghost: { button: "hover:bg-subtle hover:text-subtle-foreground", icon: "" },

@@ -38,7 +38,6 @@ export const pixelShadesPlugin = plugin(
 				},
 				colors: {
 					border: "hsl(var(--border))",
-					input: "hsl(var(--input))",
 					ring: "hsl(var(--ring))",
 					background: "hsl(var(--background))",
 					foreground: "hsl(var(--foreground))",
@@ -57,10 +56,6 @@ export const pixelShadesPlugin = plugin(
 					subtle: {
 						DEFAULT: "hsl(var(--subtle))",
 						foreground: "hsl(var(--subtle-foreground))",
-					},
-					popover: {
-						DEFAULT: "hsl(var(--popover))",
-						foreground: "hsl(var(--popover-foreground))",
 					},
 					card: {
 						DEFAULT: "hsl(var(--card))",

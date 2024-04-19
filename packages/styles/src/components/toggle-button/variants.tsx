@@ -13,7 +13,7 @@ export const toggleVariants = tv({
 	variants: {
 		variant: {
 			outline: {
-				button: "border border-input bg-transparent shadow-sm hover:bg-subtle hover:text-subtle-foreground",
+				button: "border border-border bg-transparent shadow-sm hover:bg-subtle hover:text-subtle-foreground",
 				icon: "text-foreground",
 			},
 			ghost: { button: "hover:bg-subtle hover:text-subtle-foreground", icon: "" },
