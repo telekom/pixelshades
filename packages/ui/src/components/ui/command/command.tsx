@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { Command as CommandIcon } from "lucide-react"
-import { type ReactNode, useMemo, useRef } from "react"
+import { type ReactNode, useMemo } from "react"
 import {
 	Header as AriaHeader,
 	ListBox as AriaListBox,

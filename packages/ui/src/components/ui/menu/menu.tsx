@@ -15,10 +15,10 @@ import {
 	type MenuTriggerProps as AriaMenuTriggerProps,
 	Section as AriaSection,
 	Popover,
-	Separator,
 } from "react-aria-components"
+import { Separator } from "../separator"
 
-const { menuPopover, content, header, item, separator } = menuVariants()
+const { menuPopover, content, header, item } = menuVariants()
 
 export type MenuProps = AriaMenuTriggerProps
 
@@ -54,8 +54,6 @@ const MenuHeader = ({ children, className, ...props }: MenuHeaderProps) => (
 
 export type MenuSeperatorProps = HTMLAttributes<HTMLElement> & { className?: string }
 
-const MenuSeperator = ({ className, ...props }: MenuSeperatorProps) => (
-	<Separator {...props} className={separator({ className })} />
-)
+const MenuSeperator = ({ className, ...props }: MenuSeperatorProps) => <Separator {...props} className={className} />
 
 export { Menu, MenuSection, MenuContent, MenuItem, MenuHeader, MenuSeperator }

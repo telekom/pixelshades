@@ -188,6 +188,12 @@
         "default": "./dist/es/components/tabs/index.mjs"
       }
     },
+    "./components/kbd": {
+      "import": {
+        "types": "./dist/es/components/kbd/index.d.mts",
+        "default": "./dist/es/components/kbd/index.mjs"
+      }
+    },
     "./components/text-field": {
       "import": {
         "types": "./dist/es/components/text-field/index.d.mts",

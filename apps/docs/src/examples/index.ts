@@ -842,6 +842,15 @@ export function Example() {
 }
 `,
   },
+  "kbd/preview": {
+	  component: lazy(() => import("~/examples/kbd/preview.tsx")),
+	  code: `import { Kbd } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Kbd keys={["option", "command"]}>K</Kbd>
+}
+`,
+  },
   "label/preview": {
 	  component: lazy(() => import("~/examples/label/preview.tsx")),
 	  code: `import { Checkbox, Label } from "@pixelshades/ui/components"
