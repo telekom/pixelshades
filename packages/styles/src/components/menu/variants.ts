@@ -8,8 +8,11 @@ export const menuVariants = tv({
 	slots: {
 		menuPopover:
 			"overflow-auto rounded-xl border border-border bg-background shadow-xl data-[entering]:animate-fade data-[exiting]:animate-fadeOut p-0",
-		header: "p-2",
-		content: "flex h-fit w-56 flex-col gap-md py-2 outline-none",
-		item: "relative flex cursor-pointer justify-between rounded-md p-sm text-foreground outline-none data-[focused]:bg-subtle",
+		label: "flex select-none items-center px-lg py-sm text-sm font-medium text-subtle-foreground",
+		content: "flex flex-col gap-md rounded-xl py-md text-sm leading-6 antialiased",
+		item: "relative flex cursor-pointer select-none items-center gap-md px-lg py-sm outline-none focus:bg-subtle data-[disabled]:pointer-events-none data-[disabled]:opacity-40 dark:focus:bg-white/5 [&:has(>svg:first-child)]:pl-md",
+		shortcut: "ms-auto border-0 bg-transparent p-0 ps-lg text-foreground text-xs shadow-0",
+		separator: "my-0",
+		icon: "size-4 text-subtle-foreground",
 	},
 })

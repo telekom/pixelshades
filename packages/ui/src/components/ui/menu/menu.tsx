@@ -5,6 +5,7 @@
 import { menuVariants } from "@pixelshades/styles/components/menu"
 import type { HTMLAttributes } from "react"
 
+import { ChevronRight } from "lucide-react"
 import {
 	Header as AriaHeader,
 	Menu as AriaMenu,
@@ -13,47 +14,73 @@ import {
 	type MenuProps as AriaMenuProps,
 	MenuTrigger as AriaMenuTrigger,
 	type MenuTriggerProps as AriaMenuTriggerProps,
+	Popover as AriaPopover,
 	Section as AriaSection,
-	Popover,
+	SubmenuTrigger as AriaSubMenuTrigger,
 } from "react-aria-components"
+import { createStyleContext } from "../../../utils/create-style-context"
+import { forwardRef } from "../../../utils/jsx"
+import { Kbd } from "../kbd"
 import { Separator } from "../separator"
 
-const { menuPopover, content, header, item } = menuVariants()
+const { withContext, withProvider } = createStyleContext(menuVariants)
+
+const { menuPopover, content, shortcut } = menuVariants()
 
 export type MenuProps = AriaMenuTriggerProps
 
-const Menu = AriaMenuTrigger
+const MenuRoot = withProvider(AriaMenuTrigger)
 
 const MenuSection = AriaSection
 
-export type MenuContentProps<T extends object> = AriaMenuProps<T> & { className?: string }
+export type MenuContentProps<T extends object> = AriaMenuProps<T>
 
-const MenuContent = <T extends object>({ children, className, ...props }: MenuContentProps<T>) => (
-	<Popover isNonModal {...props} className={menuPopover()}>
+const MenuContent = forwardRef(<T extends object>({ children, className, ...props }: MenuContentProps<T>) => (
+	<AriaPopover isNonModal {...props} className={menuPopover()}>
 		<AriaMenu {...props} className={content({ className })}>
 			{children}
 		</AriaMenu>
-	</Popover>
-)
+	</AriaPopover>
+))
 
 export type MenuItemProps = AriaMenuItemProps & { className?: string }
 
-const MenuItem = ({ children, className, ...props }: MenuItemProps) => (
-	<AriaMenuItem {...props} className={item({ className })}>
-		{children}
-	</AriaMenuItem>
-)
+const MenuItem = withContext(AriaMenuItem, "item")
 
 export type MenuHeaderProps = HTMLAttributes<HTMLElement> & { className?: string }
 
-const MenuHeader = ({ children, className, ...props }: MenuHeaderProps) => (
-	<AriaHeader {...props} className={header({ className })}>
-		{children}
-	</AriaHeader>
-)
+const MenuLabel = withContext(AriaHeader, "label")
+
+const MenuShortcut = withContext(Kbd, "shortcut")
 
 export type MenuSeperatorProps = HTMLAttributes<HTMLElement> & { className?: string }
 
-const MenuSeperator = ({ className, ...props }: MenuSeperatorProps) => <Separator {...props} className={className} />
+const MenuSeparator = withContext(Separator, "separator")
 
-export { Menu, MenuSection, MenuContent, MenuItem, MenuHeader, MenuSeperator }
+const MenuSubMenu = AriaSubMenuTrigger
+
+const MenuSubMenuTrigger = (props: MenuItemProps) => {
+	return (
+		<MenuItem>
+			{(value) => {
+				return (
+					<>
+						{typeof props.children === "function" ? props.children(value) : props.children}
+						<ChevronRight className={"ms-auto size-4 text-subtle-foreground"} />
+					</>
+				)
+			}}
+		</MenuItem>
+	)
+}
+
+export const Menu = Object.assign(MenuRoot, {
+	Section: MenuSection,
+	Content: MenuContent,
+	Shortcut: MenuShortcut,
+	Item: MenuItem,
+	Label: MenuLabel,
+	Separator: MenuSeparator,
+	SubMenu: MenuSubMenu,
+	SubMenuTrigger: MenuSubMenuTrigger,
+})

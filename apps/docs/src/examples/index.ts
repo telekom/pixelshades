@@ -979,25 +979,132 @@ export function Example() {
   },
   "menu/preview": {
 	  component: lazy(() => import("~/examples/menu/preview.tsx")),
-	  code: `import { Button, Menu, MenuContent, MenuHeader, MenuItem, MenuSection, MenuSeperator } from "@pixelshades/ui/components"
+	  code: `import { Button, Menu } from "@pixelshades/ui/components"
+import { DownloadIcon, EyeOffIcon, MailIcon, PinIcon, RedoIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
 		<div>
-			<Menu>
+			<Menu aria-label="Menu">
 				<Button>Open Menu</Button>
 
-				<MenuContent>
-					<MenuSection>
-						<MenuHeader>User Pfoile</MenuHeader>
-					</MenuSection>
-					<MenuSeperator />
+				<Menu.Content>
+					<Menu.Section aria-label="Actions">
+						<Menu.Label>Actions</Menu.Label>
+						<Menu.Item aria-label="Reply">
+							<RedoIcon className="size-4 text-subtle-foreground" />
+							<span>Reply</span>
+							<Menu.Shortcut keys={["option"]}>R</Menu.Shortcut>
+						</Menu.Item>
+						<Menu.Item aria-label="Pin">
+							<PinIcon className="size-4 text-subtle-foreground" />
+							<span>Pin</span>
+							<Menu.Shortcut keys={["option"]}>P</Menu.Shortcut>
+						</Menu.Item>
+					</Menu.Section>
 
-					<MenuItem>Some Menu Item</MenuItem>
-					<MenuItem>Another Menu Item</MenuItem>
-					<MenuItem>Seperated Last Menu Item</MenuItem>
-					<MenuSeperator />
-				</MenuContent>
+					<Menu.Separator />
+
+					<Menu.Section>
+						<Menu.Item aria-label="Save this message">
+							<DownloadIcon className="size-4 text-subtle-foreground" />
+							<span>Save this message</span>
+							<Menu.Shortcut keys={["command"]}>S</Menu.Shortcut>
+						</Menu.Item>
+
+						<Menu.Item aria-label="Mark as unread">
+							<EyeOffIcon className="size-4 text-subtle-foreground" />
+							<span>Mark as unread</span>
+							<Menu.Shortcut keys={["command", "option"]}>U</Menu.Shortcut>
+						</Menu.Item>
+
+						<Menu.Item aria-label="Share via email">
+							<MailIcon className="size-4 text-subtle-foreground" />
+							<span>Share via email</span>
+							<Menu.Shortcut keys={["command"]}>U</Menu.Shortcut>
+						</Menu.Item>
+					</Menu.Section>
+				</Menu.Content>
+			</Menu>
+		</div>
+	)
+}
+`,
+  },
+  "menu/sub-menu": {
+	  component: lazy(() => import("~/examples/menu/sub-menu.tsx")),
+	  code: `import { Button, Menu } from "@pixelshades/ui/components"
+import { DownloadIcon, EyeOffIcon, MailIcon, PinIcon, RedoIcon } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return (
+		<div>
+			<Menu aria-label="Menu">
+				<Button>Open Menu</Button>
+
+				<Menu.Content>
+					<Menu.Section aria-label="Actions">
+						<Menu.Label>Actions</Menu.Label>
+						<Menu.Item aria-label="Reply">
+							<RedoIcon className="size-4 text-subtle-foreground" />
+							<span>Reply</span>
+							<Menu.Shortcut keys={["option"]}>R</Menu.Shortcut>
+						</Menu.Item>
+						<Menu.Item aria-label="Pin">
+							<PinIcon className="size-4 text-subtle-foreground" />
+							<span>Pin</span>
+							<Menu.Shortcut keys={["option"]}>P</Menu.Shortcut>
+						</Menu.Item>
+					</Menu.Section>
+
+					<Menu.Separator />
+
+					<Menu.Section>
+						<Menu.Item aria-label="Save this message">
+							<DownloadIcon className="size-4 text-subtle-foreground" />
+							<span>Save this message</span>
+							<Menu.Shortcut keys={["command"]}>S</Menu.Shortcut>
+						</Menu.Item>
+
+						<Menu.Item aria-label="Mark as unread">
+							<EyeOffIcon className="size-4 text-subtle-foreground" />
+							<span>Mark as unread</span>
+							<Menu.Shortcut keys={["command", "option"]}>U</Menu.Shortcut>
+						</Menu.Item>
+
+						<Menu.SubMenu aria-label="Sub Menu">
+							<Menu.SubMenuTrigger aria-label="Sub Menu">Sub Menu</Menu.SubMenuTrigger>
+							<Menu.Content aria-label="Sub Menu">
+								<Menu.Section>
+									<Menu.Label>Sub Menu</Menu.Label>
+									<Menu.Item aria-label="Save this message">
+										<DownloadIcon className="size-4 text-subtle-foreground" />
+										<span>Save this message</span>
+										<Menu.Shortcut keys={["command"]}>S</Menu.Shortcut>
+									</Menu.Item>
+
+									<Menu.Item aria-label="Mark as unread">
+										<EyeOffIcon className="size-4 text-subtle-foreground" />
+										<span>Mark as unread</span>
+										<Menu.Shortcut keys={["command", "option"]}>U</Menu.Shortcut>
+									</Menu.Item>
+
+									<Menu.Item aria-label="Share via email">
+										<MailIcon className="size-4 text-subtle-foreground" />
+										<span>Share via email</span>
+										<Menu.Shortcut keys={["command"]}>U</Menu.Shortcut>
+									</Menu.Item>
+								</Menu.Section>
+							</Menu.Content>
+						</Menu.SubMenu>
+
+						<Menu.Item aria-label="Share via email">
+							<MailIcon className="size-4 text-subtle-foreground" />
+							<span>Share via email</span>
+							<Menu.Shortcut keys={["command"]}>U</Menu.Shortcut>
+						</Menu.Item>
+					</Menu.Section>
+				</Menu.Content>
 			</Menu>
 		</div>
 	)

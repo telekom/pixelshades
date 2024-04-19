@@ -37,6 +37,32 @@ export default function Example() {
 							<Menu.Shortcut keys={["command", "option"]}>U</Menu.Shortcut>
 						</Menu.Item>
 
+						<Menu.SubMenu aria-label="Sub Menu">
+							<Menu.SubMenuTrigger aria-label="Sub Menu">Sub Menu</Menu.SubMenuTrigger>
+							<Menu.Content aria-label="Sub Menu">
+								<Menu.Section>
+									<Menu.Label>Sub Menu</Menu.Label>
+									<Menu.Item aria-label="Save this message">
+										<DownloadIcon className="size-4 text-subtle-foreground" />
+										<span>Save this message</span>
+										<Menu.Shortcut keys={["command"]}>S</Menu.Shortcut>
+									</Menu.Item>
+
+									<Menu.Item aria-label="Mark as unread">
+										<EyeOffIcon className="size-4 text-subtle-foreground" />
+										<span>Mark as unread</span>
+										<Menu.Shortcut keys={["command", "option"]}>U</Menu.Shortcut>
+									</Menu.Item>
+
+									<Menu.Item aria-label="Share via email">
+										<MailIcon className="size-4 text-subtle-foreground" />
+										<span>Share via email</span>
+										<Menu.Shortcut keys={["command"]}>U</Menu.Shortcut>
+									</Menu.Item>
+								</Menu.Section>
+							</Menu.Content>
+						</Menu.SubMenu>
+
 						<Menu.Item aria-label="Share via email">
 							<MailIcon className="size-4 text-subtle-foreground" />
 							<span>Share via email</span>

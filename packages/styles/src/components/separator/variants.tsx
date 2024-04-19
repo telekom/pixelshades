@@ -9,8 +9,8 @@ export const separatorVariants = tv({
 	defaultVariants: { orientation: "horizontal" },
 	variants: {
 		orientation: {
-			vertical: "w-0.5 mx-md h-full",
-			horizontal: "h-0.5 my-md w-full",
+			vertical: "w-px mx-md h-full",
+			horizontal: "h-px my-md w-full",
 		},
 	},
 })

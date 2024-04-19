@@ -1,6 +1,6 @@
 "use client"
 
-import { Button, type ButtonProps, Menu, MenuContent, MenuItem, type MenuProps } from "@pixelshades/ui/components"
+import { Button, type ButtonProps, Menu, type MenuProps } from "@pixelshades/ui/components"
 import { CheckIcon, CopyIcon } from "@pixelshades/ui/icons"
 import { cn } from "@pixelshades/ui/utils"
 import { useCallback, useEffect, useState } from "react"
@@ -73,7 +73,7 @@ export function CopyWithClassNames({ value, classNames, className, ...props }: C
 				{hasCopied ? <CheckIcon className="h-3 w-3" /> : <CopyIcon className="h-3 w-3" />}
 				<span className="sr-only">Copy</span>
 			</Button>
-			<MenuContent
+			<Menu.Content
 				onAction={(key) => {
 					switch (key) {
 						case "component":
@@ -87,9 +87,9 @@ export function CopyWithClassNames({ value, classNames, className, ...props }: C
 					}
 				}}
 			>
-				<MenuItem id="component">Component</MenuItem>
-				<MenuItem id="classname">Classname</MenuItem>
-			</MenuContent>
+				<Menu.Item id="component">Component</Menu.Item>
+				<Menu.Item id="classname">Classname</Menu.Item>
+			</Menu.Content>
 		</Menu>
 	)
 }
@@ -124,7 +124,7 @@ export function CopyNpmCommandButton({ commands, className, ...props }: CopyNpmC
 				{hasCopied ? <CheckIcon className="h-3 w-3" /> : <CopyIcon className="h-3 w-3" />}
 				<span className="sr-only">Copy</span>
 			</Button>
-			<MenuContent
+			<Menu.Content
 				onAction={(key) => {
 					switch (key) {
 						case "npm":
@@ -144,11 +144,11 @@ export function CopyNpmCommandButton({ commands, className, ...props }: CopyNpmC
 					}
 				}}
 			>
-				<MenuItem id="npm">npm</MenuItem>
-				<MenuItem id="yarn">yarn</MenuItem>
-				<MenuItem id="pnpm">pnpm</MenuItem>
-				<MenuItem id="bun">bun</MenuItem>
-			</MenuContent>
+				<Menu.Item id="npm">npm</Menu.Item>
+				<Menu.Item id="yarn">yarn</Menu.Item>
+				<Menu.Item id="pnpm">pnpm</Menu.Item>
+				<Menu.Item id="bun">bun</Menu.Item>
+			</Menu.Content>
 		</Menu>
 	)
 }
