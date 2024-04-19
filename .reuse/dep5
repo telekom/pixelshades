@@ -11,6 +11,12 @@ Files: .vscode/*
 Copyright: 2024 Deutsche Telekom AG
 License: CC0-1.0
 
+
+Files: .changeset/*
+Copyright: 2024 Deutsche Telekom AG
+License: CC0-1.0
+
+
 Files: .github/*
 Copyright: 2024 Deutsche Telekom AG
 License: CC0-1.0
