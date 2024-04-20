@@ -2,8 +2,6 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-"use client"
-
 export * from "./badge"
 export * from "./breadcrumbs"
 export * from "./button"

@@ -1,3 +1,9 @@
+"use client"
+
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { kbdVariants } from "@pixelshades/styles/components/kbd"
 import * as React from "react"
 import type { VariantProps } from "tailwind-variants"
