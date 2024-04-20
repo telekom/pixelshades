@@ -159,6 +159,9 @@ importers:
       '@pixelshades/styles':
         specifier: workspace:*
         version: link:../styles
+      '@pixelshades/utils':
+        specifier: workspace:*
+        version: link:../utils
       '@radix-ui/react-slot':
         specifier: ^1.0.2
         version: 1.0.2(@types/react@18.2.79)(react@18.2.0)
@@ -223,6 +226,43 @@ importers:
       tailwindcss-react-aria-components:
         specifier: 1.1.1
         version: 1.1.1(tailwindcss@3.4.3)
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+
+  packages/utils:
+    dependencies:
+      '@radix-ui/react-slot':
+        specifier: ^1.0.2
+        version: 1.0.2(@types/react@18.2.79)(react@18.2.0)
+      clsx:
+        specifier: ^2.1.0
+        version: 2.1.0
+      tailwind-merge:
+        specifier: 2.3.0
+        version: 2.3.0
+    devDependencies:
+      '@pixelshades/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      '@types/node':
+        specifier: ^20.12.7
+        version: 20.12.7
+      '@types/react':
+        specifier: ^18.2.79
+        version: 18.2.79
+      '@types/react-dom':
+        specifier: ^18.2.25
+        version: 18.2.25
+      bunchee:
+        specifier: ^5.1.2
+        version: 5.1.2(typescript@5.4.5)
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5

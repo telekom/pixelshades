@@ -21,8 +21,8 @@ import {
 } from "react-aria-components"
 
 import { tableVariants } from "@pixelshades/styles/components/table"
+import { createStyleContext } from "@pixelshades/utils/styles"
 import { ChevronDown, ChevronUp, Menu } from "lucide-react"
-import { createStyleContext } from "../../../utils/create-style-context"
 import { Button } from "../button"
 import { Checkbox } from "../checkbox"
 

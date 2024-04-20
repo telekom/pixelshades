@@ -17,8 +17,8 @@ interface TocProps {
 	toc: TocItem[]
 }
 
+import { cn } from "@pixelshades/utils/styles"
 import { useMounted } from "../../hooks"
-import { cn } from "../../utils"
 
 export const TableOfContents = ({ toc }: TocProps) => {
 	const isMounted = useMounted()

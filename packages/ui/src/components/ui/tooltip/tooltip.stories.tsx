@@ -3,10 +3,10 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { Button, Tooltip, TooltipContent, TooltipRoot } from "@pixelshades/ui/components"
+import { cn } from "@pixelshades/utils/styles"
 import type { Meta, StoryObj } from "@storybook/react"
 import { SaveIcon } from "lucide-react"
 import { Inter } from "next/font/google"
-import { cn } from "../../../utils"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 

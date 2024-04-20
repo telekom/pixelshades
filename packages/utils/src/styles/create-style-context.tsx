@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { type ComponentProps, type ElementType, createContext, forwardRef, useContext } from "react"
-import { cn } from "."
+import { cn } from "./cn"
 
 type Recipe = (props: any) => any
 type VariantProps<R extends Recipe> = Parameters<R>[0]

@@ -5,11 +5,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { progressBarVariants } from "@pixelshades/styles/components/progress-bar"
+import { RenderSlot } from "@pixelshades/utils/jsx"
 import type React from "react"
 import type { ProgressBarProps as AriaProgressBarProps } from "react-aria-components"
 import { Label as AriaLabel, ProgressBar as AriaProgressBar } from "react-aria-components"
 import type { VariantProps } from "tailwind-variants"
-import { RenderSlot } from "../../../utils/jsx"
 import { If } from "../../utils"
 
 const { progressRoot, progressHeader, progressBar, progressFill, progressDescription } = progressBarVariants()

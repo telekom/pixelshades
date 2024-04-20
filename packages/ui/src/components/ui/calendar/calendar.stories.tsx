@@ -2,9 +2,9 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
+import { cn } from "@pixelshades/utils/styles"
 import type { Meta, StoryObj } from "@storybook/react"
 import { Inter } from "next/font/google"
-import { cn } from "../../../utils"
 import { Calendar } from "./calendar"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })

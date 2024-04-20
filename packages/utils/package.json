@@ -1,0 +1,55 @@
+{
+  "name": "@pixelshades/utils",
+  "version": "0.0.1-alpha.0",
+  "private": false,
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "bunchee",
+    "dev": "bunchee --watch --no-clean"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.0.2",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "2.3.0"
+  },
+  "peerDependencies": {
+    "react": ">18.0.0",
+    "react-dom": ">18.0.0"
+  },
+  "devDependencies": {
+    "@pixelshades/typescript-config": "workspace:*",
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
+    "bunchee": "^5.1.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.4.5"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./jsx": {
+      "import": {
+        "types": "./dist/es/jsx/index.d.mts",
+        "default": "./dist/es/jsx/index.mjs"
+      }
+    },
+    "./styles": {
+      "import": {
+        "types": "./dist/es/styles/index.d.mts",
+        "default": "./dist/es/styles/index.mjs"
+      }
+    },
+    "./types": {
+      "import": {
+        "types": "./dist/es/types/index.d.mts",
+        "default": "./dist/es/types/index.mjs"
+      }
+    }
+  }
+}

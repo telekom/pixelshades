@@ -5,9 +5,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { dataListVariants } from "@pixelshades/styles/components/data-list"
+import { forwardRef } from "@pixelshades/utils/jsx"
+import { createStyleContext } from "@pixelshades/utils/styles"
 import type { HTMLAttributes } from "react"
-import { createStyleContext } from "../../../utils/create-style-context"
-import { forwardRef } from "../../../utils/jsx"
 
 export type DataListProps = HTMLAttributes<HTMLDListElement>
 

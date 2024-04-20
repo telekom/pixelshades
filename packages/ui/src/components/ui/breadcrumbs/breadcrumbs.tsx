@@ -11,10 +11,10 @@ import type {
 import { Breadcrumb as AriaBreadcrumb, Breadcrumbs as AriaBreadcrumbs } from "react-aria-components"
 
 import { breadcrumbsVariants } from "@pixelshades/styles/components/breadcrumbs"
+import { RenderSlot, forwardRef } from "@pixelshades/utils/jsx"
 import { ChevronRightIcon } from "lucide-react"
 import type React from "react"
 import { type ReactElement, createContext, useContext } from "react"
-import { RenderSlot, forwardRef } from "../../../utils/jsx"
 import { If } from "../../utils"
 import { Link, type LinkProps } from "../link"
 

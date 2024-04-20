@@ -7,8 +7,8 @@
 import type { VariantProps } from "tailwind-variants"
 
 import { badgeVariants } from "@pixelshades/styles/components/badge"
+import { RenderSlot, forwardRef } from "@pixelshades/utils/jsx"
 import type { HTMLAttributes } from "react"
-import { RenderSlot, forwardRef } from "../../../utils/jsx"
 import { If } from "../../utils"
 
 type BadgeVariantsProps = VariantProps<typeof badgeVariants>

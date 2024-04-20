@@ -4,7 +4,7 @@
 
 import { Slot } from "@radix-ui/react-slot"
 import React, { type ReactElement, isValidElement } from "react"
-import { cn } from "."
+import { cn } from "../styles/cn"
 
 /**
  * The same as `React.forwardRef` but passes the `ref` as a prop and returns a

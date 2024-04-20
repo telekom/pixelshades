@@ -4,8 +4,8 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
+import { cn } from "@pixelshades/utils/styles"
 import { Popover as AriaPopover, DialogTrigger, type PopoverProps } from "react-aria-components"
-import { cn } from "../../../utils"
 
 const PopoverTrigger = DialogTrigger
 

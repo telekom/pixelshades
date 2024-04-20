@@ -5,10 +5,10 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { loadingSpinnerVariants } from "@pixelshades/styles/components/loading-spinner"
+import { RenderSlot } from "@pixelshades/utils/jsx"
 import { LoaderCircle } from "lucide-react"
 import type React from "react"
 import type { VariantProps } from "tailwind-variants"
-import { RenderSlot } from "../../../utils/jsx"
 import { If } from "../../utils"
 
 interface LoadingSpinnerProps extends VariantProps<typeof loadingSpinnerVariants> {

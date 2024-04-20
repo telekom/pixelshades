@@ -4,8 +4,8 @@
 
 import type { ComponentProps, ElementType } from "react"
 import type { VariantProps } from "tailwind-variants"
-import { cn } from "."
-import { forwardRef } from "./jsx"
+import { forwardRef } from "../jsx/jsx"
+import { cn } from "./cn"
 
 type Recipe = (props: any) => any
 

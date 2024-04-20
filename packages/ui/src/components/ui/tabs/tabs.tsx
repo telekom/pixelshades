@@ -16,7 +16,7 @@ import {
 } from "react-aria-components"
 
 import { tabsVariants } from "@pixelshades/styles/components/tabs"
-import { createStyleContext } from "../../../utils/create-style-context"
+import { createStyleContext } from "@pixelshades/utils/styles"
 
 const { withContext, withProvider } = createStyleContext(tabsVariants)
 

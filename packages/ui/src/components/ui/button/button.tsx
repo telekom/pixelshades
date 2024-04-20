@@ -10,12 +10,12 @@ import type { VariantProps } from "tailwind-variants"
 
 import { buttonVariants } from "@pixelshades/styles/components/button"
 
+import { RenderSlot } from "@pixelshades/utils/jsx"
 import {
 	Button as AriaButton,
 	type ButtonProps as AriaButtonProps,
 	type ButtonRenderProps,
 } from "react-aria-components"
-import { RenderSlot } from "../../../utils/jsx"
 import { If } from "../../utils"
 import { buttonGroupContext } from "../button-group/button-group-context"
 

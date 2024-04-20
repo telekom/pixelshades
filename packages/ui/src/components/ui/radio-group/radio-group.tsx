@@ -13,7 +13,7 @@ import {
 } from "react-aria-components"
 
 import { labelVariants } from "@pixelshades/styles/components/label"
-import { cn } from "../../../utils"
+import { cn } from "@pixelshades/utils/styles"
 
 const RadioGroup = ({ className, orientation = "vertical", ...props }: RadioGroupProps) => {
 	return (
