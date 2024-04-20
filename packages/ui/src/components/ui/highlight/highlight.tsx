@@ -7,7 +7,7 @@
 import { Typography } from "../typography"
 import { highlighter } from "./highlighter"
 
-type HighlightProps = {
+export type HighlightProps = {
 	/** Element that will be rendered highlighted */
 	children: string
 	/** Elements characters that will be highlighted */
@@ -21,6 +21,7 @@ export const Highlight = ({ children, highlight = "", minLengthToHighlight = 0 }
 	return (
 		<Typography as="span">
 			{highlightChunks.map(({ chunk, highlighted }, i) =>
+				// biome-ignore lint/correctness/useJsxKeyInIterable: <explanation>
 				highlighted ? (
 					<span key={i} className={"bg-primary text-primary-foreground"} data-highlight={chunk}>
 						{chunk}

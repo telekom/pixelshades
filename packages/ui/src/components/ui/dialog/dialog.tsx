@@ -19,13 +19,13 @@ import {
 
 const { overlay, modal, content, header, title, footer } = dialogVariants()
 
-const Dialog = ({ children, className, ...props }: ModalOverlayProps & { className?: string }) => (
+const DialogRoot = ({ children, className, ...props }: ModalOverlayProps & { className?: string }) => (
 	<ModalOverlay {...props} isDismissable={true} className={overlay()}>
 		<Modal className={modal({ className })}>{children}</Modal>
 	</ModalOverlay>
 )
 
-Dialog.displayName = "Dialog"
+DialogRoot.displayName = "Dialog"
 
 const DialogContent = ({ children, className, ...props }: DialogProps & { className?: string }) => (
 	<AriaDialogContent {...props} className={content({ className })}>
@@ -55,4 +55,10 @@ DialogTitle.displayName = "DialogTitle"
 
 const DialogTrigger = AriaDialogTrigger
 
-export { Dialog, DialogContent, DialogHeader, DialogFooter, DialogTitle, DialogTrigger, dialogVariants }
+export const Dialog = Object.assign(DialogRoot, {
+	Content: DialogContent,
+	Header: DialogHeader,
+	Title: DialogTitle,
+	Trigger: DialogTrigger,
+	Footer: DialogFooter,
+})

@@ -9,7 +9,7 @@ import { Popover as AriaPopover, DialogTrigger, type PopoverProps } from "react-
 
 const PopoverTrigger = DialogTrigger
 
-const Popover = ({ className, offset = 4, ...props }: PopoverProps) => (
+const PopoverRoot = ({ className, offset = 4, ...props }: PopoverProps) => (
 	<AriaPopover
 		offset={offset}
 		className={(values) =>
@@ -24,6 +24,8 @@ const Popover = ({ className, offset = 4, ...props }: PopoverProps) => (
 	/>
 )
 
-Popover.displayName = "Popover"
+PopoverRoot.displayName = "Popover"
 
-export { Popover, PopoverTrigger }
+export const Popover = Object.assign(PopoverRoot, {
+	Trigger: PopoverTrigger,
+})

@@ -1,5 +1,5 @@
 import { Heading, Tabs } from "@pixelshades/ui/components"
-import { cn } from "@pixelshades/ui/utils"
+import { cn } from "@pixelshades/utils/styles"
 import * as runtime from "react/jsx-runtime"
 import type { NpmCommands } from "~/lib/rehype/types/units"
 import { ComponentPreview } from "./component-preview"

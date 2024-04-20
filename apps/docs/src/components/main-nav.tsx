@@ -1,4 +1,4 @@
-import { cn } from "@pixelshades/ui/utils"
+import { cn } from "@pixelshades/utils/styles"
 import { siteConfig } from "~/config/site"
 
 import { FlameIcon } from "@pixelshades/ui/icons"

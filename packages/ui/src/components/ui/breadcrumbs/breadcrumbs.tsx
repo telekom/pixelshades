@@ -28,13 +28,13 @@ const BreadcrumbContext = createContext<BreadcrumbContext>({
 
 const { breadcrumbs, breadcrumb, breadcrumbLink, seperator } = breadcrumbsVariants()
 
-interface BreadcrumbsProps<T extends object> extends Omit<AriaBreadcrumbsProps<T>, "children"> {
+export interface BreadcrumbsProps<T extends object> extends Omit<AriaBreadcrumbsProps<T>, "children"> {
 	className?: string
 	separator?: ReactElement<HTMLElement>
 	children: React.ReactNode | ((item: T) => React.ReactNode)
 }
 
-const Breadcrumbs = forwardRef(<T extends object>({ className, separator, ...props }: BreadcrumbsProps<T>) => {
+const BreadcrumbsRoot = forwardRef(<T extends object>({ className, separator, ...props }: BreadcrumbsProps<T>) => {
 	return (
 		<BreadcrumbContext.Provider
 			value={{
@@ -46,7 +46,7 @@ const Breadcrumbs = forwardRef(<T extends object>({ className, separator, ...pro
 	)
 })
 
-interface BreadcrumbProps extends AriaBreadcrumbProps {
+export interface BreadcrumbProps extends AriaBreadcrumbProps {
 	last?: boolean
 	className?: string
 	linkProps?: LinkProps
@@ -72,4 +72,6 @@ const Breadcrumb = forwardRef(({ children, last, linkProps, className, separator
 	)
 })
 
-export { Breadcrumbs, Breadcrumb }
+export const Breadcrumbs = Object.assign(BreadcrumbsRoot, {
+	Item: Breadcrumb,
+})

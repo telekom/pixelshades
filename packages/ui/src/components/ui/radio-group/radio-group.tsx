@@ -38,7 +38,7 @@ interface RadioProps extends AriaRadioProps {
 	showRadio?: boolean
 }
 
-const Radio = ({ className, children, showRadio = true, ...props }: RadioProps) => {
+const RadioRoot = ({ className, children, showRadio = true, ...props }: RadioProps) => {
 	return (
 		<AriaRadio
 			className={(values) =>
@@ -64,7 +64,10 @@ const Radio = ({ className, children, showRadio = true, ...props }: RadioProps) 
 	)
 }
 
-Radio.displayName = "Radio"
+RadioRoot.displayName = "Radio"
 
-export { Radio, RadioGroup }
 export type { RadioProps, RadioGroupProps }
+
+export const Radio = Object.assign(RadioRoot, {
+	Group: RadioGroup,
+})

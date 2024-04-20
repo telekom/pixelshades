@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@pixelshades/ui": "workspace:*",
+    "@pixelshades/utils": "workspace:*",
     "@fontsource/fira-sans": "^5.0.19",
     "@tanstack/react-router": "^1.28.7",
     "@tanstack/router-devtools": "^1.28.7",

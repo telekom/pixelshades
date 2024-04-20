@@ -1,8 +1,7 @@
-import { cn } from "@pixelshades/ui/utils"
+import { cn } from "@pixelshades/utils/styles"
 import { Link, createFileRoute } from "@tanstack/react-router"
 
 import { Button, Heading, Typography } from "@pixelshades/ui/components"
-import { components } from "#site/content"
 
 export const Route = createFileRoute("/")({
 	component: HomePage,

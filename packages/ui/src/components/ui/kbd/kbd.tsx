@@ -95,23 +95,23 @@ const Key = ({ keyName }: { keyName: KbdKey }) => {
 	return <abbr title={kbdKeysLabelMap[keyName]}>{kbdKeysMap[keyName]}</abbr>
 }
 
-export const Kbd = React.forwardRef<KbdElement, KbdProps>(
-	({ children, className, keys, size = "xs", ...otherProps }, ref) => {
-		const renderKeys = () => {
-			if (!keys) return null
+const Kbd = React.forwardRef<KbdElement, KbdProps>(({ children, className, keys, size = "xs", ...otherProps }, ref) => {
+	const renderKeys = () => {
+		if (!keys) return null
 
-			if (Array.isArray(keys)) {
-				return keys.map((k) => <Key key={k} keyName={k} />)
-			}
-
-			return null
+		if (Array.isArray(keys)) {
+			return keys.map((k) => <Key key={k} keyName={k} />)
 		}
 
-		return (
-			<kbd ref={ref} className={kbdVariants({ size, className })} {...otherProps}>
-				{renderKeys()}
-				{children ? <span>{children}</span> : null}
-			</kbd>
-		)
-	},
-)
+		return null
+	}
+
+	return (
+		<kbd ref={ref} className={kbdVariants({ size, className })} {...otherProps}>
+			{renderKeys()}
+			{children ? <span>{children}</span> : null}
+		</kbd>
+	)
+})
+
+export { Kbd }

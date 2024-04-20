@@ -1,13 +1,13 @@
-import { Button, TooltipContent, TooltipRoot } from "@pixelshades/ui/components"
+import { Button, Tooltip } from "@pixelshades/ui/components"
 import { SaveIcon } from "@pixelshades/ui/icons"
 
 export default function Example() {
 	return (
-		<TooltipRoot>
+		<Tooltip.Root>
 			<Button variant="solid">
 				<SaveIcon />
 			</Button>
-			<TooltipContent>Save</TooltipContent>
-		</TooltipRoot>
+			<Tooltip.Content>Save</Tooltip.Content>
+		</Tooltip.Root>
 	)
 }

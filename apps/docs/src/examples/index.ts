@@ -51,15 +51,15 @@ export function Example() {
   },
   "breadcrumbs/custom": {
 	  component: lazy(() => import("~/examples/breadcrumbs/custom.tsx")),
-	  code: `import { Breadcrumb, Breadcrumbs } from "@pixelshades/ui/components"
+	  code: `import { Breadcrumbs } from "@pixelshades/ui/components"
 import { MoveRightIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
 		<Breadcrumbs separator={<MoveRightIcon className="size-4 text-subtle" />}>
-			<Breadcrumb>Products</Breadcrumb>
-			<Breadcrumb>Product</Breadcrumb>
-			<Breadcrumb last>Product A</Breadcrumb>
+			<Breadcrumbs.Item>Products</Breadcrumbs.Item>
+			<Breadcrumbs.Item>Product</Breadcrumbs.Item>
+			<Breadcrumbs.Item last>Product A</Breadcrumbs.Item>
 		</Breadcrumbs>
 	)
 }
@@ -67,14 +67,14 @@ export function Example() {
   },
   "breadcrumbs/preview": {
 	  component: lazy(() => import("~/examples/breadcrumbs/preview.tsx")),
-	  code: `import { Breadcrumb, Breadcrumbs } from "@pixelshades/ui/components"
+	  code: `import { Breadcrumbs } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
 		<Breadcrumbs>
-			<Breadcrumb>Products</Breadcrumb>
-			<Breadcrumb>Product</Breadcrumb>
-			<Breadcrumb last>Product A</Breadcrumb>
+			<Breadcrumbs.Item>Products</Breadcrumbs.Item>
+			<Breadcrumbs.Item>Product</Breadcrumbs.Item>
+			<Breadcrumbs.Item last>Product A</Breadcrumbs.Item>
 		</Breadcrumbs>
 	)
 }
@@ -337,28 +337,16 @@ export function Example() {
   },
   "card/preview": {
 	  component: lazy(() => import("~/examples/card/preview.tsx")),
-	  code: `import {
-	Button,
-	Card,
-	CardContent,
-	CardDescription,
-	CardFooter,
-	CardHeader,
-	CardTitle,
-	Input,
-	Label,
-	Select,
-	SelectItem,
-} from "@pixelshades/ui/components"
+	  code: `import { Button, Card, Input, Label, Select, SelectItem } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
 		<Card className="w-[350px]">
-			<CardHeader>
-				<CardTitle>Create project</CardTitle>
-				<CardDescription>Deploy your new project in one-click.</CardDescription>
-			</CardHeader>
-			<CardContent>
+			<Card.Header>
+				<Card.Title>Create project</Card.Title>
+				<Card.Description>Deploy your new project in one-click.</Card.Description>
+			</Card.Header>
+			<Card.Content>
 				<form>
 					<div className="grid w-full items-center gap-lg">
 						<div className="flex flex-col space-y-1.5">
@@ -375,11 +363,11 @@ export function Example() {
 						</div>
 					</div>
 				</form>
-			</CardContent>
-			<CardFooter className="flex justify-between">
+			</Card.Content>
+			<Card.Footer className="flex justify-between">
 				<Button variant="outline">Cancel</Button>
 				<Button>Deploy</Button>
-			</CardFooter>
+			</Card.Footer>
 		</Card>
 	)
 }
@@ -411,15 +399,15 @@ export function Example() {
   },
   "combobox/preview": {
 	  component: lazy(() => import("~/examples/combobox/preview.tsx")),
-	  code: `import { ComboBox, ComboBoxItem } from "@pixelshades/ui/components"
+	  code: `import { ComboBox } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
 		<ComboBox label="Project">
-			<ComboBoxItem>Health Dashboard</ComboBoxItem>
-			<ComboBoxItem>To-Do App</ComboBoxItem>
-			<ComboBoxItem>UI Kit</ComboBoxItem>
-			<ComboBoxItem>Portfolio Site</ComboBoxItem>
+			<ComboBox.Item>Health Dashboard</ComboBox.Item>
+			<ComboBox.Item>To-Do App</ComboBox.Item>
+			<ComboBox.Item>UI Kit</ComboBox.Item>
+			<ComboBox.Item>Portfolio Site</ComboBox.Item>
 		</ComboBox>
 	)
 }
@@ -427,16 +415,7 @@ export function Example() {
   },
   "command/controlled": {
 	  component: lazy(() => import("~/examples/command/controlled.tsx")),
-	  code: `import {
-	Button,
-	Command,
-	CommandGroup,
-	CommandItem,
-	CommandItemDescription,
-	CommandItemTitle,
-	CommandSearch,
-	Typography,
-} from "@pixelshades/ui/components"
+	  code: `import { Button, Command } from "@pixelshades/ui/components"
 import { Apple, CommandIcon, GlassWater } from "@pixelshades/ui/icons"
 import { useState } from "react"
 
@@ -464,35 +443,35 @@ export function Example() {
 				shortcut={["Meta", "KeyB"]}
 				searchValue={inputValue}
 				onSearchChange={setInputValue}
-				searchField={<CommandSearch />}
+				searchField={<Command.Search />}
 				onOpenChange={setOpen}
 				open={open}
 				disableIntegratedSearch
 			>
-				<CommandGroup heading="Fruits">
+				<Command.Group heading="Fruits">
 					{fruits.map((fruit, index) => (
-						<CommandItem key={fruit.name + index} before={<Apple />} className={"items-center"}>
+						<Command.Item key={fruit.name + index} before={<Apple />} className={"items-center"}>
 							<div className="flex flex-col items-center gap-2">
-								<CommandItemTitle>{fruit.name}</CommandItemTitle>
+								<Command.ItemTitle>{fruit.name}</Command.ItemTitle>
 								{fruit.description && (
-									<CommandItemDescription>{fruit.description}</CommandItemDescription>
+									<Command.ItemDescription>{fruit.description}</Command.ItemDescription>
 								)}
 							</div>
-						</CommandItem>
+						</Command.Item>
 					))}
-				</CommandGroup>
-				<CommandGroup heading="Drinks">
+				</Command.Group>
+				<Command.Group heading="Drinks">
 					{drinks.map((drink) => (
-						<CommandItem key={drink.name} before={<GlassWater />} className={"items-center"}>
+						<Command.Item key={drink.name} before={<GlassWater />} className={"items-center"}>
 							<div className="flex flex-col gap-2">
-								<CommandItemTitle>{drink.name}</CommandItemTitle>
+								<Command.ItemTitle>{drink.name}</Command.ItemTitle>
 								{drink.description && (
-									<CommandItemDescription>{drink.description}</CommandItemDescription>
+									<Command.ItemDescription>{drink.description}</Command.ItemDescription>
 								)}
 							</div>
-						</CommandItem>
+						</Command.Item>
 					))}
-				</CommandGroup>
+				</Command.Group>
 			</Command>
 		</div>
 	)
@@ -501,14 +480,7 @@ export function Example() {
   },
   "command/preview": {
 	  component: lazy(() => import("~/examples/command/preview.tsx")),
-	  code: `import {
-	Command,
-	CommandGroup,
-	CommandItem,
-	CommandItemDescription,
-	CommandItemTitle,
-	CommandSearch,
-} from "@pixelshades/ui/components"
+	  code: `import { Command } from "@pixelshades/ui/components"
 import { Apple, GlassWater } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -523,36 +495,40 @@ export function Example() {
 		{ name: "Apple juice", description: "A bottle of apple juice." },
 	]
 	return (
-		<Command shortcut={["Meta", "KeyX"]} searchField={<CommandSearch />}>
-			<CommandGroup heading="Fruits">
+		<Command shortcut={["Meta", "KeyX"]} searchField={<Command.Search />}>
+			<Command.Group heading="Fruits">
 				{fruits.map((fruit, index) => (
-					<CommandItem
+					<Command.Item
 						key={fruit.name + index}
 						before={<Apple />}
 						searchValues={[fruit.name, fruit.description || ""]}
 						className={"items-center"}
 					>
 						<div className="flex flex-col items-center gap-2">
-							<CommandItemTitle>{fruit.name}</CommandItemTitle>
-							{fruit.description && <CommandItemDescription>{fruit.description}</CommandItemDescription>}
+							<Command.ItemTitle>{fruit.name}</Command.ItemTitle>
+							{fruit.description && (
+								<Command.ItemDescription>{fruit.description}</Command.ItemDescription>
+							)}
 						</div>
-					</CommandItem>
+					</Command.Item>
 				))}
-			</CommandGroup>
-			<CommandGroup heading="Drinks">
+			</Command.Group>
+			<Command.Group heading="Drinks">
 				{drinks.map((drink) => (
-					<CommandItem
+					<Command.Item
 						key={drink.name}
 						before={<GlassWater />}
 						searchValues={[drink.name, drink.description || ""]}
 					>
 						<div className="flex flex-col gap-2">
-							<CommandItemTitle>{drink.name}</CommandItemTitle>
-							{drink.description && <CommandItemDescription>{drink.description}</CommandItemDescription>}
+							<Command.ItemTitle>{drink.name}</Command.ItemTitle>
+							{drink.description && (
+								<Command.ItemDescription>{drink.description}</Command.ItemDescription>
+							)}
 						</div>
-					</CommandItem>
+					</Command.Item>
 				))}
-			</CommandGroup>
+			</Command.Group>
 		</Command>
 	)
 }
@@ -560,14 +536,7 @@ export function Example() {
   },
   "command/uncontrolled": {
 	  component: lazy(() => import("~/examples/command/uncontrolled.tsx")),
-	  code: `import {
-	Command,
-	CommandGroup,
-	CommandItem,
-	CommandItemDescription,
-	CommandItemTitle,
-	CommandSearch,
-} from "@pixelshades/ui/components"
+	  code: `import { Command } from "@pixelshades/ui/components"
 import { Apple, GlassWater } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -582,37 +551,41 @@ export function Example() {
 		{ name: "Apple juice", description: "A bottle of apple juice." },
 	]
 	return (
-		<Command shortcut={["Meta", "KeyJ"]} searchField={<CommandSearch />}>
-			<CommandGroup heading="Fruits">
+		<Command shortcut={["Meta", "KeyJ"]} searchField={<Command.Search />}>
+			<Command.Group heading="Fruits">
 				{fruits.map((fruit) => (
-					<CommandItem
+					<Command.Item
 						key={fruit.name}
 						before={<Apple />}
 						className={"items-center"}
 						searchValues={[fruit.name, fruit.description || ""]}
 					>
 						<div className="flex flex-col items-center gap-2">
-							<CommandItemTitle>{fruit.name}</CommandItemTitle>
-							{fruit.description && <CommandItemDescription>{fruit.description}</CommandItemDescription>}
+							<Command.ItemTitle>{fruit.name}</Command.ItemTitle>
+							{fruit.description && (
+								<Command.ItemDescription>{fruit.description}</Command.ItemDescription>
+							)}
 						</div>
-					</CommandItem>
+					</Command.Item>
 				))}
-			</CommandGroup>
-			<CommandGroup heading="Drinks">
+			</Command.Group>
+			<Command.Group heading="Drinks">
 				{drinks.map((drink) => (
-					<CommandItem
+					<Command.Item
 						key={drink.name}
 						before={<GlassWater />}
 						className={"items-center"}
 						searchValues={[drink.name, drink.description || ""]}
 					>
 						<div className="flex flex-col gap-2">
-							<CommandItemTitle>{drink.name}</CommandItemTitle>
-							{drink.description && <CommandItemDescription>{drink.description}</CommandItemDescription>}
+							<Command.ItemTitle>{drink.name}</Command.ItemTitle>
+							{drink.description && (
+								<Command.ItemDescription>{drink.description}</Command.ItemDescription>
+							)}
 						</div>
-					</CommandItem>
+					</Command.Item>
 				))}
-			</CommandGroup>
+			</Command.Group>
 		</Command>
 	)
 }

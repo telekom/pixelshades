@@ -57,4 +57,4 @@ const Calendar = ({ className, visibleDuration, error, ...props }: CalendarProps
 
 Calendar.displayName = "Calendar"
 
-export { Calendar, calendarVariants }
+export { Calendar }

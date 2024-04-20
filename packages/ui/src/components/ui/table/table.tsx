@@ -34,7 +34,7 @@ const TableBody = AriaTableBody
 
 export type TableProps = AriaTableProps
 
-const Table = withProvider(AriaTable, "root")
+const TableRoot = withProvider(AriaTable, "root")
 
 export type TableCellProps = AriaCellProps
 
@@ -106,4 +106,10 @@ const TableRow = <T extends object>({
 	)
 }
 
-export { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow }
+export const Table = Object.assign(TableRoot, {
+	Body: TableBody,
+	Cell: TableCell,
+	Column: TableColumn,
+	Header: TableHeader,
+	Row: TableRow,
+})

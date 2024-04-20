@@ -22,7 +22,7 @@ import { useControllableState } from "../../../hooks/use-controlled-state"
 import { type Keys, useKeyPress } from "../../../hooks/use-keypress"
 import { If } from "../../utils/if"
 import { Button } from "../button"
-import { Dialog, DialogContent } from "../dialog"
+import { Dialog } from "../dialog"
 import { Highlight } from "../highlight"
 import { Input, type InputProps } from "../input"
 import { Typography, type TypographyProps } from "../typography"
@@ -95,7 +95,7 @@ const UnstyledCommand = ({
 				</CommandTrigger>
 			</If>
 			<Dialog isOpen={open} onOpenChange={setOpen} className={className} aria-label="Command Dialog">
-				<DialogContent className="flex w-full flex-col items-start">
+				<Dialog.Content className="flex w-full flex-col items-start">
 					<div className="sticky w-full">{searchField}</div>
 
 					<AriaListBox
@@ -106,7 +106,7 @@ const UnstyledCommand = ({
 					>
 						{children}
 					</AriaListBox>
-				</DialogContent>
+				</Dialog.Content>
 			</Dialog>
 		</CommandContext.Provider>
 	)
@@ -294,10 +294,18 @@ function fullTextSearch(data: string[], searchTerm: string) {
 }
 
 /** Displays a command with a title and a list of actions. */
-const Command = withProvider(UnstyledCommand, "command")
+const CommandRoot = withProvider(UnstyledCommand, "command")
 const CommandItemDescription = withContext(UnstyledCommandItemDescription, "itemDescription")
 const CommandItemTitle = withContext(UnstyledCommandItemTitle, "itemTitle")
 const CommandGroup = withContext(UnstyledCommandGroup, "group")
 const CommandItem = withContext(UnstyledCommandItem, "item")
 
-export { Command, CommandGroup, CommandItem, CommandItemDescription, CommandItemTitle, CommandSearch }
+export const Command = Object.assign(CommandRoot, {
+	Group: CommandGroup,
+	Item: CommandItem,
+	ItemTitle: CommandItemTitle,
+	ItemDescription: CommandItemDescription,
+	Search: CommandSearch,
+	Trigger: CommandTrigger,
+	Icon: CommandIcon,
+})

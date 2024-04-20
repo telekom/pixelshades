@@ -20,7 +20,7 @@ import { createStyleContext } from "@pixelshades/utils/styles"
 
 const { withContext, withProvider } = createStyleContext(tabsVariants)
 
-const Tabs = withProvider(AriaTabsRoot, "root")
+const TabsRoot = withProvider(AriaTabsRoot, "root")
 
 const TabsList = withContext(AriaTabList, "list")
 
@@ -29,4 +29,8 @@ const TabPanel = withContext(AriaTabPanel, "panel")
 
 export type { TabListProps, TabPanelProps, TabProps, TabsProps }
 
-export { Tabs, TabsList, Tab, TabPanel }
+export const Tabs = Object.assign(TabsRoot, {
+	Tab: Tab,
+	List: TabsList,
+	Panel: TabPanel,
+})

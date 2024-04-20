@@ -1,11 +1,11 @@
-import { Breadcrumb, Breadcrumbs } from "@pixelshades/ui/components"
+import { Breadcrumbs } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
 		<Breadcrumbs>
-			<Breadcrumb>Products</Breadcrumb>
-			<Breadcrumb>Product</Breadcrumb>
-			<Breadcrumb last>Product A</Breadcrumb>
+			<Breadcrumbs.Item>Products</Breadcrumbs.Item>
+			<Breadcrumbs.Item>Product</Breadcrumbs.Item>
+			<Breadcrumbs.Item last>Product A</Breadcrumbs.Item>
 		</Breadcrumbs>
 	)
 }

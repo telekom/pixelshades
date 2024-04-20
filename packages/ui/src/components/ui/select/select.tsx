@@ -30,7 +30,7 @@ interface SelectProps<T extends object> extends Omit<AriaSelectProps<T>, "childr
 	children: React.ReactNode | ((item: T) => React.ReactNode)
 }
 
-const Select = <T extends object>({
+const SelectRoot = <T extends object>({
 	label,
 	className,
 	description,
@@ -52,7 +52,7 @@ const Select = <T extends object>({
 	</AriaSelect>
 )
 
-Select.displayName = "Select"
+SelectRoot.displayName = "Select"
 
 const SelectItem = (props: ListBoxItemProps) => {
 	return <ListBoxItem {...props} className={item()} />
@@ -60,4 +60,6 @@ const SelectItem = (props: ListBoxItemProps) => {
 
 SelectItem.displayName = "SelectItem"
 
-export { Select, SelectItem }
+export const Select = Object.assign(SelectRoot, {
+	Item: SelectItem,
+})
