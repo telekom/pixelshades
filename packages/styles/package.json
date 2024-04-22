@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "tailwind-variants": "0.2.1",
-    "tailwind-merge": "^2.3.0"
+    "tailwind-merge": "2.3.0"
   },
   "peerDependencies": {
     "react": ">18.0.0",

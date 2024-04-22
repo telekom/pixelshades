@@ -103,7 +103,7 @@ function ComponentPage() {
 						<div className="col-span-9 w-full">
 							<MDXContent code={component.content} />
 						</div>
-						<div className="sticky top-16 col-span-3 self-start">
+						<div className="sticky top-16 col-span-3 hidden self-start md:block">
 							<If condition={component.toc.length > 0}>
 								<TableOfContents toc={component.toc} />
 							</If>

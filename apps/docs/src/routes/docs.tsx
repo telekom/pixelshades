@@ -1,9 +1,8 @@
-import { Link, Outlet, createFileRoute } from "@tanstack/react-router"
+import { Outlet, createFileRoute } from "@tanstack/react-router"
 
-import { cn } from "@pixelshades/utils/styles"
 import { DocsSidebarNav } from "~/components/sidebar-nav"
 import type { SidebarNavItem } from "~/config/docs"
-import { components, dvds_pages, general_pages } from "#site/content"
+import { components, general_pages } from "#site/content"
 
 export const Route = createFileRoute("/docs")({
 	component: DocsLayout,

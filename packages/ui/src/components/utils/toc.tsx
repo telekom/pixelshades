@@ -19,6 +19,7 @@ interface TocProps {
 
 import { cn } from "@pixelshades/utils/styles"
 import { useMounted } from "../../hooks"
+import { Heading } from "../ui"
 
 export const TableOfContents = ({ toc }: TocProps) => {
 	const isMounted = useMounted()
@@ -40,7 +41,9 @@ export const TableOfContents = ({ toc }: TocProps) => {
 
 	return (
 		<nav className="rounded p-4 shadow">
-			<h2 className="mb-4 font-bold text-xl">Table of Contents</h2>
+			<Heading level={5} className="mb-md">
+				On this Page
+			</Heading>
 			<Tree tree={toc} activeItem={activeHeading} />
 		</nav>
 	)

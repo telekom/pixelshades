@@ -1,10 +1,7 @@
 {
 	"extends": "@pixelshades/typescript-config/react-library.json",
 	"compilerOptions": {
-		"outDir": "dist",
-		"paths": {
-			"tailwind-variants": ["../../node_modules/tailwind-variants"]
-		}
+		"outDir": "dist"
 	},
 	"include": ["src"],
 	"exclude": ["node_modules", "dist"]
