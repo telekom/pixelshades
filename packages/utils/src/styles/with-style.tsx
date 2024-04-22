@@ -22,7 +22,7 @@ export const withStyle = <
 		const styles = createStyles(props)
 		const variantClassNames = styles[slot ?? ""]?.()
 
-		// @ts-expect-error
+		// @ts-expect-error JSX.IntrinsicElements do not have a displayName but Function and Class components do
 		return <Component ref={ref} {...props} className={cn(variantClassNames, props.className)} />
 	})
 
