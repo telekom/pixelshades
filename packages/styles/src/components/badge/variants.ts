@@ -15,9 +15,12 @@ export const badgeVariants = tv({
 		variant: {
 			default: {
 				badge: "bg-primary text-primary-foreground dark:bg-primary/10 dark:text-primary border-primary",
-				icon: "text-primary",
+				icon: "text-primary-foreground dark:text-primary",
 			},
-			info: { badge: "bg-subtle/10 text-subtle-foreground border-subtle", icon: "text-subtle" },
+			info: {
+				badge: "bg-subtle/10 text-subtle-foreground border-subtle",
+				icon: "text-subtle-foreground dark:text-subtle",
+			},
 			alert: { badge: "bg-destructive/10 text-destructive border-destructive", icon: "text-destructive" },
 			outline: { badge: "text-foreground border", icon: "text-foreground" },
 		},

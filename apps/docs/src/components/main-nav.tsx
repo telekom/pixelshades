@@ -3,6 +3,7 @@ import { siteConfig } from "~/config/site"
 
 import { FlameIcon } from "@pixelshades/ui/icons"
 import { Link } from "@tanstack/react-router"
+import ThemeSwitch from "./theme-switcher"
 
 export function MainNav() {
 	return (
@@ -21,6 +22,7 @@ export function MainNav() {
 				>
 					Docs
 				</Link>
+
 				<Link
 					to="/examples"
 					className={cn("text-subtle-foreground transition-colors hover:text-foreground/80")}
