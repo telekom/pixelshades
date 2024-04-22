@@ -19,7 +19,7 @@ interface TocProps {
 
 import { cn } from "@pixelshades/utils/styles"
 import { useMounted } from "../../hooks"
-import { Heading } from "../ui"
+import { Heading } from "../ui/heading/heading"
 
 export const TableOfContents = ({ toc }: TocProps) => {
 	const isMounted = useMounted()

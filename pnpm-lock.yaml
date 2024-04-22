@@ -115,7 +115,7 @@ importers:
   packages/styles:
     dependencies:
       tailwind-merge:
-        specifier: ^2.3.0
+        specifier: 2.3.0
         version: 2.3.0
       tailwind-variants:
         specifier: 0.2.1
@@ -184,7 +184,7 @@ importers:
         specifier: ^3.30.1
         version: 3.30.1(react@18.2.0)
       tailwind-merge:
-        specifier: ^2.3.0
+        specifier: 2.3.0
         version: 2.3.0
       tailwind-variants:
         specifier: 0.2.1
