@@ -12,6 +12,7 @@ export const pixelShadesPlugin = plugin(
 		// You can add your own utilities or call other plugins here
 	},
 	{
+		darkMode: "class",
 		theme: {
 			container: {
 				center: true,
