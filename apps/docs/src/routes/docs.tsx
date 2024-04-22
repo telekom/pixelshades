@@ -24,20 +24,9 @@ const gettingStartedItems: SidebarNavItem[] = general_pages.map((page) => ({
 	items: [],
 }))
 
-const dvdsItems: SidebarNavItem[] = dvds_pages.map((page) => ({
-	title: page.title,
-	href: page.permalink,
-	items: [],
-}))
-
 sidebarItems.push({
 	title: "Getting Started",
 	items: gettingStartedItems,
-})
-
-sidebarItems.push({
-	title: "DVDS CLI",
-	items: dvdsItems,
 })
 
 sidebarItems.push({
