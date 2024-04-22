@@ -12,12 +12,13 @@ Our color palette persist of color tokens that adapt to the current theme.
 By default, the color palette supports both
 `light` and `dark` themes. 
 
-<div className="flex gap-md">
-    <div className="flex justify-center items-center rounded-md p-2 border-border border bg-primary text-primary-foreground">Primary</div>
-    <div className="flex justify-center items-center rounded-md p-2 border-border border bg-secondary text-secondary-foreground">Secondary</div>
-    <div className="flex justify-center items-center rounded-md p-2 border-border border bg-destructive text-destructive-foreground">Destructive</div>
-    <div className="flex justify-center items-center rounded-md p-2 border-border border bg-subtle text-subtle-foreground">Subtle</div>
-    <div className="flex justify-center items-center rounded-md p-2 border-border border bg-background text-foreground">Background</div>
-    <div className="flex justify-center items-center rounded-md p-2 border-primary border bg-border text-foreground">Border</div>
-    <div className="flex justify-center items-center rounded-md p-2 border-primary border bg-ring text-foreground">Ring</div>
+<div className="grid grid-cols-2 gap-4 items-start justify-center md:grid-cols-8 md:gap-6">
+    <ColorPreview className="bg-background border" name="Background" />
+    <ColorPreview className="bg-primary" name="Primary" />
+    <ColorPreview className="bg-secondary" name="Secondary" />
+    <ColorPreview className="bg-destructive" name="Destructive" />
+    <ColorPreview className="bg-subtle" name="Subtle" />
+    <ColorPreview className="bg-card border" name="Card" />
+    <ColorPreview className="bg-border" name="Border" />
+    <ColorPreview className="bg-ring" name="Ring" />
 </div>
