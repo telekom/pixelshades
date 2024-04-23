@@ -680,6 +680,15 @@ export function Example() {
 }
 `,
   },
+  "date-range-calendar/preview": {
+	  component: lazy(() => import("~/examples/date-range-calendar/preview.tsx")),
+	  code: `import { DateRangeCalendar } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <DateRangeCalendar />
+}
+`,
+  },
   "dialog/preview": {
 	  component: lazy(() => import("~/examples/dialog/preview.tsx")),
 	  code: `import { Button, Dialog, Input, Label } from "@pixelshades/ui/components"
