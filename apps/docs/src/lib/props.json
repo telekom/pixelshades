@@ -396,6 +396,32 @@
       ]
     }
   ],
+  "src/components/ui/date-range-calendar/date-range-calendar.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Date Range Calendar",
+      "props": {
+        "error": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "className": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        }
+      },
+      "composes": [
+        "Omit"
+      ]
+    }
+  ],
   "src/components/ui/command/command.tsx": [
     {
       "description": "Displays a command with a title and a list of actions.",

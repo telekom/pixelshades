@@ -8,8 +8,8 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 
 import {
 	Button as AriaButton,
-	Calendar as AriaCalendar,
-	type CalendarProps as AriaCalendarProps,
+	RangeCalendar as AriaRangeCalendar,
+	type RangeCalendarProps as AriaRangeCalendarProps,
 	Heading as AriaHeading,
 	CalendarCell,
 	CalendarGrid,
@@ -21,16 +21,17 @@ import {
 } from "react-aria-components"
 
 import { calendarVariants } from "@pixelshades/styles/components/calendar"
+import React from "react"
 
 const { root, header, heading, gridHeaderCell, cell, grid, iconButton } = calendarVariants()
 
-export interface CalendarProps<T extends DateValue> extends Omit<AriaCalendarProps<T>, "className"> {
+export interface RangeCalendarProps<T extends DateValue> extends Omit<AriaRangeCalendarProps<T>, "className"> {
 	error?: string
 	className?: string
 }
 
-const DateRangeCalendar = ({ className, visibleDuration, error, ...props }: CalendarProps<DateValue>) => (
-	<AriaCalendar className={root({ className })} visibleDuration={visibleDuration} {...props}>
+const DateRangeCalendar = ({ className, visibleDuration, error, ...props }: RangeCalendarProps<DateValue>) => (
+	<AriaRangeCalendar className={root({ className })} visibleDuration={visibleDuration} {...props}>
 		<header className={header()}>
 			<AriaButton className={iconButton()} slot="previous">
 				<ChevronLeft className="h-6 w-6" />
@@ -52,7 +53,7 @@ const DateRangeCalendar = ({ className, visibleDuration, error, ...props }: Cale
 		</div>
 
 		{error && <Text slot="errorMessage">{error}</Text>}
-	</AriaCalendar>
+	</AriaRangeCalendar>
 )
 
 DateRangeCalendar.displayName = "DateRangeCalendar"
