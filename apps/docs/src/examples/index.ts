@@ -375,10 +375,22 @@ export function Example() {
   },
   "checkbox/preview": {
 	  component: lazy(() => import("~/examples/checkbox/preview.tsx")),
-	  code: `import { Checkbox } from "@pixelshades/ui/components"
+	  code: `import { Button, Checkbox, Form } from "@pixelshades/ui/components"
 
 export function Example() {
-	return <Checkbox value="push" label="Push" description="Test Desc" tooltip="Test" />
+	return (
+		<Form>
+			<Checkbox
+				isRequired
+				value="push"
+				label="Label"
+				description="Description"
+				helperText="Helper Text"
+				tooltip="Tooltip"
+			/>
+			<Button type="submit">Submit</Button>
+		</Form>
+	)
 }
 `,
   },
