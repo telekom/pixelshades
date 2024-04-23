@@ -378,7 +378,7 @@ export function Example() {
 	  code: `import { Checkbox } from "@pixelshades/ui/components"
 
 export function Example() {
-	return <Checkbox value="push">Push</Checkbox>
+	return <Checkbox value="push" label="Push" description="Test Desc" tooltip="Test" />
 }
 `,
   },
@@ -811,20 +811,6 @@ export function Example() {
 
 export function Example() {
 	return <Kbd keys={["option", "command"]}>K</Kbd>
-}
-`,
-  },
-  "label/preview": {
-	  component: lazy(() => import("~/examples/label/preview.tsx")),
-	  code: `import { Checkbox, Label } from "@pixelshades/ui/components"
-
-export function Example() {
-	return (
-		<div className="flex flex-row items-center gap-md">
-			<Checkbox />
-			<Label>This is a label</Label>
-		</div>
-	)
 }
 `,
   },
