@@ -41,6 +41,11 @@ Files: pnpm-lock.yaml
 Copyright: 2024 Deutsche Telekom AG
 License: CC0-1.0
 
+Files: .npmrc
+Copyright: 2024 Deutsche Telekom AG
+License: CC0-1.0
+
+
 Files: biome.json
 Copyright: 2024 Deutsche Telekom AG
 License: CC0-1.0
