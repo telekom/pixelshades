@@ -18,7 +18,7 @@ export default function dvUiVitePlugin() {
 				if (!relativePath.startsWith("..") && file !== indexFile) {
 					const trimmedPath = file.split("/examples/").pop()
 
-					console.info(`📁💫 Example file changed: ${trimmedPath} ✔️`)
+					console.info(`📁💫 Example file changed: ${trimmedPath} √`)
 
 					generateExamplesIndex()
 					server.hot.send({ type: "full-reload" })

@@ -1,5 +1,4 @@
 import { Switch } from "@pixelshades/ui/components"
-import { SunIcon } from "@pixelshades/ui/icons"
 import { useEffect, useState } from "react"
 
 function classNames(...classes: string[]) {
