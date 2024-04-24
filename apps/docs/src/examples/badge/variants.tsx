@@ -1,5 +1,5 @@
-import { Badge } from "@pixelshades/ui/components";
-import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons";
+import { Badge } from "@pixelshades/ui/components"
+import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
 
 export default function Example() {
 	return (
@@ -17,5 +17,5 @@ export default function Example() {
 				Badge Label
 			</Badge>
 		</div>
-	);
+	)
 }

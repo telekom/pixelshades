@@ -1,12 +1,12 @@
-import { Button } from "@pixelshades/ui/components";
-import { Command } from "@pixelshades/ui/icons";
-import { useState } from "react";
-import { MainNav } from "./main-nav";
-import { SearchDialog } from "./search-dialog";
-import ThemeSwitch from "./theme-switcher";
+import { Button } from "@pixelshades/ui/components"
+import { Command } from "@pixelshades/ui/icons"
+import { useState } from "react"
+import { MainNav } from "./main-nav"
+import { SearchDialog } from "./search-dialog"
+import ThemeSwitch from "./theme-switcher"
 
 export function SiteHeader() {
-	const [open, setOpen] = useState(false);
+	const [open, setOpen] = useState(false)
 
 	return (
 		<header className="sticky top-0 z-50 w-full border-border/40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -19,7 +19,7 @@ export function SiteHeader() {
 						<Button
 							variant="outline"
 							onPress={() => {
-								setOpen(true);
+								setOpen(true)
 							}}
 							className={"self-end text-subtle-foreground"}
 							after={
@@ -36,5 +36,5 @@ export function SiteHeader() {
 				</div>
 			</div>
 		</header>
-	);
+	)
 }

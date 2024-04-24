@@ -1,4 +1,4 @@
-import { ProgressBar } from "@pixelshades/ui/components";
+import { ProgressBar } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
@@ -8,5 +8,5 @@ export default function Example() {
 			<ProgressBar variant="alert" label="Alert" value={75} />
 			<ProgressBar variant="outline" label="Outline" value={95} />
 		</div>
-	);
+	)
 }

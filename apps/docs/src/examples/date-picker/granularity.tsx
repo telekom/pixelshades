@@ -1,4 +1,4 @@
-import { DatePicker } from "@pixelshades/ui/components";
+import { DatePicker } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
@@ -8,5 +8,5 @@ export default function Example() {
 			<DatePicker label="Minute" granularity="minute" />
 			<DatePicker label="Second" granularity="second" />
 		</div>
-	);
+	)
 }

@@ -1,4 +1,4 @@
-import { ProgressBar } from "@pixelshades/ui/components";
+import { ProgressBar } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
@@ -6,5 +6,5 @@ export default function Example() {
 			<ProgressBar label="Sending…" formatOptions={{ style: "currency", currency: "JPY" }} value={60} />
 			<ProgressBar label="Feeding…" valueLabel="30 of 100 dogs" value={30} />
 		</div>
-	);
+	)
 }

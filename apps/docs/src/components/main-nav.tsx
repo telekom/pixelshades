@@ -1,8 +1,8 @@
-import { cn } from "@pixelshades/utils/styles";
-import { siteConfig } from "~/config/site";
+import { cn } from "@pixelshades/utils/styles"
+import { siteConfig } from "~/config/site"
 
-import { FlameIcon } from "@pixelshades/ui/icons";
-import { Link } from "@tanstack/react-router";
+import { FlameIcon } from "@pixelshades/ui/icons"
+import { Link } from "@tanstack/react-router"
 
 export function MainNav() {
 	return (
@@ -33,5 +33,5 @@ export function MainNav() {
 				</Link>
 			</nav>
 		</div>
-	);
+	)
 }

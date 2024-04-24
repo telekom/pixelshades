@@ -1,5 +1,5 @@
-import { Button, Menu } from "@pixelshades/ui/components";
-import { DownloadIcon, EyeOffIcon, MailIcon, PinIcon, RedoIcon } from "@pixelshades/ui/icons";
+import { Button, Menu } from "@pixelshades/ui/components"
+import { DownloadIcon, EyeOffIcon, MailIcon, PinIcon, RedoIcon } from "@pixelshades/ui/icons"
 
 export default function Example() {
 	return (
@@ -46,5 +46,5 @@ export default function Example() {
 				</Menu.Content>
 			</Menu>
 		</div>
-	);
+	)
 }

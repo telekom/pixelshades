@@ -1,14 +1,14 @@
 export type LabelDocsParams = {
-	children?: boolean;
-	required?: boolean;
-	disabled?: boolean;
-	before?: boolean;
-	after?: boolean;
-	asChild?: boolean;
-};
+	children?: boolean
+	required?: boolean
+	disabled?: boolean
+	before?: boolean
+	after?: boolean
+	asChild?: boolean
+}
 
 export const createLabelDocs = ({ children, required, disabled, before, after, asChild }: LabelDocsParams) => {
-	const components = [];
+	const components = []
 
 	if (asChild) {
 		components.push([
@@ -19,7 +19,7 @@ export const createLabelDocs = ({ children, required, disabled, before, after, a
 			},
 			{ value: "boolean" },
 			{ value: "false" },
-		]);
+		])
 	}
 
 	if (children) {
@@ -30,7 +30,7 @@ export const createLabelDocs = ({ children, required, disabled, before, after, a
 			},
 			{ value: "ReactNode" },
 			{},
-		]);
+		])
 	}
 
 	if (disabled) {
@@ -44,7 +44,7 @@ export const createLabelDocs = ({ children, required, disabled, before, after, a
 				value: "boolean",
 			},
 			{ value: "false" },
-		]);
+		])
 	}
 
 	if (before) {
@@ -57,7 +57,7 @@ export const createLabelDocs = ({ children, required, disabled, before, after, a
 				value: "ReactNode",
 			},
 			{},
-		]);
+		])
 	}
 
 	if (after) {
@@ -70,8 +70,8 @@ export const createLabelDocs = ({ children, required, disabled, before, after, a
 				value: "ReactNode",
 			},
 			{},
-		]);
+		])
 	}
 
-	return components;
-};
+	return components
+}

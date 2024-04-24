@@ -6,6 +6,6 @@ export const siteConfig = {
 	links: {
 		gitlab: "",
 	},
-};
+}
 
-export type SiteConfig = typeof siteConfig;
+export type SiteConfig = typeof siteConfig

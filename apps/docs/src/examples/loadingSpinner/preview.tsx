@@ -1,5 +1,5 @@
-import { LoadingSpinner } from "@pixelshades/ui/components";
+import { LoadingSpinner } from "@pixelshades/ui/components"
 
 export default function Example() {
-	return <LoadingSpinner />;
+	return <LoadingSpinner />
 }

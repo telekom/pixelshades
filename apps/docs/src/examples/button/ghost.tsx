@@ -1,5 +1,5 @@
-import { Button } from "@pixelshades/ui/components";
+import { Button } from "@pixelshades/ui/components"
 
 export default function Example() {
-	return <Button variant="ghost">Button</Button>;
+	return <Button variant="ghost">Button</Button>
 }

@@ -1,5 +1,5 @@
-import { TimeField } from "@pixelshades/ui/components";
+import { TimeField } from "@pixelshades/ui/components"
 
 export default function Example() {
-	return <TimeField label="Start Date" />;
+	return <TimeField label="Start Date" />
 }

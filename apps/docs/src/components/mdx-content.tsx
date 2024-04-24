@@ -1,14 +1,14 @@
-import { Heading, Tabs } from "@pixelshades/ui/components";
-import { cn } from "@pixelshades/utils/styles";
-import * as runtime from "react/jsx-runtime";
-import type { NpmCommands } from "~/lib/rehype/types/units";
-import { ColorPreview } from "./color-preview";
-import { ComponentPreview } from "./component-preview";
-import { CopyButton, CopyNpmCommandButton } from "./copy-button";
+import { Heading, Tabs } from "@pixelshades/ui/components"
+import { cn } from "@pixelshades/utils/styles"
+import * as runtime from "react/jsx-runtime"
+import type { NpmCommands } from "~/lib/rehype/types/units"
+import { ColorPreview } from "./color-preview"
+import { ComponentPreview } from "./component-preview"
+import { CopyButton, CopyNpmCommandButton } from "./copy-button"
 
 interface MdxProps {
-	code: string;
-	components?: Record<string, React.ComponentType>;
+	code: string
+	components?: Record<string, React.ComponentType>
 }
 
 const defaultComponents = {
@@ -53,9 +53,9 @@ const defaultComponents = {
 		__src__,
 		...props
 	}: React.HTMLAttributes<HTMLPreElement> & {
-		__rawString__?: string;
-		__withMeta__?: boolean;
-		__src__?: string;
+		__rawString__?: string
+		__withMeta__?: boolean
+		__src__?: string
 	} & NpmCommands) => {
 		return (
 			<div className="relative h-full w-full">
@@ -85,7 +85,7 @@ const defaultComponents = {
 					/>
 				)}
 			</div>
-		);
+		)
 	},
 	h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
 		<Heading level={1} className={cn("mt-2 scroll-m-20", className)} {...props} />
@@ -141,14 +141,14 @@ const defaultComponents = {
 			<table className={cn("w-full", className)} {...props} />
 		</div>
 	),
-};
+}
 
 const useMDXComponent = (code: string) => {
-	const fn = new Function(code);
-	return fn({ ...runtime }).default;
-};
+	const fn = new Function(code)
+	return fn({ ...runtime }).default
+}
 
 export function MDXContent({ code, components }: MdxProps) {
-	const Component = useMDXComponent(code);
-	return <Component components={{ ...defaultComponents, ...components }} />;
+	const Component = useMDXComponent(code)
+	return <Component components={{ ...defaultComponents, ...components }} />
 }

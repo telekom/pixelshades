@@ -1,4 +1,4 @@
-import { Tabs } from "@pixelshades/ui/components";
+import { Tabs } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
@@ -12,5 +12,5 @@ export default function Example() {
 			<Tabs.Panel id="panel-2">Panel 2</Tabs.Panel>
 			<Tabs.Panel id="panel-3">Panel 3</Tabs.Panel>
 		</Tabs>
-	);
+	)
 }

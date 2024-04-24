@@ -1,27 +1,27 @@
-import { Command, If, Typography } from "@pixelshades/ui/components";
-import { components, dvds_pages } from "#site/content";
+import { Command, If, Typography } from "@pixelshades/ui/components"
+import { components, dvds_pages } from "#site/content"
 
-import Fuse, { type FuseResultMatch } from "fuse.js";
-import { Highlight } from "../../../../packages/ui/src/components/ui/highlight";
+import Fuse, { type FuseResultMatch } from "fuse.js"
+import { Highlight } from "../../../../packages/ui/src/components/ui/highlight"
 
-import { useState } from "react";
+import { useState } from "react"
 
-import { Component, StickyNote } from "@pixelshades/ui/icons";
+import { Component, StickyNote } from "@pixelshades/ui/icons"
 
 type SearchDialogProps = {
-	open?: boolean;
-	handleOpenChange?: (isOpen: boolean) => void;
-};
+	open?: boolean
+	handleOpenChange?: (isOpen: boolean) => void
+}
 
 export const SearchDialog = ({ open, handleOpenChange }: SearchDialogProps) => {
-	const [inputValue, setInputValue] = useState("");
+	const [inputValue, setInputValue] = useState("")
 
 	const handleOnOpen = (isOpen: boolean) => {
-		handleOpenChange?.(isOpen);
+		handleOpenChange?.(isOpen)
 		if (!isOpen) {
-			setInputValue("");
+			setInputValue("")
 		}
-	};
+	}
 
 	const componentSearch = new Fuse(components, {
 		keys: ["title", { name: "description", weight: 0.15 }, { name: "toc", weight: 0.3 }],
@@ -30,7 +30,7 @@ export const SearchDialog = ({ open, handleOpenChange }: SearchDialogProps) => {
 		includeScore: true,
 		includeMatches: true,
 		shouldSort: true,
-	});
+	})
 
 	const dvdsSearch = new Fuse(dvds_pages, {
 		keys: [
@@ -45,19 +45,19 @@ export const SearchDialog = ({ open, handleOpenChange }: SearchDialogProps) => {
 		includeMatches: true,
 		findAllMatches: false,
 		shouldSort: true,
-	});
+	})
 
-	const componentSearchResults = componentSearch.search(inputValue);
-	const dvdsSearchResults = dvdsSearch.search(inputValue);
+	const componentSearchResults = componentSearch.search(inputValue)
+	const dvdsSearchResults = dvdsSearch.search(inputValue)
 
 	const getMatches = (match: FuseResultMatch | undefined) => {
 		if (!match || !match.value) {
-			return [];
+			return []
 		}
-		const matchedSubstrings = match.indices.map(([start, end]) => match.value!.substring(start, end + 1));
+		const matchedSubstrings = match.indices.map(([start, end]) => match.value!.substring(start, end + 1))
 
-		return matchedSubstrings;
-	};
+		return matchedSubstrings
+	}
 
 	return (
 		<Command
@@ -180,5 +180,5 @@ export const SearchDialog = ({ open, handleOpenChange }: SearchDialogProps) => {
 				</If>
 			</Command.Group>
 		</Command>
-	);
-};
+	)
+}

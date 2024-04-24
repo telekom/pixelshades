@@ -1,5 +1,5 @@
-import { Checkbox } from "@pixelshades/ui/components";
+import { Checkbox } from "@pixelshades/ui/components"
 
 export default function Example() {
-	return <Checkbox value="push">Push</Checkbox>;
+	return <Checkbox value="push">Push</Checkbox>
 }

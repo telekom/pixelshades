@@ -1,17 +1,17 @@
-import { Command } from "@pixelshades/ui/components";
-import { Apple, GlassWater } from "@pixelshades/ui/icons";
+import { Command } from "@pixelshades/ui/components"
+import { Apple, GlassWater } from "@pixelshades/ui/icons"
 
 export default function Example() {
 	const fruits = [
 		{ name: "Apple", description: "Red apple" },
 		{ name: "Apple", description: "Green apple" },
 		{ name: "Banana" },
-	];
+	]
 
 	const drinks = [
 		{ name: "Water", description: "A bottle of water." },
 		{ name: "Apple juice", description: "A bottle of apple juice." },
-	];
+	]
 	return (
 		<Command shortcut={["Meta", "KeyJ"]} searchField={<Command.Search />}>
 			<Command.Group heading="Fruits">
@@ -49,5 +49,5 @@ export default function Example() {
 				))}
 			</Command.Group>
 		</Command>
-	);
+	)
 }

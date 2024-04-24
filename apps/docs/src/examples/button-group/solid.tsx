@@ -1,4 +1,4 @@
-import { Button, ButtonGroup } from "@pixelshades/ui/components";
+import { Button, ButtonGroup } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
@@ -7,5 +7,5 @@ export default function Example() {
 			<Button>Two</Button>
 			<Button>Three</Button>
 		</ButtonGroup>
-	);
+	)
 }

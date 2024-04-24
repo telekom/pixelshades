@@ -1,5 +1,5 @@
-import { DatePicker } from "@pixelshades/ui/components";
+import { DatePicker } from "@pixelshades/ui/components"
 
 export default function Example() {
-	return <DatePicker label="Start Date" />;
+	return <DatePicker label="Start Date" />
 }

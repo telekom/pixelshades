@@ -5,5 +5,5 @@ export function SiteFooter() {
 				Build by @Makisuo
 			</div>
 		</footer>
-	);
+	)
 }

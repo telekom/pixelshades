@@ -1,11 +1,11 @@
-import { Highlight, Input, Label, Typography } from "@pixelshades/ui/components";
-import { useState } from "react";
+import { Highlight, Input, Label, Typography } from "@pixelshades/ui/components"
+import { useState } from "react"
 
 export default function Example() {
-	const [inputValue, setInputValue] = useState("");
+	const [inputValue, setInputValue] = useState("")
 
-	const highlightedChars = inputValue.split("");
-	const fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+	const highlightedChars = inputValue.split("")
+	const fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"]
 
 	return (
 		<div className="flex flex-col gap-lg">
@@ -21,5 +21,5 @@ export default function Example() {
 				))}
 			</div>
 		</div>
-	);
+	)
 }

@@ -1,13 +1,13 @@
-import { defineConfig, s } from "velite";
+import { defineConfig, s } from "velite"
 
-import { appendCodePreview } from "~/lib/rehype/append-code-preview";
-import { postProcess, preProcess, rehypeNpmCommand } from "~/lib/rehype/rehype-npm-command";
+import { appendCodePreview } from "~/lib/rehype/append-code-preview"
+import { postProcess, preProcess, rehypeNpmCommand } from "~/lib/rehype/rehype-npm-command"
 
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import rehypeSlug from "rehype-slug"
 
-import rehypePrettyCode from "rehype-pretty-code";
-import remarkGfm from "remark-gfm";
+import rehypePrettyCode from "rehype-pretty-code"
+import remarkGfm from "remark-gfm"
 
 export default defineConfig({
 	collections: {
@@ -77,4 +77,4 @@ export default defineConfig({
 		],
 	},
 	markdown: {},
-});
+})

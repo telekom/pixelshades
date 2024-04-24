@@ -1,4 +1,4 @@
-import { ComboBox } from "@pixelshades/ui/components";
+import { ComboBox } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
@@ -8,5 +8,5 @@ export default function Example() {
 			<ComboBox.Item>UI Kit</ComboBox.Item>
 			<ComboBox.Item>Portfolio Site</ComboBox.Item>
 		</ComboBox>
-	);
+	)
 }

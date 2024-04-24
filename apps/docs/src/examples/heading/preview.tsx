@@ -1,4 +1,4 @@
-import { Heading, HeadingLevel } from "@pixelshades/ui/components";
+import { Heading, HeadingLevel } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
@@ -20,5 +20,5 @@ export default function Example() {
 				</HeadingLevel>
 			</HeadingLevel>
 		</div>
-	);
+	)
 }

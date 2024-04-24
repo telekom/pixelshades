@@ -1,5 +1,5 @@
-import { Switch } from "@pixelshades/ui/components";
+import { Switch } from "@pixelshades/ui/components"
 
 export default function Example() {
-	return <Switch />;
+	return <Switch />
 }

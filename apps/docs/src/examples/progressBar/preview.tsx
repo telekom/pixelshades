@@ -1,5 +1,5 @@
-import { ProgressBar } from "@pixelshades/ui/components";
+import { ProgressBar } from "@pixelshades/ui/components"
 
 export default function Example() {
-	return <ProgressBar label="Loading…" description={<small>This is a description!</small>} value={25} />;
+	return <ProgressBar label="Loading…" description={<small>This is a description!</small>} value={25} />
 }
