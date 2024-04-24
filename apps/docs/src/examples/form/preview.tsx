@@ -1,8 +1,8 @@
-import { Button, Form, TextField, TimeField } from "@pixelshades/ui/components"
+import { Button, DateField, Form, TextField, TimeField } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
-		<Form>
+		<Form className="min-w-[320px]">
 			<TextField
 				label="Email"
 				name="email"
@@ -14,7 +14,16 @@ export default function Example() {
 
 			<TimeField label="Start Date" isRequired />
 
-			<Button type="submit">Submit</Button>
+			<DateField label="End Date" description="The end date of the event" isRequired />
+			<div className="flex flex-row gap-md w-full">
+				<Button className="w-full" type="submit">
+					Submit
+				</Button>
+
+				<Button className="w-full" type="reset" variant="outline">
+					Reset
+				</Button>
+			</div>
 		</Form>
 	)
 }

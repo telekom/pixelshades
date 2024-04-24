@@ -4,7 +4,7 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-import type { TimeFieldProps as AriaTimeFieldProps, TimeValue } from "react-aria-components"
+import type { TimeFieldProps as AriaTimeFieldProps, TimeValue, ValidationResult } from "react-aria-components"
 import { TimeField as AriaTimeField, DateInput, DateSegment, Text } from "react-aria-components"
 
 import { dateFieldVariants } from "@pixelshades/styles/components/date-field"
@@ -16,7 +16,7 @@ import { type FormComponentLabelProps, Label } from "../label"
 export interface TimeFieldProps<T extends TimeValue> extends AriaTimeFieldProps<T>, FormComponentLabelProps {
 	label?: ReactNode
 	helperText?: string
-	errorMessage?: string
+	errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
 const TimeField = <T extends TimeValue>({
@@ -35,7 +35,7 @@ const TimeField = <T extends TimeValue>({
 			{(segment) => <DateSegment className={dateFieldVariants()} segment={segment} />}
 		</DateInput>
 		{helperText && <FormDescription>{helperText}</FormDescription>}
-		{errorMessage && <FormFieldError>{errorMessage}</FormFieldError>}
+		<FormFieldError>{errorMessage}</FormFieldError>
 	</AriaTimeField>
 )
 

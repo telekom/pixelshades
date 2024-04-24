@@ -4,16 +4,17 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-import type { DateFieldProps as AriaDateFieldProps, DateValue } from "react-aria-components"
+import type { DateFieldProps as AriaDateFieldProps, DateValue, ValidationResult } from "react-aria-components"
 import { DateField as AriaDateField, DateInput, DateSegment, Text } from "react-aria-components"
 
 import { dateFieldVariants } from "@pixelshades/styles/components/date-field"
 import { inputVariants } from "@pixelshades/styles/components/input"
+import { FormDescription, FormFieldError } from "../form"
 import { type FormComponentLabelProps, Label } from "../label"
 
 interface DateFieldProps<T extends DateValue> extends AriaDateFieldProps<T>, FormComponentLabelProps {
 	helperText?: string
-	errorMessage?: string
+	errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
 const DateField = <T extends DateValue>({
@@ -31,8 +32,8 @@ const DateField = <T extends DateValue>({
 		<DateInput className={inputVariants()}>
 			{(segment) => <DateSegment className={dateFieldVariants()} segment={segment} />}
 		</DateInput>
-		{helperText && <Text slot="description">{helperText}</Text>}
-		{errorMessage && <Text slot="errorMessage">{errorMessage}</Text>}
+		{helperText && <FormDescription>{helperText}</FormDescription>}
+		<FormFieldError>{errorMessage}</FormFieldError>
 	</AriaDateField>
 )
 
