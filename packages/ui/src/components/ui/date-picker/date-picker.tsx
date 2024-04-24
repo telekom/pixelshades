@@ -47,7 +47,7 @@ const DatePicker = <T extends DateValue>({
 		<Label description={description} tooltip={tooltip}>
 			{label}
 		</Label>
-		<FormFieldGroup className={"relative"}>
+		<FormFieldGroup className={"relative flex items-center"}>
 			<DateInput className={inputVariants({ className: input() })}>
 				{(segment) => <DateSegment className={base()} segment={segment} />}
 			</DateInput>
