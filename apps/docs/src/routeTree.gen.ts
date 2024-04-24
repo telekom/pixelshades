@@ -21,37 +21,36 @@ import { Route as DocsComponentsSlugIndexImport } from "./routes/docs/components
 // Create/Update Routes
 
 const ExamplesRoute = ExamplesImport.update({
-        path: "/examples",
-        getParentRoute: () => rootRoute,
+	path: "/examples",
+	getParentRoute: () => rootRoute,
 } as any)
 
 const DocsRoute = DocsImport.update({
-        path: "/docs",
-        getParentRoute: () => rootRoute,
+	path: "/docs",
+	getParentRoute: () => rootRoute,
 } as any)
 
 const IndexRoute = IndexImport.update({
-        path: "/",
-        getParentRoute: () => rootRoute,
+	path: "/",
+	getParentRoute: () => rootRoute,
 } as any)
 
 const DocsIndexRoute = DocsIndexImport.update({
-        path: "/",
-        getParentRoute: () => DocsRoute,
+	path: "/",
+	getParentRoute: () => DocsRoute,
 } as any)
 
 const DocsSlugRoute = DocsSlugImport.update({
-        path: "/$slug",
-        getParentRoute: () => DocsRoute,
+	path: "/$slug",
+	getParentRoute: () => DocsRoute,
 } as any)
 
 const DocsComponentsSlugIndexRoute = DocsComponentsSlugIndexImport.update({
-        path: "/components/$slug/",
-        getParentRoute: () => DocsRoute,
+	path: "/components/$slug/",
+	getParentRoute: () => DocsRoute,
 } as any)
 
 // Populate the FileRoutesByPath interface
-
 
 declare module "@tanstack/react-router" {
 	interface FileRoutesByPath {
@@ -85,7 +84,7 @@ declare module "@tanstack/react-router" {
 // Create and export the route tree
 
 export const routeTree = rootRoute.addChildren([
-  IndexRoute,
+	IndexRoute,
 	DocsRoute.addChildren([DocsSlugRoute, DocsIndexRoute, DocsComponentsSlugIndexRoute]),
 	ExamplesRoute,
 ])
