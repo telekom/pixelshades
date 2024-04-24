@@ -795,6 +795,7 @@ export function Example() {
 	DateField,
 	DatePicker,
 	Form,
+	Switch,
 	TextField,
 	TimeField,
 } from "@pixelshades/ui/components"
@@ -830,6 +831,8 @@ export function Example() {
 				isRequired
 				type="email"
 			/>
+
+			<Switch label="Switch" description="Description" tooltip="Tooltip" helperText="Helper text" />
 
 			<TimeField label="Start Date" isRequired />
 
