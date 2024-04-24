@@ -36,6 +36,6 @@ export const fieldBorderStyles = tv({
 
 export const formGroupVariants = tv({
 	extend: focusRing,
-	base: "group flex items-center h-9 forced-colors:bg-[Field] border-2 rounded-lg overflow-hidden",
+	base: "group flex relative items-center h-9 forced-colors:bg-[Field] border-2 rounded-lg overflow-hidden",
 	variants: fieldBorderStyles.variants,
 })

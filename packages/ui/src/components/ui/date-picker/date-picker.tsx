@@ -22,7 +22,7 @@ import { datePickerVariants } from "@pixelshades/styles/components/date-picker"
 import { inputVariants } from "@pixelshades/styles/components/input"
 import { If } from "../../utils"
 import { Calendar } from "../calendar"
-import { FormDescription, FormFieldError } from "../form"
+import { FormDescription, FormFieldError, FormFieldGroup } from "../form"
 import { type FormComponentLabelProps, Label } from "../label"
 import { Popover } from "../popover"
 
@@ -43,18 +43,18 @@ const DatePicker = <T extends DateValue>({
 	children,
 	...props
 }: DatePickerProps<T>) => (
-	<AriaDatePicker className={className} {...props}>
+	<AriaDatePicker className="flex flex-col gap-md" {...props}>
 		<Label description={description} tooltip={tooltip}>
 			{label}
 		</Label>
-		<AriaGroup className={group()}>
+		<FormFieldGroup className={"relative"}>
 			<DateInput className={inputVariants({ className: input() })}>
 				{(segment) => <DateSegment className={base()} segment={segment} />}
 			</DateInput>
 			<AriaButton className={inputButton()}>
 				<ChevronDownIcon />
 			</AriaButton>
-		</AriaGroup>
+		</FormFieldGroup>
 		<If condition={helperText}>
 			<FormDescription>{helperText}</FormDescription>
 		</If>

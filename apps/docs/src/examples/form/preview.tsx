@@ -1,4 +1,4 @@
-import { Button, DateField, Form, TextField, TimeField } from "@pixelshades/ui/components"
+import { Button, DateField, DatePicker, Form, TextField, TimeField } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
@@ -15,6 +15,7 @@ export default function Example() {
 			<TimeField label="Start Date" isRequired />
 
 			<DateField label="End Date" description="The end date of the event" isRequired />
+			<DatePicker label="Custom Date Picker" description="The end date of the event" isRequired />
 			<div className="flex flex-row gap-md w-full">
 				<Button className="w-full" type="submit">
 					Submit
