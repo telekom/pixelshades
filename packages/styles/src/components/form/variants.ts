@@ -5,8 +5,8 @@ export const formVariants = tv({
 	slots: {
 		root: "flex flex-col gap-md",
 		label: "flex-none text-subtle-foreground",
-		description: "text-start text-subtle-foreground",
-		errorMessage: "text-destructive",
+		description: "text-start text-subtle-foreground text-xs",
+		errorMessage: "text-destructive text-xs",
 	},
 	variants: {
 		size: {

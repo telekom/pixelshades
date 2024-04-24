@@ -6,23 +6,25 @@
 
 import { textFieldVariants } from "@pixelshades/styles/components/text-field"
 import type { TextFieldProps as AriaTextFieldProps } from "react-aria-components"
-import { TextField as AriaTextField, Input, Text } from "react-aria-components"
-import { Label } from "../label"
+import { TextField as AriaTextField } from "react-aria-components"
+import { FormDescription, FormFieldError } from "../form"
+import { Input } from "../input"
+import { type FormComponentLabelProps, Label } from "../label"
 
-const { root, input } = textFieldVariants()
-
-export interface TextFieldProps extends AriaTextFieldProps {
+export interface TextFieldProps extends AriaTextFieldProps, FormComponentLabelProps {
 	label?: string
-	description?: string
+	helperText?: string
 	errorMessage?: string
 }
 
-const TextField = ({ label, description, errorMessage, ...props }: TextFieldProps) => (
-	<AriaTextField className={root()} {...props}>
-		<Label>{label}</Label>
-		<Input className={input()} />
-		{description && <Text slot="description">{description}</Text>}
-		{errorMessage && <Text slot="errorMessage">{errorMessage}</Text>}
+const TextField = ({ label, helperText, description, tooltip, errorMessage, ...props }: TextFieldProps) => (
+	<AriaTextField className={"flex flex-col gap-sm"} {...props}>
+		<Label tooltip={tooltip} description={description}>
+			{label}
+		</Label>
+		<Input />
+		{helperText && !errorMessage && <FormDescription>{helperText}</FormDescription>}
+		<FormFieldError>{errorMessage}</FormFieldError>
 	</AriaTextField>
 )
 

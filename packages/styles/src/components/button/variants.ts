@@ -6,7 +6,6 @@ import { tv } from "tailwind-variants"
 import { focusRing } from "../../utils"
 
 export const buttonVariants = tv({
-	extend: focusRing,
 	base: "group inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors disabled:pointer-events-none disabled:opacity-50",
 	defaultVariants: { variant: "solid", size: "md" },
 	variants: {
@@ -24,9 +23,10 @@ export const buttonVariants = tv({
 		size: {
 			icon: "size-9 rounded-md",
 			xs: "h-7 px-1 text-xs rounded-md",
-			sm: "h-8 px-2 text-xs rounded-md gap-0.5",
-			md: "h-9 px-md py-2 rounded-md gap-1",
+			sm: "h-8 px-2 text-xs rounded-md gap-xs",
+			md: "h-9 px-md py-2 rounded-md gap-sm",
 			lg: "h-10 px-8 rounded-md gap-md",
 		},
 	},
+	extend: focusRing,
 })

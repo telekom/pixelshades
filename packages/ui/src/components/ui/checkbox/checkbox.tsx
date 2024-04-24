@@ -13,12 +13,12 @@ import React from "react"
 import {
 	type CheckboxProps as AriaCheckBoxProps,
 	Checkbox as AriaCheckbox,
-	FieldError,
 	type ValidationResult,
 } from "react-aria-components"
 import type { VariantProps } from "tailwind-variants"
 import { If } from "../../utils"
-import { Label, LabelHelperText } from "../label"
+import { FormDescription, FormFieldError } from "../form"
+import { Label } from "../label"
 
 type CheckboxVariantProps = VariantProps<typeof checkboxVariant>
 
@@ -52,8 +52,8 @@ const Checkbox = forwardRef<ElementRef<typeof AriaCheckbox>, CheckBoxProps>(
 									{label}
 								</Label>
 							</If>
-							<LabelHelperText aria-disabled={isDisabled}>{helperText}</LabelHelperText>
-							<FieldError>{errorMessage}</FieldError>
+							<FormDescription aria-disabled={isDisabled}>{helperText}</FormDescription>
+							<FormFieldError>{errorMessage}</FormFieldError>
 						</span>
 
 						{children}

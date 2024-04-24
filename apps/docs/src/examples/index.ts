@@ -378,19 +378,7 @@ export function Example() {
 	  code: `import { Button, Checkbox, Form } from "@pixelshades/ui/components"
 
 export function Example() {
-	return (
-		<Form>
-			<Checkbox
-				isRequired
-				value="push"
-				label="Label"
-				description="Description"
-				helperText="Helper Text"
-				tooltip="Tooltip"
-			/>
-			<Button type="submit">Submit</Button>
-		</Form>
-	)
+	return <Checkbox value="push" label="Label" description="Description" helperText="Helper Text" tooltip="Tooltip" />
 }
 `,
   },
@@ -740,13 +728,21 @@ export function Example() {
   },
   "form/preview": {
 	  component: lazy(() => import("~/examples/form/preview.tsx")),
-	  code: `import { Button, Checkbox, Form, TextField } from "@pixelshades/ui/components"
+	  code: `import { Button, Form, TextField, TimeField } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
 		<Form>
-			<TextField label="Surename" isRequired />
-			<TextField label="Name" isRequired />
+			<TextField
+				label="Email"
+				name="email"
+				tooltip="Email address"
+				description="Your best email"
+				isRequired
+				type="email"
+			/>
+
+			<TimeField label="Start Date" isRequired />
 
 			<Button type="submit">Submit</Button>
 		</Form>

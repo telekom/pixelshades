@@ -7,14 +7,15 @@
 import { labelVariants } from "@pixelshades/styles/components/label"
 import { forwardRef } from "@pixelshades/utils/jsx"
 import type { ReactNode } from "react"
-import {
-	Label as AriaLabel,
-	type LabelProps as AriaLabelProps,
-	Text as AriaText,
-	type TextProps,
-} from "react-aria-components"
+import { Label as AriaLabel, type LabelProps as AriaLabelProps, type TextProps } from "react-aria-components"
 import { If } from "../../utils"
 import { Tooltip } from "../tooltip"
+
+export interface FormComponentLabelProps {
+	label?: ReactNode
+	tooltip?: ReactNode
+	description?: ReactNode
+}
 
 interface LabelProps extends AriaLabelProps {
 	tooltip?: ReactNode
@@ -37,20 +38,6 @@ const LabelRoot = forwardRef(({ className, children, description, tooltip, ...pr
 
 export type LabelHelperTextProps = TextProps
 
-const LabelHelperText = forwardRef(({ children, ...props }: LabelHelperTextProps) => {
-	if (!children) {
-		return null
-	}
+export const Label = Object.assign(LabelRoot, {})
 
-	return (
-		<AriaText slot="description" className={labelVariants().helperText()} {...props}>
-			{children}
-		</AriaText>
-	)
-})
-
-export const Label = Object.assign(LabelRoot, {
-	HelperText: LabelHelperText,
-})
-
-export { LabelHelperText, type LabelProps }
+export type { LabelProps }

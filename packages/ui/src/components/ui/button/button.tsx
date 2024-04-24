@@ -27,8 +27,6 @@ interface ButtonProps extends ButtonVariantProps, AriaButtonProps {
 	after?: React.ReactElement<HTMLElement>
 }
 
-const { button, icon } = buttonVariants()
-
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 	({ size, variant, className, children, before, after, withRing, ...props }, ref) => {
 		const buttonGroupState = buttonGroupContext.useStyleContext()
@@ -36,13 +34,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 		/* If Button is in Button Group apply Button Group Styles, this can still be overwritten on button layer **/
 		const buttonStyles = (values: ButtonRenderProps) =>
 			buttonGroupState
-				? buttonGroupState.button({
+				? buttonGroupState.base({
 						variant,
 						withRing,
 						size,
 						className: typeof className === "function" ? className(values) : className,
 					})
-				: button({
+				: buttonVariants({
 						variant,
 						withRing,
 						size,
@@ -53,11 +51,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			<AriaButton className={buttonStyles} ref={ref} {...props}>
 				<>
 					<If condition={before}>
-						<RenderSlot item={before!} className={icon({ variant, withRing, size })} />
+						<RenderSlot item={before!} className={"text-inherit"} />
 					</If>
 					{children}
 					<If condition={after}>
-						<RenderSlot item={after!} className={icon({ variant, withRing, size })} />
+						<RenderSlot item={after!} className={"text-inherit"} />
 					</If>
 				</>
 			</AriaButton>

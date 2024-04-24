@@ -32,4 +32,4 @@ export const Form = Object.assign(FormRoot, {
 	FieldErrror: FormFieldError,
 })
 
-export { FormFieldGroup }
+export { FormFieldGroup, FormDescription, FormFieldError }

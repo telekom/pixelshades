@@ -9,7 +9,7 @@ export const inputVariants = tv({
 	defaultVariants: { size: "md" },
 	variants: {
 		size: {
-			md: "h-9 w-full px-3 py-1 text-sm",
+			md: "h-9 w-full px-md py-sm text-sm",
 		},
 	},
 })
