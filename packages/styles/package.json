@@ -35,6 +35,12 @@
     "dist"
   ],
   "exports": {
+    "./utils": {
+      "import": {
+        "types": "./dist/es/utils.d.mts",
+        "default": "./dist/es/utils.mjs"
+      }
+    },
     "./components/badge": {
       "import": {
         "types": "./dist/es/components/badge/index.d.mts",
@@ -111,6 +117,12 @@
       "import": {
         "types": "./dist/es/components/dialog/index.d.mts",
         "default": "./dist/es/components/dialog/index.mjs"
+      }
+    },
+    "./components/form": {
+      "import": {
+        "types": "./dist/es/components/form/index.d.mts",
+        "default": "./dist/es/components/form/index.mjs"
       }
     },
     "./components/heading": {

@@ -738,6 +738,22 @@ export function Example() {
 }
 `,
   },
+  "form/preview": {
+	  component: lazy(() => import("~/examples/form/preview.tsx")),
+	  code: `import { Button, Checkbox, Form, TextField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<Form>
+			<TextField label="Surename" isRequired />
+			<TextField label="Name" isRequired />
+
+			<Button type="submit">Submit</Button>
+		</Form>
+	)
+}
+`,
+  },
   "heading/preview": {
 	  component: lazy(() => import("~/examples/heading/preview.tsx")),
 	  code: `import { Heading, HeadingLevel } from "@pixelshades/ui/components"
