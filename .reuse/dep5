@@ -3,6 +3,10 @@ Upstream-Name: pixelshades
 Upstream-Contact: makisuo <david.granzin@t-systems.com>
 Source: https://pixelshades.dev
 
+Files: .npmrc
+Copyright: 2024 Deutsche Telekom AG
+License: CC0-1.0
+
 Files: apps/docs/*
 Copyright: 2024 Deutsche Telekom AG
 License: CC-BY-4.0

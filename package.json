@@ -1,34 +1,35 @@
 {
-  "name": "pixelshades-mono",
-  "private": true,
-  "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "lint": "turbo lint",
-    "verify-compliace": "pipx run reuse lint",
-    "bump-versions": "bun changeset version && bun install",
-    "publish": "turbo run build && changeset version && changeset publish --access public",
-    "commit": "cz"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.7.0",
-    "@changesets/cli": "^2.27.1",
-    "@pixelshades/typescript-config": "workspace:*",
-    "concurrently": "^8.2.2",
-    "cz-conventional-changelog": "^3.3.0",
-    "turbo": "1.13.2"
-  },
-  "engines": {
-    "node": ">=18"
-  },
-  "packageManager": "pnpm@8.6.5",
-  "workspaces": [
-    "packages/*",
-    "apps/*"
-  ],
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  }
+	"name": "pixelshades-mono",
+	"private": true,
+	"scripts": {
+		"build": "turbo build",
+		"dev": "turbo dev",
+		"lint": "turbo lint",
+		"fmt": "pnpm biome format . --write && pnpm biome check .",
+		"verify-compliace": "pipx run reuse lint",
+		"bump-versions": "bun changeset version && bun install",
+		"publish": "turbo run build && changeset version && changeset publish --access public",
+		"commit": "cz"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.7.0",
+		"@changesets/cli": "^2.27.1",
+		"@pixelshades/typescript-config": "workspace:*",
+		"concurrently": "^8.2.2",
+		"cz-conventional-changelog": "^3.3.0",
+		"turbo": "1.13.2"
+	},
+	"engines": {
+		"node": ">=18"
+	},
+	"packageManager": "pnpm@8.6.5",
+	"workspaces": ["packages/*", "apps/*"],
+	"config": {
+		"commitizen": {
+			"path": "cz-conventional-changelog"
+		}
+	},
+	"volta": {
+		"node": "20.12.2"
+	}
 }

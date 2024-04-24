@@ -107,6 +107,12 @@
         "default": "./dist/es/components/date-field/index.mjs"
       }
     },
+    "./date-range-calendar": {
+      "import": {
+        "types": "./dist/es/date-range-calendar/index.d.mts",
+        "default": "./dist/es/date-range-calendar/index.mjs"
+      }
+    },
     "./components/date-picker": {
       "import": {
         "types": "./dist/es/components/date-picker/index.d.mts",
