@@ -3,7 +3,7 @@ import { focusRing } from "../../utils"
 
 export const formVariants = tv({
 	slots: {
-		root: "flex flex-col gap-md",
+		root: "flex flex-col gap-layout-md",
 		label: "flex-none text-subtle-foreground",
 		description: "text-start text-subtle-foreground text-xs",
 		errorMessage: "text-destructive text-xs",

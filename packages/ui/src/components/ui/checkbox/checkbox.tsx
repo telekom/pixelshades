@@ -42,7 +42,7 @@ const Checkbox = forwardRef<ElementRef<typeof AriaCheckbox>, CheckBoxProps>(
 					<>
 						<div className={checkboxVariant({ size }).box()}>{isSelected && <Check />}</div>
 						<span className="inline-flex flex-col">
-							<If condition={description || tooltip || helperText}>
+							<If condition={label || description || tooltip}>
 								<Label
 									aria-disabled={isDisabled}
 									htmlFor={elId}
