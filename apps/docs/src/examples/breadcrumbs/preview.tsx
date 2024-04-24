@@ -1,4 +1,4 @@
-import { Breadcrumbs } from "@pixelshades/ui/components"
+import { Breadcrumbs } from "@pixelshades/ui/components";
 
 export default function Example() {
 	return (
@@ -7,5 +7,5 @@ export default function Example() {
 			<Breadcrumbs.Item>Product</Breadcrumbs.Item>
 			<Breadcrumbs.Item last>Product A</Breadcrumbs.Item>
 		</Breadcrumbs>
-	)
+	);
 }

@@ -1,4 +1,4 @@
-import { Button, Dialog, Input, Label } from "@pixelshades/ui/components"
+import { Button, Dialog, Input, Label } from "@pixelshades/ui/components";
 
 export default function Example() {
 	return (
@@ -38,5 +38,5 @@ export default function Example() {
 				</Dialog.Content>
 			</Dialog>
 		</Dialog.Trigger>
-	)
+	);
 }

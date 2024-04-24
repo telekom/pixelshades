@@ -1,25 +1,25 @@
-import { If, Table, Typography } from "@pixelshades/ui/components"
-import props from "~/lib/props.json"
+import { If, Table, Typography } from "@pixelshades/ui/components";
+import props from "~/lib/props.json";
 
 export type PropsTableProps = {
-	slug: string
-}
+	slug: string;
+};
 
 const getComponentPropsBySlug = (slug: string) => {
-	const matchKey = Object.keys(props).find((key) => key.includes(slug.toLowerCase()))
+	const matchKey = Object.keys(props).find((key) => key.includes(slug.toLowerCase()));
 
 	if (!matchKey) {
-		return null
+		return null;
 	}
 
-	return props[matchKey as "src/components/ui/breadcrumbs/breadcrumbs.tsx"]
-}
+	return props[matchKey as "src/components/ui/breadcrumbs/breadcrumbs.tsx"];
+};
 
 export const PropsTable = ({ slug }: PropsTableProps) => {
-	const props = getComponentPropsBySlug(slug)
+	const props = getComponentPropsBySlug(slug);
 
 	if (!props) {
-		return "No Props Yet"
+		return "No Props Yet";
 	}
 
 	return (
@@ -38,7 +38,7 @@ export const PropsTable = ({ slug }: PropsTableProps) => {
 										{" "}
 										extends <span className="font-bold text-primary"> {data.toString()}</span>
 									</span>
-								)
+								);
 							}}
 						</If>
 					</Typography>
@@ -62,7 +62,7 @@ export const PropsTable = ({ slug }: PropsTableProps) => {
 											<Table.Cell>{value.tsType?.raw}</Table.Cell>
 											<Table.Cell>{value.description}</Table.Cell>
 										</Table.Row>
-									))
+									));
 								}}
 							</If>
 						</Table.Body>
@@ -70,5 +70,5 @@ export const PropsTable = ({ slug }: PropsTableProps) => {
 				</div>
 			))}
 		</div>
-	)
-}
+	);
+};

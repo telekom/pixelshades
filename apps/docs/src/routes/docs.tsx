@@ -1,37 +1,37 @@
-import { Outlet, createFileRoute } from "@tanstack/react-router"
+import { Outlet, createFileRoute } from "@tanstack/react-router";
 
-import { DocsSidebarNav } from "~/components/sidebar-nav"
-import type { SidebarNavItem } from "~/config/docs"
-import { components, general_pages } from "#site/content"
+import { DocsSidebarNav } from "~/components/sidebar-nav";
+import type { SidebarNavItem } from "~/config/docs";
+import { components, general_pages } from "#site/content";
 
 export const Route = createFileRoute("/docs")({
 	component: DocsLayout,
-})
+});
 
-const sidebarItems: SidebarNavItem[] = []
+const sidebarItems: SidebarNavItem[] = [];
 
 const componentItems: SidebarNavItem[] = components.map((component) => ({
 	title: component.title,
 	href: component.permalink,
 	label: component.primaryTag,
 	items: [],
-}))
+}));
 
 const gettingStartedItems: SidebarNavItem[] = general_pages.map((page) => ({
 	title: page.title,
 	href: page.permalink,
 	items: [],
-}))
+}));
 
 sidebarItems.push({
 	title: "Getting Started",
 	items: gettingStartedItems,
-})
+});
 
 sidebarItems.push({
 	title: "Components",
 	items: componentItems,
-})
+});
 
 function DocsLayout() {
 	return (
@@ -45,5 +45,5 @@ function DocsLayout() {
 				<Outlet />
 			</div>
 		</div>
-	)
+	);
 }

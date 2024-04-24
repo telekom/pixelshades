@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { Badge } from "@pixelshades/ui/components"
-import { cn } from "@pixelshades/utils/styles"
-import { Link } from "@tanstack/react-router"
-import type { SidebarNavItem } from "~/config/docs"
+import { Badge } from "@pixelshades/ui/components";
+import { cn } from "@pixelshades/utils/styles";
+import { Link } from "@tanstack/react-router";
+import type { SidebarNavItem } from "~/config/docs";
 
 export interface DocsSidebarNavProps {
-	items: SidebarNavItem[]
+	items: SidebarNavItem[];
 }
 
 export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
@@ -19,11 +19,11 @@ export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
 				</div>
 			))}
 		</div>
-	) : null
+	) : null;
 }
 
 interface DocsSidebarNavItemsProps {
-	items: SidebarNavItem[]
+	items: SidebarNavItem[];
 }
 
 export function DocsSidebarNavItems({ items }: DocsSidebarNavItemsProps) {
@@ -62,5 +62,5 @@ export function DocsSidebarNavItems({ items }: DocsSidebarNavItemsProps) {
 				),
 			)}
 		</div>
-	) : null
+	) : null;
 }

@@ -1,5 +1,5 @@
-import { Kbd } from "@pixelshades/ui/components"
+import { Kbd } from "@pixelshades/ui/components";
 
 export default function Example() {
-	return <Kbd keys={["option", "command"]}>K</Kbd>
+	return <Kbd keys={["option", "command"]}>K</Kbd>;
 }

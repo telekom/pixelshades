@@ -1,4 +1,4 @@
-import { Link } from "@pixelshades/ui/components"
+import { Link } from "@pixelshades/ui/components";
 
 export default function Example() {
 	return (
@@ -15,5 +15,5 @@ export default function Example() {
 			<Link size="6xl">Ag</Link>
 			<Link size="7xl">Ag</Link>
 		</div>
-	)
+	);
 }

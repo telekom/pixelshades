@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { isWeekend } from "@internationalized/date"
-import { Calendar } from "@pixelshades/ui/components"
-import { useLocale } from "@pixelshades/ui/hooks"
+import { isWeekend } from "@internationalized/date";
+import { Calendar } from "@pixelshades/ui/components";
+import { useLocale } from "@pixelshades/ui/hooks";
 
 export default function Example() {
-	const { locale } = useLocale()
+	const { locale } = useLocale();
 
-	return <Calendar isDateUnavailable={(date) => isWeekend(date, locale)} />
+	return <Calendar isDateUnavailable={(date) => isWeekend(date, locale)} />;
 }

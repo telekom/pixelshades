@@ -1,5 +1,5 @@
-import { Calendar } from "@pixelshades/ui/components"
+import { Calendar } from "@pixelshades/ui/components";
 
 export default function Example() {
-	return <Calendar isDisabled />
+	return <Calendar isDisabled />;
 }

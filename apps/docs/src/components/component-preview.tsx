@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { Tabs } from "@pixelshades/ui/components"
-import { cn } from "@pixelshades/utils/styles"
-import type * as React from "react"
-import { Demos } from "../examples"
+import { Tabs } from "@pixelshades/ui/components";
+import { cn } from "@pixelshades/utils/styles";
+import type * as React from "react";
+import { Demos } from "../examples";
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
-	name: string
-	extractClassname?: boolean
-	extractedClassNames?: string
-	align?: "center" | "start" | "end"
+	name: string;
+	extractClassname?: boolean;
+	extractedClassNames?: string;
+	align?: "center" | "start" | "end";
 }
 
 export function ComponentPreview({
@@ -21,7 +21,7 @@ export function ComponentPreview({
 	align = "center",
 	...props
 }: ComponentPreviewProps) {
-	const component = Demos[name]
+	const component = Demos[name];
 
 	return (
 		<div className={cn("group relative my-4 flex flex-col space-y-2", className)} {...props}>
@@ -44,5 +44,5 @@ export function ComponentPreview({
 				</div>
 			</Tabs>
 		</div>
-	)
+	);
 }

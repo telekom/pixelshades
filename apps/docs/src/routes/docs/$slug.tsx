@@ -1,28 +1,28 @@
-import { general_pages } from "#site/content"
+import { general_pages } from "#site/content";
 
-import { Heading, HeadingLevel, Typography } from "@pixelshades/ui/components"
+import { Heading, HeadingLevel, Typography } from "@pixelshades/ui/components";
 
-import { createFileRoute, notFound } from "@tanstack/react-router"
-import { MDXContent } from "~/components/mdx-content"
+import { createFileRoute, notFound } from "@tanstack/react-router";
+import { MDXContent } from "~/components/mdx-content";
 
 export const Route = createFileRoute("/docs/$slug")({
 	component: PostPage,
 	loader: (ctx) => {
-		const component = getComponentBySlug(ctx.params.slug)
+		const component = getComponentBySlug(ctx.params.slug);
 
-		return { component }
+		return { component };
 	},
-})
+});
 
 function getComponentBySlug(slug: string) {
-	return general_pages.find((component) => component.slug === slug)
+	return general_pages.find((component) => component.slug === slug);
 }
 
 export default function PostPage() {
-	const { component } = Route.useLoaderData()
+	const { component } = Route.useLoaderData();
 
 	if (!component) {
-		throw notFound()
+		throw notFound();
 	}
 
 	return (
@@ -38,5 +38,5 @@ export default function PostPage() {
 				<MDXContent code={component.content} />
 			</main>
 		</HeadingLevel>
-	)
+	);
 }

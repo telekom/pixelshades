@@ -1,11 +1,11 @@
-import { cn } from "@pixelshades/utils/styles"
-import { Link, createFileRoute } from "@tanstack/react-router"
+import { cn } from "@pixelshades/utils/styles";
+import { Link, createFileRoute } from "@tanstack/react-router";
 
-import { Button, Heading, Typography } from "@pixelshades/ui/components"
+import { Button, Heading, Typography } from "@pixelshades/ui/components";
 
 export const Route = createFileRoute("/")({
 	component: HomePage,
-})
+});
 
 function HomePage() {
 	return (
@@ -37,5 +37,5 @@ function HomePage() {
 				</div>
 			</section>
 		</main>
-	)
+	);
 }

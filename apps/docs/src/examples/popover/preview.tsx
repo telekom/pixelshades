@@ -1,4 +1,4 @@
-import { Button, Input, Label, Popover } from "@pixelshades/ui/components"
+import { Button, Input, Label, Popover } from "@pixelshades/ui/components";
 
 export default function Example() {
 	return (
@@ -31,5 +31,5 @@ export default function Example() {
 				</div>
 			</Popover>
 		</Popover.Trigger>
-	)
+	);
 }

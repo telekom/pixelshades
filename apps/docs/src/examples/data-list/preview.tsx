@@ -1,5 +1,5 @@
-import { DataList, Link } from "@pixelshades/ui/components"
-import { GithubIcon } from "@pixelshades/ui/icons"
+import { DataList, Link } from "@pixelshades/ui/components";
+import { GithubIcon } from "@pixelshades/ui/icons";
 
 export default function Example() {
 	return (
@@ -31,5 +31,5 @@ export default function Example() {
 				<DataList.Value>Michael Jackson</DataList.Value>
 			</DataList.Item>
 		</DataList>
-	)
+	);
 }

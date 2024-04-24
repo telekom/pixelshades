@@ -1,16 +1,16 @@
-import type { LucideIcon } from "@pixelshades/ui/icons"
+import type { LucideIcon } from "@pixelshades/ui/icons";
 
 export interface NavItem {
-	title: string
-	href?: string
-	disabled?: boolean
-	external?: boolean
-	icon?: LucideIcon
-	label?: string
+	title: string;
+	href?: string;
+	disabled?: boolean;
+	external?: boolean;
+	icon?: LucideIcon;
+	label?: string;
 }
 
 export interface NavItemWithChildren extends NavItem {
-	items: NavItemWithChildren[]
+	items: NavItemWithChildren[];
 }
 
 export interface MainNavItem extends NavItem {}

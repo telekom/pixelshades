@@ -1,4 +1,4 @@
-import { Typography } from "@pixelshades/ui/components"
+import { Typography } from "@pixelshades/ui/components";
 
 export default function Example() {
 	return (
@@ -15,5 +15,5 @@ export default function Example() {
 			<Typography size="6xl">Ag</Typography>
 			<Typography size="7xl">Ag</Typography>
 		</div>
-	)
+	);
 }

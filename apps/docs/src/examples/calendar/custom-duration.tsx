@@ -1,4 +1,4 @@
-import { Calendar } from "@pixelshades/ui/components"
+import { Calendar } from "@pixelshades/ui/components";
 
 export default function Example() {
 	return (
@@ -7,5 +7,5 @@ export default function Example() {
 				months: 3,
 			}}
 		/>
-	)
+	);
 }

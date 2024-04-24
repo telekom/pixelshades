@@ -1,4 +1,4 @@
-import { components } from "#site/content"
+import { components } from "#site/content";
 
 import {
 	DataList,
@@ -9,39 +9,39 @@ import {
 	TableOfContents,
 	Tabs,
 	Typography,
-} from "@pixelshades/ui/components"
-import { GithubIcon } from "@pixelshades/ui/icons"
-import { cn } from "@pixelshades/utils/styles"
+} from "@pixelshades/ui/components";
+import { GithubIcon } from "@pixelshades/ui/icons";
+import { cn } from "@pixelshades/utils/styles";
 
-import { createFileRoute } from "@tanstack/react-router"
-import { z } from "zod"
-import { AdopeLogo } from "~/components/logos/adope-logo"
-import { MDXContent } from "~/components/mdx-content"
-import { PropsTable } from "~/components/props-table"
+import { createFileRoute } from "@tanstack/react-router";
+import { z } from "zod";
+import { AdopeLogo } from "~/components/logos/adope-logo";
+import { MDXContent } from "~/components/mdx-content";
+import { PropsTable } from "~/components/props-table";
 
 const componentPageSearchParams = z.object({
 	tab: z.enum(["docs", "props"]).default("docs"),
-})
+});
 
 export const Route = createFileRoute("/docs/components/$slug/")({
 	validateSearch: (s) => componentPageSearchParams.parse(s),
 	component: ComponentPage,
 	loader: (ctx) => {
-		const component = getComponentBySlug(ctx.params.slug)
+		const component = getComponentBySlug(ctx.params.slug);
 
-		return { component }
+		return { component };
 	},
-})
+});
 
 function getComponentBySlug(slug: string) {
-	return components.find((component) => component.slug === slug)
+	return components.find((component) => component.slug === slug);
 }
 
 function ComponentPage() {
-	const { component } = Route.useLoaderData()
+	const { component } = Route.useLoaderData();
 
 	if (!component) {
-		return "Not Found"
+		return "Not Found";
 	}
 
 	return (
@@ -115,5 +115,5 @@ function ComponentPage() {
 				</Tabs>
 			</main>
 		</HeadingLevel>
-	)
+	);
 }

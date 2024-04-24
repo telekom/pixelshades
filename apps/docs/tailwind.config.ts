@@ -1,6 +1,6 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
-import { pixelShadesPlugin } from "@pixelshades/ui/tailwind"
+import { pixelShadesPlugin } from "@pixelshades/ui/tailwind";
 
 const config: Config = {
 	darkMode: ["class"],
@@ -30,6 +30,6 @@ const config: Config = {
 		},
 	},
 	plugins: [pixelShadesPlugin as any],
-}
+};
 
-export default config
+export default config;

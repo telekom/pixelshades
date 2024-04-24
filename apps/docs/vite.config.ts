@@ -1,12 +1,12 @@
-import react from "@vitejs/plugin-react-swc"
-import { defineConfig } from "vite"
-import VeliteVitePlugin from "./vite-plugins/velite-plugin"
+import react from "@vitejs/plugin-react-swc";
+import { defineConfig } from "vite";
+import VeliteVitePlugin from "./vite-plugins/velite-plugin";
 
-import { TanStackRouterVite } from "@tanstack/router-vite-plugin"
-import tsconfigPaths from "vite-tsconfig-paths"
-import dvUiVitePlugin from "./vite-plugins/dv-ui-plugin/dv-ui-plugin"
+import { TanStackRouterVite } from "@tanstack/router-vite-plugin";
+import tsconfigPaths from "vite-tsconfig-paths";
+import dvUiVitePlugin from "./vite-plugins/dv-ui-plugin/dv-ui-plugin";
 
-import path from "node:path"
+import path from "node:path";
 
 export default defineConfig({
 	resolve: {
@@ -20,4 +20,4 @@ export default defineConfig({
 		exclude: ["@pixelshades/ui"],
 	},
 	plugins: [tsconfigPaths(), react(), dvUiVitePlugin(), VeliteVitePlugin(), TanStackRouterVite()],
-})
+});

@@ -1,4 +1,4 @@
-import { Label, Radio } from "@pixelshades/ui/components"
+import { Label, Radio } from "@pixelshades/ui/components";
 
 export default function Example() {
 	return (
@@ -8,5 +8,5 @@ export default function Example() {
 			<Radio value="cat">Cat</Radio>
 			<Radio value="dragon">Dragon</Radio>
 		</Radio.Group>
-	)
+	);
 }

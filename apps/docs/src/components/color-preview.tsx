@@ -1,4 +1,4 @@
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/utils/styles";
 
 export const ColorPreview = ({ className, name }: { className: string; name: string }) => {
 	return (
@@ -6,5 +6,5 @@ export const ColorPreview = ({ className, name }: { className: string; name: str
 			<div className={cn("size-12 rounded-md border border-border", className)} />
 			<div className="font-medium text-foreground text-sm">{name}</div>
 		</div>
-	)
-}
+	);
+};

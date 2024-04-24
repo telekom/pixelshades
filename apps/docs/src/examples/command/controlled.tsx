@@ -1,21 +1,21 @@
-import { Button, Command } from "@pixelshades/ui/components"
-import { Apple, CommandIcon, GlassWater } from "@pixelshades/ui/icons"
-import { useState } from "react"
+import { Button, Command } from "@pixelshades/ui/components";
+import { Apple, CommandIcon, GlassWater } from "@pixelshades/ui/icons";
+import { useState } from "react";
 
 export default function Example() {
-	const [inputValue, setInputValue] = useState("")
-	const [open, setOpen] = useState(false)
+	const [inputValue, setInputValue] = useState("");
+	const [open, setOpen] = useState(false);
 
 	const fruits = [
 		{ name: "Apple", description: "Red apple" },
 		{ name: "Apple", description: "Green apple" },
 		{ name: "Banana" },
-	]
+	];
 
 	const drinks = [
 		{ name: "Water", description: "A bottle of water." },
 		{ name: "Apple juice", description: "A bottle of apple juice." },
-	]
+	];
 
 	return (
 		<div>
@@ -57,5 +57,5 @@ export default function Example() {
 				</Command.Group>
 			</Command>
 		</div>
-	)
+	);
 }

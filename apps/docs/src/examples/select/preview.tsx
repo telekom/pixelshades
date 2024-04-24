@@ -1,4 +1,4 @@
-import { Select } from "@pixelshades/ui/components"
+import { Select } from "@pixelshades/ui/components";
 
 export default function Example() {
 	return (
@@ -8,5 +8,5 @@ export default function Example() {
 			<Select.Item>Vue</Select.Item>
 			<Select.Item>Svelte</Select.Item>
 		</Select>
-	)
+	);
 }

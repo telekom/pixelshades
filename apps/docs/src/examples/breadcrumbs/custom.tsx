@@ -1,5 +1,5 @@
-import { Breadcrumbs } from "@pixelshades/ui/components"
-import { MoveRightIcon } from "@pixelshades/ui/icons"
+import { Breadcrumbs } from "@pixelshades/ui/components";
+import { MoveRightIcon } from "@pixelshades/ui/icons";
 
 export default function Example() {
 	return (
@@ -8,5 +8,5 @@ export default function Example() {
 			<Breadcrumbs.Item>Product</Breadcrumbs.Item>
 			<Breadcrumbs.Item last>Product A</Breadcrumbs.Item>
 		</Breadcrumbs>
-	)
+	);
 }

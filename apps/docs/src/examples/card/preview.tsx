@@ -1,4 +1,4 @@
-import { Button, Card, Input, Label, Select } from "@pixelshades/ui/components"
+import { Button, Card, Input, Label, Select } from "@pixelshades/ui/components";
 
 export default function Example() {
 	return (
@@ -30,5 +30,5 @@ export default function Example() {
 				<Button>Deploy</Button>
 			</Card.Footer>
 		</Card>
-	)
+	);
 }

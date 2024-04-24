@@ -1,4 +1,4 @@
-import { DateField } from "@pixelshades/ui/components"
+import { DateField } from "@pixelshades/ui/components";
 
 export default function Example() {
 	return (
@@ -8,5 +8,5 @@ export default function Example() {
 			<DateField label="Minute" granularity="minute" />
 			<DateField label="Second" granularity="second" />
 		</div>
-	)
+	);
 }

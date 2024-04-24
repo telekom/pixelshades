@@ -1,5 +1,3 @@
-import { siteConfig } from "~/config/site"
-
 export function SiteFooter() {
 	return (
 		<footer className="py-6 md:px-8 md:py-0">
@@ -7,5 +5,5 @@ export function SiteFooter() {
 				Build by @Makisuo
 			</div>
 		</footer>
-	)
+	);
 }

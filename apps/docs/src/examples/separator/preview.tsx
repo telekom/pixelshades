@@ -1,4 +1,4 @@
-import { Separator } from "@pixelshades/ui/components"
+import { Separator } from "@pixelshades/ui/components";
 
 export default function Example() {
 	return (
@@ -14,5 +14,5 @@ export default function Example() {
 				Content right
 			</div>
 		</div>
-	)
+	);
 }

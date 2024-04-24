@@ -1,27 +1,26 @@
-import { Switch } from "@pixelshades/ui/components"
-import { SunIcon } from "@pixelshades/ui/icons"
-import { useEffect, useState } from "react"
+import { Switch } from "@pixelshades/ui/components";
+import { useEffect, useState } from "react";
 
 function classNames(...classes: string[]) {
-	return classes.filter(Boolean).join(" ")
+	return classes.filter(Boolean).join(" ");
 }
 
 function ThemeSwitch() {
-	const [theme, setTheme] = useState("light")
+	const [theme, setTheme] = useState("light");
 
 	useEffect(() => {
-		document.documentElement.classList.remove("light", "dark")
-		document.documentElement.classList.add(theme)
-	}, [theme])
+		document.documentElement.classList.remove("light", "dark");
+		document.documentElement.classList.add(theme);
+	}, [theme]);
 
-	const [enabled, setEnabled] = useState(theme === "light")
+	const [enabled, setEnabled] = useState(theme === "light");
 
 	const handleThemeChange = (enabled: boolean) => {
-		setTheme(enabled ? "light" : "dark")
-		setEnabled(enabled)
-	}
+		setTheme(enabled ? "light" : "dark");
+		setEnabled(enabled);
+	};
 
-	return <Switch selected={enabled} onChange={handleThemeChange} />
+	return <Switch selected={enabled} onChange={handleThemeChange} />;
 }
 
-export default ThemeSwitch
+export default ThemeSwitch;

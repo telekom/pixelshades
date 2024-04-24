@@ -1,10 +1,10 @@
-import { Outlet, createRootRoute } from "@tanstack/react-router"
-import { TanStackRouterDevtools } from "@tanstack/router-devtools"
-import { SiteFooter } from "~/components/site-footer"
-import { SiteHeader } from "~/components/site-header"
-import { ThemeProvider } from "~/provider/theme-provider"
+import { Outlet, createRootRoute } from "@tanstack/react-router";
+import { TanStackRouterDevtools } from "@tanstack/router-devtools";
+import { SiteFooter } from "~/components/site-footer";
+import { SiteHeader } from "~/components/site-header";
+import { ThemeProvider } from "~/provider/theme-provider";
 
-import { ScrollRestoration } from "@tanstack/react-router"
+import { ScrollRestoration } from "@tanstack/react-router";
 
 export const Route = createRootRoute({
 	component: () => (
@@ -25,4 +25,4 @@ export const Route = createRootRoute({
 			<TanStackRouterDevtools />
 		</>
 	),
-})
+});

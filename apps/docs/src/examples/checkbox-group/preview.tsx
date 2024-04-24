@@ -1,4 +1,4 @@
-import { Checkbox, CheckboxGroup } from "@pixelshades/ui/components"
+import { Checkbox, CheckboxGroup } from "@pixelshades/ui/components";
 
 export default function Example() {
 	return (
@@ -7,5 +7,5 @@ export default function Example() {
 			<Checkbox value="email">Email</Checkbox>
 			<Checkbox value="text">Text</Checkbox>
 		</CheckboxGroup>
-	)
+	);
 }

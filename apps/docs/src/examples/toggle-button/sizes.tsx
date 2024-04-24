@@ -1,5 +1,4 @@
-import { ToggleButton } from "@pixelshades/ui/components"
-import React from "react"
+import { ToggleButton } from "@pixelshades/ui/components";
 
 export default function Example() {
 	return (
@@ -9,5 +8,5 @@ export default function Example() {
 			<ToggleButton size="md">Toggle</ToggleButton>
 			<ToggleButton size="lg">Toggle</ToggleButton>
 		</div>
-	)
+	);
 }
