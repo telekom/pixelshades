@@ -63,3 +63,5 @@ export const Card = Object.assign(CardRoot, {
 	Description: CardDescription,
 	Footer: CardFooter,
 })
+
+export { CardTitle, CardContent, CardDescription, CardFooter, CardHeader }

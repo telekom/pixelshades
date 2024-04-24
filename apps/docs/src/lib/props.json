@@ -1,401 +1,384 @@
 {
-  "src/components/ui/calendar/calendar.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Calendar",
-      "props": {
-        "error": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "Omit"
-      ]
-    }
-  ],
-  "src/components/ui/button/button.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Button"
-    }
-  ],
-  "src/components/ui/badge/badge.tsx": [
-    {
-      "description": "Displays a Badge",
-      "methods": [],
-      "displayName": "Badge",
-      "props": {
-        "before": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactElement",
-            "raw": "React.ReactElement<HTMLElement>",
-            "elements": [
-              {
-                "name": "HTMLElement"
-              }
-            ]
-          },
-          "description": "Element shown before the child"
-        },
-        "after": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactElement",
-            "raw": "React.ReactElement<HTMLElement>",
-            "elements": [
-              {
-                "name": "HTMLElement"
-              }
-            ]
-          },
-          "description": "Element shown after the child"
-        }
-      },
-      "composes": [
-        "HTMLAttributes",
-        "BadgeVariantsProps"
-      ]
-    }
-  ],
-  "src/components/ui/breadcrumbs/breadcrumbs.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Breadcrumbs",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "separator": {
-          "required": false,
-          "tsType": {
-            "name": "ReactElement",
-            "elements": [
-              {
-                "name": "HTMLElement"
-              }
-            ],
-            "raw": "ReactElement<HTMLElement>"
-          },
-          "description": ""
-        },
-        "children": {
-          "required": true,
-          "tsType": {
-            "name": "union",
-            "raw": "React.ReactNode | ((item: T) => React.ReactNode)",
-            "elements": [
-              {
-                "name": "ReactReactNode",
-                "raw": "React.ReactNode"
-              },
-              {
-                "name": "unknown"
-              }
-            ]
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "Omit"
-      ]
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Breadcrumb",
-      "props": {
-        "last": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": ""
-        },
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "linkProps": {
-          "required": false,
-          "tsType": {
-            "name": "LinkProps"
-          },
-          "description": ""
-        },
-        "separator": {
-          "required": false,
-          "tsType": {
-            "name": "ReactElement",
-            "elements": [
-              {
-                "name": "HTMLElement"
-              }
-            ],
-            "raw": "ReactElement<HTMLElement>"
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "AriaBreadcrumbProps"
-      ]
-    }
-  ],
-  "src/components/ui/checkbox-group/checkbox-group.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "CheckboxGroup",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "children": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "label": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "description": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "error": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "Omit"
-      ]
-    }
-  ],
-  "src/components/ui/checkbox/checkbox.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Checkbox"
-    }
-  ],
-  "src/components/ui/card/card.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Card"
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "CardHeader"
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "CardFooter"
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "CardTitle"
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "CardDescription"
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "CardContent"
-    }
-  ],
-  "src/components/ui/combo-box/combo-box.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "ComboBox",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "label": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "description": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "string | null",
-            "elements": [
-              {
-                "name": "string"
-              },
-              {
-                "name": "null"
-              }
-            ]
-          },
-          "description": ""
-        },
-        "errorMessage": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "string | null",
-            "elements": [
-              {
-                "name": "string"
-              },
-              {
-                "name": "null"
-              }
-            ]
-          },
-          "description": ""
-        },
-        "children": {
-          "required": true,
-          "tsType": {
-            "name": "union",
-            "raw": "React.ReactNode | ((item: T) => React.ReactNode)",
-            "elements": [
-              {
-                "name": "ReactReactNode",
-                "raw": "React.ReactNode"
-              },
-              {
-                "name": "unknown"
-              }
-            ]
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "Omit"
-      ]
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "ComboBoxItem"
-    }
-  ],
-  "src/components/ui/date-field/date-field.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "DateField",
-      "props": {
-        "label": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "description": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "errorMessage": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "AriaDateFieldProps"
-      ]
-    }
-  ],
-  "src/components/ui/date-picker/date-picker.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "DatePicker",
-      "props": {
-        "label": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "description": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "error": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "AriaDatePickerProps"
-      ]
-    }
-  ],
+	"src/components/ui/calendar/calendar.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "Calendar",
+			"props": {
+				"error": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				},
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			},
+			"composes": ["Omit"]
+		}
+	],
+	"src/components/ui/button/button.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "Button"
+		}
+	],
+	"src/components/ui/badge/badge.tsx": [
+		{
+			"description": "Displays a Badge",
+			"methods": [],
+			"displayName": "Badge",
+			"props": {
+				"before": {
+					"required": false,
+					"tsType": {
+						"name": "ReactReactElement",
+						"raw": "React.ReactElement<HTMLElement>",
+						"elements": [
+							{
+								"name": "HTMLElement"
+							}
+						]
+					},
+					"description": "Element shown before the child"
+				},
+				"after": {
+					"required": false,
+					"tsType": {
+						"name": "ReactReactElement",
+						"raw": "React.ReactElement<HTMLElement>",
+						"elements": [
+							{
+								"name": "HTMLElement"
+							}
+						]
+					},
+					"description": "Element shown after the child"
+				}
+			},
+			"composes": ["HTMLAttributes", "BadgeVariantsProps"]
+		}
+	],
+	"src/components/ui/breadcrumbs/breadcrumbs.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "Breadcrumbs",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				},
+				"separator": {
+					"required": false,
+					"tsType": {
+						"name": "ReactElement",
+						"elements": [
+							{
+								"name": "HTMLElement"
+							}
+						],
+						"raw": "ReactElement<HTMLElement>"
+					},
+					"description": ""
+				},
+				"children": {
+					"required": true,
+					"tsType": {
+						"name": "union",
+						"raw": "React.ReactNode | ((item: T) => React.ReactNode)",
+						"elements": [
+							{
+								"name": "ReactReactNode",
+								"raw": "React.ReactNode"
+							},
+							{
+								"name": "unknown"
+							}
+						]
+					},
+					"description": ""
+				}
+			},
+			"composes": ["Omit"]
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "Breadcrumb",
+			"props": {
+				"last": {
+					"required": false,
+					"tsType": {
+						"name": "boolean"
+					},
+					"description": ""
+				},
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				},
+				"linkProps": {
+					"required": false,
+					"tsType": {
+						"name": "LinkProps"
+					},
+					"description": ""
+				},
+				"separator": {
+					"required": false,
+					"tsType": {
+						"name": "ReactElement",
+						"elements": [
+							{
+								"name": "HTMLElement"
+							}
+						],
+						"raw": "ReactElement<HTMLElement>"
+					},
+					"description": ""
+				}
+			},
+			"composes": ["AriaBreadcrumbProps"]
+		}
+	],
+	"src/components/ui/checkbox-group/checkbox-group.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "CheckboxGroup",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				},
+				"children": {
+					"required": false,
+					"tsType": {
+						"name": "ReactNode"
+					},
+					"description": ""
+				},
+				"label": {
+					"required": false,
+					"tsType": {
+						"name": "ReactNode"
+					},
+					"description": ""
+				},
+				"description": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				},
+				"error": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			},
+			"composes": ["Omit"]
+		}
+	],
+	"src/components/ui/checkbox/checkbox.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "Checkbox"
+		}
+	],
+	"src/components/ui/card/card.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "Card"
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "CardHeader"
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "CardFooter"
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "CardTitle"
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "CardDescription"
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "CardContent"
+		}
+	],
+	"src/components/ui/combo-box/combo-box.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "ComboBox",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				},
+				"label": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				},
+				"description": {
+					"required": false,
+					"tsType": {
+						"name": "union",
+						"raw": "string | null",
+						"elements": [
+							{
+								"name": "string"
+							},
+							{
+								"name": "null"
+							}
+						]
+					},
+					"description": ""
+				},
+				"errorMessage": {
+					"required": false,
+					"tsType": {
+						"name": "union",
+						"raw": "string | null",
+						"elements": [
+							{
+								"name": "string"
+							},
+							{
+								"name": "null"
+							}
+						]
+					},
+					"description": ""
+				},
+				"children": {
+					"required": true,
+					"tsType": {
+						"name": "union",
+						"raw": "React.ReactNode | ((item: T) => React.ReactNode)",
+						"elements": [
+							{
+								"name": "ReactReactNode",
+								"raw": "React.ReactNode"
+							},
+							{
+								"name": "unknown"
+							}
+						]
+					},
+					"description": ""
+				}
+			},
+			"composes": ["Omit"]
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "ComboBoxItem"
+		}
+	],
+	"src/components/ui/date-field/date-field.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "DateField",
+			"props": {
+				"label": {
+					"required": false,
+					"tsType": {
+						"name": "ReactNode"
+					},
+					"description": ""
+				},
+				"description": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				},
+				"errorMessage": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			},
+			"composes": ["AriaDateFieldProps"]
+		}
+	],
+	"src/components/ui/date-picker/date-picker.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "DatePicker",
+			"props": {
+				"label": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				},
+				"description": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				},
+				"error": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			},
+			"composes": ["AriaDatePickerProps"]
+		}
+	],
   "src/components/ui/date-range-calendar/date-range-calendar.tsx": [
     {
       "description": "",
@@ -422,1453 +405,1424 @@
       ]
     }
   ],
-  "src/components/ui/command/command.tsx": [
-    {
-      "description": "Displays a command with a title and a list of actions.",
-      "methods": [],
-      "displayName": "UnstyledCommand",
-      "props": {
-        "children": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactNode",
-            "raw": "React.ReactNode"
-          },
-          "description": "The children of the command."
-        },
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Class name to apply to the command."
-        },
-        "onOpenChange": {
-          "required": false,
-          "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "(isOpen: boolean) => void",
-            "signature": {
-              "arguments": [
-                {
-                  "type": {
-                    "name": "boolean"
-                  },
-                  "name": "isOpen"
-                }
-              ],
-              "return": {
-                "name": "void"
-              }
-            }
-          },
-          "description": "Callback when the command is opened or closed."
-        },
-        "shortcut": {
-          "required": false,
-          "tsType": {
-            "name": "Array",
-            "elements": [
-              {
-                "name": "union",
-                "raw": "keyof typeof Keys",
-                "elements": [
-                  {
-                    "name": "literal",
-                    "value": "Backspace"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Tab"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Enter"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Shift"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Control"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Alt"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Pause"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "CapsLock"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Escape"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Space"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "PageUp"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "PageDown"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "End"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Home"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "LeftArrow"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "UpArrow"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "RightArrow"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "DownArrow"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Insert"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Delete"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Meta"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Key0"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Key1"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Key2"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Key3"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Key4"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Key5"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Key6"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Key7"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Key8"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Key9"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyA"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyB"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyC"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyD"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyE"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyF"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyG"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyH"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyI"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyJ"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyK"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyL"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyM"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyN"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyO"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyP"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyQ"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyR"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyS"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyT"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyU"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyV"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyW"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyX"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyY"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "KeyZ"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "LeftMeta"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "RightMeta"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Select"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Numpad0"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Numpad1"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Numpad2"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Numpad3"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Numpad4"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Numpad5"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Numpad6"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Numpad7"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Numpad8"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Numpad9"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Multiply"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Add"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Subtract"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Decimal"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Divide"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "F1"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "F2"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "F3"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "F4"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "F5"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "F6"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "F7"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "F8"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "F9"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "F10"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "F11"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "F12"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "NumLock"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "ScrollLock"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Semicolon"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Equals"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Comma"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Dash"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Period"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "ForwardSlash"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "GraveAccent"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "OpenBracket"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "BackSlash"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "CloseBracket"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "Quote"
-                  }
-                ]
-              }
-            ],
-            "raw": "Array<Keys>"
-          },
-          "description": "Shortcut keys to open the command.",
-          "defaultValue": {
-            "value": "[\"Meta\", \"KeyK\"]",
-            "computed": false
-          }
-        },
-        "searchField": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": "The search field to display in the command."
-        },
-        "open": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": "Whether the command is open."
-        },
-        "onSearchChange": {
-          "required": false,
-          "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "(value: string) => void",
-            "signature": {
-              "arguments": [
-                {
-                  "type": {
-                    "name": "string"
-                  },
-                  "name": "value"
-                }
-              ],
-              "return": {
-                "name": "void"
-              }
-            }
-          },
-          "description": "Callback when the search value changes."
-        },
-        "searchValue": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "The values to search for."
-        },
-        "disableIntegratedSearch": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": "Whether to disable the integrated search.",
-          "defaultValue": {
-            "value": "false",
-            "computed": false
-          }
-        }
-      }
-    },
-    {
-      "description": "Displays a group of command items.",
-      "methods": [],
-      "displayName": "UnstyledCommandGroup",
-      "props": {
-        "heading": {
-          "required": true,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "The heading of the group."
-        },
-        "children": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": "The items of the group."
-        }
-      },
-      "composes": [
-        "SectionProps"
-      ]
-    },
-    {
-      "description": "Displays a command item.",
-      "methods": [],
-      "displayName": "UnstyledCommandItem",
-      "props": {
-        "children": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "ReactNode | ReactNode[]",
-            "elements": [
-              {
-                "name": "ReactNode"
-              },
-              {
-                "name": "Array",
-                "elements": [
-                  {
-                    "name": "ReactNode"
-                  }
-                ],
-                "raw": "ReactNode[]"
-              }
-            ]
-          },
-          "description": "The children of the command item."
-        },
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Class name to apply to the command item."
-        },
-        "searchValues": {
-          "required": false,
-          "tsType": {
-            "name": "Array",
-            "elements": [
-              {
-                "name": "string"
-              }
-            ],
-            "raw": "string[]"
-          },
-          "description": "The values to search for."
-        },
-        "before": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactElement",
-            "raw": "React.ReactElement<HTMLElement>",
-            "elements": [
-              {
-                "name": "HTMLElement"
-              }
-            ]
-          },
-          "description": "Element shown before the child"
-        },
-        "after": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactElement",
-            "raw": "React.ReactElement<HTMLElement>",
-            "elements": [
-              {
-                "name": "HTMLElement"
-              }
-            ]
-          },
-          "description": "Element shown after the child"
-        }
-      }
-    },
-    {
-      "description": "Displays a description of a command item.",
-      "methods": [],
-      "displayName": "UnstyledCommandItemDescription",
-      "props": {
-        "as": {
-          "required": false,
-          "tsType": {
-            "name": "T"
-          },
-          "description": ""
-        },
-        "children": {
-          "required": true,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "The children of the description."
-        },
-        "highlight": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "string | string[]",
-            "elements": [
-              {
-                "name": "string"
-              },
-              {
-                "name": "Array",
-                "elements": [
-                  {
-                    "name": "string"
-                  }
-                ],
-                "raw": "string[]"
-              }
-            ]
-          },
-          "description": "The characters to highlight in the description when integrated search is enabled."
-        }
-      }
-    },
-    {
-      "description": "Displays a title of a command item.",
-      "methods": [],
-      "displayName": "UnstyledCommandItemTitle",
-      "props": {
-        "as": {
-          "required": false,
-          "tsType": {
-            "name": "T"
-          },
-          "description": ""
-        },
-        "children": {
-          "required": true,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "The children of the title."
-        },
-        "highlight": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "string | string[]",
-            "elements": [
-              {
-                "name": "string"
-              },
-              {
-                "name": "Array",
-                "elements": [
-                  {
-                    "name": "string"
-                  }
-                ],
-                "raw": "string[]"
-              }
-            ]
-          },
-          "description": "The characters to highlight in the title when integrated search is enabled."
-        }
-      }
-    },
-    {
-      "description": "Displays a search field for the command.",
-      "methods": [],
-      "displayName": "CommandSearch",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Class name to apply to the search field."
-        },
-        "placeholder": {
-          "defaultValue": {
-            "value": "\"Search...\"",
-            "computed": false
-          },
-          "required": false
-        }
-      },
-      "composes": [
-        "Omit"
-      ]
-    }
-  ],
-  "src/components/ui/dialog/dialog.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Dialog",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      }
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "DialogContent",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      }
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "DialogHeader"
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "DialogFooter"
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "DialogTitle"
-    }
-  ],
-  "src/components/ui/highlight/highlight.tsx": [
-    {
-      "description": "Displays a Text with highlighted characters",
-      "methods": [],
-      "displayName": "Highlight",
-      "props": {
-        "children": {
-          "required": true,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Element that will be rendered highlighted"
-        },
-        "highlight": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "string | string[]",
-            "elements": [
-              {
-                "name": "string"
-              },
-              {
-                "name": "Array",
-                "elements": [
-                  {
-                    "name": "string"
-                  }
-                ],
-                "raw": "string[]"
-              }
-            ]
-          },
-          "description": "Elements characters that will be highlighted",
-          "defaultValue": {
-            "value": "\"\"",
-            "computed": false
-          }
-        },
-        "minLengthToHighlight": {
-          "required": false,
-          "tsType": {
-            "name": "number"
-          },
-          "description": "Minimum length to highlight",
-          "defaultValue": {
-            "value": "0",
-            "computed": false
-          }
-        }
-      }
-    }
-  ],
-  "src/components/ui/heading/heading-levels.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "HeadingLevel",
-      "props": {
-        "level": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "1 | 2 | 3 | 4 | 5 | 6",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "1"
-              },
-              {
-                "name": "literal",
-                "value": "2"
-              },
-              {
-                "name": "literal",
-                "value": "3"
-              },
-              {
-                "name": "literal",
-                "value": "4"
-              },
-              {
-                "name": "literal",
-                "value": "5"
-              },
-              {
-                "name": "literal",
-                "value": "6"
-              }
-            ]
-          },
-          "description": "The heading level. By default, it'll increase the level by 1 based on the\ncontext."
-        },
-        "children": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
-  "src/components/ui/input/input.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Input"
-    }
-  ],
-  "src/components/ui/heading/heading.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Heading"
-    }
-  ],
-  "src/components/ui/label/label.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Label"
-    }
-  ],
-  "src/components/ui/link/link.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Link",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "AriaLinkProps",
-        "VariantProps"
-      ]
-    }
-  ],
-  "src/components/ui/loading-spinner/loading-spinner.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "LoadingSpinner",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "icon": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactElement",
-            "raw": "React.ReactElement<HTMLElement>",
-            "elements": [
-              {
-                "name": "HTMLElement"
-              }
-            ]
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "VariantProps"
-      ]
-    }
-  ],
-  "src/components/ui/menu/menu.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "MenuContent",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      }
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "MenuItem",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      }
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "MenuHeader",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      }
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "MenuSeperator",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
-  "src/components/ui/popover/popover.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Popover",
-      "props": {
-        "offset": {
-          "defaultValue": {
-            "value": "4",
-            "computed": false
-          },
-          "required": false
-        }
-      }
-    }
-  ],
-  "src/components/ui/progress-bar/progress-bar.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "ProgressBar",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "label": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "description": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactElement",
-            "raw": "React.ReactElement<HTMLElement>",
-            "elements": [
-              {
-                "name": "HTMLElement"
-              }
-            ]
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "AriaProgressBarProps",
-        "VariantProps"
-      ]
-    }
-  ],
-  "src/components/ui/radio-group/radio-group.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Radio",
-      "props": {
-        "showRadio": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": "",
-          "defaultValue": {
-            "value": "true",
-            "computed": false
-          }
-        }
-      },
-      "composes": [
-        "AriaRadioProps"
-      ]
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "RadioGroup",
-      "props": {
-        "orientation": {
-          "defaultValue": {
-            "value": "\"vertical\"",
-            "computed": false
-          },
-          "required": false
-        }
-      }
-    }
-  ],
-  "src/components/ui/select/select.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Select",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "label": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "description": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "string | null",
-            "elements": [
-              {
-                "name": "string"
-              },
-              {
-                "name": "null"
-              }
-            ]
-          },
-          "description": ""
-        },
-        "errorMessage": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "string | null",
-            "elements": [
-              {
-                "name": "string"
-              },
-              {
-                "name": "null"
-              }
-            ]
-          },
-          "description": ""
-        },
-        "children": {
-          "required": true,
-          "tsType": {
-            "name": "union",
-            "raw": "React.ReactNode | ((item: T) => React.ReactNode)",
-            "elements": [
-              {
-                "name": "ReactReactNode",
-                "raw": "React.ReactNode"
-              },
-              {
-                "name": "unknown"
-              }
-            ]
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "Omit"
-      ]
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "SelectItem"
-    }
-  ],
-  "src/components/ui/switch/switch.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Switch",
-      "props": {
-        "children": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "SwitchVariantProps",
-        "AriaSwitchProps"
-      ]
-    }
-  ],
-  "src/components/ui/table/table.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Table",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      }
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "TableCell",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      }
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "TableColumn",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      }
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "TableHeader",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      }
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "TableRow",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
-  "src/components/ui/toggle-button/toggle-button.tsx": [
-    {
-      "description": "Displays a button that can be toggled on and off.",
-      "methods": [],
-      "displayName": "UnstyledToggleButton",
-      "props": {
-        "before": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactElement",
-            "raw": "React.ReactElement<HTMLElement>",
-            "elements": [
-              {
-                "name": "HTMLElement"
-              }
-            ]
-          },
-          "description": "The content to display before the toggle button."
-        },
-        "after": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactElement",
-            "raw": "React.ReactElement<HTMLElement>",
-            "elements": [
-              {
-                "name": "HTMLElement"
-              }
-            ]
-          },
-          "description": "The content to display after the toggle button."
-        }
-      },
-      "composes": [
-        "ToggleVariantProps",
-        "AriaToggleButtonProps"
-      ]
-    }
-  ],
-  "src/components/ui/text-field/text-field.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "TextField",
-      "props": {
-        "label": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "description": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "errorMessage": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "AriaTextFieldProps"
-      ]
-    }
-  ],
-  "src/components/ui/time-field/time-field.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "TimeField",
-      "props": {
-        "label": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "description": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "errorMessage": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "AriaTimeFieldProps"
-      ]
-    }
-  ],
-  "src/components/ui/typography/typography.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Typography",
-      "props": {
-        "as": {
-          "required": false,
-          "tsType": {
-            "name": "T"
-          },
-          "description": ""
-        },
-        "children": {
-          "required": true,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
-  "src/components/ui/tooltip/tooltip.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Tooltip",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "AriaTooltipProps"
-      ]
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "TooltipContent",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "AriaTooltipProps"
-      ]
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "TooltipRoot"
-    }
-  ]
+	"src/components/ui/command/command.tsx": [
+		{
+			"description": "Displays a command with a title and a list of actions.",
+			"methods": [],
+			"displayName": "UnstyledCommand",
+			"props": {
+				"children": {
+					"required": false,
+					"tsType": {
+						"name": "ReactReactNode",
+						"raw": "React.ReactNode"
+					},
+					"description": "The children of the command."
+				},
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": "Class name to apply to the command."
+				},
+				"onOpenChange": {
+					"required": false,
+					"tsType": {
+						"name": "signature",
+						"type": "function",
+						"raw": "(isOpen: boolean) => void",
+						"signature": {
+							"arguments": [
+								{
+									"type": {
+										"name": "boolean"
+									},
+									"name": "isOpen"
+								}
+							],
+							"return": {
+								"name": "void"
+							}
+						}
+					},
+					"description": "Callback when the command is opened or closed."
+				},
+				"shortcut": {
+					"required": false,
+					"tsType": {
+						"name": "Array",
+						"elements": [
+							{
+								"name": "union",
+								"raw": "keyof typeof Keys",
+								"elements": [
+									{
+										"name": "literal",
+										"value": "Backspace"
+									},
+									{
+										"name": "literal",
+										"value": "Tab"
+									},
+									{
+										"name": "literal",
+										"value": "Enter"
+									},
+									{
+										"name": "literal",
+										"value": "Shift"
+									},
+									{
+										"name": "literal",
+										"value": "Control"
+									},
+									{
+										"name": "literal",
+										"value": "Alt"
+									},
+									{
+										"name": "literal",
+										"value": "Pause"
+									},
+									{
+										"name": "literal",
+										"value": "CapsLock"
+									},
+									{
+										"name": "literal",
+										"value": "Escape"
+									},
+									{
+										"name": "literal",
+										"value": "Space"
+									},
+									{
+										"name": "literal",
+										"value": "PageUp"
+									},
+									{
+										"name": "literal",
+										"value": "PageDown"
+									},
+									{
+										"name": "literal",
+										"value": "End"
+									},
+									{
+										"name": "literal",
+										"value": "Home"
+									},
+									{
+										"name": "literal",
+										"value": "LeftArrow"
+									},
+									{
+										"name": "literal",
+										"value": "UpArrow"
+									},
+									{
+										"name": "literal",
+										"value": "RightArrow"
+									},
+									{
+										"name": "literal",
+										"value": "DownArrow"
+									},
+									{
+										"name": "literal",
+										"value": "Insert"
+									},
+									{
+										"name": "literal",
+										"value": "Delete"
+									},
+									{
+										"name": "literal",
+										"value": "Meta"
+									},
+									{
+										"name": "literal",
+										"value": "Key0"
+									},
+									{
+										"name": "literal",
+										"value": "Key1"
+									},
+									{
+										"name": "literal",
+										"value": "Key2"
+									},
+									{
+										"name": "literal",
+										"value": "Key3"
+									},
+									{
+										"name": "literal",
+										"value": "Key4"
+									},
+									{
+										"name": "literal",
+										"value": "Key5"
+									},
+									{
+										"name": "literal",
+										"value": "Key6"
+									},
+									{
+										"name": "literal",
+										"value": "Key7"
+									},
+									{
+										"name": "literal",
+										"value": "Key8"
+									},
+									{
+										"name": "literal",
+										"value": "Key9"
+									},
+									{
+										"name": "literal",
+										"value": "KeyA"
+									},
+									{
+										"name": "literal",
+										"value": "KeyB"
+									},
+									{
+										"name": "literal",
+										"value": "KeyC"
+									},
+									{
+										"name": "literal",
+										"value": "KeyD"
+									},
+									{
+										"name": "literal",
+										"value": "KeyE"
+									},
+									{
+										"name": "literal",
+										"value": "KeyF"
+									},
+									{
+										"name": "literal",
+										"value": "KeyG"
+									},
+									{
+										"name": "literal",
+										"value": "KeyH"
+									},
+									{
+										"name": "literal",
+										"value": "KeyI"
+									},
+									{
+										"name": "literal",
+										"value": "KeyJ"
+									},
+									{
+										"name": "literal",
+										"value": "KeyK"
+									},
+									{
+										"name": "literal",
+										"value": "KeyL"
+									},
+									{
+										"name": "literal",
+										"value": "KeyM"
+									},
+									{
+										"name": "literal",
+										"value": "KeyN"
+									},
+									{
+										"name": "literal",
+										"value": "KeyO"
+									},
+									{
+										"name": "literal",
+										"value": "KeyP"
+									},
+									{
+										"name": "literal",
+										"value": "KeyQ"
+									},
+									{
+										"name": "literal",
+										"value": "KeyR"
+									},
+									{
+										"name": "literal",
+										"value": "KeyS"
+									},
+									{
+										"name": "literal",
+										"value": "KeyT"
+									},
+									{
+										"name": "literal",
+										"value": "KeyU"
+									},
+									{
+										"name": "literal",
+										"value": "KeyV"
+									},
+									{
+										"name": "literal",
+										"value": "KeyW"
+									},
+									{
+										"name": "literal",
+										"value": "KeyX"
+									},
+									{
+										"name": "literal",
+										"value": "KeyY"
+									},
+									{
+										"name": "literal",
+										"value": "KeyZ"
+									},
+									{
+										"name": "literal",
+										"value": "LeftMeta"
+									},
+									{
+										"name": "literal",
+										"value": "RightMeta"
+									},
+									{
+										"name": "literal",
+										"value": "Select"
+									},
+									{
+										"name": "literal",
+										"value": "Numpad0"
+									},
+									{
+										"name": "literal",
+										"value": "Numpad1"
+									},
+									{
+										"name": "literal",
+										"value": "Numpad2"
+									},
+									{
+										"name": "literal",
+										"value": "Numpad3"
+									},
+									{
+										"name": "literal",
+										"value": "Numpad4"
+									},
+									{
+										"name": "literal",
+										"value": "Numpad5"
+									},
+									{
+										"name": "literal",
+										"value": "Numpad6"
+									},
+									{
+										"name": "literal",
+										"value": "Numpad7"
+									},
+									{
+										"name": "literal",
+										"value": "Numpad8"
+									},
+									{
+										"name": "literal",
+										"value": "Numpad9"
+									},
+									{
+										"name": "literal",
+										"value": "Multiply"
+									},
+									{
+										"name": "literal",
+										"value": "Add"
+									},
+									{
+										"name": "literal",
+										"value": "Subtract"
+									},
+									{
+										"name": "literal",
+										"value": "Decimal"
+									},
+									{
+										"name": "literal",
+										"value": "Divide"
+									},
+									{
+										"name": "literal",
+										"value": "F1"
+									},
+									{
+										"name": "literal",
+										"value": "F2"
+									},
+									{
+										"name": "literal",
+										"value": "F3"
+									},
+									{
+										"name": "literal",
+										"value": "F4"
+									},
+									{
+										"name": "literal",
+										"value": "F5"
+									},
+									{
+										"name": "literal",
+										"value": "F6"
+									},
+									{
+										"name": "literal",
+										"value": "F7"
+									},
+									{
+										"name": "literal",
+										"value": "F8"
+									},
+									{
+										"name": "literal",
+										"value": "F9"
+									},
+									{
+										"name": "literal",
+										"value": "F10"
+									},
+									{
+										"name": "literal",
+										"value": "F11"
+									},
+									{
+										"name": "literal",
+										"value": "F12"
+									},
+									{
+										"name": "literal",
+										"value": "NumLock"
+									},
+									{
+										"name": "literal",
+										"value": "ScrollLock"
+									},
+									{
+										"name": "literal",
+										"value": "Semicolon"
+									},
+									{
+										"name": "literal",
+										"value": "Equals"
+									},
+									{
+										"name": "literal",
+										"value": "Comma"
+									},
+									{
+										"name": "literal",
+										"value": "Dash"
+									},
+									{
+										"name": "literal",
+										"value": "Period"
+									},
+									{
+										"name": "literal",
+										"value": "ForwardSlash"
+									},
+									{
+										"name": "literal",
+										"value": "GraveAccent"
+									},
+									{
+										"name": "literal",
+										"value": "OpenBracket"
+									},
+									{
+										"name": "literal",
+										"value": "BackSlash"
+									},
+									{
+										"name": "literal",
+										"value": "CloseBracket"
+									},
+									{
+										"name": "literal",
+										"value": "Quote"
+									}
+								]
+							}
+						],
+						"raw": "Array<Keys>"
+					},
+					"description": "Shortcut keys to open the command.",
+					"defaultValue": {
+						"value": "[\"Meta\", \"KeyK\"]",
+						"computed": false
+					}
+				},
+				"searchField": {
+					"required": false,
+					"tsType": {
+						"name": "ReactNode"
+					},
+					"description": "The search field to display in the command."
+				},
+				"open": {
+					"required": false,
+					"tsType": {
+						"name": "boolean"
+					},
+					"description": "Whether the command is open."
+				},
+				"onSearchChange": {
+					"required": false,
+					"tsType": {
+						"name": "signature",
+						"type": "function",
+						"raw": "(value: string) => void",
+						"signature": {
+							"arguments": [
+								{
+									"type": {
+										"name": "string"
+									},
+									"name": "value"
+								}
+							],
+							"return": {
+								"name": "void"
+							}
+						}
+					},
+					"description": "Callback when the search value changes."
+				},
+				"searchValue": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": "The values to search for."
+				},
+				"disableIntegratedSearch": {
+					"required": false,
+					"tsType": {
+						"name": "boolean"
+					},
+					"description": "Whether to disable the integrated search.",
+					"defaultValue": {
+						"value": "false",
+						"computed": false
+					}
+				}
+			}
+		},
+		{
+			"description": "Displays a group of command items.",
+			"methods": [],
+			"displayName": "UnstyledCommandGroup",
+			"props": {
+				"heading": {
+					"required": true,
+					"tsType": {
+						"name": "string"
+					},
+					"description": "The heading of the group."
+				},
+				"children": {
+					"required": false,
+					"tsType": {
+						"name": "ReactNode"
+					},
+					"description": "The items of the group."
+				}
+			},
+			"composes": ["SectionProps"]
+		},
+		{
+			"description": "Displays a command item.",
+			"methods": [],
+			"displayName": "UnstyledCommandItem",
+			"props": {
+				"children": {
+					"required": false,
+					"tsType": {
+						"name": "union",
+						"raw": "ReactNode | ReactNode[]",
+						"elements": [
+							{
+								"name": "ReactNode"
+							},
+							{
+								"name": "Array",
+								"elements": [
+									{
+										"name": "ReactNode"
+									}
+								],
+								"raw": "ReactNode[]"
+							}
+						]
+					},
+					"description": "The children of the command item."
+				},
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": "Class name to apply to the command item."
+				},
+				"searchValues": {
+					"required": false,
+					"tsType": {
+						"name": "Array",
+						"elements": [
+							{
+								"name": "string"
+							}
+						],
+						"raw": "string[]"
+					},
+					"description": "The values to search for."
+				},
+				"before": {
+					"required": false,
+					"tsType": {
+						"name": "ReactReactElement",
+						"raw": "React.ReactElement<HTMLElement>",
+						"elements": [
+							{
+								"name": "HTMLElement"
+							}
+						]
+					},
+					"description": "Element shown before the child"
+				},
+				"after": {
+					"required": false,
+					"tsType": {
+						"name": "ReactReactElement",
+						"raw": "React.ReactElement<HTMLElement>",
+						"elements": [
+							{
+								"name": "HTMLElement"
+							}
+						]
+					},
+					"description": "Element shown after the child"
+				}
+			}
+		},
+		{
+			"description": "Displays a description of a command item.",
+			"methods": [],
+			"displayName": "UnstyledCommandItemDescription",
+			"props": {
+				"as": {
+					"required": false,
+					"tsType": {
+						"name": "T"
+					},
+					"description": ""
+				},
+				"children": {
+					"required": true,
+					"tsType": {
+						"name": "string"
+					},
+					"description": "The children of the description."
+				},
+				"highlight": {
+					"required": false,
+					"tsType": {
+						"name": "union",
+						"raw": "string | string[]",
+						"elements": [
+							{
+								"name": "string"
+							},
+							{
+								"name": "Array",
+								"elements": [
+									{
+										"name": "string"
+									}
+								],
+								"raw": "string[]"
+							}
+						]
+					},
+					"description": "The characters to highlight in the description when integrated search is enabled."
+				}
+			}
+		},
+		{
+			"description": "Displays a title of a command item.",
+			"methods": [],
+			"displayName": "UnstyledCommandItemTitle",
+			"props": {
+				"as": {
+					"required": false,
+					"tsType": {
+						"name": "T"
+					},
+					"description": ""
+				},
+				"children": {
+					"required": true,
+					"tsType": {
+						"name": "string"
+					},
+					"description": "The children of the title."
+				},
+				"highlight": {
+					"required": false,
+					"tsType": {
+						"name": "union",
+						"raw": "string | string[]",
+						"elements": [
+							{
+								"name": "string"
+							},
+							{
+								"name": "Array",
+								"elements": [
+									{
+										"name": "string"
+									}
+								],
+								"raw": "string[]"
+							}
+						]
+					},
+					"description": "The characters to highlight in the title when integrated search is enabled."
+				}
+			}
+		},
+		{
+			"description": "Displays a search field for the command.",
+			"methods": [],
+			"displayName": "CommandSearch",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": "Class name to apply to the search field."
+				},
+				"placeholder": {
+					"defaultValue": {
+						"value": "\"Search...\"",
+						"computed": false
+					},
+					"required": false
+				}
+			},
+			"composes": ["Omit"]
+		}
+	],
+	"src/components/ui/dialog/dialog.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "Dialog",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			}
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "DialogContent",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			}
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "DialogHeader"
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "DialogFooter"
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "DialogTitle"
+		}
+	],
+	"src/components/ui/highlight/highlight.tsx": [
+		{
+			"description": "Displays a Text with highlighted characters",
+			"methods": [],
+			"displayName": "Highlight",
+			"props": {
+				"children": {
+					"required": true,
+					"tsType": {
+						"name": "string"
+					},
+					"description": "Element that will be rendered highlighted"
+				},
+				"highlight": {
+					"required": false,
+					"tsType": {
+						"name": "union",
+						"raw": "string | string[]",
+						"elements": [
+							{
+								"name": "string"
+							},
+							{
+								"name": "Array",
+								"elements": [
+									{
+										"name": "string"
+									}
+								],
+								"raw": "string[]"
+							}
+						]
+					},
+					"description": "Elements characters that will be highlighted",
+					"defaultValue": {
+						"value": "\"\"",
+						"computed": false
+					}
+				},
+				"minLengthToHighlight": {
+					"required": false,
+					"tsType": {
+						"name": "number"
+					},
+					"description": "Minimum length to highlight",
+					"defaultValue": {
+						"value": "0",
+						"computed": false
+					}
+				}
+			}
+		}
+	],
+	"src/components/ui/heading/heading-levels.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "HeadingLevel",
+			"props": {
+				"level": {
+					"required": false,
+					"tsType": {
+						"name": "union",
+						"raw": "1 | 2 | 3 | 4 | 5 | 6",
+						"elements": [
+							{
+								"name": "literal",
+								"value": "1"
+							},
+							{
+								"name": "literal",
+								"value": "2"
+							},
+							{
+								"name": "literal",
+								"value": "3"
+							},
+							{
+								"name": "literal",
+								"value": "4"
+							},
+							{
+								"name": "literal",
+								"value": "5"
+							},
+							{
+								"name": "literal",
+								"value": "6"
+							}
+						]
+					},
+					"description": "The heading level. By default, it'll increase the level by 1 based on the\ncontext."
+				},
+				"children": {
+					"required": false,
+					"tsType": {
+						"name": "ReactNode"
+					},
+					"description": ""
+				}
+			}
+		}
+	],
+	"src/components/ui/input/input.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "Input"
+		}
+	],
+	"src/components/ui/heading/heading.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "Heading"
+		}
+	],
+	"src/components/ui/label/label.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "Label"
+		}
+	],
+	"src/components/ui/link/link.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "Link",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			},
+			"composes": ["AriaLinkProps", "VariantProps"]
+		}
+	],
+	"src/components/ui/loading-spinner/loading-spinner.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "LoadingSpinner",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				},
+				"icon": {
+					"required": false,
+					"tsType": {
+						"name": "ReactReactElement",
+						"raw": "React.ReactElement<HTMLElement>",
+						"elements": [
+							{
+								"name": "HTMLElement"
+							}
+						]
+					},
+					"description": ""
+				}
+			},
+			"composes": ["VariantProps"]
+		}
+	],
+	"src/components/ui/menu/menu.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "MenuContent",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			}
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "MenuItem",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			}
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "MenuHeader",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			}
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "MenuSeperator",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			}
+		}
+	],
+	"src/components/ui/popover/popover.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "Popover",
+			"props": {
+				"offset": {
+					"defaultValue": {
+						"value": "4",
+						"computed": false
+					},
+					"required": false
+				}
+			}
+		}
+	],
+	"src/components/ui/progress-bar/progress-bar.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "ProgressBar",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				},
+				"label": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				},
+				"description": {
+					"required": false,
+					"tsType": {
+						"name": "ReactReactElement",
+						"raw": "React.ReactElement<HTMLElement>",
+						"elements": [
+							{
+								"name": "HTMLElement"
+							}
+						]
+					},
+					"description": ""
+				}
+			},
+			"composes": ["AriaProgressBarProps", "VariantProps"]
+		}
+	],
+	"src/components/ui/radio-group/radio-group.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "Radio",
+			"props": {
+				"showRadio": {
+					"required": false,
+					"tsType": {
+						"name": "boolean"
+					},
+					"description": "",
+					"defaultValue": {
+						"value": "true",
+						"computed": false
+					}
+				}
+			},
+			"composes": ["AriaRadioProps"]
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "RadioGroup",
+			"props": {
+				"orientation": {
+					"defaultValue": {
+						"value": "\"vertical\"",
+						"computed": false
+					},
+					"required": false
+				}
+			}
+		}
+	],
+	"src/components/ui/select/select.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "Select",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				},
+				"label": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				},
+				"description": {
+					"required": false,
+					"tsType": {
+						"name": "union",
+						"raw": "string | null",
+						"elements": [
+							{
+								"name": "string"
+							},
+							{
+								"name": "null"
+							}
+						]
+					},
+					"description": ""
+				},
+				"errorMessage": {
+					"required": false,
+					"tsType": {
+						"name": "union",
+						"raw": "string | null",
+						"elements": [
+							{
+								"name": "string"
+							},
+							{
+								"name": "null"
+							}
+						]
+					},
+					"description": ""
+				},
+				"children": {
+					"required": true,
+					"tsType": {
+						"name": "union",
+						"raw": "React.ReactNode | ((item: T) => React.ReactNode)",
+						"elements": [
+							{
+								"name": "ReactReactNode",
+								"raw": "React.ReactNode"
+							},
+							{
+								"name": "unknown"
+							}
+						]
+					},
+					"description": ""
+				}
+			},
+			"composes": ["Omit"]
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "SelectItem"
+		}
+	],
+	"src/components/ui/switch/switch.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "Switch",
+			"props": {
+				"children": {
+					"required": false,
+					"tsType": {
+						"name": "ReactNode"
+					},
+					"description": ""
+				},
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			},
+			"composes": ["SwitchVariantProps", "AriaSwitchProps"]
+		}
+	],
+	"src/components/ui/table/table.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "Table",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			}
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "TableCell",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			}
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "TableColumn",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			}
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "TableHeader",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			}
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "TableRow",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			}
+		}
+	],
+	"src/components/ui/toggle-button/toggle-button.tsx": [
+		{
+			"description": "Displays a button that can be toggled on and off.",
+			"methods": [],
+			"displayName": "UnstyledToggleButton",
+			"props": {
+				"before": {
+					"required": false,
+					"tsType": {
+						"name": "ReactReactElement",
+						"raw": "React.ReactElement<HTMLElement>",
+						"elements": [
+							{
+								"name": "HTMLElement"
+							}
+						]
+					},
+					"description": "The content to display before the toggle button."
+				},
+				"after": {
+					"required": false,
+					"tsType": {
+						"name": "ReactReactElement",
+						"raw": "React.ReactElement<HTMLElement>",
+						"elements": [
+							{
+								"name": "HTMLElement"
+							}
+						]
+					},
+					"description": "The content to display after the toggle button."
+				}
+			},
+			"composes": ["ToggleVariantProps", "AriaToggleButtonProps"]
+		}
+	],
+	"src/components/ui/text-field/text-field.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "TextField",
+			"props": {
+				"label": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				},
+				"description": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				},
+				"errorMessage": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			},
+			"composes": ["AriaTextFieldProps"]
+		}
+	],
+	"src/components/ui/time-field/time-field.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "TimeField",
+			"props": {
+				"label": {
+					"required": false,
+					"tsType": {
+						"name": "ReactNode"
+					},
+					"description": ""
+				},
+				"description": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				},
+				"errorMessage": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			},
+			"composes": ["AriaTimeFieldProps"]
+		}
+	],
+	"src/components/ui/typography/typography.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "Typography",
+			"props": {
+				"as": {
+					"required": false,
+					"tsType": {
+						"name": "T"
+					},
+					"description": ""
+				},
+				"children": {
+					"required": true,
+					"tsType": {
+						"name": "ReactNode"
+					},
+					"description": ""
+				}
+			}
+		}
+	],
+	"src/components/ui/tooltip/tooltip.tsx": [
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "Tooltip",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			},
+			"composes": ["AriaTooltipProps"]
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "TooltipContent",
+			"props": {
+				"className": {
+					"required": false,
+					"tsType": {
+						"name": "string"
+					},
+					"description": ""
+				}
+			},
+			"composes": ["AriaTooltipProps"]
+		},
+		{
+			"description": "",
+			"methods": [],
+			"displayName": "TooltipRoot"
+		}
+	]
 }
+

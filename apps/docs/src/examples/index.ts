@@ -874,20 +874,6 @@ export function Example() {
 }
 `,
   },
-  "label/preview": {
-	  component: lazy(() => import("~/examples/label/preview.tsx")),
-	  code: `import { Checkbox, Label } from "@pixelshades/ui/components"
-
-export function Example() {
-	return (
-		<div className="flex flex-row items-center gap-md">
-			<Checkbox />
-			<Label>This is a label</Label>
-		</div>
-	)
-}
-`,
-  },
   "link/active": {
 	  component: lazy(() => import("~/examples/link/active.tsx")),
 	  code: `import { Link } from "@pixelshades/ui/components"
@@ -947,7 +933,7 @@ export function Example() {
   "loadingSpinner/icons": {
 	  component: lazy(() => import("~/examples/loadingSpinner/icons.tsx")),
 	  code: `import { LoadingSpinner } from "@pixelshades/ui/components"
-import { Loader, LoaderIcon } from "@pixelshades/ui/icons"
+import { Loader } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
@@ -1179,7 +1165,7 @@ export function Example() {
 
 export function Example() {
 	return (
-		<div className="gap-lg flex flex-col w-full">
+		<div className="flex w-full flex-col gap-lg">
 			<ProgressBar label="Sending…" formatOptions={{ style: "currency", currency: "JPY" }} value={60} />
 			<ProgressBar label="Feeding…" valueLabel="30 of 100 dogs" value={30} />
 		</div>
@@ -1202,7 +1188,7 @@ export function Example() {
 
 export function Example() {
 	return (
-		<div className="gap-lg flex flex-col w-full">
+		<div className="gap-lg·flex·flex-col·w-full">
 			<ProgressBar size="xs" label="XS" description={<small>This is a description!</small>} value={25} />
 			<ProgressBar size="sm" label="SM" description={<small>This is a description!</small>} value={45} />
 			<ProgressBar size="md" label="MD" description={<small>This is a description!</small>} value={65} />
@@ -1474,7 +1460,6 @@ export function Example() {
   "toggle-button/ghost": {
 	  component: lazy(() => import("~/examples/toggle-button/ghost.tsx")),
 	  code: `import { ToggleButton } from "@pixelshades/ui/components"
-import React from "react"
 
 export function Example() {
 	return <ToggleButton variant="ghost">Toggle</ToggleButton>
@@ -1484,7 +1469,6 @@ export function Example() {
   "toggle-button/outline": {
 	  component: lazy(() => import("~/examples/toggle-button/outline.tsx")),
 	  code: `import { ToggleButton } from "@pixelshades/ui/components"
-import React from "react"
 
 export function Example() {
 	return <ToggleButton variant="outline">Toggle</ToggleButton>
@@ -1495,7 +1479,6 @@ export function Example() {
 	  component: lazy(() => import("~/examples/toggle-button/preview.tsx")),
 	  code: `import { ToggleButton } from "@pixelshades/ui/components"
 import { Snail } from "@pixelshades/ui/icons"
-import React from "react"
 
 export function Example() {
 	return <ToggleButton before={<Snail />}>Toggle</ToggleButton>
@@ -1505,7 +1488,6 @@ export function Example() {
   "toggle-button/sizes": {
 	  component: lazy(() => import("~/examples/toggle-button/sizes.tsx")),
 	  code: `import { ToggleButton } from "@pixelshades/ui/components"
-import React from "react"
 
 export function Example() {
 	return (
@@ -1522,7 +1504,6 @@ export function Example() {
   "toggle-button/subtle": {
 	  component: lazy(() => import("~/examples/toggle-button/subtle.tsx")),
 	  code: `import { ToggleButton } from "@pixelshades/ui/components"
-import React from "react"
 
 export function Example() {
 	return <ToggleButton variant="subtle">Toggle</ToggleButton>

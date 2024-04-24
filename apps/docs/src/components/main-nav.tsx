@@ -3,7 +3,6 @@ import { siteConfig } from "~/config/site"
 
 import { FlameIcon } from "@pixelshades/ui/icons"
 import { Link } from "@tanstack/react-router"
-import ThemeSwitch from "./theme-switcher"
 
 export function MainNav() {
 	return (
