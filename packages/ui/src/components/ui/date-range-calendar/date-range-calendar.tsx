@@ -8,9 +8,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 
 import {
 	Button as AriaButton,
+	Heading as AriaHeading,
 	RangeCalendar as AriaRangeCalendar,
 	type RangeCalendarProps as AriaRangeCalendarProps,
-	Heading as AriaHeading,
 	CalendarCell,
 	CalendarGrid,
 	CalendarGridBody,
@@ -21,7 +21,6 @@ import {
 } from "react-aria-components"
 
 import { calendarVariants } from "@pixelshades/styles/components/calendar"
-import React from "react"
 
 const { root, header, heading, gridHeaderCell, cell, grid, iconButton } = calendarVariants()
 
