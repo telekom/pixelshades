@@ -679,6 +679,66 @@ export function Example() {
 	return <DatePicker label="Start Date" />
 }
 `,
+  },
+  "date-range-calendar/custom-duration": {
+	  component: lazy(() => import("~/examples/date-range-calendar/custom-duration.tsx")),
+	  code: `import { DateRangeCalendar } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<DateRangeCalendar
+			visibleDuration={{
+				months: 3,
+			}}
+		/>
+	)
+}
+`,
+  },
+  "date-range-calendar/disabled": {
+	  component: lazy(() => import("~/examples/date-range-calendar/disabled.tsx")),
+	  code: `import { DateRangeCalendar } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <DateRangeCalendar isDisabled />
+}
+`,
+  },
+  "date-range-calendar/min-dates": {
+	  component: lazy(() => import("~/examples/date-range-calendar/min-dates.tsx")),
+	  code: `import { getLocalTimeZone, today } from "@internationalized/date"
+import { DateRangeCalendar } from "@pixelshades/ui/components"
+
+export function Example() {
+	const now = today(getLocalTimeZone())
+
+	return <DateRangeCalendar minValue={now} maxValue={now.add({ days: 15 })} />
+}
+`,
+  },
+  "date-range-calendar/preview": {
+	  component: lazy(() => import("~/examples/date-range-calendar/preview.tsx")),
+	  code: `import { DateRangeCalendar } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <DateRangeCalendar />
+}
+`,
+  },
+  "date-range-calendar/unavailable-dates": {
+	  component: lazy(() => import("~/examples/date-range-calendar/unavailable-dates.tsx")),
+	  code: `"use client"
+
+import { isWeekend } from "@internationalized/date"
+import { DateRangeCalendar } from "@pixelshades/ui/components"
+import { useLocale } from "@pixelshades/ui/hooks"
+
+export function Example() {
+	const { locale } = useLocale()
+
+	return <DateRangeCalendar isDateUnavailable={(date) => isWeekend(date, locale)} />
+}
+`,
 	},
 	"dialog/preview": {
 		component: lazy(() => import("~/examples/dialog/preview.tsx")),

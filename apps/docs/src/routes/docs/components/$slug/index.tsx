@@ -59,7 +59,7 @@ function ComponentPage() {
 								<DataList.Value>
 									<code>
 										import {"{ "}
-										{component.title}
+										{component.title.replace(/\s/g, "")}
 										{" }"} from "@pixelshades/ui/components"
 									</code>
 								</DataList.Value>
