@@ -795,6 +795,7 @@ export function Example() {
 	DateField,
 	DatePicker,
 	Form,
+	Radio,
 	Switch,
 	TextField,
 	TimeField,
@@ -821,22 +822,28 @@ export function Example() {
 				<Checkbox value="email" label="Email" />
 				<Checkbox value="text" label="Text" />
 			</CheckboxGroup>
-			<DateField label="DateField" description="Description" tooltip="Tooltip" isRequired />
+			<DateField label="Label" description="Description" helperText="Helper Text" tooltip="Tooltip" isRequired />
 
 			<TextField
-				label="Email"
-				name="email"
-				tooltip="Email address"
-				description="Your best email"
+				label="Label"
+				description="Description"
+				helperText="Helper Text"
+				tooltip="Tooltip"
 				isRequired
 				type="email"
 			/>
 
+			<TimeField label="Label" description="Description" helperText="Helper Text" tooltip="Tooltip" isRequired />
+
+			<DatePicker label="Label" description="Description" helperText="Helper Text" tooltip="Tooltip" isRequired />
+
 			<Switch label="Switch" description="Description" tooltip="Tooltip" helperText="Helper text" />
 
-			<TimeField label="Start Date" isRequired />
-
-			<DatePicker label="Custom Date Picker" description="The end date of the event" isRequired />
+			<Radio.Group label="Radio Group" description="Description" tooltip="Tooltip" helperText="Helper Text">
+				<Radio value="push">Push</Radio>
+				<Radio value="email">Email</Radio>
+				<Radio value="text">Text</Radio>
+			</Radio.Group>
 			<div className="flex w-full flex-row gap-md">
 				<Button className="w-full" type="submit">
 					Submit
