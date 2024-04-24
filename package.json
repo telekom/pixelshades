@@ -5,6 +5,7 @@
 		"build": "turbo build",
 		"dev": "turbo dev",
 		"lint": "turbo lint",
+		"fmt": "pnpm biome format . --write && pnpm biome check .",
 		"verify-compliace": "pipx run reuse lint",
 		"bump-versions": "bun changeset version && bun install",
 		"publish": "turbo run build && changeset version && changeset publish --access public",
