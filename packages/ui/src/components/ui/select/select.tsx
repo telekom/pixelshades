@@ -4,17 +4,17 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SelectProps as AriaSelectProps, ListBoxItemProps } from "react-aria-components"
+import type {ListBoxItemProps, SelectProps as AriaSelectProps} from "react-aria-components"
 import {
 	Button as AriaButton,
 	ListBox as AriaListBox,
 	Select as AriaSelect,
 	ListBoxItem,
-	SelectValue,
+    SelectValue,
 } from "react-aria-components"
 
-import { selectVariants } from "@pixelshades/styles/components/select"
-import { ChevronDown } from "lucide-react"
+import {selectVariants} from "@pixelshades/styles/components/select"
+import {ChevronDown} from "lucide-react"
 import type React from "react"
 import type { ReactNode } from "react"
 import { FormDescription, FormFieldError } from "../form"

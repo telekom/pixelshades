@@ -21,7 +21,7 @@ const Heading = forwardRef(function Heading(props: HeadingProps) {
 
 	const contextLevel = useContext(HeadingContext)
 
-	const currentLevel = level || contextLevel
+	const currentLevel = level || contextLevel || 1
 
 	const classes = headingVariants({ className, variant: currentLevel })
 
