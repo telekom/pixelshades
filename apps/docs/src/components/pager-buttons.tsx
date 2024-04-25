@@ -1,5 +1,5 @@
 import { Button, Typography } from "@dv/ui/components"
-import { ChevronLeft, ChevronRight } from "@dv/ui/icons"
+import { ArrowLeft, ArrowRight } from "@dv/ui/icons"
 import { useNavigate } from "@tanstack/react-router"
 import { getNavbarItems } from "~/config/navbar-items"
 
@@ -41,7 +41,7 @@ export const PagerButtons = ({ permalink }: PagerButtonsProps) => {
 	const navigate = useNavigate()
 
 	return (
-		<div className="flex flex-row gap-layout-xs">
+		<div className="flex flex-col gap-layout-xs md:flex-row">
 			{prevComponent && (
 				<Button
 					className="flex h-full w-full flex-row justify-between p-md"
@@ -55,7 +55,7 @@ export const PagerButtons = ({ permalink }: PagerButtonsProps) => {
 						})
 					}
 				>
-					<ChevronLeft className="size-3" />
+					<ArrowLeft className="size-3" />
 					<div className="flex flex-col items-end">
 						<Typography>Previous</Typography>
 						<Typography className="text-subtle-foreground">{prevComponent.title}</Typography>
@@ -79,7 +79,7 @@ export const PagerButtons = ({ permalink }: PagerButtonsProps) => {
 						<Typography>Next</Typography>
 						<Typography className="text-subtle-foreground">{nextComponent.title}</Typography>
 					</div>
-					<ChevronRight className="size-3" />
+					<ArrowRight className="size-3" />
 				</Button>
 			)}
 		</div>
