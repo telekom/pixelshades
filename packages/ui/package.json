@@ -45,7 +45,9 @@
 		"tailwindcss-react-aria-components": "1.1.1",
 		"typescript": "^5.4.5"
 	},
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"exports": {
 		"./tailwind": {
 			"import": {

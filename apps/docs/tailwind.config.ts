@@ -29,7 +29,7 @@ const config: Config = {
 			},
 		},
 	},
-	plugins: [pixelShadesPlugin as any],
+	plugins: [pixelShadesPlugin as any, require("tailwindcss-react-aria-components")],
 }
 
 export default config

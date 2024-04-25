@@ -6,25 +6,56 @@
 
 import { Check } from "lucide-react"
 
-import { type ElementRef, forwardRef } from "react"
+import { type ElementRef, type ReactNode, forwardRef } from "react"
 
 import { checkboxVariant } from "@pixelshades/styles/components/checkbox"
-import { type CheckboxProps as AriaCheckBoxProps, Checkbox as AriaCheckbox } from "react-aria-components"
+import React from "react"
+import {
+	type CheckboxProps as AriaCheckBoxProps,
+	Checkbox as AriaCheckbox,
+	type ValidationResult,
+} from "react-aria-components"
 import type { VariantProps } from "tailwind-variants"
+import { If } from "../../utils"
+import { FormDescription, FormFieldError } from "../form"
+import { Label } from "../label"
 
 type CheckboxVariantProps = VariantProps<typeof checkboxVariant>
 
 interface CheckBoxProps extends CheckboxVariantProps, AriaCheckBoxProps {
+	label?: ReactNode
+	description?: ReactNode
+	helperText?: ReactNode
+	errorMessage?: string | ((validation: ValidationResult) => string)
+	tooltip?: ReactNode
 	className?: string
 }
 
 const Checkbox = forwardRef<ElementRef<typeof AriaCheckbox>, CheckBoxProps>(
-	({ className, size, children, ...props }, ref) => {
+	({ className, label, id, helperText, errorMessage, description, tooltip, size, children, ...props }, ref) => {
+		const generatedId = React.useId()
+		const elId = id ?? generatedId
+
 		return (
-			<AriaCheckbox className={checkboxVariant({ size }).root({ className })} ref={ref} {...props}>
-				{({ isSelected }) => (
+			<AriaCheckbox id={elId} className={checkboxVariant({ size }).root({ className })} ref={ref} {...props}>
+				{({ isSelected, isDisabled }) => (
 					<>
 						<div className={checkboxVariant({ size }).box()}>{isSelected && <Check />}</div>
+						<span className="inline-flex flex-col">
+							<If condition={label || description || tooltip}>
+								<Label
+									aria-disabled={isDisabled}
+									htmlFor={elId}
+									description={description}
+									tooltip={tooltip}
+								>
+									{label}
+								</Label>
+							</If>
+							<FormDescription aria-disabled={isDisabled}>{helperText}</FormDescription>
+							<FormFieldError>{errorMessage}</FormFieldError>
+						</span>
+
 						{children}
 					</>
 				)}

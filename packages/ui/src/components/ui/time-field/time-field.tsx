@@ -4,29 +4,38 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-import type { TimeFieldProps as AriaTimeFieldProps, TimeValue } from "react-aria-components"
+import type { TimeFieldProps as AriaTimeFieldProps, TimeValue, ValidationResult } from "react-aria-components"
 import { TimeField as AriaTimeField, DateInput, DateSegment, Text } from "react-aria-components"
 
 import { dateFieldVariants } from "@pixelshades/styles/components/date-field"
+import { inputVariants } from "@pixelshades/styles/components/input"
 import type { ReactNode } from "react"
-import { Label } from "../label"
+import { FormDescription, FormFieldError } from "../form"
+import { type FormComponentLabelProps, Label } from "../label"
 
-const { input, dateSegment } = dateFieldVariants()
-
-export interface TimeFieldProps<T extends TimeValue> extends AriaTimeFieldProps<T> {
+export interface TimeFieldProps<T extends TimeValue> extends AriaTimeFieldProps<T>, FormComponentLabelProps {
 	label?: ReactNode
-	description?: string
-	errorMessage?: string
+	helperText?: string
+	errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
-const TimeField = <T extends TimeValue>({ label, description, errorMessage, ...props }: TimeFieldProps<T>) => (
+const TimeField = <T extends TimeValue>({
+	label,
+	helperText,
+	errorMessage,
+	description,
+	tooltip,
+	...props
+}: TimeFieldProps<T>) => (
 	<AriaTimeField className="flex flex-col gap-md" {...props}>
-		<Label>{label}</Label>
-		<DateInput className={input()}>
-			{(segment) => <DateSegment className={dateSegment()} segment={segment} />}
+		<Label description={description} tooltip={tooltip}>
+			{label}
+		</Label>
+		<DateInput className={inputVariants()}>
+			{(segment) => <DateSegment className={dateFieldVariants()} segment={segment} />}
 		</DateInput>
-		{description && <Text slot="description">{description}</Text>}
-		{errorMessage && <Text slot="errorMessage">{errorMessage}</Text>}
+		{helperText && <FormDescription>{helperText}</FormDescription>}
+		<FormFieldError>{errorMessage}</FormFieldError>
 	</AriaTimeField>
 )
 
