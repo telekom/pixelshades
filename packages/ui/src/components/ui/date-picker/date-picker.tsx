@@ -9,8 +9,6 @@ import {
 	Button as AriaButton,
 	DatePicker as AriaDatePicker,
 	Dialog as AriaDialog,
-	Group as AriaGroup,
-	Text as AriaText,
 	DateInput,
 	DateSegment,
 	type DateValue,
@@ -26,7 +24,7 @@ import { FormDescription, FormFieldError, FormFieldGroup } from "../form"
 import { type FormComponentLabelProps, Label } from "../label"
 import { Popover } from "../popover"
 
-const { group, inputButton, input, base } = datePickerVariants()
+const { inputButton, input, base } = datePickerVariants()
 
 interface DatePickerProps<T extends DateValue> extends AriaDatePickerProps<T>, FormComponentLabelProps {
 	helperText?: string

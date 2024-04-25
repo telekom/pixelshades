@@ -12,17 +12,15 @@ import {
 	type DialogProps,
 	Heading,
 	type HeadingProps,
-	Modal,
-	ModalOverlay,
-	type ModalOverlayProps,
 } from "react-aria-components"
+import { Modal, type ModalOverlayProps } from "../modal"
 
-const { overlay, modal, content, header, title, footer } = dialogVariants()
+const { content, header, title, footer } = dialogVariants()
 
-const DialogRoot = ({ children, className, ...props }: ModalOverlayProps & { className?: string }) => (
-	<ModalOverlay {...props} isDismissable={true} className={overlay()}>
-		<Modal className={modal({ className })}>{children}</Modal>
-	</ModalOverlay>
+const DialogRoot = ({ children, className, ...props }: ModalOverlayProps) => (
+	<Modal isDismissable={true} {...props}>
+		{children}
+	</Modal>
 )
 
 DialogRoot.displayName = "Dialog"
