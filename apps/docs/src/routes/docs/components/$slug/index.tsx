@@ -109,6 +109,7 @@ function ComponentPage() {
 					<TabPanel id="docs" className={cn("relative grid w-full grid-cols-12 gap-layout-sm")}>
 						<div className="col-span-9 w-full">
 							<MDXContent code={component.content} />
+							<PagerButtons permalink={component.permalink} />
 						</div>
 						<div className="sticky top-16 col-span-3 self-start">
 							<If condition={component.toc.length > 0}>
@@ -120,7 +121,6 @@ function ComponentPage() {
 						<PropsTable slug={component.slug} />
 					</TabPanel>
 				</Tabs>
-				<PagerButtons permalink={component.permalink} />
 			</main>
 		</HeadingLevel>
 	)
