@@ -167,6 +167,12 @@
         "default": "./dist/es/components/menu/index.mjs"
       }
     },
+    "./components/modal": {
+      "import": {
+        "types": "./dist/es/components/modal/index.d.mts",
+        "default": "./dist/es/components/modal/index.mjs"
+      }
+    },
     "./components/progress-bar": {
       "import": {
         "types": "./dist/es/components/progress-bar/index.d.mts",
