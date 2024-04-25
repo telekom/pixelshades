@@ -1,13 +1,19 @@
+"use client"
+
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
+import { RenderSlot } from "@pixelshades/utils/jsx"
+import { createStyleContext } from "@pixelshades/utils/styles"
 import {
 	ToggleButton as AriaToggleButton,
 	type ToggleButtonProps as AriaToggleButtonProps,
 } from "react-aria-components"
 import type { VariantProps } from "tailwind-variants"
-import { createStyleContext } from "../../../utils/create-style-context"
-import { RenderSlot } from "../../../utils/jsx"
 import { If } from "../../utils"
 
-import { toggleVariants } from "@dv/styles/components/toggle-button"
+import { toggleVariants } from "@pixelshades/styles/components/toggle-button"
 
 const { withContext, withProvider } = createStyleContext(toggleVariants)
 

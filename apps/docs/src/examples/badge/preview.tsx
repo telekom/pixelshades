@@ -1,5 +1,5 @@
-import { Badge } from "@dv/ui/components"
-import { ArrowRightIcon, SmileIcon } from "@dv/ui/icons"
+import { Badge } from "@pixelshades/ui/components"
+import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
 
 export default function Example() {
 	return (

@@ -1,8 +1,8 @@
-import { ProgressBar } from "@dv/ui/components"
+import { ProgressBar } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
-		<div className="gap-lg flex flex-col w-full">
+		<div className="gap-lg·flex·flex-col·w-full">
 			<ProgressBar size="xs" label="XS" description={<small>This is a description!</small>} value={25} />
 			<ProgressBar size="sm" label="SM" description={<small>This is a description!</small>} value={45} />
 			<ProgressBar size="md" label="MD" description={<small>This is a description!</small>} value={65} />

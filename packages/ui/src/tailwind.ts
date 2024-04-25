@@ -1,13 +1,18 @@
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import ariaPlugin from "tailwindcss-react-aria-components"
 import { fontFamily } from "tailwindcss/defaultTheme.js"
 import plugin from "tailwindcss/plugin.js"
 
-export const dvPlugin = plugin(
+export const pixelShadesPlugin = plugin(
 	({ addUtilities, addBase }) => {
 		// Call the ariaPlugin and add its utilities
 		// You can add your own utilities or call other plugins here
 	},
 	{
+		darkMode: "class",
 		theme: {
 			container: {
 				center: true,
@@ -34,7 +39,6 @@ export const dvPlugin = plugin(
 				},
 				colors: {
 					border: "hsl(var(--border))",
-					input: "hsl(var(--input))",
 					ring: "hsl(var(--ring))",
 					background: "hsl(var(--background))",
 					foreground: "hsl(var(--foreground))",
@@ -53,14 +57,6 @@ export const dvPlugin = plugin(
 					subtle: {
 						DEFAULT: "hsl(var(--subtle))",
 						foreground: "hsl(var(--subtle-foreground))",
-					},
-					accent: {
-						DEFAULT: "hsl(var(--accent))",
-						foreground: "hsl(var(--accent-foreground))",
-					},
-					popover: {
-						DEFAULT: "hsl(var(--popover))",
-						foreground: "hsl(var(--popover-foreground))",
 					},
 					card: {
 						DEFAULT: "hsl(var(--card))",

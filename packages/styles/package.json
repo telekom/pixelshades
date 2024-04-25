@@ -1,37 +1,46 @@
 {
-  "name": "@dv/styles",
-  "version": "0.0.0",
-  "private": true,
+  "name": "@pixelshades/styles",
+  "version": "0.0.1-alpha.6",
+  "private": false,
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "bunchee",
     "dev": "bunchee --watch --no-clean"
   },
   "dependencies": {
     "tailwind-variants": "0.2.1",
-    "tailwind-merge": "^2.2.2"
+    "tailwind-merge": "2.3.0"
   },
   "peerDependencies": {
     "react": ">18.0.0",
     "react-dom": ">18.0.0"
   },
   "devDependencies": {
-    "@dv/typescript-config": "workspace:*",
-    "@types/node": "^20.12.6",
-    "@types/react": "^18.2.75",
-    "@types/react-dom": "^18.2.24",
+    "@pixelshades/typescript-config": "workspace:*",
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
     "bunchee": "^5.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.4.3",
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-react-aria-components": "1.1.1",
-    "typescript": "^5.4.4"
+    "typescript": "^5.4.5"
   },
   "files": [
     "dist"
   ],
   "exports": {
+    "./utils": {
+      "import": {
+        "types": "./dist/es/utils.d.mts",
+        "default": "./dist/es/utils.mjs"
+      }
+    },
     "./components/badge": {
       "import": {
         "types": "./dist/es/components/badge/index.d.mts",
@@ -48,6 +57,12 @@
       "import": {
         "types": "./dist/es/components/button/index.d.mts",
         "default": "./dist/es/components/button/index.mjs"
+      }
+    },
+    "./components/button-group": {
+      "import": {
+        "types": "./dist/es/components/button-group/index.d.mts",
+        "default": "./dist/es/components/button-group/index.mjs"
       }
     },
     "./components/calendar": {
@@ -92,6 +107,12 @@
         "default": "./dist/es/components/date-field/index.mjs"
       }
     },
+    "./date-range-calendar": {
+      "import": {
+        "types": "./dist/es/date-range-calendar/index.d.mts",
+        "default": "./dist/es/date-range-calendar/index.mjs"
+      }
+    },
     "./components/date-picker": {
       "import": {
         "types": "./dist/es/components/date-picker/index.d.mts",
@@ -102,6 +123,12 @@
       "import": {
         "types": "./dist/es/components/dialog/index.d.mts",
         "default": "./dist/es/components/dialog/index.mjs"
+      }
+    },
+    "./components/form": {
+      "import": {
+        "types": "./dist/es/components/form/index.d.mts",
+        "default": "./dist/es/components/form/index.mjs"
       }
     },
     "./components/heading": {
@@ -140,6 +167,12 @@
         "default": "./dist/es/components/menu/index.mjs"
       }
     },
+    "./components/modal": {
+      "import": {
+        "types": "./dist/es/components/modal/index.d.mts",
+        "default": "./dist/es/components/modal/index.mjs"
+      }
+    },
     "./components/progress-bar": {
       "import": {
         "types": "./dist/es/components/progress-bar/index.d.mts",
@@ -158,6 +191,12 @@
         "default": "./dist/es/components/select/index.mjs"
       }
     },
+    "./components/separator": {
+      "import": {
+        "types": "./dist/es/components/separator/index.d.mts",
+        "default": "./dist/es/components/separator/index.mjs"
+      }
+    },
     "./components/switch": {
       "import": {
         "types": "./dist/es/components/switch/index.d.mts",
@@ -174,6 +213,12 @@
       "import": {
         "types": "./dist/es/components/tabs/index.d.mts",
         "default": "./dist/es/components/tabs/index.mjs"
+      }
+    },
+    "./components/kbd": {
+      "import": {
+        "types": "./dist/es/components/kbd/index.d.mts",
+        "default": "./dist/es/components/kbd/index.mjs"
       }
     },
     "./components/text-field": {

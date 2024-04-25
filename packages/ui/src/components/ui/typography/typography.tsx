@@ -1,4 +1,10 @@
-import { typographyVariants } from "@dv/styles/components/typography"
+"use client"
+
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
+import { typographyVariants } from "@pixelshades/styles/components/typography"
 import type { ReactNode } from "react"
 import type { VariantProps } from "tailwind-variants"
 
@@ -15,7 +21,7 @@ const Typography = <T extends React.ElementType = "p">({
 	children,
 	...elementProps
 }: TypographyProps<T>) => {
-	const Component = as || "button"
+	const Component = as || "p"
 
 	const classes = typographyVariants({ size, className })
 	return (

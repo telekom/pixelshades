@@ -1,5 +1,11 @@
+"use client"
+
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { Command as CommandIcon } from "lucide-react"
-import { type ReactNode, useMemo, useRef } from "react"
+import { type ReactNode, useMemo } from "react"
 import {
 	Header as AriaHeader,
 	ListBox as AriaListBox,
@@ -9,14 +15,14 @@ import {
 	type SectionProps,
 } from "react-aria-components"
 
-import { commandVariants } from "@dv/styles/components/command"
+import { commandVariants } from "@pixelshades/styles/components/command"
+import { RenderSlot } from "@pixelshades/utils/jsx"
+import { createStyleContext } from "@pixelshades/utils/styles"
 import { useControllableState } from "../../../hooks/use-controlled-state"
 import { type Keys, useKeyPress } from "../../../hooks/use-keypress"
-import { createStyleContext } from "../../../utils/create-style-context"
-import { RenderSlot } from "../../../utils/jsx"
 import { If } from "../../utils/if"
 import { Button } from "../button"
-import { Dialog, DialogContent } from "../dialog"
+import { Dialog } from "../dialog"
 import { Highlight } from "../highlight"
 import { Input, type InputProps } from "../input"
 import { Typography, type TypographyProps } from "../typography"
@@ -89,7 +95,7 @@ const UnstyledCommand = ({
 				</CommandTrigger>
 			</If>
 			<Dialog isOpen={open} onOpenChange={setOpen} className={className} aria-label="Command Dialog">
-				<DialogContent className="flex w-full flex-col items-start">
+				<Dialog.Content className="flex w-full flex-col items-start">
 					<div className="sticky w-full">{searchField}</div>
 
 					<AriaListBox
@@ -100,7 +106,7 @@ const UnstyledCommand = ({
 					>
 						{children}
 					</AriaListBox>
-				</DialogContent>
+				</Dialog.Content>
 			</Dialog>
 		</CommandContext.Provider>
 	)
@@ -288,10 +294,18 @@ function fullTextSearch(data: string[], searchTerm: string) {
 }
 
 /** Displays a command with a title and a list of actions. */
-const Command = withProvider(UnstyledCommand, "command")
+const CommandRoot = withProvider(UnstyledCommand, "command")
 const CommandItemDescription = withContext(UnstyledCommandItemDescription, "itemDescription")
 const CommandItemTitle = withContext(UnstyledCommandItemTitle, "itemTitle")
 const CommandGroup = withContext(UnstyledCommandGroup, "group")
 const CommandItem = withContext(UnstyledCommandItem, "item")
 
-export { Command, CommandGroup, CommandItem, CommandItemDescription, CommandItemTitle, CommandSearch }
+export const Command = Object.assign(CommandRoot, {
+	Group: CommandGroup,
+	Item: CommandItem,
+	ItemTitle: CommandItemTitle,
+	ItemDescription: CommandItemDescription,
+	Search: CommandSearch,
+	Trigger: CommandTrigger,
+	Icon: CommandIcon,
+})

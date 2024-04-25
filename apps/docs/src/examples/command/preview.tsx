@@ -1,12 +1,5 @@
-import {
-	Command,
-	CommandGroup,
-	CommandItem,
-	CommandItemDescription,
-	CommandItemTitle,
-	CommandSearch,
-} from "@dv/ui/components"
-import { Apple, GlassWater } from "@dv/ui/icons"
+import { Command } from "@pixelshades/ui/components"
+import { Apple, GlassWater } from "@pixelshades/ui/icons"
 
 export default function Example() {
 	const fruits = [
@@ -20,36 +13,40 @@ export default function Example() {
 		{ name: "Apple juice", description: "A bottle of apple juice." },
 	]
 	return (
-		<Command shortcut={["Meta", "KeyX"]} searchField={<CommandSearch />}>
-			<CommandGroup heading="Fruits">
+		<Command shortcut={["Meta", "KeyX"]} searchField={<Command.Search />}>
+			<Command.Group heading="Fruits">
 				{fruits.map((fruit, index) => (
-					<CommandItem
+					<Command.Item
 						key={fruit.name + index}
 						before={<Apple />}
 						searchValues={[fruit.name, fruit.description || ""]}
 						className={"items-center"}
 					>
 						<div className="flex flex-col items-center gap-2">
-							<CommandItemTitle>{fruit.name}</CommandItemTitle>
-							{fruit.description && <CommandItemDescription>{fruit.description}</CommandItemDescription>}
+							<Command.ItemTitle>{fruit.name}</Command.ItemTitle>
+							{fruit.description && (
+								<Command.ItemDescription>{fruit.description}</Command.ItemDescription>
+							)}
 						</div>
-					</CommandItem>
+					</Command.Item>
 				))}
-			</CommandGroup>
-			<CommandGroup heading="Drinks">
+			</Command.Group>
+			<Command.Group heading="Drinks">
 				{drinks.map((drink) => (
-					<CommandItem
+					<Command.Item
 						key={drink.name}
 						before={<GlassWater />}
 						searchValues={[drink.name, drink.description || ""]}
 					>
 						<div className="flex flex-col gap-2">
-							<CommandItemTitle>{drink.name}</CommandItemTitle>
-							{drink.description && <CommandItemDescription>{drink.description}</CommandItemDescription>}
+							<Command.ItemTitle>{drink.name}</Command.ItemTitle>
+							{drink.description && (
+								<Command.ItemDescription>{drink.description}</Command.ItemDescription>
+							)}
 						</div>
-					</CommandItem>
+					</Command.Item>
 				))}
-			</CommandGroup>
+			</Command.Group>
 		</Command>
 	)
 }

@@ -1,8 +1,14 @@
-import { forwardRef } from "../../../utils/jsx"
+"use client"
 
-import { headingVariants } from "@dv/styles/components/heading"
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
+import { forwardRef } from "@pixelshades/utils/jsx"
+
+import { headingVariants } from "@pixelshades/styles/components/heading"
+import type { Props } from "@pixelshades/utils/types"
 import { type ElementType, createElement, useContext } from "react"
-import type { Props } from "../../../utils/types"
 import { HeadingContext } from "./heading-context"
 
 type HeadingLevels = 1 | 2 | 3 | 4 | 5 | 6

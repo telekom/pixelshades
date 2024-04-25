@@ -1,19 +1,44 @@
+"use client"
+
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { Circle } from "lucide-react"
 import {
 	Radio as AriaRadio,
 	RadioGroup as AriaRadioGroup,
+	type RadioGroupProps as AriaRadioGroupProps,
 	type RadioProps as AriaRadioProps,
-	type RadioGroupProps,
+	type ValidationResult,
 } from "react-aria-components"
 
-import { labelVariants } from "@dv/styles/components/label"
-import { cn } from "../../../utils"
+import { labelVariants } from "@pixelshades/styles/components/label"
+import { cn } from "@pixelshades/utils/styles"
+import type { ReactNode } from "react"
+import { FormDescription, FormFieldError } from "../form"
+import { type FormComponentLabelProps, Label } from "../label"
 
-const RadioGroup = ({ className, orientation = "vertical", ...props }: RadioGroupProps) => {
+export interface RadioGroupProps extends AriaRadioGroupProps, FormComponentLabelProps {
+	children?: ReactNode
+	helperText?: string
+	errorMessage?: string | ((validation: ValidationResult) => string)
+}
+
+const RadioGroup = ({
+	className,
+	orientation = "vertical",
+	description,
+	tooltip,
+	errorMessage,
+	children,
+	...props
+}: RadioGroupProps) => {
 	return (
 		<AriaRadioGroup
 			className={(values) =>
 				cn(
+					"group flex flex-col gap-md",
 					{
 						"grid gap-md": orientation === "vertical",
 						"flex items-center gap-md": orientation === "horizontal",
@@ -22,17 +47,26 @@ const RadioGroup = ({ className, orientation = "vertical", ...props }: RadioGrou
 				)
 			}
 			{...props}
-		/>
+		>
+			<Label description={description} tooltip={tooltip}>
+				{props.label}
+			</Label>
+			<div className="flex gap-2 group-orientation-vertical:flex-col group-orientation-horizontal:gap-4">
+				{children}
+			</div>
+			{description && <FormDescription>{description}</FormDescription>}
+			<FormFieldError>{errorMessage}</FormFieldError>
+		</AriaRadioGroup>
 	)
 }
 
 RadioGroup.displayName = "RadioGroup"
 
-interface RadioProps extends AriaRadioProps {
+export interface RadioProps extends AriaRadioProps {
 	showRadio?: boolean
 }
 
-const Radio = ({ className, children, showRadio = true, ...props }: RadioProps) => {
+const RadioRoot = ({ className, children, showRadio = true, ...props }: RadioProps) => {
 	return (
 		<AriaRadio
 			className={(values) =>
@@ -58,7 +92,10 @@ const Radio = ({ className, children, showRadio = true, ...props }: RadioProps) 
 	)
 }
 
-Radio.displayName = "Radio"
+RadioRoot.displayName = "Radio"
 
-export { Radio, RadioGroup }
-export type { RadioProps, RadioGroupProps }
+export const Radio = Object.assign(RadioRoot, {
+	Group: RadioGroup,
+})
+
+export { RadioGroup }

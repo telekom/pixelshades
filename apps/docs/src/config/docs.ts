@@ -1,4 +1,4 @@
-import type { LucideIcon } from "@dv/ui/icons"
+import type { LucideIcon } from "@pixelshades/ui/icons"
 
 export interface NavItem {
 	title: string

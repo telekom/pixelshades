@@ -1,5 +1,5 @@
-import { LoadingSpinner } from "@dv/ui/components"
-import { Loader, LoaderIcon } from "@dv/ui/icons"
+import { LoadingSpinner } from "@pixelshades/ui/components"
+import { Loader } from "@pixelshades/ui/icons"
 
 export default function Example() {
 	return (

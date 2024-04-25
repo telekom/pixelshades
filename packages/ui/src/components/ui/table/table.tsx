@@ -1,3 +1,9 @@
+"use client"
+
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import {
 	Cell as AriaCell,
 	type CellProps as AriaCellProps,
@@ -14,9 +20,9 @@ import {
 	useTableOptions,
 } from "react-aria-components"
 
-import { tableVariants } from "@dv/styles/components/table"
+import { tableVariants } from "@pixelshades/styles/components/table"
+import { createStyleContext } from "@pixelshades/utils/styles"
 import { ChevronDown, ChevronUp, Menu } from "lucide-react"
-import { createStyleContext } from "../../../utils/create-style-context"
 import { Button } from "../button"
 import { Checkbox } from "../checkbox"
 
@@ -28,7 +34,7 @@ const TableBody = AriaTableBody
 
 export type TableProps = AriaTableProps
 
-const Table = withProvider(AriaTable, "root")
+const TableRoot = withProvider(AriaTable, "root")
 
 export type TableCellProps = AriaCellProps
 
@@ -100,4 +106,10 @@ const TableRow = <T extends object>({
 	)
 }
 
-export { Table, TableBody, TableCell, TableColumn, TableHeader, TableRow }
+export const Table = Object.assign(TableRoot, {
+	Body: TableBody,
+	Cell: TableCell,
+	Column: TableColumn,
+	Header: TableHeader,
+	Row: TableRow,
+})

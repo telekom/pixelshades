@@ -1,7 +1,7 @@
-import { cn } from "@dv/ui/utils"
+import { cn } from "@pixelshades/utils/styles"
 import { siteConfig } from "~/config/site"
 
-import { FlameIcon } from "@dv/ui/icons"
+import { FlameIcon } from "@pixelshades/ui/icons"
 import { Link } from "@tanstack/react-router"
 
 export function MainNav() {
@@ -21,6 +21,7 @@ export function MainNav() {
 				>
 					Docs
 				</Link>
+
 				<Link
 					to="/examples"
 					className={cn("text-subtle-foreground transition-colors hover:text-foreground/80")}

@@ -1,3 +1,9 @@
+"use client"
+
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { useEffect, useMemo, useState } from "react"
 import { If } from "../utils/if"
 
@@ -11,8 +17,9 @@ interface TocProps {
 	toc: TocItem[]
 }
 
+import { cn } from "@pixelshades/utils/styles"
 import { useMounted } from "../../hooks"
-import { cn } from "../../utils"
+import { Heading } from "../ui/heading/heading"
 
 export const TableOfContents = ({ toc }: TocProps) => {
 	const isMounted = useMounted()
@@ -34,7 +41,9 @@ export const TableOfContents = ({ toc }: TocProps) => {
 
 	return (
 		<nav className="rounded p-4 shadow">
-			<h2 className="mb-4 font-bold text-xl">Table of Contents</h2>
+			<Heading level={5} className="mb-md">
+				On this Page
+			</Heading>
 			<Tree tree={toc} activeItem={activeHeading} />
 		</nav>
 	)

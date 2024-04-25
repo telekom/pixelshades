@@ -1,7 +1,13 @@
-import { dataListVariants } from "@dv/styles/components/data-list"
+"use client"
+
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
+import { dataListVariants } from "@pixelshades/styles/components/data-list"
+import { forwardRef } from "@pixelshades/utils/jsx"
+import { createStyleContext } from "@pixelshades/utils/styles"
 import type { HTMLAttributes } from "react"
-import { createStyleContext } from "../../../utils/create-style-context"
-import { forwardRef } from "../../../utils/jsx"
 
 export type DataListProps = HTMLAttributes<HTMLDListElement>
 
@@ -29,9 +35,13 @@ const UnstyledDataListValue = forwardRef(({ ...props }: DataListValueProps) => {
 	return <dd {...props} />
 })
 
-const DataList = withProvider(UnstyledDataList, "root")
+const DataListRoot = withProvider(UnstyledDataList, "root")
 const DataListItem = withContext(UnstyledDataListItem, "item")
 const DataListLabel = withContext(UnstyledDataListLabel, "label")
 const DataListValue = withContext(UnstyledDataListValue, "value")
 
-export { DataList, DataListItem, DataListLabel, DataListValue }
+export const DataList = Object.assign(DataListRoot, {
+	Item: DataListItem,
+	Label: DataListLabel,
+	Value: DataListValue,
+})

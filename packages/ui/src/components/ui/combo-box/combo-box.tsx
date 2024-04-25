@@ -1,3 +1,9 @@
+"use client"
+
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import type { ComboBoxProps as AriaComboBoxProps, ListBoxItemProps } from "react-aria-components"
 import {
 	ComboBox as AriaComboBox,
@@ -10,7 +16,7 @@ import {
 	Text,
 } from "react-aria-components"
 
-import { comboboxVaraints } from "@dv/styles/components/combo-box"
+import { comboboxVaraints } from "@pixelshades/styles/components/combo-box"
 import { ChevronDown } from "lucide-react"
 import type React from "react"
 
@@ -24,7 +30,7 @@ interface ComboBoxProps<T extends object> extends Omit<AriaComboBoxProps<T>, "ch
 	children: React.ReactNode | ((item: T) => React.ReactNode)
 }
 
-const ComboBox = <T extends object>({
+const ComboBoxRoot = <T extends object>({
 	label,
 	className,
 	description,
@@ -48,7 +54,7 @@ const ComboBox = <T extends object>({
 	</AriaComboBox>
 )
 
-ComboBox.displayName = "ComboBox"
+ComboBoxRoot.displayName = "ComboBox"
 
 export type ComboBoxItemProps = ListBoxItemProps
 
@@ -56,4 +62,6 @@ const ComboBoxItem = (props: ComboBoxItemProps) => <ListBoxItem {...props} class
 
 ComboBoxItem.displayName = "ComboBoxItem"
 
-export { ComboBox, ComboBoxItem }
+export const ComboBox = Object.assign(ComboBoxRoot, {
+	Item: ComboBoxItem,
+})

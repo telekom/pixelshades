@@ -1,19 +1,12 @@
 {
 	"$schema": "https://turbo.build/schema.json",
-	"globalDependencies": [
-		"**/.env.*local"
-	],
+	"globalDependencies": ["**/.env.*local"],
 	"pipeline": {
 		"build": {
-			"dependsOn": [
-				"^build"
-			],
-			"outputs": [
-				".next/**",
-				"!.next/cache/**"
-			]
+			"dependsOn": ["^build"],
+			"outputs": [".next/**", "!.next/cache/**", "dist/**"]
 		},
-		"@dv/styles#build": {
+		"@pixelshades/styles#build": {
 			"cache": true,
 			"persistent": false
 		},
@@ -21,7 +14,7 @@
 			"cache": false,
 			"persistent": true
 		},
-		"@dv/ui#dev": {
+		"@pixelshades/ui#dev": {
 			"cache": false,
 			"persistent": true
 		}

@@ -1,3 +1,9 @@
+"use client"
+
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import type { SelectProps as AriaSelectProps, ListBoxItemProps } from "react-aria-components"
 import {
 	Select as AriaSelect,
@@ -10,7 +16,7 @@ import {
 	Text,
 } from "react-aria-components"
 
-import { selectVariants } from "@dv/styles/components/select"
+import { selectVariants } from "@pixelshades/styles/components/select"
 import { ChevronDown } from "lucide-react"
 import type React from "react"
 
@@ -24,7 +30,7 @@ interface SelectProps<T extends object> extends Omit<AriaSelectProps<T>, "childr
 	children: React.ReactNode | ((item: T) => React.ReactNode)
 }
 
-const Select = <T extends object>({
+const SelectRoot = <T extends object>({
 	label,
 	className,
 	description,
@@ -46,7 +52,7 @@ const Select = <T extends object>({
 	</AriaSelect>
 )
 
-Select.displayName = "Select"
+SelectRoot.displayName = "Select"
 
 const SelectItem = (props: ListBoxItemProps) => {
 	return <ListBoxItem {...props} className={item()} />
@@ -54,4 +60,6 @@ const SelectItem = (props: ListBoxItemProps) => {
 
 SelectItem.displayName = "SelectItem"
 
-export { Select, SelectItem }
+export const Select = Object.assign(SelectRoot, {
+	Item: SelectItem,
+})

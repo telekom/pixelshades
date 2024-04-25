@@ -1,12 +1,4 @@
-import {
-	Command,
-	CommandGroup,
-	CommandItem,
-	CommandItemDescription,
-	CommandSearch,
-	If,
-	Typography,
-} from "@dv/ui/components"
+import { Command, If, Typography } from "@pixelshades/ui/components"
 import { components, dvds_pages } from "#site/content"
 
 import Fuse, { type FuseResultMatch } from "fuse.js"
@@ -14,7 +6,7 @@ import { Highlight } from "../../../../packages/ui/src/components/ui/highlight"
 
 import { useState } from "react"
 
-import { Component, StickyNote } from "@dv/ui/icons"
+import { Component, StickyNote } from "@pixelshades/ui/icons"
 
 type SearchDialogProps = {
 	open?: boolean
@@ -70,17 +62,17 @@ export const SearchDialog = ({ open, handleOpenChange }: SearchDialogProps) => {
 	return (
 		<Command
 			open={open}
-			searchField={<CommandSearch />}
+			searchField={<Command.Search />}
 			onOpenChange={handleOnOpen}
 			onSearchChange={setInputValue}
 			searchValue={inputValue}
 			disableIntegratedSearch
 		>
-			<CommandGroup heading="Components" className="font-light text-primary-foreground">
+			<Command.Group heading="Components" className="font-light text-primary-foreground">
 				<If
 					condition={componentSearchResults.length > 0 || inputValue.length !== 0}
 					fallback={components.map((value) => (
-						<CommandItem
+						<Command.Item
 							before={
 								<div className="rounded-md border border-border bg-subtle p-2">
 									<Component className="size-4 text-foreground" />
@@ -91,13 +83,13 @@ export const SearchDialog = ({ open, handleOpenChange }: SearchDialogProps) => {
 						>
 							<div className="flex flex-col items-start gap-md">
 								<Typography>{value.title}</Typography>
-								<CommandItemDescription>{value.description}</CommandItemDescription>
+								<Command.ItemDescription>{value.description}</Command.ItemDescription>
 							</div>
-						</CommandItem>
+						</Command.Item>
 					))}
 				>
 					{componentSearchResults.map((value) => (
-						<CommandItem
+						<Command.Item
 							before={
 								<div className="rounded-md border border-border bg-subtle p-2">
 									<Component className="size-4" />
@@ -118,24 +110,24 @@ export const SearchDialog = ({ open, handleOpenChange }: SearchDialogProps) => {
 									</Highlight>
 								</Typography>
 								{value.item.description && (
-									<CommandItemDescription
+									<Command.ItemDescription
 										highlight={getMatches(
 											value.matches?.find((val) => val.value === value.item.description),
 										)}
 									>
 										{value.item.description}
-									</CommandItemDescription>
+									</Command.ItemDescription>
 								)}
 							</div>
-						</CommandItem>
+						</Command.Item>
 					))}
 				</If>
-			</CommandGroup>
-			<CommandGroup heading="DVDS CLI Tool" className="max-w-min font-light text-primary-foreground">
+			</Command.Group>
+			<Command.Group heading="DVDS CLI Tool" className="max-w-min font-light text-primary-foreground">
 				<If
 					condition={dvdsSearchResults.length > 0}
 					fallback={dvds_pages.map((value) => (
-						<CommandItem
+						<Command.Item
 							key={value.slug}
 							before={
 								<div className="rounded-md border border-border bg-subtle p-2">
@@ -148,15 +140,15 @@ export const SearchDialog = ({ open, handleOpenChange }: SearchDialogProps) => {
 									<Typography>{value.title}</Typography>
 
 									{value.description && (
-										<CommandItemDescription>{value.description}</CommandItemDescription>
+										<Command.ItemDescription>{value.description}</Command.ItemDescription>
 									)}
 								</div>
 							</div>
-						</CommandItem>
+						</Command.Item>
 					))}
 				>
 					{dvdsSearchResults.map((value) => (
-						<CommandItem key={value.refIndex} href={`/docs/dvds-cli/${value.item.slug}`}>
+						<Command.Item key={value.refIndex} href={`/docs/dvds-cli/${value.item.slug}`}>
 							<div className="flex flex-row items-center gap-2">
 								<div className="rounded-md border border-border bg-subtle p-2">
 									<StickyNote size={18} className="text-foreground" />
@@ -172,21 +164,21 @@ export const SearchDialog = ({ open, handleOpenChange }: SearchDialogProps) => {
 									</Highlight>
 
 									{value.item.description && (
-										<CommandItemDescription
+										<Command.ItemDescription
 											highlight={getMatches(
 												value.matches?.find((val) => val.value === value.item.description),
 											)}
 											key={value.refIndex}
 										>
 											{value.item.description}
-										</CommandItemDescription>
+										</Command.ItemDescription>
 									)}
 								</div>
 							</div>
-						</CommandItem>
+						</Command.Item>
 					))}
 				</If>
-			</CommandGroup>
+			</Command.Group>
 		</Command>
 	)
 }

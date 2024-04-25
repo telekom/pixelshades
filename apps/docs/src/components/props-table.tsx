@@ -1,14 +1,4 @@
-import {
-	Heading,
-	If,
-	Table,
-	TableBody,
-	TableCell,
-	TableColumn,
-	TableHeader,
-	TableRow,
-	Typography,
-} from "@dv/ui/components"
+import { If, Table, Typography } from "@pixelshades/ui/components"
 import props from "~/lib/props.json"
 
 export type PropsTableProps = {
@@ -53,29 +43,29 @@ export const PropsTable = ({ slug }: PropsTableProps) => {
 						</If>
 					</Typography>
 					<Table className="w-full bg-subtle/10" aria-label={prop.displayName}>
-						<TableHeader>
-							<TableColumn isRowHeader>Name</TableColumn>
-							<TableColumn>Type</TableColumn>
-							<TableColumn>Description</TableColumn>
-						</TableHeader>
-						<TableBody>
+						<Table.Header>
+							<Table.Column isRowHeader>Name</Table.Column>
+							<Table.Column>Type</Table.Column>
+							<Table.Column>Description</Table.Column>
+						</Table.Header>
+						<Table.Body>
 							<If condition={prop.props}>
 								{(data) => {
 									return Object.entries(data).map(([key, value]) => (
-										<TableRow key={key}>
-											<TableCell>
+										<Table.Row key={key}>
+											<Table.Cell>
 												{key}
 												<If condition={value.required}>
 													<span className="text-destructive">*</span>
 												</If>
-											</TableCell>
-											<TableCell>{value.tsType?.raw}</TableCell>
-											<TableCell>{value.description}</TableCell>
-										</TableRow>
+											</Table.Cell>
+											<Table.Cell>{value.tsType?.raw}</Table.Cell>
+											<Table.Cell>{value.description}</Table.Cell>
+										</Table.Row>
 									))
 								}}
 							</If>
-						</TableBody>
+						</Table.Body>
 					</Table>
 				</div>
 			))}

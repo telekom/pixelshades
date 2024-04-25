@@ -2,22 +2,16 @@ import { components } from "#site/content"
 
 import {
 	DataList,
-	DataListItem,
-	DataListLabel,
-	DataListValue,
 	Heading,
 	HeadingLevel,
 	If,
 	Link,
-	Tab,
-	TabPanel,
 	TableOfContents,
 	Tabs,
-	TabsList,
 	Typography,
-} from "@dv/ui/components"
-import { GithubIcon } from "@dv/ui/icons"
-import { cn } from "@dv/ui/utils"
+} from "@pixelshades/ui/components"
+import { GithubIcon } from "@pixelshades/ui/icons"
+import { cn } from "@pixelshades/utils/styles"
 
 import { createFileRoute } from "@tanstack/react-router"
 import { z } from "zod"
@@ -61,19 +55,19 @@ function ComponentPage() {
 
 					<div className="my-layout-md">
 						<DataList>
-							<DataListItem>
-								<DataListLabel>Import</DataListLabel>
-								<DataListValue>
+							<DataList.Item>
+								<DataList.Label>Import</DataList.Label>
+								<DataList.Value>
 									<code>
 										import {"{ "}
-										{component.title}
-										{" }"} from "@dv/ui/components"
+										{component.title.replace(/\s/g, "")}
+										{" }"} from "@pixelshades/ui/components"
 									</code>
-								</DataListValue>
-							</DataListItem>
-							<DataListItem>
-								<DataListLabel>Source</DataListLabel>
-								<DataListValue>
+								</DataList.Value>
+							</DataList.Item>
+							<DataList.Item>
+								<DataList.Label>Source</DataList.Label>
+								<DataList.Value>
 									<GithubIcon className="size-3" />
 									<Link
 										className="text-foreground"
@@ -81,19 +75,19 @@ function ComponentPage() {
 									>
 										View Source Code
 									</Link>
-								</DataListValue>
-							</DataListItem>
+								</DataList.Value>
+							</DataList.Item>
 							<If condition={component.docLink}>
 								{(docLink) => (
-									<DataListItem>
-										<DataListLabel>Aria Docs</DataListLabel>
-										<DataListValue>
+									<DataList.Item>
+										<DataList.Label>Aria Docs</DataList.Label>
+										<DataList.Value>
 											<AdopeLogo className="size-3" />
 											<Link className="text-foreground" href={docLink}>
 												View Docs
 											</Link>
-										</DataListValue>
-									</DataListItem>
+										</DataList.Value>
+									</DataList.Item>
 								)}
 							</If>
 						</DataList>
@@ -101,25 +95,25 @@ function ComponentPage() {
 				</div>
 
 				<Tabs variant="pill">
-					<TabsList className="mb-layout-xs">
-						<Tab id="docs">Docs</Tab>
-						<Tab id="props">Props</Tab>
-					</TabsList>
+					<Tabs.List className="mb-layout-xs">
+						<Tabs.Tab id="docs">Docs</Tabs.Tab>
+						<Tabs.Tab id="props">Props</Tabs.Tab>
+					</Tabs.List>
 
-					<TabPanel id="docs" className={cn("relative grid w-full grid-cols-12 gap-layout-sm")}>
+					<Tabs.Panel id="docs" className={cn("relative grid w-full grid-cols-12 gap-layout-sm")}>
 						<div className="col-span-9 w-full">
 							<MDXContent code={component.content} />
 							<PagerButtons permalink={component.permalink} />
 						</div>
-						<div className="sticky top-16 col-span-3 self-start">
+						<div className="sticky top-16 col-span-3 hidden self-start md:block">
 							<If condition={component.toc.length > 0}>
 								<TableOfContents toc={component.toc} />
 							</If>
 						</div>
-					</TabPanel>
-					<TabPanel id="props" className="w-full">
+					</Tabs.Panel>
+					<Tabs.Panel id="props" className="w-full">
 						<PropsTable slug={component.slug} />
-					</TabPanel>
+					</Tabs.Panel>
 				</Tabs>
 			</main>
 		</HeadingLevel>

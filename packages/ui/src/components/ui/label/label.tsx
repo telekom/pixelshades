@@ -1,8 +1,43 @@
-import { labelVariants } from "@dv/styles/components/label"
-import { Label as AriaLabel, type LabelProps } from "react-aria-components"
+"use client"
 
-const Label = ({ className, ...props }: LabelProps) => <AriaLabel className={labelVariants(className)} {...props} />
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
 
-Label.displayName = "Label"
+import { labelVariants } from "@pixelshades/styles/components/label"
+import { forwardRef } from "@pixelshades/utils/jsx"
+import type { ReactNode } from "react"
+import { Label as AriaLabel, type LabelProps as AriaLabelProps, type TextProps } from "react-aria-components"
+import { If } from "../../utils"
+import { Tooltip } from "../tooltip"
 
-export { Label, type LabelProps }
+export interface FormComponentLabelProps {
+	label?: ReactNode
+	tooltip?: ReactNode
+	description?: ReactNode
+}
+
+interface LabelProps extends AriaLabelProps {
+	tooltip?: ReactNode
+	description?: ReactNode
+}
+
+const LabelRoot = forwardRef(({ className, children, description, tooltip, ...props }: LabelProps) => {
+	const RenderedLabel = () => (
+		<AriaLabel className={labelVariants(className).base()} {...props}>
+			<span>{children}</span>
+			<If condition={description}>
+				{(description) => <span className={labelVariants(className).description()}>{description}</span>}
+			</If>
+			{tooltip ? <Tooltip>{tooltip}</Tooltip> : null}
+		</AriaLabel>
+	)
+
+	return <RenderedLabel />
+})
+
+export type LabelHelperTextProps = TextProps
+
+export const Label = Object.assign(LabelRoot, {})
+
+export type { LabelProps }

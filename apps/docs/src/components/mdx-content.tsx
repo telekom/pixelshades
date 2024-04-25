@@ -1,8 +1,8 @@
-import { Heading, Tabs } from "@dv/ui/components"
-import { cn } from "@dv/ui/utils"
+import { Heading, Tabs } from "@pixelshades/ui/components"
+import { cn } from "@pixelshades/utils/styles"
 import * as runtime from "react/jsx-runtime"
 import type { NpmCommands } from "~/lib/rehype/types/units"
-import { ApiTable } from "./api-table"
+import { ColorPreview } from "./color-preview"
 import { ComponentPreview } from "./component-preview"
 import { CopyButton, CopyNpmCommandButton } from "./copy-button"
 
@@ -13,7 +13,7 @@ interface MdxProps {
 
 const defaultComponents = {
 	ComponentPreview,
-	ApiTable,
+	ColorPreview,
 	Tabs,
 	code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
 		<code

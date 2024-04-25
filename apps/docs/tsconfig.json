@@ -21,8 +21,8 @@
 		],
 		"paths": {
 			"~/*": ["./src/*"],
-			"@dv/ui/*": ["../../packages/ui/src/*"],
-			"@dv/styles/components/*": ["../../packages/styles/src/components/*"],
+			"@pixelshades/ui/*": ["../../packages/ui/src/*"],
+			"@pixelshades/styles/components/*": ["../../packages/styles/src/components/*"],
 			"#site/content": ["./.velite"]
 		}
 	},

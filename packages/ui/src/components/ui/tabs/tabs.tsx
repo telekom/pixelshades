@@ -1,3 +1,9 @@
+"use client"
+
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import {
 	Tab as AriaTab,
 	TabList as AriaTabList,
@@ -9,12 +15,12 @@ import {
 	type TabsProps,
 } from "react-aria-components"
 
-import { tabsVariants } from "@dv/styles/components/tabs"
-import { createStyleContext } from "../../../utils/create-style-context"
+import { tabsVariants } from "@pixelshades/styles/components/tabs"
+import { createStyleContext } from "@pixelshades/utils/styles"
 
 const { withContext, withProvider } = createStyleContext(tabsVariants)
 
-const Tabs = withProvider(AriaTabsRoot, "root")
+const TabsRoot = withProvider(AriaTabsRoot, "root")
 
 const TabsList = withContext(AriaTabList, "list")
 
@@ -23,4 +29,8 @@ const TabPanel = withContext(AriaTabPanel, "panel")
 
 export type { TabListProps, TabPanelProps, TabProps, TabsProps }
 
-export { Tabs, TabsList, Tab, TabPanel }
+export const Tabs = Object.assign(TabsRoot, {
+	Tab: Tab,
+	List: TabsList,
+	Panel: TabPanel,
+})

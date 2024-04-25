@@ -1,4 +1,4 @@
-import { Highlight, Typography } from "@dv/ui/components"
+import { Highlight, Typography } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (

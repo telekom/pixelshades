@@ -14,8 +14,8 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as ExamplesImport } from './routes/examples'
 import { Route as DocsImport } from './routes/docs'
 import { Route as IndexImport } from './routes/index'
+import { Route as DocsIndexImport } from './routes/docs/index'
 import { Route as DocsSlugImport } from './routes/docs/$slug'
-import { Route as DocsDvdsCliSlugIndexImport } from './routes/docs/dvds-cli/$slug/index'
 import { Route as DocsComponentsSlugIndexImport } from './routes/docs/components/$slug/index'
 
 // Create/Update Routes
@@ -35,13 +35,13 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const DocsSlugRoute = DocsSlugImport.update({
-  path: '/$slug',
+const DocsIndexRoute = DocsIndexImport.update({
+  path: '/',
   getParentRoute: () => DocsRoute,
 } as any)
 
-const DocsDvdsCliSlugIndexRoute = DocsDvdsCliSlugIndexImport.update({
-  path: '/dvds-cli/$slug/',
+const DocsSlugRoute = DocsSlugImport.update({
+  path: '/$slug',
   getParentRoute: () => DocsRoute,
 } as any)
 
@@ -70,12 +70,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsSlugImport
       parentRoute: typeof DocsImport
     }
-    '/docs/components/$slug/': {
-      preLoaderRoute: typeof DocsComponentsSlugIndexImport
+    '/docs/': {
+      preLoaderRoute: typeof DocsIndexImport
       parentRoute: typeof DocsImport
     }
-    '/docs/dvds-cli/$slug/': {
-      preLoaderRoute: typeof DocsDvdsCliSlugIndexImport
+    '/docs/components/$slug/': {
+      preLoaderRoute: typeof DocsComponentsSlugIndexImport
       parentRoute: typeof DocsImport
     }
   }
@@ -87,8 +87,8 @@ export const routeTree = rootRoute.addChildren([
   IndexRoute,
   DocsRoute.addChildren([
     DocsSlugRoute,
+    DocsIndexRoute,
     DocsComponentsSlugIndexRoute,
-    DocsDvdsCliSlugIndexRoute,
   ]),
   ExamplesRoute,
 ])

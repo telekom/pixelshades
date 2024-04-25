@@ -1,8 +1,14 @@
+"use client"
+
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { Link as AriaLink, type LinkProps as AriaLinkProps } from "react-aria-components"
 
-import { linkVariants } from "@dv/styles/components/link"
+import { linkVariants } from "@pixelshades/styles/components/link"
+import { cn } from "@pixelshades/utils/styles"
 import type { VariantProps } from "tailwind-variants"
-import { cn } from "../../../utils"
 
 export interface LinkProps extends AriaLinkProps, VariantProps<typeof linkVariants> {
 	className?: string

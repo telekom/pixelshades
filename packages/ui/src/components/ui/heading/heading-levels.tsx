@@ -1,3 +1,9 @@
+"use client"
+
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import type { ReactNode } from "react"
 import { useContext } from "react"
 import type { HeadingLevels } from "./heading"

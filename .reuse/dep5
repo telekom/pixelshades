@@ -1,0 +1,61 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: pixelshades
+Upstream-Contact: makisuo <david.granzin@t-systems.com>
+Source: https://pixelshades.dev
+
+Files: .npmrc
+Copyright: 2024 Deutsche Telekom AG
+License: CC0-1.0
+
+Files: apps/docs/*
+Copyright: 2024 Deutsche Telekom AG
+License: CC-BY-4.0
+
+Files: .vscode/*
+Copyright: 2024 Deutsche Telekom AG
+License: CC0-1.0
+
+
+Files: .changeset/*
+Copyright: 2024 Deutsche Telekom AG
+License: CC0-1.0
+
+
+Files: .github/*
+Copyright: 2024 Deutsche Telekom AG
+License: CC0-1.0
+
+Files: packages/*
+Copyright: 2024 Deutsche Telekom AG
+License: Apache-2.0
+
+Files: turbo.json
+Copyright: 2024 Deutsche Telekom AG
+License: CC0-1.0
+
+Files: package.json
+Copyright: 2024 Deutsche Telekom AG
+License: CC0-1.0
+
+Files: bun.lockb
+Copyright: 2024 Deutsche Telekom AG
+License: CC0-1.0
+
+Files: pnpm-lock.yaml
+Copyright: 2024 Deutsche Telekom AG
+License: CC0-1.0
+
+Files: .npmrc
+Copyright: 2024 Deutsche Telekom AG
+License: CC0-1.0
+
+
+Files: biome.json
+Copyright: 2024 Deutsche Telekom AG
+License: CC0-1.0
+
+
+
+
+
+

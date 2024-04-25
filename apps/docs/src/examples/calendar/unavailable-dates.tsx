@@ -1,8 +1,8 @@
 "use client"
 
-import { Calendar } from "@dv/ui/components"
-import { useLocale } from "@dv/ui/hooks"
 import { isWeekend } from "@internationalized/date"
+import { Calendar } from "@pixelshades/ui/components"
+import { useLocale } from "@pixelshades/ui/hooks"
 
 export default function Example() {
 	const { locale } = useLocale()

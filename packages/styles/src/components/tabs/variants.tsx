@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { type VariantProps, tv } from "tailwind-variants"
 
 export type TabsVariantsProps = VariantProps<typeof tabsVariants>
@@ -14,7 +18,7 @@ export const tabsVariants = tv({
 			outline: {
 				root: "",
 				list: "border-blue-500 border-b",
-				tab: "-mb-[1px] border-red-500 rounded-b-none aria-selected:border aria-selected:bg-subtle aria-selected:border-b-transparent data-[hovered]:bg-subtle data-[focus-visible]:ring-2",
+				tab: "-mb-px border-red-500 rounded-b-none aria-selected:border aria-selected:bg-subtle aria-selected:border-b-transparent data-[hovered]:bg-subtle data-[focus-visible]:ring-2",
 				panel: "bg-subtle",
 			},
 			line: {

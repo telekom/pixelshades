@@ -2,7 +2,7 @@ import { Outlet, createFileRoute } from "@tanstack/react-router"
 
 import { DocsSidebarNav } from "~/components/sidebar-nav"
 import type { SidebarNavItem } from "~/config/docs"
-import { components, dvds_pages, general_pages } from "#site/content"
+import { components, general_pages } from "#site/content"
 
 export const Route = createFileRoute("/docs")({
 	component: DocsLayout,
@@ -23,20 +23,9 @@ const gettingStartedItems: SidebarNavItem[] = general_pages.map((page) => ({
 	items: [],
 }))
 
-const dvdsItems: SidebarNavItem[] = dvds_pages.map((page) => ({
-	title: page.title,
-	href: page.permalink,
-	items: [],
-}))
-
 sidebarItems.push({
 	title: "Getting Started",
 	items: gettingStartedItems,
-})
-
-sidebarItems.push({
-	title: "DVDS CLI",
-	items: dvdsItems,
 })
 
 sidebarItems.push({

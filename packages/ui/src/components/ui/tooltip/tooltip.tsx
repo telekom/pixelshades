@@ -1,4 +1,10 @@
-import { tooltipVariants } from "@dv/styles/components/tooltip"
+"use client"
+
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
+import { tooltipVariants } from "@pixelshades/styles/components/tooltip"
 import { InfoIcon } from "lucide-react"
 import {
 	Tooltip as AriaTooltip,
@@ -28,7 +34,7 @@ export interface TooltipProps extends AriaTooltipProps {
 	className?: string
 }
 
-const Tooltip = ({ children, className, ...props }: TooltipProps) => {
+const DefaultTooltipp = ({ children, className, ...props }: TooltipProps) => {
 	return (
 		<TooltipRoot delay={200} closeDelay={200}>
 			<Button className="size-4 hover:text-primary" variant="ghost" size="icon">
@@ -41,6 +47,9 @@ const Tooltip = ({ children, className, ...props }: TooltipProps) => {
 	)
 }
 
-Tooltip.displayName = "Tooltip"
+DefaultTooltipp.displayName = "Tooltip"
 
-export { Tooltip, TooltipContent, TooltipRoot }
+export const Tooltip = Object.assign(DefaultTooltipp, {
+	Root: TooltipRoot,
+	Content: TooltipContent,
+})

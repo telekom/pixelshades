@@ -1,3 +1,9 @@
+"use client"
+
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 import {
@@ -14,7 +20,7 @@ import {
 	Text,
 } from "react-aria-components"
 
-import { calendarVariants } from "@dv/styles/components/calendar"
+import { calendarVariants } from "@pixelshades/styles/components/calendar"
 
 const { root, header, heading, gridHeaderCell, cell, grid, iconButton } = calendarVariants()
 
@@ -51,4 +57,4 @@ const Calendar = ({ className, visibleDuration, error, ...props }: CalendarProps
 
 Calendar.displayName = "Calendar"
 
-export { Calendar, calendarVariants }
+export { Calendar }

@@ -1,11 +1,11 @@
-import { Button, Input, Label, Popover, PopoverTrigger } from "@dv/ui/components"
+import { Button, Input, Label, Popover } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
-		<PopoverTrigger>
+		<Popover.Trigger>
 			<Button variant="outline">Open popover</Button>
 			<Popover className="w-80">
-				<div className="grid gap-lg ">
+				<div className="grid gap-lg">
 					<div className="space-y-2">
 						<h4 className="font-medium leading-none">Dimensions</h4>
 						<p className="text-sm text-subtle-foreground">Set the dimensions for the layer.</p>
@@ -30,6 +30,6 @@ export default function Example() {
 					</div>
 				</div>
 			</Popover>
-		</PopoverTrigger>
+		</Popover.Trigger>
 	)
 }

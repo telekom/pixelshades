@@ -1,6 +1,10 @@
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
+import { cn } from "@pixelshades/utils/styles"
 import type { Meta, StoryObj } from "@storybook/react"
 import { Inter } from "next/font/google"
-import { cn } from "../../../utils"
 import { FileTrigger } from "../file-trigger"
 import { Button } from "./button"
 

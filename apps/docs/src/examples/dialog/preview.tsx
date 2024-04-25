@@ -1,29 +1,19 @@
-import {
-	Button,
-	Dialog,
-	DialogContent,
-	DialogFooter,
-	DialogHeader,
-	DialogTitle,
-	DialogTrigger,
-	Input,
-	Label,
-} from "@dv/ui/components"
+import { Button, Dialog, Input, Label } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
-		<DialogTrigger>
+		<Dialog.Trigger>
 			<Button variant="outline">Edit Profile</Button>
 			<Dialog>
-				<DialogContent className="sm:max-w-[425px]">
+				<Dialog.Content className="sm:max-w-[425px]">
 					{({ close }) => (
 						<>
-							<DialogHeader>
-								<DialogTitle>Edit profile</DialogTitle>
+							<Dialog.Header>
+								<Dialog.Title>Edit profile</Dialog.Title>
 								<p className="text-sm text-subtle-foreground">
 									Make changes to your profile here. Click save when you&apos;re done.
 								</p>
-							</DialogHeader>
+							</Dialog.Header>
 							<div className="grid gap-lg py-4">
 								<div className="grid grid-cols-4 items-center gap-lg">
 									<Label htmlFor="name" className="text-right">
@@ -38,15 +28,15 @@ export default function Example() {
 									<Input id="username" defaultValue="@peduarte" className="col-span-3" />
 								</div>
 							</div>
-							<DialogFooter>
+							<Dialog.Footer>
 								<Button type="submit" onPress={close}>
 									Save changes
 								</Button>
-							</DialogFooter>
+							</Dialog.Footer>
 						</>
 					)}
-				</DialogContent>
+				</Dialog.Content>
 			</Dialog>
-		</DialogTrigger>
+		</Dialog.Trigger>
 	)
 }

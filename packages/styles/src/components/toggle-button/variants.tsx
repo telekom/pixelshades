@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+//
+// SPDX-License-Identifier: Apache-2.0
+
 import { tv } from "tailwind-variants"
 
 export const toggleVariants = tv({
@@ -9,10 +13,10 @@ export const toggleVariants = tv({
 	variants: {
 		variant: {
 			outline: {
-				button: "border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground",
+				button: "border border-border bg-transparent shadow-sm hover:bg-subtle hover:text-subtle-foreground",
 				icon: "text-foreground",
 			},
-			ghost: { button: "hover:bg-accent hover:text-accent-foreground", icon: "" },
+			ghost: { button: "hover:bg-subtle hover:text-subtle-foreground", icon: "" },
 
 			subtle: {
 				button: "bg-subtle text-subtle-foreground data-[selected=true]:text-foreground shadow-sm hover:bg-subtle/80",

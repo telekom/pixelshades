@@ -1,22 +1,22 @@
-import { DataList, DataListItem, DataListLabel, DataListValue, Link } from "@dv/ui/components"
-import { GithubIcon } from "@dv/ui/icons"
+import { DataList, Link } from "@pixelshades/ui/components"
+import { GithubIcon } from "@pixelshades/ui/icons"
 
 export default function Example() {
 	return (
 		<DataList>
-			<DataListItem>
-				<DataListLabel>Import</DataListLabel>
-				<DataListValue>
+			<DataList.Item>
+				<DataList.Label>Import</DataList.Label>
+				<DataList.Value>
 					<code>
 						import {"{ "}
 						Button
-						{" }"} from "@dv/ui/components"
+						{" }"} from "@pixelshades/ui/components"
 					</code>
-				</DataListValue>
-			</DataListItem>
-			<DataListItem>
-				<DataListLabel>Source</DataListLabel>
-				<DataListValue>
+				</DataList.Value>
+			</DataList.Item>
+			<DataList.Item>
+				<DataList.Label>Source</DataList.Label>
+				<DataList.Value>
 					<GithubIcon className="size-3" />
 					<Link
 						className="text-foreground"
@@ -24,12 +24,12 @@ export default function Example() {
 					>
 						View Source Code
 					</Link>
-				</DataListValue>
-			</DataListItem>
-			<DataListItem>
-				<DataListLabel>Owner</DataListLabel>
-				<DataListValue>Michael Jackson</DataListValue>
-			</DataListItem>
+				</DataList.Value>
+			</DataList.Item>
+			<DataList.Item>
+				<DataList.Label>Owner</DataList.Label>
+				<DataList.Value>Michael Jackson</DataList.Value>
+			</DataList.Item>
 		</DataList>
 	)
 }

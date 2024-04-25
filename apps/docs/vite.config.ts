@@ -11,13 +11,13 @@ import path from "node:path"
 export default defineConfig({
 	resolve: {
 		alias: {
-			"@dv/ui": path.resolve(__dirname, "../../packages/ui/src"),
-			"@dv/styles/components": path.resolve(__dirname, "../../packages/styles/src/components"),
+			"@pixelshades/ui": path.resolve(__dirname, "../../packages/ui/src"),
+			"@pixelshades/styles/components": path.resolve(__dirname, "../../packages/styles/src/components"),
 			// Add more package aliases as needed
 		},
 	},
 	optimizeDeps: {
-		exclude: ["@dv/ui"],
+		exclude: ["@pixelshades/ui"],
 	},
 	plugins: [tsconfigPaths(), react(), dvUiVitePlugin(), VeliteVitePlugin(), TanStackRouterVite()],
 })
