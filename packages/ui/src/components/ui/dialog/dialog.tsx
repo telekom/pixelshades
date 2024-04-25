@@ -8,10 +8,9 @@ import { dialogVariants } from "@pixelshades/styles/components/dialog"
 import type React from "react"
 import {
 	Dialog as AriaDialogContent,
-	DialogTrigger as AriaDialogTrigger,
-	type DialogProps,
+	type DialogProps as AriaDialogProps,
+	type HeadingProps as AriaHeadingProps,
 	Heading,
-	type HeadingProps,
 } from "react-aria-components"
 import { Modal, type ModalOverlayProps } from "../modal"
 
@@ -25,7 +24,11 @@ const DialogRoot = ({ children, className, ...props }: ModalOverlayProps) => (
 
 DialogRoot.displayName = "Dialog"
 
-const DialogContent = ({ children, className, ...props }: DialogProps & { className?: string }) => (
+export interface DialogContentProps extends AriaDialogProps {
+	className?: string
+}
+
+const DialogContent = ({ children, className, ...props }: DialogContentProps) => (
 	<AriaDialogContent {...props} className={content({ className })}>
 		{children}
 	</AriaDialogContent>
@@ -33,25 +36,31 @@ const DialogContent = ({ children, className, ...props }: DialogProps & { classN
 
 DialogContent.displayName = "DialogContent"
 
-const DialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
+export interface DialogHeaderProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+const DialogHeader = ({ className, ...props }: DialogHeaderProps) => (
 	<div className={header({ className })} {...props} />
 )
 
 DialogHeader.displayName = "DialogHeader"
 
-const DialogFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
+export interface DialogFooterProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+const DialogFooter = ({ className, ...props }: DialogFooterProps) => (
 	<div className={footer({ className })} {...props} />
 )
 
 DialogFooter.displayName = "DialogFooter"
 
-const DialogTitle = ({ className, ...props }: HeadingProps) => (
+export interface DialogTitleProps extends AriaHeadingProps {}
+
+const DialogTitle = ({ className, ...props }: DialogTitleProps) => (
 	<Heading slot="title" className={title({ className })} {...props} />
 )
 
 DialogTitle.displayName = "DialogTitle"
 
-const DialogTrigger = AriaDialogTrigger
+const DialogTrigger = Modal.Trigger
 
 export const Dialog = Object.assign(DialogRoot, {
 	Content: DialogContent,
@@ -60,3 +69,4 @@ export const Dialog = Object.assign(DialogRoot, {
 	Trigger: DialogTrigger,
 	Footer: DialogFooter,
 })
+export { DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogFooter }
