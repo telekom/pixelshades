@@ -23,6 +23,7 @@ import { createFileRoute } from "@tanstack/react-router"
 import { z } from "zod"
 import { AdopeLogo } from "~/components/logos/adope-logo"
 import { MDXContent } from "~/components/mdx-content"
+import { PagerButtons } from "~/components/pager-buttons"
 import { PropsTable } from "~/components/props-table"
 
 const componentPageSearchParams = z.object({
@@ -49,8 +50,6 @@ function ComponentPage() {
 	if (!component) {
 		return "Not Found"
 	}
-
-	console.log(component.toc)
 
 	return (
 		<HeadingLevel>
@@ -121,6 +120,7 @@ function ComponentPage() {
 						<PropsTable slug={component.slug} />
 					</TabPanel>
 				</Tabs>
+				<PagerButtons permalink={component.permalink} />
 			</main>
 		</HeadingLevel>
 	)

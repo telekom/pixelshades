@@ -1,5 +1,3 @@
-"use client"
-
 import { Badge } from "@dv/ui/components"
 import { cn } from "@dv/ui/utils"
 import { Link } from "@tanstack/react-router"

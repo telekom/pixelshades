@@ -4,6 +4,7 @@ import { Heading, HeadingLevel, Typography } from "@dv/ui/components"
 
 import { createFileRoute, notFound } from "@tanstack/react-router"
 import { MDXContent } from "~/components/mdx-content"
+import { PagerButtons } from "~/components/pager-buttons"
 
 interface PostProps {
 	params: {
@@ -42,6 +43,7 @@ export default function DocsPage({ params }: PostProps) {
 
 				<hr className="" />
 				<MDXContent code={component.content} />
+				<PagerButtons permalink={component.permalink} />
 			</main>
 		</HeadingLevel>
 	)
