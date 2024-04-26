@@ -20,9 +20,9 @@ import {
 	Text,
 } from "react-aria-components"
 
-import { calendarVariants } from "@pixelshades/styles/components/calendar"
+import { dateRangeCalendarVariants } from "@pixelshades/styles/components/date-range-calendar"
 
-const { root, header, heading, gridHeaderCell, cell, grid, iconButton } = calendarVariants()
+const { root, header, heading, gridHeaderCell, cell, grid, iconButton } = dateRangeCalendarVariants()
 
 export interface RangeCalendarProps<T extends DateValue> extends Omit<AriaRangeCalendarProps<T>, "className"> {
 	error?: string
@@ -46,7 +46,17 @@ const DateRangeCalendar = ({ className, visibleDuration, error, ...props }: Rang
 					<CalendarGridHeader>
 						{(day) => <CalendarHeaderCell className={gridHeaderCell()}>{day}</CalendarHeaderCell>}
 					</CalendarGridHeader>
-					<CalendarGridBody>{(date) => <CalendarCell className={cell()} date={date} />}</CalendarGridBody>
+					<CalendarGridBody>
+						{(date) => (
+							<CalendarCell
+								className={cell({
+									className:
+										"data-[selected]:rounded-none [&[data-selection-end]]:rounded-r-md [&[data-selection-start]]:rounded-l-md",
+								})}
+								date={date}
+							/>
+						)}
+					</CalendarGridBody>
 				</CalendarGrid>
 			))}
 		</div>
