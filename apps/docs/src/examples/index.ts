@@ -10,7 +10,63 @@
   };
   
   export const Demos: Record<string, Demo> = {
-    "badge/preview": {
+    "badge/alert": {
+	  component: lazy(() => import("~/examples/badge/alert.tsx")),
+	  code: `import { Badge } from "@pixelshades/ui/components"
+import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return (
+		<Badge variant="alert" before={<SmileIcon />} after={<ArrowRightIcon />}>
+			Badge Label
+		</Badge>
+	)
+}
+`,
+  },
+  "badge/default": {
+	  component: lazy(() => import("~/examples/badge/default.tsx")),
+	  code: `import { Badge } from "@pixelshades/ui/components"
+import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return (
+		<Badge variant="default" before={<SmileIcon />} after={<ArrowRightIcon />}>
+			Badge Label
+		</Badge>
+	)
+}
+`,
+  },
+  "badge/info": {
+	  component: lazy(() => import("~/examples/badge/info.tsx")),
+	  code: `import { Badge } from "@pixelshades/ui/components"
+import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return (
+		<Badge variant="info" before={<SmileIcon />} after={<ArrowRightIcon />}>
+			Badge Label
+		</Badge>
+	)
+}
+`,
+  },
+  "badge/outline": {
+	  component: lazy(() => import("~/examples/badge/outline.tsx")),
+	  code: `import { Badge } from "@pixelshades/ui/components"
+import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return (
+		<Badge variant="outline" before={<SmileIcon />} after={<ArrowRightIcon />}>
+			Badge Label
+		</Badge>
+	)
+}
+`,
+  },
+  "badge/preview": {
 	  component: lazy(() => import("~/examples/badge/preview.tsx")),
 	  code: `import { Badge } from "@pixelshades/ui/components"
 import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
@@ -24,27 +80,30 @@ export function Example() {
 }
 `,
   },
-  "badge/variants": {
-	  component: lazy(() => import("~/examples/badge/variants.tsx")),
+  "badge/with-after": {
+	  component: lazy(() => import("~/examples/badge/with-after.tsx")),
 	  code: `import { Badge } from "@pixelshades/ui/components"
-import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
+import { ArrowRightIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
-		<div className="flex flex-wrap gap-lg">
-			<Badge variant="default" before={<SmileIcon />} after={<ArrowRightIcon />}>
-				Badge Label
-			</Badge>
-			<Badge variant="alert" before={<SmileIcon />} after={<ArrowRightIcon />}>
-				Badge Label
-			</Badge>
-			<Badge variant="info" before={<SmileIcon />} after={<ArrowRightIcon />}>
-				Badge Label
-			</Badge>
-			<Badge variant="outline" before={<SmileIcon />} after={<ArrowRightIcon />}>
-				Badge Label
-			</Badge>
-		</div>
+		<Badge variant="default" after={<ArrowRightIcon />}>
+			Badge Label
+		</Badge>
+	)
+}
+`,
+  },
+  "badge/with-before": {
+	  component: lazy(() => import("~/examples/badge/with-before.tsx")),
+	  code: `import { Badge } from "@pixelshades/ui/components"
+import { Smile } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return (
+		<Badge variant="default" before={<Smile />}>
+			Badge Label
+		</Badge>
 	)
 }
 `,
