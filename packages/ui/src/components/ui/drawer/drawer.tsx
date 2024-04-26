@@ -3,17 +3,38 @@ import type { DialogContentProps, DialogFooterProps, DialogHeaderProps, DialogTi
 import { DialogContent, DialogFooter, DialogHeader, DialogTitle } from "../dialog"
 import { Modal, type ModalOverlayProps } from "../modal"
 
-const { modal } = drawerVariants()
+const { modalVertical, modalHorizontal } = drawerVariants()
+
+export const DIRECTIONS = ["left", "right", "bottom"] as const
+export type DrawerDirection = (typeof DIRECTIONS)[number]
+
+export const SIZES = ["xs", "sm", "md", "lg", "xl", "full"] as const
+export type DrawerSize = (typeof SIZES)[number]
 
 export interface DrawerProps extends ModalOverlayProps {
-	direction?: "left" | "right" | "bottom"
+	direction?: DrawerDirection
+	size?: DrawerSize
 }
 
-const DrawerRoot = ({ direction, children, className, ...props }: DrawerProps) => (
-	<Modal className={modal({ direction, className })} isDismissable={true} {...props}>
-		{children}
-	</Modal>
-)
+const DrawerRoot = ({ size, direction, children, className, ...props }: DrawerProps) => {
+	// FIXME - make it responsive
+	const modalVariant = ({ direction, ...props }: DrawerProps) =>
+		direction
+			? modalHorizontal({ ...props })
+			: modalVertical({
+					direction: {
+						initial: direction ?? "bottom",
+						md: direction ?? "right",
+					},
+					...props,
+				})
+
+	return (
+		<Modal className={modalVariant({ size, direction, className })} isDismissable={true} {...props}>
+			{children}
+		</Modal>
+	)
+}
 
 DrawerRoot.displayName = "Drawer"
 

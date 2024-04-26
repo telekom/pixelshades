@@ -32,6 +32,7 @@ interface SelectProps<T extends object> extends Omit<AriaSelectProps<T>, "childr
 
 const SelectRoot = <T extends object>({
 	label,
+	items,
 	className,
 	description,
 	helperText,

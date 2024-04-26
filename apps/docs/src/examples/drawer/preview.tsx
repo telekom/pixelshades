@@ -3,7 +3,7 @@ import { Button, Drawer } from "@pixelshades/ui/components"
 export default function Example() {
 	return (
 		<Drawer.Trigger>
-			<Button variant="outline">open drawer</Button>
+			<Button variant="outline">open default drawer</Button>
 			<Drawer>
 				<Drawer.Content className="h-full">
 					{({ close }) => (
