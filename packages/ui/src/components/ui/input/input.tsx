@@ -22,6 +22,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
 				inputVariants({
 					className: typeof className === "function" ? className(values) : className,
 					size,
+					...values,
 				})
 			}
 			ref={ref}

@@ -4,7 +4,6 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-import { textFieldVariants } from "@pixelshades/styles/components/text-field"
 import type { TextFieldProps as AriaTextFieldProps } from "react-aria-components"
 import { TextField as AriaTextField } from "react-aria-components"
 import { FormDescription, FormFieldError } from "../form"
