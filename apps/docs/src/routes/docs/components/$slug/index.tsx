@@ -17,6 +17,7 @@ import { createFileRoute } from "@tanstack/react-router"
 import { z } from "zod"
 import { AdopeLogo } from "~/components/logos/adope-logo"
 import { MDXContent } from "~/components/mdx-content"
+import { PagerButtons } from "~/components/pager-buttons"
 import { PropsTable } from "~/components/props-table"
 
 const componentPageSearchParams = z.object({
@@ -102,6 +103,7 @@ function ComponentPage() {
 					<Tabs.Panel id="docs" className={cn("relative grid w-full grid-cols-12 gap-layout-sm")}>
 						<div className="col-span-9 w-full">
 							<MDXContent code={component.content} />
+							<PagerButtons permalink={component.permalink} />
 						</div>
 						<div className="sticky top-16 col-span-3 hidden self-start md:block">
 							<If condition={component.toc.length > 0}>

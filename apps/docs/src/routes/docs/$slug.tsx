@@ -4,6 +4,7 @@ import { Heading, HeadingLevel, Typography } from "@pixelshades/ui/components"
 
 import { createFileRoute, notFound } from "@tanstack/react-router"
 import { MDXContent } from "~/components/mdx-content"
+import { PagerButtons } from "~/components/pager-buttons"
 
 export const Route = createFileRoute("/docs/$slug")({
 	component: PostPage,
@@ -33,9 +34,9 @@ export default function PostPage() {
 
 					{component.description && <Typography>{component.description}</Typography>}
 				</div>
-
 				<hr className="" />
 				<MDXContent code={component.content} />
+				<PagerButtons permalink={component.permalink} />
 			</main>
 		</HeadingLevel>
 	)
