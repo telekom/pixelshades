@@ -8,6 +8,5 @@ jobs:
     steps:
        - uses: actions/checkout@v4
        - uses: oven-sh/setup-bun@v1
-       - run: npm install -g pnpm
-       - run: pnpm install
-       - run: pnpm run build
+       - run: bun install
+       - run: bun run build
