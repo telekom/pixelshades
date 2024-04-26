@@ -22,8 +22,11 @@
 	"engines": {
 		"node": ">=18"
 	},
-	"packageManager": "pnpm@8.6.5",
-	"workspaces": ["packages/*", "apps/*"],
+	"packageManager": "pnpm@9.0.6",
+	"workspaces": [
+		"packages/*",
+		"apps/*"
+	],
 	"config": {
 		"commitizen": {
 			"path": "cz-conventional-changelog"
