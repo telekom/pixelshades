@@ -15,6 +15,7 @@
     "@internationalized/date": "^3.5.2",
     "@pixelshades/ui": "workspace:*",
     "@pixelshades/utils": "workspace:*",
+    "@pixelshades/styles": "workspace:*",
     "@tanstack/react-router": "^1.29.2",
     "@tanstack/router-devtools": "^1.29.2",
     "@tanstack/router-vite-plugin": "^1.30.0",

@@ -35,6 +35,9 @@ importers:
       '@internationalized/date':
         specifier: ^3.5.2
         version: 3.5.2
+      '@pixelshades/styles':
+        specifier: workspace:*
+        version: link:../../packages/styles
       '@pixelshades/ui':
         specifier: workspace:*
         version: link:../../packages/ui
