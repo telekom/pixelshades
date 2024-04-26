@@ -1,5 +1,5 @@
-import { Button, Typography } from "@dv/ui/components"
-import { ArrowLeft, ArrowRight } from "@dv/ui/icons"
+import { Button, Typography } from "@pixelshades/ui/components"
+import { ArrowLeft, ArrowRight } from "@pixelshades/ui/icons"
 import { Link } from "@tanstack/react-router"
 import { getNavbarItems } from "~/config/navbar-items"
 
