@@ -26,6 +26,8 @@ jobs:
       - name: Install Dependencies
         run: bun install
       - name: Build packages
+        env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
         run: bun run build --filter='./packages/*'
 
       - name: Create Release Pull Request or Publish to npm
