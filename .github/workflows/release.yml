@@ -13,16 +13,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
        
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
 
       - name: Install Dependencies
-        run: bun install
+        run: pnpm install
       - name: Build packages
-        run: bun run build --filter='./packages/*'
+        env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
+        run: pnpm run build --filter='./packages/*'
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets

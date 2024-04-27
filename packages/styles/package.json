@@ -1,6 +1,6 @@
 {
   "name": "@pixelshades/styles",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "type": "module",
   "publishConfig": {
@@ -109,8 +109,8 @@
     },
     "./components/date-range-calendar": {
       "import": {
-        "types": "./dist/es/date-range-calendar/index.d.mts",
-        "default": "./dist/es/date-range-calendar/index.mjs"
+        "types": "./dist/es/components/date-range-calendar/index.d.mts",
+        "default": "./dist/es/components/date-range-calendar/index.mjs"
       }
     },
     "./components/date-picker": {
