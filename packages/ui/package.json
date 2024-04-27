@@ -15,7 +15,7 @@
 	},
 	"dependencies": {
 		"@radix-ui/react-slot": "^1.0.2",
-		"clsx": "^2.1.0",
+		"clsx": "^2.1.1",
 		"lucide-react": "^0.372.0",
 		"react-aria": "^3.32.1",
 		"react-aria-components": "1.1.1",
