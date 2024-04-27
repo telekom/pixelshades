@@ -1,5 +1,13 @@
 # docs
 
+## 0.0.3
+
+### Patch Changes
+
+- Updated dependencies [fbb7db0]
+  - @pixelshades/styles@0.0.3
+  - @pixelshades/ui@0.0.7
+
 ## 0.0.2
 
 ### Patch Changes
