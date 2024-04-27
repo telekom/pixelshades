@@ -9,14 +9,13 @@
 	"scripts": {
 		"lint": "eslint . --max-warnings 0",
 		"generate:component": "turbo gen react-component",
-		"build": "bunchee",
+		"build": "bunchee --tsconfig tsconfig.build.json",
 		"gen:props": "bunx @react-docgen/cli --pretty --resolver find-all-exported-components -i **/*.stories.tsx  -o ../../apps/docs/src/lib/props.json src/components/ui/**/*.tsx",
 		"dev": "bunchee --watch --no-clean"
 	},
 	"dependencies": {
 		"@radix-ui/react-slot": "^1.0.2",
-		"clsx": "^2.1.0",
-		"lucide-react": "^0.372.0",
+		"lucide-react": "^0.376.0",
 		"react-aria": "^3.32.1",
 		"react-aria-components": "1.1.1",
 		"react-stately": "^3.30.1",
