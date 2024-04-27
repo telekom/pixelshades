@@ -35,7 +35,7 @@
 		"react-docgen": "^7.0.3",
 		"@pixelshades/typescript-config": "workspace:*",
 		"@tailwindcss/typography": "^0.5.12",
-		"@turbo/gen": "^1.13.2",
+		"@turbo/gen": "^1.13.3",
 		"@types/node": "^20.12.7",
 		"@types/react": "^18.2.79",
 		"@types/react-dom": "^18.2.25",
