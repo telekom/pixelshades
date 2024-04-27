@@ -8,7 +8,7 @@
 		"fmt": "pnpm biome format . --write && pnpm biome check .",
 		"verify-compliace": "pipx run reuse lint",
 		"bump-versions": "bun changeset version && bun install",
-		"release": "turbo run build && changeset version && changeset publish --access public",
+		"release": "changeset version && changeset publish --access public",
 		"commit": "cz"
 	},
 	"devDependencies": {
