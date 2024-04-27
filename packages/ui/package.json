@@ -37,10 +37,10 @@
 		"@tailwindcss/typography": "^0.5.12",
 		"@turbo/gen": "^1.13.2",
 		"@types/node": "^20.12.7",
-		"@types/react": "^18.2.79",
+		"@types/react": "^18.3.1",
 		"@types/react-dom": "^18.2.25",
 		"bunchee": "^5.1.2",
-		"react": "^18.2.0",
+		"react": "^18.3.1",
 		"react-dom": "^18.2.0",
 		"tailwindcss-react-aria-components": "1.1.1",
 		"typescript": "^5.4.5"
