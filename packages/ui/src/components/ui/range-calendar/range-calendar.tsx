@@ -20,7 +20,7 @@ import {
 	Text,
 } from "react-aria-components"
 
-import { dateRangeCalendarVariants } from "@pixelshades/styles/components/date-range-calendar"
+import { dateRangeCalendarVariants } from "@pixelshades/styles/components/range-calendar"
 
 const { root, header, heading, gridHeaderCell, cell, grid, iconButton } = dateRangeCalendarVariants()
 
@@ -29,7 +29,7 @@ export interface RangeCalendarProps<T extends DateValue> extends Omit<AriaRangeC
 	className?: string
 }
 
-const DateRangeCalendar = ({ className, visibleDuration, error, ...props }: RangeCalendarProps<DateValue>) => (
+const RangeCalendar = ({ className, visibleDuration, error, ...props }: RangeCalendarProps<DateValue>) => (
 	<AriaRangeCalendar className={root({ className })} visibleDuration={visibleDuration} {...props}>
 		<header className={header()}>
 			<AriaButton className={iconButton()} slot="previous">
@@ -65,6 +65,6 @@ const DateRangeCalendar = ({ className, visibleDuration, error, ...props }: Rang
 	</AriaRangeCalendar>
 )
 
-DateRangeCalendar.displayName = "DateRangeCalendar"
+RangeCalendar.displayName = "RangeCalendar"
 
-export { DateRangeCalendar }
+export { RangeCalendar }
