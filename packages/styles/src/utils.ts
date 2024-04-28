@@ -1,11 +1,10 @@
 import { tv } from "tailwind-variants"
 
 export const focusRing = tv({
-	base: "outline outline-ring forced-colors:outline-[Highlight] outline-offset-2",
-	variants: {
-		isFocusVisible: {
-			false: "outline-0",
-			true: "outline-2",
-		},
-	},
+	base: [
+		"outline outline-0 outline-ring forced-colors:outline-[Highlight] outline-offset-2",
+		"data-[focus-visible]:outline-2",
+		// "data-[focused]:outline-2",
+		"data-[invalid]:outline-2 data-[invalid]:outline-destructive",
+	],
 })

@@ -2,4 +2,4 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-export * from "./date-range-calendar"
+export * from "./range-calendar"

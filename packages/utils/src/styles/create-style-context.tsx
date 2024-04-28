@@ -8,6 +8,11 @@ import { cn } from "./cn"
 type Recipe = (props: any) => any
 type VariantProps<R extends Recipe> = Parameters<R>[0]
 
+/**
+ * The `createStyleContext` function creates a context that can be used to pass style props to its children.
+ * @param createStyles A function that returns a style object for a given component.
+ * @returns A context provider and a context consumer.
+ */
 export const createStyleContext = <StylesFunction extends Recipe, Slot extends keyof ReturnType<StylesFunction>>(
 	createStyles: StylesFunction,
 ) => {
@@ -30,11 +35,14 @@ export const createStyleContext = <StylesFunction extends Recipe, Slot extends k
 	}
 
 	const withContext = <C extends ElementType>(Component: C, slot?: Slot) => {
-		type ComponentPropsWithVariants = ComponentProps<C>
+		type ComponentPropsWithVariants = ComponentProps<C> & VariantProps<StylesFunction>
 
 		const Comp = forwardRef((props: ComponentPropsWithVariants, ref) => {
 			const slotRecipe = useContext(StyleContext)
-			const variantClassNames = slotRecipe?.[slot ?? ""]?.()
+
+			const variantClassNames = slotRecipe
+				? slotRecipe?.[slot ?? ""]?.(props)
+				: createStyles(props)?.[slot ?? ""]?.()
 
 			return <Component ref={ref} {...(props as any)} className={cn(variantClassNames, props.className)} />
 		})

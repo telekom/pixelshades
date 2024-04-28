@@ -7,7 +7,7 @@
 import { checkboxGroup } from "@pixelshades/styles/components/checkbox-group"
 import type { ReactNode } from "react"
 import type { CheckboxGroupProps as AriaCheckboxGroupProps } from "react-aria-components"
-import { CheckboxGroup as AriaCheckboxGroup, Text } from "react-aria-components"
+import { CheckboxGroup as AriaCheckboxGroup } from "react-aria-components"
 import { FormDescription, FormFieldError } from "../form"
 import { type FormComponentLabelProps, Label } from "../label"
 

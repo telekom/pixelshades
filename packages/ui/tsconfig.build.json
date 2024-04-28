@@ -3,9 +3,7 @@
 	"compilerOptions": {
 		"outDir": "dist",
 		"paths": {
-			"tailwind-variants": ["../../node_modules/tailwind-variants"],
-			"@pixelshades/styles/components/*": ["../styles/src/components/*"],
-			"@pixelshades/utils/*": ["../utils/src/*"]
+			"tailwind-variants": ["../../node_modules/tailwind-variants"]
 		}
 	},
 	"include": ["src"],
