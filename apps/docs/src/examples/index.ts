@@ -1,19 +1,18 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-<<<<<<< HEAD
-  /* -------------------------------------------------------------------------- */
-  /*                    GENERATED FILE, DO NOT EDIT MANUALLY!                   */
-  /* -------------------------------------------------------------------------- */
-  import { lazy, type LazyExoticComponent } from "react";
-  
-  type Demo = {
-	component: LazyExoticComponent<() => JSX.Element>;
-	code: string;
-  };
-  
-  export const Demos: Record<string, Demo> = {
-    "badge/alert": {
-	  component: lazy(() => import("~/examples/badge/alert.tsx")),
-	  code: `import { Badge } from "@pixelshades/ui/components"
+/* -------------------------------------------------------------------------- */
+/*                    GENERATED FILE, DO NOT EDIT MANUALLY!                   */
+/* -------------------------------------------------------------------------- */
+import { lazy, type LazyExoticComponent } from "react"
+
+type Demo = {
+	component: LazyExoticComponent<() => JSX.Element>
+	code: string
+}
+
+export const Demos: Record<string, Demo> = {
+	"badge/alert": {
+		component: lazy(() => import("~/examples/badge/alert.tsx")),
+		code: `import { Badge } from "@pixelshades/ui/components"
 import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -24,10 +23,10 @@ export function Example() {
 	)
 }
 `,
-  },
-  "badge/default": {
-	  component: lazy(() => import("~/examples/badge/default.tsx")),
-	  code: `import { Badge } from "@pixelshades/ui/components"
+	},
+	"badge/default": {
+		component: lazy(() => import("~/examples/badge/default.tsx")),
+		code: `import { Badge } from "@pixelshades/ui/components"
 import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -38,10 +37,10 @@ export function Example() {
 	)
 }
 `,
-  },
-  "badge/info": {
-	  component: lazy(() => import("~/examples/badge/info.tsx")),
-	  code: `import { Badge } from "@pixelshades/ui/components"
+	},
+	"badge/info": {
+		component: lazy(() => import("~/examples/badge/info.tsx")),
+		code: `import { Badge } from "@pixelshades/ui/components"
 import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -52,10 +51,10 @@ export function Example() {
 	)
 }
 `,
-  },
-  "badge/outline": {
-	  component: lazy(() => import("~/examples/badge/outline.tsx")),
-	  code: `import { Badge } from "@pixelshades/ui/components"
+	},
+	"badge/outline": {
+		component: lazy(() => import("~/examples/badge/outline.tsx")),
+		code: `import { Badge } from "@pixelshades/ui/components"
 import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -66,26 +65,10 @@ export function Example() {
 	)
 }
 `,
-  },
-  "badge/preview": {
-	  component: lazy(() => import("~/examples/badge/preview.tsx")),
-	  code: `import { Badge } from "@pixelshades/ui/components"
-=======
-/* -------------------------------------------------------------------------- */
-/*                    GENERATED FILE, DO NOT EDIT MANUALLY!                   */
-/* -------------------------------------------------------------------------- */
-import { type LazyExoticComponent, lazy } from "react"
-
-type Demo = {
-	component: LazyExoticComponent<() => JSX.Element>
-	code: string
-}
-
-export const Demos: Record<string, Demo> = {
+	},
 	"badge/preview": {
 		component: lazy(() => import("~/examples/badge/preview.tsx")),
 		code: `import { Badge } from "@pixelshades/ui/components"
->>>>>>> f5cd7b5087682f16e2ceeb2609962319fd27d3fc
 import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -96,19 +79,11 @@ export function Example() {
 	)
 }
 `,
-<<<<<<< HEAD
-  },
-  "badge/with-after": {
-	  component: lazy(() => import("~/examples/badge/with-after.tsx")),
-	  code: `import { Badge } from "@pixelshades/ui/components"
-import { ArrowRightIcon } from "@pixelshades/ui/icons"
-=======
 	},
-	"badge/variants": {
-		component: lazy(() => import("~/examples/badge/variants.tsx")),
+	"badge/with-after": {
+		component: lazy(() => import("~/examples/badge/with-after.tsx")),
 		code: `import { Badge } from "@pixelshades/ui/components"
-import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
->>>>>>> f5cd7b5087682f16e2ceeb2609962319fd27d3fc
+import { ArrowRightIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
@@ -118,10 +93,10 @@ export function Example() {
 	)
 }
 `,
-  },
-  "badge/with-before": {
-	  component: lazy(() => import("~/examples/badge/with-before.tsx")),
-	  code: `import { Badge } from "@pixelshades/ui/components"
+	},
+	"badge/with-before": {
+		component: lazy(() => import("~/examples/badge/with-before.tsx")),
+		code: `import { Badge } from "@pixelshades/ui/components"
 import { Smile } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -764,66 +739,6 @@ export function Example() {
 }
 `,
 	},
-	"date-range-calendar/custom-duration": {
-		component: lazy(() => import("~/examples/range-calendar/custom-duration")),
-		code: `import { RangeCalendar } from "@pixelshades/ui/components"
-
-export function Example() {
-	return (
-		<RangeCalendar
-			visibleDuration={{
-				months: 3,
-			}}
-		/>
-	)
-}
-`,
-	},
-	"date-range-calendar/disabled": {
-		component: lazy(() => import("~/examples/range-calendar/disabled")),
-		code: `import { RangeCalendar } from "@pixelshades/ui/components"
-
-export function Example() {
-	return <RangeCalendar isDisabled />
-}
-`,
-	},
-	"date-range-calendar/min-dates": {
-		component: lazy(() => import("~/examples/range-calendar/min-dates")),
-		code: `import { getLocalTimeZone, today } from "@internationalized/date"
-import { RangeCalendar } from "@pixelshades/ui/components"
-
-export function Example() {
-	const now = today(getLocalTimeZone())
-
-	return <RangeCalendar minValue={now} maxValue={now.add({ days: 15 })} />
-}
-`,
-	},
-	"date-range-calendar/preview": {
-		component: lazy(() => import("~/examples/range-calendar/preview")),
-		code: `import { RangeCalendar } from "@pixelshades/ui/components"
-
-export function Example() {
-	return <RangeCalendar />
-}
-`,
-	},
-	"date-range-calendar/unavailable-dates": {
-		component: lazy(() => import("~/examples/range-calendar/unavailable-dates")),
-		code: `"use client"
-
-import { isWeekend } from "@internationalized/date"
-import { RangeCalendar } from "@pixelshades/ui/components"
-import { useLocale } from "@pixelshades/ui/hooks"
-
-export function Example() {
-	const { locale } = useLocale()
-
-	return <RangeCalendar isDateUnavailable={(date) => isWeekend(date, locale)} />
-}
-`,
-	},
 	"dialog/preview": {
 		component: lazy(() => import("~/examples/dialog/preview.tsx")),
 		code: `import { Button, Dialog, Input, Label } from "@pixelshades/ui/components"
@@ -1383,6 +1298,66 @@ export function Example() {
 			<Radio value="dragon">Dragon</Radio>
 		</Radio.Group>
 	)
+}
+`,
+	},
+	"range-calendar/custom-duration": {
+		component: lazy(() => import("~/examples/range-calendar/custom-duration.tsx")),
+		code: `import { RangeCalendar } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<RangeCalendar
+			visibleDuration={{
+				months: 3,
+			}}
+		/>
+	)
+}
+`,
+	},
+	"range-calendar/disabled": {
+		component: lazy(() => import("~/examples/range-calendar/disabled.tsx")),
+		code: `import { RangeCalendar } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <RangeCalendar isDisabled />
+}
+`,
+	},
+	"range-calendar/min-dates": {
+		component: lazy(() => import("~/examples/range-calendar/min-dates.tsx")),
+		code: `import { getLocalTimeZone, today } from "@internationalized/date"
+import { RangeCalendar } from "@pixelshades/ui/components"
+
+export function Example() {
+	const now = today(getLocalTimeZone())
+
+	return <RangeCalendar minValue={now} maxValue={now.add({ days: 15 })} />
+}
+`,
+	},
+	"range-calendar/preview": {
+		component: lazy(() => import("~/examples/range-calendar/preview.tsx")),
+		code: `import { RangeCalendar } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <RangeCalendar />
+}
+`,
+	},
+	"range-calendar/unavailable-dates": {
+		component: lazy(() => import("~/examples/range-calendar/unavailable-dates.tsx")),
+		code: `"use client"
+
+import { isWeekend } from "@internationalized/date"
+import { RangeCalendar } from "@pixelshades/ui/components"
+import { useLocale } from "@pixelshades/ui/hooks"
+
+export function Example() {
+	const { locale } = useLocale()
+
+	return <RangeCalendar isDateUnavailable={(date) => isWeekend(date, locale)} />
 }
 `,
 	},
