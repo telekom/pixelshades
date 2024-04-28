@@ -1,8 +1,8 @@
-import { DateRangeCalendar } from "@pixelshades/ui/components"
+import { RangeCalendar } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
-		<DateRangeCalendar
+		<RangeCalendar
 			visibleDuration={{
 				months: 3,
 			}}
