@@ -1492,7 +1492,7 @@ export function Example() {
 	  code: `import { TextField } from "@pixelshades/ui/components"
 
 export function Example() {
-	return <TextField label="Project" description="Deploy your new project in one-click." />
+	return <TextField label="Project" description="Deploy your new project in one-click." helperText="Helper Text" />
 }
 `,
   },
