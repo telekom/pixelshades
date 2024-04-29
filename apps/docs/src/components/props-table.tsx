@@ -4,9 +4,17 @@ import props from "~/lib/props.json"
 export type PropsTableProps = {
 	slug: string
 }
+function getComponentName(path: string): string {
+	const lastSlashIndex = path.lastIndexOf("/")
+	const extensionIndex = path.lastIndexOf(".tsx")
+	if (lastSlashIndex === -1 || extensionIndex === -1 || lastSlashIndex >= extensionIndex) {
+		throw new Error("Invalid path format")
+	}
+	return path.substring(lastSlashIndex + 1, extensionIndex)
+}
 
 const getComponentPropsBySlug = (slug: string) => {
-	const matchKey = Object.keys(props).find((key) => key.includes(slug.toLowerCase()))
+	const matchKey = Object.keys(props).find((key) => getComponentName(key) === slug.toLowerCase())
 
 	if (!matchKey) {
 		return null
