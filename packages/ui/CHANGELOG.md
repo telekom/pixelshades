@@ -1,5 +1,24 @@
 # @pixelshades/ui
 
+## 0.1.0
+
+### Minor Changes
+
+- 132364d: feat: Unify Select Styling
+- ce9abf9: feat: add MultiLine TextField support
+
+### Patch Changes
+
+- c16e1af: fix DatePicker helperText type
+- 57cc119: fix ref forwarding for TextField
+- 861c19b: Add Required Indicator to Label
+- Updated dependencies [e11db49]
+- Updated dependencies [e11db49]
+- Updated dependencies [132364d]
+- Updated dependencies [ce9abf9]
+  - @pixelshades/styles@0.1.0
+  - @pixelshades/utils@0.1.0
+
 ## 0.0.8
 
 ### Patch Changes
