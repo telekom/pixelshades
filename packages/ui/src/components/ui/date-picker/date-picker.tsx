@@ -25,7 +25,7 @@ import { FormDescription, FormFieldError, FormFieldGroup } from "../form"
 import { type FormComponentLabelProps, Label } from "../label"
 import { Popover } from "../popover"
 
-const { inputButton, input, base } = datePickerVariants()
+const { inputButton, base } = datePickerVariants()
 
 interface DatePickerProps<T extends DateValue> extends AriaDatePickerProps<T>, FormComponentLabelProps {
 	helperText?: ReactNode
@@ -48,7 +48,7 @@ const DatePicker = <T extends DateValue>({
 			{label}
 		</Label>
 		<FormFieldGroup className={"relative flex items-center"}>
-			<DateInput className={inputVariants({ className: input() })}>
+			<DateInput className={inputVariants({ className: "border-none" })}>
 				{(segment) => <DateSegment className={base()} segment={segment} />}
 			</DateInput>
 			<AriaButton className={inputButton()}>
