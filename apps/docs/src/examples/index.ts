@@ -137,11 +137,11 @@ export function Example() {
 
 export function Example() {
 	return (
-		<div className="flex flex-col gap-2">
-			<Button size="xs">XS</Button>
-			<Button size="sm">SM</Button>
-			<Button size="md">MD (Default)</Button>
-			<Button size="lg">LG</Button>
+		<div className="flex flex-row flex-wrap gap-md">
+			<Button size="xs">XS Button</Button>
+			<Button size="sm">SM Button</Button>
+			<Button size="md">MD Button</Button>
+			<Button size="lg">LG Button</Button>
 		</div>
 	)
 }

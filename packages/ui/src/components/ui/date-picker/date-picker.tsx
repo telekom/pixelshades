@@ -48,7 +48,7 @@ const DatePicker = <T extends DateValue>({
 			{label}
 		</Label>
 		<FormFieldGroup className={"relative flex items-center"}>
-			<DateInput className={inputVariants({ className: "border-none" })}>
+			<DateInput className={"flex w-full items-center gap-md"}>
 				{(segment) => <DateSegment className={base()} segment={segment} />}
 			</DateInput>
 			<AriaButton className={inputButton()}>

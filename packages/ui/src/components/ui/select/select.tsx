@@ -10,9 +10,7 @@ import {
 	ListBox as AriaListBox,
 	Select as AriaSelect,
 	ListBoxItem,
-	Popover,
 	SelectValue,
-	Text,
 } from "react-aria-components"
 
 import { selectVariants } from "@pixelshades/styles/components/select"
@@ -21,8 +19,9 @@ import type React from "react"
 import type { ReactNode } from "react"
 import { FormDescription, FormFieldError } from "../form"
 import { type FormComponentLabelProps, Label } from "../label"
+import { Popover } from "../popover"
 
-const { button, item, popover, root, icon } = selectVariants()
+const { button, item, popover, root, icon, value } = selectVariants()
 
 interface SelectProps<T extends object> extends Omit<AriaSelectProps<T>, "children">, FormComponentLabelProps {
 	className?: string
@@ -47,7 +46,7 @@ const SelectRoot = <T extends object>({
 			{label}
 		</Label>
 		<AriaButton className={button()}>
-			<SelectValue />
+			<SelectValue className={value()} />
 			<ChevronDown className={icon()} />
 		</AriaButton>
 		{helperText && <FormDescription>{helperText}</FormDescription>}
