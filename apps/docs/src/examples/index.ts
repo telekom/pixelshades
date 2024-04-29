@@ -1129,6 +1129,76 @@ export function Example() {
 }
 `,
   },
+  "number-field/controlled": {
+	  component: lazy(() => import("~/examples/number-field/controlled.tsx")),
+	  code: `import { NumberField } from "@pixelshades/ui/components"
+import { useState } from "react"
+
+export function Example() {
+	const [value, setValue] = useState(0)
+	return (
+		<NumberField
+			value={value}
+			onChange={setValue}
+			label="Number of Items"
+			description="How many items do you want to add?"
+			helperText="Helper Text"
+		/>
+	)
+}
+`,
+  },
+  "number-field/currency-format": {
+	  component: lazy(() => import("~/examples/number-field/currency-format.tsx")),
+	  code: `import { NumberField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<NumberField
+			label="Transaction amount"
+			name="amount"
+			defaultValue={45}
+			formatOptions={{
+				style: "currency",
+				currency: "EUR",
+			}}
+		/>
+	)
+}
+`,
+  },
+  "number-field/percentage-format": {
+	  component: lazy(() => import("~/examples/number-field/percentage-format.tsx")),
+	  code: `import { NumberField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<NumberField
+			label="Sales tax"
+			defaultValue={0.45}
+			formatOptions={{
+				style: "percent",
+			}}
+		/>
+	)
+}
+`,
+  },
+  "number-field/preview": {
+	  component: lazy(() => import("~/examples/number-field/preview.tsx")),
+	  code: `import { NumberField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<NumberField
+			label="Number of Items"
+			description="How many items do you want to add?"
+			helperText="Helper Text"
+		/>
+	)
+}
+`,
+  },
   "popover/preview": {
 	  component: lazy(() => import("~/examples/popover/preview.tsx")),
 	  code: `import { Button, Input, Label, Popover } from "@pixelshades/ui/components"

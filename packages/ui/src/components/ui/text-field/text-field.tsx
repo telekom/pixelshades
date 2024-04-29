@@ -42,7 +42,7 @@ const TextField = forwardRef(
 				{label}
 			</Label>
 			{multiLine ? <TextArea ref={ref} cols={cols} rows={rows} /> : <Input ref={ref} />}
-			{helperText && !errorMessage && <FormDescription>{helperText}</FormDescription>}
+			{helperText && <FormDescription>{helperText}</FormDescription>}
 			<FormFieldError>{errorMessage}</FormFieldError>
 		</AriaTextField>
 	),
