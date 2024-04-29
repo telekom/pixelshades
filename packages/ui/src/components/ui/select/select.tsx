@@ -6,10 +6,9 @@
 
 import type { SelectProps as AriaSelectProps, ListBoxItemProps } from "react-aria-components"
 import {
+	Button as AriaButton,
+	ListBox as AriaListBox,
 	Select as AriaSelect,
-	Button,
-	Label,
-	ListBox,
 	ListBoxItem,
 	Popover,
 	SelectValue,
@@ -19,14 +18,16 @@ import {
 import { selectVariants } from "@pixelshades/styles/components/select"
 import { ChevronDown } from "lucide-react"
 import type React from "react"
+import type { ReactNode } from "react"
+import { FormDescription, FormFieldError } from "../form"
+import { type FormComponentLabelProps, Label } from "../label"
 
 const { button, item, popover, root, icon } = selectVariants()
 
-interface SelectProps<T extends object> extends Omit<AriaSelectProps<T>, "children"> {
+interface SelectProps<T extends object> extends Omit<AriaSelectProps<T>, "children">, FormComponentLabelProps {
 	className?: string
-	label?: string
-	description?: string | null
-	errorMessage?: string | null
+	helperText?: ReactNode
+	errorMessage?: string
 	children: React.ReactNode | ((item: T) => React.ReactNode)
 }
 
@@ -34,20 +35,25 @@ const SelectRoot = <T extends object>({
 	label,
 	className,
 	description,
+	helperText,
+	tooltip,
 	errorMessage,
 	children,
+	isRequired,
 	...props
 }: SelectProps<T>) => (
-	<AriaSelect className={root({ className })} {...props}>
-		<Label>{label}</Label>
-		<Button className={button()}>
+	<AriaSelect className={root({ className })} isRequired={isRequired} {...props}>
+		<Label tooltip={tooltip} description={description} isRequired={isRequired}>
+			{label}
+		</Label>
+		<AriaButton className={button()}>
 			<SelectValue />
 			<ChevronDown className={icon()} />
-		</Button>
-		{description && <Text slot="description">{description}</Text>}
-		{errorMessage && <Text slot="errorMessage">{errorMessage}</Text>}
+		</AriaButton>
+		{helperText && <FormDescription>{helperText}</FormDescription>}
+		<FormFieldError>{errorMessage}</FormFieldError>
 		<Popover className={popover()}>
-			<ListBox className="outline-none">{children}</ListBox>
+			<AriaListBox className="outline-none">{children}</AriaListBox>
 		</Popover>
 	</AriaSelect>
 )

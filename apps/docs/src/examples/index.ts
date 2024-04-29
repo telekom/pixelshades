@@ -1314,7 +1314,7 @@ export function Example() {
 
 export function Example() {
 	return (
-		<Select label="Framework">
+		<Select label="Framework" description="Description" helperText="Helper Text" tooltip="Tooltip">
 			<Select.Item>React</Select.Item>
 			<Select.Item>Qwik</Select.Item>
 			<Select.Item>Vue</Select.Item>
