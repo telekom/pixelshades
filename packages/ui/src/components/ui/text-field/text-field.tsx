@@ -18,9 +18,18 @@ export interface TextFieldProps extends AriaTextFieldProps, FormComponentLabelPr
 }
 
 const TextField = forwardRef(
-	({ label, helperText, description, tooltip, errorMessage, ref, ...props }: TextFieldProps & { ref?: any }) => (
-		<AriaTextField className={"flex flex-col gap-sm"} {...props}>
-			<Label tooltip={tooltip} description={description}>
+	({
+		label,
+		helperText,
+		description,
+		tooltip,
+		errorMessage,
+		ref,
+		isRequired,
+		...props
+	}: TextFieldProps & { ref?: any }) => (
+		<AriaTextField className={"flex flex-col gap-sm"} isRequired={isRequired} {...props}>
+			<Label tooltip={tooltip} description={description} isRequired={isRequired}>
 				{label}
 			</Label>
 			<Input ref={ref} />

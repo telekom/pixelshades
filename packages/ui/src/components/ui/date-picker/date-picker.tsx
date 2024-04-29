@@ -40,10 +40,11 @@ const DatePicker = <T extends DateValue>({
 	helperText,
 	errorMessage,
 	children,
+	isRequired,
 	...props
 }: DatePickerProps<T>) => (
-	<AriaDatePicker className="flex flex-col gap-md" {...props}>
-		<Label description={description} tooltip={tooltip}>
+	<AriaDatePicker className="flex flex-col gap-md" isRequired={isRequired} {...props}>
+		<Label description={description} tooltip={tooltip} isRequired={isRequired}>
 			{label}
 		</Label>
 		<FormFieldGroup className={"relative flex items-center"}>
