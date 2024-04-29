@@ -40,6 +40,9 @@
     
     --ring: 240 5.9% 10%;
     --radius: 0.5rem;
+
+    --info: 210 100% 72%;
+    --info-foreground: 0 0% 98%;
   }
 
   .dark {
@@ -53,7 +56,7 @@
     --card: 0 0% 7%;
     --card-foreground: 0 0% 98%;
 
-    --border: 240 3.7% 15.9%;
+    --border: 213 8% 23%;
 
     
     --primary: 329 100% 44%;
@@ -66,6 +69,9 @@
     --destructive-foreground: 0 0% 98%;
 
     --ring: 328.93 100% 43.92%;
+
+    --info: 210 100% 72%;
+    --info-foreground: 0 0% 98%;
   }
 }
 
