@@ -1,4 +1,27 @@
 {
+  "src/components/ui/button-group/button-group.tsx": [
+    {
+      "description": "Displays a group of buttons with matching styles.",
+      "methods": [],
+      "displayName": "UnstyledButtonGroup",
+      "props": {
+        "children": {
+          "required": true,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": "The children of the button group."
+        },
+        "className": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "The styles of the button group."
+        }
+      }
+    }
+  ],
   "src/components/ui/badge/badge.tsx": [
     {
       "description": "Displays a Badge",
@@ -36,6 +59,13 @@
         "HTMLAttributes",
         "BadgeVariantsProps"
       ]
+    }
+  ],
+  "src/components/ui/button/button.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Button"
     }
   ],
   "src/components/ui/breadcrumbs/breadcrumbs.tsx": [
@@ -85,101 +115,6 @@
       "composes": [
         "Omit"
       ]
-    }
-  ],
-  "src/components/ui/button-group/button-group.tsx": [
-    {
-      "description": "Displays a group of buttons with matching styles.",
-      "methods": [],
-      "displayName": "UnstyledButtonGroup",
-      "props": {
-        "children": {
-          "required": true,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": "The children of the button group."
-        },
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "The styles of the button group."
-        }
-      }
-    }
-  ],
-  "src/components/ui/button/button.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Button"
-    }
-  ],
-  "src/components/ui/calendar/calendar.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Calendar",
-      "props": {
-        "error": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "Omit"
-      ]
-    }
-  ],
-  "src/components/ui/card/card.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Card"
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "CardTitle"
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "CardContent"
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "CardDescription"
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "CardFooter"
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "CardHeader"
-    }
-  ],
-  "src/components/ui/checkbox/checkbox.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Checkbox"
     }
   ],
   "src/components/ui/checkbox-group/checkbox-group.tsx": [
@@ -236,6 +171,39 @@
             "name": "string"
           },
           "description": "The error message of the checkbox group."
+        }
+      },
+      "composes": [
+        "Omit"
+      ]
+    }
+  ],
+  "src/components/ui/checkbox/checkbox.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Checkbox"
+    }
+  ],
+  "src/components/ui/calendar/calendar.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Calendar",
+      "props": {
+        "error": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "className": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
         }
       },
       "composes": [
@@ -316,6 +284,176 @@
       "composes": [
         "Omit"
       ]
+    }
+  ],
+  "src/components/ui/card/card.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Card"
+    },
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "CardTitle"
+    },
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "CardContent"
+    },
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "CardDescription"
+    },
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "CardFooter"
+    },
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "CardHeader"
+    }
+  ],
+  "src/components/ui/date-picker/date-picker.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "DatePicker",
+      "props": {
+        "label": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "tooltip": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "description": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "helperText": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": "A helper text to display below the date picker."
+        },
+        "errorMessage": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "string | ((validation: ValidationResult) => string)",
+            "elements": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "unknown"
+              }
+            ]
+          },
+          "description": "The error message to display when the date picker is invalid."
+        }
+      },
+      "composes": [
+        "AriaDatePickerProps"
+      ]
+    }
+  ],
+  "src/components/ui/date-field/date-field.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "DateField",
+      "props": {
+        "label": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "tooltip": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "description": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "helperText": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "errorMessage": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "string | ((validation: ValidationResult) => string)",
+            "elements": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "unknown"
+              }
+            ]
+          },
+          "description": ""
+        }
+      },
+      "composes": [
+        "AriaDateFieldProps"
+      ]
+    }
+  ],
+  "src/components/ui/dialog/dialog.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Dialog",
+      "props": {
+        "className": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        }
+      },
+      "composes": [
+        "AriaModalOverlayProps"
+      ]
+    }
+  ],
+  "src/components/ui/data-list/data-list.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "UnstyledDataList"
     }
   ],
   "src/components/ui/command/command.tsx": [
@@ -838,144 +976,6 @@
       }
     }
   ],
-  "src/components/ui/data-list/data-list.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "UnstyledDataList"
-    }
-  ],
-  "src/components/ui/date-field/date-field.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "DateField",
-      "props": {
-        "label": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "tooltip": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "description": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "helperText": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "errorMessage": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "string | ((validation: ValidationResult) => string)",
-            "elements": [
-              {
-                "name": "string"
-              },
-              {
-                "name": "unknown"
-              }
-            ]
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "AriaDateFieldProps"
-      ]
-    }
-  ],
-  "src/components/ui/dialog/dialog.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Dialog",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "AriaModalOverlayProps"
-      ]
-    }
-  ],
-  "src/components/ui/date-picker/date-picker.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "DatePicker",
-      "props": {
-        "label": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "tooltip": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "description": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "helperText": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": "A helper text to display below the date picker."
-        },
-        "errorMessage": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "string | ((validation: ValidationResult) => string)",
-            "elements": [
-              {
-                "name": "string"
-              },
-              {
-                "name": "unknown"
-              }
-            ]
-          },
-          "description": "The error message to display when the date picker is invalid."
-        }
-      },
-      "composes": [
-        "AriaDatePickerProps"
-      ]
-    }
-  ],
   "src/components/ui/heading/heading-levels.tsx": [
     {
       "description": "",
@@ -1026,6 +1026,13 @@
       }
     }
   ],
+  "src/components/ui/form/form.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "UnstyledFormDescription"
+    }
+  ],
   "src/components/ui/heading/heading.tsx": [
     {
       "description": "",
@@ -1033,11 +1040,11 @@
       "displayName": "Heading"
     }
   ],
-  "src/components/ui/form/form.tsx": [
+  "src/components/ui/input/input.tsx": [
     {
       "description": "",
       "methods": [],
-      "displayName": "UnstyledFormDescription"
+      "displayName": "Input"
     }
   ],
   "src/components/ui/highlight/highlight.tsx": [
@@ -1093,6 +1100,42 @@
       }
     }
   ],
+  "src/components/ui/kbd/kbd.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Kbd",
+      "props": {
+        "size": {
+          "defaultValue": {
+            "value": "\"xs\"",
+            "computed": false
+          },
+          "required": false
+        }
+      }
+    }
+  ],
+  "src/components/ui/link/link.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Link",
+      "props": {
+        "className": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        }
+      },
+      "composes": [
+        "AriaLinkProps",
+        "VariantProps"
+      ]
+    }
+  ],
   "src/components/ui/label/label.tsx": [
     {
       "description": "",
@@ -1116,49 +1159,6 @@
       },
       "composes": [
         "AriaLabelProps"
-      ]
-    }
-  ],
-  "src/components/ui/kbd/kbd.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Kbd",
-      "props": {
-        "size": {
-          "defaultValue": {
-            "value": "\"xs\"",
-            "computed": false
-          },
-          "required": false
-        }
-      }
-    }
-  ],
-  "src/components/ui/input/input.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Input"
-    }
-  ],
-  "src/components/ui/link/link.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Link",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "AriaLinkProps",
-        "VariantProps"
       ]
     }
   ],
@@ -1194,6 +1194,22 @@
       ]
     }
   ],
+  "src/components/ui/popover/popover.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Popover",
+      "props": {
+        "offset": {
+          "defaultValue": {
+            "value": "4",
+            "computed": false
+          },
+          "required": false
+        }
+      }
+    }
+  ],
   "src/components/ui/modal/modal.tsx": [
     {
       "description": "",
@@ -1213,20 +1229,30 @@
       ]
     }
   ],
-  "src/components/ui/popover/popover.tsx": [
+  "src/components/ui/range-calendar/range-calendar.tsx": [
     {
       "description": "",
       "methods": [],
-      "displayName": "Popover",
+      "displayName": "RangeCalendar",
       "props": {
-        "offset": {
-          "defaultValue": {
-            "value": "4",
-            "computed": false
+        "error": {
+          "required": false,
+          "tsType": {
+            "name": "string"
           },
-          "required": false
+          "description": "The error message to display when the date picker is invalid."
+        },
+        "className": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "The className to apply styles to the component."
         }
-      }
+      },
+      "composes": [
+        "Omit"
+      ]
     }
   ],
   "src/components/ui/progress-bar/progress-bar.tsx": [
@@ -1267,6 +1293,13 @@
         "AriaProgressBarProps",
         "VariantProps"
       ]
+    }
+  ],
+  "src/components/ui/separator/separator.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Separator"
     }
   ],
   "src/components/ui/radio-group/radio-group.tsx": [
@@ -1360,32 +1393,6 @@
       ]
     }
   ],
-  "src/components/ui/range-calendar/range-calendar.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "RangeCalendar",
-      "props": {
-        "error": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "Omit"
-      ]
-    }
-  ],
   "src/components/ui/select/select.tsx": [
     {
       "description": "",
@@ -1459,13 +1466,6 @@
       "composes": [
         "Omit"
       ]
-    }
-  ],
-  "src/components/ui/separator/separator.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Separator"
     }
   ],
   "src/components/ui/switch/switch.tsx": [
@@ -1633,25 +1633,6 @@
       ]
     }
   ],
-  "src/components/ui/tooltip/tooltip.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Tooltip",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "AriaTooltipProps"
-      ]
-    }
-  ],
   "src/components/ui/toggle-button/toggle-button.tsx": [
     {
       "description": "Displays a button that can be toggled on and off.",
@@ -1688,6 +1669,25 @@
       "composes": [
         "ToggleVariantProps",
         "AriaToggleButtonProps"
+      ]
+    }
+  ],
+  "src/components/ui/tooltip/tooltip.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Tooltip",
+      "props": {
+        "className": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        }
+      },
+      "composes": [
+        "AriaTooltipProps"
       ]
     }
   ],
