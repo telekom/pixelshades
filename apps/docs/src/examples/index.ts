@@ -1493,6 +1493,23 @@ export function Example() {
 }
 `,
   },
+  "text-field/multi-line": {
+	  component: lazy(() => import("~/examples/text-field/multi-line.tsx")),
+	  code: `import { TextField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<TextField
+			label="Project"
+			description="Deploy your new project in one-click."
+			helperText="Helper Text"
+			rows={5}
+			multiLine
+		/>
+	)
+}
+`,
+  },
   "text-field/preview": {
 	  component: lazy(() => import("~/examples/text-field/preview.tsx")),
 	  code: `import { TextField } from "@pixelshades/ui/components"
