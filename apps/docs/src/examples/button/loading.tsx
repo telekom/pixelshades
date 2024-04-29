@@ -2,5 +2,9 @@ import { Button } from "@pixelshades/ui/components"
 import { SnailIcon } from "@pixelshades/ui/icons"
 
 export default function Example() {
-	return <Button before={<SnailIcon />}>Button</Button>
+	return (
+		<Button before={<SnailIcon />} isLoading>
+			Button
+		</Button>
+	)
 }

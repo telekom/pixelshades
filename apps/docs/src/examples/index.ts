@@ -98,6 +98,20 @@ export function Example() {
 }
 `,
   },
+  "button/loading": {
+	  component: lazy(() => import("~/examples/button/loading.tsx")),
+	  code: `import { Button } from "@pixelshades/ui/components"
+import { SnailIcon } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return (
+		<Button before={<SnailIcon />} isLoading>
+			Button
+		</Button>
+	)
+}
+`,
+  },
   "button/outline": {
 	  component: lazy(() => import("~/examples/button/outline.tsx")),
 	  code: `import { Button } from "@pixelshades/ui/components"
@@ -113,7 +127,23 @@ export function Example() {
 import { SnailIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
-	return <Button before={<SnailIcon className="bg-red-600" />}>Button</Button>
+	return <Button before={<SnailIcon />}>Button</Button>
+}
+`,
+  },
+  "button/sizes": {
+	  component: lazy(() => import("~/examples/button/sizes.tsx")),
+	  code: `import { Button } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<div className="flex flex-col gap-2">
+			<Button size="xs">XS</Button>
+			<Button size="sm">SM</Button>
+			<Button size="md">MD (Default)</Button>
+			<Button size="lg">LG</Button>
+		</div>
+	)
 }
 `,
   },
