@@ -1,5 +1,13 @@
 # @pixelshades/ui
 
+## 0.1.1
+
+### Patch Changes
+
+- 5171866: fix: DatePicker
+- Updated dependencies [5171866]
+  - @pixelshades/styles@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes
