@@ -1,5 +1,12 @@
 # @pixelshades/utils
 
+## 0.1.0
+
+### Minor Changes
+
+- e11db49: feat: add TimeField Component
+- e11db49: fix: withStyle with variants without slots
+
 ## 0.0.1
 
 ### Patch Changes

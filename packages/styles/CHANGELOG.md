@@ -1,5 +1,13 @@
 # @pixelshades/styles
 
+## 0.1.0
+
+### Minor Changes
+
+- e11db49: feat: add TimeField Component
+- 132364d: feat: Unify Select Styling
+- ce9abf9: feat: add MultiLine TextField support
+
 ## 0.0.4
 
 ### Patch Changes
