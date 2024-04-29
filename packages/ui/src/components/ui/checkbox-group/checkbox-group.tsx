@@ -12,9 +12,13 @@ import { FormDescription, FormFieldError } from "../form"
 import { type FormComponentLabelProps, Label } from "../label"
 
 interface CheckboxGroupProps extends Omit<AriaCheckboxGroupProps, "className" | "children">, FormComponentLabelProps {
+	/** The className of the checkbox group. */
 	className?: string
+	/** Checkbox or any other components to render in the checkbox group. */
 	children?: ReactNode
+	/** A subtle description next to the checkbox groups label. */
 	helperText?: string
+	/** The error message of the checkbox group. */
 	errorMessage?: string
 }
 
@@ -33,7 +37,7 @@ const CheckboxGroup = ({
 			{label}
 		</Label>
 		{children}
-		{description && <FormDescription>{helperText}</FormDescription>}
+		{helperText && <FormDescription>{helperText}</FormDescription>}
 		<FormFieldError>{errorMessage}</FormFieldError>
 	</AriaCheckboxGroup>
 )

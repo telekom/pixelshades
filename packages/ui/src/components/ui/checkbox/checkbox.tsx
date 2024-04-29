@@ -23,11 +23,17 @@ import { Label } from "../label"
 type CheckboxVariantProps = VariantProps<typeof checkboxVariant>
 
 interface CheckBoxProps extends CheckboxVariantProps, AriaCheckBoxProps {
+	/** The label of the checkbox. */
 	label?: ReactNode
+	/** The description of the checkbox. */
 	description?: ReactNode
+	/** A subtle description next to the checkbox groups label. */
 	helperText?: ReactNode
+	/** The error message of the checkbox. */
 	errorMessage?: string | ((validation: ValidationResult) => string)
+	/** The tooltip of the checkbox. */
 	tooltip?: ReactNode
+	/** The className of the checkbox. */
 	className?: string
 }
 

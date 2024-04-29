@@ -28,7 +28,9 @@ import { Popover } from "../popover"
 const { inputButton, input, base } = datePickerVariants()
 
 interface DatePickerProps<T extends DateValue> extends AriaDatePickerProps<T>, FormComponentLabelProps {
+	/** A helper text to display below the date picker. */
 	helperText?: ReactNode
+	/** The error message to display when the date picker is invalid. */
 	errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
