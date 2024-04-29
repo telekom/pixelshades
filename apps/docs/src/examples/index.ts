@@ -1340,6 +1340,51 @@ export function Example() {
 }
 `,
   },
+  "slider/labeling": {
+	  component: lazy(() => import("~/examples/slider/labeling.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Slider label="Sending…" formatOptions={{ style: "currency", currency: "JPY" }} value={60} />
+}
+`,
+  },
+  "slider/orientation": {
+	  component: lazy(() => import("~/examples/slider/orientation.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<div className="h-80">
+			<Slider
+				label="Slide up and down"
+				orientation="vertical"
+				description={<small>This is a description!</small>}
+				value={30}
+			/>
+		</div>
+	)
+}
+`,
+  },
+  "slider/preview": {
+	  component: lazy(() => import("~/examples/slider/preview.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Slider label="Slide to change the value" description={<small>This is a description!</small>} value={30} />
+}
+`,
+  },
+  "slider/valueScale": {
+	  component: lazy(() => import("~/examples/slider/valueScale.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Slider label="Price range" minValue={50} maxValue={150} value={100} />
+}
+`,
+  },
   "switch/preview": {
 	  component: lazy(() => import("~/examples/switch/preview.tsx")),
 	  code: `import { Switch } from "@pixelshades/ui/components"
