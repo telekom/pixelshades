@@ -18,6 +18,7 @@ import { ChevronDownIcon } from "lucide-react"
 
 import { datePickerVariants } from "@pixelshades/styles/components/date-picker"
 import { inputVariants } from "@pixelshades/styles/components/input"
+import type { ReactNode } from "react"
 import { If } from "../../utils"
 import { Calendar } from "../calendar"
 import { FormDescription, FormFieldError, FormFieldGroup } from "../form"
@@ -27,7 +28,7 @@ import { Popover } from "../popover"
 const { inputButton, input, base } = datePickerVariants()
 
 interface DatePickerProps<T extends DateValue> extends AriaDatePickerProps<T>, FormComponentLabelProps {
-	helperText?: string
+	helperText?: ReactNode
 	errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
