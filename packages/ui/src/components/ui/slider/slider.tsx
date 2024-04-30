@@ -15,7 +15,7 @@ import {
 import type { VariantProps } from "tailwind-variants"
 import { type FormComponentLabelProps, Label } from "../label"
 import { FormDescription, FormFieldError } from "../form"
-import { type ReactNode } from "react"
+import type { ReactNode } from "react"
 
 const { sliderRoot, sliderHeader, sliderTrack, sliderThumb, sliderOutput, sliderDescription } = sliderVariants()
 
