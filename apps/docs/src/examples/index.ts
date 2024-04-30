@@ -1385,6 +1385,15 @@ export function Example() {
 }
 `,
   },
+  "slider/multithrumb": {
+	  component: lazy(() => import("~/examples/slider/multithrumb.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Slider label="Range" helperText="helper text" thumbLabels={["start", "end"]} defaultValue={[30, 60]} />
+}
+`,
+  },
   "slider/orientation": {
 	  component: lazy(() => import("~/examples/slider/orientation.tsx")),
 	  code: `import { Slider } from "@pixelshades/ui/components"
