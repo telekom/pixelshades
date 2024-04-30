@@ -72,6 +72,8 @@ function ComponentPage() {
 									<Link
 										className="text-foreground"
 										href={`https://github.com/telekom/pixelshades/tree/main/packages/ui/src/components/ui/${component.slug}`}
+										target="_blank"
+										rel="noreferrer"
 									>
 										View Source Code
 									</Link>
@@ -83,7 +85,12 @@ function ComponentPage() {
 										<DataList.Label>Aria Docs</DataList.Label>
 										<DataList.Value>
 											<AdopeLogo className="size-3" />
-											<Link className="text-foreground" href={docLink}>
+											<Link
+												className="text-foreground"
+												href={docLink}
+												target="_blank"
+												rel="noreferrer"
+											>
 												View Docs
 											</Link>
 										</DataList.Value>
