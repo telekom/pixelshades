@@ -5,29 +5,18 @@ import { Modal, type ModalOverlayProps } from "../modal"
 
 const { modalVertical, modalHorizontal } = drawerVariants()
 
-export const DIRECTIONS = ["left", "right", "bottom"] as const
+export const DIRECTIONS = ["bottom", "left", "right", "top"] as const
 export type DrawerDirection = (typeof DIRECTIONS)[number]
-
-export const SIZES = ["xs", "sm", "md", "lg", "xl", "full"] as const
-export type DrawerSize = (typeof SIZES)[number]
 
 export interface DrawerProps extends ModalOverlayProps {
 	direction?: DrawerDirection
-	size?: DrawerSize
 }
 
 const DrawerRoot = ({ size, direction, children, className, ...props }: DrawerProps) => {
-	// FIXME - make it responsive
 	const modalVariant = ({ direction, ...props }: DrawerProps) =>
-		direction
-			? modalHorizontal({ ...props })
-			: modalVertical({
-					direction: {
-						initial: direction ?? "bottom",
-						md: direction ?? "right",
-					},
-					...props,
-				})
+		direction === "bottom" || direction === "top"
+			? modalHorizontal({ direction, ...props })
+			: modalVertical({ direction, ...props })
 
 	return (
 		<Modal className={modalVariant({ size, direction, className })} isDismissable={true} {...props}>
