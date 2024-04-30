@@ -1359,6 +1359,23 @@ export function Example() {
 }
 `,
   },
+  "slider/disabled": {
+	  component: lazy(() => import("~/examples/slider/disabled.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<Slider
+			label="Slide to change the value"
+			description={<small>This is a description!</small>}
+			helperText="helper text"
+			isDisabled
+			defaultValue={30}
+		/>
+	)
+}
+`,
+  },
   "slider/labeling": {
 	  component: lazy(() => import("~/examples/slider/labeling.tsx")),
 	  code: `import { Slider } from "@pixelshades/ui/components"

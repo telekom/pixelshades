@@ -13,11 +13,11 @@ import {
 	SliderThumb as AriaSliderThumb,
 } from "react-aria-components"
 import type { VariantProps } from "tailwind-variants"
-import { FormComponentLabelProps, Label } from "../label"
+import { type FormComponentLabelProps, Label } from "../label"
 import { FormDescription, FormFieldError } from "../form"
-import { ReactNode } from "react"
+import { type ReactNode } from "react"
 
-const { sliderRoot, sliderHeader, sliderTrack, sliderThumb, sliderDescription } = sliderVariants()
+const { sliderRoot, sliderHeader, sliderTrack, sliderThumb, sliderOutput, sliderDescription } = sliderVariants()
 
 interface SliderProps extends AriaSliderProps, FormComponentLabelProps, VariantProps<typeof sliderVariants> {
 	className?: string
@@ -33,22 +33,32 @@ const Slider = ({
 	description,
 	tooltip,
 	orientation,
+	isDisabled,
 	...props
 }: SliderProps) => {
 	return (
-		<AriaSlider className={sliderRoot({ className, orientation })} orientation={orientation} {...props}>
+		<AriaSlider
+			className={sliderRoot({ className, orientation })}
+			orientation={orientation}
+			isDisabled={isDisabled}
+			{...props}
+		>
 			<div className={sliderHeader({ className, orientation })}>
 				<Label tooltip={tooltip} description={description}>
 					{label}
 				</Label>
-				<AriaSliderOutput>
+				<AriaSliderOutput className={sliderOutput({ className, orientation })}>
 					{({ state }) => state.values.map((_, i) => state.getThumbValueLabel(i)).join(" – ")}
 				</AriaSliderOutput>
 			</div>
 			<AriaSliderTrack className={sliderTrack({ className, orientation })}>
 				{({ state }) =>
 					state.values.map((_, i) => (
-						<AriaSliderThumb key={i} index={i} className={sliderThumb({ className, orientation })} />
+						<AriaSliderThumb
+							key={i}
+							index={i}
+							className={sliderThumb({ className, orientation, isDisabled })}
+						/>
 					))
 				}
 			</AriaSliderTrack>

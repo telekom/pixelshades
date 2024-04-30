@@ -8,13 +8,15 @@ export const sliderVariants = tv({
 	slots: {
 		sliderRoot: "flex flex-col w-full",
 		sliderHeader: "flex justify-between",
+		sliderOutput: "w-4",
 		sliderTrack:
 			"w-full h-8 before:absolute before:inset-x-0 before:top-1/2 before:-translate-y-1/2 before:h-1 before:bg-border before:rounded-full",
-		sliderThumb: "size-6 bg-primary rounded-full top-1/2",
+		sliderThumb: "size-6 rounded-full top-1/2",
 		sliderDescription: "",
 	},
 	defaultVariants: {
 		orientation: "horizontal",
+		isDisabled: false,
 	},
 	variants: {
 		orientation: {
@@ -24,6 +26,10 @@ export const sliderVariants = tv({
 				sliderThumb: "left-1/2",
 			},
 			horizontal: "",
+		},
+		isDisabled: {
+			true: { sliderThumb: "bg-subtle" },
+			false: { sliderThumb: "bg-primary" },
 		},
 	},
 })
