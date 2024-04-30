@@ -36,7 +36,7 @@ const NumberField = forwardRef(
 				{label}
 			</Label>
 			<FormFieldGroup>
-				<Input className="border-none" ref={ref} />
+				<Input className="appearance-none border-none bg-transparent shadow-none" ref={ref} />
 				<div className="flex flex-col">
 					<Button className="size-3" slot="increment" size="icon" variant="ghost">
 						<ChevronUpIcon />
