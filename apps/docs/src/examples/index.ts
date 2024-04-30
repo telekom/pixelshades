@@ -3,12 +3,12 @@
   /*                    GENERATED FILE, DO NOT EDIT MANUALLY!                   */
   /* -------------------------------------------------------------------------- */
   import { lazy, type LazyExoticComponent } from "react";
-
+  
   type Demo = {
 	component: LazyExoticComponent<() => JSX.Element>;
 	code: string;
   };
-
+  
   export const Demos: Record<string, Demo> = {
     "badge/preview": {
 	  component: lazy(() => import("~/examples/badge/preview.tsx")),
