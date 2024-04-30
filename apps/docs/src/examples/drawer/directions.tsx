@@ -26,7 +26,7 @@ export default function Example() {
 								<Drawer.Header>
 									<Drawer.Title>Drawer Title</Drawer.Title>
 								</Drawer.Header>
-								<div className="h-full">Drawer Content</div>
+								<div className={direction === "bottom" ? "h-[200px]" : "h-full"}>Drawer Content</div>
 								<Drawer.Footer>
 									<Button onPress={close}>Close Drawer</Button>
 								</Drawer.Footer>

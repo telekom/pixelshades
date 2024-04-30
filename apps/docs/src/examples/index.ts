@@ -870,7 +870,7 @@ export function Example() {
 								<Drawer.Header>
 									<Drawer.Title>Drawer Title</Drawer.Title>
 								</Drawer.Header>
-								<div className="h-full">Drawer Content</div>
+								<div className={direction === "bottom" ? "h-[200px]" : "h-full"}>Drawer Content</div>
 								<Drawer.Footer>
 									<Button onPress={close}>Close Drawer</Button>
 								</Drawer.Footer>
@@ -887,22 +887,21 @@ export function Example() {
   "drawer/preview": {
 	  component: lazy(() => import("~/examples/drawer/preview.tsx")),
 	  code: `import { Button, Drawer } from "@pixelshades/ui/components"
+import { SquareX } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
 		<Drawer.Trigger>
 			<Button variant="outline">open default drawer</Button>
 			<Drawer>
-				<Drawer.Content className="h-full">
+				<Drawer.Content>
 					{({ close }) => (
 						<>
-							<Drawer.Header>
+							<Drawer.Header className={"flex-row items-center justify-between space-y-0"}>
 								<Drawer.Title>Drawer Title</Drawer.Title>
+								<Button variant={"ghost"} onPress={close} before={<SquareX />} />
 							</Drawer.Header>
-							<div className="h-full">Drawer Content</div>
-							<Drawer.Footer>
-								<Button onPress={close}>Close Drawer</Button>
-							</Drawer.Footer>
+							<div>Drawer Content</div>
 						</>
 					)}
 				</Drawer.Content>
