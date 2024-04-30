@@ -7,6 +7,16 @@ slug: Command
 primaryTag: WIP
 ---
 
+### Usage
+
+Command is a component that displays a menu of commands.
+You can use it in controlled or uncontrolled mode.
+In uncontrolled mode, the command menu will include a simple fuzzy search, if you want to disable it, you can set the `disableIntegratedSearch` prop to `true`.
+
+In controlled mode, you can control the behaviour of the command menu by providing the appropriate props.
+
+You can build your own command menu using the `Command` component primitives such as `Command.Group`, `Command.Item`, `Command.ItemTitle`, `Command.ItemDescription`, `Command.Search`, `Command.Trigger`, `Command.Icon`.
+
 <ComponentPreview name="command/preview" />
 
 ### Examples

@@ -25,7 +25,9 @@ import { dateRangeCalendarVariants } from "@pixelshades/styles/components/range-
 const { root, header, heading, gridHeaderCell, cell, grid, iconButton } = dateRangeCalendarVariants()
 
 export interface RangeCalendarProps<T extends DateValue> extends Omit<AriaRangeCalendarProps<T>, "className"> {
+	/** The error message to display when the date picker is invalid. */
 	error?: string
+	/** The className to apply styles to the component. */
 	className?: string
 }
 

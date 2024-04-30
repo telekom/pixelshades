@@ -25,7 +25,9 @@ import { calendarVariants } from "@pixelshades/styles/components/calendar"
 const { root, header, heading, gridHeaderCell, cell, grid, iconButton } = calendarVariants()
 
 export interface CalendarProps<T extends DateValue> extends Omit<AriaCalendarProps<T>, "className"> {
+	/** The error message to display if the calendar is invalid. */
 	error?: string
+	/** The styles of the calendar. */
 	className?: string
 }
 
