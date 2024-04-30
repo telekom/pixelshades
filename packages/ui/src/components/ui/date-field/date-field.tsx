@@ -14,7 +14,9 @@ import { FormDescription, FormFieldError } from "../form"
 import { type FormComponentLabelProps, Label } from "../label"
 
 interface DateFieldProps<T extends DateValue> extends AriaDateFieldProps<T>, FormComponentLabelProps {
+	/** A helper text to display below the date field. */
 	helperText?: string
+	/** The error message to display if the date field is invalid. */
 	errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
