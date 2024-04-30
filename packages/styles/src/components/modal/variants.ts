@@ -6,7 +6,7 @@ import { tv } from "tailwind-variants"
 
 export const modalVariants = tv({
 	slots: {
-		modal: "max-w-3/4 w-3/4 rounded-xl bg-background border p-6 outline-none md:w-96 entering:animate-zoom",
+		modal: "bg-background p-6 outline-none entering:animate-zoom",
 		overlay:
 			"fixed left-0 top-0 z-50 flex h-[var(--visual-viewport-height)] w-screen items-center justify-center bg-black/80 entering:animate-fade exiting:animate-fadeOut",
 	},

@@ -4,58 +4,30 @@
 
 import { tv } from "tailwind-variants"
 
-export const drawerVariants = tv(
-	{
-		slots: {
-			modalVertical: [
-				"max-w-full",
-				"w-full",
-				"fixed",
-				"outline-none",
-				"border-0",
-				"border-primary",
-				"shadow-lg",
-				"shadow-primary",
-				"rounded-none",
-			],
-			modalHorizontal: [
-				"max-w-full",
-				"w-full",
-				"fixed",
-				"outline-none",
-				"border-0",
-				"border-primary",
-				"shadow-lg",
-				"shadow-primary",
-				"rounded-none",
-			],
-		},
-		variants: {
-			direction: {
-				right: {
-					modalVertical: ["w-1/4", "border-t-0", "h-full", "border-l-2", "top-0", "left-[unset]"],
-				},
-				left: {
-					modalVertical: ["border-r-2", "w-1/4", "top-0", "bottom-0", "left-0", "right-auto", "h-full"],
-				},
-				bottom: {
-					modalHorizontal: ["w-full", "border-t-2", "h-1/3 ", "bottom-0 ", "right-0 ", "left-0"],
-				},
+const baseStyles = ["fixed", "border-primary", "overflow-y-scroll"]
+
+export const drawerVariants = tv({
+	slots: {
+		modalVertical: [...baseStyles, "w-fit", "top-0", "bottom-0", "h-full", "w-fit", "min-w-[320px]", "max-w-full"],
+		modalHorizontal: [...baseStyles, "h-fit", "right-0", "left-0", "w-full", "min-h-[320px]", "max-h-full"],
+	},
+	variants: {
+		direction: {
+			right: {
+				modalVertical: ["right-0", "border-l-2"],
 			},
-			size: {
-				xs: { modalVertical: "", modalHorizontal: "" },
-				sm: { modalVertical: "", modalHorizontal: "" },
-				md: { modalVertical: "", modalHorizontal: "" },
-				lg: { modalVertical: "", modalHorizontal: "" },
-				xl: { modalVertical: "", modalHorizontal: "" },
-				full: { modalVertical: "", modalHorizontal: "" },
+			left: {
+				modalVertical: ["left-0", "border-r-2"],
+			},
+			bottom: {
+				modalHorizontal: ["bottom-0", "border-t-2"],
+			},
+			top: {
+				modalHorizontal: ["top-0", "border-b-2"],
 			},
 		},
-		defaultVariants: {
-			direction: "right",
-		},
 	},
-	{
-		responsiveVariants: ["md"], // `true` to apply to all screen sizes
+	defaultVariants: {
+		direction: "right",
 	},
-)
+})
