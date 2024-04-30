@@ -1,18 +1,18 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-/* -------------------------------------------------------------------------- */
-/*                    GENERATED FILE, DO NOT EDIT MANUALLY!                   */
-/* -------------------------------------------------------------------------- */
-import { lazy, type LazyExoticComponent } from "react"
-
-type Demo = {
-	component: LazyExoticComponent<() => JSX.Element>
-	code: string
-}
-
-export const Demos: Record<string, Demo> = {
-	"badge/alert": {
-		component: lazy(() => import("~/examples/badge/alert.tsx")),
-		code: `import { Badge } from "@pixelshades/ui/components"
+  /* -------------------------------------------------------------------------- */
+  /*                    GENERATED FILE, DO NOT EDIT MANUALLY!                   */
+  /* -------------------------------------------------------------------------- */
+  import { lazy, type LazyExoticComponent } from "react";
+  
+  type Demo = {
+	component: LazyExoticComponent<() => JSX.Element>;
+	code: string;
+  };
+  
+  export const Demos: Record<string, Demo> = {
+    "badge/alert": {
+	  component: lazy(() => import("~/examples/badge/alert.tsx")),
+	  code: `import { Badge } from "@pixelshades/ui/components"
 import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -23,10 +23,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"badge/default": {
-		component: lazy(() => import("~/examples/badge/default.tsx")),
-		code: `import { Badge } from "@pixelshades/ui/components"
+  },
+  "badge/default": {
+	  component: lazy(() => import("~/examples/badge/default.tsx")),
+	  code: `import { Badge } from "@pixelshades/ui/components"
 import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -37,10 +37,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"badge/info": {
-		component: lazy(() => import("~/examples/badge/info.tsx")),
-		code: `import { Badge } from "@pixelshades/ui/components"
+  },
+  "badge/info": {
+	  component: lazy(() => import("~/examples/badge/info.tsx")),
+	  code: `import { Badge } from "@pixelshades/ui/components"
 import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -51,10 +51,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"badge/outline": {
-		component: lazy(() => import("~/examples/badge/outline.tsx")),
-		code: `import { Badge } from "@pixelshades/ui/components"
+  },
+  "badge/outline": {
+	  component: lazy(() => import("~/examples/badge/outline.tsx")),
+	  code: `import { Badge } from "@pixelshades/ui/components"
 import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -65,10 +65,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"badge/preview": {
-		component: lazy(() => import("~/examples/badge/preview.tsx")),
-		code: `import { Badge } from "@pixelshades/ui/components"
+  },
+  "badge/preview": {
+	  component: lazy(() => import("~/examples/badge/preview.tsx")),
+	  code: `import { Badge } from "@pixelshades/ui/components"
 import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -79,10 +79,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"badge/with-after": {
-		component: lazy(() => import("~/examples/badge/with-after.tsx")),
-		code: `import { Badge } from "@pixelshades/ui/components"
+  },
+  "badge/with-after": {
+	  component: lazy(() => import("~/examples/badge/with-after.tsx")),
+	  code: `import { Badge } from "@pixelshades/ui/components"
 import { ArrowRightIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -93,10 +93,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"badge/with-before": {
-		component: lazy(() => import("~/examples/badge/with-before.tsx")),
-		code: `import { Badge } from "@pixelshades/ui/components"
+  },
+  "badge/with-before": {
+	  component: lazy(() => import("~/examples/badge/with-before.tsx")),
+	  code: `import { Badge } from "@pixelshades/ui/components"
 import { Smile } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -107,10 +107,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"breadcrumbs/custom": {
-		component: lazy(() => import("~/examples/breadcrumbs/custom.tsx")),
-		code: `import { Breadcrumbs } from "@pixelshades/ui/components"
+  },
+  "breadcrumbs/custom": {
+	  component: lazy(() => import("~/examples/breadcrumbs/custom.tsx")),
+	  code: `import { Breadcrumbs } from "@pixelshades/ui/components"
 import { MoveRightIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -123,10 +123,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"breadcrumbs/preview": {
-		component: lazy(() => import("~/examples/breadcrumbs/preview.tsx")),
-		code: `import { Breadcrumbs } from "@pixelshades/ui/components"
+  },
+  "breadcrumbs/preview": {
+	  component: lazy(() => import("~/examples/breadcrumbs/preview.tsx")),
+	  code: `import { Breadcrumbs } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -138,28 +138,28 @@ export function Example() {
 	)
 }
 `,
-	},
-	"button/ghost": {
-		component: lazy(() => import("~/examples/button/ghost.tsx")),
-		code: `import { Button } from "@pixelshades/ui/components"
+  },
+  "button/ghost": {
+	  component: lazy(() => import("~/examples/button/ghost.tsx")),
+	  code: `import { Button } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <Button variant="ghost">Button</Button>
 }
 `,
-	},
-	"button/link": {
-		component: lazy(() => import("~/examples/button/link.tsx")),
-		code: `import { Button } from "@pixelshades/ui/components"
+  },
+  "button/link": {
+	  component: lazy(() => import("~/examples/button/link.tsx")),
+	  code: `import { Button } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <Button variant="link">Button</Button>
 }
 `,
-	},
-	"button/loading": {
-		component: lazy(() => import("~/examples/button/loading.tsx")),
-		code: `import { Button } from "@pixelshades/ui/components"
+  },
+  "button/loading": {
+	  component: lazy(() => import("~/examples/button/loading.tsx")),
+	  code: `import { Button } from "@pixelshades/ui/components"
 import { SnailIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -170,29 +170,29 @@ export function Example() {
 	)
 }
 `,
-	},
-	"button/outline": {
-		component: lazy(() => import("~/examples/button/outline.tsx")),
-		code: `import { Button } from "@pixelshades/ui/components"
+  },
+  "button/outline": {
+	  component: lazy(() => import("~/examples/button/outline.tsx")),
+	  code: `import { Button } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <Button variant="outline">Button</Button>
 }
 `,
-	},
-	"button/preview": {
-		component: lazy(() => import("~/examples/button/preview.tsx")),
-		code: `import { Button } from "@pixelshades/ui/components"
+  },
+  "button/preview": {
+	  component: lazy(() => import("~/examples/button/preview.tsx")),
+	  code: `import { Button } from "@pixelshades/ui/components"
 import { SnailIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return <Button before={<SnailIcon />}>Button</Button>
 }
 `,
-	},
-	"button/sizes": {
-		component: lazy(() => import("~/examples/button/sizes.tsx")),
-		code: `import { Button } from "@pixelshades/ui/components"
+  },
+  "button/sizes": {
+	  component: lazy(() => import("~/examples/button/sizes.tsx")),
+	  code: `import { Button } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -205,28 +205,28 @@ export function Example() {
 	)
 }
 `,
-	},
-	"button/solid": {
-		component: lazy(() => import("~/examples/button/solid.tsx")),
-		code: `import { Button } from "@pixelshades/ui/components"
+  },
+  "button/solid": {
+	  component: lazy(() => import("~/examples/button/solid.tsx")),
+	  code: `import { Button } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <Button variant="solid">Button</Button>
 }
 `,
-	},
-	"button/subtle": {
-		component: lazy(() => import("~/examples/button/subtle.tsx")),
-		code: `import { Button } from "@pixelshades/ui/components"
+  },
+  "button/subtle": {
+	  component: lazy(() => import("~/examples/button/subtle.tsx")),
+	  code: `import { Button } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <Button variant="subtle">Button</Button>
 }
 `,
-	},
-	"button-group/ghost": {
-		component: lazy(() => import("~/examples/button-group/ghost.tsx")),
-		code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
+  },
+  "button-group/ghost": {
+	  component: lazy(() => import("~/examples/button-group/ghost.tsx")),
+	  code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -238,10 +238,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"button-group/link": {
-		component: lazy(() => import("~/examples/button-group/link.tsx")),
-		code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
+  },
+  "button-group/link": {
+	  component: lazy(() => import("~/examples/button-group/link.tsx")),
+	  code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -253,10 +253,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"button-group/orientation": {
-		component: lazy(() => import("~/examples/button-group/orientation.tsx")),
-		code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
+  },
+  "button-group/orientation": {
+	  component: lazy(() => import("~/examples/button-group/orientation.tsx")),
+	  code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -288,10 +288,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"button-group/outline": {
-		component: lazy(() => import("~/examples/button-group/outline.tsx")),
-		code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
+  },
+  "button-group/outline": {
+	  component: lazy(() => import("~/examples/button-group/outline.tsx")),
+	  code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -303,10 +303,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"button-group/preview": {
-		component: lazy(() => import("~/examples/button-group/preview.tsx")),
-		code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
+  },
+  "button-group/preview": {
+	  component: lazy(() => import("~/examples/button-group/preview.tsx")),
+	  code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -318,10 +318,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"button-group/solid": {
-		component: lazy(() => import("~/examples/button-group/solid.tsx")),
-		code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
+  },
+  "button-group/solid": {
+	  component: lazy(() => import("~/examples/button-group/solid.tsx")),
+	  code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -333,10 +333,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"button-group/variants": {
-		component: lazy(() => import("~/examples/button-group/variants.tsx")),
-		code: `import { Button, ButtonGroup, Heading } from "@pixelshades/ui/components"
+  },
+  "button-group/variants": {
+	  component: lazy(() => import("~/examples/button-group/variants.tsx")),
+	  code: `import { Button, ButtonGroup, Heading } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -363,10 +363,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"calendar/custom-duration": {
-		component: lazy(() => import("~/examples/calendar/custom-duration.tsx")),
-		code: `import { Calendar } from "@pixelshades/ui/components"
+  },
+  "calendar/custom-duration": {
+	  component: lazy(() => import("~/examples/calendar/custom-duration.tsx")),
+	  code: `import { Calendar } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -378,19 +378,19 @@ export function Example() {
 	)
 }
 `,
-	},
-	"calendar/disabled": {
-		component: lazy(() => import("~/examples/calendar/disabled.tsx")),
-		code: `import { Calendar } from "@pixelshades/ui/components"
+  },
+  "calendar/disabled": {
+	  component: lazy(() => import("~/examples/calendar/disabled.tsx")),
+	  code: `import { Calendar } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <Calendar isDisabled />
 }
 `,
-	},
-	"calendar/min-dates": {
-		component: lazy(() => import("~/examples/calendar/min-dates.tsx")),
-		code: `import { getLocalTimeZone, today } from "@internationalized/date"
+  },
+  "calendar/min-dates": {
+	  component: lazy(() => import("~/examples/calendar/min-dates.tsx")),
+	  code: `import { getLocalTimeZone, today } from "@internationalized/date"
 import { Calendar } from "@pixelshades/ui/components"
 
 export function Example() {
@@ -399,19 +399,19 @@ export function Example() {
 	return <Calendar minValue={now} maxValue={now.add({ days: 15 })} />
 }
 `,
-	},
-	"calendar/preview": {
-		component: lazy(() => import("~/examples/calendar/preview.tsx")),
-		code: `import { Calendar } from "@pixelshades/ui/components"
+  },
+  "calendar/preview": {
+	  component: lazy(() => import("~/examples/calendar/preview.tsx")),
+	  code: `import { Calendar } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <Calendar />
 }
 `,
-	},
-	"calendar/unavailable-dates": {
-		component: lazy(() => import("~/examples/calendar/unavailable-dates.tsx")),
-		code: `"use client"
+  },
+  "calendar/unavailable-dates": {
+	  component: lazy(() => import("~/examples/calendar/unavailable-dates.tsx")),
+	  code: `"use client"
 
 import { isWeekend } from "@internationalized/date"
 import { Calendar } from "@pixelshades/ui/components"
@@ -423,10 +423,10 @@ export function Example() {
 	return <Calendar isDateUnavailable={(date) => isWeekend(date, locale)} />
 }
 `,
-	},
-	"card/preview": {
-		component: lazy(() => import("~/examples/card/preview.tsx")),
-		code: `import { Button, Card, Input, Label, Select } from "@pixelshades/ui/components"
+  },
+  "card/preview": {
+	  component: lazy(() => import("~/examples/card/preview.tsx")),
+	  code: `import { Button, Card, Input, Label, Select } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -461,19 +461,19 @@ export function Example() {
 	)
 }
 `,
-	},
-	"checkbox/preview": {
-		component: lazy(() => import("~/examples/checkbox/preview.tsx")),
-		code: `import { Button, Checkbox, Form } from "@pixelshades/ui/components"
+  },
+  "checkbox/preview": {
+	  component: lazy(() => import("~/examples/checkbox/preview.tsx")),
+	  code: `import { Button, Checkbox, Form } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <Checkbox value="push" label="Label" description="Description" helperText="Helper Text" tooltip="Tooltip" />
 }
 `,
-	},
-	"checkbox-group/preview": {
-		component: lazy(() => import("~/examples/checkbox-group/preview.tsx")),
-		code: `import { Checkbox, CheckboxGroup } from "@pixelshades/ui/components"
+  },
+  "checkbox-group/preview": {
+	  component: lazy(() => import("~/examples/checkbox-group/preview.tsx")),
+	  code: `import { Checkbox, CheckboxGroup } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -485,10 +485,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"combobox/preview": {
-		component: lazy(() => import("~/examples/combobox/preview.tsx")),
-		code: `import { ComboBox } from "@pixelshades/ui/components"
+  },
+  "combobox/preview": {
+	  component: lazy(() => import("~/examples/combobox/preview.tsx")),
+	  code: `import { ComboBox } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -501,10 +501,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"command/controlled": {
-		component: lazy(() => import("~/examples/command/controlled.tsx")),
-		code: `import { Button, Command } from "@pixelshades/ui/components"
+  },
+  "command/controlled": {
+	  component: lazy(() => import("~/examples/command/controlled.tsx")),
+	  code: `import { Button, Command } from "@pixelshades/ui/components"
 import { Apple, CommandIcon, GlassWater } from "@pixelshades/ui/icons"
 import { useState } from "react"
 
@@ -566,10 +566,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"command/preview": {
-		component: lazy(() => import("~/examples/command/preview.tsx")),
-		code: `import { Command } from "@pixelshades/ui/components"
+  },
+  "command/preview": {
+	  component: lazy(() => import("~/examples/command/preview.tsx")),
+	  code: `import { Command } from "@pixelshades/ui/components"
 import { Apple, GlassWater } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -622,10 +622,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"command/uncontrolled": {
-		component: lazy(() => import("~/examples/command/uncontrolled.tsx")),
-		code: `import { Command } from "@pixelshades/ui/components"
+  },
+  "command/uncontrolled": {
+	  component: lazy(() => import("~/examples/command/uncontrolled.tsx")),
+	  code: `import { Command } from "@pixelshades/ui/components"
 import { Apple, GlassWater } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -679,10 +679,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"data-list/preview": {
-		component: lazy(() => import("~/examples/data-list/preview.tsx")),
-		code: `import { DataList, Link } from "@pixelshades/ui/components"
+  },
+  "data-list/preview": {
+	  component: lazy(() => import("~/examples/data-list/preview.tsx")),
+	  code: `import { DataList, Link } from "@pixelshades/ui/components"
 import { GithubIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -718,10 +718,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"date-field/granularity": {
-		component: lazy(() => import("~/examples/date-field/granularity.tsx")),
-		code: `import { DateField } from "@pixelshades/ui/components"
+  },
+  "date-field/granularity": {
+	  component: lazy(() => import("~/examples/date-field/granularity.tsx")),
+	  code: `import { DateField } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -734,19 +734,19 @@ export function Example() {
 	)
 }
 `,
-	},
-	"date-field/preview": {
-		component: lazy(() => import("~/examples/date-field/preview.tsx")),
-		code: `import { DateField } from "@pixelshades/ui/components"
+  },
+  "date-field/preview": {
+	  component: lazy(() => import("~/examples/date-field/preview.tsx")),
+	  code: `import { DateField } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <DateField label="Start Date" />
 }
 `,
-	},
-	"date-picker/granularity": {
-		component: lazy(() => import("~/examples/date-picker/granularity.tsx")),
-		code: `import { DatePicker } from "@pixelshades/ui/components"
+  },
+  "date-picker/granularity": {
+	  component: lazy(() => import("~/examples/date-picker/granularity.tsx")),
+	  code: `import { DatePicker } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -759,19 +759,19 @@ export function Example() {
 	)
 }
 `,
-	},
-	"date-picker/preview": {
-		component: lazy(() => import("~/examples/date-picker/preview.tsx")),
-		code: `import { DatePicker } from "@pixelshades/ui/components"
+  },
+  "date-picker/preview": {
+	  component: lazy(() => import("~/examples/date-picker/preview.tsx")),
+	  code: `import { DatePicker } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <DatePicker label="Start Date" />
 }
 `,
-	},
-	"dialog/preview": {
-		component: lazy(() => import("~/examples/dialog/preview.tsx")),
-		code: `import { Button, Dialog, Input, Label } from "@pixelshades/ui/components"
+  },
+  "dialog/preview": {
+	  component: lazy(() => import("~/examples/dialog/preview.tsx")),
+	  code: `import { Button, Dialog, Input, Label } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -814,10 +814,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"form/preview": {
-		component: lazy(() => import("~/examples/form/preview.tsx")),
-		code: `import {
+  },
+  "form/preview": {
+	  component: lazy(() => import("~/examples/form/preview.tsx")),
+	  code: `import {
 	Button,
 	Checkbox,
 	CheckboxGroup,
@@ -892,25 +892,58 @@ export function Example() {
 	)
 }
 `,
-	},
-	"heading/preview": {
-		component: lazy(() => import("~/examples/heading/preview.tsx")),
-		code: `import { Heading, HeadingLevel } from "@pixelshades/ui/components"
+  },
+  "heading/flat-heading-levels": {
+	  component: lazy(() => import("~/examples/heading/flat-heading-levels.tsx")),
+	  code: `import { Heading, HeadingLevel, Typography } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
 		<div>
-			<Heading>Ag</Heading>
+			<Heading>h1</Heading>
+			<Heading level={2}>h2</Heading>
+			<Heading level={3}>h3</Heading>
+			<Heading level={4}>h4</Heading>
+			<Heading level={5}>h5</Heading>
+			<Heading level={6}>h6</Heading>
+		</div>
+	)
+}
+`,
+  },
+  "heading/nested-heading-level": {
+	  component: lazy(() => import("~/examples/heading/nested-heading-level.tsx")),
+	  code: `import { Heading, HeadingLevel, Typography } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<div>
+			<HeadingLevel level={2}>
+				<Heading>h2</Heading>
+			</HeadingLevel>
+		</div>
+	)
+}
+`,
+  },
+  "heading/preview": {
+	  component: lazy(() => import("~/examples/heading/preview.tsx")),
+	  code: `import { Heading, HeadingLevel, Typography } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<div>
+			<Heading>h1</Heading>
 			<HeadingLevel>
-				<Heading>Ag</Heading>
+				<Heading>h2</Heading>
 				<HeadingLevel>
-					<Heading>Ag</Heading>
+					<Heading>h3</Heading>
 					<HeadingLevel>
-						<Heading>Ag</Heading>
+						<Heading>h4</Heading>
 						<HeadingLevel>
-							<Heading>Ag</Heading>
+							<Heading>h5</Heading>
 							<HeadingLevel>
-								<Heading>Ag</Heading>
+								<Heading>h6</Heading>
 							</HeadingLevel>
 						</HeadingLevel>
 					</HeadingLevel>
@@ -920,10 +953,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"highlight/preview": {
-		component: lazy(() => import("~/examples/highlight/preview.tsx")),
-		code: `import { Highlight, Typography } from "@pixelshades/ui/components"
+  },
+  "highlight/preview": {
+	  component: lazy(() => import("~/examples/highlight/preview.tsx")),
+	  code: `import { Highlight, Typography } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -933,10 +966,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"highlight/search": {
-		component: lazy(() => import("~/examples/highlight/search.tsx")),
-		code: `import { Highlight, Input, Label, Typography } from "@pixelshades/ui/components"
+  },
+  "highlight/search": {
+	  component: lazy(() => import("~/examples/highlight/search.tsx")),
+	  code: `import { Highlight, Input, Label, Typography } from "@pixelshades/ui/components"
 import { useState } from "react"
 
 export function Example() {
@@ -962,19 +995,19 @@ export function Example() {
 	)
 }
 `,
-	},
-	"kbd/preview": {
-		component: lazy(() => import("~/examples/kbd/preview.tsx")),
-		code: `import { Kbd } from "@pixelshades/ui/components"
+  },
+  "kbd/preview": {
+	  component: lazy(() => import("~/examples/kbd/preview.tsx")),
+	  code: `import { Kbd } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <Kbd keys={["option", "command"]}>K</Kbd>
 }
 `,
-	},
-	"link/active": {
-		component: lazy(() => import("~/examples/link/active.tsx")),
-		code: `import { Link } from "@pixelshades/ui/components"
+  },
+  "link/active": {
+	  component: lazy(() => import("~/examples/link/active.tsx")),
+	  code: `import { Link } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -985,19 +1018,19 @@ export function Example() {
 	)
 }
 `,
-	},
-	"link/preview": {
-		component: lazy(() => import("~/examples/link/preview.tsx")),
-		code: `import { Link } from "@pixelshades/ui/components"
+  },
+  "link/preview": {
+	  component: lazy(() => import("~/examples/link/preview.tsx")),
+	  code: `import { Link } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <Link>Link</Link>
 }
 `,
-	},
-	"link/sizes": {
-		component: lazy(() => import("~/examples/link/sizes.tsx")),
-		code: `import { Link } from "@pixelshades/ui/components"
+  },
+  "link/sizes": {
+	  component: lazy(() => import("~/examples/link/sizes.tsx")),
+	  code: `import { Link } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1017,20 +1050,20 @@ export function Example() {
 	)
 }
 `,
-	},
-	"loadingSpinner/button": {
-		component: lazy(() => import("~/examples/loadingSpinner/button.tsx")),
-		code: `import { LoadingSpinner } from "@pixelshades/ui/components"
+  },
+  "loadingSpinner/button": {
+	  component: lazy(() => import("~/examples/loadingSpinner/button.tsx")),
+	  code: `import { LoadingSpinner } from "@pixelshades/ui/components"
 import { Button } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <Button before={<LoadingSpinner />}>Loading...</Button>
 }
 `,
-	},
-	"loadingSpinner/icons": {
-		component: lazy(() => import("~/examples/loadingSpinner/icons.tsx")),
-		code: `import { LoadingSpinner } from "@pixelshades/ui/components"
+  },
+  "loadingSpinner/icons": {
+	  component: lazy(() => import("~/examples/loadingSpinner/icons.tsx")),
+	  code: `import { LoadingSpinner } from "@pixelshades/ui/components"
 import { Loader } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -1042,19 +1075,19 @@ export function Example() {
 	)
 }
 `,
-	},
-	"loadingSpinner/preview": {
-		component: lazy(() => import("~/examples/loadingSpinner/preview.tsx")),
-		code: `import { LoadingSpinner } from "@pixelshades/ui/components"
+  },
+  "loadingSpinner/preview": {
+	  component: lazy(() => import("~/examples/loadingSpinner/preview.tsx")),
+	  code: `import { LoadingSpinner } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <LoadingSpinner />
 }
 `,
-	},
-	"loadingSpinner/sizes": {
-		component: lazy(() => import("~/examples/loadingSpinner/sizes.tsx")),
-		code: `import { LoadingSpinner } from "@pixelshades/ui/components"
+  },
+  "loadingSpinner/sizes": {
+	  component: lazy(() => import("~/examples/loadingSpinner/sizes.tsx")),
+	  code: `import { LoadingSpinner } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1068,10 +1101,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"loadingSpinner/variants": {
-		component: lazy(() => import("~/examples/loadingSpinner/variants.tsx")),
-		code: `import { LoadingSpinner } from "@pixelshades/ui/components"
+  },
+  "loadingSpinner/variants": {
+	  component: lazy(() => import("~/examples/loadingSpinner/variants.tsx")),
+	  code: `import { LoadingSpinner } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1083,10 +1116,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"menu/preview": {
-		component: lazy(() => import("~/examples/menu/preview.tsx")),
-		code: `import { Button, Menu } from "@pixelshades/ui/components"
+  },
+  "menu/preview": {
+	  component: lazy(() => import("~/examples/menu/preview.tsx")),
+	  code: `import { Button, Menu } from "@pixelshades/ui/components"
 import { DownloadIcon, EyeOffIcon, MailIcon, PinIcon, RedoIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -1137,10 +1170,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"menu/sub-menu": {
-		component: lazy(() => import("~/examples/menu/sub-menu.tsx")),
-		code: `import { Button, Menu } from "@pixelshades/ui/components"
+  },
+  "menu/sub-menu": {
+	  component: lazy(() => import("~/examples/menu/sub-menu.tsx")),
+	  code: `import { Button, Menu } from "@pixelshades/ui/components"
 import { DownloadIcon, EyeOffIcon, MailIcon, PinIcon, RedoIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -1217,10 +1250,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"number-field/controlled": {
-		component: lazy(() => import("~/examples/number-field/controlled.tsx")),
-		code: `import { NumberField } from "@pixelshades/ui/components"
+  },
+  "number-field/controlled": {
+	  component: lazy(() => import("~/examples/number-field/controlled.tsx")),
+	  code: `import { NumberField } from "@pixelshades/ui/components"
 import { useState } from "react"
 
 export function Example() {
@@ -1236,10 +1269,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"number-field/currency-format": {
-		component: lazy(() => import("~/examples/number-field/currency-format.tsx")),
-		code: `import { NumberField } from "@pixelshades/ui/components"
+  },
+  "number-field/currency-format": {
+	  component: lazy(() => import("~/examples/number-field/currency-format.tsx")),
+	  code: `import { NumberField } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1255,10 +1288,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"number-field/percentage-format": {
-		component: lazy(() => import("~/examples/number-field/percentage-format.tsx")),
-		code: `import { NumberField } from "@pixelshades/ui/components"
+  },
+  "number-field/percentage-format": {
+	  component: lazy(() => import("~/examples/number-field/percentage-format.tsx")),
+	  code: `import { NumberField } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1272,10 +1305,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"number-field/preview": {
-		component: lazy(() => import("~/examples/number-field/preview.tsx")),
-		code: `import { NumberField } from "@pixelshades/ui/components"
+  },
+  "number-field/preview": {
+	  component: lazy(() => import("~/examples/number-field/preview.tsx")),
+	  code: `import { NumberField } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1287,10 +1320,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"popover/preview": {
-		component: lazy(() => import("~/examples/popover/preview.tsx")),
-		code: `import { Button, Input, Label, Popover } from "@pixelshades/ui/components"
+  },
+  "popover/preview": {
+	  component: lazy(() => import("~/examples/popover/preview.tsx")),
+	  code: `import { Button, Input, Label, Popover } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1326,10 +1359,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"progressBar/labeling": {
-		component: lazy(() => import("~/examples/progressBar/labeling.tsx")),
-		code: `import { ProgressBar } from "@pixelshades/ui/components"
+  },
+  "progressBar/labeling": {
+	  component: lazy(() => import("~/examples/progressBar/labeling.tsx")),
+	  code: `import { ProgressBar } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1340,19 +1373,19 @@ export function Example() {
 	)
 }
 `,
-	},
-	"progressBar/preview": {
-		component: lazy(() => import("~/examples/progressBar/preview.tsx")),
-		code: `import { ProgressBar } from "@pixelshades/ui/components"
+  },
+  "progressBar/preview": {
+	  component: lazy(() => import("~/examples/progressBar/preview.tsx")),
+	  code: `import { ProgressBar } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <ProgressBar label="Loading…" description={<small>This is a description!</small>} value={25} />
 }
 `,
-	},
-	"progressBar/sizes": {
-		component: lazy(() => import("~/examples/progressBar/sizes.tsx")),
-		code: `import { ProgressBar } from "@pixelshades/ui/components"
+  },
+  "progressBar/sizes": {
+	  component: lazy(() => import("~/examples/progressBar/sizes.tsx")),
+	  code: `import { ProgressBar } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1365,19 +1398,19 @@ export function Example() {
 	)
 }
 `,
-	},
-	"progressBar/valueScale": {
-		component: lazy(() => import("~/examples/progressBar/valueScale.tsx")),
-		code: `import { ProgressBar } from "@pixelshades/ui/components"
+  },
+  "progressBar/valueScale": {
+	  component: lazy(() => import("~/examples/progressBar/valueScale.tsx")),
+	  code: `import { ProgressBar } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <ProgressBar label="Scale" minValue={10} maxValue={125} value={25} />
 }
 `,
-	},
-	"progressBar/variants": {
-		component: lazy(() => import("~/examples/progressBar/variants.tsx")),
-		code: `import { ProgressBar } from "@pixelshades/ui/components"
+  },
+  "progressBar/variants": {
+	  component: lazy(() => import("~/examples/progressBar/variants.tsx")),
+	  code: `import { ProgressBar } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1390,10 +1423,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"radio-group/preview": {
-		component: lazy(() => import("~/examples/radio-group/preview.tsx")),
-		code: `import { Label, Radio } from "@pixelshades/ui/components"
+  },
+  "radio-group/preview": {
+	  component: lazy(() => import("~/examples/radio-group/preview.tsx")),
+	  code: `import { Label, Radio } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1406,10 +1439,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"range-calendar/custom-duration": {
-		component: lazy(() => import("~/examples/range-calendar/custom-duration.tsx")),
-		code: `import { RangeCalendar } from "@pixelshades/ui/components"
+  },
+  "range-calendar/custom-duration": {
+	  component: lazy(() => import("~/examples/range-calendar/custom-duration.tsx")),
+	  code: `import { RangeCalendar } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1421,19 +1454,19 @@ export function Example() {
 	)
 }
 `,
-	},
-	"range-calendar/disabled": {
-		component: lazy(() => import("~/examples/range-calendar/disabled.tsx")),
-		code: `import { RangeCalendar } from "@pixelshades/ui/components"
+  },
+  "range-calendar/disabled": {
+	  component: lazy(() => import("~/examples/range-calendar/disabled.tsx")),
+	  code: `import { RangeCalendar } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <RangeCalendar isDisabled />
 }
 `,
-	},
-	"range-calendar/min-dates": {
-		component: lazy(() => import("~/examples/range-calendar/min-dates.tsx")),
-		code: `import { getLocalTimeZone, today } from "@internationalized/date"
+  },
+  "range-calendar/min-dates": {
+	  component: lazy(() => import("~/examples/range-calendar/min-dates.tsx")),
+	  code: `import { getLocalTimeZone, today } from "@internationalized/date"
 import { RangeCalendar } from "@pixelshades/ui/components"
 
 export function Example() {
@@ -1442,19 +1475,19 @@ export function Example() {
 	return <RangeCalendar minValue={now} maxValue={now.add({ days: 15 })} />
 }
 `,
-	},
-	"range-calendar/preview": {
-		component: lazy(() => import("~/examples/range-calendar/preview.tsx")),
-		code: `import { RangeCalendar } from "@pixelshades/ui/components"
+  },
+  "range-calendar/preview": {
+	  component: lazy(() => import("~/examples/range-calendar/preview.tsx")),
+	  code: `import { RangeCalendar } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <RangeCalendar />
 }
 `,
-	},
-	"range-calendar/unavailable-dates": {
-		component: lazy(() => import("~/examples/range-calendar/unavailable-dates.tsx")),
-		code: `"use client"
+  },
+  "range-calendar/unavailable-dates": {
+	  component: lazy(() => import("~/examples/range-calendar/unavailable-dates.tsx")),
+	  code: `"use client"
 
 import { isWeekend } from "@internationalized/date"
 import { RangeCalendar } from "@pixelshades/ui/components"
@@ -1466,10 +1499,10 @@ export function Example() {
 	return <RangeCalendar isDateUnavailable={(date) => isWeekend(date, locale)} />
 }
 `,
-	},
-	"select/preview": {
-		component: lazy(() => import("~/examples/select/preview.tsx")),
-		code: `import { Select } from "@pixelshades/ui/components"
+  },
+  "select/preview": {
+	  component: lazy(() => import("~/examples/select/preview.tsx")),
+	  code: `import { Select } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1482,10 +1515,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"separator/preview": {
-		component: lazy(() => import("~/examples/separator/preview.tsx")),
-		code: `import { Separator } from "@pixelshades/ui/components"
+  },
+  "separator/preview": {
+	  component: lazy(() => import("~/examples/separator/preview.tsx")),
+	  code: `import { Separator } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1504,19 +1537,19 @@ export function Example() {
 	)
 }
 `,
-	},
-	"switch/preview": {
-		component: lazy(() => import("~/examples/switch/preview.tsx")),
-		code: `import { Switch } from "@pixelshades/ui/components"
+  },
+  "switch/preview": {
+	  component: lazy(() => import("~/examples/switch/preview.tsx")),
+	  code: `import { Switch } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <Switch />
 }
 `,
-	},
-	"table/preview": {
-		component: lazy(() => import("~/examples/table/preview.tsx")),
-		code: `import { Table } from "@pixelshades/ui/components"
+  },
+  "table/preview": {
+	  component: lazy(() => import("~/examples/table/preview.tsx")),
+	  code: `import { Table } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1552,10 +1585,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"table/with-selection": {
-		component: lazy(() => import("~/examples/table/with-selection.tsx")),
-		code: `import { Table } from "@pixelshades/ui/components"
+  },
+  "table/with-selection": {
+	  component: lazy(() => import("~/examples/table/with-selection.tsx")),
+	  code: `import { Table } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1591,10 +1624,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"tabs/outline": {
-		component: lazy(() => import("~/examples/tabs/outline.tsx")),
-		code: `import { Tabs } from "@pixelshades/ui/components"
+  },
+  "tabs/outline": {
+	  component: lazy(() => import("~/examples/tabs/outline.tsx")),
+	  code: `import { Tabs } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1611,10 +1644,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"tabs/pill": {
-		component: lazy(() => import("~/examples/tabs/pill.tsx")),
-		code: `import { Tabs } from "@pixelshades/ui/components"
+  },
+  "tabs/pill": {
+	  component: lazy(() => import("~/examples/tabs/pill.tsx")),
+	  code: `import { Tabs } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1631,10 +1664,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"tabs/preview": {
-		component: lazy(() => import("~/examples/tabs/preview.tsx")),
-		code: `import { Tabs } from "@pixelshades/ui/components"
+  },
+  "tabs/preview": {
+	  component: lazy(() => import("~/examples/tabs/preview.tsx")),
+	  code: `import { Tabs } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1651,10 +1684,10 @@ export function Example() {
 	)
 }
 `,
-	},
-	"text-field/multi-line": {
-		component: lazy(() => import("~/examples/text-field/multi-line.tsx")),
-		code: `import { TextField } from "@pixelshades/ui/components"
+  },
+  "text-field/multi-line": {
+	  component: lazy(() => import("~/examples/text-field/multi-line.tsx")),
+	  code: `import { TextField } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1668,19 +1701,19 @@ export function Example() {
 	)
 }
 `,
-	},
-	"text-field/preview": {
-		component: lazy(() => import("~/examples/text-field/preview.tsx")),
-		code: `import { TextField } from "@pixelshades/ui/components"
+  },
+  "text-field/preview": {
+	  component: lazy(() => import("~/examples/text-field/preview.tsx")),
+	  code: `import { TextField } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <TextField label="Project" description="Deploy your new project in one-click." helperText="Helper Text" />
 }
 `,
-	},
-	"time-field/granularity": {
-		component: lazy(() => import("~/examples/time-field/granularity.tsx")),
-		code: `import { TimeField } from "@pixelshades/ui/components"
+  },
+  "time-field/granularity": {
+	  component: lazy(() => import("~/examples/time-field/granularity.tsx")),
+	  code: `import { TimeField } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1692,47 +1725,47 @@ export function Example() {
 	)
 }
 `,
-	},
-	"time-field/preview": {
-		component: lazy(() => import("~/examples/time-field/preview.tsx")),
-		code: `import { TimeField } from "@pixelshades/ui/components"
+  },
+  "time-field/preview": {
+	  component: lazy(() => import("~/examples/time-field/preview.tsx")),
+	  code: `import { TimeField } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <TimeField label="Start Date" />
 }
 `,
-	},
-	"toggle-button/ghost": {
-		component: lazy(() => import("~/examples/toggle-button/ghost.tsx")),
-		code: `import { ToggleButton } from "@pixelshades/ui/components"
+  },
+  "toggle-button/ghost": {
+	  component: lazy(() => import("~/examples/toggle-button/ghost.tsx")),
+	  code: `import { ToggleButton } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <ToggleButton variant="ghost">Toggle</ToggleButton>
 }
 `,
-	},
-	"toggle-button/outline": {
-		component: lazy(() => import("~/examples/toggle-button/outline.tsx")),
-		code: `import { ToggleButton } from "@pixelshades/ui/components"
+  },
+  "toggle-button/outline": {
+	  component: lazy(() => import("~/examples/toggle-button/outline.tsx")),
+	  code: `import { ToggleButton } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <ToggleButton variant="outline">Toggle</ToggleButton>
 }
 `,
-	},
-	"toggle-button/preview": {
-		component: lazy(() => import("~/examples/toggle-button/preview.tsx")),
-		code: `import { ToggleButton } from "@pixelshades/ui/components"
+  },
+  "toggle-button/preview": {
+	  component: lazy(() => import("~/examples/toggle-button/preview.tsx")),
+	  code: `import { ToggleButton } from "@pixelshades/ui/components"
 import { Snail } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return <ToggleButton before={<Snail />}>Toggle</ToggleButton>
 }
 `,
-	},
-	"toggle-button/sizes": {
-		component: lazy(() => import("~/examples/toggle-button/sizes.tsx")),
-		code: `import { ToggleButton } from "@pixelshades/ui/components"
+  },
+  "toggle-button/sizes": {
+	  component: lazy(() => import("~/examples/toggle-button/sizes.tsx")),
+	  code: `import { ToggleButton } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1745,19 +1778,19 @@ export function Example() {
 	)
 }
 `,
-	},
-	"toggle-button/subtle": {
-		component: lazy(() => import("~/examples/toggle-button/subtle.tsx")),
-		code: `import { ToggleButton } from "@pixelshades/ui/components"
+  },
+  "toggle-button/subtle": {
+	  component: lazy(() => import("~/examples/toggle-button/subtle.tsx")),
+	  code: `import { ToggleButton } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <ToggleButton variant="subtle">Toggle</ToggleButton>
 }
 `,
-	},
-	"tooltip/custom": {
-		component: lazy(() => import("~/examples/tooltip/custom.tsx")),
-		code: `import { Button, Tooltip } from "@pixelshades/ui/components"
+  },
+  "tooltip/custom": {
+	  component: lazy(() => import("~/examples/tooltip/custom.tsx")),
+	  code: `import { Button, Tooltip } from "@pixelshades/ui/components"
 import { SaveIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
@@ -1771,19 +1804,19 @@ export function Example() {
 	)
 }
 `,
-	},
-	"tooltip/preview": {
-		component: lazy(() => import("~/examples/tooltip/preview.tsx")),
-		code: `import { Tooltip } from "@pixelshades/ui/components"
+  },
+  "tooltip/preview": {
+	  component: lazy(() => import("~/examples/tooltip/preview.tsx")),
+	  code: `import { Tooltip } from "@pixelshades/ui/components"
 
 export function Example() {
 	return <Tooltip>Small Little Tooltip</Tooltip>
 }
 `,
-	},
-	"typography/preview": {
-		component: lazy(() => import("~/examples/typography/preview.tsx")),
-		code: `import { Typography } from "@pixelshades/ui/components"
+  },
+  "typography/preview": {
+	  component: lazy(() => import("~/examples/typography/preview.tsx")),
+	  code: `import { Typography } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1803,5 +1836,5 @@ export function Example() {
 	)
 }
 `,
-	},
-}
+  },
+};
