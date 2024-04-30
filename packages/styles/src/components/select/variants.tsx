@@ -13,5 +13,6 @@ export const selectVariants = tv({
 		popover: "min-w-[var(--trigger-width)] w-fit",
 		button: inputVariants({ className: "justify-between" }),
 		icon: "size-4 text-subtle-foreground",
+		wow: "",
 	},
 })
