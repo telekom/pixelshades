@@ -25,7 +25,7 @@ const getComponentPropsBySlug = (slug: string) => {
 
 export const PropsTable = ({ slug }: PropsTableProps) => {
 	const props = getComponentPropsBySlug(slug)
-	console.log("props", props)
+
 	if (!props) {
 		return "No Props Yet"
 	}
@@ -67,7 +67,7 @@ export const PropsTable = ({ slug }: PropsTableProps) => {
 													<span className="text-destructive">*</span>
 												</If>
 											</Table.Cell>
-											<Table.Cell>{value.tsType?.raw}</Table.Cell>
+											<Table.Cell>{value.tsType?.name}</Table.Cell>
 											<Table.Cell>{value.description}</Table.Cell>
 										</Table.Row>
 									))
