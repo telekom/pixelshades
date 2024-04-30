@@ -1530,6 +1530,96 @@ export function Example() {
 }
 `,
   },
+  "slider/controlled": {
+	  component: lazy(() => import("~/examples/slider/controlled.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+import { useState } from "react"
+
+export function Example() {
+	const [value, setValue] = useState(25)
+
+	return (
+		<Slider
+			label="Slide to change the value"
+			description={<small>This is a description!</small>}
+			defaultValue={30}
+			onChangeEnd={(value) => setValue(value as number)}
+		/>
+	)
+}
+`,
+  },
+  "slider/disabled": {
+	  component: lazy(() => import("~/examples/slider/disabled.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<Slider
+			label="Slide to change the value"
+			description={<small>This is a description!</small>}
+			helperText="helper text"
+			isDisabled
+			defaultValue={30}
+		/>
+	)
+}
+`,
+  },
+  "slider/labeling": {
+	  component: lazy(() => import("~/examples/slider/labeling.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Slider label="Sending…" formatOptions={{ style: "currency", currency: "JPY" }} defaultValue={60} />
+}
+`,
+  },
+  "slider/multithrumb": {
+	  component: lazy(() => import("~/examples/slider/multithrumb.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Slider label="Range" helperText="helper text" thumbLabels={["start", "end"]} defaultValue={[30, 60]} />
+}
+`,
+  },
+  "slider/orientation": {
+	  component: lazy(() => import("~/examples/slider/orientation.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<div className="h-80">
+			<Slider
+				label="Slide up and down"
+				orientation="vertical"
+				description={<small>This is a description!</small>}
+				defaultValue={30}
+			/>
+		</div>
+	)
+}
+`,
+  },
+  "slider/preview": {
+	  component: lazy(() => import("~/examples/slider/preview.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Slider label="Slide to change the value" description={<small>This is a description!</small>} helperText="helper text" defaultValue={30} />
+}
+`,
+  },
+  "slider/valueScale": {
+	  component: lazy(() => import("~/examples/slider/valueScale.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Slider label="Price range" minValue={50} maxValue={150} defaultValue={100} />
+}
+`,
+  },
   "switch/preview": {
 	  component: lazy(() => import("~/examples/switch/preview.tsx")),
 	  code: `import { Switch } from "@pixelshades/ui/components"
