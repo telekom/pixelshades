@@ -9,7 +9,8 @@
 		"verify-compliace": "pipx run reuse lint",
 		"bump-versions": "bun changeset version && bun install",
 		"release": "changeset version && changeset publish --access public",
-		"commit": "cz"
+		"commit": "cz",
+		"changeset": "changeset"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.7.1",
