@@ -23,6 +23,7 @@ interface SliderProps extends AriaSliderProps, FormComponentLabelProps, VariantP
 	className?: string
 	helperText?: ReactNode
 	errorMessage?: string
+	thumbLabels?: string[]
 }
 
 const Slider = ({
