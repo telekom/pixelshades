@@ -1,6 +1,6 @@
 {
   "name": "@pixelshades/styles",
-  "version": "0.0.1-alpha.6",
+  "version": "0.1.1",
   "private": false,
   "type": "module",
   "publishConfig": {
@@ -21,11 +21,11 @@
   "devDependencies": {
     "@pixelshades/typescript-config": "workspace:*",
     "@types/node": "^20.12.7",
-    "@types/react": "^18.2.79",
-    "@types/react-dom": "^18.2.25",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
     "bunchee": "^5.1.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.3",
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-react-aria-components": "1.1.1",
@@ -107,10 +107,10 @@
         "default": "./dist/es/components/date-field/index.mjs"
       }
     },
-    "./date-range-calendar": {
+    "./components/range-calendar": {
       "import": {
-        "types": "./dist/es/date-range-calendar/index.d.mts",
-        "default": "./dist/es/date-range-calendar/index.mjs"
+        "types": "./dist/es/components/date-range-calendar/index.d.mts",
+        "default": "./dist/es/components/date-range-calendar/index.mjs"
       }
     },
     "./components/date-picker": {

@@ -20,7 +20,7 @@ export const withStyle = <
 ) => {
 	const StyledComponent = forwardRef(({ ...props }: ComponentProps<C> & VariantProps<StylesFunction>, ref) => {
 		const styles = createStyles(props)
-		const variantClassNames = styles[slot ?? ""]?.()
+		const variantClassNames = typeof styles === "function" ? styles[slot ?? ""]?.() : styles
 
 		// @ts-expect-error JSX.IntrinsicElements do not have a displayName but Function and Class components do
 		return <Component ref={ref} {...props} className={cn(variantClassNames, props.className)} />

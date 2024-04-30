@@ -29,8 +29,11 @@ const BreadcrumbContext = createContext<BreadcrumbContext>({
 const { breadcrumbs, breadcrumb, breadcrumbLink, seperator } = breadcrumbsVariants()
 
 export interface BreadcrumbsProps<T extends object> extends Omit<AriaBreadcrumbsProps<T>, "children"> {
+	/** The styles of the breadcrumbs. */
 	className?: string
+	/** The separator between the breadcrumbs. */
 	separator?: ReactElement<HTMLElement>
+	/** The breadcrumb items. */
 	children: React.ReactNode | ((item: T) => React.ReactNode)
 }
 

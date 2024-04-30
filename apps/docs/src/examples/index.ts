@@ -10,7 +10,63 @@
   };
   
   export const Demos: Record<string, Demo> = {
-    "badge/preview": {
+    "badge/alert": {
+	  component: lazy(() => import("~/examples/badge/alert.tsx")),
+	  code: `import { Badge } from "@pixelshades/ui/components"
+import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return (
+		<Badge variant="alert" before={<SmileIcon />} after={<ArrowRightIcon />}>
+			Badge Label
+		</Badge>
+	)
+}
+`,
+  },
+  "badge/default": {
+	  component: lazy(() => import("~/examples/badge/default.tsx")),
+	  code: `import { Badge } from "@pixelshades/ui/components"
+import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return (
+		<Badge variant="default" before={<SmileIcon />} after={<ArrowRightIcon />}>
+			Badge Label
+		</Badge>
+	)
+}
+`,
+  },
+  "badge/info": {
+	  component: lazy(() => import("~/examples/badge/info.tsx")),
+	  code: `import { Badge } from "@pixelshades/ui/components"
+import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return (
+		<Badge variant="info" before={<SmileIcon />} after={<ArrowRightIcon />}>
+			Badge Label
+		</Badge>
+	)
+}
+`,
+  },
+  "badge/outline": {
+	  component: lazy(() => import("~/examples/badge/outline.tsx")),
+	  code: `import { Badge } from "@pixelshades/ui/components"
+import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return (
+		<Badge variant="outline" before={<SmileIcon />} after={<ArrowRightIcon />}>
+			Badge Label
+		</Badge>
+	)
+}
+`,
+  },
+  "badge/preview": {
 	  component: lazy(() => import("~/examples/badge/preview.tsx")),
 	  code: `import { Badge } from "@pixelshades/ui/components"
 import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
@@ -24,27 +80,30 @@ export function Example() {
 }
 `,
   },
-  "badge/variants": {
-	  component: lazy(() => import("~/examples/badge/variants.tsx")),
+  "badge/with-after": {
+	  component: lazy(() => import("~/examples/badge/with-after.tsx")),
 	  code: `import { Badge } from "@pixelshades/ui/components"
-import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
+import { ArrowRightIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
-		<div className="flex flex-wrap gap-lg">
-			<Badge variant="default" before={<SmileIcon />} after={<ArrowRightIcon />}>
-				Badge Label
-			</Badge>
-			<Badge variant="alert" before={<SmileIcon />} after={<ArrowRightIcon />}>
-				Badge Label
-			</Badge>
-			<Badge variant="info" before={<SmileIcon />} after={<ArrowRightIcon />}>
-				Badge Label
-			</Badge>
-			<Badge variant="outline" before={<SmileIcon />} after={<ArrowRightIcon />}>
-				Badge Label
-			</Badge>
-		</div>
+		<Badge variant="default" after={<ArrowRightIcon />}>
+			Badge Label
+		</Badge>
+	)
+}
+`,
+  },
+  "badge/with-before": {
+	  component: lazy(() => import("~/examples/badge/with-before.tsx")),
+	  code: `import { Badge } from "@pixelshades/ui/components"
+import { Smile } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return (
+		<Badge variant="default" before={<Smile />}>
+			Badge Label
+		</Badge>
 	)
 }
 `,
@@ -98,6 +157,20 @@ export function Example() {
 }
 `,
   },
+  "button/loading": {
+	  component: lazy(() => import("~/examples/button/loading.tsx")),
+	  code: `import { Button } from "@pixelshades/ui/components"
+import { SnailIcon } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return (
+		<Button before={<SnailIcon />} isLoading>
+			Button
+		</Button>
+	)
+}
+`,
+  },
   "button/outline": {
 	  component: lazy(() => import("~/examples/button/outline.tsx")),
 	  code: `import { Button } from "@pixelshades/ui/components"
@@ -113,7 +186,23 @@ export function Example() {
 import { SnailIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
-	return <Button before={<SnailIcon className="bg-red-600" />}>Button</Button>
+	return <Button before={<SnailIcon />}>Button</Button>
+}
+`,
+  },
+  "button/sizes": {
+	  component: lazy(() => import("~/examples/button/sizes.tsx")),
+	  code: `import { Button } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<div className="flex flex-row flex-wrap gap-md">
+			<Button size="xs">XS Button</Button>
+			<Button size="sm">SM Button</Button>
+			<Button size="md">MD Button</Button>
+			<Button size="lg">LG Button</Button>
+		</div>
+	)
 }
 `,
   },
@@ -680,66 +769,6 @@ export function Example() {
 }
 `,
   },
-  "date-range-calendar/custom-duration": {
-	  component: lazy(() => import("~/examples/date-range-calendar/custom-duration.tsx")),
-	  code: `import { DateRangeCalendar } from "@pixelshades/ui/components"
-
-export function Example() {
-	return (
-		<DateRangeCalendar
-			visibleDuration={{
-				months: 3,
-			}}
-		/>
-	)
-}
-`,
-  },
-  "date-range-calendar/disabled": {
-	  component: lazy(() => import("~/examples/date-range-calendar/disabled.tsx")),
-	  code: `import { DateRangeCalendar } from "@pixelshades/ui/components"
-
-export function Example() {
-	return <DateRangeCalendar isDisabled />
-}
-`,
-  },
-  "date-range-calendar/min-dates": {
-	  component: lazy(() => import("~/examples/date-range-calendar/min-dates.tsx")),
-	  code: `import { getLocalTimeZone, today } from "@internationalized/date"
-import { DateRangeCalendar } from "@pixelshades/ui/components"
-
-export function Example() {
-	const now = today(getLocalTimeZone())
-
-	return <DateRangeCalendar minValue={now} maxValue={now.add({ days: 15 })} />
-}
-`,
-  },
-  "date-range-calendar/preview": {
-	  component: lazy(() => import("~/examples/date-range-calendar/preview.tsx")),
-	  code: `import { DateRangeCalendar } from "@pixelshades/ui/components"
-
-export function Example() {
-	return <DateRangeCalendar />
-}
-`,
-  },
-  "date-range-calendar/unavailable-dates": {
-	  component: lazy(() => import("~/examples/date-range-calendar/unavailable-dates.tsx")),
-	  code: `"use client"
-
-import { isWeekend } from "@internationalized/date"
-import { DateRangeCalendar } from "@pixelshades/ui/components"
-import { useLocale } from "@pixelshades/ui/hooks"
-
-export function Example() {
-	const { locale } = useLocale()
-
-	return <DateRangeCalendar isDateUnavailable={(date) => isWeekend(date, locale)} />
-}
-`,
-  },
   "dialog/preview": {
 	  component: lazy(() => import("~/examples/dialog/preview.tsx")),
 	  code: `import { Button, Dialog, Input, Label } from "@pixelshades/ui/components"
@@ -839,7 +868,13 @@ export function Example() {
 
 			<Switch label="Switch" description="Description" tooltip="Tooltip" helperText="Helper text" />
 
-			<Radio.Group label="Radio Group" description="Description" tooltip="Tooltip" helperText="Helper Text">
+			<Radio.Group
+				label="Radio Group"
+				description="Description"
+				tooltip="Tooltip"
+				helperText="Helper Text"
+				isRequired
+			>
 				<Radio value="push">Push</Radio>
 				<Radio value="email">Email</Radio>
 				<Radio value="text">Text</Radio>
@@ -1183,6 +1218,76 @@ export function Example() {
 }
 `,
   },
+  "number-field/controlled": {
+	  component: lazy(() => import("~/examples/number-field/controlled.tsx")),
+	  code: `import { NumberField } from "@pixelshades/ui/components"
+import { useState } from "react"
+
+export function Example() {
+	const [value, setValue] = useState(0)
+	return (
+		<NumberField
+			value={value}
+			onChange={setValue}
+			label="Number of Items"
+			description="How many items do you want to add?"
+			helperText="Helper Text"
+		/>
+	)
+}
+`,
+  },
+  "number-field/currency-format": {
+	  component: lazy(() => import("~/examples/number-field/currency-format.tsx")),
+	  code: `import { NumberField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<NumberField
+			label="Transaction amount"
+			name="amount"
+			defaultValue={45}
+			formatOptions={{
+				style: "currency",
+				currency: "EUR",
+			}}
+		/>
+	)
+}
+`,
+  },
+  "number-field/percentage-format": {
+	  component: lazy(() => import("~/examples/number-field/percentage-format.tsx")),
+	  code: `import { NumberField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<NumberField
+			label="Sales tax"
+			defaultValue={0.45}
+			formatOptions={{
+				style: "percent",
+			}}
+		/>
+	)
+}
+`,
+  },
+  "number-field/preview": {
+	  component: lazy(() => import("~/examples/number-field/preview.tsx")),
+	  code: `import { NumberField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<NumberField
+			label="Number of Items"
+			description="How many items do you want to add?"
+			helperText="Helper Text"
+		/>
+	)
+}
+`,
+  },
   "popover/preview": {
 	  component: lazy(() => import("~/examples/popover/preview.tsx")),
 	  code: `import { Button, Input, Label, Popover } from "@pixelshades/ui/components"
@@ -1302,13 +1407,73 @@ export function Example() {
 }
 `,
   },
+  "range-calendar/custom-duration": {
+	  component: lazy(() => import("~/examples/range-calendar/custom-duration.tsx")),
+	  code: `import { RangeCalendar } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<RangeCalendar
+			visibleDuration={{
+				months: 3,
+			}}
+		/>
+	)
+}
+`,
+  },
+  "range-calendar/disabled": {
+	  component: lazy(() => import("~/examples/range-calendar/disabled.tsx")),
+	  code: `import { RangeCalendar } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <RangeCalendar isDisabled />
+}
+`,
+  },
+  "range-calendar/min-dates": {
+	  component: lazy(() => import("~/examples/range-calendar/min-dates.tsx")),
+	  code: `import { getLocalTimeZone, today } from "@internationalized/date"
+import { RangeCalendar } from "@pixelshades/ui/components"
+
+export function Example() {
+	const now = today(getLocalTimeZone())
+
+	return <RangeCalendar minValue={now} maxValue={now.add({ days: 15 })} />
+}
+`,
+  },
+  "range-calendar/preview": {
+	  component: lazy(() => import("~/examples/range-calendar/preview.tsx")),
+	  code: `import { RangeCalendar } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <RangeCalendar />
+}
+`,
+  },
+  "range-calendar/unavailable-dates": {
+	  component: lazy(() => import("~/examples/range-calendar/unavailable-dates.tsx")),
+	  code: `"use client"
+
+import { isWeekend } from "@internationalized/date"
+import { RangeCalendar } from "@pixelshades/ui/components"
+import { useLocale } from "@pixelshades/ui/hooks"
+
+export function Example() {
+	const { locale } = useLocale()
+
+	return <RangeCalendar isDateUnavailable={(date) => isWeekend(date, locale)} />
+}
+`,
+  },
   "select/preview": {
 	  component: lazy(() => import("~/examples/select/preview.tsx")),
 	  code: `import { Select } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
-		<Select label="Framework">
+		<Select label="Framework" description="Description" helperText="Helper Text" tooltip="Tooltip">
 			<Select.Item>React</Select.Item>
 			<Select.Item>Qwik</Select.Item>
 			<Select.Item>Vue</Select.Item>
@@ -1577,12 +1742,29 @@ export function Example() {
 }
 `,
   },
+  "text-field/multi-line": {
+	  component: lazy(() => import("~/examples/text-field/multi-line.tsx")),
+	  code: `import { TextField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<TextField
+			label="Project"
+			description="Deploy your new project in one-click."
+			helperText="Helper Text"
+			rows={5}
+			multiLine
+		/>
+	)
+}
+`,
+  },
   "text-field/preview": {
 	  component: lazy(() => import("~/examples/text-field/preview.tsx")),
 	  code: `import { TextField } from "@pixelshades/ui/components"
 
 export function Example() {
-	return <TextField label="Project" description="Deploy your new project in one-click." />
+	return <TextField label="Project" description="Deploy your new project in one-click." helperText="Helper Text" />
 }
 `,
   },

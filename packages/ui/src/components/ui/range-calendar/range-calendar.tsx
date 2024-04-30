@@ -20,16 +20,18 @@ import {
 	Text,
 } from "react-aria-components"
 
-import { calendarVariants } from "@pixelshades/styles/components/calendar"
+import { dateRangeCalendarVariants } from "@pixelshades/styles/components/range-calendar"
 
-const { root, header, heading, gridHeaderCell, cell, grid, iconButton } = calendarVariants()
+const { root, header, heading, gridHeaderCell, cell, grid, iconButton } = dateRangeCalendarVariants()
 
 export interface RangeCalendarProps<T extends DateValue> extends Omit<AriaRangeCalendarProps<T>, "className"> {
+	/** The error message to display when the date picker is invalid. */
 	error?: string
+	/** The className to apply styles to the component. */
 	className?: string
 }
 
-const DateRangeCalendar = ({ className, visibleDuration, error, ...props }: RangeCalendarProps<DateValue>) => (
+const RangeCalendar = ({ className, visibleDuration, error, ...props }: RangeCalendarProps<DateValue>) => (
 	<AriaRangeCalendar className={root({ className })} visibleDuration={visibleDuration} {...props}>
 		<header className={header()}>
 			<AriaButton className={iconButton()} slot="previous">
@@ -46,7 +48,17 @@ const DateRangeCalendar = ({ className, visibleDuration, error, ...props }: Rang
 					<CalendarGridHeader>
 						{(day) => <CalendarHeaderCell className={gridHeaderCell()}>{day}</CalendarHeaderCell>}
 					</CalendarGridHeader>
-					<CalendarGridBody>{(date) => <CalendarCell className={cell()} date={date} />}</CalendarGridBody>
+					<CalendarGridBody>
+						{(date) => (
+							<CalendarCell
+								className={cell({
+									className:
+										"data-[selected]:rounded-none [&[data-selection-end]]:rounded-r-md [&[data-selection-start]]:rounded-l-md",
+								})}
+								date={date}
+							/>
+						)}
+					</CalendarGridBody>
 				</CalendarGrid>
 			))}
 		</div>
@@ -55,6 +67,6 @@ const DateRangeCalendar = ({ className, visibleDuration, error, ...props }: Rang
 	</AriaRangeCalendar>
 )
 
-DateRangeCalendar.displayName = "DateRangeCalendar"
+RangeCalendar.displayName = "RangeCalendar"
 
-export { DateRangeCalendar }
+export { RangeCalendar }

@@ -8,16 +8,17 @@
 		"fmt": "pnpm biome format . --write && pnpm biome check .",
 		"verify-compliace": "pipx run reuse lint",
 		"bump-versions": "bun changeset version && bun install",
-		"publish": "turbo run build && changeset version && changeset publish --access public",
-		"commit": "cz"
+		"release": "changeset version && changeset publish --access public",
+		"commit": "cz",
+		"changeset": "changeset"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.7.0",
+		"@biomejs/biome": "1.7.1",
 		"@changesets/cli": "^2.27.1",
 		"@pixelshades/typescript-config": "workspace:*",
 		"concurrently": "^8.2.2",
 		"cz-conventional-changelog": "^3.3.0",
-		"turbo": "1.13.2"
+		"turbo": "1.13.3"
 	},
 	"engines": {
 		"node": ">=18"

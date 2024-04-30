@@ -1,5 +1,6 @@
 import { tv } from "tailwind-variants"
 import { focusRing } from "../../utils"
+import { inputVariants } from "../input"
 
 export const formVariants = tv({
 	slots: {
@@ -35,7 +36,7 @@ export const fieldBorderStyles = tv({
 })
 
 export const formGroupVariants = tv({
-	base: "group flex relative items-center h-9 forced-colors:bg-[Field] border-2 rounded-lg overflow-hidden",
+	base: inputVariants({ className: "group" }),
 	variants: fieldBorderStyles.variants,
 	extend: focusRing,
 })

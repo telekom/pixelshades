@@ -15,7 +15,7 @@ import { type FormComponentLabelProps, Label } from "../label"
 
 export interface TimeFieldProps<T extends TimeValue> extends AriaTimeFieldProps<T>, FormComponentLabelProps {
 	label?: ReactNode
-	helperText?: string
+	helperText?: ReactNode
 	errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
@@ -25,10 +25,11 @@ const TimeField = <T extends TimeValue>({
 	errorMessage,
 	description,
 	tooltip,
+	isRequired,
 	...props
 }: TimeFieldProps<T>) => (
-	<AriaTimeField className="flex flex-col gap-md" {...props}>
-		<Label description={description} tooltip={tooltip}>
+	<AriaTimeField className="flex flex-col gap-md" isRequired={isRequired} {...props}>
+		<Label description={description} tooltip={tooltip} isRequired={isRequired}>
 			{label}
 		</Label>
 		<DateInput className={inputVariants()}>

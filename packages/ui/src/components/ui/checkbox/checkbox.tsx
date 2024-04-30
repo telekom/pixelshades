@@ -23,11 +23,17 @@ import { Label } from "../label"
 type CheckboxVariantProps = VariantProps<typeof checkboxVariant>
 
 interface CheckBoxProps extends CheckboxVariantProps, AriaCheckBoxProps {
+	/** The label of the checkbox. */
 	label?: ReactNode
+	/** The description of the checkbox. */
 	description?: ReactNode
+	/** A subtle description next to the checkbox groups label. */
 	helperText?: ReactNode
+	/** The error message of the checkbox. */
 	errorMessage?: string | ((validation: ValidationResult) => string)
+	/** The tooltip of the checkbox. */
 	tooltip?: ReactNode
+	/** The className of the checkbox. */
 	className?: string
 }
 
@@ -38,7 +44,7 @@ const Checkbox = forwardRef<ElementRef<typeof AriaCheckbox>, CheckBoxProps>(
 
 		return (
 			<AriaCheckbox id={elId} className={checkboxVariant({ size }).root({ className })} ref={ref} {...props}>
-				{({ isSelected, isDisabled }) => (
+				{({ isSelected, isDisabled, isRequired }) => (
 					<>
 						<div className={checkboxVariant({ size }).box()}>{isSelected && <Check />}</div>
 						<span className="inline-flex flex-col">
@@ -48,6 +54,7 @@ const Checkbox = forwardRef<ElementRef<typeof AriaCheckbox>, CheckBoxProps>(
 									htmlFor={elId}
 									description={description}
 									tooltip={tooltip}
+									isRequired={isRequired}
 								>
 									{label}
 								</Label>

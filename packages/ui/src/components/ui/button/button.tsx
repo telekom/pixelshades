@@ -18,17 +18,18 @@ import {
 } from "react-aria-components"
 import { If } from "../../utils"
 import { buttonGroupContext } from "../button-group/button-group-context"
+import { LoadingSpinner } from "../loading-spinner"
 
 type ButtonVariantProps = VariantProps<typeof buttonVariants>
 
 interface ButtonProps extends ButtonVariantProps, AriaButtonProps {
+	isLoading?: boolean
 	before?: React.ReactElement<HTMLElement>
-
 	after?: React.ReactElement<HTMLElement>
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-	({ size, variant, className, children, before, after, withRing, ...props }, ref) => {
+	({ size, variant, className, children, isLoading, isDisabled, before, after, withRing, ...props }, ref) => {
 		const buttonGroupState = buttonGroupContext.useStyleContext()
 
 		/* If Button is in Button Group apply Button Group Styles, this can still be overwritten on button layer **/
@@ -48,14 +49,15 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 					})
 
 		return (
-			<AriaButton className={buttonStyles} ref={ref} {...props}>
+			<AriaButton className={buttonStyles} isDisabled={isDisabled || isLoading} ref={ref} {...props}>
 				<>
-					<If condition={before}>
-						<RenderSlot item={before!} className={"text-inherit"} />
+					{isLoading && <LoadingSpinner className="size-4 text-inherit" />}
+					<If condition={before && !isLoading}>
+						<RenderSlot item={before!} className={"size-4 text-inherit"} />
 					</If>
 					{children}
 					<If condition={after}>
-						<RenderSlot item={after!} className={"text-inherit"} />
+						<RenderSlot item={after!} className={"size-4 text-inherit"} />
 					</If>
 				</>
 			</AriaButton>

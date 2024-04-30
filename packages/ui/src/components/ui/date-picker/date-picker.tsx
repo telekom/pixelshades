@@ -18,16 +18,19 @@ import { ChevronDownIcon } from "lucide-react"
 
 import { datePickerVariants } from "@pixelshades/styles/components/date-picker"
 import { inputVariants } from "@pixelshades/styles/components/input"
+import type { ReactNode } from "react"
 import { If } from "../../utils"
 import { Calendar } from "../calendar"
 import { FormDescription, FormFieldError, FormFieldGroup } from "../form"
 import { type FormComponentLabelProps, Label } from "../label"
 import { Popover } from "../popover"
 
-const { inputButton, input, base } = datePickerVariants()
+const { inputButton, base } = datePickerVariants()
 
 interface DatePickerProps<T extends DateValue> extends AriaDatePickerProps<T>, FormComponentLabelProps {
-	helperText?: string
+	/** A helper text to display below the date picker. */
+	helperText?: ReactNode
+	/** The error message to display when the date picker is invalid. */
 	errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
@@ -39,14 +42,15 @@ const DatePicker = <T extends DateValue>({
 	helperText,
 	errorMessage,
 	children,
+	isRequired,
 	...props
 }: DatePickerProps<T>) => (
-	<AriaDatePicker className="flex flex-col gap-md" {...props}>
-		<Label description={description} tooltip={tooltip}>
+	<AriaDatePicker className="flex flex-col gap-md" isRequired={isRequired} {...props}>
+		<Label description={description} tooltip={tooltip} isRequired={isRequired}>
 			{label}
 		</Label>
 		<FormFieldGroup className={"relative flex items-center"}>
-			<DateInput className={inputVariants({ className: input() })}>
+			<DateInput className={"flex w-full items-center gap-md"}>
 				{(segment) => <DateSegment className={base()} segment={segment} />}
 			</DateInput>
 			<AriaButton className={inputButton()}>

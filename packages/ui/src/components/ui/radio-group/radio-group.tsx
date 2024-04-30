@@ -21,7 +21,7 @@ import { type FormComponentLabelProps, Label } from "../label"
 
 export interface RadioGroupProps extends AriaRadioGroupProps, FormComponentLabelProps {
 	children?: ReactNode
-	helperText?: string
+	helperText?: ReactNode
 	errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
@@ -29,9 +29,11 @@ const RadioGroup = ({
 	className,
 	orientation = "vertical",
 	description,
+	helperText,
 	tooltip,
 	errorMessage,
 	children,
+	isRequired,
 	...props
 }: RadioGroupProps) => {
 	return (
@@ -46,15 +48,16 @@ const RadioGroup = ({
 					typeof className === "function" ? className(values) : className,
 				)
 			}
+			isRequired={isRequired}
 			{...props}
 		>
-			<Label description={description} tooltip={tooltip}>
+			<Label description={description} tooltip={tooltip} isRequired={isRequired}>
 				{props.label}
 			</Label>
 			<div className="flex gap-2 group-orientation-vertical:flex-col group-orientation-horizontal:gap-4">
 				{children}
 			</div>
-			{description && <FormDescription>{description}</FormDescription>}
+			{helperText && <FormDescription>{helperText}</FormDescription>}
 			<FormFieldError>{errorMessage}</FormFieldError>
 		</AriaRadioGroup>
 	)
@@ -66,12 +69,12 @@ export interface RadioProps extends AriaRadioProps {
 	showRadio?: boolean
 }
 
-const RadioRoot = ({ className, children, showRadio = true, ...props }: RadioProps) => {
+const RadioItem = ({ className, children, showRadio = true, ...props }: RadioProps) => {
 	return (
 		<AriaRadio
 			className={(values) =>
 				cn(
-					"group flex items-center gap-x-2 data-[focused]:outline-none",
+					"group flex items-center gap-x-2",
 					labelVariants(),
 					typeof className === "function" ? className(values) : className,
 				)
@@ -92,9 +95,9 @@ const RadioRoot = ({ className, children, showRadio = true, ...props }: RadioPro
 	)
 }
 
-RadioRoot.displayName = "Radio"
+RadioItem.displayName = "Radio"
 
-export const Radio = Object.assign(RadioRoot, {
+export const Radio = Object.assign(RadioItem, {
 	Group: RadioGroup,
 })
 

@@ -23,10 +23,15 @@ import type React from "react"
 const { input, button, item, popover, root } = comboboxVaraints()
 
 interface ComboBoxProps<T extends object> extends Omit<AriaComboBoxProps<T>, "children"> {
+	/** The styles of the combo box. */
 	className?: string
+	/** The label of the combo box. */
 	label?: string
+	/** The description of the combo box. */
 	description?: string | null
+	/** The error message to display if the combo box is invalid. */
 	errorMessage?: string | null
+	/** The combo box items. */
 	children: React.ReactNode | ((item: T) => React.ReactNode)
 }
 

@@ -6,7 +6,6 @@ import {
 	type FormProps as AriaFormProps,
 	Group as AriaGroup,
 	Text as AriaText,
-	Text,
 	type TextProps,
 } from "react-aria-components"
 
