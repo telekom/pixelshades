@@ -33,12 +33,16 @@ const CheckboxGroup = ({
 	...props
 }: CheckboxGroupProps) => (
 	<AriaCheckboxGroup {...props} className={checkboxGroup({ className })}>
-		<Label description={description} tooltip={tooltip}>
-			{label}
-		</Label>
-		{children}
-		{helperText && <FormDescription>{helperText}</FormDescription>}
-		<FormFieldError>{errorMessage}</FormFieldError>
+		{({ isRequired, isDisabled }) => (
+			<>
+				<Label description={description} aria-disabled={isDisabled} tooltip={tooltip} isRequired={isRequired}>
+					{label}
+				</Label>
+				{children}
+				{helperText && <FormDescription aria-disabled={isDisabled}>{helperText}</FormDescription>}
+				<FormFieldError>{errorMessage}</FormFieldError>
+			</>
+		)}
 	</AriaCheckboxGroup>
 )
 

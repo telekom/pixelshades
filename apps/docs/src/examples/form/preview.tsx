@@ -49,7 +49,13 @@ export default function Example() {
 
 			<Switch label="Switch" description="Description" tooltip="Tooltip" helperText="Helper text" />
 
-			<Radio.Group label="Radio Group" description="Description" tooltip="Tooltip" helperText="Helper Text">
+			<Radio.Group
+				label="Radio Group"
+				description="Description"
+				tooltip="Tooltip"
+				helperText="Helper Text"
+				isRequired
+			>
 				<Radio value="push">Push</Radio>
 				<Radio value="email">Email</Radio>
 				<Radio value="text">Text</Radio>

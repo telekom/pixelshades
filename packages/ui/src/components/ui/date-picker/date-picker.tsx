@@ -25,7 +25,7 @@ import { FormDescription, FormFieldError, FormFieldGroup } from "../form"
 import { type FormComponentLabelProps, Label } from "../label"
 import { Popover } from "../popover"
 
-const { inputButton, input, base } = datePickerVariants()
+const { inputButton, base } = datePickerVariants()
 
 interface DatePickerProps<T extends DateValue> extends AriaDatePickerProps<T>, FormComponentLabelProps {
 	/** A helper text to display below the date picker. */
@@ -42,14 +42,15 @@ const DatePicker = <T extends DateValue>({
 	helperText,
 	errorMessage,
 	children,
+	isRequired,
 	...props
 }: DatePickerProps<T>) => (
-	<AriaDatePicker className="flex flex-col gap-md" {...props}>
-		<Label description={description} tooltip={tooltip}>
+	<AriaDatePicker className="flex flex-col gap-md" isRequired={isRequired} {...props}>
+		<Label description={description} tooltip={tooltip} isRequired={isRequired}>
 			{label}
 		</Label>
 		<FormFieldGroup className={"relative flex items-center"}>
-			<DateInput className={inputVariants({ className: input() })}>
+			<DateInput className={"flex w-full items-center gap-md"}>
 				{(segment) => <DateSegment className={base()} segment={segment} />}
 			</DateInput>
 			<AriaButton className={inputButton()}>

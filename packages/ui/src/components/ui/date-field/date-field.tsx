@@ -10,12 +10,13 @@ import { DateField as AriaDateField, DateInput, DateSegment } from "react-aria-c
 import { dateFieldVariants } from "@pixelshades/styles/components/date-field"
 import { inputVariants } from "@pixelshades/styles/components/input"
 import { cn } from "@pixelshades/utils/styles"
+import type { ReactNode } from "react"
 import { FormDescription, FormFieldError } from "../form"
 import { type FormComponentLabelProps, Label } from "../label"
 
 interface DateFieldProps<T extends DateValue> extends AriaDateFieldProps<T>, FormComponentLabelProps {
 	/** A helper text to display below the date field. */
-	helperText?: string
+	helperText?: ReactNode
 	/** The error message to display if the date field is invalid. */
 	errorMessage?: string | ((validation: ValidationResult) => string)
 }
@@ -27,10 +28,11 @@ const DateField = <T extends DateValue>({
 	description,
 	errorMessage,
 	className,
+	isRequired,
 	...props
 }: DateFieldProps<T>) => (
-	<AriaDateField className={cn("flex flex-col gap-md", className)} {...props}>
-		<Label description={description} tooltip={tooltip}>
+	<AriaDateField className={cn("flex flex-col gap-md", className)} isRequired={isRequired} {...props}>
+		<Label description={description} isRequired={isRequired} tooltip={tooltip}>
 			{label}
 		</Label>
 		<DateInput className={inputVariants(props as any)}>

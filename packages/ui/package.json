@@ -1,6 +1,6 @@
 {
   "name": "@pixelshades/ui",
-  "version": "0.0.8",
+  "version": "0.1.1",
   "private": false,
   "type": "module",
   "publishConfig": {
@@ -10,7 +10,7 @@
     "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component",
     "build": "bunchee --tsconfig tsconfig.build.json",
-    "gen:props": "pnpm dlx @react-docgen/cli --pretty --resolver find-all-exported-components -i **/*.stories.tsx  -o ../../apps/docs/src/lib/props.json src/components/ui/**/*.tsx",
+    "gen:props": "bunx @react-docgen/cli --pretty --resolver find-all-exported-components -i **/*.stories.tsx  -o ../../apps/docs/src/lib/props.json src/components/ui/**/*.tsx",
     "dev": "bunchee --watch --no-clean"
   },
   "dependencies": {

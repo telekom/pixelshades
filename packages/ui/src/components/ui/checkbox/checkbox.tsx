@@ -44,7 +44,7 @@ const Checkbox = forwardRef<ElementRef<typeof AriaCheckbox>, CheckBoxProps>(
 
 		return (
 			<AriaCheckbox id={elId} className={checkboxVariant({ size }).root({ className })} ref={ref} {...props}>
-				{({ isSelected, isDisabled }) => (
+				{({ isSelected, isDisabled, isRequired }) => (
 					<>
 						<div className={checkboxVariant({ size }).box()}>{isSelected && <Check />}</div>
 						<span className="inline-flex flex-col">
@@ -54,6 +54,7 @@ const Checkbox = forwardRef<ElementRef<typeof AriaCheckbox>, CheckBoxProps>(
 									htmlFor={elId}
 									description={description}
 									tooltip={tooltip}
+									isRequired={isRequired}
 								>
 									{label}
 								</Label>

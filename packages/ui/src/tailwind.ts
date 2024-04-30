@@ -54,6 +54,10 @@ export const pixelShadesPlugin = plugin(
 						DEFAULT: "hsl(var(--destructive) / <alpha-value>)",
 						foreground: "hsl(var(--destructive-foreground) / <alpha-value>)",
 					},
+					info: {
+						DEFAULT: "hsl(var(--info) / <alpha-value>)",
+						foreground: "hsl(var(--info-foreground) / <alpha-value>)",
+					},
 					subtle: {
 						DEFAULT: "hsl(var(--subtle))",
 						foreground: "hsl(var(--subtle-foreground))",
