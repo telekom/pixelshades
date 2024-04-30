@@ -10,7 +10,7 @@ export const sliderVariants = tv({
 		sliderHeader: "flex justify-between",
 		sliderTrack:
 			"w-full h-8 before:absolute before:inset-x-0 before:top-1/2 before:-translate-y-1/2 before:h-1 before:bg-border before:rounded-full",
-		sliderThumb: "h-6 w-6 bg-primary rounded-full top-1/2",
+		sliderThumb: "size-6 bg-primary rounded-full top-1/2",
 		sliderDescription: "",
 	},
 	defaultVariants: {

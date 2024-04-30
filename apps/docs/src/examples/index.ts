@@ -1340,12 +1340,31 @@ export function Example() {
 }
 `,
   },
+  "slider/controlled": {
+	  component: lazy(() => import("~/examples/slider/controlled.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+import { useState } from "react"
+
+export function Example() {
+	const [value, setValue] = useState(25)
+
+	return (
+		<Slider
+			label="Slide to change the value"
+			description={<small>This is a description!</small>}
+			defaultValue={30}
+			onChangeEnd={(value) => setValue(value as number)}
+		/>
+	)
+}
+`,
+  },
   "slider/labeling": {
 	  component: lazy(() => import("~/examples/slider/labeling.tsx")),
 	  code: `import { Slider } from "@pixelshades/ui/components"
 
 export function Example() {
-	return <Slider label="Sending…" formatOptions={{ style: "currency", currency: "JPY" }} value={60} />
+	return <Slider label="Sending…" formatOptions={{ style: "currency", currency: "JPY" }} defaultValue={60} />
 }
 `,
   },
@@ -1360,7 +1379,7 @@ export function Example() {
 				label="Slide up and down"
 				orientation="vertical"
 				description={<small>This is a description!</small>}
-				value={30}
+				defaultValue={30}
 			/>
 		</div>
 	)
@@ -1372,7 +1391,7 @@ export function Example() {
 	  code: `import { Slider } from "@pixelshades/ui/components"
 
 export function Example() {
-	return <Slider label="Slide to change the value" description={<small>This is a description!</small>} value={30} />
+	return <Slider label="Slide to change the value" description={<small>This is a description!</small>} helperText="helper text" defaultValue={30} />
 }
 `,
   },
@@ -1381,7 +1400,7 @@ export function Example() {
 	  code: `import { Slider } from "@pixelshades/ui/components"
 
 export function Example() {
-	return <Slider label="Price range" minValue={50} maxValue={150} value={100} />
+	return <Slider label="Price range" minValue={50} maxValue={150} defaultValue={100} />
 }
 `,
   },

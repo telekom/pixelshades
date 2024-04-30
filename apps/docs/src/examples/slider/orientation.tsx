@@ -7,7 +7,7 @@ export default function Example() {
 				label="Slide up and down"
 				orientation="vertical"
 				description={<small>This is a description!</small>}
-				value={30}
+				defaultValue={30}
 			/>
 		</div>
 	)

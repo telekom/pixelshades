@@ -5,31 +5,42 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { sliderVariants } from "@pixelshades/styles/components/slider"
-import { RenderSlot } from "@pixelshades/utils/jsx"
 import type { SliderProps as AriaSliderProps } from "react-aria-components"
 import {
-	Label as AriaLabel,
 	Slider as AriaSlider,
 	SliderOutput as AriaSliderOutput,
 	SliderTrack as AriaSliderTrack,
 	SliderThumb as AriaSliderThumb,
 } from "react-aria-components"
 import type { VariantProps } from "tailwind-variants"
-import { If } from "../../utils"
+import { FormComponentLabelProps, Label } from "../label"
+import { FormDescription, FormFieldError } from "../form"
+import { ReactNode } from "react"
 
 const { sliderRoot, sliderHeader, sliderTrack, sliderThumb, sliderDescription } = sliderVariants()
 
-interface SliderProps extends AriaSliderProps, VariantProps<typeof sliderVariants> {
+interface SliderProps extends AriaSliderProps, FormComponentLabelProps, VariantProps<typeof sliderVariants> {
 	className?: string
-	label?: string
-	description?: React.ReactElement<HTMLElement>
+	helperText?: ReactNode
+	errorMessage?: string
 }
 
-const Slider = ({ className, label, description, orientation, ...props }: SliderProps) => {
+const Slider = ({
+	className,
+	label,
+	helperText,
+	errorMessage,
+	description,
+	tooltip,
+	orientation,
+	...props
+}: SliderProps) => {
 	return (
 		<AriaSlider className={sliderRoot({ className, orientation })} orientation={orientation} {...props}>
 			<div className={sliderHeader({ className, orientation })}>
-				<AriaLabel>{label}</AriaLabel>
+				<Label tooltip={tooltip} description={description}>
+					{label}
+				</Label>
 				<AriaSliderOutput>
 					{({ state }) => state.values.map((_, i) => state.getThumbValueLabel(i)).join(" – ")}
 				</AriaSliderOutput>
@@ -41,9 +52,8 @@ const Slider = ({ className, label, description, orientation, ...props }: Slider
 					))
 				}
 			</AriaSliderTrack>
-			<If condition={description}>
-				<RenderSlot className={sliderDescription({ className, orientation })} item={description!} />
-			</If>
+			{helperText && !errorMessage && <FormDescription>{helperText}</FormDescription>}
+			<FormFieldError>{errorMessage}</FormFieldError>
 		</AriaSlider>
 	)
 }
