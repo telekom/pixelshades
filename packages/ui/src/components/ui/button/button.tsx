@@ -24,6 +24,7 @@ type ButtonVariantProps = VariantProps<typeof buttonVariants>
 
 interface ButtonProps extends ButtonVariantProps, AriaButtonProps {
 	isLoading?: boolean
+	onClick?: AriaButtonProps["onPress"]
 	before?: React.ReactElement<HTMLElement>
 	after?: React.ReactElement<HTMLElement>
 }
