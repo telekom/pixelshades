@@ -1,5 +1,17 @@
 # @pixelshades/styles
 
+## 0.2.0
+
+### Minor Changes
+
+- e588c3e: feat: enhance Button styling and capabilties
+- cfe51d2: feat: add date-range-picker component
+- 416398d: feat: enhance all input based components
+
+### Patch Changes
+
+- 8e5e8da: feat: add slider component
+
 ## 0.1.1
 
 ### Patch Changes
