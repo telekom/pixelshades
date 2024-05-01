@@ -769,6 +769,31 @@ export function Example() {
 }
 `,
   },
+  "date-range-picker/granularity": {
+	  component: lazy(() => import("~/examples/date-range-picker/granularity.tsx")),
+	  code: `import { DateRangePicker } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<div className="flex flex-col gap-lg">
+			<DateRangePicker label="Day" granularity="day" />
+			<DateRangePicker label="Hour" granularity="hour" />
+			<DateRangePicker label="Minute" granularity="minute" />
+			<DateRangePicker label="Second" granularity="second" />
+		</div>
+	)
+}
+`,
+  },
+  "date-range-picker/preview": {
+	  component: lazy(() => import("~/examples/date-range-picker/preview.tsx")),
+	  code: `import { DateRangePicker } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <DateRangePicker label="Start Date" />
+}
+`,
+  },
   "dialog/preview": {
 	  component: lazy(() => import("~/examples/dialog/preview.tsx")),
 	  code: `import { Button, Dialog, Input, Label } from "@pixelshades/ui/components"
