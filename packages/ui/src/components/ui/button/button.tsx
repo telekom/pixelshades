@@ -30,7 +30,23 @@ interface ButtonProps extends ButtonVariantProps, AriaButtonProps {
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-	({ size, variant, className, children, isLoading, isDisabled, before, after, withRing, ...props }, ref) => {
+	(
+		{
+			size,
+			variant,
+			className,
+			children,
+			isLoading,
+			onClick,
+			onPress,
+			isDisabled,
+			before,
+			after,
+			withRing,
+			...props
+		},
+		ref,
+	) => {
 		const buttonGroupState = buttonGroupContext.useStyleContext()
 
 		/* If Button is in Button Group apply Button Group Styles, this can still be overwritten on button layer **/
@@ -50,7 +66,16 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 					})
 
 		return (
-			<AriaButton className={buttonStyles} isDisabled={isDisabled || isLoading} ref={ref} {...props}>
+			<AriaButton
+				className={buttonStyles}
+				onPress={(e) => {
+					onPress?.(e)
+					onClick?.(e)
+				}}
+				isDisabled={isDisabled || isLoading}
+				ref={ref}
+				{...props}
+			>
 				<>
 					{isLoading && <LoadingSpinner className="size-4 text-inherit" />}
 					<If condition={before && !isLoading}>
