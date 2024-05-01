@@ -1,5 +1,11 @@
 # @pixelshades/ui
 
+## 0.2.1
+
+### Patch Changes
+
+- f245ca8: fix: add optional onClick for compabiltiy with other libraries
+
 ## 0.2.0
 
 ### Minor Changes
