@@ -5,7 +5,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { dialogVariants } from "@pixelshades/styles/components/dialog"
-import { SquareX } from "@pixelshades/ui/icons"
+import { SquareX } from "lucide-react"
 import type React from "react"
 import {
 	Dialog as AriaDialogContent,
