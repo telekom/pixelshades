@@ -87,13 +87,6 @@
       ]
     }
   ],
-  "src/components/ui/button/button.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Button"
-    }
-  ],
   "src/components/ui/button-group/button-group.tsx": [
     {
       "description": "Displays a group of buttons with matching styles.",
@@ -117,36 +110,11 @@
       }
     }
   ],
-  "src/components/ui/card/card.tsx": [
+  "src/components/ui/button/button.tsx": [
     {
       "description": "",
       "methods": [],
-      "displayName": "Card"
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "CardTitle"
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "CardContent"
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "CardDescription"
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "CardFooter"
-    },
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "CardHeader"
+      "displayName": "Button"
     }
   ],
   "src/components/ui/calendar/calendar.tsx": [
@@ -234,6 +202,38 @@
       "composes": [
         "Omit"
       ]
+    }
+  ],
+  "src/components/ui/card/card.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Card"
+    },
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "CardTitle"
+    },
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "CardContent"
+    },
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "CardDescription"
+    },
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "CardFooter"
+    },
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "CardHeader"
     }
   ],
   "src/components/ui/checkbox/checkbox.tsx": [
@@ -838,13 +838,6 @@
       }
     }
   ],
-  "src/components/ui/data-list/data-list.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "UnstyledDataList"
-    }
-  ],
   "src/components/ui/date-field/date-field.tsx": [
     {
       "description": "",
@@ -898,6 +891,32 @@
       },
       "composes": [
         "AriaDateFieldProps"
+      ]
+    }
+  ],
+  "src/components/ui/data-list/data-list.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "UnstyledDataList"
+    }
+  ],
+  "src/components/ui/dialog/dialog.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Dialog",
+      "props": {
+        "className": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        }
+      },
+      "composes": [
+        "AriaModalOverlayProps"
       ]
     }
   ],
@@ -957,30 +976,18 @@
       ]
     }
   ],
-  "src/components/ui/dialog/dialog.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Dialog",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "AriaModalOverlayProps"
-      ]
-    }
-  ],
   "src/components/ui/form/form.tsx": [
     {
       "description": "",
       "methods": [],
       "displayName": "UnstyledFormDescription"
+    }
+  ],
+  "src/components/ui/heading/heading.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Heading"
     }
   ],
   "src/components/ui/heading/heading-levels.tsx": [
@@ -1033,11 +1040,11 @@
       }
     }
   ],
-  "src/components/ui/heading/heading.tsx": [
+  "src/components/ui/input/input.tsx": [
     {
       "description": "",
       "methods": [],
-      "displayName": "Heading"
+      "displayName": "Input"
     }
   ],
   "src/components/ui/highlight/highlight.tsx": [
@@ -1091,13 +1098,6 @@
           }
         }
       }
-    }
-  ],
-  "src/components/ui/input/input.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Input"
     }
   ],
   "src/components/ui/kbd/kbd.tsx": [
@@ -1220,6 +1220,46 @@
       ]
     }
   ],
+  "src/components/ui/progress-bar/progress-bar.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "ProgressBar",
+      "props": {
+        "className": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "The styles to apply to the progress bar."
+        },
+        "label": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "A label to display above the progress bar."
+        },
+        "description": {
+          "required": false,
+          "tsType": {
+            "name": "ReactReactElement",
+            "raw": "React.ReactElement<HTMLElement>",
+            "elements": [
+              {
+                "name": "HTMLElement"
+              }
+            ]
+          },
+          "description": "Description text to display below the progress bar."
+        }
+      },
+      "composes": [
+        "AriaProgressBarProps",
+        "VariantProps"
+      ]
+    }
+  ],
   "src/components/ui/number-field/number-field.tsx": [
     {
       "description": "",
@@ -1252,14 +1292,14 @@
           "tsType": {
             "name": "ReactNode"
           },
-          "description": ""
+          "description": "A helper text to display below the date picker."
         },
         "errorMessage": {
           "required": false,
           "tsType": {
             "name": "string"
           },
-          "description": ""
+          "description": "The error message to display when the number field is invalid."
         },
         "ref": {
           "required": false,
@@ -1290,6 +1330,84 @@
       }
     }
   ],
+  "src/components/ui/separator/separator.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Separator"
+    }
+  ],
+  "src/components/ui/select/select.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Select",
+      "props": {
+        "label": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "tooltip": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "description": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "className": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "The styles to be applied to the select field"
+        },
+        "helperText": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": "A helper text to be displayed below the select field"
+        },
+        "errorMessage": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "The tooltip to be displayed when hovering over the select field"
+        },
+        "children": {
+          "required": true,
+          "tsType": {
+            "name": "union",
+            "raw": "React.ReactNode | ((item: T) => React.ReactNode)",
+            "elements": [
+              {
+                "name": "ReactReactNode",
+                "raw": "React.ReactNode"
+              },
+              {
+                "name": "unknown"
+              }
+            ]
+          },
+          "description": "Children of the select field"
+        }
+      },
+      "composes": [
+        "Omit"
+      ]
+    }
+  ],
   "src/components/ui/radio-group/radio-group.tsx": [
     {
       "description": "",
@@ -1301,7 +1419,7 @@
           "tsType": {
             "name": "boolean"
           },
-          "description": "",
+          "description": "Whether the radio should be shown.",
           "defaultValue": {
             "value": "true",
             "computed": false
@@ -1343,14 +1461,14 @@
           "tsType": {
             "name": "ReactNode"
           },
-          "description": ""
+          "description": "The children of the radio group."
         },
         "helperText": {
           "required": false,
           "tsType": {
             "name": "ReactNode"
           },
-          "description": ""
+          "description": "The helper text to display below the radio group."
         },
         "errorMessage": {
           "required": false,
@@ -1366,7 +1484,7 @@
               }
             ]
           },
-          "description": ""
+          "description": "The error message to display below the radio group."
         },
         "orientation": {
           "defaultValue": {
@@ -1378,117 +1496,6 @@
       },
       "composes": [
         "AriaRadioGroupProps"
-      ]
-    }
-  ],
-  "src/components/ui/progress-bar/progress-bar.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "ProgressBar",
-      "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "label": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "description": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactElement",
-            "raw": "React.ReactElement<HTMLElement>",
-            "elements": [
-              {
-                "name": "HTMLElement"
-              }
-            ]
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "AriaProgressBarProps",
-        "VariantProps"
-      ]
-    }
-  ],
-  "src/components/ui/select/select.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Select",
-      "props": {
-        "label": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "tooltip": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "description": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "helperText": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "errorMessage": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "children": {
-          "required": true,
-          "tsType": {
-            "name": "union",
-            "raw": "React.ReactNode | ((item: T) => React.ReactNode)",
-            "elements": [
-              {
-                "name": "ReactReactNode",
-                "raw": "React.ReactNode"
-              },
-              {
-                "name": "unknown"
-              }
-            ]
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "Omit"
       ]
     }
   ],
@@ -1516,13 +1523,6 @@
       "composes": [
         "Omit"
       ]
-    }
-  ],
-  "src/components/ui/separator/separator.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Separator"
     }
   ],
   "src/components/ui/switch/switch.tsx": [
@@ -1557,21 +1557,21 @@
           "tsType": {
             "name": "string"
           },
-          "description": ""
+          "description": "The styles to be applied to the switch field"
         },
         "helperText": {
           "required": false,
           "tsType": {
             "name": "ReactNode"
           },
-          "description": ""
+          "description": "A helper text to be displayed below the switch field"
         },
         "errorMessage": {
           "required": false,
           "tsType": {
             "name": "string"
           },
-          "description": ""
+          "description": "The error message to be displayed when the switch is in an error state"
         }
       },
       "composes": [
@@ -1612,35 +1612,35 @@
           "tsType": {
             "name": "ReactNode"
           },
-          "description": ""
+          "description": "A helper text to be displayed below the text field"
         },
         "errorMessage": {
           "required": false,
           "tsType": {
             "name": "string"
           },
-          "description": ""
+          "description": "The error message to be displayed when the text field is in an error state"
         },
         "multiLine": {
           "required": false,
           "tsType": {
             "name": "boolean"
           },
-          "description": "Text Area Props"
+          "description": "Toggle between a text field and a text area"
         },
         "cols": {
           "required": false,
           "tsType": {
             "name": "number"
           },
-          "description": ""
+          "description": "The number of columns in the text area"
         },
         "rows": {
           "required": false,
           "tsType": {
             "name": "number"
           },
-          "description": ""
+          "description": "The number of rows in the text area"
         },
         "ref": {
           "required": false,
@@ -1652,62 +1652,6 @@
       },
       "composes": [
         "AriaTextFieldProps"
-      ]
-    }
-  ],
-  "src/components/ui/time-field/time-field.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "TimeField",
-      "props": {
-        "label": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "tooltip": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "description": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "helperText": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "errorMessage": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "string | ((validation: ValidationResult) => string)",
-            "elements": [
-              {
-                "name": "string"
-              },
-              {
-                "name": "unknown"
-              }
-            ]
-          },
-          "description": ""
-        }
-      },
-      "composes": [
-        "AriaTimeFieldProps"
       ]
     }
   ],
@@ -1728,6 +1672,62 @@
       "composes": [
         "InputVariantProps",
         "Omit"
+      ]
+    }
+  ],
+  "src/components/ui/time-field/time-field.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "TimeField",
+      "props": {
+        "label": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": "A label to be displayed above the time field"
+        },
+        "tooltip": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "description": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "helperText": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": "A helper text to be displayed below the time field"
+        },
+        "errorMessage": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "string | ((validation: ValidationResult) => string)",
+            "elements": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "unknown"
+              }
+            ]
+          },
+          "description": "The error message to be displayed when the time field is in an error state"
+        }
+      },
+      "composes": [
+        "AriaTimeFieldProps"
       ]
     }
   ],
@@ -1770,6 +1770,29 @@
       ]
     }
   ],
+  "src/components/ui/typography/typography.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Typography",
+      "props": {
+        "as": {
+          "required": false,
+          "tsType": {
+            "name": "T"
+          },
+          "description": "The HTML tag to be used for the typography"
+        },
+        "children": {
+          "required": true,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": "The children of the typography"
+        }
+      }
+    }
+  ],
   "src/components/ui/tooltip/tooltip.tsx": [
     {
       "description": "",
@@ -1787,29 +1810,6 @@
       "composes": [
         "AriaTooltipProps"
       ]
-    }
-  ],
-  "src/components/ui/typography/typography.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Typography",
-      "props": {
-        "as": {
-          "required": false,
-          "tsType": {
-            "name": "T"
-          },
-          "description": ""
-        },
-        "children": {
-          "required": true,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        }
-      }
     }
   ]
 }

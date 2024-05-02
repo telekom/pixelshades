@@ -14,12 +14,15 @@ import { type FormComponentLabelProps, Label } from "../label"
 import { TextArea } from "./text-area"
 
 export interface TextFieldProps extends AriaTextFieldProps, FormComponentLabelProps {
+	/** A helper text to be displayed below the text field */
 	helperText?: ReactNode
+	/** The error message to be displayed when the text field is in an error state */
 	errorMessage?: string
-
-	/** Text Area Props */
+	/** Toggle between a text field and a text area */
 	multiLine?: boolean
+	/** The number of columns in the text area */
 	cols?: number
+	/** The number of rows in the text area */
 	rows?: number
 }
 

@@ -61,8 +61,11 @@ const TableColumn = ({ children, className, ...props }: ColumnProps & { classNam
 )
 
 const TableHeader = <T extends object>({
+	/** The children of the table header */
 	children,
+	/** The styles to be applied to the table header */
 	className,
+	/** The columns of the table header */
 	columns,
 	...props
 }: TableHeaderProps<T> & { className?: string }) => {
@@ -80,9 +83,13 @@ const TableHeader = <T extends object>({
 }
 
 const TableRow = <T extends object>({
+	/** The children of the table row */
 	children,
+	/** The styles to be applied to the table row */
 	className,
+	/** The columns of the table row */
 	columns,
+	/** The id of the table row */
 	id,
 	...props
 }: RowProps<T> & { className?: string }) => {
