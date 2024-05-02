@@ -25,6 +25,7 @@ const { button, item, popover, root, icon, value } = selectVariants()
 
 interface SelectProps<T extends object> extends Omit<AriaSelectProps<T>, "children">, FormComponentLabelProps {
 	className?: string
+	items?: Iterable<T>
 	helperText?: ReactNode
 	errorMessage?: string
 	children: React.ReactNode | ((item: T) => React.ReactNode)
@@ -53,7 +54,9 @@ const SelectRoot = <T extends object>({
 		{helperText && <FormDescription>{helperText}</FormDescription>}
 		<FormFieldError>{errorMessage}</FormFieldError>
 		<Popover className={popover()}>
-			<AriaListBox className="outline-none">{children}</AriaListBox>
+			<AriaListBox className="outline-none" items={items}>
+				{children}
+			</AriaListBox>
 		</Popover>
 	</AriaSelect>
 )

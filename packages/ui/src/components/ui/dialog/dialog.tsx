@@ -5,6 +5,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { dialogVariants } from "@pixelshades/styles/components/dialog"
+import { SquareX } from "@pixelshades/ui/icons"
 import type React from "react"
 import {
 	Dialog as AriaDialogContent,
@@ -12,9 +13,10 @@ import {
 	type HeadingProps as AriaHeadingProps,
 	Heading,
 } from "react-aria-components"
+import { Button } from "../button"
 import { Modal, type ModalOverlayProps } from "../modal"
 
-const { modal, content, header, title, footer } = dialogVariants()
+const { closeButton, modal, content, header, title, footer } = dialogVariants()
 
 const DialogRoot = ({ children, className, ...props }: ModalOverlayProps) => (
 	<Modal className={modal(className)} isDismissable={true} {...props}>
@@ -25,12 +27,35 @@ const DialogRoot = ({ children, className, ...props }: ModalOverlayProps) => (
 DialogRoot.displayName = "Dialog"
 
 export interface DialogContentProps extends AriaDialogProps {
+	/** Class name to apply to the Dialog. */
 	className?: string
+	/** Class name to apply to the close button. */
+	closeButtonClassName?: string
+	/** Hides default close button. It will not affect the functionality of the ESC key! */
+	hideCloseButton?: boolean
 }
 
-const DialogContent = ({ children, className, ...props }: DialogContentProps) => (
+const DialogContent = ({
+	hideCloseButton = false,
+	closeButtonClassName,
+	children,
+	className,
+	...props
+}: DialogContentProps) => (
 	<AriaDialogContent {...props} className={content({ className })}>
-		{children}
+		{({ ...innerProps }) => (
+			<>
+				{typeof children === "function" ? children(innerProps) : children}
+				{!hideCloseButton && (
+					<Button
+						className={closeButton(closeButtonClassName)}
+						before={<SquareX />}
+						variant={"ghost"}
+						onPress={innerProps.close}
+					/>
+				)}
+			</>
+		)}
 	</AriaDialogContent>
 )
 

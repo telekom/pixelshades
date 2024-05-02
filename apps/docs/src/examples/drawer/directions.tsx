@@ -1,9 +1,9 @@
-import { Button, DIRECTIONS, Drawer, type DrawerDirection, Select } from "@pixelshades/ui/components"
+import { Button, Drawer, type DrawerPlacement, PLACEMENTS, Select } from "@pixelshades/ui/components"
 import React from "react"
 
 export default function Example() {
-	const options = DIRECTIONS.map((d) => ({ name: d }))
-	const [direction, setDirection] = React.useState<DrawerDirection>("right")
+	const options = PLACEMENTS.map((d) => ({ name: d }))
+	const [placement, setPlacement] = React.useState<DrawerPlacement>("right")
 
 	return (
 		<div className="flex flex-col gap-layout-sm">
@@ -11,22 +11,22 @@ export default function Example() {
 				<Select
 					label="Direction"
 					items={options}
-					selectedKey={direction}
-					onSelectionChange={(selected) => setDirection(selected as DrawerDirection)}
+					selectedKey={placement}
+					onSelectionChange={(selected) => setPlacement(selected as DrawerPlacement)}
 				>
 					{(item) => <Select.Item id={item.name}>{item.name}</Select.Item>}
 				</Select>
 			</div>
 			<Drawer.Trigger>
-				<Button variant="outline">open drawer {direction}</Button>
-				<Drawer direction={direction}>
+				<Button variant="outline">open drawer {placement}</Button>
+				<Drawer placement={placement}>
 					<Drawer.Content className="h-full">
 						{({ close }) => (
 							<>
 								<Drawer.Header>
 									<Drawer.Title>Drawer Title</Drawer.Title>
 								</Drawer.Header>
-								<div className={direction === "bottom" ? "h-[200px]" : "h-full"}>Drawer Content</div>
+								<div className={placement === "bottom" ? "h-[200px]" : "h-full"}>Drawer Content</div>
 								<Drawer.Footer>
 									<Button onPress={close}>Close Drawer</Button>
 								</Drawer.Footer>

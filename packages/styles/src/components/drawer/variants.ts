@@ -12,7 +12,7 @@ export const drawerVariants = tv({
 		modalHorizontal: [...baseStyles, "h-fit", "right-0", "left-0", "w-full", "min-h-[320px]", "max-h-full"],
 	},
 	variants: {
-		direction: {
+		placement: {
 			right: {
 				modalVertical: ["right-0", "border-l-2"],
 			},
@@ -28,6 +28,6 @@ export const drawerVariants = tv({
 		},
 	},
 	defaultVariants: {
-		direction: "right",
+		placement: "right",
 	},
 })
