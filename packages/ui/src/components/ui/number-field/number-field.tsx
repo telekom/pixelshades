@@ -15,7 +15,9 @@ import { Input } from "../input"
 import { type FormComponentLabelProps, Label } from "../label"
 
 export interface NumberFieldProps extends AriaNumberFieldProps, FormComponentLabelProps {
+	/** A helper text to display below the date picker. */
 	helperText?: ReactNode
+	/** The error message to display when the number field is invalid. */
 	errorMessage?: string
 }
 
