@@ -2,47 +2,108 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   :root {
-    --spacing-xs: 0.125rem;
-    --spacing-sm: 0.25rem;
-    --spacing-md: 0.5rem;
-    --spacing-lg: 1rem;
-    --spacing-xl: 1.5rem;
+    --primary-scale-1: 345.75 42.453% 3.3945%;
+		--primary-scale-2: 342.74 31.057% 9.279%;
+		--primary-scale-3: 338.72 53.878% 14.856%;
+		--primary-scale-4: 334.05 80.379% 17.76%;
+		--primary-scale-5: 334.81 71.898% 22.238%;
+		--primary-scale-6: 336.59 58.805% 28.323%;
+		--primary-scale-7: 337.48 51.909% 36.44%;
+		--primary-scale-8: 337.18 51.933% 47.218%;
+		--primary-scale-9: 329 100% 44%;
+		--primary-scale-10: 328.11 100% 37.911%;
+		--primary-scale-11: 340.99 100% 78.836%;
+		--primary-scale-12: 344.46 100% 91.811%;
+        
+          --neutral-scale-1: 218.58 37.692% 3.1765%;
+		--neutral-scale-2: 215.39 16.725% 9.4618%;
+		--neutral-scale-3: 215.39 16.962% 13.684%;
+		--neutral-scale-4: 215.39 18.248% 16.813%;
+		--neutral-scale-5: 215.39 17.903% 19.823%;
+		--neutral-scale-6: 215.38 18.573% 23.534%;
+		--neutral-scale-7: 215.38 18.792% 29.161%;
+		--neutral-scale-8: 215.38 18.954% 39.568%;
+		--neutral-scale-9: 215.38 16.9% 44.893%;
+		--neutral-scale-10: 215.39 14.545% 50.088%;
+		--neutral-scale-11: 215.4 20.453% 71.849%;
+		--neutral-scale-12: 215.44 25.82% 93.74%;
+        
+          --success-scale-1: 126.19 41.893% 2.4331%;
+		--success-scale-2: 127.04 23.778% 8.0714%;
+		--success-scale-3: 130.71 45.38% 12.028%;
+		--success-scale-4: 134.46 65.078% 14.299%;
+		--success-scale-5: 134.47 61.29% 18.116%;
+		--success-scale-6: 133.88 55.487% 22.559%;
+		--success-scale-7: 133.87 53.538% 27.267%;
+		--success-scale-8: 134.59 55.693% 31.994%;
+		--success-scale-9: 141.92 91.069% 34.621%;
+		--success-scale-10: 143.33 98.831% 35.796%;
+		--success-scale-11: 144.95 100% 41.618%;
+		--success-scale-12: 127.58 78.858% 81.488%;
+        
+          --info-scale-1: 220.88 84.625% 4.0378%;
+		--info-scale-2: 213.78 57.712% 9.5643%;
+		--info-scale-3: 212.48 92.455% 15.767%;
+		--info-scale-4: 211.22 100% 19.251%;
+		--info-scale-5: 210.18 100% 23.242%;
+		--info-scale-6: 210.23 100% 28.537%;
+		--info-scale-7: 210.89 88.998% 35.131%;
+		--info-scale-8: 210.38 91.592% 41.184%;
+		--info-scale-9: 208.42 100% 45.663%;
+		--info-scale-10: 210.18 100% 54.775%;
+		--info-scale-11: 214.9 100% 76.155%;
+		--info-scale-12: 214.22 100% 90.712%;
+        
+          --destructive-scale-1: 358.18 40.497% 3.425%;
+		--destructive-scale-2: 358.1 23.808% 9.2438%;
+		--destructive-scale-3: 353.17 56.689% 14.86%;
+		--destructive-scale-4: 349.23 74.569% 18.35%;
+		--destructive-scale-5: 349.78 68.426% 22.959%;
+		--destructive-scale-6: 351.52 57.437% 29.011%;
+		--destructive-scale-7: 352.43 51.153% 36.998%;
+		--destructive-scale-8: 352.12 51.043% 48.457%;
+		--destructive-scale-9: 349.42 84.195% 57.576%;
+		--destructive-scale-10: 352.02 88.216% 63.717%;
+		--destructive-scale-11: 356.41 100% 79.556%;
+		--destructive-scale-12: 358.73 100% 91.778%;
 
-    --spacing-layout-xs: 1rem;
-    --spacing-layout-sm: 1.5rem;
-    --spacing-layout-md: 2rem;
-    --spacing-layout-lg: 3rem;
-    --spacing-layout-xl: 4rem;
-    --spacing-layout-2xl: 6rem;
 
-
-    --background: 0 0% 100%;
-    --foreground: 0 0% 9%;
-
-    --subtle: 240 5% 96%;
-    --subtle-foreground: 240 3.8% 46.1%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-
-    --border: 240 5.9% 90%;
-
-    --primary: 240 6% 10%;
-    --primary-foreground: 0 0% 98%;
-
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-
-    --destructive: 350 89% 60%;
-    --destructive-foreground: 0 0% 98%;
-    
-    --ring: 240 5.9% 10%;
-    --radius: 0.5rem;
-
-    --info: 210 100% 72%;
-    --info-foreground: 0 0% 98%;
+          --spacing-xs: 0.125rem;
+          --spacing-sm: 0.25rem;
+          --spacing-md: 0.5rem;
+          --spacing-lg: 1rem;
+          --spacing-xl: 1.5rem;
+      
+          --spacing-layout-xs: 1rem;
+          --spacing-layout-sm: 1.5rem;
+          --spacing-layout-md: 2rem;
+          --spacing-layout-lg: 3rem;
+          --spacing-layout-xl: 4rem;
+          --spacing-layout-2xl: 6rem;
+      
+      
+          --background: 228.57 84% 4.902%;
+          --foreground: 215.44 25.82% 93.74%;
+      
+          --subtle: var(--neutral-scale-9);
+          --subtle-foreground: var(--neutral-scale-11);
+      
+          --border: var(--neutral-scale-6);
+      
+          --primary: var(--primary-scale-9);
+          --primary-foreground: var(--primary-scale-12);
+      
+          --destructive: var(--destructive-scale-9);
+          --destructive-foreground: var(--destructive-scale-12);
+          
+          --ring: var(--primary-scale-9);
+          --radius: 0.5rem;
+      
+          --info: var(--info-scale-9);
+          --info-foreground: var(--info-scale-12);
   }
 
   .dark {

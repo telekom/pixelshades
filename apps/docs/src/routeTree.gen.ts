@@ -11,6 +11,7 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as ThemesImport } from './routes/themes'
 import { Route as ExamplesImport } from './routes/examples'
 import { Route as DocsImport } from './routes/docs'
 import { Route as IndexImport } from './routes/index'
@@ -19,6 +20,11 @@ import { Route as DocsSlugImport } from './routes/docs/$slug'
 import { Route as DocsComponentsSlugIndexImport } from './routes/docs/components/$slug/index'
 
 // Create/Update Routes
+
+const ThemesRoute = ThemesImport.update({
+  path: '/themes',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const ExamplesRoute = ExamplesImport.update({
   path: '/examples',
@@ -66,6 +72,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExamplesImport
       parentRoute: typeof rootRoute
     }
+    '/themes': {
+      preLoaderRoute: typeof ThemesImport
+      parentRoute: typeof rootRoute
+    }
     '/docs/$slug': {
       preLoaderRoute: typeof DocsSlugImport
       parentRoute: typeof DocsImport
@@ -91,6 +101,7 @@ export const routeTree = rootRoute.addChildren([
     DocsComponentsSlugIndexRoute,
   ]),
   ExamplesRoute,
+  ThemesRoute,
 ])
 
 /* prettier-ignore-end */

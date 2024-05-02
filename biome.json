@@ -3,6 +3,11 @@
 	"organizeImports": {
 		"enabled": true
 	},
+	"files": {
+		"ignore": [
+			"**/*.js"
+		]
+	},
 	"linter": {
 		"enabled": true,
 		"rules": {
