@@ -12,7 +12,9 @@ import type { VariantProps } from "tailwind-variants"
 import { If } from "../../utils"
 
 interface LoadingSpinnerProps extends VariantProps<typeof loadingSpinnerVariants> {
+	/** The styles of the loading spinner. */
 	className?: string
+	/** The loading spinner icon to display. */
 	icon?: React.ReactElement<HTMLElement>
 }
 

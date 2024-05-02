@@ -15,7 +15,7 @@ function getComponentName(path: string): string {
 
 const getComponentPropsBySlug = (slug: string) => {
 	const matchKey = Object.keys(props).find((key) => getComponentName(key) === slug.toLowerCase())
-
+	console.log("all props", props)
 	if (!matchKey) {
 		return null
 	}
@@ -25,7 +25,7 @@ const getComponentPropsBySlug = (slug: string) => {
 
 export const PropsTable = ({ slug }: PropsTableProps) => {
 	const props = getComponentPropsBySlug(slug)
-
+	console.log(props)
 	if (!props) {
 		return "No Props Yet"
 	}
