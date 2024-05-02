@@ -8,11 +8,11 @@ import { Typography } from "../typography"
 import { highlighter } from "./highlighter"
 
 export type HighlightProps = {
-	/** Element that will be rendered highlighted */
+	/** Element that will be rendered highlighted. */
 	children: string
-	/** Elements characters that will be highlighted */
+	/** Elements characters that will be highlighted. */
 	highlight?: string | string[]
-	/** Minimum length to highlight */
+	/** Minimum length to highlight, */
 	minLengthToHighlight?: number
 }
 /** Displays a Text with highlighted characters */

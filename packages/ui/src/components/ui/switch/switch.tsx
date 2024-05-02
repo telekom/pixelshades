@@ -18,11 +18,11 @@ import { type FormComponentLabelProps, Label } from "../label"
 type SwitchVariantProps = VariantProps<typeof switchVariants>
 
 interface SwitchProps extends SwitchVariantProps, AriaSwitchProps, FormComponentLabelProps {
-	/** The styles to be applied to the switch field */
+	/** The styles to be applied to the switch field, */
 	className?: string
-	/** A helper text to be displayed below the switch field */
+	/** A helper text to be displayed below the switch field. */
 	helperText?: ReactNode
-	/** The error message to be displayed when the switch is in an error state */
+	/** The error message to be displayed when the switch is in an error state. */
 	errorMessage?: string
 }
 
