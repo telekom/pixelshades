@@ -11,6 +11,7 @@ import { cn } from "@pixelshades/utils/styles"
 import type { VariantProps } from "tailwind-variants"
 
 export interface LinkProps extends AriaLinkProps, VariantProps<typeof linkVariants> {
+	/** The styles of the link. */
 	className?: string
 }
 

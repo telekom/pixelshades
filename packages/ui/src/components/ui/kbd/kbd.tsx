@@ -81,6 +81,7 @@ export type KbdKeysLabelType = typeof kbdKeysLabelMap
 export type KbdElement = React.ElementRef<"kbd">
 export type KbdProps = Omit<React.HTMLAttributes<KbdElement>, "size"> &
 	VariantProps<typeof kbdVariants> & {
+		/** The key or array of keys to render */
 		keys?: KbdKey | KbdKey[]
 	}
 

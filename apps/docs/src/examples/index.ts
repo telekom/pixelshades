@@ -1035,24 +1035,24 @@ export function Example() {
 export function Example() {
 	return (
 		<div className="flex flex-col">
-			<Link size="xs">Ag</Link>
-			<Link size="sm">Ag</Link>
-			<Link size="md">Ag</Link>
-			<Link size="lg">Ag</Link>
-			<Link size="xl">Ag</Link>
-			<Link size="2xl">Ag</Link>
-			<Link size="3xl">Ag</Link>
-			<Link size="4xl">Ag</Link>
-			<Link size="5xl">Ag</Link>
-			<Link size="6xl">Ag</Link>
-			<Link size="7xl">Ag</Link>
+			<Link size="xs">xs</Link>
+			<Link size="sm">sm</Link>
+			<Link size="md">md</Link>
+			<Link size="lg">lg</Link>
+			<Link size="xl">xl</Link>
+			<Link size="2xl">2xl</Link>
+			<Link size="3xl">3xl</Link>
+			<Link size="4xl">4xl</Link>
+			<Link size="5xl">5xl</Link>
+			<Link size="6xl">6xl</Link>
+			<Link size="7xl">7xl</Link>
 		</div>
 	)
 }
 `,
   },
-  "loadingSpinner/button": {
-	  component: lazy(() => import("~/examples/loadingSpinner/button.tsx")),
+  "loading-spinner/button": {
+	  component: lazy(() => import("~/examples/loading-spinner/button.tsx")),
 	  code: `import { LoadingSpinner } from "@pixelshades/ui/components"
 import { Button } from "@pixelshades/ui/components"
 
@@ -1061,8 +1061,8 @@ export function Example() {
 }
 `,
   },
-  "loadingSpinner/icons": {
-	  component: lazy(() => import("~/examples/loadingSpinner/icons.tsx")),
+  "loading-spinner/icons": {
+	  component: lazy(() => import("~/examples/loading-spinner/icons.tsx")),
 	  code: `import { LoadingSpinner } from "@pixelshades/ui/components"
 import { Loader } from "@pixelshades/ui/icons"
 
@@ -1076,8 +1076,8 @@ export function Example() {
 }
 `,
   },
-  "loadingSpinner/preview": {
-	  component: lazy(() => import("~/examples/loadingSpinner/preview.tsx")),
+  "loading-spinner/preview": {
+	  component: lazy(() => import("~/examples/loading-spinner/preview.tsx")),
 	  code: `import { LoadingSpinner } from "@pixelshades/ui/components"
 
 export function Example() {
@@ -1085,8 +1085,8 @@ export function Example() {
 }
 `,
   },
-  "loadingSpinner/sizes": {
-	  component: lazy(() => import("~/examples/loadingSpinner/sizes.tsx")),
+  "loading-spinner/sizes": {
+	  component: lazy(() => import("~/examples/loading-spinner/sizes.tsx")),
 	  code: `import { LoadingSpinner } from "@pixelshades/ui/components"
 
 export function Example() {
@@ -1102,8 +1102,8 @@ export function Example() {
 }
 `,
   },
-  "loadingSpinner/variants": {
-	  component: lazy(() => import("~/examples/loadingSpinner/variants.tsx")),
+  "loading-spinner/variants": {
+	  component: lazy(() => import("~/examples/loading-spinner/variants.tsx")),
 	  code: `import { LoadingSpinner } from "@pixelshades/ui/components"
 
 export function Example() {

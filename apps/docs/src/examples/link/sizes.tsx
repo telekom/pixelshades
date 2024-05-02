@@ -3,17 +3,17 @@ import { Link } from "@pixelshades/ui/components"
 export default function Example() {
 	return (
 		<div className="flex flex-col">
-			<Link size="xs">Ag</Link>
-			<Link size="sm">Ag</Link>
-			<Link size="md">Ag</Link>
-			<Link size="lg">Ag</Link>
-			<Link size="xl">Ag</Link>
-			<Link size="2xl">Ag</Link>
-			<Link size="3xl">Ag</Link>
-			<Link size="4xl">Ag</Link>
-			<Link size="5xl">Ag</Link>
-			<Link size="6xl">Ag</Link>
-			<Link size="7xl">Ag</Link>
+			<Link size="xs">xs</Link>
+			<Link size="sm">sm</Link>
+			<Link size="md">md</Link>
+			<Link size="lg">lg</Link>
+			<Link size="xl">xl</Link>
+			<Link size="2xl">2xl</Link>
+			<Link size="3xl">3xl</Link>
+			<Link size="4xl">4xl</Link>
+			<Link size="5xl">5xl</Link>
+			<Link size="6xl">6xl</Link>
+			<Link size="7xl">7xl</Link>
 		</div>
 	)
 }
