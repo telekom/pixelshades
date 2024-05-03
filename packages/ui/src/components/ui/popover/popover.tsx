@@ -4,28 +4,53 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-import { cn } from "@pixelshades/utils/styles"
-import { Popover as AriaPopover, DialogTrigger, type PopoverProps } from "react-aria-components"
+import { popoverVariants } from "@pixelshades/styles/components/popover"
+import {
+	Popover as AriaPopover,
+	type PopoverProps as AriaPopoverProps,
+	DialogTrigger,
+	OverlayArrow,
+	composeRenderProps,
+} from "react-aria-components"
+import { DialogContent } from "../dialog"
 
 const PopoverTrigger = DialogTrigger
 
-const PopoverRoot = ({ className, offset = 4, ...props }: PopoverProps) => (
+const { base, arrow } = popoverVariants()
+
+interface PopoverProps extends AriaPopoverProps {
+	showArrow?: boolean
+}
+
+const PopoverRoot = ({ className, offset = 4, children, showArrow, ...props }: PopoverProps) => (
 	<AriaPopover
 		offset={offset}
-		className={(values) =>
-			cn(
-				"z-50 w-72 overflow-y-auto rounded-md border bg-background p-xs text-foreground shadow-md outline-none",
-				"entering:fade-in-0 exiting:fade-out-0 exiting:zoom-out-95 entering:animate-in exiting:animate-out",
-				"placement-bottom:slide-in-from-top-2 placement-left:slide-in-from-right-2 placement-right:slide-in-from-left-2 placement-top:slide-in-from-bottom-2",
-				typeof className === "function" ? className(values) : className,
-			)
-		}
+		className={composeRenderProps(className, (className, renderProps) => base({ ...renderProps, className }))}
 		{...props}
-	/>
+	>
+		{(innerProps) => (
+			<>
+				{showArrow && (
+					<OverlayArrow className="group">
+						<svg width={12} height={12} viewBox="0 0 12 12" className={arrow()}>
+							<title>Arrow</title>
+							<path d="M0 0 L6 6 L12 0" />
+						</svg>
+					</OverlayArrow>
+				)}
+				{typeof children === "function" ? children(innerProps) : children}
+			</>
+		)}
+	</AriaPopover>
 )
+
+const PopoverContent = DialogContent
 
 PopoverRoot.displayName = "Popover"
 
 export const Popover = Object.assign(PopoverRoot, {
 	Trigger: PopoverTrigger,
+	Content: PopoverContent,
 })
+
+export { PopoverContent, PopoverRoot, PopoverTrigger }

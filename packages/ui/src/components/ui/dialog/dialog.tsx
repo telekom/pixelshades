@@ -19,7 +19,7 @@ import { Modal, type ModalOverlayProps } from "../modal"
 const { closeButton, modal, content, header, title, footer } = dialogVariants()
 
 const DialogRoot = ({ children, className, ...props }: ModalOverlayProps) => (
-	<Modal className={modal(className)} isDismissable={true} {...props}>
+	<Modal className={modal({ className })} isDismissable={true} {...props}>
 		{children}
 	</Modal>
 )
@@ -48,7 +48,7 @@ const DialogContent = ({
 				{typeof children === "function" ? children(innerProps) : children}
 				{!hideCloseButton && (
 					<Button
-						className={closeButton(closeButtonClassName)}
+						className={closeButton({ className: closeButtonClassName })}
 						before={<SquareX />}
 						variant={"ghost"}
 						onPress={innerProps.close}
@@ -94,4 +94,5 @@ export const Dialog = Object.assign(DialogRoot, {
 	Trigger: DialogTrigger,
 	Footer: DialogFooter,
 })
+
 export { DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogFooter }

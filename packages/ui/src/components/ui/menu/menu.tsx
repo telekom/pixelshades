@@ -18,16 +18,17 @@ import {
 	type MenuProps as AriaMenuProps,
 	MenuTrigger as AriaMenuTrigger,
 	type MenuTriggerProps as AriaMenuTriggerProps,
-	Popover as AriaPopover,
 	Section as AriaSection,
 	SubmenuTrigger as AriaSubMenuTrigger,
+	type PopoverProps,
 } from "react-aria-components"
 import { Kbd } from "../kbd"
+import { Popover } from "../popover"
 import { Separator } from "../separator"
 
 const { withContext, withProvider } = createStyleContext(menuVariants)
 
-const { menuPopover, content, shortcut } = menuVariants()
+const { content } = menuVariants()
 
 export type MenuProps = AriaMenuTriggerProps
 
@@ -35,15 +36,19 @@ const MenuRoot = withProvider(AriaMenuTrigger)
 
 const MenuSection = AriaSection
 
-export type MenuContentProps<T extends object> = AriaMenuProps<T>
+export type MenuContentProps<T extends object> = {
+	placement?: PopoverProps["placement"]
+} & AriaMenuProps<T>
 
-const MenuContent = forwardRef(<T extends object>({ children, className, ...props }: MenuContentProps<T>) => (
-	<AriaPopover isNonModal {...props} className={menuPopover()}>
-		<AriaMenu {...props} className={content({ className })}>
-			{children}
-		</AriaMenu>
-	</AriaPopover>
-))
+const MenuContent = forwardRef(
+	<T extends object>({ children, className, placement, ...props }: MenuContentProps<T>) => (
+		<Popover isNonModal placement={placement}>
+			<AriaMenu {...props} className={content({ className })}>
+				{children}
+			</AriaMenu>
+		</Popover>
+	),
+)
 
 export type MenuItemProps = AriaMenuItemProps & { className?: string }
 
