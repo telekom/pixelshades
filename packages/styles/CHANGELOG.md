@@ -1,5 +1,15 @@
 # @pixelshades/styles
 
+## 0.3.0
+
+### Minor Changes
+
+- 1a3afa0: add drawer component
+
+### Patch Changes
+
+- de2134e: fix: menu button submenus not opening
+
 ## 0.2.0
 
 ### Minor Changes
