@@ -32,23 +32,23 @@ const { content } = menuVariants()
 
 export type MenuProps = AriaMenuTriggerProps
 
-const MenuRoot = withProvider(AriaMenuTrigger)
-
-const MenuSection = AriaSection
-
 export type MenuContentProps<T extends object> = {
 	placement?: PopoverProps["placement"]
 } & AriaMenuProps<T>
 
-const MenuContent = forwardRef(
-	<T extends object>({ children, className, placement, ...props }: MenuContentProps<T>) => (
-		<Popover placement={placement}>
-			<AriaMenu {...props} className={content({ className })}>
-				{children}
-			</AriaMenu>
-		</Popover>
-	),
+const MenuContent = <T extends object>({ children, className, placement, ...props }: MenuContentProps<T>) => (
+	<Popover placement={placement}>
+		<AriaMenu {...props} className={content({ className })}>
+			{children}
+		</AriaMenu>
+	</Popover>
 )
+
+MenuContent.displayName = "MenuContent"
+
+const MenuRoot = withProvider(AriaMenuTrigger)
+
+const MenuSection = AriaSection
 
 export type MenuItemProps = AriaMenuItemProps & { className?: string }
 
@@ -91,3 +91,5 @@ export const Menu = Object.assign(MenuRoot, {
 	SubMenu: MenuSubMenu,
 	SubMenuTrigger: MenuSubMenuTrigger,
 })
+
+export { MenuContent, MenuSection, MenuItem, MenuLabel, MenuShortcut, MenuSeparator, MenuSubMenu, MenuSubMenuTrigger }
