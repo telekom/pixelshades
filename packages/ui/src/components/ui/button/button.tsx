@@ -23,6 +23,7 @@ import { LoadingSpinner } from "../loading-spinner"
 type ButtonVariantProps = VariantProps<typeof buttonVariants>
 
 interface ButtonProps extends ButtonVariantProps, AriaButtonProps {
+	className?: string
 	isLoading?: boolean
 	before?: React.ReactElement<HTMLElement>
 	after?: React.ReactElement<HTMLElement>
@@ -39,13 +40,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 						variant,
 						withRing,
 						size,
-						className: typeof className === "function" ? className(values) : className,
+						className,
 					})
 				: buttonVariants({
 						variant,
 						withRing,
 						size,
-						className: typeof className === "function" ? className(values) : className,
+						className,
 					})
 
 		return (
