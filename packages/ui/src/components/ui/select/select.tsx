@@ -26,6 +26,8 @@ const { button, item, popover, root, icon, value } = selectVariants()
 interface SelectProps<T extends object> extends Omit<AriaSelectProps<T>, "children">, FormComponentLabelProps {
 	/** The styles to be applied to the select field. */
 	className?: string
+    /** Array of select options. */
+	items?: Iterable<T>
 	/** A helper text to be displayed below the select field. */
 	helperText?: ReactNode
 	/** The tooltip to be displayed when hovering over the select field. */
@@ -36,6 +38,7 @@ interface SelectProps<T extends object> extends Omit<AriaSelectProps<T>, "childr
 
 const SelectRoot = <T extends object>({
 	label,
+	items,
 	className,
 	description,
 	helperText,
@@ -56,7 +59,9 @@ const SelectRoot = <T extends object>({
 		{helperText && <FormDescription>{helperText}</FormDescription>}
 		<FormFieldError>{errorMessage}</FormFieldError>
 		<Popover className={popover()}>
-			<AriaListBox className="outline-none">{children}</AriaListBox>
+			<AriaListBox className="outline-none" items={items}>
+				{children}
+			</AriaListBox>
 		</Popover>
 	</AriaSelect>
 )

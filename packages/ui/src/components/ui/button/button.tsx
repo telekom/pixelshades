@@ -39,12 +39,14 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 				? buttonGroupState.base({
 						variant,
 						withRing,
+						...values,
 						size,
 						className,
 					})
 				: buttonVariants({
 						variant,
 						withRing,
+						...values,
 						size,
 						className,
 					})

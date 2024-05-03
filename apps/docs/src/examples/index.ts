@@ -794,6 +794,52 @@ export function Example() {
 }
 `,
   },
+  "dialog/hideCloseButton": {
+	  component: lazy(() => import("~/examples/dialog/hideCloseButton.tsx")),
+	  code: `import { Button, Dialog, Input, Label } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<Dialog.Trigger>
+			<Button variant="outline">Edit Profile</Button>
+			<Dialog>
+				<Dialog.Content className="sm:max-w-[425px]" hideCloseButton={true}>
+					{({ close }) => (
+						<>
+							<Dialog.Header>
+								<Dialog.Title>Edit profile</Dialog.Title>
+								<p className="text-sm text-subtle-foreground">
+									Make changes to your profile here. Click save when you&apos;re done.
+								</p>
+							</Dialog.Header>
+							<div className="grid gap-lg py-4">
+								<div className="grid grid-cols-4 items-center gap-lg">
+									<Label htmlFor="name" className="text-right">
+										Name
+									</Label>
+									<Input id="name" defaultValue="Pedro Duarte" className="col-span-3" />
+								</div>
+								<div className="grid grid-cols-4 items-center gap-lg">
+									<Label htmlFor="username" className="text-right">
+										Username
+									</Label>
+									<Input id="username" defaultValue="@peduarte" className="col-span-3" />
+								</div>
+							</div>
+							<Dialog.Footer>
+								<Button type="submit" onPress={close}>
+									Save changes
+								</Button>
+							</Dialog.Footer>
+						</>
+					)}
+				</Dialog.Content>
+			</Dialog>
+		</Dialog.Trigger>
+	)
+}
+`,
+  },
   "dialog/preview": {
 	  component: lazy(() => import("~/examples/dialog/preview.tsx")),
 	  code: `import { Button, Dialog, Input, Label } from "@pixelshades/ui/components"
@@ -836,6 +882,98 @@ export function Example() {
 				</Dialog.Content>
 			</Dialog>
 		</Dialog.Trigger>
+	)
+}
+`,
+  },
+  "drawer/directions": {
+	  component: lazy(() => import("~/examples/drawer/directions.tsx")),
+	  code: `import { Button, Drawer, type DrawerPlacement, PLACEMENTS, Select } from "@pixelshades/ui/components"
+import React from "react"
+
+export function Example() {
+	const options = PLACEMENTS.map((d) => ({ name: d }))
+	const [placement, setPlacement] = React.useState<DrawerPlacement>("right")
+
+	return (
+		<div className="flex flex-col gap-layout-sm">
+			<div>
+				<Select
+					label="Direction"
+					items={options}
+					selectedKey={placement}
+					onSelectionChange={(selected) => setPlacement(selected as DrawerPlacement)}
+				>
+					{(item) => <Select.Item id={item.name}>{item.name}</Select.Item>}
+				</Select>
+			</div>
+			<Drawer.Trigger>
+				<Button variant="outline">open drawer {placement}</Button>
+				<Drawer placement={placement}>
+					<Drawer.Content className="h-full">
+						{({ close }) => (
+							<>
+								<Drawer.Header>
+									<Drawer.Title>Drawer Title</Drawer.Title>
+								</Drawer.Header>
+								<div className={placement === "bottom" ? "h-[200px]" : "h-full"}>Drawer Content</div>
+								<Drawer.Footer>
+									<Button onPress={close}>Close Drawer</Button>
+								</Drawer.Footer>
+							</>
+						)}
+					</Drawer.Content>
+				</Drawer>
+			</Drawer.Trigger>
+		</div>
+	)
+}
+`,
+  },
+  "drawer/hideCloseButton": {
+	  component: lazy(() => import("~/examples/drawer/hideCloseButton.tsx")),
+	  code: `import { Button, Drawer } from "@pixelshades/ui/components"
+import { SquareX } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return (
+		<Drawer.Trigger>
+			<Button variant="outline">open default drawer</Button>
+			<Drawer>
+				<Drawer.Content hideCloseButton={true}>
+					<>
+						<Drawer.Header className={"flex-row items-center justify-between space-y-0"}>
+							<Drawer.Title>Drawer Title</Drawer.Title>
+						</Drawer.Header>
+						<div>Drawer Content</div>
+					</>
+				</Drawer.Content>
+			</Drawer>
+		</Drawer.Trigger>
+	)
+}
+`,
+  },
+  "drawer/preview": {
+	  component: lazy(() => import("~/examples/drawer/preview.tsx")),
+	  code: `import { Button, Drawer } from "@pixelshades/ui/components"
+import { SquareX } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return (
+		<Drawer.Trigger>
+			<Button variant="outline">open default drawer</Button>
+			<Drawer>
+				<Drawer.Content>
+					<>
+						<Drawer.Header className={"flex-row items-center justify-between space-y-0"}>
+							<Drawer.Title>Drawer Title</Drawer.Title>
+						</Drawer.Header>
+						<div>Drawer Content</div>
+					</>
+				</Drawer.Content>
+			</Drawer>
+		</Drawer.Trigger>
 	)
 }
 `,
