@@ -42,7 +42,7 @@ export type MenuContentProps<T extends object> = {
 
 const MenuContent = forwardRef(
 	<T extends object>({ children, className, placement, ...props }: MenuContentProps<T>) => (
-		<Popover isNonModal placement={placement}>
+		<Popover placement={placement}>
 			<AriaMenu {...props} className={content({ className })}>
 				{children}
 			</AriaMenu>

@@ -4,9 +4,11 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-import { dialogVariants } from "@pixelshades/styles/components/dialog"
-import { SquareX } from "lucide-react"
 import type React from "react"
+
+import { dialogVariants } from "@pixelshades/styles/components/dialog"
+import { XIcon } from "lucide-react"
+
 import {
 	Dialog as AriaDialogContent,
 	type DialogProps as AriaDialogProps,
@@ -50,8 +52,8 @@ const DialogContent = ({
 				{!hideCloseButton && (
 					<Button
 						className={closeButton({ className: closeButtonClassName })}
-						before={<SquareX />}
-						variant={"ghost"}
+						before={<XIcon />}
+						variant="ghost"
 						onPress={innerProps.close}
 					/>
 				)}
