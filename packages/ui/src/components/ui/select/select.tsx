@@ -24,10 +24,15 @@ import { Popover } from "../popover"
 const { button, item, popover, root, icon, value } = selectVariants()
 
 interface SelectProps<T extends object> extends Omit<AriaSelectProps<T>, "children">, FormComponentLabelProps {
+	/** The styles to be applied to the select field. */
 	className?: string
+    /** Array of select options. */
 	items?: Iterable<T>
+	/** A helper text to be displayed below the select field. */
 	helperText?: ReactNode
+	/** The tooltip to be displayed when hovering over the select field. */
 	errorMessage?: string
+	/** Children of the select field. */
 	children: React.ReactNode | ((item: T) => React.ReactNode)
 }
 

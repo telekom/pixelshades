@@ -32,6 +32,7 @@ const Heading = forwardRef(function Heading(props: HeadingProps) {
 })
 
 type HeadingOptions<_T extends ElementType = TagName> = {
+	/** The heading level. */
 	level?: HeadingLevels
 }
 

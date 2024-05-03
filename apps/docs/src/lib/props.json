@@ -1,4 +1,73 @@
 {
+  "src/components/ui/badge/badge.tsx": [
+    {
+      "description": "Displays a Badge",
+      "methods": [],
+      "displayName": "Badge",
+      "props": {
+        "before": {
+          "required": false,
+          "tsType": {
+            "name": "ReactReactElement",
+            "raw": "React.ReactElement<HTMLElement>",
+            "elements": [
+              {
+                "name": "HTMLElement"
+              }
+            ]
+          },
+          "description": "Element shown before the child"
+        },
+        "after": {
+          "required": false,
+          "tsType": {
+            "name": "ReactReactElement",
+            "raw": "React.ReactElement<HTMLElement>",
+            "elements": [
+              {
+                "name": "HTMLElement"
+              }
+            ]
+          },
+          "description": "Element shown after the child"
+        }
+      },
+      "composes": [
+        "HTMLAttributes",
+        "BadgeVariantsProps"
+      ]
+    }
+  ],
+  "src/components/ui/button-group/button-group.tsx": [
+    {
+      "description": "Displays a group of buttons with matching styles.",
+      "methods": [],
+      "displayName": "UnstyledButtonGroup",
+      "props": {
+        "children": {
+          "required": true,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": "The children of the button group."
+        },
+        "className": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "The styles of the button group."
+        }
+      }
+    }
+  ],
+  "src/components/ui/button/button.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Button"
+    }
+  ],
   "src/components/ui/breadcrumbs/breadcrumbs.tsx": [
     {
       "description": "",
@@ -48,65 +117,29 @@
       ]
     }
   ],
-  "src/components/ui/button-group/button-group.tsx": [
+  "src/components/ui/calendar/calendar.tsx": [
     {
-      "description": "Displays a group of buttons with matching styles.",
+      "description": "",
       "methods": [],
-      "displayName": "UnstyledButtonGroup",
+      "displayName": "Calendar",
       "props": {
-        "children": {
-          "required": true,
+        "error": {
+          "required": false,
           "tsType": {
-            "name": "ReactNode"
+            "name": "string"
           },
-          "description": "The children of the button group."
+          "description": "The error message to display if the calendar is invalid."
         },
         "className": {
           "required": false,
           "tsType": {
             "name": "string"
           },
-          "description": "The styles of the button group."
-        }
-      }
-    }
-  ],
-  "src/components/ui/badge/badge.tsx": [
-    {
-      "description": "Displays a Badge",
-      "methods": [],
-      "displayName": "Badge",
-      "props": {
-        "before": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactElement",
-            "raw": "React.ReactElement<HTMLElement>",
-            "elements": [
-              {
-                "name": "HTMLElement"
-              }
-            ]
-          },
-          "description": "Element shown before the child"
-        },
-        "after": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactElement",
-            "raw": "React.ReactElement<HTMLElement>",
-            "elements": [
-              {
-                "name": "HTMLElement"
-              }
-            ]
-          },
-          "description": "Element shown after the child"
+          "description": "The styles of the calendar."
         }
       },
       "composes": [
-        "HTMLAttributes",
-        "BadgeVariantsProps"
+        "Omit"
       ]
     }
   ],
@@ -140,39 +173,6 @@
       "description": "",
       "methods": [],
       "displayName": "CardHeader"
-    }
-  ],
-  "src/components/ui/calendar/calendar.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Calendar",
-      "props": {
-        "error": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "The error message to display if the calendar is invalid."
-        },
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "The styles of the calendar."
-        }
-      },
-      "composes": [
-        "Omit"
-      ]
-    }
-  ],
-  "src/components/ui/button/button.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Button"
     }
   ],
   "src/components/ui/checkbox-group/checkbox-group.tsx": [
@@ -875,7 +875,7 @@
         "helperText": {
           "required": false,
           "tsType": {
-            "name": "string"
+            "name": "ReactNode"
           },
           "description": "A helper text to display below the date field."
         },
@@ -1051,7 +1051,7 @@
           "tsType": {
             "name": "string"
           },
-          "description": "Element that will be rendered highlighted"
+          "description": "Element that will be rendered highlighted."
         },
         "highlight": {
           "required": false,
@@ -1073,7 +1073,7 @@
               }
             ]
           },
-          "description": "Elements characters that will be highlighted",
+          "description": "Elements characters that will be highlighted.",
           "defaultValue": {
             "value": "\"\"",
             "computed": false
@@ -1084,7 +1084,7 @@
           "tsType": {
             "name": "number"
           },
-          "description": "Minimum length to highlight",
+          "description": "Minimum length to highlight,",
           "defaultValue": {
             "value": "0",
             "computed": false
@@ -1135,30 +1135,17 @@
             "name": "ReactNode"
           },
           "description": ""
-        }
-      },
-      "composes": [
-        "AriaLabelProps"
-      ]
-    }
-  ],
-  "src/components/ui/link/link.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Link",
-      "props": {
-        "className": {
+        },
+        "isRequired": {
           "required": false,
           "tsType": {
-            "name": "string"
+            "name": "boolean"
           },
           "description": ""
         }
       },
       "composes": [
-        "AriaLinkProps",
-        "VariantProps"
+        "AriaLabelProps"
       ]
     }
   ],
@@ -1173,7 +1160,7 @@
           "tsType": {
             "name": "string"
           },
-          "description": ""
+          "description": "The styles of the loading spinner."
         },
         "icon": {
           "required": false,
@@ -1186,10 +1173,30 @@
               }
             ]
           },
-          "description": ""
+          "description": "The loading spinner icon to display."
         }
       },
       "composes": [
+        "VariantProps"
+      ]
+    }
+  ],
+  "src/components/ui/link/link.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Link",
+      "props": {
+        "className": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "The styles of the link."
+        }
+      },
+      "composes": [
+        "AriaLinkProps",
         "VariantProps"
       ]
     }
@@ -1229,6 +1236,60 @@
       }
     }
   ],
+  "src/components/ui/number-field/number-field.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "NumberField",
+      "props": {
+        "label": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "tooltip": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "description": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "helperText": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": "A helper text to display below the date picker."
+        },
+        "errorMessage": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "The error message to display when the number field is invalid."
+        },
+        "ref": {
+          "required": false,
+          "tsType": {
+            "name": "any"
+          },
+          "description": ""
+        }
+      },
+      "composes": [
+        "AriaNumberFieldProps"
+      ]
+    }
+  ],
   "src/components/ui/progress-bar/progress-bar.tsx": [
     {
       "description": "",
@@ -1240,14 +1301,14 @@
           "tsType": {
             "name": "string"
           },
-          "description": ""
+          "description": "The styles to apply to the progress bar."
         },
         "label": {
           "required": false,
           "tsType": {
             "name": "string"
           },
-          "description": ""
+          "description": "A label to display above the progress bar."
         },
         "description": {
           "required": false,
@@ -1260,7 +1321,7 @@
               }
             ]
           },
-          "description": ""
+          "description": "Description text to display below the progress bar."
         }
       },
       "composes": [
@@ -1280,7 +1341,7 @@
           "tsType": {
             "name": "boolean"
           },
-          "description": "",
+          "description": "Whether the radio should be shown.",
           "defaultValue": {
             "value": "true",
             "computed": false
@@ -1322,14 +1383,14 @@
           "tsType": {
             "name": "ReactNode"
           },
-          "description": ""
+          "description": "The children of the radio group."
         },
         "helperText": {
           "required": false,
           "tsType": {
-            "name": "string"
+            "name": "ReactNode"
           },
-          "description": ""
+          "description": "The helper text to display below the radio group."
         },
         "errorMessage": {
           "required": false,
@@ -1345,7 +1406,7 @@
               }
             ]
           },
-          "description": ""
+          "description": "The error message to display below the radio group."
         },
         "orientation": {
           "defaultValue": {
@@ -1392,51 +1453,47 @@
       "methods": [],
       "displayName": "Select",
       "props": {
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
         "label": {
           "required": false,
           "tsType": {
-            "name": "string"
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "tooltip": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
           },
           "description": ""
         },
         "description": {
           "required": false,
           "tsType": {
-            "name": "union",
-            "raw": "string | null",
-            "elements": [
-              {
-                "name": "string"
-              },
-              {
-                "name": "null"
-              }
-            ]
+            "name": "ReactNode"
           },
           "description": ""
+        },
+        "className": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "The styles to be applied to the select field."
+        },
+        "helperText": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": "A helper text to be displayed below the select field."
         },
         "errorMessage": {
           "required": false,
           "tsType": {
-            "name": "union",
-            "raw": "string | null",
-            "elements": [
-              {
-                "name": "string"
-              },
-              {
-                "name": "null"
-              }
-            ]
+            "name": "string"
           },
-          "description": ""
+          "description": "The tooltip to be displayed when hovering over the select field."
         },
         "children": {
           "required": true,
@@ -1453,7 +1510,7 @@
               }
             ]
           },
-          "description": ""
+          "description": "Children of the select field."
         }
       },
       "composes": [
@@ -1500,26 +1557,46 @@
           "tsType": {
             "name": "string"
           },
-          "description": ""
+          "description": "The styles to be applied to the switch field,"
         },
         "helperText": {
           "required": false,
           "tsType": {
             "name": "ReactNode"
           },
-          "description": ""
+          "description": "A helper text to be displayed below the switch field."
         },
         "errorMessage": {
           "required": false,
           "tsType": {
             "name": "string"
           },
-          "description": ""
+          "description": "The error message to be displayed when the switch is in an error state."
         }
       },
       "composes": [
         "SwitchVariantProps",
         "AriaSwitchProps"
+      ]
+    }
+  ],
+  "src/components/ui/text-field/text-area.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "TextArea",
+      "props": {
+        "ref": {
+          "required": false,
+          "tsType": {
+            "name": "any"
+          },
+          "description": ""
+        }
+      },
+      "composes": [
+        "InputVariantProps",
+        "Omit"
       ]
     }
   ],
@@ -1532,7 +1609,7 @@
         "label": {
           "required": false,
           "tsType": {
-            "name": "string"
+            "name": "ReactNode"
           },
           "description": ""
         },
@@ -1553,16 +1630,37 @@
         "helperText": {
           "required": false,
           "tsType": {
-            "name": "string"
+            "name": "ReactNode"
           },
-          "description": ""
+          "description": "A helper text to be displayed below the text field."
         },
         "errorMessage": {
           "required": false,
           "tsType": {
             "name": "string"
           },
-          "description": ""
+          "description": "The error message to be displayed when the text field is in an error state."
+        },
+        "multiLine": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": "Toggle between a text field and a text area."
+        },
+        "cols": {
+          "required": false,
+          "tsType": {
+            "name": "number"
+          },
+          "description": "The number of columns in the text area."
+        },
+        "rows": {
+          "required": false,
+          "tsType": {
+            "name": "number"
+          },
+          "description": "The number of rows in the text area."
         },
         "ref": {
           "required": false,
@@ -1588,7 +1686,7 @@
           "tsType": {
             "name": "ReactNode"
           },
-          "description": ""
+          "description": "A label to be displayed above the time field"
         },
         "tooltip": {
           "required": false,
@@ -1607,9 +1705,9 @@
         "helperText": {
           "required": false,
           "tsType": {
-            "name": "string"
+            "name": "ReactNode"
           },
-          "description": ""
+          "description": "A helper text to be displayed below the time field"
         },
         "errorMessage": {
           "required": false,
@@ -1625,7 +1723,7 @@
               }
             ]
           },
-          "description": ""
+          "description": "The error message to be displayed when the time field is in an error state"
         }
       },
       "composes": [
@@ -1683,7 +1781,7 @@
           "tsType": {
             "name": "string"
           },
-          "description": ""
+          "description": "The styles to be applied to the tooltip root."
         }
       },
       "composes": [
@@ -1702,14 +1800,14 @@
           "tsType": {
             "name": "T"
           },
-          "description": ""
+          "description": "The HTML tag to be used for the typography."
         },
         "children": {
           "required": true,
           "tsType": {
             "name": "ReactNode"
           },
-          "description": ""
+          "description": "The children of the typography."
         }
       }
     }

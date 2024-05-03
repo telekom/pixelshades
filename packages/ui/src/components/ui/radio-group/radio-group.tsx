@@ -20,8 +20,11 @@ import { FormDescription, FormFieldError } from "../form"
 import { type FormComponentLabelProps, Label } from "../label"
 
 export interface RadioGroupProps extends AriaRadioGroupProps, FormComponentLabelProps {
+	/** The children of the radio group. */
 	children?: ReactNode
+	/** The helper text to display below the radio group. */
 	helperText?: ReactNode
+	/** The error message to display below the radio group. */
 	errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
@@ -66,6 +69,7 @@ const RadioGroup = ({
 RadioGroup.displayName = "RadioGroup"
 
 export interface RadioProps extends AriaRadioProps {
+	/** Whether the radio should be shown. */
 	showRadio?: boolean
 }
 

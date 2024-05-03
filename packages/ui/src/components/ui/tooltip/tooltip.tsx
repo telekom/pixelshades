@@ -19,6 +19,7 @@ const TooltipRoot = (props: TooltipTriggerComponentProps) => <AriaTooltipTrigger
 TooltipRoot.displayName = "TooltipRoot"
 
 export interface TooltipContentProps extends AriaTooltipProps {
+	/** The styles to be applied to the tooltip content. */
 	className?: string
 }
 
@@ -31,6 +32,7 @@ const TooltipContent = ({ children, className, ...props }: TooltipContentProps) 
 TooltipContent.displayName = "TooltipContent"
 
 export interface TooltipProps extends AriaTooltipProps {
+	/** The styles to be applied to the tooltip root. */
 	className?: string
 }
 
