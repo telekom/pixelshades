@@ -7,7 +7,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "bunchee",
+    "build": " NODE_OPTIONS=--max-old-space-size=8192 bunchee",
     "dev": "bunchee --watch --no-clean"
   },
   "dependencies": {
@@ -20,15 +20,13 @@
   },
   "devDependencies": {
     "@pixelshades/typescript-config": "workspace:*",
-    "@types/node": "^20.12.7",
+    "@types/node": "^20.12.8",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
-    "bunchee": "^5.1.2",
+    "bunchee": "5.1.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.3",
-    "tailwindcss-animate": "^1.0.7",
-    "tailwindcss-react-aria-components": "1.1.1",
     "typescript": "^5.4.5"
   },
   "files": [
@@ -171,6 +169,12 @@
       "import": {
         "types": "./dist/es/components/modal/index.d.mts",
         "default": "./dist/es/components/modal/index.mjs"
+      }
+    },
+    "./components/popover": {
+      "import": {
+        "types": "./dist/es/components/popover/index.d.mts",
+        "default": "./dist/es/components/popover/index.mjs"
       }
     },
     "./components/progress-bar": {
