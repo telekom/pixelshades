@@ -13,6 +13,7 @@ import {
 	type HeadingProps as AriaHeadingProps,
 	Heading,
 } from "react-aria-components"
+import type { VariantProps } from "tailwind-variants"
 import { Button } from "../button"
 import { Modal, type ModalOverlayProps } from "../modal"
 
@@ -26,7 +27,7 @@ const DialogRoot = ({ children, className, ...props }: ModalOverlayProps) => (
 
 DialogRoot.displayName = "Dialog"
 
-export interface DialogContentProps extends AriaDialogProps {
+export interface DialogContentProps extends AriaDialogProps, VariantProps<typeof dialogVariants> {
 	/** Class name to apply to the Dialog. */
 	className?: string
 	/** Class name to apply to the close button. */
