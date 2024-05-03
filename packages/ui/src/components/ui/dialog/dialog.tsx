@@ -43,9 +43,10 @@ const DialogContent = ({
 	closeButtonClassName,
 	children,
 	className,
+	padding,
 	...props
 }: DialogContentProps) => (
-	<AriaDialogContent {...props} className={content({ className })}>
+	<AriaDialogContent className={content({ className, padding })} {...props}>
 		{({ ...innerProps }) => (
 			<>
 				{typeof children === "function" ? children(innerProps) : children}

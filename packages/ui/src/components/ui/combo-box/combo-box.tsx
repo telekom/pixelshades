@@ -51,10 +51,10 @@ const ComboBoxRoot = <T extends object>({
 		</div>
 		{helperText && <FormDescription>{helperText}</FormDescription>}
 		<FormFieldError>{errorMessage}</FormFieldError>
-		<Popover className={popover()}>
-			<Popover.Content padding="none">
-				<ListBox>{children}</ListBox>
-			</Popover.Content>
+		<Popover className={popover()} isNonModal>
+			<ListBox className="max-h-[inherit] overflow-auto outline-0 [clip-path:inset(0_0_0_0_round_.75rem)]">
+				{children}
+			</ListBox>
 		</Popover>
 	</AriaComboBox>
 )

@@ -12,7 +12,7 @@ import {
 	OverlayArrow,
 	composeRenderProps,
 } from "react-aria-components"
-import { DialogContent } from "../dialog"
+import { DialogContent, type DialogContentProps } from "../dialog"
 
 const PopoverTrigger = DialogTrigger
 
@@ -44,7 +44,11 @@ const PopoverRoot = ({ className, offset = 4, children, showArrow, ...props }: P
 	</AriaPopover>
 )
 
-const PopoverContent = DialogContent
+const PopoverContent = ({ children, ...props }: DialogContentProps) => (
+	<DialogContent {...props} hideCloseButton>
+		{children}
+	</DialogContent>
+)
 
 PopoverRoot.displayName = "Popover"
 
