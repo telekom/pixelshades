@@ -8,7 +8,6 @@ import { Heading, HeadingLevel } from "./heading"
 const meta: Meta<typeof Heading> = {
 	component: Heading,
 	title: "Components/UI/Heading",
-	tags: ["autodocs"],
 	decorators: (Story) => (
 		<div className={"dark relative h-full w-full font-sans"}>
 			<HeadingLevel>

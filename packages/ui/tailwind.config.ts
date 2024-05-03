@@ -8,7 +8,7 @@ import { pixelShadesPlugin } from "./src/tailwind"
 
 const config: Config = {
 	darkMode: ["class"],
-	content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
+	content: ["../../packages/ui/**/*.{js,ts,jsx,tsx,mdx,md}", "../../packages/styles/**/*.{js,ts,jsx,tsx,mdx,md}"],
 
 	plugins: [pixelShadesPlugin],
 }

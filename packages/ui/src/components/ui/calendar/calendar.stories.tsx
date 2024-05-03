@@ -9,7 +9,6 @@ import { Calendar } from "./calendar"
 const meta: Meta<typeof Calendar> = {
 	component: Calendar,
 	title: "Components/UI/Calendar",
-	tags: ["autodocs"],
 	decorators: (Story) => (
 		<div className={cn("dark relative h-full w-full font-sans")}>
 			<Story />

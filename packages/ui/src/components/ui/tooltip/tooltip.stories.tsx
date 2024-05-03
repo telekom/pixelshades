@@ -11,7 +11,6 @@ import { Tooltip } from "./tooltip"
 const meta: Meta<typeof Tooltip> = {
 	component: Tooltip,
 	title: "Components/UI/Tooltip",
-	tags: ["autodocs"],
 	decorators: (Story) => (
 		<div className={cn("dark relative h-full w-full font-sans")}>
 			<Story />

@@ -10,7 +10,6 @@ import { Button } from "./button"
 const meta: Meta<typeof Button> = {
 	component: Button,
 	title: "Components/UI/Button",
-	tags: ["autodocs"],
 	decorators: (Story) => (
 		<div className={cn("dark relative h-full w-full font-sans")}>
 			<Story />

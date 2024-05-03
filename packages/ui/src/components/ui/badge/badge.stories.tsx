@@ -8,7 +8,6 @@ import { Badge } from "./badge"
 const meta: Meta<typeof Badge> = {
 	component: Badge,
 	title: "Components/UI/Badge",
-	tags: ["autodocs"],
 	decorators: (Story) => (
 		<div className={"dark relative h-full w-full font-sans"}>
 			<Story />
