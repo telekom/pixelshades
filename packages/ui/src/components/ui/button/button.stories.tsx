@@ -4,18 +4,15 @@
 
 import { cn } from "@pixelshades/utils/styles"
 import type { Meta, StoryObj } from "@storybook/react"
-import { Inter } from "next/font/google"
 import { FileTrigger } from "../file-trigger"
 import { Button } from "./button"
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 const meta: Meta<typeof Button> = {
 	component: Button,
 	title: "Components/UI/Button",
 	tags: ["autodocs"],
 	decorators: (Story) => (
-		<div className={cn(inter.variable, "dark relative h-full w-full font-sans")}>
+		<div className={cn("dark relative h-full w-full font-sans")}>
 			<Story />
 		</div>
 	),

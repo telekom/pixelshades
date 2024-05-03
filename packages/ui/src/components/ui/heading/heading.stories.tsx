@@ -3,22 +3,14 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { Meta, StoryObj } from "@storybook/react"
-import { Inter } from "next/font/google"
 import { Heading, HeadingLevel } from "./heading"
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 const meta: Meta<typeof Heading> = {
 	component: Heading,
 	title: "Components/UI/Heading",
 	tags: ["autodocs"],
 	decorators: (Story) => (
-		<div
-			className={`${
-				inter.variable
-				// biome-ignore lint/nursery/useSortedClasses: <explanation>
-			} font-sans relative w-full h-full dark`}
-		>
+		<div className={"dark relative h-full w-full font-sans"}>
 			<HeadingLevel>
 				<Story />
 			</HeadingLevel>

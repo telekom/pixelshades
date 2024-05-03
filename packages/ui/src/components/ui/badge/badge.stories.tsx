@@ -3,22 +3,14 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { Meta, StoryObj } from "@storybook/react"
-import { Inter } from "next/font/google"
-import Badge from "./badge"
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+import { Badge } from "./badge"
 
 const meta: Meta<typeof Badge> = {
 	component: Badge,
 	title: "Components/UI/Badge",
 	tags: ["autodocs"],
 	decorators: (Story) => (
-		<div
-			className={`${
-				inter.variable
-				// biome-ignore lint/nursery/useSortedClasses: <explanation>
-			} font-sans relative w-full h-full dark`}
-		>
+		<div className={"dark relative h-full w-full font-sans"}>
 			<Story />
 		</div>
 	),
