@@ -4,9 +4,11 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
+import type React from "react"
+
 import { dialogVariants } from "@pixelshades/styles/components/dialog"
 import { XIcon } from "lucide-react"
-import type React from "react"
+
 import {
 	Dialog as AriaDialogContent,
 	type DialogProps as AriaDialogProps,
