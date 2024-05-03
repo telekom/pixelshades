@@ -17,15 +17,15 @@ import {
 import { ChevronDownIcon } from "lucide-react"
 
 import { datePickerVariants } from "@pixelshades/styles/components/date-picker"
-import { inputVariants } from "@pixelshades/styles/components/input"
 import type { ReactNode } from "react"
 import { If } from "../../utils"
+import { Button } from "../button"
 import { Calendar } from "../calendar"
 import { FormDescription, FormFieldError, FormFieldGroup } from "../form"
 import { type FormComponentLabelProps, Label } from "../label"
 import { Popover } from "../popover"
 
-const { inputButton, base, dateInput } = datePickerVariants()
+const { base, dateInput } = datePickerVariants()
 
 interface DatePickerProps<T extends DateValue> extends AriaDatePickerProps<T>, FormComponentLabelProps {
 	/** A helper text to display below the date picker. */
@@ -53,15 +53,15 @@ const DatePicker = <T extends DateValue>({
 			<DateInput className={dateInput()}>
 				{(segment) => <DateSegment className={base()} segment={segment} />}
 			</DateInput>
-			<AriaButton className={inputButton()}>
-				<ChevronDownIcon />
-			</AriaButton>
+			<Button size="xs-icon" variant="ghost">
+				<ChevronDownIcon className="size-4" />
+			</Button>
 		</FormFieldGroup>
 		<If condition={helperText}>
 			<FormDescription>{helperText}</FormDescription>
 		</If>
 		<FormFieldError>{errorMessage}</FormFieldError>
-		<Popover className="w-fit border-none p-0">
+		<Popover className="w-fit border-none">
 			<AriaDialog>
 				<Calendar />
 			</AriaDialog>
