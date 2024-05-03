@@ -1,5 +1,29 @@
 # @pixelshades/ui
 
+## 0.2.1
+
+### Patch Changes
+
+- f245ca8: fix: add optional onClick for compabiltiy with other libraries
+
+## 0.2.0
+
+### Minor Changes
+
+- 2e6a01f: feat: add new design token "info"
+- e588c3e: feat: enhance Button styling and capabilties
+- cfe51d2: feat: add date-range-picker component
+- 416398d: feat: enhance all input based components
+
+### Patch Changes
+
+- 8e5e8da: feat: add slider component
+- Updated dependencies [e588c3e]
+- Updated dependencies [8e5e8da]
+- Updated dependencies [cfe51d2]
+- Updated dependencies [416398d]
+  - @pixelshades/styles@0.2.0
+
 ## 0.1.1
 
 ### Patch Changes

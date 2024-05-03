@@ -769,6 +769,34 @@ export function Example() {
 }
 `,
   },
+<<<<<<< HEAD
+=======
+  "date-range-picker/granularity": {
+	  component: lazy(() => import("~/examples/date-range-picker/granularity.tsx")),
+	  code: `import { DateRangePicker } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<div className="flex flex-col gap-lg">
+			<DateRangePicker label="Day" granularity="day" />
+			<DateRangePicker label="Hour" granularity="hour" />
+			<DateRangePicker label="Minute" granularity="minute" />
+			<DateRangePicker label="Second" granularity="second" />
+		</div>
+	)
+}
+`,
+  },
+  "date-range-picker/preview": {
+	  component: lazy(() => import("~/examples/date-range-picker/preview.tsx")),
+	  code: `import { DateRangePicker } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <DateRangePicker label="Start Date" />
+}
+`,
+  },
+>>>>>>> ed5d516903ac00b1db57d33ed1477f3d5db9e32e
   "dialog/preview": {
 	  component: lazy(() => import("~/examples/dialog/preview.tsx")),
 	  code: `import { Button, Dialog, Input, Label } from "@pixelshades/ui/components"
@@ -893,9 +921,15 @@ export function Example() {
 }
 `,
   },
+<<<<<<< HEAD
   "heading/flat-heading-levels": {
 	  component: lazy(() => import("~/examples/heading/flat-heading-levels.tsx")),
 	  code: `import { Heading, HeadingLevel, Typography } from "@pixelshades/ui/components"
+=======
+  "heading/preview": {
+	  component: lazy(() => import("~/examples/heading/preview.tsx")),
+	  code: `import { Heading, HeadingLevel } from "@pixelshades/ui/components"
+>>>>>>> ed5d516903ac00b1db57d33ed1477f3d5db9e32e
 
 export function Example() {
 	return (
@@ -1051,8 +1085,13 @@ export function Example() {
 }
 `,
   },
+<<<<<<< HEAD
   "loading-spinner/button": {
 	  component: lazy(() => import("~/examples/loading-spinner/button.tsx")),
+=======
+  "loadingSpinner/button": {
+	  component: lazy(() => import("~/examples/loadingSpinner/button.tsx")),
+>>>>>>> ed5d516903ac00b1db57d33ed1477f3d5db9e32e
 	  code: `import { LoadingSpinner } from "@pixelshades/ui/components"
 import { Button } from "@pixelshades/ui/components"
 
@@ -1061,8 +1100,13 @@ export function Example() {
 }
 `,
   },
+<<<<<<< HEAD
   "loading-spinner/icons": {
 	  component: lazy(() => import("~/examples/loading-spinner/icons.tsx")),
+=======
+  "loadingSpinner/icons": {
+	  component: lazy(() => import("~/examples/loadingSpinner/icons.tsx")),
+>>>>>>> ed5d516903ac00b1db57d33ed1477f3d5db9e32e
 	  code: `import { LoadingSpinner } from "@pixelshades/ui/components"
 import { Loader } from "@pixelshades/ui/icons"
 
@@ -1076,8 +1120,13 @@ export function Example() {
 }
 `,
   },
+<<<<<<< HEAD
   "loading-spinner/preview": {
 	  component: lazy(() => import("~/examples/loading-spinner/preview.tsx")),
+=======
+  "loadingSpinner/preview": {
+	  component: lazy(() => import("~/examples/loadingSpinner/preview.tsx")),
+>>>>>>> ed5d516903ac00b1db57d33ed1477f3d5db9e32e
 	  code: `import { LoadingSpinner } from "@pixelshades/ui/components"
 
 export function Example() {
@@ -1085,8 +1134,13 @@ export function Example() {
 }
 `,
   },
+<<<<<<< HEAD
   "loading-spinner/sizes": {
 	  component: lazy(() => import("~/examples/loading-spinner/sizes.tsx")),
+=======
+  "loadingSpinner/sizes": {
+	  component: lazy(() => import("~/examples/loadingSpinner/sizes.tsx")),
+>>>>>>> ed5d516903ac00b1db57d33ed1477f3d5db9e32e
 	  code: `import { LoadingSpinner } from "@pixelshades/ui/components"
 
 export function Example() {
@@ -1102,8 +1156,13 @@ export function Example() {
 }
 `,
   },
+<<<<<<< HEAD
   "loading-spinner/variants": {
 	  component: lazy(() => import("~/examples/loading-spinner/variants.tsx")),
+=======
+  "loadingSpinner/variants": {
+	  component: lazy(() => import("~/examples/loadingSpinner/variants.tsx")),
+>>>>>>> ed5d516903ac00b1db57d33ed1477f3d5db9e32e
 	  code: `import { LoadingSpinner } from "@pixelshades/ui/components"
 
 export function Example() {
@@ -1538,6 +1597,99 @@ export function Example() {
 }
 `,
   },
+<<<<<<< HEAD
+=======
+  "slider/controlled": {
+	  component: lazy(() => import("~/examples/slider/controlled.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+import { useState } from "react"
+
+export function Example() {
+	const [value, setValue] = useState(25)
+
+	return (
+		<Slider
+			label="Slide to change the value"
+			description={<small>This is a description!</small>}
+			defaultValue={30}
+			onChangeEnd={(value) => setValue(value as number)}
+		/>
+	)
+}
+`,
+  },
+  "slider/disabled": {
+	  component: lazy(() => import("~/examples/slider/disabled.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<Slider
+			label="Slide to change the value"
+			description={<small>This is a description!</small>}
+			helperText="helper text"
+			isDisabled
+			defaultValue={30}
+		/>
+	)
+}
+`,
+  },
+  "slider/labeling": {
+	  component: lazy(() => import("~/examples/slider/labeling.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Slider label="Sending…" formatOptions={{ style: "currency", currency: "JPY" }} defaultValue={60} />
+}
+`,
+  },
+  "slider/multithrumb": {
+	  component: lazy(() => import("~/examples/slider/multithrumb.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Slider label="Range" helperText="helper text" thumbLabels={["start", "end"]} defaultValue={[30, 60]} />
+}
+`,
+  },
+  "slider/orientation": {
+	  component: lazy(() => import("~/examples/slider/orientation.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<div className="h-80">
+			<Slider
+				label="Slide up and down"
+				orientation="vertical"
+				description={<small>This is a description!</small>}
+				defaultValue={30}
+			/>
+		</div>
+	)
+}
+`,
+  },
+  "slider/preview": {
+	  component: lazy(() => import("~/examples/slider/preview.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Slider label="Slide to change the value" description={<small>This is a description!</small>} helperText="helper text" defaultValue={30} />
+}
+`,
+  },
+  "slider/valueScale": {
+	  component: lazy(() => import("~/examples/slider/valueScale.tsx")),
+	  code: `import { Slider } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Slider label="Price range" minValue={50} maxValue={150} defaultValue={100} />
+}
+`,
+  },
+>>>>>>> ed5d516903ac00b1db57d33ed1477f3d5db9e32e
   "switch/preview": {
 	  component: lazy(() => import("~/examples/switch/preview.tsx")),
 	  code: `import { Switch } from "@pixelshades/ui/components"
