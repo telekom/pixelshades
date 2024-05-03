@@ -1,19 +1,19 @@
-import { Heading, HeadingLevel } from "@pixelshades/ui/components"
+import { Heading, HeadingLevel, Typography } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
 		<div>
-			<Heading>Ag</Heading>
+			<Heading>h1</Heading>
 			<HeadingLevel>
-				<Heading>Ag</Heading>
+				<Heading>h2</Heading>
 				<HeadingLevel>
-					<Heading>Ag</Heading>
+					<Heading>h3</Heading>
 					<HeadingLevel>
-						<Heading>Ag</Heading>
+						<Heading>h4</Heading>
 						<HeadingLevel>
-							<Heading>Ag</Heading>
+							<Heading>h5</Heading>
 							<HeadingLevel>
-								<Heading>Ag</Heading>
+								<Heading>h6</Heading>
 							</HeadingLevel>
 						</HeadingLevel>
 					</HeadingLevel>

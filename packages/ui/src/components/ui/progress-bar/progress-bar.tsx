@@ -15,8 +15,11 @@ import { If } from "../../utils"
 const { progressRoot, progressHeader, progressBar, progressFill, progressDescription } = progressBarVariants()
 
 interface ProgressBarProps extends AriaProgressBarProps, VariantProps<typeof progressBarVariants> {
+	/** The styles to apply to the progress bar. */
 	className?: string
+	/** A label to display above the progress bar. */
 	label?: string
+	/** Description text to display below the progress bar. */
 	description?: React.ReactElement<HTMLElement>
 }
 
