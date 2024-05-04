@@ -1,5 +1,12 @@
 # @pixelshades/styles
 
+## 0.3.1
+
+### Patch Changes
+
+- 87ae004: chore: remove padding from menu content
+- 56d4739: chore: remove popover width to be able be set in components
+
 ## 0.3.0
 
 ### Minor Changes

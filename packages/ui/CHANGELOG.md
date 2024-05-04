@@ -1,5 +1,14 @@
 # @pixelshades/ui
 
+## 0.3.2
+
+### Patch Changes
+
+- 56d4739: chore: remove popover width to be able be set in components
+- Updated dependencies [87ae004]
+- Updated dependencies [56d4739]
+  - @pixelshades/styles@0.3.1
+
 ## 0.3.1
 
 ### Patch Changes
