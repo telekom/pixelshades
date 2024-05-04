@@ -1,5 +1,11 @@
 # @pixelshades/ui
 
+## 0.3.1
+
+### Patch Changes
+
+- 6c61b28: fix: drawer not bundling as client component
+
 ## 0.3.0
 
 ### Minor Changes
