@@ -7,7 +7,6 @@
 import { menuVariants } from "@pixelshades/styles/components/menu"
 import type { HTMLAttributes } from "react"
 
-import { forwardRef } from "@pixelshades/utils/jsx"
 import { createStyleContext } from "@pixelshades/utils/styles"
 import { ChevronRight } from "lucide-react"
 import {
@@ -28,7 +27,7 @@ import { Separator } from "../separator"
 
 const { withContext, withProvider } = createStyleContext(menuVariants)
 
-const { content } = menuVariants()
+const { content, popover } = menuVariants()
 
 export type MenuProps = AriaMenuTriggerProps
 
@@ -37,7 +36,7 @@ export type MenuContentProps<T extends object> = {
 } & AriaMenuProps<T>
 
 const MenuContent = <T extends object>({ children, className, placement, ...props }: MenuContentProps<T>) => (
-	<Popover placement={placement}>
+	<Popover className={popover({ className })} placement={placement}>
 		<AriaMenu {...props} className={content({ className })}>
 			{children}
 		</AriaMenu>

@@ -7,7 +7,7 @@ import { tv } from "tailwind-variants"
 export const popoverVariants = tv({
 	slots: {
 		base: [
-			"w-72 rounded-md border bg-background text-foreground shadow-md outline-none forced-colors:bg-[Canvas] bg-clip-padding",
+			"rounded-md border bg-background text-foreground shadow-md outline-none forced-colors:bg-[Canvas] bg-clip-padding",
 			"placement-bottom:slide-in-from-top-1 placement-top:slide-in-from-bottom-1 placement-left:slide-in-from-right-1 placement-right:slide-in-from-left-1",
 		],
 
