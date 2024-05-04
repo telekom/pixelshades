@@ -44,7 +44,7 @@
     "unist-builder": "^4.0.0",
     "unist-util-visit": "^5.0.0",
     "velite": "^0.1.0-beta.14",
-    "vite": "^5.2.10",
+    "vite": "^5.2.11",
     "vite-tsconfig-paths": "^4.3.2"
   }
 }
