@@ -214,6 +214,9 @@ importers:
       '@turbo/gen':
         specifier: ^1.13.3
         version: 1.13.3(@swc/core@1.4.17(@swc/helpers@0.5.11))(@types/node@20.12.8)(typescript@5.4.5)
+      '@types/bun':
+        specifier: ^1.1.1
+        version: 1.1.1
       '@types/node':
         specifier: ^20.12.8
         version: 20.12.8
@@ -232,6 +235,9 @@ importers:
       react-docgen:
         specifier: ^7.0.3
         version: 7.0.3
+      react-docgen-typescript:
+        specifier: ^2.2.2
+        version: 2.2.2(typescript@5.4.5)
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
@@ -1897,6 +1903,9 @@ packages:
   '@types/babel__traverse@7.20.5':
     resolution: {integrity: sha512-WXCyOcRtH37HAUkpXhUduaxdm82b4GSlyTqajXviN4EfiuPgNYR109xMCKvpl6zPIpua0DGlMEDCq+g8EdoheQ==}
 
+  '@types/bun@1.1.1':
+    resolution: {integrity: sha512-lUe9rLMhgDCViciZtgDj5CMl2u7uTq/IP149kSZH/Si6FWkCioximABFf+baRQgbm8QlH4bzT0qJRteQFNqeGA==}
+
   '@types/conventional-commits-parser@5.0.0':
     resolution: {integrity: sha512-loB369iXNmAZglwWATL+WRe+CRMmmBPtpolYzIebFaX4YA3x+BEfLqhUAV9WanycKI3TG1IMr5bMJDajDKLlUQ==}
 
@@ -1939,6 +1948,9 @@ packages:
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
 
+  '@types/node@20.11.30':
+    resolution: {integrity: sha512-dHM6ZxwlmuZaRmUPfv1p+KrdD1Dci04FbdEm/9wEMouFqxYoFl5aMkt0VMAUtYRQDyYvD41WJLukhq/ha3YuTw==}
+
   '@types/node@20.12.8':
     resolution: {integrity: sha512-NU0rJLJnshZWdE/097cdCBbyW1h4hEg0xpovcoAQYHl8dnEyp/NAOiE45pvc+Bd1Dt+2r94v2eGFpQJ4R7g+2w==}
 
@@ -1974,6 +1986,9 @@ packages:
 
   '@types/unist@3.0.2':
     resolution: {integrity: sha512-dqId9J8K/vGi5Zr7oo212BGii5m3q5Hxlkwy3WpYuKPklmBEvsbMYYyLxAQpSffdLl/gdW0XUpKWFvYmyoWCoQ==}
+
+  '@types/ws@8.5.10':
+    resolution: {integrity: sha512-vmQSUcfalpIq0R9q7uTo2lXs6eGIpt9wtnLdMv9LVpIjCA/+ufZRozlVoVelIYixx1ugCBKDhn89vnsEGOCx9A==}
 
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
@@ -2161,6 +2176,9 @@ packages:
 
   builtins@5.1.0:
     resolution: {integrity: sha512-SW9lzGTLvWTP1AY8xeAMZimqDrIaSdLQUcVr9DMef51niJ022Ri87SwRRKYm4A6iHfkPaiVUu/Duw2Wc4J7kKg==}
+
+  bun-types@1.1.6:
+    resolution: {integrity: sha512-LK2aaJdBBTUkDyN+kRiJHLF3VGrAcdkEHrbBvbmTkccShPw6ZalxxKjWSBJwn4UkikhZdrdA87bZWmfUgkRUYg==}
 
   bunchee@5.1.5:
     resolution: {integrity: sha512-zrUIjZcyJjiXdUk1U1Sa1ItmopK3ZmzFUGQ5M4FGDPRI0ksDB4OCRyqp5ci2vFdLFy1y8MbrxIoOD6/j8TYfYQ==}
@@ -3846,6 +3864,11 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
+
+  react-docgen-typescript@2.2.2:
+    resolution: {integrity: sha512-tvg2ZtOpOi6QDwsb3GZhOjDkkX0h8Z2gipvTg6OVMUyoYoURhEiRNePT8NZItTVCDh39JJHnLdfCOkzoLbFnTg==}
+    peerDependencies:
+      typescript: '>= 4.3.x'
 
   react-docgen@7.0.3:
     resolution: {integrity: sha512-i8aF1nyKInZnANZ4uZrH49qn1paRgBZ7wZiCNBMnenlPzEv0mRl+ShpTVEI6wZNl8sSc79xZkivtgLKQArcanQ==}
@@ -6758,6 +6781,10 @@ snapshots:
     dependencies:
       '@babel/types': 7.24.0
 
+  '@types/bun@1.1.1':
+    dependencies:
+      bun-types: 1.1.6
+
   '@types/conventional-commits-parser@5.0.0':
     dependencies:
       '@types/node': 20.12.8
@@ -6803,6 +6830,10 @@ snapshots:
 
   '@types/node@12.20.55': {}
 
+  '@types/node@20.11.30':
+    dependencies:
+      undici-types: 5.26.5
+
   '@types/node@20.12.8':
     dependencies:
       undici-types: 5.26.5
@@ -6835,6 +6866,10 @@ snapshots:
   '@types/unist@2.0.10': {}
 
   '@types/unist@3.0.2': {}
+
+  '@types/ws@8.5.10':
+    dependencies:
+      '@types/node': 20.12.8
 
   '@ungap/structured-clone@1.2.0': {}
 
@@ -7027,6 +7062,11 @@ snapshots:
   builtins@5.1.0:
     dependencies:
       semver: 7.6.0
+
+  bun-types@1.1.6:
+    dependencies:
+      '@types/node': 20.11.30
+      '@types/ws': 8.5.10
 
   bunchee@5.1.5(typescript@5.4.5):
     dependencies:
@@ -9280,6 +9320,10 @@ snapshots:
       '@react-types/shared': 3.23.0(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
+
+  react-docgen-typescript@2.2.2(typescript@5.4.5):
+    dependencies:
+      typescript: 5.4.5
 
   react-docgen@7.0.3:
     dependencies:
