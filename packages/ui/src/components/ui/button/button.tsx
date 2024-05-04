@@ -28,52 +28,43 @@ interface ButtonProps extends ButtonVariantProps, AriaButtonProps {
 	after?: React.ReactElement<HTMLElement>
 }
 
-const Button = ({
-	size,
-	variant,
-	className,
-	children,
-	isLoading,
-	isDisabled,
-	before,
-	after,
-	withRing,
-	...props
-}: ButtonProps) => {
-	const buttonGroupState = buttonGroupContext.useStyleContext()
+const Button = forwardRef(
+	({ size, variant, className, children, isLoading, isDisabled, before, after, withRing, ...props }: ButtonProps) => {
+		const buttonGroupState = buttonGroupContext.useStyleContext()
 
-	/* If Button is in Button Group apply Button Group Styles, this can still be overwritten on button layer **/
-	const buttonStyles = (values: ButtonRenderProps) =>
-		buttonGroupState
-			? buttonGroupState.base({
-					variant,
-					withRing,
-					...values,
-					size,
-					className,
-				})
-			: buttonVariants({
-					variant,
-					withRing,
-					...values,
-					size,
-					className,
-				})
+		/* If Button is in Button Group apply Button Group Styles, this can still be overwritten on button layer **/
+		const buttonStyles = (values: ButtonRenderProps) =>
+			buttonGroupState
+				? buttonGroupState.base({
+						variant,
+						withRing,
+						...values,
+						size,
+						className,
+					})
+				: buttonVariants({
+						variant,
+						withRing,
+						...values,
+						size,
+						className,
+					})
 
-	return (
-		<AriaButton className={buttonStyles} isDisabled={isDisabled || isLoading} {...props}>
-			<>
-				{isLoading && <LoadingSpinner className="size-4 text-inherit" />}
-				<If condition={before && !isLoading}>
-					<RenderSlot item={before!} className={"size-4 text-inherit"} />
-				</If>
-				{children}
-				<If condition={after}>
-					<RenderSlot item={after!} className={"size-4 text-inherit"} />
-				</If>
-			</>
-		</AriaButton>
-	)
-}
+		return (
+			<AriaButton className={buttonStyles} isDisabled={isDisabled || isLoading} {...props}>
+				<>
+					{isLoading && <LoadingSpinner className="size-4 text-inherit" />}
+					<If condition={before && !isLoading}>
+						<RenderSlot item={before!} className={"size-4 text-inherit"} />
+					</If>
+					{children}
+					<If condition={after}>
+						<RenderSlot item={after!} className={"size-4 text-inherit"} />
+					</If>
+				</>
+			</AriaButton>
+		)
+	},
+)
 
 export { type ButtonProps, Button }
