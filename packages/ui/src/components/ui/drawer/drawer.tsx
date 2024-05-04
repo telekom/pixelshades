@@ -1,3 +1,5 @@
+"use client"
+
 import { drawerVariants } from "@pixelshades/styles/components/drawer"
 import type { VariantProps } from "tailwind-variants"
 import { DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../dialog"
