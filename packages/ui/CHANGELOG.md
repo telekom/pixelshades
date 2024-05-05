@@ -1,5 +1,16 @@
 # @pixelshades/ui
 
+## 0.3.3
+
+### Patch Changes
+
+- 96d5a16: unify popover styles across components
+- ee6d32d: fix: select not rendering an empty label anymore
+- 079e2d6: feat: add DialogCloseButton component
+- Updated dependencies [96d5a16]
+- Updated dependencies [079e2d6]
+  - @pixelshades/styles@0.3.2
+
 ## 0.3.2
 
 ### Patch Changes
