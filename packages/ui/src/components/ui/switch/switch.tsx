@@ -26,6 +26,8 @@ interface SwitchProps extends SwitchVariantProps, AriaSwitchProps, FormComponent
 	errorMessage?: string
 }
 
+const { root, indicator } = switchVariants()
+
 const Switch = ({
 	className,
 	children,
@@ -41,14 +43,10 @@ const Switch = ({
 	const elId = id ?? generatedId
 
 	return (
-		<AriaSwitch className={switchVariants().root({ className })} id={elId} {...restProps}>
+		<AriaSwitch className={root({ className })} id={elId} {...restProps}>
 			{({ isSelected, isDisabled }) => (
 				<>
-					<div
-						className={switchVariants({
-							selected: isSelected,
-						}).indicator()}
-					/>
+					<div className={indicator({ selected: isSelected })} />
 					<span className="inline-flex flex-col">
 						<If condition={label || description || tooltip}>
 							<Label
@@ -60,7 +58,7 @@ const Switch = ({
 								{label}
 							</Label>
 						</If>
-						<FormDescription aria-disabled={isDisabled}>{helperText}</FormDescription>
+						{helperText && <FormDescription aria-disabled={isDisabled}>{helperText}</FormDescription>}
 						<FormFieldError>{errorMessage}</FormFieldError>
 					</span>
 				</>

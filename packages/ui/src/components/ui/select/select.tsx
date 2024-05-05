@@ -17,6 +17,7 @@ import { selectVariants } from "@pixelshades/styles/components/select"
 import { ChevronDown } from "lucide-react"
 import type React from "react"
 import type { ReactNode } from "react"
+import { If } from "../../utils"
 import { FormDescription, FormFieldError } from "../form"
 import { type FormComponentLabelProps, Label } from "../label"
 import { Popover } from "../popover"
@@ -26,7 +27,7 @@ const { button, item, popover, root, icon, value } = selectVariants()
 interface SelectProps<T extends object> extends Omit<AriaSelectProps<T>, "children">, FormComponentLabelProps {
 	/** The styles to be applied to the select field. */
 	className?: string
-    /** Array of select options. */
+	/** Array of select options. */
 	items?: Iterable<T>
 	/** A helper text to be displayed below the select field. */
 	helperText?: ReactNode
@@ -49,9 +50,12 @@ const SelectRoot = <T extends object>({
 	...props
 }: SelectProps<T>) => (
 	<AriaSelect className={root({ className })} isRequired={isRequired} {...props}>
-		<Label tooltip={tooltip} description={description} isRequired={isRequired}>
-			{label}
-		</Label>
+		<If condition={label || description || tooltip || errorMessage}>
+			<Label tooltip={tooltip} description={description} isRequired={isRequired}>
+				{label}
+			</Label>
+		</If>
+
 		<AriaButton className={button()}>
 			<SelectValue className={value()} />
 			<ChevronDown className={icon()} />
