@@ -29,9 +29,7 @@ export default function Example() {
 								</div>
 							</div>
 							<Dialog.Footer>
-								<Button type="submit" onPress={close}>
-									Save changes
-								</Button>
+								<Dialog.CloseButton type="submit">Save changes</Dialog.CloseButton>
 							</Dialog.Footer>
 						</>
 					)}
