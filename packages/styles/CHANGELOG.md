@@ -1,5 +1,12 @@
 # @pixelshades/styles
 
+## 0.3.2
+
+### Patch Changes
+
+- 96d5a16: unify popover styles across components
+- 079e2d6: feat: add DialogCloseButton component
+
 ## 0.3.1
 
 ### Patch Changes
