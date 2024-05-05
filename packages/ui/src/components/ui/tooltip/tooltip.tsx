@@ -23,8 +23,8 @@ export interface TooltipContentProps extends AriaTooltipProps {
 	className?: string
 }
 
-const TooltipContent = ({ children, className, ...props }: TooltipContentProps) => (
-	<AriaTooltip className={tooltipVariants({ className })} {...props}>
+const TooltipContent = ({ children, className, offset = 10, ...props }: TooltipContentProps) => (
+	<AriaTooltip offset={offset} className={tooltipVariants({ className })} {...props}>
 		{children}
 	</AriaTooltip>
 )

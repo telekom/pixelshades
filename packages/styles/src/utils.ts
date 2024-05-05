@@ -16,3 +16,13 @@ export const baseInputSizes = tv({
 		},
 	},
 })
+
+export const popoverBase = tv({
+	base: [
+		"rounded-md border bg-background text-foreground shadow-md outline-none forced-colors:bg-[Canvas] bg-clip-padding",
+
+		// Animations
+		"data-[entering]:animate-in data-[entering]:fade-in data-[entering]:ease-out data-[entering]:duration-200 data-[entering]:placement-top:slide-in-from-bottom-0.5 data-[entering]:placement-bottom:slide-in-from-top-0.5 data-[entering]:placement-top:slide-in-from-bottom-0.5 data-[entering]:placement-left:slide-in-from-right-0.5",
+		"data-[exiting]:animate-out data-[exiting]:fade-out data-[exiting]:ease-out data-[exiting]:duration-150 data-[exiting]:placement-top:slide-out-from-bottom-0.5 data-[exiting]:placement-bottom:slide-out-from-top-0.5 data-[exiting]:placement-top:slide-out-from-bottom-0.5 data-[exiting]:placement-left:slide-out-from-right-0.5",
+	],
+})
