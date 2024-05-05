@@ -20,6 +20,7 @@ import type { ReactNode } from "react"
 import { If } from "../../utils"
 import { FormDescription, FormFieldError } from "../form"
 import { type FormComponentLabelProps, Label } from "../label"
+import { MenuLabel, MenuSection } from "../menu"
 import { Popover } from "../popover"
 
 const { button, item, popover, root, icon, value } = selectVariants()
@@ -76,8 +77,16 @@ const SelectItem = (props: ListBoxItemProps) => {
 	return <ListBoxItem {...props} className={item()} />
 }
 
+const SelectSection = MenuSection
+
+const SelectLabel = MenuLabel
+
 SelectItem.displayName = "SelectItem"
 
 export const Select = Object.assign(SelectRoot, {
 	Item: SelectItem,
+	Section: SelectSection,
+	Label: SelectLabel,
 })
+
+export { SelectSection, SelectItem, SelectLabel }

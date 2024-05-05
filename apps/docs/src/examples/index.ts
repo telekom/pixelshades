@@ -1674,6 +1674,11 @@ export function Example() {
 			<Select.Item>Qwik</Select.Item>
 			<Select.Item>Vue</Select.Item>
 			<Select.Item>Svelte</Select.Item>
+			<Select.Section>
+				<Select.Label>Others</Select.Label>
+				<Select.Item>Angular</Select.Item>
+				<Select.Item>JQuery</Select.Item>
+			</Select.Section>
 		</Select>
 	)
 }
