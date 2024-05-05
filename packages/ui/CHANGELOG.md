@@ -1,5 +1,11 @@
 # @pixelshades/ui
 
+## 0.3.4
+
+### Patch Changes
+
+- f5d039e: feat: add SelectLabel and SelectSection to Select
+
 ## 0.3.3
 
 ### Patch Changes
