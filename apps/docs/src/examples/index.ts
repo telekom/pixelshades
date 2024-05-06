@@ -987,7 +987,7 @@ export function Example() {
 	DateField,
 	DatePicker,
 	Form,
-	Radio,
+	RadioGroup,
 	Switch,
 	TextField,
 	TimeField,
@@ -1031,17 +1031,17 @@ export function Example() {
 
 			<Switch label="Switch" description="Description" tooltip="Tooltip" helperText="Helper text" />
 
-			<Radio.Group
+			<RadioGroup
 				label="Radio Group"
 				description="Description"
 				tooltip="Tooltip"
 				helperText="Helper Text"
 				isRequired
 			>
-				<Radio value="push">Push</Radio>
-				<Radio value="email">Email</Radio>
-				<Radio value="text">Text</Radio>
-			</Radio.Group>
+				<RadioGroup.Item value="push">Push</RadioGroup.Item>
+				<RadioGroup.Item value="email">Email</RadioGroup.Item>
+				<RadioGroup.Item value="text">Text</RadioGroup.Item>
+			</RadioGroup>
 			<div className="flex w-full flex-row gap-md">
 				<Button className="w-full" type="submit">
 					Submit
@@ -1591,52 +1591,52 @@ export function Example() {
   },
   "radio-group/card": {
 	  component: lazy(() => import("~/examples/radio-group/card.tsx")),
-	  code: `import { Label, Radio } from "@pixelshades/ui/components"
+	  code: `import { RadioGroup } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
-		<Radio.Group defaultValue="dog" orientation="horizontal" label="Favorite pet" description="Description">
-			<Radio.Card value="dog">Dog</Radio.Card>
-			<Radio.Card value="cat">Cat</Radio.Card>
-			<Radio.Card value="dragon">Dragon</Radio.Card>
-		</Radio.Group>
+		<RadioGroup defaultValue="dog" orientation="horizontal" label="Favorite pet" description="Description">
+			<RadioGroup.Card value="dog">Dog</RadioGroup.Card>
+			<RadioGroup.Card value="cat">Cat</RadioGroup.Card>
+			<RadioGroup.Card value="dragon">Dragon</RadioGroup.Card>
+		</RadioGroup>
 	)
 }
 `,
   },
   "radio-group/horizontal": {
 	  component: lazy(() => import("~/examples/radio-group/horizontal.tsx")),
-	  code: `import { Label, Radio } from "@pixelshades/ui/components"
+	  code: `import { RadioGroup } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
-		<Radio.Group
+		<RadioGroup
 			defaultValue="dog"
 			orientation="horizontal"
 			label="Favorite pet"
 			description="Description"
 			helperText="WOW"
 		>
-			<Radio value="dog">Dog</Radio>
-			<Radio value="cat">Cat</Radio>
-			<Radio value="dragon">Dragon</Radio>
-		</Radio.Group>
+			<RadioGroup.Item value="dog">Dog</RadioGroup.Item>
+			<RadioGroup.Item value="cat">Cat</RadioGroup.Item>
+			<RadioGroup.Item value="dragon">Dragon</RadioGroup.Item>
+		</RadioGroup>
 	)
 }
 `,
   },
   "radio-group/preview": {
 	  component: lazy(() => import("~/examples/radio-group/preview.tsx")),
-	  code: `import { Label, Radio } from "@pixelshades/ui/components"
+	  code: `import { Label, RadioGroup } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
-		<Radio.Group defaultValue="dog">
+		<RadioGroup defaultValue="dog">
 			<Label>Favorite pet</Label>
-			<Radio value="dog">Dog</Radio>
-			<Radio value="cat">Cat</Radio>
-			<Radio value="dragon">Dragon</Radio>
-		</Radio.Group>
+			<RadioGroup.Item value="dog">Dog</RadioGroup.Item>
+			<RadioGroup.Item value="cat">Cat</RadioGroup.Item>
+			<RadioGroup.Item value="dragon">Dragon</RadioGroup.Item>
+		</RadioGroup>
 	)
 }
 `,
