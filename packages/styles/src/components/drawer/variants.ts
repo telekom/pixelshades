@@ -7,24 +7,17 @@ import { tv } from "tailwind-variants"
 const baseStyles = ["fixed", "border-primary", "overflow-y-scroll"]
 
 export const drawerVariants = tv({
-	slots: {
-		modalVertical: [...baseStyles, "w-fit", "top-0", "bottom-0", "h-full", "w-fit", "min-w-[320px]", "max-w-full"],
-		modalHorizontal: [...baseStyles, "h-fit", "right-0", "left-0", "w-full", "min-h-[320px]", "max-h-full"],
-	},
+	base: "fixed overflow-y-scroll",
 	variants: {
+		orientation: {
+			vertical: "h-full w-fit min-w-[320px] max-w-full",
+			horizontal: "h-fit !w-full min-h-[320px] max-h-full !max-w-full",
+		},
 		placement: {
-			right: {
-				modalVertical: ["right-0", "border-l-2"],
-			},
-			left: {
-				modalVertical: ["left-0", "border-r-2"],
-			},
-			bottom: {
-				modalHorizontal: ["bottom-0", "border-t-2"],
-			},
-			top: {
-				modalHorizontal: ["top-0", "border-b-2"],
-			},
+			right: "right-0 border-l-2 animate-in slide-in-from-right ease-in",
+			left: "left-0 border-r-2 animate-in slide-in-from-left ease-in",
+			bottom: "bottom-0 border-t-2 animate-in slide-in-from-bottom ease-in",
+			top: "top-0 border-b-2 animate-in slide-in-from-top ease-in",
 		},
 	},
 	defaultVariants: {

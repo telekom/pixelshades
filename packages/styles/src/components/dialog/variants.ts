@@ -6,12 +6,34 @@ import { tv } from "tailwind-variants"
 
 export const dialogVariants = tv({
 	slots: {
-		closeButton: "absolute top-1 right-1",
-		modal: "relative max-w-3/4 w-3/4 rounded-xl border md:w-96",
+		closeButton: "absolute top-2 right-2",
 		container: "fixed inset-0 z-40 flex items-center justify-center",
-		content: "flex flex-col gap-6 text-fg outline-none",
+		content: "flex flex-col gap-md text-foreground outline-none relative",
+		modal: "max-w-3/4 w-3/4 rounded-xl bg-background border outline-none md:w-96 entering:animate-zoom",
+		overlay:
+			"fixed left-0 top-0 z-50 flex h-[var(--visual-viewport-height)] w-screen items-center justify-center bg-black/80 entering:animate-fade exiting:animate-fadeOut",
+
 		header: "flex flex-col space-y-1.5 text-center sm:text-left",
 		title: "text-lg font-semibold leading-none tracking-tight",
 		footer: "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
+	},
+	variants: {
+		padding: {
+			none: {
+				content: "p-0",
+			},
+			sm: {
+				content: "p-layout-xs",
+			},
+			md: {
+				content: "p-layout-sm",
+			},
+			lg: {
+				content: "p-layout-md",
+			},
+		},
+	},
+	defaultVariants: {
+		padding: "md",
 	},
 })

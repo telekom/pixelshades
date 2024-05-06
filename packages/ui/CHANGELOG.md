@@ -1,5 +1,51 @@
 # @pixelshades/ui
 
+## 0.3.4
+
+### Patch Changes
+
+- f5d039e: feat: add SelectLabel and SelectSection to Select
+
+## 0.3.3
+
+### Patch Changes
+
+- 96d5a16: unify popover styles across components
+- ee6d32d: fix: select not rendering an empty label anymore
+- 079e2d6: feat: add DialogCloseButton component
+- Updated dependencies [96d5a16]
+- Updated dependencies [079e2d6]
+  - @pixelshades/styles@0.3.2
+
+## 0.3.2
+
+### Patch Changes
+
+- 56d4739: chore: remove popover width to be able be set in components
+- Updated dependencies [87ae004]
+- Updated dependencies [56d4739]
+  - @pixelshades/styles@0.3.1
+
+## 0.3.1
+
+### Patch Changes
+
+- 6c61b28: fix: drawer not bundling as client component
+
+## 0.3.0
+
+### Minor Changes
+
+- 1a3afa0: add drawer component
+
+### Patch Changes
+
+- de2134e: fix: menu button submenus not opening
+- Updated dependencies [de2134e]
+- Updated dependencies [1a3afa0]
+  - @pixelshades/styles@0.3.0
+  - @pixelshades/utils@0.1.1
+
 ## 0.2.1
 
 ### Patch Changes

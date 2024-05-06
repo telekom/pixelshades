@@ -4,29 +4,36 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-import { dialogVariants } from "@pixelshades/styles/components/dialog"
-import { SquareX } from "lucide-react"
 import type React from "react"
+
+import { dialogVariants } from "@pixelshades/styles/components/dialog"
+import { XIcon } from "lucide-react"
+
+import { forwardRef } from "@pixelshades/utils/jsx"
+import { useContext } from "react"
+import { chain } from "react-aria"
 import {
 	Dialog as AriaDialogContent,
 	type DialogProps as AriaDialogProps,
 	type HeadingProps as AriaHeadingProps,
 	Heading,
+	OverlayTriggerStateContext,
 } from "react-aria-components"
-import { Button } from "../button"
+import type { VariantProps } from "tailwind-variants"
+import { Button, type ButtonProps } from "../button"
 import { Modal, type ModalOverlayProps } from "../modal"
 
 const { closeButton, modal, content, header, title, footer } = dialogVariants()
 
 const DialogRoot = ({ children, className, ...props }: ModalOverlayProps) => (
-	<Modal className={modal(className)} isDismissable={true} {...props}>
+	<Modal className={modal({ className })} isDismissable={true} {...props}>
 		{children}
 	</Modal>
 )
 
 DialogRoot.displayName = "Dialog"
 
-export interface DialogContentProps extends AriaDialogProps {
+export interface DialogContentProps extends AriaDialogProps, VariantProps<typeof dialogVariants> {
 	/** Class name to apply to the Dialog. */
 	className?: string
 	/** Class name to apply to the close button. */
@@ -40,17 +47,19 @@ const DialogContent = ({
 	closeButtonClassName,
 	children,
 	className,
+	padding,
 	...props
 }: DialogContentProps) => (
-	<AriaDialogContent {...props} className={content({ className })}>
-		{({ ...innerProps }) => (
+	<AriaDialogContent className={content({ className, padding })} {...props}>
+		{(innerProps) => (
 			<>
 				{typeof children === "function" ? children(innerProps) : children}
 				{!hideCloseButton && (
 					<Button
-						className={closeButton(closeButtonClassName)}
-						before={<SquareX />}
-						variant={"ghost"}
+						className={closeButton({ className: closeButtonClassName })}
+						before={<XIcon />}
+						variant="ghost"
+						size="xs-icon"
 						onPress={innerProps.close}
 					/>
 				)}
@@ -85,6 +94,18 @@ const DialogTitle = ({ className, ...props }: DialogTitleProps) => (
 
 DialogTitle.displayName = "DialogTitle"
 
+export interface DialogCloseButtonProps extends ButtonProps {}
+
+const DialogCloseButton = forwardRef(({ className, onPress, ...props }: DialogCloseButtonProps) => {
+	const state = useContext(OverlayTriggerStateContext)
+
+	if (!state) {
+		throw new Error("DialogCloseButton must be used within a DialogTrigger")
+	}
+
+	return <Button className={className} onPress={chain(state.close, onPress)} {...props} />
+})
+
 const DialogTrigger = Modal.Trigger
 
 export const Dialog = Object.assign(DialogRoot, {
@@ -93,5 +114,7 @@ export const Dialog = Object.assign(DialogRoot, {
 	Title: DialogTitle,
 	Trigger: DialogTrigger,
 	Footer: DialogFooter,
+	CloseButton: DialogCloseButton,
 })
-export { DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogFooter }
+
+export { DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogFooter, DialogCloseButton }

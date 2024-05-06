@@ -19,12 +19,13 @@ import { ChevronDownIcon } from "lucide-react"
 import { datePickerVariants } from "@pixelshades/styles/components/date-picker"
 import type { ReactNode } from "react"
 import { If } from "../../utils"
+import { Button } from "../button"
 import { FormDescription, FormFieldError, FormFieldGroup } from "../form"
 import { type FormComponentLabelProps, Label } from "../label"
 import { Popover } from "../popover"
 import { RangeCalendar } from "../range-calendar"
 
-const { inputButton, base, dateInput } = datePickerVariants()
+const { base, dateInput } = datePickerVariants()
 
 interface DateRangePickerProps<T extends DateValue> extends AriaDateRangePickerProps<T>, FormComponentLabelProps {
 	/** A helper text to display below the date picker. */
@@ -56,9 +57,9 @@ const DateRangePicker = <T extends DateValue>({
 			<DateInput className={dateInput()} slot="end">
 				{(segment) => <DateSegment className={base()} segment={segment} />}
 			</DateInput>
-			<AriaButton className={inputButton()}>
-				<ChevronDownIcon />
-			</AriaButton>
+			<Button size="xs-icon" variant="ghost">
+				<ChevronDownIcon aria-hidden className="size-4" />
+			</Button>
 		</FormFieldGroup>
 		<If condition={helperText}>
 			<FormDescription>{helperText}</FormDescription>

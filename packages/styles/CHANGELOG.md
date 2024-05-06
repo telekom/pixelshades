@@ -1,5 +1,29 @@
 # @pixelshades/styles
 
+## 0.3.2
+
+### Patch Changes
+
+- 96d5a16: unify popover styles across components
+- 079e2d6: feat: add DialogCloseButton component
+
+## 0.3.1
+
+### Patch Changes
+
+- 87ae004: chore: remove padding from menu content
+- 56d4739: chore: remove popover width to be able be set in components
+
+## 0.3.0
+
+### Minor Changes
+
+- 1a3afa0: add drawer component
+
+### Patch Changes
+
+- de2134e: fix: menu button submenus not opening
+
 ## 0.2.0
 
 ### Minor Changes

@@ -13,70 +13,67 @@ function getComponentName(path: string): string {
 	return path.substring(lastSlashIndex + 1, extensionIndex)
 }
 
-const getComponentPropsBySlug = (slug: string) => {
-	const matchKey = Object.keys(props).find((key) => getComponentName(key) === slug.toLowerCase())
-	console.log("all props", props)
-	if (!matchKey) {
+const getComponentDocBySlug = (slug: string) => {
+	const item = props.find((comp) => getComponentName(comp.filePath) === slug.toLowerCase())
+
+	if (!item) {
 		return null
 	}
 
-	return props[matchKey as "src/components/ui/breadcrumbs/breadcrumbs.tsx"]
+	return item
 }
 
 export const PropsTable = ({ slug }: PropsTableProps) => {
-	const props = getComponentPropsBySlug(slug)
-	console.log(props)
-	if (!props) {
+	const doc = getComponentDocBySlug(slug)
+
+	if (!doc) {
 		return "No Props Yet"
 	}
 
 	return (
 		<div className="flex h-full w-full flex-col gap-md">
-			{props.map((prop) => (
-				<div className="w-full space-y-layout-sm" key={prop.description}>
-					<Typography className="text-xl">
-						{prop.displayName.includes("Unstyled")
-							? prop.displayName.replace("Unstyled", "")
-							: prop.displayName}{" "}
-						Component Props
-						<If condition={prop.composes}>
+			<div className="w-full space-y-layout-sm" key={doc.description}>
+				<Typography className="text-xl">
+					{doc.displayName.includes("Unstyled") ? doc.displayName.replace("Unstyled", "") : doc.displayName}{" "}
+					Component Props
+					{/* <If condition={doc.}>
+						{(data) => {
+							return (
+								<span>
+									{" "}
+									extends <span className="font-bold text-primary"> {data.toString()}</span>
+								</span>
+							)
+						}}
+					</If> */}
+				</Typography>
+				<Table className="w-full bg-subtle/10" aria-label={doc.displayName}>
+					<Table.Header>
+						<Table.Column isRowHeader>Name</Table.Column>
+						<Table.Column>Type</Table.Column>
+						<Table.Column>Description</Table.Column>
+					</Table.Header>
+					<Table.Body>
+						<If condition={doc.props}>
 							{(data) => {
-								return (
-									<span>
-										{" "}
-										extends <span className="font-bold text-primary"> {data.toString()}</span>
-									</span>
-								)
+								return Object.entries(data).map(([key, value]) => (
+									<Table.Row key={key}>
+										<Table.Cell>
+											{value.name}
+											<If condition={value.required}>
+												<span className="text-destructive">*</span>
+											</If>
+										</Table.Cell>
+										<Table.Cell>{value.type.name}</Table.Cell>
+										<Table.Cell>{value.description}</Table.Cell>
+										{/* <Table.Cell>{value.parent}</Table.Cell> */}
+									</Table.Row>
+								))
 							}}
 						</If>
-					</Typography>
-					<Table className="w-full bg-subtle/10" aria-label={prop.displayName}>
-						<Table.Header>
-							<Table.Column isRowHeader>Name</Table.Column>
-							<Table.Column>Type</Table.Column>
-							<Table.Column>Description</Table.Column>
-						</Table.Header>
-						<Table.Body>
-							<If condition={prop.props}>
-								{(data) => {
-									return Object.entries(data).map(([key, value]) => (
-										<Table.Row key={key}>
-											<Table.Cell>
-												{key}
-												<If condition={value.required}>
-													<span className="text-destructive">*</span>
-												</If>
-											</Table.Cell>
-											<Table.Cell>{value.tsType?.name}</Table.Cell>
-											<Table.Cell>{value.description}</Table.Cell>
-										</Table.Row>
-									))
-								}}
-							</If>
-						</Table.Body>
-					</Table>
-				</div>
-			))}
+					</Table.Body>
+				</Table>
+			</div>
 		</div>
 	)
 }

@@ -2,19 +2,17 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-import tailwindAnimate from "tailwindcss-animate"
-import ariaPlugin from "tailwindcss-react-aria-components"
 import { fontFamily } from "tailwindcss/defaultTheme.js"
 import plugin from "tailwindcss/plugin.js"
 
 export const pixelShadesPlugin = plugin(
-	({ addUtilities, addBase }) => {
+	() => {
 		// Call the ariaPlugin and add its utilities
 		// You can add your own utilities or call other plugins here
 	},
 	{
 		darkMode: "class",
-		plugins: [ariaPlugin, tailwindAnimate],
+		plugins: [require("tailwindcss-react-aria-components"), require("tailwindcss-animate")],
 		theme: {
 			container: {
 				center: true,

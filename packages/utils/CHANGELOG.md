@@ -1,5 +1,11 @@
 # @pixelshades/utils
 
+## 0.1.1
+
+### Patch Changes
+
+- de2134e: fix: menu button submenus not opening
+
 ## 0.1.0
 
 ### Minor Changes

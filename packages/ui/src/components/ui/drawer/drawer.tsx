@@ -1,26 +1,31 @@
-import { drawerVariants } from "@pixelshades/styles/components/drawer"
-import type { DialogContentProps, DialogFooterProps, DialogHeaderProps, DialogTitleProps } from "../dialog"
-import { DialogContent, DialogFooter, DialogHeader, DialogTitle } from "../dialog"
-import { Modal, type ModalOverlayProps } from "../modal"
+"use client"
 
-const { modalVertical, modalHorizontal } = drawerVariants()
+import { drawerVariants } from "@pixelshades/styles/components/drawer"
+import type { VariantProps } from "tailwind-variants"
+import { DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../dialog"
+import { Modal, type ModalOverlayProps } from "../modal"
 
 export const PLACEMENTS = ["bottom", "left", "right", "top"] as const
 export type DrawerPlacement = (typeof PLACEMENTS)[number]
 
-export interface DrawerProps extends ModalOverlayProps {
+export type Placement = VariantProps<typeof drawerVariants>["placement"]
+
+export interface DrawerProps extends ModalOverlayProps, VariantProps<typeof drawerVariants> {
 	/** The placement of the drawer. */
-	placement?: DrawerPlacement
+	placement?: Placement
 }
 
 const DrawerRoot = ({ placement, children, className, ...props }: DrawerProps) => {
-	const modalVariant = ({ placement, ...props }: DrawerProps) =>
-		placement === "bottom" || placement === "top"
-			? modalHorizontal({ placement, ...props })
-			: modalVertical({ placement, ...props })
-
 	return (
-		<Modal className={modalVariant({ placement, className })} isDismissable={true} {...props}>
+		<Modal
+			className={drawerVariants({
+				placement,
+				orientation: placement === "bottom" || placement === "top" ? "horizontal" : "vertical",
+				className,
+			})}
+			isDismissable
+			{...props}
+		>
 			{children}
 		</Modal>
 	)
@@ -28,25 +33,23 @@ const DrawerRoot = ({ placement, children, className, ...props }: DrawerProps) =
 
 DrawerRoot.displayName = "Drawer"
 
-const DrawerContent = ({ children, ...props }: DialogContentProps) => (
-	<DialogContent {...props}>{children}</DialogContent>
-)
+const DrawerContent = DialogContent
 
 DrawerContent.displayName = "DrawerContent"
 
-const DrawerHeader = ({ ...props }: DialogHeaderProps) => <DialogHeader {...props} />
+const DrawerHeader = DialogHeader
 
 DrawerHeader.displayName = "DrawerHeader"
 
-const DrawerFooter = ({ ...props }: DialogFooterProps) => <DialogFooter {...props} />
+const DrawerFooter = DialogFooter
 
 DrawerFooter.displayName = "DrawerFooter"
 
-const DrawerTitle = ({ ...props }: DialogTitleProps) => <DialogTitle slot="title" {...props} />
+const DrawerTitle = DialogTitle
 
 DrawerTitle.displayName = "DrawerTitle"
 
-const DrawerTrigger = Modal.Trigger
+const DrawerTrigger = DialogTrigger
 
 export const Drawer = Object.assign(DrawerRoot, {
 	Content: DrawerContent,

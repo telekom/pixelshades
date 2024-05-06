@@ -1,259 +1,265 @@
 {
-	"name": "@pixelshades/styles",
-	"version": "0.2.0",
-	"private": false,
-	"type": "module",
-	"publishConfig": {
-		"access": "public"
-	},
-	"scripts": {
-		"build": "bunchee",
-		"dev": "bunchee --watch --no-clean"
-	},
-	"dependencies": {
-		"tailwind-variants": "0.2.1",
-		"tailwind-merge": "2.3.0"
-	},
-	"peerDependencies": {
-		"react": ">18.0.0",
-		"react-dom": ">18.0.0"
-	},
-	"devDependencies": {
-		"@pixelshades/typescript-config": "workspace:*",
-		"@types/node": "^20.12.7",
-		"@types/react": "^18.3.1",
-		"@types/react-dom": "^18.3.0",
-		"bunchee": "^5.1.2",
-		"react": "^18.3.1",
-		"react-dom": "^18.3.1",
-		"tailwindcss": "^3.4.3",
-		"tailwindcss-animate": "^1.0.7",
-		"tailwindcss-react-aria-components": "1.1.1",
-		"typescript": "^5.4.5"
-	},
-	"files": ["dist"],
-	"exports": {
-		"./utils": {
-			"import": {
-				"types": "./dist/es/utils.d.mts",
-				"default": "./dist/es/utils.mjs"
-			}
-		},
-		"./components/badge": {
-			"import": {
-				"types": "./dist/es/components/badge/index.d.mts",
-				"default": "./dist/es/components/badge/index.mjs"
-			}
-		},
-		"./components/breadcrumbs": {
-			"import": {
-				"types": "./dist/es/components/breadcrumbs/index.d.mts",
-				"default": "./dist/es/components/breadcrumbs/index.mjs"
-			}
-		},
-		"./components/button": {
-			"import": {
-				"types": "./dist/es/components/button/index.d.mts",
-				"default": "./dist/es/components/button/index.mjs"
-			}
-		},
-		"./components/button-group": {
-			"import": {
-				"types": "./dist/es/components/button-group/index.d.mts",
-				"default": "./dist/es/components/button-group/index.mjs"
-			}
-		},
-		"./components/calendar": {
-			"import": {
-				"types": "./dist/es/components/calendar/index.d.mts",
-				"default": "./dist/es/components/calendar/index.mjs"
-			}
-		},
-		"./components/checkbox": {
-			"import": {
-				"types": "./dist/es/components/checkbox/index.d.mts",
-				"default": "./dist/es/components/checkbox/index.mjs"
-			}
-		},
-		"./components/checkbox-group": {
-			"import": {
-				"types": "./dist/es/components/checkbox-group/index.d.mts",
-				"default": "./dist/es/components/checkbox-group/index.mjs"
-			}
-		},
-		"./components/combo-box": {
-			"import": {
-				"types": "./dist/es/components/combo-box/index.d.mts",
-				"default": "./dist/es/components/combo-box/index.mjs"
-			}
-		},
-		"./components/command": {
-			"import": {
-				"types": "./dist/es/components/command/index.d.mts",
-				"default": "./dist/es/components/command/index.mjs"
-			}
-		},
-		"./components/data-list": {
-			"import": {
-				"types": "./dist/es/components/data-list/index.d.mts",
-				"default": "./dist/es/components/data-list/index.mjs"
-			}
-		},
-		"./components/date-field": {
-			"import": {
-				"types": "./dist/es/components/date-field/index.d.mts",
-				"default": "./dist/es/components/date-field/index.mjs"
-			}
-		},
-		"./components/range-calendar": {
-			"import": {
-				"types": "./dist/es/components/date-range-calendar/index.d.mts",
-				"default": "./dist/es/components/date-range-calendar/index.mjs"
-			}
-		},
-		"./components/date-picker": {
-			"import": {
-				"types": "./dist/es/components/date-picker/index.d.mts",
-				"default": "./dist/es/components/date-picker/index.mjs"
-			}
-		},
-		"./components/dialog": {
-			"import": {
-				"types": "./dist/es/components/dialog/index.d.mts",
-				"default": "./dist/es/components/dialog/index.mjs"
-			}
-		},
-		"./components/drawer": {
-			"import": {
-				"types": "./dist/es/components/drawer/index.d.mts",
-				"default": "./dist/es/components/drawer/index.mjs"
-			}
-		},
-		"./components/form": {
-			"import": {
-				"types": "./dist/es/components/form/index.d.mts",
-				"default": "./dist/es/components/form/index.mjs"
-			}
-		},
-		"./components/heading": {
-			"import": {
-				"types": "./dist/es/components/heading/index.d.mts",
-				"default": "./dist/es/components/heading/index.mjs"
-			}
-		},
-		"./components/input": {
-			"import": {
-				"types": "./dist/es/components/input/index.d.mts",
-				"default": "./dist/es/components/input/index.mjs"
-			}
-		},
-		"./components/label": {
-			"import": {
-				"types": "./dist/es/components/label/index.d.mts",
-				"default": "./dist/es/components/label/index.mjs"
-			}
-		},
-		"./components/link": {
-			"import": {
-				"types": "./dist/es/components/link/index.d.mts",
-				"default": "./dist/es/components/link/index.mjs"
-			}
-		},
-		"./components/loading-spinner": {
-			"import": {
-				"types": "./dist/es/components/loading-spinner/index.d.mts",
-				"default": "./dist/es/components/loading-spinner/index.mjs"
-			}
-		},
-		"./components/menu": {
-			"import": {
-				"types": "./dist/es/components/menu/index.d.mts",
-				"default": "./dist/es/components/menu/index.mjs"
-			}
-		},
-		"./components/modal": {
-			"import": {
-				"types": "./dist/es/components/modal/index.d.mts",
-				"default": "./dist/es/components/modal/index.mjs"
-			}
-		},
-		"./components/progress-bar": {
-			"import": {
-				"types": "./dist/es/components/progress-bar/index.d.mts",
-				"default": "./dist/es/components/progress-bar/index.mjs"
-			}
-		},
-		"./components/radio-group": {
-			"import": {
-				"types": "./dist/es/components/radio-group/index.d.mts",
-				"default": "./dist/es/components/radio-group/index.mjs"
-			}
-		},
-		"./components/select": {
-			"import": {
-				"types": "./dist/es/components/select/index.d.mts",
-				"default": "./dist/es/components/select/index.mjs"
-			}
-		},
-		"./components/separator": {
-			"import": {
-				"types": "./dist/es/components/separator/index.d.mts",
-				"default": "./dist/es/components/separator/index.mjs"
-			}
-		},
-		"./components/slider": {
-			"import": {
-				"types": "./dist/es/components/slider/index.d.mts",
-				"default": "./dist/es/components/slider/index.mjs"
-			}
-		},
-		"./components/switch": {
-			"import": {
-				"types": "./dist/es/components/switch/index.d.mts",
-				"default": "./dist/es/components/switch/index.mjs"
-			}
-		},
-		"./components/table": {
-			"import": {
-				"types": "./dist/es/components/table/index.d.mts",
-				"default": "./dist/es/components/table/index.mjs"
-			}
-		},
-		"./components/tabs": {
-			"import": {
-				"types": "./dist/es/components/tabs/index.d.mts",
-				"default": "./dist/es/components/tabs/index.mjs"
-			}
-		},
-		"./components/kbd": {
-			"import": {
-				"types": "./dist/es/components/kbd/index.d.mts",
-				"default": "./dist/es/components/kbd/index.mjs"
-			}
-		},
-		"./components/text-field": {
-			"import": {
-				"types": "./dist/es/components/text-field/index.d.mts",
-				"default": "./dist/es/components/text-field/index.mjs"
-			}
-		},
-		"./components/typography": {
-			"import": {
-				"types": "./dist/es/components/typography/index.d.mts",
-				"default": "./dist/es/components/typography/index.mjs"
-			}
-		},
-		"./components/tooltip": {
-			"import": {
-				"types": "./dist/es/components/tooltip/index.d.mts",
-				"default": "./dist/es/components/tooltip/index.mjs"
-			}
-		},
-		"./components/toggle-button": {
-			"import": {
-				"types": "./dist/es/components/toggle-button/index.d.mts",
-				"default": "./dist/es/components/toggle-button/index.mjs"
-			}
-		}
-	}
+  "name": "@pixelshades/styles",
+  "version": "0.3.2",
+  "private": false,
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": " NODE_OPTIONS=--max-old-space-size=8192 bunchee",
+    "dev": "bunchee --watch --no-clean"
+  },
+  "dependencies": {
+    "tailwind-variants": "0.2.1",
+    "tailwind-merge": "2.3.0"
+  },
+  "peerDependencies": {
+    "react": ">18.0.0",
+    "react-dom": ">18.0.0"
+  },
+  "devDependencies": {
+    "@pixelshades/typescript-config": "workspace:*",
+    "@types/node": "^20.12.8",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "bunchee": "5.1.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "3.4.3",
+    "typescript": "^5.4.5"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./utils": {
+      "import": {
+        "types": "./dist/es/utils.d.mts",
+        "default": "./dist/es/utils.mjs"
+      }
+    },
+    "./components/badge": {
+      "import": {
+        "types": "./dist/es/components/badge/index.d.mts",
+        "default": "./dist/es/components/badge/index.mjs"
+      }
+    },
+    "./components/breadcrumbs": {
+      "import": {
+        "types": "./dist/es/components/breadcrumbs/index.d.mts",
+        "default": "./dist/es/components/breadcrumbs/index.mjs"
+      }
+    },
+    "./components/button": {
+      "import": {
+        "types": "./dist/es/components/button/index.d.mts",
+        "default": "./dist/es/components/button/index.mjs"
+      }
+    },
+    "./components/button-group": {
+      "import": {
+        "types": "./dist/es/components/button-group/index.d.mts",
+        "default": "./dist/es/components/button-group/index.mjs"
+      }
+    },
+    "./components/calendar": {
+      "import": {
+        "types": "./dist/es/components/calendar/index.d.mts",
+        "default": "./dist/es/components/calendar/index.mjs"
+      }
+    },
+    "./components/checkbox": {
+      "import": {
+        "types": "./dist/es/components/checkbox/index.d.mts",
+        "default": "./dist/es/components/checkbox/index.mjs"
+      }
+    },
+    "./components/checkbox-group": {
+      "import": {
+        "types": "./dist/es/components/checkbox-group/index.d.mts",
+        "default": "./dist/es/components/checkbox-group/index.mjs"
+      }
+    },
+    "./components/combo-box": {
+      "import": {
+        "types": "./dist/es/components/combo-box/index.d.mts",
+        "default": "./dist/es/components/combo-box/index.mjs"
+      }
+    },
+    "./components/command": {
+      "import": {
+        "types": "./dist/es/components/command/index.d.mts",
+        "default": "./dist/es/components/command/index.mjs"
+      }
+    },
+    "./components/data-list": {
+      "import": {
+        "types": "./dist/es/components/data-list/index.d.mts",
+        "default": "./dist/es/components/data-list/index.mjs"
+      }
+    },
+    "./components/date-field": {
+      "import": {
+        "types": "./dist/es/components/date-field/index.d.mts",
+        "default": "./dist/es/components/date-field/index.mjs"
+      }
+    },
+    "./components/range-calendar": {
+      "import": {
+        "types": "./dist/es/components/date-range-calendar/index.d.mts",
+        "default": "./dist/es/components/date-range-calendar/index.mjs"
+      }
+    },
+    "./components/date-picker": {
+      "import": {
+        "types": "./dist/es/components/date-picker/index.d.mts",
+        "default": "./dist/es/components/date-picker/index.mjs"
+      }
+    },
+    "./components/dialog": {
+      "import": {
+        "types": "./dist/es/components/dialog/index.d.mts",
+        "default": "./dist/es/components/dialog/index.mjs"
+      }
+    },
+    "./components/drawer": {
+      "import": {
+        "types": "./dist/es/components/drawer/index.d.mts",
+        "default": "./dist/es/components/drawer/index.mjs"
+      }
+    },
+    "./components/form": {
+      "import": {
+        "types": "./dist/es/components/form/index.d.mts",
+        "default": "./dist/es/components/form/index.mjs"
+      }
+    },
+    "./components/heading": {
+      "import": {
+        "types": "./dist/es/components/heading/index.d.mts",
+        "default": "./dist/es/components/heading/index.mjs"
+      }
+    },
+    "./components/input": {
+      "import": {
+        "types": "./dist/es/components/input/index.d.mts",
+        "default": "./dist/es/components/input/index.mjs"
+      }
+    },
+    "./components/label": {
+      "import": {
+        "types": "./dist/es/components/label/index.d.mts",
+        "default": "./dist/es/components/label/index.mjs"
+      }
+    },
+    "./components/link": {
+      "import": {
+        "types": "./dist/es/components/link/index.d.mts",
+        "default": "./dist/es/components/link/index.mjs"
+      }
+    },
+    "./components/loading-spinner": {
+      "import": {
+        "types": "./dist/es/components/loading-spinner/index.d.mts",
+        "default": "./dist/es/components/loading-spinner/index.mjs"
+      }
+    },
+    "./components/menu": {
+      "import": {
+        "types": "./dist/es/components/menu/index.d.mts",
+        "default": "./dist/es/components/menu/index.mjs"
+      }
+    },
+    "./components/modal": {
+      "import": {
+        "types": "./dist/es/components/modal/index.d.mts",
+        "default": "./dist/es/components/modal/index.mjs"
+      }
+    },
+    "./components/popover": {
+      "import": {
+        "types": "./dist/es/components/popover/index.d.mts",
+        "default": "./dist/es/components/popover/index.mjs"
+      }
+    },
+    "./components/progress-bar": {
+      "import": {
+        "types": "./dist/es/components/progress-bar/index.d.mts",
+        "default": "./dist/es/components/progress-bar/index.mjs"
+      }
+    },
+    "./components/radio-group": {
+      "import": {
+        "types": "./dist/es/components/radio-group/index.d.mts",
+        "default": "./dist/es/components/radio-group/index.mjs"
+      }
+    },
+    "./components/select": {
+      "import": {
+        "types": "./dist/es/components/select/index.d.mts",
+        "default": "./dist/es/components/select/index.mjs"
+      }
+    },
+    "./components/separator": {
+      "import": {
+        "types": "./dist/es/components/separator/index.d.mts",
+        "default": "./dist/es/components/separator/index.mjs"
+      }
+    },
+    "./components/slider": {
+      "import": {
+        "types": "./dist/es/components/slider/index.d.mts",
+        "default": "./dist/es/components/slider/index.mjs"
+      }
+    },
+    "./components/switch": {
+      "import": {
+        "types": "./dist/es/components/switch/index.d.mts",
+        "default": "./dist/es/components/switch/index.mjs"
+      }
+    },
+    "./components/table": {
+      "import": {
+        "types": "./dist/es/components/table/index.d.mts",
+        "default": "./dist/es/components/table/index.mjs"
+      }
+    },
+    "./components/tabs": {
+      "import": {
+        "types": "./dist/es/components/tabs/index.d.mts",
+        "default": "./dist/es/components/tabs/index.mjs"
+      }
+    },
+    "./components/kbd": {
+      "import": {
+        "types": "./dist/es/components/kbd/index.d.mts",
+        "default": "./dist/es/components/kbd/index.mjs"
+      }
+    },
+    "./components/text-field": {
+      "import": {
+        "types": "./dist/es/components/text-field/index.d.mts",
+        "default": "./dist/es/components/text-field/index.mjs"
+      }
+    },
+    "./components/typography": {
+      "import": {
+        "types": "./dist/es/components/typography/index.d.mts",
+        "default": "./dist/es/components/typography/index.mjs"
+      }
+    },
+    "./components/tooltip": {
+      "import": {
+        "types": "./dist/es/components/tooltip/index.d.mts",
+        "default": "./dist/es/components/tooltip/index.mjs"
+      }
+    },
+    "./components/toggle-button": {
+      "import": {
+        "types": "./dist/es/components/toggle-button/index.d.mts",
+        "default": "./dist/es/components/toggle-button/index.mjs"
+      }
+    }
+  }
 }
