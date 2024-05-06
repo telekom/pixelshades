@@ -1,4 +1,4 @@
-import { Heading, Radio, Typography } from "@pixelshades/ui/components"
+import { Heading, RadioGroup, Typography } from "@pixelshades/ui/components"
 import { createFileRoute } from "@tanstack/react-router"
 import { ColorPreview } from "~/components/color-preview"
 import { generateRadixColors } from "~/lib/colors/utils"
@@ -93,9 +93,9 @@ function Index() {
 		<div className="container flex min-h-screen w-full flex-col items-center gap-layout-md py-layout-lg">
 			<Heading level={1}>Create a new theme</Heading>
 
-			<Radio.Group value={primaryColor} orientation="horizontal" onChange={(value) => setPrimaryColor(value)}>
+			<RadioGroup value={primaryColor} orientation="horizontal" onChange={(value) => setPrimaryColor(value)}>
 				{primaryColors.map((color, i) => (
-					<Radio showRadio={false} key={i} value={color}>
+					<RadioGroup.Item showRadio={false} key={i} value={color}>
 						{({ isSelected }) => {
 							return (
 								<ColorPreview
@@ -107,17 +107,17 @@ function Index() {
 								/>
 							)
 						}}
-					</Radio>
+					</RadioGroup.Item>
 				))}
-			</Radio.Group>
+			</RadioGroup>
 
-			<Radio.Group
+			<RadioGroup
 				orientation="horizontal"
 				value={neutralColor.name}
 				onChange={(value) => setNeutralColor(neutralColors.find((color) => color.name === value)!)}
 			>
 				{neutralColors.map((color, i) => (
-					<Radio showRadio={false} key={i} value={color.name}>
+					<RadioGroup.Item showRadio={false} key={i} value={color.name}>
 						{({ isSelected }) => {
 							return (
 								<ColorPreview
@@ -129,9 +129,9 @@ function Index() {
 								/>
 							)
 						}}
-					</Radio>
+					</RadioGroup.Item>
 				))}
-			</Radio.Group>
+			</RadioGroup>
 
 			<div className="grid grid-cols-2 items-start justify-center gap-4 md:grid-cols-8 md:gap-6">
 				<ColorPreview name="Background" style={{ backgroundColor: darkModeResult.background }} />

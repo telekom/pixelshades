@@ -1,11 +1,11 @@
-import { Label, Radio } from "@pixelshades/ui/components"
+import { RadioGroup } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
-		<Radio.Group defaultValue="dog" orientation="horizontal" label="Favorite pet" description="Description">
-			<Radio.Card value="dog">Dog</Radio.Card>
-			<Radio.Card value="cat">Cat</Radio.Card>
-			<Radio.Card value="dragon">Dragon</Radio.Card>
-		</Radio.Group>
+		<RadioGroup defaultValue="dog" orientation="horizontal" label="Favorite pet" description="Description">
+			<RadioGroup.Card value="dog">Dog</RadioGroup.Card>
+			<RadioGroup.Card value="cat">Cat</RadioGroup.Card>
+			<RadioGroup.Card value="dragon">Dragon</RadioGroup.Card>
+		</RadioGroup>
 	)
 }
