@@ -5,20 +5,36 @@ description: How to install DV UI
 slug: installation
 ---
 
+## Requirements
 
-### Add Package
+To be able to use Pixelshades you need to install Tailwind CSS. 
+To do so please follow the instructions on the [Tailwind CSS docs](https://tailwindcss.com/docs/installation).
+
+## Installation
+
+### 1. Create a Next.js App
 
 ```bash
-npm install @pixelshades/ui
+npx create-next-app my-app
+cd my-app
 ```
 
 
-### Extend Tailwind Config
+### 2. Install Pixelshades Components & Styles
+
+```bash
+npm install @pixelshades/ui @pixelshades/styles
+```
+
+### 3. Extend Tailwind Config
+
+After adding Pixelshades components and styles, extend your Tailwind CSS configuration by importing the pixelShadesPlugin and adding it to your `tailwind.config.js/.ts` file. 
 
 ```ts
+// tailwind.config.js
 import type { Config } from "tailwindcss"
 
-import { dvPlugin } from "@pixelshades/ui/tailwind"
+import { pixelShadesPlugin } from "@pixelshades/ui/tailwind"
 
 const config: Config = {
 	darkMode: ["class"],
@@ -32,8 +48,9 @@ const config: Config = {
 	theme: {
 		extend: {},
 	},
-	plugins: [dvPlugin],
+	plugins: [pixelShadesPlugin],
 }
 
 export default config
+
 ```
