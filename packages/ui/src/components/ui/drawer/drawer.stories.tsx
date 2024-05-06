@@ -12,7 +12,7 @@ const meta: Meta<typeof Drawer> = {
 	decorators: (Story) => (
 		<div className={"dark relative h-full w-full font-sans"}>
 			<Drawer.Trigger>
-				<Button variant="outline">open default drawer</Button>
+				<Button variant="outline">open drawer</Button>
 				<Story />
 			</Drawer.Trigger>
 		</div>
@@ -24,10 +24,8 @@ export default meta
 
 type Story = StoryObj<typeof Drawer>
 
-export const Right: Story = {
-	args: {
-		placement: "right",
-	},
+export const Default: Story = {
+	args: {},
 	render: (args) => {
 		return (
 			<Drawer {...args}>
@@ -44,23 +42,30 @@ export const Right: Story = {
 	},
 }
 
+export const Right: Story = {
+	args: {
+		placement: "right",
+	},
+	render: Default.render,
+}
+
 export const Left: Story = {
 	args: {
 		placement: "left",
 	},
-	render: Right.render,
+	render: Default.render,
 }
 
 export const Top: Story = {
 	args: {
 		placement: "top",
 	},
-	render: Right.render,
+	render: Default.render,
 }
 
 export const Bottom: Story = {
 	args: {
 		placement: "bottom",
 	},
-	render: Right.render,
+	render: Default.render,
 }
