@@ -6,7 +6,9 @@ import type { Meta, StoryObj } from "@storybook/react"
 import { Button } from "../button"
 import { Drawer } from "./drawer"
 
-const meta: Meta<typeof Drawer> = {
+type DrawerPropsAndCustomArgs = React.ComponentProps<typeof Drawer> & { hideCloseButton?: boolean }
+
+const meta: Meta<DrawerPropsAndCustomArgs> = {
 	component: Drawer,
 	title: "Components/UI/Drawer",
 	decorators: (Story) => (
@@ -22,14 +24,14 @@ const meta: Meta<typeof Drawer> = {
 
 export default meta
 
-type Story = StoryObj<typeof Drawer>
+type Story = StoryObj<DrawerPropsAndCustomArgs>
 
 export const Default: Story = {
 	args: {},
-	render: (args) => {
+	render: ({ hideCloseButton, ...args }) => {
 		return (
 			<Drawer {...args}>
-				<Drawer.Content>
+				<Drawer.Content hideCloseButton={hideCloseButton}>
 					<>
 						<Drawer.Header className={"flex-row items-center justify-between space-y-0"}>
 							<Drawer.Title>Drawer Title</Drawer.Title>
@@ -66,6 +68,13 @@ export const Top: Story = {
 export const Bottom: Story = {
 	args: {
 		placement: "bottom",
+	},
+	render: Default.render,
+}
+
+export const hideCloseButton: Story = {
+	args: {
+		hideCloseButton: true,
 	},
 	render: Default.render,
 }
