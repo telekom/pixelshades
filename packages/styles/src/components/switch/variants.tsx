@@ -3,20 +3,33 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { tv } from "tailwind-variants"
+import { focusRing } from "../../utils"
 
 export const switchVariants = tv({
 	slots: {
-		root: "flex items-center gap-md transition-none duration-200 [&>div]:ring-focus [&>div]:ring-offset-2 [&>div]:ring-offset-background [&>div]:data-[focus-visible]:ring-2",
-		indicator:
-			"h-6 w-10 cursor-pointer rounded-2xl bg-subtle duration-200 before:mx-[2px] before:mt-[2px] before:block before:h-5 before:w-5 before:rounded-2xl before:bg-subtle-foreground before:dark:bg-foreground before:transition-all ",
-		label: "text-foreground text-base",
+		root: "group flex gap-2 items-center text-foreground disabled:text-foreground-disabled forced-colors:disabled:text-[GrayText] text-sm transition",
+		track: focusRing({
+			className:
+				"flex h-5 w-8 px-px bg-red-500 items-center shrink-0 cursor-default rounded-full transition duration-200 ease-in-out shadow-inner border border-transparent",
+		}),
+		handle: "size-4 transform rounded-full bg-subtle outline outline-1 -outline-offset-1 outline-transparent shadow transition duration-200 ease-in-out",
 	},
 	variants: {
-		selected: {
-			true: { indicator: "bg-primary before:translate-x-4 before:bg-primary-foreground" },
+		isSelected: {
+			false: {
+				base: "bg-red-600 group-pressed:bg-foreground",
+				handle: "translate-x-0",
+			},
+			true: {
+				base: "bg-blue-600 forced-colors:!bg-[Highlight] group-pressed:bg-blue-700",
+				handle: "translate-x-[100%]",
+			},
 		},
-	},
-	defaultVariants: {
-		selected: false,
+		isDisabled: {
+			true: {
+				base: "bg-pink-600 forced-colors:group-selected:!bg-[GrayText] forced-colors:border-[GrayText]",
+				handle: "forced-colors:outline-[GrayText]",
+			},
+		},
 	},
 })
