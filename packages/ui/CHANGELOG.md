@@ -1,5 +1,11 @@
 # @pixelshades/ui
 
+## 0.3.6
+
+### Patch Changes
+
+- 35eaf22: modernize RadioGroup
+
 ## 0.3.5
 
 ### Patch Changes
