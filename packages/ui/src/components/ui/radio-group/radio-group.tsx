@@ -30,7 +30,7 @@ export interface RadioGroupProps extends AriaRadioGroupProps, FormComponentLabel
 	errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
-const { item, group, root } = radioGroupVariants()
+const { item, group, root, card } = radioGroupVariants()
 
 const RadioGroup = ({
 	className,
@@ -95,10 +95,26 @@ const RadioItem = ({ className, children, showRadio = true, ...props }: RadioPro
 	)
 }
 
+const RadioCard = ({ className, children, showRadio = true, ...props }: RadioProps) => {
+	return (
+		<AriaRadio
+			className={(values) =>
+				card(
+					{ className: typeof className === "function" ? className(values) : className },
+				)
+			}
+			{...props}
+		>
+			{children}
+		</AriaRadio>
+	)
+}
+
 RadioItem.displayName = "Radio"
 
 export const Radio = Object.assign(RadioItem, {
 	Group: RadioGroup,
+	Card: RadioCard,
 })
 
-export { RadioGroup }
+export { RadioGroup, RadioItem }

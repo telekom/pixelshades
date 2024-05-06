@@ -93,7 +93,7 @@ function Index() {
 		<div className="container flex min-h-screen w-full flex-col items-center gap-layout-md py-layout-lg">
 			<Heading level={1}>Create a new theme</Heading>
 
-			<Radio.Group value={primaryColor} onChange={(value) => setPrimaryColor(value)}>
+			<Radio.Group value={primaryColor} orientation="horizontal" onChange={(value) => setPrimaryColor(value)}>
 				{primaryColors.map((color, i) => (
 					<Radio showRadio={false} key={i} value={color}>
 						{({ isSelected }) => {
@@ -112,6 +112,7 @@ function Index() {
 			</Radio.Group>
 
 			<Radio.Group
+				orientation="horizontal"
 				value={neutralColor.name}
 				onChange={(value) => setNeutralColor(neutralColors.find((color) => color.name === value)!)}
 			>

@@ -1589,6 +1589,21 @@ export function Example() {
 }
 `,
   },
+  "radio-group/card": {
+	  component: lazy(() => import("~/examples/radio-group/card.tsx")),
+	  code: `import { Label, Radio } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<Radio.Group defaultValue="dog" orientation="horizontal" label="Favorite pet" description="Description">
+			<Radio.Card value="dog">Dog</Radio.Card>
+			<Radio.Card value="cat">Cat</Radio.Card>
+			<Radio.Card value="dragon">Dragon</Radio.Card>
+		</Radio.Group>
+	)
+}
+`,
+  },
   "radio-group/horizontal": {
 	  component: lazy(() => import("~/examples/radio-group/horizontal.tsx")),
 	  code: `import { Label, Radio } from "@pixelshades/ui/components"
