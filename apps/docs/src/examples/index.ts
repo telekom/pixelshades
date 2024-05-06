@@ -886,8 +886,10 @@ export function Example() {
   },
   "drawer/directions": {
 	  component: lazy(() => import("~/examples/drawer/directions.tsx")),
-	  code: `import { Button, Drawer, type DrawerPlacement, PLACEMENTS, Select } from "@pixelshades/ui/components"
+	  code: `import { Button, Drawer, type DrawerPlacement, Select } from "@pixelshades/ui/components"
 import React from "react"
+
+export const PLACEMENTS = ["bottom", "left", "right", "top"] satisfies DrawerPlacement[]
 
 export function Example() {
 	const options = PLACEMENTS.map((d) => ({ name: d }))
