@@ -1,5 +1,13 @@
 # @pixelshades/ui
 
+## 0.3.7
+
+### Patch Changes
+
+- 9cb144d: feat: add Avatar Component
+- Updated dependencies [9cb144d]
+  - @pixelshades/styles@0.3.4
+
 ## 0.3.6
 
 ### Patch Changes
