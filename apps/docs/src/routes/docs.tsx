@@ -3,7 +3,6 @@ import { Outlet, createFileRoute } from "@tanstack/react-router"
 import { DocsSidebarNav } from "~/components/sidebar-nav"
 import type { SidebarNavItem } from "~/config/docs"
 import { components, general_pages } from "#site/content"
-import { sortUserPlugins } from "vite"
 
 export const Route = createFileRoute("/docs")({
 	component: DocsLayout,
