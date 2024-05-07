@@ -17,7 +17,6 @@
     "@internationalized/date": "^3.5.3",
     "@pixelshades/styles": "workspace:*",
     "@pixelshades/utils": "workspace:*",
-    "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-slot": "1.0.2",
     "lucide-react": "0.378.0",
     "react-aria": "3.33.0",

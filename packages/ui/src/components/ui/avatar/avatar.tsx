@@ -9,7 +9,7 @@ export interface AvatarProps extends React.ComponentPropsWithoutRef<"span"> {
 
 const { root, image } = avatarVariants()
 
-export function Avatar({ src = null, initials, alt = "", className, ...props }: AvatarProps) {
+export const Avatar = ({ src = null, initials, alt = "", className, ...props }: AvatarProps) => {
 	return (
 		<span className={root({ className })} {...props}>
 			{initials && (
