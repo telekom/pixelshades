@@ -6,9 +6,8 @@ import { tv } from "tailwind-variants"
 
 export const avatarVariants = tv({
 	slots: {
-		root: "inline-grid align-middle aspect-square",
+		root: "inline-grid align-middle aspect-square ring-1 ring-border ring-inset forced-colors:outline",
 		image: "rounded-full",
-		ring: "ring-1 ring-black/5 ring-inset forced-colors:outline dark:ring-white/5",
 	},
 
 	variants: {
@@ -24,7 +23,6 @@ export const avatarVariants = tv({
 			rounded: {
 				root: "rounded-full",
 				image: "rounded-full",
-				ring: "rounded-full",
 			},
 		},
 	},

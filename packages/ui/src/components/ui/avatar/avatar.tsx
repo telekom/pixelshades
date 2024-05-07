@@ -7,7 +7,7 @@ export interface AvatarProps extends React.ComponentPropsWithoutRef<"span"> {
 	className?: string
 }
 
-const { root, ring, image } = avatarVariants()
+const { root, image } = avatarVariants()
 
 export function Avatar({ src = null, initials, alt = "", className, ...props }: AvatarProps) {
 	return (
@@ -33,8 +33,6 @@ export function Avatar({ src = null, initials, alt = "", className, ...props }: 
 				</svg>
 			)}
 			{src && <img className={image()} src={src} alt={alt} />}
-			{/* Add an inset border that sits on top of the image */}
-			<span className={ring()} aria-hidden="true" />
 		</span>
 	)
 }
