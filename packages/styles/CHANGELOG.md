@@ -1,5 +1,11 @@
 # @pixelshades/styles
 
+## 0.3.4
+
+### Patch Changes
+
+- 9cb144d: feat: add Avatar Component
+
 ## 0.3.3
 
 ### Patch Changes
