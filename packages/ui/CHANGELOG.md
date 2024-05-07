@@ -1,5 +1,11 @@
 # @pixelshades/ui
 
+## 0.3.8
+
+### Patch Changes
+
+- 1af9ef5: fix: avatar bundling
+
 ## 0.3.7
 
 ### Patch Changes
