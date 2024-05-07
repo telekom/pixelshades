@@ -12,13 +12,13 @@ export const avatarVariants = tv({
 
 	variants: {
 		size: {
-			xxs: { root: "h-4 min-w-4 text-xs" },
-			xs: { root: "h-6 min-w-6 text-sm" },
-			sm: { root: "h-8 min-w-8 text-md" },
-			md: { root: "h-10 min-w-10 text-lg" },
-			lg: { root: "h-12 min-w-12 text-xl" },
-			xl: { root: "h-16 min-w-16 text-2xl" },
-			"2xl": { root: "h-20 min-w-20 text-3xl" },
+			xxs: { root: "size-4 text-xs" },
+			xs: { root: "size-6 text-sm" },
+			sm: { root: "size-8 text-md" },
+			md: { root: "size-10 text-lg" },
+			lg: { root: "size-12 text-xl" },
+			xl: { root: "size-16 text-2xl" },
+			"2xl": { root: "size-20 text-3xl" },
 		},
 		variant: {
 			rounded: {

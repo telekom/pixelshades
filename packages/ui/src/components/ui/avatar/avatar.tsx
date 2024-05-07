@@ -1,8 +1,9 @@
 "use client"
 
 import { avatarVariants } from "@pixelshades/styles/components/avatar"
+import type { VariantProps } from "tailwind-variants"
 
-export interface AvatarProps extends React.ComponentPropsWithoutRef<"span"> {
+export interface AvatarProps extends React.ComponentPropsWithoutRef<"span">, VariantProps<typeof avatarVariants> {
 	src?: string | null
 	initials?: string
 	alt?: string
