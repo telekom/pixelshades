@@ -7,6 +7,7 @@ export interface NavItem {
 	external?: boolean
 	icon?: LucideIcon
 	label?: string
+	sortingIndex?: number
 }
 
 export interface NavItemWithChildren extends NavItem {

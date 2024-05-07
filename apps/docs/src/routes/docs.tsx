@@ -3,6 +3,7 @@ import { Outlet, createFileRoute } from "@tanstack/react-router"
 import { DocsSidebarNav } from "~/components/sidebar-nav"
 import type { SidebarNavItem } from "~/config/docs"
 import { components, general_pages } from "#site/content"
+import { sortUserPlugins } from "vite"
 
 export const Route = createFileRoute("/docs")({
 	component: DocsLayout,
@@ -17,11 +18,14 @@ const componentItems: SidebarNavItem[] = components.map((component) => ({
 	items: [],
 }))
 
-const gettingStartedItems: SidebarNavItem[] = general_pages.map((page) => ({
-	title: page.title,
-	href: page.permalink,
-	items: [],
-}))
+const gettingStartedItems: SidebarNavItem[] = general_pages
+	.map((page) => ({
+		title: page.title,
+		href: page.permalink,
+		sortingIndex: page.sortingIndex,
+		items: [],
+	}))
+	.sort((a, b) => (a.sortingIndex && b.sortingIndex && a.sortingIndex > b.sortingIndex ? 1 : -1))
 
 sidebarItems.push({
 	title: "Getting Started",
