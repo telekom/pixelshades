@@ -1,3 +1,5 @@
+"use client"
+
 import { avatarVariants } from "@pixelshades/styles/components/avatar"
 
 export interface AvatarProps extends React.ComponentPropsWithoutRef<"span"> {
