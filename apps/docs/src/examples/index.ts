@@ -10,7 +10,27 @@
   };
   
   export const Demos: Record<string, Demo> = {
-    "badge/alert": {
+    "avatar/inital": {
+	  component: lazy(() => import("~/examples/avatar/inital.tsx")),
+	  code: `import { Avatar } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Avatar initials="ma" alt="@makisuo__" />
+}
+`,
+  },
+  "avatar/preview": {
+	  component: lazy(() => import("~/examples/avatar/preview.tsx")),
+	  code: `import { Avatar } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<Avatar src="https://pbs.twimg.com/profile_images/1271783863614873600/DozTdIj7_400x400.jpg" alt="@makisuo__" />
+	)
+}
+`,
+  },
+  "badge/alert": {
 	  component: lazy(() => import("~/examples/badge/alert.tsx")),
 	  code: `import { Badge } from "@pixelshades/ui/components"
 import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"

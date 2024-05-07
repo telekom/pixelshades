@@ -2,6 +2,7 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
+export * from "./avatar"
 export * from "./badge"
 export * from "./breadcrumbs"
 export * from "./button"
