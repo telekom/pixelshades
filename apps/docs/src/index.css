@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   :root {
     --primary-scale-1: 345.75 42.453% 3.3945%;
