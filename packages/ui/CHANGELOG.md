@@ -1,5 +1,13 @@
 # @pixelshades/ui
 
+## 0.3.9
+
+### Patch Changes
+
+- 515a668: fix: Avatar Type Exports
+- Updated dependencies [515a668]
+  - @pixelshades/styles@0.3.5
+
 ## 0.3.8
 
 ### Patch Changes

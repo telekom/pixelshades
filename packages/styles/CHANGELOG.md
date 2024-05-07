@@ -1,5 +1,11 @@
 # @pixelshades/styles
 
+## 0.3.5
+
+### Patch Changes
+
+- 515a668: fix: Avatar Type Exports
+
 ## 0.3.4
 
 ### Patch Changes
