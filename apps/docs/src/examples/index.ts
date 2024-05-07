@@ -10,8 +10,8 @@
   };
   
   export const Demos: Record<string, Demo> = {
-    "avatar/inital": {
-	  component: lazy(() => import("~/examples/avatar/inital.tsx")),
+    "avatar/initials": {
+	  component: lazy(() => import("~/examples/avatar/initials.tsx")),
 	  code: `import { Avatar } from "@pixelshades/ui/components"
 
 export function Example() {
