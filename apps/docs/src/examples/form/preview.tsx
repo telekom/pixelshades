@@ -13,17 +13,17 @@ import {
 
 export default function Example() {
 	return (
-		<Form className="min-w-[320px]">
+		<Form>
 			<Checkbox
 				label="Checkbox"
 				tooltip="Tooltip"
-				description="Description"
+				description="Some very long Description"
 				helperText="Helper text"
 				isRequired
 			/>
 			<CheckboxGroup
 				label="Checkbox Group"
-				description="Description"
+				description="Some very long Description"
 				tooltip="Tooltip"
 				helperText="Helper Text"
 				isRequired
@@ -36,7 +36,7 @@ export default function Example() {
 
 			<TextField
 				label="Label"
-				description="Description"
+				description="Some very long Description"
 				helperText="Helper Text"
 				tooltip="Tooltip"
 				isRequired
