@@ -7,7 +7,7 @@ import { baseInputSizes, focusRing } from "../../utils"
 
 export const inputVariants = tv({
 	base: [
-		"flex gap-md md:w-full w-[150px] overflow-x-scroll items-center",
+		"flex gap-md w-full overflow-hidden items-center",
 		"rounded-md border border-border bg-subtle shadow-sm transition-colors",
 		"file:border-0 file:bg-transparent file:text-sm file:font-medium",
 		"placeholder:text-subtle-foreground",
