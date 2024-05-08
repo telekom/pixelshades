@@ -6,9 +6,9 @@ import { tv } from "tailwind-variants"
 
 export const labelVariants = tv({
 	slots: {
-		description: "text-subtle-foreground text-sm",
-		helperText: "text-subtle-foreground text-sm",
+		description: "text-subtle-foreground text-sm line-clamp-1",
+		helperText: "text-subtle-foreground text-sm line-clamp-1",
 		required: "text-info text-sm",
 	},
-	base: "text-sm font-medium inline-flex flex-wrap shrink-0 items-center gap-sm antialiased leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70 data-[required]:after:content-[_*]",
+	base: "text-sm font-medium inline-flex shrink-0 items-center gap-sm antialiased leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70 data-[required]:after:content-[_*]",
 })
