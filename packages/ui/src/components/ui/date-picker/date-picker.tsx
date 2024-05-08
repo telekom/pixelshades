@@ -45,7 +45,7 @@ const DatePicker = <T extends DateValue>({
 	isRequired,
 	...props
 }: DatePickerProps<T>) => (
-	<AriaDatePicker className="flex flex-col gap-md" isRequired={isRequired} {...props}>
+	<AriaDatePicker className="flex w-full flex-col gap-md" isRequired={isRequired} {...props}>
 		<Label description={description} tooltip={tooltip} isRequired={isRequired}>
 			{label}
 		</Label>
