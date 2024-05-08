@@ -17,13 +17,13 @@ export default function Example() {
 			<Checkbox
 				label="Checkbox"
 				tooltip="Tooltip"
-				description="Some very long Description"
+				description="Description"
 				helperText="Helper text"
 				isRequired
 			/>
 			<CheckboxGroup
 				label="Checkbox Group"
-				description="Some very long Description"
+				description="Description"
 				tooltip="Tooltip"
 				helperText="Helper Text"
 				isRequired
