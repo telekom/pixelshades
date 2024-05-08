@@ -995,7 +995,7 @@ export function Example() {
 
 export function Example() {
 	return (
-		<Form className="min-w-[320px]">
+		<Form>
 			<Checkbox
 				label="Checkbox"
 				tooltip="Tooltip"
@@ -1018,7 +1018,7 @@ export function Example() {
 
 			<TextField
 				label="Label"
-				description="Description"
+				description="Some very long Description"
 				helperText="Helper Text"
 				tooltip="Tooltip"
 				isRequired
