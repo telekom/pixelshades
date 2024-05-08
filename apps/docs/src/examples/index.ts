@@ -260,7 +260,7 @@ export function Example() {
 
 export function Example() {
 	return (
-		<div className="flex flex-row gap-layout-sm">
+		<div className="flex flex-row flex-wrap gap-layout-sm">
 			<ButtonGroup orientation="vertical">
 				<Button>One</Button>
 				<Button>Two</Button>
