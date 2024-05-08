@@ -12,7 +12,7 @@ export const checkboxVariant = tv({
 	},
 	variants: {
 		size: {
-			md: { box: "size-5 rounded-md", root: "text-md" },
+			md: { box: "size-5 min-w-5 rounded-md", root: "text-md" },
 		},
 	},
 	defaultVariants: {
