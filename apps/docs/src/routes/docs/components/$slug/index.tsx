@@ -108,7 +108,7 @@ function ComponentPage() {
 					</Tabs.List>
 
 					<Tabs.Panel id="docs" className={cn("relative grid w-full grid-cols-12 gap-layout-sm")}>
-						<div className="col-span-9 w-full">
+						<div className="col-span-12 w-full md:col-span-9">
 							<MDXContent code={component.content} />
 							<PagerButtons permalink={component.permalink} />
 						</div>
