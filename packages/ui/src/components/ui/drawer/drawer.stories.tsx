@@ -13,7 +13,7 @@ const meta: Meta<DrawerPropsAndCustomArgs> = {
 	title: "Components/UI/Drawer",
 	decorators: (Story) => (
 		<div className={"dark relative h-full w-full font-sans"}>
-			<Drawer.Trigger>
+			<Drawer.Trigger defaultOpen={true}>
 				<Button variant="outline">open drawer</Button>
 				<Story />
 			</Drawer.Trigger>

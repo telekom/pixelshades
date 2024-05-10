@@ -15,7 +15,7 @@ export interface DrawerProps extends ModalOverlayProps, VariantProps<typeof draw
 	placement?: Placement
 }
 
-export const DrawerRoot = ({ placement, children, className, ...props }: DrawerProps) => {
+const DrawerRoot = ({ placement, children, className, ...props }: DrawerProps) => {
 	return (
 		<Modal
 			className={drawerVariants({
