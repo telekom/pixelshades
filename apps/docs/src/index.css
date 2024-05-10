@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   :root {
-    --primary-scale-1: 345.75 42.453% 3.3945%;
+    	--primary-scale-1: 345.75 42.453% 3.3945%;
 		--primary-scale-2: 342.74 31.057% 9.279%;
 		--primary-scale-3: 338.72 53.878% 14.856%;
 		--primary-scale-4: 334.05 80.379% 17.76%;
@@ -103,7 +102,7 @@
           --radius: 0.5rem;
       
           --info: var(--info-scale-9);
-          --info-foreground: var(--info-scale-12);
+		--info-foreground: var(--info-scale-12);
   }
 
   .dark {

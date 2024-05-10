@@ -22,6 +22,10 @@ import {
 
 import { calendarVariants } from "@pixelshades/styles/components/calendar"
 
+import { isToday } from "@internationalized/date"
+
+import { getLocalTimeZone } from "@internationalized/date"
+
 const { root, header, heading, gridHeaderCell, cell, grid, iconButton } = calendarVariants()
 
 export interface CalendarProps<T extends DateValue> extends Omit<AriaCalendarProps<T>, "className"> {
@@ -48,7 +52,15 @@ const Calendar = ({ className, visibleDuration, error, ...props }: CalendarProps
 					<CalendarGridHeader>
 						{(day) => <CalendarHeaderCell className={gridHeaderCell()}>{day}</CalendarHeaderCell>}
 					</CalendarGridHeader>
-					<CalendarGridBody>{(date) => <CalendarCell className={cell()} date={date} />}</CalendarGridBody>
+					<CalendarGridBody>
+						{(date) => (
+							<CalendarCell
+								data-today={isToday(date, getLocalTimeZone()) ? true : undefined}
+								className={cell()}
+								date={date}
+							/>
+						)}
+					</CalendarGridBody>
 				</CalendarGrid>
 			))}
 		</div>

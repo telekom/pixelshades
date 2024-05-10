@@ -1,5 +1,26 @@
 # @pixelshades/styles
 
+## 0.3.5
+
+### Patch Changes
+
+- 515a668: fix: Avatar Type Exports
+
+## 0.3.4
+
+### Patch Changes
+
+- 9cb144d: feat: add Avatar Component
+
+## 0.3.3
+
+### Patch Changes
+
+- 4598f44: refactor: cleanup drawer
+- 8b82d38: feat: update calendar to mark today's date
+- cf81fb5: feat: add RadioCard
+- 50066dc: fix: radio group working horizontally
+
 ## 0.3.2
 
 ### Patch Changes
