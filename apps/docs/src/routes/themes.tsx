@@ -29,6 +29,7 @@ import {
 	yellow,
 	zinc,
 } from "tailwindcss/colors"
+import { type Palette, type Shade, generateColorPalette } from "~/lib/colors/tailwind-themes"
 
 export const Route = createFileRoute("/themes")({
 	component: Index,
@@ -77,17 +78,7 @@ function Index() {
 		background: neutralColor.value[950],
 	})
 
-	// console.log(
-	// 	exportTheme({
-	// 		primaryScale: darkModeResult.primaryScale,
-	// 		neutralScale: darkModeResult.neutralScale,
-	// 		infoScale: darkModeResult.infoScale,
-	// 		successScale: darkModeResult.sucessScale,
-	// 		destructiveScale: darkModeResult.destructiveScale,
-	// 		background: darkModeResult.background,
-	// 		foreground: darkModeResult.foreground,
-	// 	}),
-	// )
+	const test = generateColorPalette({ color: neutralColor.value[500] })
 
 	return (
 		<div className="container flex min-h-screen w-full flex-col items-center gap-layout-md py-layout-lg">
@@ -147,8 +138,15 @@ function Index() {
 				<div className="flex w-full flex-row items-center gap-md">
 					<Typography className="flex-1">Primary</Typography>
 
-					{darkModeResult.primaryScale.map((color, i) => (
+					{/* {darkModeResult.primaryScale.map((color, i) => (
 						<ColorPreview key={i} style={{ backgroundColor: color }} />
+					))} */}
+
+					{test.map((palette, i) => (
+						<ColorPreview
+							key={i}
+							style={{ backgroundColor: palette.color.to("hsl").toString({ format: "hsl" }) }}
+						/>
 					))}
 				</div>
 
@@ -197,32 +195,67 @@ const exportTheme = ({
 	background,
 	foreground,
 }: {
-	primaryScale: string[]
-	neutralScale: string[]
-	successScale: string[]
-	infoScale: string[]
-	destructiveScale: string[]
+	primaryScale: Palette[]
+	neutralScale: Palette[]
+	successScale: Palette[]
+	infoScale: Palette[]
+	destructiveScale: Palette[]
 	background: string
 	foreground: string
 }) => {
 	const primaryScaleString = primaryScale
-		.map((color, index) => `--primary-scale-${index + 1}: ${color.replace("hsl(", "").replace(")", "")};`)
+		.map(
+			(shade, index) =>
+				`--primary-scale-${index + 1}: ${shade.color
+					.to("hsl")
+					.toString({ format: "hsl" })
+					.replace("hsl(", "")
+					.replace(")", "")};`,
+		)
 		.join("\n\t\t")
 
 	const neutralScaleString = neutralScale
-		.map((color, index) => `--neutral-scale-${index + 1}: ${color.replace("hsl(", "").replace(")", "")};`)
+		.map(
+			(shade, index) =>
+				`--neutral-scale-${index + 1}: ${shade.color
+					.to("hsl")
+					.toString({ format: "hsl" })
+					.replace("hsl(", "")
+					.replace(")", "")};`,
+		)
 		.join("\n\t\t")
 
 	const successScaleString = successScale
-		.map((color, index) => `--success-scale-${index + 1}: ${color.replace("hsl(", "").replace(")", "")};`)
+		.map(
+			(shade, index) =>
+				`--success-scale-${index + 1}: ${shade.color
+					.to("hsl")
+					.toString({ format: "hsl" })
+					.replace("hsl(", "")
+					.replace(")", "")};`,
+		)
 		.join("\n\t\t")
 
 	const infoScaleString = infoScale
-		.map((color, index) => `--info-scale-${index + 1}: ${color.replace("hsl(", "").replace(")", "")};`)
+		.map(
+			(shade, index) =>
+				`--info-scale-${index + 1}: ${shade.color
+					.to("hsl")
+					.toString({ format: "hsl" })
+					.replace("hsl(", "")
+					.replace(")", "")};`,
+		)
 		.join("\n\t\t")
 
 	const destructiveScaleString = destructiveScale
-		.map((color, index) => `--destructive-scale-${index + 1}: ${color.replace("hsl(", "").replace(")", "")};`)
+		.map(
+			(shade, index) =>
+				`--destructive-scale-${index + 1}: ${shade.color
+					.to("hsl")
+					.toString({ format: "hsl" })
+					.replace("hsl(", "")
+					.replace(")", "")};`,
+		)
 		.join("\n\t\t")
 
 	const base = `
