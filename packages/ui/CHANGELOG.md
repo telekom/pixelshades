@@ -1,47 +1,5 @@
 # @pixelshades/ui
 
-## 0.3.9
-
-### Patch Changes
-
-- 515a668: fix: Avatar Type Exports
-- Updated dependencies [515a668]
-  - @pixelshades/styles@0.3.5
-
-## 0.3.8
-
-### Patch Changes
-
-- 1af9ef5: fix: avatar bundling
-
-## 0.3.7
-
-### Patch Changes
-
-- 9cb144d: feat: add Avatar Component
-- Updated dependencies [9cb144d]
-  - @pixelshades/styles@0.3.4
-
-## 0.3.6
-
-### Patch Changes
-
-- 35eaf22: modernize RadioGroup
-
-## 0.3.5
-
-### Patch Changes
-
-- 4598f44: refactor: cleanup drawer
-- 8b82d38: feat: update calendar to mark today's date
-- cf81fb5: feat: add RadioCard
-- 50066dc: fix: radio group working horizontally
-- Updated dependencies [4598f44]
-- Updated dependencies [8b82d38]
-- Updated dependencies [cf81fb5]
-- Updated dependencies [50066dc]
-  - @pixelshades/styles@0.3.3
-
 ## 0.3.4
 
 ### Patch Changes

@@ -1,7 +1,5 @@
-import { Button, Drawer, type DrawerPlacement, Select } from "@pixelshades/ui/components"
+import { Button, Drawer, type DrawerPlacement, PLACEMENTS, Select } from "@pixelshades/ui/components"
 import React from "react"
-
-export const PLACEMENTS = ["bottom", "left", "right", "top"] satisfies DrawerPlacement[]
 
 export default function Example() {
 	const options = PLACEMENTS.map((d) => ({ name: d }))

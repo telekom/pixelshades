@@ -5,7 +5,7 @@ import {
 	DateField,
 	DatePicker,
 	Form,
-	RadioGroup,
+	Radio,
 	Switch,
 	TextField,
 	TimeField,
@@ -49,17 +49,17 @@ export default function Example() {
 
 			<Switch label="Switch" description="Description" tooltip="Tooltip" helperText="Helper text" />
 
-			<RadioGroup
+			<Radio.Group
 				label="Radio Group"
 				description="Description"
 				tooltip="Tooltip"
 				helperText="Helper Text"
 				isRequired
 			>
-				<RadioGroup.Item value="push">Push</RadioGroup.Item>
-				<RadioGroup.Item value="email">Email</RadioGroup.Item>
-				<RadioGroup.Item value="text">Text</RadioGroup.Item>
-			</RadioGroup>
+				<Radio value="push">Push</Radio>
+				<Radio value="email">Email</Radio>
+				<Radio value="text">Text</Radio>
+			</Radio.Group>
 			<div className="flex w-full flex-row gap-md">
 				<Button className="w-full" type="submit">
 					Submit

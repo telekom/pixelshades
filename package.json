@@ -13,7 +13,7 @@
 		"changeset": "changeset"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.7.3",
+		"@biomejs/biome": "1.7.1",
 		"@changesets/cli": "^2.27.1",
 		"@pixelshades/typescript-config": "workspace:*",
 		"concurrently": "^8.2.2",
@@ -23,11 +23,8 @@
 	"engines": {
 		"node": ">=18"
 	},
-	"packageManager": "pnpm@9.1.0",
-	"workspaces": [
-		"packages/*",
-		"apps/*"
-	],
+	"packageManager": "pnpm@9.0.6",
+	"workspaces": ["packages/*", "apps/*"],
 	"config": {
 		"commitizen": {
 			"path": "cz-conventional-changelog"

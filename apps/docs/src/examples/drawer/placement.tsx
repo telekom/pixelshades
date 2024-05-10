@@ -1,6 +1,5 @@
-import { Button, Drawer, type DrawerPlacement, Select } from "@pixelshades/ui/components"
+import { Button, Drawer, type DrawerPlacement, PLACEMENTS, Select } from "@pixelshades/ui/components"
 import React from "react"
-import { PLACEMENTS } from "~/examples/drawer/directions.tsx"
 
 export default function Example() {
 	const options = PLACEMENTS.map((d) => ({ name: d }))
