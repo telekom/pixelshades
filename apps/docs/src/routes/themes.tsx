@@ -78,7 +78,10 @@ function Index() {
 		background: neutralColor.value[950],
 	})
 
-	const test = generateColorPalette({ color: neutralColor.value[500] })
+	const primaryScale = generateColorPalette({ color: primaryColor })
+	const primaryHighcontrastScale = generateColorPalette({ color: primaryColor, highcontrast: true })
+
+	console.log(primaryHighcontrastScale.map((palette) => palette.color.to("srgb").toString({ format: "hex" })))
 
 	return (
 		<div className="container flex min-h-screen w-full flex-col items-center gap-layout-md py-layout-lg">
@@ -142,7 +145,18 @@ function Index() {
 						<ColorPreview key={i} style={{ backgroundColor: color }} />
 					))} */}
 
-					{test.map((palette, i) => (
+					{primaryScale.map((palette, i) => (
+						<ColorPreview
+							key={i}
+							style={{ backgroundColor: palette.color.to("hsl").toString({ format: "hsl" }) }}
+						/>
+					))}
+				</div>
+
+				<div className="flex w-full flex-row items-center gap-md">
+					<Typography className="flex-1">Primary High Contrast</Typography>
+
+					{primaryHighcontrastScale.map((palette, i) => (
 						<ColorPreview
 							key={i}
 							style={{ backgroundColor: palette.color.to("hsl").toString({ format: "hsl" }) }}

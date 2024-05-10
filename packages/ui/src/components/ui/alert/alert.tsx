@@ -7,7 +7,8 @@ import { alertVariants } from "@pixelshades/styles/components/alert"
 import { RenderSlot } from "@pixelshades/utils/jsx"
 import { cn } from "@pixelshades/utils/styles"
 import { forwardRef, useCallback, useState } from "react"
-import { InfoIcon, XIcon } from "../../../icons"
+import type { PressEvent } from "react-aria"
+import { InfoIcon } from "../../../icons"
 import { If } from "../../utils"
 import { Button } from "../button"
 
@@ -23,7 +24,7 @@ type ClosableProps = {
 	 * This can be used to handle the removal of the tag.
 	 * If provided, the close icon will be displayed.
 	 */
-	onClose?: React.MouseEventHandler<HTMLButtonElement>
+	onClose?: (event: PressEvent) => void
 }
 
 type NotClosableProps = {
@@ -91,12 +92,7 @@ const AlertWedges = forwardRef<HTMLDivElement, AlertProps>(
 		 * @param event - The event object
 		 */
 		const handleClose = useCallback(
-			(event: React.MouseEvent<HTMLButtonElement>) => {
-				// Do not close if the event is prevented by the onClose callback
-				if (!event.defaultPrevented) {
-					setVisible(false)
-				}
-
+			(event: PressEvent) => {
 				if (onClose) {
 					onClose(event)
 				}
@@ -138,8 +134,8 @@ const AlertWedges = forwardRef<HTMLDivElement, AlertProps>(
 							variant === "inline" && "sm:flex-row sm:items-center sm:gap-2",
 						)}
 					>
-						{title && <AlertTitle color={color}>{title}</AlertTitle>}
-						{children && <AlertDescription>{children}</AlertDescription>}
+						{title && <RenderSlot item={title} fallbackAs="p" />}
+						{children && <RenderSlot item={children} fallbackAs="p" />}
 					</div>
 
 					{after && (
@@ -149,48 +145,8 @@ const AlertWedges = forwardRef<HTMLDivElement, AlertProps>(
 					)}
 				</div>
 
-				{closable && <AlertCloseButton className={cn(variant === "inline" && "pr-1")} onClick={handleClose} />}
+				{closable && <AlertCloseButton className={cn(variant === "inline" && "pr-1")} onPress={handleClose} />}
 			</div>
-		)
-	},
-)
-
-/* After */
-const AlertAfter = forwardRef<HTMLElement, React.HTMLAttributes<HTMLElement>>(
-	({ className, children, ...props }, ref) => {
-		const Component = isReactElement(children) ? Slot : "span"
-
-		return (
-			<Component ref={ref} className={className} {...props}>
-				{children}
-			</Component>
-		)
-	},
-)
-
-/* Title */
-const AlertTitle = forwardRef<
-	HTMLParagraphElement,
-	React.HTMLAttributes<HTMLParagraphElement> & VariantProps<typeof alertTitleVariants>
->(({ className, color, children, ...props }, ref) => {
-	const Component = isReactElement(children) ? Slot : "p"
-
-	return (
-		<Component ref={ref} className={cn(alertTitleVariants({ color }), className)} {...props}>
-			{children}
-		</Component>
-	)
-})
-
-/* Description */
-const AlertDescription = forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLParagraphElement>>(
-	({ className, children, ...props }, ref) => {
-		const Component = isReactElement(children) ? Slot : "p"
-
-		return (
-			<Component ref={ref} className={cn("text-start", className)} {...props}>
-				{children}
-			</Component>
 		)
 	},
 )
@@ -203,9 +159,6 @@ const AlertCloseButton = forwardRef<React.ElementRef<typeof Button>, React.Compo
 )
 
 AlertWedges.displayName = "Alert"
-AlertAfter.displayName = "AlertAfter"
 AlertCloseButton.displayName = "AlertCloseButton"
-AlertDescription.displayName = "AlertDescription"
-AlertTitle.displayName = "AlertTitle"
 
 export default AlertWedges
