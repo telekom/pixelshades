@@ -24,10 +24,7 @@
 		"node": ">=18"
 	},
 	"packageManager": "pnpm@9.1.0",
-	"workspaces": [
-		"packages/*",
-		"apps/*"
-	],
+	"workspaces": ["packages/*", "apps/*"],
 	"config": {
 		"commitizen": {
 			"path": "cz-conventional-changelog"
