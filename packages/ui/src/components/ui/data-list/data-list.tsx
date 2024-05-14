@@ -6,22 +6,52 @@
 
 import { dataListVariants } from "@pixelshades/styles/components/data-list"
 import { forwardRef } from "@pixelshades/utils/jsx"
-import { createStyleContext } from "@pixelshades/utils/styles"
+import { cn, createStyleContext } from "@pixelshades/utils/styles"
 import type { HTMLAttributes } from "react"
 
-export type DataListProps = HTMLAttributes<HTMLDListElement>
+type ScreenSizeOptions = "xs" | "sm" | "md" | "lg" | "xl" | "2xl"
+
+export type DataListProps = HTMLAttributes<HTMLDListElement> & {
+	orientation?: Record<ScreenSizeOptions, "vertical" | "horizontal">
+}
 
 const { withContext, withProvider } = createStyleContext(dataListVariants)
 
-const UnstyledDataList = forwardRef((props: DataListProps) => {
-	return <dl {...props} />
-})
+const UnstyledDataList = forwardRef(
+	({
+		orientation = {
+			"2xl": "vertical",
+			xl: "vertical",
+			lg: "vertical",
+			md: "vertical",
+			sm: "horizontal",
+			xs: "horizontal",
+		},
+		...props
+	}: DataListProps) => {
+		return <dl {...props} />
+	},
+)
 
-export type DataListItemProps = HTMLAttributes<HTMLDivElement>
+export type DataListItemProps = HTMLAttributes<HTMLDivElement> & {
+	orientation?: Record<ScreenSizeOptions, "vertical" | "horizontal">
+}
 
-const UnstyledDataListItem = forwardRef((props: DataListItemProps) => {
-	return <div {...props} />
-})
+const UnstyledDataListItem = forwardRef(
+	({
+		orientation = {
+			"2xl": "vertical",
+			xl: "vertical",
+			lg: "vertical",
+			md: "vertical",
+			sm: "horizontal",
+			xs: "horizontal",
+		},
+		...props
+	}: DataListItemProps) => {
+		return <div {...props} />
+	},
+)
 
 export type DataListLabelProps = HTMLAttributes<HTMLElement>
 

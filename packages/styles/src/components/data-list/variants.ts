@@ -19,6 +19,7 @@ export const dataListVariants = tv({
 			},
 			horizontal: {
 				root: "flex-wrap",
+				item: "md:flex-row flex-col md:flex-start md:items-center items-start",
 				label: "min-w-[100px]",
 			},
 		},
