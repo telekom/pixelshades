@@ -1,7 +1,6 @@
 import { Heading, RadioGroup, Typography } from "@pixelshades/ui/components"
 import { createFileRoute } from "@tanstack/react-router"
 import { ColorPreview } from "~/components/color-preview"
-import { generateRadixColors } from "~/lib/colors/utils"
 
 import { cn } from "@pixelshades/utils/styles"
 import { useState } from "react"
@@ -29,18 +28,24 @@ import {
 	yellow,
 	zinc,
 } from "tailwindcss/colors"
-import { type Palette, type Shade, generateColorPalette } from "~/lib/colors/tailwind-themes"
+import {
+	type Palette,
+	type Theme,
+	exportTheme,
+	generateColorPalette,
+	generateTheme,
+} from "~/lib/colors/tailwind-themes"
 
 export const Route = createFileRoute("/themes")({
 	component: Index,
 })
 
 const neutralColors = [
-	{ name: "slate", value: slate },
-	{ name: "gray", value: gray },
-	{ name: "zinc", value: zinc },
-	{ name: "neutral", value: neutral },
-	{ name: "stone", value: stone },
+	{ name: "slate", value: slate[500] },
+	{ name: "gray", value: gray[500] },
+	{ name: "zinc", value: zinc[500] },
+	{ name: "neutral", value: neutral[500] },
+	{ name: "stone", value: stone[500] },
 ]
 
 const primaryColors = [
@@ -67,21 +72,19 @@ const primaryColors = [
 function Index() {
 	const [primaryColor, setPrimaryColor] = useState("hsl(329 100% 44%)")
 	const [neutralColor, setNeutralColor] = useState(neutralColors[0])
+	const [successColor, setSuccessColor] = useState("hsl(144 100% 44%)")
+	const [infoColor, setInfoColor] = useState("hsl(210 100% 32%)")
+	const [destructiveColor, setDestructiveColor] = useState("hsl(350 89% 60%)")
 
-	const darkModeResult = generateRadixColors({
-		appearance: "dark",
+	const theme = generateTheme({
 		primary: primaryColor,
-		success: "hsl(144 100% 44%)",
-		info: "hsl(210 100% 32%)",
-		destructive: "hsl(350 89% 60%)",
-		neutral: neutralColor.value[500],
-		background: neutralColor.value[950],
+		success: successColor,
+		info: infoColor,
+		destructive: destructiveColor,
+		neutral: neutralColor.value,
 	})
 
-	const primaryScale = generateColorPalette({ color: primaryColor })
-	const primaryHighcontrastScale = generateColorPalette({ color: primaryColor, highcontrast: true })
-
-	console.log(primaryHighcontrastScale.map((palette) => palette.color.to("srgb").toString({ format: "hex" })))
+	console.log(exportTheme(theme))
 
 	return (
 		<div className="container flex min-h-screen w-full flex-col items-center gap-layout-md py-layout-lg">
@@ -119,7 +122,7 @@ function Index() {
 										ring: isSelected,
 									})}
 									key={i}
-									style={{ backgroundColor: color.value[500] }}
+									style={{ backgroundColor: color.value }}
 								/>
 							)
 						}}
@@ -127,14 +130,14 @@ function Index() {
 				))}
 			</RadioGroup>
 
-			<div className="grid grid-cols-2 items-start justify-center gap-4 md:grid-cols-8 md:gap-6">
+			{/* <div className="grid grid-cols-2 items-start justify-center gap-4 md:grid-cols-8 md:gap-6">
 				<ColorPreview name="Background" style={{ backgroundColor: darkModeResult.background }} />
 				<ColorPreview name="Primary" style={{ backgroundColor: darkModeResult.primaryScale[8] }} />
 				<ColorPreview name="Destructive" style={{ backgroundColor: darkModeResult.destructiveScale[8] }} />
 				<ColorPreview name="Subtle" style={{ backgroundColor: darkModeResult.neutralScale[8] }} />
 				<ColorPreview name="Border" style={{ backgroundColor: darkModeResult.neutralScale[5] }} />
 				<ColorPreview name="Ring" style={{ backgroundColor: darkModeResult.primaryScale[8] }} />
-			</div>
+			</div> */}
 			<div className="space-y-layout-md">
 				<Heading level={2}>Scales</Heading>
 
@@ -145,7 +148,7 @@ function Index() {
 						<ColorPreview key={i} style={{ backgroundColor: color }} />
 					))} */}
 
-					{primaryScale.map((palette, i) => (
+					{theme.primaryScale.map((palette, i) => (
 						<ColorPreview
 							key={i}
 							style={{ backgroundColor: palette.color.to("hsl").toString({ format: "hsl" }) }}
@@ -156,7 +159,7 @@ function Index() {
 				<div className="flex w-full flex-row items-center gap-md">
 					<Typography className="flex-1">Primary High Contrast</Typography>
 
-					{primaryHighcontrastScale.map((palette, i) => (
+					{theme.primaryHighcontrastScale.map((palette, i) => (
 						<ColorPreview
 							key={i}
 							style={{ backgroundColor: palette.color.to("hsl").toString({ format: "hsl" }) }}
@@ -167,161 +170,47 @@ function Index() {
 				<div className="flex w-full flex-row items-center gap-md">
 					<Typography className="flex-1">Neutral</Typography>
 
-					{darkModeResult.neutralScale.map((color, i) => (
-						<ColorPreview key={i} style={{ backgroundColor: color }} />
+					{theme.neutralScale.map((palette, i) => (
+						<ColorPreview
+							key={i}
+							style={{ backgroundColor: palette.color.to("hsl").toString({ format: "hsl" }) }}
+						/>
 					))}
 				</div>
 
 				<div className="flex w-full flex-row items-center gap-md">
 					<Typography className="flex-1">Success</Typography>
 
-					{darkModeResult.sucessScale.map((color, i) => (
-						<ColorPreview key={i} style={{ backgroundColor: color }} />
+					{theme.successScale.map((palette, i) => (
+						<ColorPreview
+							key={i}
+							style={{ backgroundColor: palette.color.to("hsl").toString({ format: "hsl" }) }}
+						/>
 					))}
 				</div>
 
 				<div className="flex w-full flex-row items-center gap-md">
 					<Typography className="flex-1">Info</Typography>
 
-					{darkModeResult.infoScale.map((color, i) => (
-						<ColorPreview key={i} style={{ backgroundColor: color }} />
+					{theme.infoScale.map((palette, i) => (
+						<ColorPreview
+							key={i}
+							style={{ backgroundColor: palette.color.to("hsl").toString({ format: "hsl" }) }}
+						/>
 					))}
 				</div>
 
 				<div className="flex w-full flex-row items-center gap-md">
 					<Typography className="flex-1">Destructive</Typography>
 
-					{darkModeResult.destructiveScale.map((color, i) => (
-						<ColorPreview key={i} style={{ backgroundColor: color }} />
+					{theme.destructiveScale.map((palette, i) => (
+						<ColorPreview
+							key={i}
+							style={{ backgroundColor: palette.color.to("hsl").toString({ format: "hsl" }) }}
+						/>
 					))}
 				</div>
 			</div>
 		</div>
 	)
-}
-
-const exportTheme = ({
-	primaryScale,
-	successScale,
-	infoScale,
-	destructiveScale,
-	neutralScale,
-	background,
-	foreground,
-}: {
-	primaryScale: Palette[]
-	neutralScale: Palette[]
-	successScale: Palette[]
-	infoScale: Palette[]
-	destructiveScale: Palette[]
-	background: string
-	foreground: string
-}) => {
-	const primaryScaleString = primaryScale
-		.map(
-			(shade, index) =>
-				`--primary-scale-${index + 1}: ${shade.color
-					.to("hsl")
-					.toString({ format: "hsl" })
-					.replace("hsl(", "")
-					.replace(")", "")};`,
-		)
-		.join("\n\t\t")
-
-	const neutralScaleString = neutralScale
-		.map(
-			(shade, index) =>
-				`--neutral-scale-${index + 1}: ${shade.color
-					.to("hsl")
-					.toString({ format: "hsl" })
-					.replace("hsl(", "")
-					.replace(")", "")};`,
-		)
-		.join("\n\t\t")
-
-	const successScaleString = successScale
-		.map(
-			(shade, index) =>
-				`--success-scale-${index + 1}: ${shade.color
-					.to("hsl")
-					.toString({ format: "hsl" })
-					.replace("hsl(", "")
-					.replace(")", "")};`,
-		)
-		.join("\n\t\t")
-
-	const infoScaleString = infoScale
-		.map(
-			(shade, index) =>
-				`--info-scale-${index + 1}: ${shade.color
-					.to("hsl")
-					.toString({ format: "hsl" })
-					.replace("hsl(", "")
-					.replace(")", "")};`,
-		)
-		.join("\n\t\t")
-
-	const destructiveScaleString = destructiveScale
-		.map(
-			(shade, index) =>
-				`--destructive-scale-${index + 1}: ${shade.color
-					.to("hsl")
-					.toString({ format: "hsl" })
-					.replace("hsl(", "")
-					.replace(")", "")};`,
-		)
-		.join("\n\t\t")
-
-	const base = `
-    @layer base {
-        :root {
-          ${primaryScaleString}
-        
-          ${neutralScaleString}
-        
-          ${successScaleString}
-        
-          ${infoScaleString}
-        
-          ${destructiveScaleString}
-
-
-          --spacing-xs: 0.125rem;
-          --spacing-sm: 0.25rem;
-          --spacing-md: 0.5rem;
-          --spacing-lg: 1rem;
-          --spacing-xl: 1.5rem;
-      
-          --spacing-layout-xs: 1rem;
-          --spacing-layout-sm: 1.5rem;
-          --spacing-layout-md: 2rem;
-          --spacing-layout-lg: 3rem;
-          --spacing-layout-xl: 4rem;
-          --spacing-layout-2xl: 6rem;
-      
-      
-          --background: ${background.replace("hsl(", "").replace(")", "")};
-          --foreground: ${foreground.replace("hsl(", "").replace(")", "")};
-      
-          --subtle: var(--neutral-scale-9);
-          --subtle-foreground: var(--neutral-scale-11);
-      
-          --border: var(--neutral-scale-6);
-      
-          --primary: var(--primary-scale-9);
-          --primary-foreground: var(--primary-scale-12);
-      
-          --destructive: var(--destructive-scale-9);
-          --destructive-foreground: var(--destructive-scale-12);
-          
-          --ring: var(--primary-scale-9);
-          --radius: 0.5rem;
-      
-          --info: var(--info-scale-9);
-          --info-foreground: var(--info-scale-12);
-        }
-      }
-    `
-
-	return base
 }

@@ -68,3 +68,159 @@ export const generateColorPalette = ({
 
 	return palette
 }
+
+export type Theme = {
+	primaryScale: Palette[]
+	primaryHighcontrastScale: Palette[]
+
+	neutralScale: Palette[]
+	neutralHighcontrastScale: Palette[]
+
+	successScale: Palette[]
+	successHighcontrastScale: Palette[]
+
+	infoScale: Palette[]
+	infoHighcontrastScale: Palette[]
+
+	destructiveScale: Palette[]
+	destructiveHighcontrastScale: Palette[]
+
+	background: Color
+	contrast: Color
+}
+
+export const generateTheme = ({
+	primary,
+	success,
+	info,
+	destructive,
+	neutral,
+}: {
+	primary: string
+	success: string
+	info: string
+	destructive: string
+	neutral: string
+}): Theme => {
+	const primaryScale = generateColorPalette({ color: primary })
+	const primaryHighcontrastScale = generateColorPalette({ color: primary, highcontrast: true })
+
+	const neutralScale = generateColorPalette({ color: neutral })
+	const neutralHighcontrastScale = generateColorPalette({ color: neutral, highcontrast: true })
+
+	const successScale = generateColorPalette({ color: success })
+	const successHighcontrastScale = generateColorPalette({ color: success, highcontrast: true })
+
+	const infoScale = generateColorPalette({ color: info })
+	const infoHighcontrastScale = generateColorPalette({ color: info, highcontrast: true })
+
+	const destructiveScale = generateColorPalette({ color: destructive })
+	const destructiveHighcontrastScale = generateColorPalette({ color: destructive, highcontrast: true })
+
+	return {
+		primaryScale,
+		primaryHighcontrastScale,
+
+		neutralScale,
+		neutralHighcontrastScale,
+
+		successScale,
+		successHighcontrastScale,
+
+		infoScale,
+		infoHighcontrastScale,
+
+		destructiveScale,
+		destructiveHighcontrastScale,
+
+		background: neutralScale[0].color,
+		contrast: new Color("hsl(0 0% 100%)"),
+	}
+}
+
+export const exportTheme = ({
+	primaryScale,
+	successScale,
+	infoScale,
+	destructiveScale,
+	neutralScale,
+	background,
+	contrast,
+}: Theme) => {
+	const transformColor = (color: Color) => {
+		return color.to("hsl").toString({ format: "hsl" }).replace("hsl(", "").replace(")", "")
+	}
+
+	const primaryScaleString = primaryScale
+		.map((shade) => `--primary-scale-${shade.name}: ${transformColor(shade.color)};`)
+		.join("\n\t\t")
+
+	const neutralScaleString = neutralScale
+		.map((shade) => `--neutral-scale-${shade.name}: ${transformColor(shade.color)};`)
+		.join("\n\t\t")
+
+	const successScaleString = successScale
+		.map((shade) => `--success-scale-${shade.name}: ${transformColor(shade.color)};`)
+		.join("\n\t\t")
+
+	const infoScaleString = infoScale
+		.map((shade) => `--info-scale-${shade.name}: ${transformColor(shade.color)};`)
+		.join("\n\t\t")
+
+	const destructiveScaleString = destructiveScale
+		.map((shade) => `--destructive-scale-${shade.name}: ${transformColor(shade.color)};`)
+		.join("\n\t\t")
+
+	const base = `
+    @layer base {
+        :root {
+          ${primaryScaleString}
+        
+          ${neutralScaleString}
+        
+          ${successScaleString}
+        
+          ${infoScaleString}
+        
+          ${destructiveScaleString}
+
+
+          --spacing-xs: 0.125rem;
+          --spacing-sm: 0.25rem;
+          --spacing-md: 0.5rem;
+          --spacing-lg: 1rem;
+          --spacing-xl: 1.5rem;
+      
+          --spacing-layout-xs: 1rem;
+          --spacing-layout-sm: 1.5rem;
+          --spacing-layout-md: 2rem;
+          --spacing-layout-lg: 3rem;
+          --spacing-layout-xl: 4rem;
+          --spacing-layout-2xl: 6rem;
+      
+
+          --background: ${transformColor(background)};
+          --foreground: var(--neutral-scale-900);
+      
+          --subtle: var(--neutral-scale-100);
+          --subtle-foreground: var(--neutral-scale-900);
+      
+          --border: var(--neutral-scale-300);
+      
+          --primary: var(--primary-scale-700);
+          --primary-foreground: var(--contrast);
+      
+          --destructive: var(--destructive-scale-700);
+          --destructive-foreground: var(--contrast);
+          
+          --ring: var(--primary);
+          --radius: 0.5rem;
+      
+          --info: var(--info-scale-700);
+          --info-foreground: var(--contrast);
+        }
+      }
+    `
+
+	return base
+}
