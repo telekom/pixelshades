@@ -79,7 +79,7 @@ export type AlertProps = Omit<React.HTMLAttributes<HTMLDivElement>, "title"> &
 
 const { root, icon } = alertVariants()
 
-const AlertWedges = forwardRef<HTMLDivElement, AlertProps>(
+const Alert = forwardRef<HTMLDivElement, AlertProps>(
 	(
 		{ after, before, className, closable, color, variant = "inline", children, title, onClose, ...otherProps },
 		ref,
@@ -159,7 +159,7 @@ const AlertCloseButton = forwardRef<React.ElementRef<typeof Button>, React.Compo
 	},
 )
 
-AlertWedges.displayName = "Alert"
+Alert.displayName = "Alert"
 AlertCloseButton.displayName = "AlertCloseButton"
 
-export default AlertWedges
+export { Alert }
