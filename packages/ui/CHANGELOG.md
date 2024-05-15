@@ -1,5 +1,11 @@
 # @pixelshades/ui
 
+## 0.3.12
+
+### Patch Changes
+
+- 0196e8c: fix: tailwind config colors
+
 ## 0.3.11
 
 ### Patch Changes
