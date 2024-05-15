@@ -1,5 +1,11 @@
 # @pixelshades/styles
 
+## 0.3.6
+
+### Patch Changes
+
+- 85ea017: fix: readd Button ref props
+
 ## 0.3.5
 
 ### Patch Changes
