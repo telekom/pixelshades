@@ -262,7 +262,7 @@ export const exportTheme = ({
 			--ring: var(--primary);
 			--radius: 0.5rem;
 			--subtle: var(--neutral-scale-800);
-			--subtle-foreground: var(--neutral-scale-100);
+			--subtle-foreground: var(--neutral-scale-400);
 			--border: var(--neutral-scale-700);
 		  }
 		}

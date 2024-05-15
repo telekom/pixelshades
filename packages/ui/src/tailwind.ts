@@ -51,20 +51,16 @@ export const pixelShadesPlugin = plugin(
 						foreground: "hsl(var(--secondary-foreground))",
 					},
 					destructive: {
-						DEFAULT: "hsl(var(--destructive)",
-						foreground: "hsl(var(--destructive-foreground)",
+						DEFAULT: "hsl(var(--destructive))",
+						foreground: "hsl(var(--destructive-foreground))",
 					},
 					info: {
 						DEFAULT: "hsl(var(--info)",
-						foreground: "hsl(var(--info-foreground)",
+						foreground: "hsl(var(--info-foreground))",
 					},
 					subtle: {
 						DEFAULT: "hsl(var(--subtle))",
 						foreground: "hsl(var(--subtle-foreground))",
-					},
-					card: {
-						DEFAULT: "hsl(var(--card))",
-						foreground: "hsl(var(--card-foreground))",
 					},
 				},
 				borderRadius: {
