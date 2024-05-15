@@ -4,9 +4,13 @@ import { avatarVariants } from "@pixelshades/styles/components/avatar"
 import type { VariantProps } from "tailwind-variants"
 
 export interface AvatarProps extends React.ComponentPropsWithoutRef<"span">, VariantProps<typeof avatarVariants> {
+	/**The image source.*/
 	src?: string | null
+	/**The initials to display.*/
 	initials?: string
+	/**The alt text to display if the image is not available.*/
 	alt?: string
+	/**The class name to apply to the root element.*/
 	className?: string
 }
 
