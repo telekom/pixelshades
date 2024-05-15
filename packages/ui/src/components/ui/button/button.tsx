@@ -10,6 +10,7 @@ import type { VariantProps } from "tailwind-variants"
 import { buttonVariants } from "@pixelshades/styles/components/button"
 
 import { RenderSlot, forwardRef } from "@pixelshades/utils/jsx"
+import type { LegacyRef } from "react"
 import {
 	Button as AriaButton,
 	type ButtonProps as AriaButtonProps,
@@ -22,6 +23,7 @@ import { LoadingSpinner } from "../loading-spinner"
 type ButtonVariantProps = VariantProps<typeof buttonVariants>
 
 interface ButtonProps extends ButtonVariantProps, AriaButtonProps {
+	ref?: LegacyRef<HTMLButtonElement>
 	className?: string
 	isLoading?: boolean
 	before?: React.ReactElement<HTMLElement>

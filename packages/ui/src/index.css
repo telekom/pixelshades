@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--spacing-xs: 0.125rem;
+		--spacing-sm: 0.25rem;
+		--spacing-md: 0.5rem;
+		--spacing-lg: 1rem;
+		--spacing-xl: 1.5rem;
+	
+		--spacing-layout-xs: 1rem;
+		--spacing-layout-sm: 1.5rem;
+		--spacing-layout-md: 2rem;
+		--spacing-layout-lg: 3rem;
+		--spacing-layout-xl: 4rem;
+		--spacing-layout-2xl: 6rem;
+
+		--primary-scale-50: 329 100% 98%;
+	  --primary-scale-100: 329 100% 95%;
+	  --primary-scale-200: 329 100% 90%;
+	  --primary-scale-300: 329 100% 82%;
+	  --primary-scale-400: 329 100% 64%;
+	  --primary-scale-500: 329 100% 46%;
+	  --primary-scale-600: 329 100% 33%;
+	  --primary-scale-700: 329 100% 24%;
+	  --primary-scale-800: 329 100% 14%;
+	  --primary-scale-900: 329 100% 7%;
+	  --primary-scale-950: 329 100% 4%;
+	  
+		--neutral-scale-50: 215.38 16.318% 98%;
+	  --neutral-scale-100: 215.38 16.318% 95%;
+	  --neutral-scale-200: 215.38 16.318% 90%;
+	  --neutral-scale-300: 215.38 16.318% 82%;
+	  --neutral-scale-400: 215.38 16.318% 64%;
+	  --neutral-scale-500: 215.38 16.318% 46%;
+	  --neutral-scale-600: 215.38 16.318% 33%;
+	  --neutral-scale-700: 215.38 16.318% 24%;
+	  --neutral-scale-800: 215.38 16.318% 14%;
+	  --neutral-scale-900: 215.38 16.318% 7%;
+	  --neutral-scale-950: 215.38 16.318% 4%;
+	  
+		--success-scale-50: 144 100% 98%;
+	  --success-scale-100: 144 100% 95%;
+	  --success-scale-200: 144 100% 90%;
+	  --success-scale-300: 144 100% 82%;
+	  --success-scale-400: 144 100% 64%;
+	  --success-scale-500: 144 100% 46%;
+	  --success-scale-600: 144 100% 33%;
+	  --success-scale-700: 144 100% 24%;
+	  --success-scale-800: 144 100% 14%;
+	  --success-scale-900: 144 100% 7%;
+	  --success-scale-950: 144 100% 4%;
+	  
+		--info-scale-50: 210 100% 98%;
+	  --info-scale-100: 210 100% 95%;
+	  --info-scale-200: 210 100% 90%;
+	  --info-scale-300: 210 100% 82%;
+	  --info-scale-400: 210 100% 64%;
+	  --info-scale-500: 210 100% 46%;
+	  --info-scale-600: 210 100% 33%;
+	  --info-scale-700: 210 100% 24%;
+	  --info-scale-800: 210 100% 14%;
+	  --info-scale-900: 210 100% 7%;
+	  --info-scale-950: 210 100% 4%;
+	  
+		--destructive-scale-50: 350 89% 98%;
+	  --destructive-scale-100: 350 89% 95%;
+	  --destructive-scale-200: 350 89% 90%;
+	  --destructive-scale-300: 350 89% 82%;
+	  --destructive-scale-400: 350 89% 64%;
+	  --destructive-scale-500: 350 89% 46%;
+	  --destructive-scale-600: 350 89% 33%;
+	  --destructive-scale-700: 350 89% 24%;
+	  --destructive-scale-800: 350 89% 14%;
+	  --destructive-scale-900: 350 89% 7%;
+	  --destructive-scale-950: 350 89% 4%;
+
+		--contrast: 0 0% 100%;
+		--background: 215.38 16.318% 98%;
+		--foreground: var(--neutral-scale-900);
+	
+		--subtle: var(--neutral-scale-100);
+		--subtle-foreground: var(--neutral-scale-900);
+	
+		--border: var(--neutral-scale-300);
+	
+		--primary: var(--primary-scale-700);
+		--primary-foreground: var(--contrast);
+	
+		--destructive: var(--destructive-scale-700);
+		--destructive-foreground: var(--contrast);
+		
+		--ring: var(--primary);
+		--radius: 0.5rem;
+	
+		--info: var(--info-scale-700);
+		--info-foreground: var(--contrast);
+	}
+
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
+
+
+    --subtle: 240 4% 16%;
+    --subtle-foreground: 240 5% 64.9%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 98%;
+
+    --border: 213 8% 23%;
+
+    
+    --primary: 329 100% 44%;
+    --primary-foreground: 240 0% 100%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --destructive: 350 89% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: 328.93 100% 43.92%;
+
+    --info: 210 100% 72%;
+    --info-foreground: 0 0% 98%;
+  }
+}
+
+@layer base {
+	* {
+		@apply border-border ring-ring;
+	}
+	body {
+		@apply bg-background text-foreground;
+		font-feature-settings: "rlig" 1, "calt" 1;
+	}
+}
+
+
+[data-rehype-pretty-code-figure] code {
+  @apply text-sm !leading-loose md:text-base;
+}
+
+[data-rehype-pretty-code-figure] code[data-line-numbers] {
+  counter-reset: line;
+}
+
+[data-rehype-pretty-code-figure] code[data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  @apply mr-4 inline-block w-4 text-right text-subtle-foreground;
+}
+
+[data-rehype-pretty-code-figure] [data-line] {
+  @apply border-l-2 border-l-transparent px-3;
+}
+
+[data-rehype-pretty-code-figure] [data-highlighted-line] {
+  @apply border-l-blue-400 bg-subtle/10;
+}
+
+[data-rehype-pretty-code-figure] [data-highlighted-chars] {
+  @apply rounded bg-subtle/10;
+  box-shadow: 0 0 0 4px rgb(82 82 91 / 0.5);
+}
+
+[data-rehype-pretty-code-figure] [data-chars-id] {
+  @apply border-b-2 p-1 shadow-none;
+}

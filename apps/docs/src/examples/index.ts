@@ -10,7 +10,21 @@
   };
   
   export const Demos: Record<string, Demo> = {
-    "avatar/initials": {
+    "alert/preview": {
+	  component: lazy(() => import("~/examples/alert/preview.tsx")),
+	  code: `import { Button } from "@pixelshades/ui/components"
+import Alert from "@pixelshades/ui/components/ui/alert/alert"
+
+export function Example() {
+	return (
+		<Alert title="Alert title" after={<Button variant="link">Button</Button>}>
+			Alert content
+		</Alert>
+	)
+}
+`,
+  },
+  "avatar/initials": {
 	  component: lazy(() => import("~/examples/avatar/initials.tsx")),
 	  code: `import { Avatar } from "@pixelshades/ui/components"
 
@@ -1841,7 +1855,14 @@ export function Example() {
 	  code: `import { Slider } from "@pixelshades/ui/components"
 
 export function Example() {
-	return <Slider label="Slide to change the value" description={<small>This is a description!</small>} helperText="helper text" defaultValue={30} />
+	return (
+		<Slider
+			label="Slide to change the value"
+			description={<small>This is a description!</small>}
+			helperText="helper text"
+			defaultValue={30}
+		/>
+	)
 }
 `,
   },
