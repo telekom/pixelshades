@@ -20,7 +20,6 @@ import {
 	Text,
 } from "react-aria-components"
 
-import { getLocalTimeZone, isToday } from "@internationalized/date"
 import { dateRangeCalendarVariants } from "@pixelshades/styles/components/range-calendar"
 
 const { root, header, heading, gridHeaderCell, cell, grid, iconButton } = dateRangeCalendarVariants()
@@ -52,7 +51,6 @@ const RangeCalendar = ({ className, visibleDuration, error, ...props }: RangeCal
 					<CalendarGridBody>
 						{(date) => (
 							<CalendarCell
-								data-today={isToday(date, getLocalTimeZone()) ? true : undefined}
 								className={cell({
 									className:
 										"data-[selected]:rounded-none [&[data-selection-end]]:rounded-r-md [&[data-selection-start]]:rounded-l-md",

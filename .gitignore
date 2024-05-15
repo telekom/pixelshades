@@ -11,3 +11,6 @@ dist
 .velite
 apps/docs/tsconfig.tsbuildinfo
 apps/docs/tsconfig.tsbuildinfo
+packages/ui/test-results
+
+*storybook.log

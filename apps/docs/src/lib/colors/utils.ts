@@ -84,10 +84,14 @@ export const generateRadixColors = ({
 
 	const backgroundHsl = backgroundColor.to("hsl").toString({ format: "hsl" })
 
-	const neutral = getFullColorScales(args.neutral, backgroundColor, grayScales)
-	const destructive = getFullColorScales(args.destructive, backgroundColor, allScales)
-	const info = getFullColorScales(args.info, backgroundColor, allScales)
-	const success = getFullColorScales(args.success, backgroundColor, allScales)
+	const [neutralScaleColorsHex, neutralScaleWideGamut] = getFullColorScales(args.neutral, backgroundColor, grayScales)
+	const [destructiveScaleColorsHex, destructiveScaleWideGamut] = getFullColorScales(
+		args.destructive,
+		backgroundColor,
+		allScales,
+	)
+	const [infoScaleColorsHex, infoScaleWideGamut, _] = getFullColorScales(args.info, backgroundColor, allScales)
+	const [successScaleColorsHex, successScaleWideGamut] = getFullColorScales(args.success, backgroundColor, allScales)
 
 	const primaryBaseColor = new Color(args.primary).to("oklch")
 
@@ -96,7 +100,7 @@ export const generateRadixColors = ({
 	// Make sure we use the tint from the gray scale for when base is pure white or black
 	const primaryBaseHex = primaryBaseColor.to("srgb").toString({ format: "hex" })
 	if (primaryBaseHex === "#000" || primaryBaseHex === "#fff") {
-		primaryScaleColors = neutral.hexScale.map((color) => new Color(color).to("oklch")) as ArrayOf12<Color>
+		primaryScaleColors = neutralScaleColorsHex.map((color) => new Color(color).to("oklch")) as ArrayOf12<Color>
 	}
 
 	const [primary9Color] = getStep9Colors(primaryScaleColors, primaryBaseColor)
@@ -124,24 +128,20 @@ export const generateRadixColors = ({
 		primaryScale: primaryScaleHex,
 		primaryScaleWideGamut: primaryScaleWideGamut,
 
-		neutralScale: neutral.hexScale,
-		neutralScaleWideGamut: neutral.wideGamutScale,
-		neutralForeground: neutral.textColor,
+		neutralScale: neutralScaleColorsHex,
+		neutralScaleWideGamut: neutralScaleWideGamut,
 
-		destructiveScale: destructive.hexScale,
-		destructiveScaleWideGamut: destructive.wideGamutScale,
-		destructiveTForeground: destructive.textColor,
+		destructiveScale: destructiveScaleColorsHex,
+		destructiveScaleWideGamut: destructiveScaleWideGamut,
 
-		infoScale: info.hexScale,
-		infoScaleWideGamut: info.wideGamutScale,
-		infoForeground: info.textColor,
+		infoScale: infoScaleColorsHex,
+		infoScaleWideGamut: infoScaleWideGamut,
 
-		sucessScale: success.hexScale,
-		sucessScaleWideGamut: success.wideGamutScale,
-		sucessForeground: success.textColor,
+		sucessScale: successScaleColorsHex,
+		sucessScaleWideGamut: successScaleWideGamut,
 
 		background: backgroundHsl,
-		foreground: getTextColor(backgroundColor),
+		foreground: neutralScaleColorsHex[11],
 	}
 }
 
@@ -149,12 +149,11 @@ export const getFullColorScales = (color: string, backgroundColor: Color, scales
 	const baseColor = new Color(color).to("oklch")
 	const colorScale = getScaleFromColor(baseColor, scales, backgroundColor)
 
-	const wideGamutScale = colorScale.map(toOklchString) as ArrayOf12<string>
+	const colorScaleWideGamut = colorScale.map(toOklchString) as ArrayOf12<string>
 
-	const hexScale = colorScale.map((color) => color.to("hsl").toString({ format: "hsl" })) as ArrayOf12<string>
+	const colorScaleHex = colorScale.map((color) => color.to("hsl").toString({ format: "hsl" })) as ArrayOf12<string>
 
-	const textColor = getTextColor(colorScale[9])
-	return { hexScale, wideGamutScale, textColor }
+	return [colorScaleHex, colorScaleWideGamut]
 }
 
 function getStep9Colors(scale: ArrayOf12<Color>, accentBaseColor: Color): [Color, Color] {

@@ -37,7 +37,6 @@ export default defineConfig({
 					slug: s.slug("docs"),
 					content: s.mdx(),
 					toc: s.toc(),
-					sortingIndex: s.number().optional(),
 				})
 				.transform((data) => ({ ...data, permalink: `/docs/${data.slug}` })),
 		},

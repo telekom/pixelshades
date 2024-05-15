@@ -19,9 +19,9 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
       - name: Setup PNPM
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v3
         with:
-          version: 9.1.0
+          version: 9
 
       - name: Install Dependencies
         run: pnpm install

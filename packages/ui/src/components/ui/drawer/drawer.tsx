@@ -5,11 +5,14 @@ import type { VariantProps } from "tailwind-variants"
 import { DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../dialog"
 import { Modal, type ModalOverlayProps } from "../modal"
 
-export type DrawerPlacement = VariantProps<typeof drawerVariants>["placement"]
+export const PLACEMENTS = ["bottom", "left", "right", "top"] as const
+export type DrawerPlacement = (typeof PLACEMENTS)[number]
+
+export type Placement = VariantProps<typeof drawerVariants>["placement"]
 
 export interface DrawerProps extends ModalOverlayProps, VariantProps<typeof drawerVariants> {
 	/** The placement of the drawer. */
-	placement?: DrawerPlacement
+	placement?: Placement
 }
 
 const DrawerRoot = ({ placement, children, className, ...props }: DrawerProps) => {

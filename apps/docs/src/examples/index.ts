@@ -10,27 +10,7 @@
   };
   
   export const Demos: Record<string, Demo> = {
-    "avatar/initials": {
-	  component: lazy(() => import("~/examples/avatar/initials.tsx")),
-	  code: `import { Avatar } from "@pixelshades/ui/components"
-
-export function Example() {
-	return <Avatar initials="ma" alt="@makisuo__" />
-}
-`,
-  },
-  "avatar/preview": {
-	  component: lazy(() => import("~/examples/avatar/preview.tsx")),
-	  code: `import { Avatar } from "@pixelshades/ui/components"
-
-export function Example() {
-	return (
-		<Avatar src="https://pbs.twimg.com/profile_images/1271783863614873600/DozTdIj7_400x400.jpg" alt="@makisuo__" />
-	)
-}
-`,
-  },
-  "badge/alert": {
+    "badge/alert": {
 	  component: lazy(() => import("~/examples/badge/alert.tsx")),
 	  code: `import { Badge } from "@pixelshades/ui/components"
 import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
@@ -906,10 +886,8 @@ export function Example() {
   },
   "drawer/directions": {
 	  component: lazy(() => import("~/examples/drawer/directions.tsx")),
-	  code: `import { Button, Drawer, type DrawerPlacement, Select } from "@pixelshades/ui/components"
+	  code: `import { Button, Drawer, type DrawerPlacement, PLACEMENTS, Select } from "@pixelshades/ui/components"
 import React from "react"
-
-export const PLACEMENTS = ["bottom", "left", "right", "top"] satisfies DrawerPlacement[]
 
 export function Example() {
 	const options = PLACEMENTS.map((d) => ({ name: d }))
@@ -974,6 +952,50 @@ export function Example() {
 }
 `,
   },
+  "drawer/placement": {
+	  component: lazy(() => import("~/examples/drawer/placement.tsx")),
+	  code: `import { Button, Drawer, type DrawerPlacement, PLACEMENTS, Select } from "@pixelshades/ui/components"
+import React from "react"
+
+export function Example() {
+	const options = PLACEMENTS.map((d) => ({ name: d }))
+	const [placement, setPlacement] = React.useState<DrawerPlacement>("right")
+
+	return (
+		<div className="flex flex-col gap-layout-sm">
+			<div>
+				<Select
+					label="Direction"
+					items={options}
+					selectedKey={placement}
+					onSelectionChange={(selected) => setPlacement(selected as DrawerPlacement)}
+				>
+					{(item) => <Select.Item id={item.name}>{item.name}</Select.Item>}
+				</Select>
+			</div>
+			<Drawer.Trigger>
+				<Button variant="outline">open drawer {placement}</Button>
+				<Drawer placement={placement}>
+					<Drawer.Content className="h-full">
+						{({ close }) => (
+							<>
+								<Drawer.Header>
+									<Drawer.Title>Drawer Title</Drawer.Title>
+								</Drawer.Header>
+								<div className={placement === "bottom" ? "h-[200px]" : "h-full"}>Drawer Content</div>
+								<Drawer.Footer>
+									<Button onPress={close}>Close Drawer</Button>
+								</Drawer.Footer>
+							</>
+						)}
+					</Drawer.Content>
+				</Drawer>
+			</Drawer.Trigger>
+		</div>
+	)
+}
+`,
+  },
   "drawer/preview": {
 	  component: lazy(() => import("~/examples/drawer/preview.tsx")),
 	  code: `import { Button, Drawer } from "@pixelshades/ui/components"
@@ -1007,7 +1029,7 @@ export function Example() {
 	DateField,
 	DatePicker,
 	Form,
-	RadioGroup,
+	Radio,
 	Switch,
 	TextField,
 	TimeField,
@@ -1051,17 +1073,17 @@ export function Example() {
 
 			<Switch label="Switch" description="Description" tooltip="Tooltip" helperText="Helper text" />
 
-			<RadioGroup
+			<Radio.Group
 				label="Radio Group"
 				description="Description"
 				tooltip="Tooltip"
 				helperText="Helper Text"
 				isRequired
 			>
-				<RadioGroup.Item value="push">Push</RadioGroup.Item>
-				<RadioGroup.Item value="email">Email</RadioGroup.Item>
-				<RadioGroup.Item value="text">Text</RadioGroup.Item>
-			</RadioGroup>
+				<Radio value="push">Push</Radio>
+				<Radio value="email">Email</Radio>
+				<Radio value="text">Text</Radio>
+			</Radio.Group>
 			<div className="flex w-full flex-row gap-md">
 				<Button className="w-full" type="submit">
 					Submit
@@ -1609,54 +1631,18 @@ export function Example() {
 }
 `,
   },
-  "radio-group/card": {
-	  component: lazy(() => import("~/examples/radio-group/card.tsx")),
-	  code: `import { RadioGroup } from "@pixelshades/ui/components"
-
-export function Example() {
-	return (
-		<RadioGroup defaultValue="dog" orientation="horizontal" label="Favorite pet" description="Description">
-			<RadioGroup.Card value="dog">Dog</RadioGroup.Card>
-			<RadioGroup.Card value="cat">Cat</RadioGroup.Card>
-			<RadioGroup.Card value="dragon">Dragon</RadioGroup.Card>
-		</RadioGroup>
-	)
-}
-`,
-  },
-  "radio-group/horizontal": {
-	  component: lazy(() => import("~/examples/radio-group/horizontal.tsx")),
-	  code: `import { RadioGroup } from "@pixelshades/ui/components"
-
-export function Example() {
-	return (
-		<RadioGroup
-			defaultValue="dog"
-			orientation="horizontal"
-			label="Favorite pet"
-			description="Description"
-			helperText="WOW"
-		>
-			<RadioGroup.Item value="dog">Dog</RadioGroup.Item>
-			<RadioGroup.Item value="cat">Cat</RadioGroup.Item>
-			<RadioGroup.Item value="dragon">Dragon</RadioGroup.Item>
-		</RadioGroup>
-	)
-}
-`,
-  },
   "radio-group/preview": {
 	  component: lazy(() => import("~/examples/radio-group/preview.tsx")),
-	  code: `import { Label, RadioGroup } from "@pixelshades/ui/components"
+	  code: `import { Label, Radio } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
-		<RadioGroup defaultValue="dog">
+		<Radio.Group defaultValue="dog">
 			<Label>Favorite pet</Label>
-			<RadioGroup.Item value="dog">Dog</RadioGroup.Item>
-			<RadioGroup.Item value="cat">Cat</RadioGroup.Item>
-			<RadioGroup.Item value="dragon">Dragon</RadioGroup.Item>
-		</RadioGroup>
+			<Radio value="dog">Dog</Radio>
+			<Radio value="cat">Cat</Radio>
+			<Radio value="dragon">Dragon</Radio>
+		</Radio.Group>
 	)
 }
 `,

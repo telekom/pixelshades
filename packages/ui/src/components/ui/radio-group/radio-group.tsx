@@ -14,10 +14,8 @@ import {
 } from "react-aria-components"
 
 import { labelVariants } from "@pixelshades/styles/components/label"
-import { radioGroupVariants } from "@pixelshades/styles/components/radio-group"
 import { cn } from "@pixelshades/utils/styles"
 import type { ReactNode } from "react"
-import { If } from "../../utils"
 import { FormDescription, FormFieldError } from "../form"
 import { type FormComponentLabelProps, Label } from "../label"
 
@@ -30,39 +28,45 @@ export interface RadioGroupProps extends AriaRadioGroupProps, FormComponentLabel
 	errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
-const { item, group, root, card } = radioGroupVariants()
-
-const RadioGroupRoot = ({
+const RadioGroup = ({
 	className,
+	orientation = "vertical",
 	description,
 	helperText,
 	tooltip,
 	errorMessage,
 	children,
 	isRequired,
-	label,
 	...props
 }: RadioGroupProps) => {
 	return (
 		<AriaRadioGroup
-			className={(values) => root({ className: typeof className === "function" ? className(values) : className })}
+			className={(values) =>
+				cn(
+					"group flex flex-col gap-md",
+					{
+						"grid gap-md": orientation === "vertical",
+						"flex items-center gap-md": orientation === "horizontal",
+					},
+					typeof className === "function" ? className(values) : className,
+				)
+			}
 			isRequired={isRequired}
 			{...props}
 		>
-			<If condition={label || description || tooltip}>
-				<Label description={description} tooltip={tooltip} isRequired={isRequired}>
-					{label}
-				</Label>
-			</If>
-
-			<div className={group()}>{children}</div>
+			<Label description={description} tooltip={tooltip} isRequired={isRequired}>
+				{props.label}
+			</Label>
+			<div className="flex gap-2 group-orientation-vertical:flex-col group-orientation-horizontal:gap-4">
+				{children}
+			</div>
 			{helperText && <FormDescription>{helperText}</FormDescription>}
 			<FormFieldError>{errorMessage}</FormFieldError>
 		</AriaRadioGroup>
 	)
 }
 
-RadioGroupRoot.displayName = "RadioGroup"
+RadioGroup.displayName = "RadioGroup"
 
 export interface RadioProps extends AriaRadioProps {
 	/** Whether the radio should be shown. */
@@ -84,7 +88,7 @@ const RadioItem = ({ className, children, showRadio = true, ...props }: RadioPro
 			{(values) => (
 				<>
 					{showRadio && (
-						<span className={item()}>
+						<span className="flex aspect-square size-4 items-center justify-center rounded-full border border-primary text-primary ring-offset-background group-data-[disabled]:opacity-50 group-data-[focus-visible]:ring-2 group-data-[focus-visible]:ring-ring group-data-[focus-visible]:ring-offset-2">
 							{values.isSelected && <Circle className="size-2.5 fill-current text-current" />}
 						</span>
 					)}
@@ -95,22 +99,10 @@ const RadioItem = ({ className, children, showRadio = true, ...props }: RadioPro
 	)
 }
 
-const RadioCard = ({ className, children, showRadio = true, ...props }: RadioProps) => {
-	return (
-		<AriaRadio
-			className={(values) => card({ className: typeof className === "function" ? className(values) : className })}
-			{...props}
-		>
-			{children}
-		</AriaRadio>
-	)
-}
-
 RadioItem.displayName = "Radio"
 
-export const RadioGroup = Object.assign(RadioGroupRoot, {
-	Item: RadioItem,
-	Card: RadioCard,
+export const Radio = Object.assign(RadioItem, {
+	Group: RadioGroup,
 })
 
-export { RadioItem, RadioCard }
+export { RadioGroup }
