@@ -14,10 +14,10 @@ export const drawerVariants = tv({
 			horizontal: "h-fit !w-full min-h-[320px] max-h-full !max-w-full",
 		},
 		placement: {
-			right: "right-0 border-l-2 animate-in slide-in-from-right ease-in",
-			left: "left-0 border-r-2 animate-in slide-in-from-left ease-in",
-			bottom: "bottom-0 border-t-2 animate-in slide-in-from-bottom ease-in",
-			top: "top-0 border-b-2 animate-in slide-in-from-top ease-in",
+			right: "right-0 border-l-2 rounded-r-none animate-in slide-in-from-right ease-in",
+			left: "left-0 border-r-2 rounded-l-none animate-in slide-in-from-left ease-in",
+			bottom: "bottom-0 border-t-2 rounded-b-none animate-in slide-in-from-bottom ease-in",
+			top: "top-0 border-b-2 rounded-t-none animate-in slide-in-from-top ease-in",
 		},
 	},
 	defaultVariants: {

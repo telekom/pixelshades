@@ -8,6 +8,7 @@
 	},
 	"scripts": {
 		"test": "jest",
+		"test:vrt": "playwright test",
 		"lint": "eslint . --max-warnings 0",
 		"generate:component": "turbo gen react-component",
 		"build": "bunchee --tsconfig tsconfig.build.json",
@@ -37,6 +38,7 @@
 	"devDependencies": {
 		"@chromatic-com/storybook": "^1.3.3",
 		"@pixelshades/typescript-config": "workspace:*",
+		"@playwright/test": "^1.44.0",
 		"@storybook/addon-essentials": "^8.0.10",
 		"@storybook/addon-interactions": "^8.0.10",
 		"@storybook/addon-links": "^8.0.10",
@@ -46,6 +48,7 @@
 		"@storybook/react": "^8.0.10",
 		"@storybook/react-vite": "^8.0.10",
 		"@storybook/test": "^8.0.10",
+		"@storybook/test-runner": "^0.18.0",
 		"@tailwindcss/typography": "^0.5.13",
 		"@testing-library/react": "^15.0.7",
 		"@turbo/gen": "^1.13.3",
