@@ -1,5 +1,11 @@
 # @pixelshades/ui
 
+## 0.3.11
+
+### Patch Changes
+
+- e81ee8f: fix: Alert export
+
 ## 0.3.10
 
 ### Patch Changes
