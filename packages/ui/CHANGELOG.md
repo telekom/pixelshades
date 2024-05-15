@@ -1,5 +1,15 @@
 # @pixelshades/ui
 
+## 0.3.10
+
+### Patch Changes
+
+- 643fc86: feat: add default .css vars
+- 85ea017: fix: readd Button ref props
+- Updated dependencies [85ea017]
+  - @pixelshades/styles@0.3.6
+  - @pixelshades/utils@0.1.2
+
 ## 0.3.9
 
 ### Patch Changes
