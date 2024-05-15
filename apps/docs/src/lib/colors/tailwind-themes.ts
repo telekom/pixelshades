@@ -69,12 +69,22 @@ export const generateColorPalette = ({
 	return palette
 }
 
+function getContrastColor(color: Color) {
+	// Calculate luminance
+	const luminance = color.luminance
+
+	// If luminance is greater than 0.5, use black for contrast, otherwise use white
+	return luminance > 0.5 ? "#000000" : "#FFFFFF"
+}
+
 export type Theme = {
 	primaryScale: Palette[]
+	primaryContrast: string
 	primaryHighcontrastScale: Palette[]
 
 	neutralScale: Palette[]
 	neutralHighcontrastScale: Palette[]
+	neutralContrast: string
 
 	successScale: Palette[]
 	successHighcontrastScale: Palette[]
@@ -104,9 +114,15 @@ export const generateTheme = ({
 }): Theme => {
 	const primaryScale = generateColorPalette({ color: primary })
 	const primaryHighcontrastScale = generateColorPalette({ color: primary, highcontrast: true })
+	const primaryContrast = getContrastColor(primaryScale[5].color)
 
 	const neutralScale = generateColorPalette({ color: neutral })
 	const neutralHighcontrastScale = generateColorPalette({ color: neutral, highcontrast: true })
+	const neutralContrast = getContrastColor(primaryScale[5].color)
+
+	const contrast = primaryScale[5].color.contrastWCAG21(neutralContrast)
+
+	console.log(contrast)
 
 	const successScale = generateColorPalette({ color: success })
 	const successHighcontrastScale = generateColorPalette({ color: success, highcontrast: true })
@@ -120,9 +136,11 @@ export const generateTheme = ({
 	return {
 		primaryScale,
 		primaryHighcontrastScale,
+		primaryContrast,
 
 		neutralScale,
 		neutralHighcontrastScale,
+		neutralContrast,
 
 		successScale,
 		successHighcontrastScale,
@@ -199,6 +217,7 @@ export const exportTheme = ({
           --spacing-layout-2xl: 6rem;
       
 
+		  --contrast: ${transformColor(contrast)};
           --background: ${transformColor(background)};
           --foreground: var(--neutral-scale-900);
       
@@ -207,16 +226,16 @@ export const exportTheme = ({
       
           --border: var(--neutral-scale-300);
       
-          --primary: var(--primary-scale-700);
+          --primary: var(--primary-scale-500);
           --primary-foreground: var(--contrast);
       
-          --destructive: var(--destructive-scale-700);
+          --destructive: var(--destructive-scale-500);
           --destructive-foreground: var(--contrast);
           
           --ring: var(--primary);
           --radius: 0.5rem;
       
-          --info: var(--info-scale-700);
+          --info: var(--info-scale-500);
           --info-foreground: var(--contrast);
         }
       }

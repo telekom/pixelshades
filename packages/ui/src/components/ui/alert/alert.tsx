@@ -1,6 +1,5 @@
 "use client"
 
-import { Slot } from "@radix-ui/react-slot"
 import type { VariantProps } from "tailwind-variants"
 
 import { alertVariants } from "@pixelshades/styles/components/alert"
@@ -134,7 +133,9 @@ const AlertWedges = forwardRef<HTMLDivElement, AlertProps>(
 							variant === "inline" && "sm:flex-row sm:items-center sm:gap-2",
 						)}
 					>
+						{/* @ts-expect-error */}
 						{title && <RenderSlot item={title} fallbackAs="p" />}
+						{/* @ts-expect-error */}
 						{children && <RenderSlot item={children} fallbackAs="p" />}
 					</div>
 
@@ -153,8 +154,8 @@ const AlertWedges = forwardRef<HTMLDivElement, AlertProps>(
 
 /* CloseButton */
 const AlertCloseButton = forwardRef<React.ElementRef<typeof Button>, React.ComponentPropsWithoutRef<typeof Button>>(
-	({ children, ...otherProps }, ref) => {
-		return <Button after={children} size="xs-icon" variant="ghost" {...otherProps} />
+	({ ...otherProps }, ref) => {
+		return <Button ref={ref} size="xs-icon" variant="ghost" {...otherProps} />
 	},
 )
 

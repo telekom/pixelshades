@@ -28,13 +28,7 @@ import {
 	yellow,
 	zinc,
 } from "tailwindcss/colors"
-import {
-	type Palette,
-	type Theme,
-	exportTheme,
-	generateColorPalette,
-	generateTheme,
-} from "~/lib/colors/tailwind-themes"
+import { exportTheme, generateTheme } from "~/lib/colors/tailwind-themes"
 
 export const Route = createFileRoute("/themes")({
 	component: Index,
@@ -149,17 +143,6 @@ function Index() {
 					))} */}
 
 					{theme.primaryScale.map((palette, i) => (
-						<ColorPreview
-							key={i}
-							style={{ backgroundColor: palette.color.to("hsl").toString({ format: "hsl" }) }}
-						/>
-					))}
-				</div>
-
-				<div className="flex w-full flex-row items-center gap-md">
-					<Typography className="flex-1">Primary High Contrast</Typography>
-
-					{theme.primaryHighcontrastScale.map((palette, i) => (
 						<ColorPreview
 							key={i}
 							style={{ backgroundColor: palette.color.to("hsl").toString({ format: "hsl" }) }}

@@ -4,6 +4,19 @@
 
 @layer base {
 	:root {
+		--spacing-xs: 0.125rem;
+		--spacing-sm: 0.25rem;
+		--spacing-md: 0.5rem;
+		--spacing-lg: 1rem;
+		--spacing-xl: 1.5rem;
+	
+		--spacing-layout-xs: 1rem;
+		--spacing-layout-sm: 1.5rem;
+		--spacing-layout-md: 2rem;
+		--spacing-layout-lg: 3rem;
+		--spacing-layout-xl: 4rem;
+		--spacing-layout-2xl: 6rem;
+
 		--primary-scale-50: 329 100% 98%;
 	  --primary-scale-100: 329 100% 95%;
 	  --primary-scale-200: 329 100% 90%;
@@ -16,17 +29,17 @@
 	  --primary-scale-900: 329 100% 7%;
 	  --primary-scale-950: 329 100% 4%;
 	  
-		--neutral-scale-50: 220 8.9362% 98%;
-	  --neutral-scale-100: 220 8.9362% 95%;
-	  --neutral-scale-200: 220 8.9362% 90%;
-	  --neutral-scale-300: 220 8.9362% 82%;
-	  --neutral-scale-400: 220 8.9362% 64%;
-	  --neutral-scale-500: 220 8.9362% 46%;
-	  --neutral-scale-600: 220 8.9362% 33%;
-	  --neutral-scale-700: 220 8.9362% 24%;
-	  --neutral-scale-800: 220 8.9362% 14%;
-	  --neutral-scale-900: 220 8.9362% 7%;
-	  --neutral-scale-950: 220 8.9362% 4%;
+		--neutral-scale-50: 215.38 16.318% 98%;
+	  --neutral-scale-100: 215.38 16.318% 95%;
+	  --neutral-scale-200: 215.38 16.318% 90%;
+	  --neutral-scale-300: 215.38 16.318% 82%;
+	  --neutral-scale-400: 215.38 16.318% 64%;
+	  --neutral-scale-500: 215.38 16.318% 46%;
+	  --neutral-scale-600: 215.38 16.318% 33%;
+	  --neutral-scale-700: 215.38 16.318% 24%;
+	  --neutral-scale-800: 215.38 16.318% 14%;
+	  --neutral-scale-900: 215.38 16.318% 7%;
+	  --neutral-scale-950: 215.38 16.318% 4%;
 	  
 		--success-scale-50: 144 100% 98%;
 	  --success-scale-100: 144 100% 95%;
@@ -61,26 +74,11 @@
 	  --destructive-scale-600: 350 89% 33%;
 	  --destructive-scale-700: 350 89% 24%;
 	  --destructive-scale-800: 350 89% 14%;
-	 	--destructive-scale-900: 350 89% 7%;
-	  	--destructive-scale-950: 350 89% 4%;
-
-
-		--spacing-xs: 0.125rem;
-		--spacing-sm: 0.25rem;
-		--spacing-md: 0.5rem;
-		--spacing-lg: 1rem;
-		--spacing-xl: 1.5rem;
-	
-		--spacing-layout-xs: 1rem;
-		--spacing-layout-sm: 1.5rem;
-		--spacing-layout-md: 2rem;
-		--spacing-layout-lg: 3rem;
-		--spacing-layout-xl: 4rem;
-		--spacing-layout-2xl: 6rem;
-	
+	  --destructive-scale-900: 350 89% 7%;
+	  --destructive-scale-950: 350 89% 4%;
 
 		--contrast: 0 0% 100%;
-		--background: 220 8.9362% 98%;
+		--background: 215.38 16.318% 98%;
 		--foreground: var(--neutral-scale-900);
 	
 		--subtle: var(--neutral-scale-100);
@@ -88,18 +86,18 @@
 	
 		--border: var(--neutral-scale-300);
 	
-		--primary: var(--primary-scale-500);
+		--primary: var(--primary-scale-700);
 		--primary-foreground: var(--contrast);
 	
-		--destructive: var(--destructive-scale-500);
+		--destructive: var(--destructive-scale-700);
 		--destructive-foreground: var(--contrast);
 		
 		--ring: var(--primary);
 		--radius: 0.5rem;
 	
-		--info: var(--info-scale-500);
+		--info: var(--info-scale-700);
 		--info-foreground: var(--contrast);
-	  }
+	}
 
 
   .dark {
