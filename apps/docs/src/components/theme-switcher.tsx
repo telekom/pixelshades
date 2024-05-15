@@ -1,26 +1,24 @@
-import { Switch } from "@pixelshades/ui/components"
-import { useEffect, useState } from "react"
+"use client"
 
-function classNames(...classes: string[]) {
-	return classes.filter(Boolean).join(" ")
-}
+import { Button } from "@pixelshades/ui/components"
+import { MoonIcon, SunIcon } from "@pixelshades/ui/icons"
+import { useTheme } from "~/provider/theme-provider"
 
 function ThemeSwitch() {
-	const [theme, setTheme] = useState("light")
+	const { computedTheme, setTheme } = useTheme()
 
-	useEffect(() => {
-		document.documentElement.classList.remove("light", "dark")
-		document.documentElement.classList.add(theme)
-	}, [theme])
-
-	const [enabled, setEnabled] = useState(theme === "light")
-
-	const handleThemeChange = (enabled: boolean) => {
-		setTheme(enabled ? "light" : "dark")
-		setEnabled(enabled)
+	const toggleTheme = () => {
+		setTheme(computedTheme === "light" ? "dark" : "light")
 	}
 
-	return <Switch selected={enabled} onChange={handleThemeChange} />
+	console.log(computedTheme)
+
+	return (
+		<Button size="xs-icon" variant="ghost" onPress={toggleTheme}>
+			{computedTheme === "light" && <SunIcon />}
+			{computedTheme === "dark" && <MoonIcon />}
+		</Button>
+	)
 }
 
 export default ThemeSwitch

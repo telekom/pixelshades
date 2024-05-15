@@ -1,36 +1,39 @@
 {
-	"name": "pixelshades-mono",
-	"private": true,
-	"scripts": {
-		"build": "turbo build",
-		"dev": "turbo dev",
-		"lint": "turbo lint",
-		"fmt": "pnpm biome format . --write && pnpm biome check .",
-		"verify-compliace": "pipx run reuse lint",
-		"bump-versions": "bun changeset version && bun install",
-		"release": "changeset version && changeset publish --access public",
-		"commit": "cz",
-		"changeset": "changeset"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.7.3",
-		"@changesets/cli": "^2.27.1",
-		"@pixelshades/typescript-config": "workspace:*",
-		"concurrently": "^8.2.2",
-		"cz-conventional-changelog": "^3.3.0",
-		"turbo": "1.13.3"
-	},
-	"engines": {
-		"node": ">=18"
-	},
-	"packageManager": "pnpm@9.1.0",
-	"workspaces": ["packages/*", "apps/*"],
-	"config": {
-		"commitizen": {
-			"path": "cz-conventional-changelog"
-		}
-	},
-	"volta": {
-		"node": "20.12.2"
-	}
+  "name": "pixelshades-mono",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "fmt": "pnpm biome format . --write && pnpm biome check .",
+    "verify-compliace": "pipx run reuse lint",
+    "bump-versions": "bun changeset version && bun install",
+    "release": "changeset version && changeset publish --access public",
+    "commit": "cz",
+    "changeset": "changeset"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.7.3",
+    "@changesets/cli": "^2.27.1",
+    "@pixelshades/typescript-config": "workspace:*",
+    "concurrently": "^8.2.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "turbo": "1.13.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "pnpm@9.1.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "volta": {
+    "node": "20.12.2"
+  }
 }
