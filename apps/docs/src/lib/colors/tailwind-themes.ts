@@ -70,11 +70,14 @@ export const generateColorPalette = ({
 }
 
 function getContrastColor({ color, white, black }: { color: Color; white: Color; black: Color }) {
-	// Calculate luminance
-	const luminance = color.luminance
+	const contrast = color.contrastWCAG21(white)
+	const blackContrast = color.contrastWCAG21(black)
 
-	// If luminance is greater than 0.5, use black for contrast, otherwise use white
-	return luminance > 0.5 ? black : white
+	if (contrast >= 4.5 || contrast > blackContrast) {
+		return white
+	}
+
+	return black
 }
 
 export type Theme = {
@@ -121,6 +124,8 @@ export const generateTheme = ({
 	const primaryScale = generateColorPalette({ color: primary })
 	const primaryHighcontrastScale = generateColorPalette({ color: primary, highcontrast: true })
 	const primaryContrast = getContrastColor({ color: primaryScale[5].color, white, black })
+
+	console.log(primaryContrast.to("srgb").toString({ format: "hex" }))
 
 	const neutralScale = generateColorPalette({ color: neutral })
 	const neutralHighcontrastScale = generateColorPalette({ color: neutral, highcontrast: true })

@@ -78,7 +78,9 @@ function Index() {
 		neutral: neutralColor.value,
 	})
 
-	console.log(exportTheme(theme))
+	// console.log(exportTheme(theme))
+
+	navigator.clipboard.writeText(exportTheme(theme))
 
 	return (
 		<div className="container flex min-h-screen w-full flex-col items-center gap-layout-md py-layout-lg">

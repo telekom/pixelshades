@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer base {
 	:root {
 	  /* Spacing Variables */
@@ -19,17 +21,18 @@
 	  --spacing-layout-2xl: 6rem;
 
 	  /* Color Scales */
-	  --primary-scale-50: 329 100% 98%;
-  --primary-scale-100: 329 100% 95%;
-  --primary-scale-200: 329 100% 90%;
-  --primary-scale-300: 329 100% 82%;
-  --primary-scale-400: 329 100% 64%;
-  --primary-scale-500: 329 100% 46%;
-  --primary-scale-600: 329 100% 33%;
-  --primary-scale-700: 329 100% 24%;
-  --primary-scale-800: 329 100% 14%;
-  --primary-scale-900: 329 100% 7%;
-  --primary-scale-950: 329 100% 4%;
+    --primary-scale-50: 329 100% 98%;
+    --primary-scale-100: 329 100% 95%;
+    --primary-scale-200: 329 100% 90%;
+    --primary-scale-300: 329 100% 82%;
+    --primary-scale-400: 329 100% 64%;
+    --primary-scale-500: 329 100% 46%;
+    --primary-scale-600: 329 100% 33%;
+    --primary-scale-700: 329 100% 24%;
+    --primary-scale-800: 329 100% 14%;
+    --primary-scale-900: 329 100% 7%;
+    --primary-scale-950: 329 100% 4%;
+    
 	  --neutral-scale-50: 240 3.8298% 98%;
   --neutral-scale-100: 240 3.8298% 95%;
   --neutral-scale-200: 240 3.8298% 90%;
@@ -94,7 +97,7 @@
 
 	  /* Info Colors */
 	  --info: var(--info-scale-500);
-	  --info-foreground: none 0% 100%;
+	  --info-foreground: none 0% 0%;
 
 	  /* Success Colors */
 	  --success: var(--success-scale-500);
@@ -111,17 +114,18 @@
 	  --subtle-foreground: var(--neutral-scale-100);
 	  --border: var(--neutral-scale-700);
 	}
-}
+  }
 
-@layer base {
-	* {
-		@apply border-border ring-ring;
-	}
-	body {
-		@apply bg-background text-foreground;
-		font-feature-settings: "rlig" 1, "calt" 1;
-	}
-}
+
+  @layer base {
+    * {
+      @apply border-border ring-ring;
+    }
+    body {
+      @apply bg-background text-foreground;
+      font-feature-settings: "rlig" 1, "calt" 1;
+    }
+  }
 
 
 [data-rehype-pretty-code-figure] code {
