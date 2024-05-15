@@ -10,11 +10,13 @@ type ThemeProviderProps = {
 
 type ThemeProviderState = {
 	theme: Theme
+	computedTheme: Theme | null
 	setTheme: (theme: Theme) => void
 }
 
 const initialState: ThemeProviderState = {
 	theme: "system",
+	computedTheme: null,
 	setTheme: () => null,
 }
 
@@ -27,6 +29,7 @@ export function ThemeProvider({
 	...props
 }: ThemeProviderProps) {
 	const [theme, setTheme] = useState<Theme>(() => (localStorage.getItem(storageKey) as Theme) || defaultTheme)
+	const [computedTheme, setComputedTheme] = useState<Theme>(theme)
 
 	useEffect(() => {
 		const root = window.document.documentElement
@@ -37,6 +40,7 @@ export function ThemeProvider({
 			const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
 
 			root.classList.add(systemTheme)
+			setComputedTheme(systemTheme)
 			return
 		}
 
@@ -45,9 +49,11 @@ export function ThemeProvider({
 
 	const value = {
 		theme,
+		computedTheme,
 		setTheme: (theme: Theme) => {
 			localStorage.setItem(storageKey, theme)
 			setTheme(theme)
+			setComputedTheme(theme)
 		},
 	}
 
