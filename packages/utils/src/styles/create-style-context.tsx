@@ -9,7 +9,8 @@ import { cn } from "./cn"
 type ScreenSizes = "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl"
 
 type Recipe = (props: any) => any
-type ComponentPropsWithVariants<C extends ElementType, StylesFunction extends Recipe> = ComponentProps<C>
+type ComponentPropsWithVariants<C extends ElementType, StylesFunction extends Recipe> = ComponentProps<C> &
+	VariantProps<StylesFunction>
 
 type VariantProps<R extends Recipe> = Parameters<R>[0]
 
