@@ -2157,6 +2157,15 @@ export function Example() {
 }
 `,
   },
+  "tooltip/crossoffset": {
+	  component: lazy(() => import("~/examples/tooltip/crossoffset.tsx")),
+	  code: `import { Tooltip } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Tooltip crossOffset={50}>Small Little Tooltip</Tooltip>
+}
+`,
+  },
   "tooltip/custom": {
 	  component: lazy(() => import("~/examples/tooltip/custom.tsx")),
 	  code: `import { Button, Tooltip } from "@pixelshades/ui/components"
@@ -2170,6 +2179,62 @@ export function Example() {
 			</Button>
 			<Tooltip.Content>Save</Tooltip.Content>
 		</Tooltip.Root>
+	)
+}
+`,
+  },
+  "tooltip/offset": {
+	  component: lazy(() => import("~/examples/tooltip/offset.tsx")),
+	  code: `import { Tooltip } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Tooltip offset={70}>Small Little Tooltip</Tooltip>
+}
+`,
+  },
+  "tooltip/open": {
+	  component: lazy(() => import("~/examples/tooltip/open.tsx")),
+	  code: `import { Tooltip } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Tooltip defaultOpen>Small Little Tooltip</Tooltip>
+}
+`,
+  },
+  "tooltip/placement": {
+	  component: lazy(() => import("~/examples/tooltip/placement.tsx")),
+	  code: `import { Button, Tooltip } from "@pixelshades/ui/components"
+import { useState } from "react"
+
+type Placement = "top" | "right" | "bottom" | "left" | "start" | "end"
+
+export function Example() {
+	const [placement, setPlacement] = useState<Placement>("top")
+
+	return (
+		<div className="flex flex-col items-center gap-8">
+			<ul className="flex flex-row flex-wrap gap-3">
+				<li>
+					<Button onPress={() => setPlacement("top")}>Top</Button>
+				</li>
+				<li>
+					<Button onPress={() => setPlacement("right")}>Right</Button>
+				</li>
+				<li>
+					<Button onPress={() => setPlacement("bottom")}>Bottom</Button>
+				</li>
+				<li>
+					<Button onPress={() => setPlacement("left")}>Left</Button>
+				</li>
+				<li>
+					<Button onPress={() => setPlacement("start")}>Start</Button>
+				</li>
+				<li>
+					<Button onPress={() => setPlacement("end")}>End</Button>
+				</li>
+			</ul>
+			<Tooltip placement={placement}>Small Little Tooltip</Tooltip>
+		</div>
 	)
 }
 `,
