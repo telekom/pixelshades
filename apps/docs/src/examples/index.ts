@@ -2054,20 +2054,44 @@ export function Example() {
 }
 `,
   },
+  "text-field/description": {
+	  component: lazy(() => import("~/examples/text-field/description.tsx")),
+	  code: `import { TextField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <TextField label="Project" description="Deploy your new project in one-click." />
+}
+`,
+  },
+  "text-field/disabled": {
+	  component: lazy(() => import("~/examples/text-field/disabled.tsx")),
+	  code: `import { TextField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <TextField label="Project" isDisabled />
+}
+`,
+  },
+  "text-field/helperText": {
+	  component: lazy(() => import("~/examples/text-field/helperText.tsx")),
+	  code: `import { TextField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<div className="flex flex-col gap-xl">
+			<TextField label="Project" helperText="Helper Text" />
+			<TextField label="Project" errorMessage="Error message" isInvalid />
+		</div>
+	)
+}
+`,
+  },
   "text-field/multi-line": {
 	  component: lazy(() => import("~/examples/text-field/multi-line.tsx")),
 	  code: `import { TextField } from "@pixelshades/ui/components"
 
 export function Example() {
-	return (
-		<TextField
-			label="Project"
-			description="Deploy your new project in one-click."
-			helperText="Helper Text"
-			rows={5}
-			multiLine
-		/>
-	)
+	return <TextField label="Project" rows={5} multiLine />
 }
 `,
   },
@@ -2076,7 +2100,44 @@ export function Example() {
 	  code: `import { TextField } from "@pixelshades/ui/components"
 
 export function Example() {
-	return <TextField label="Project" description="Deploy your new project in one-click." helperText="Helper Text" />
+	return <TextField label="Project" />
+}
+`,
+  },
+  "text-field/readonly": {
+	  component: lazy(() => import("~/examples/text-field/readonly.tsx")),
+	  code: `import { TextField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <TextField label="Project" isReadOnly />
+}
+`,
+  },
+  "text-field/validation": {
+	  component: lazy(() => import("~/examples/text-field/validation.tsx")),
+	  code: `import { Button, TextField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<form className="flex flex-col gap-xl">
+			<TextField label="Project" isRequired />
+			<div className="grid auto-cols-fr grid-flow-col gap-lg">
+				<Button type="submit">Submit</Button>
+				<Button type="reset" variant="subtle">
+					Reset
+				</Button>
+			</div>
+		</form>
+	)
+}
+`,
+  },
+  "time-field/disabled": {
+	  component: lazy(() => import("~/examples/time-field/disabled.tsx")),
+	  code: `import { TimeField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <TimeField label="Start Time" isDisabled />
 }
 `,
   },
