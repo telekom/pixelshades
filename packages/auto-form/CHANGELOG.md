@@ -1,5 +1,11 @@
 # @pixelshades/utils
 
+## 0.0.3
+
+### Patch Changes
+
+- e495324: fix: ts missconfiguration
+
 ## 0.0.2
 
 ### Patch Changes
