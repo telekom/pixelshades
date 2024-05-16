@@ -1624,6 +1624,22 @@ export function Example() {
 }
 `,
   },
+  "radio-group/disabled": {
+	  component: lazy(() => import("~/examples/radio-group/disabled.tsx")),
+	  code: `import { Label, RadioGroup } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<RadioGroup defaultValue="dog" isDisabled>
+			<Label>Favorite pet</Label>
+			<RadioGroup.Item value="dog">Dog</RadioGroup.Item>
+			<RadioGroup.Item value="cat">Cat</RadioGroup.Item>
+			<RadioGroup.Item value="dragon">Dragon</RadioGroup.Item>
+		</RadioGroup>
+	)
+}
+`,
+  },
   "radio-group/horizontal": {
 	  component: lazy(() => import("~/examples/radio-group/horizontal.tsx")),
 	  code: `import { RadioGroup } from "@pixelshades/ui/components"
