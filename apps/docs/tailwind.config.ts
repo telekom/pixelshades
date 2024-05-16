@@ -7,6 +7,7 @@ const config: Config = {
 	content: [
 		"../../packages/ui/**/*.{js,ts,jsx,tsx,mdx,md}",
 		"../../packages/styles/**/*.{js,ts,jsx,tsx,mdx,md}",
+		"../../packages/auto-form/**/*.{js,ts,jsx,tsx,mdx,md}",
 		"./src/**/*.{js,ts,jsx,tsx,mdx,md}",
 		"./content/**/*.{js,ts,jsx,tsx,mdx,md}",
 		"../../node_modules/@pixelshades/ui/dist/es/**/*.{js,ts,jsx,tsx,mdx,md}",

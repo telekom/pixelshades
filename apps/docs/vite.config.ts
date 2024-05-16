@@ -13,6 +13,7 @@ export default defineConfig({
 		alias: {
 			"@pixelshades/ui": path.resolve(__dirname, "../../packages/ui/src"),
 			"@pixelshades/styles/components": path.resolve(__dirname, "../../packages/styles/src/components"),
+			"@pixelshades/auto-form": path.resolve(__dirname, "../../packages/auto-form/src"),
 			// Add more package aliases as needed
 		},
 	},
