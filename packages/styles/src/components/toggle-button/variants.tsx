@@ -30,5 +30,8 @@ export const toggleVariants = tv({
 			md: { button: "h-9 px-3 py-2 rounded-md gap-1" },
 			lg: { button: "h-10 px-8 rounded-md gap-md" },
 		},
+		isDisabled: {
+			true: { button: "opacity-50 cursor-not-allowed" },
+		},
 	},
 })
