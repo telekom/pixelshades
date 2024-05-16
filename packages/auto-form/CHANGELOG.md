@@ -1,5 +1,13 @@
 # @pixelshades/utils
 
+## 0.0.1
+
+### Patch Changes
+
+- f6ecb0d: Init Autoform
+- Updated dependencies [edb8853]
+  - @pixelshades/ui@0.3.13
+
 ## 0.1.2
 
 ### Patch Changes

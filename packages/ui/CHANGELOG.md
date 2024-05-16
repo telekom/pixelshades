@@ -1,5 +1,11 @@
 # @pixelshades/ui
 
+## 0.3.13
+
+### Patch Changes
+
+- edb8853: fix: missconfigured export
+
 ## 0.3.12
 
 ### Patch Changes
