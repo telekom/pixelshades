@@ -3,18 +3,17 @@ import { GithubIcon } from "@pixelshades/ui/icons"
 
 export default function Example() {
 	return (
-		<DataList>
-			<DataList.Item
-				orientation={{
-					xs: "vertical",
-					sm: "vertical",
-					md: "horizontal",
-					lg: "horizontal",
-					xl: "horizontal",
-					"2xl": "horizontal",
-					"3xl": "horizontal",
-				}}
-			>
+		<DataList
+			direction={{
+				xs: "vertical",
+				sm: "vertical",
+				md: "horizontal",
+				lg: "horizontal",
+				"2xl": "horizontal",
+				"3xl": "horizontal",
+			}}
+		>
+			<DataList.Item>
 				<DataList.Label>Import</DataList.Label>
 				<DataList.Value>
 					<code>

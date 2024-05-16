@@ -3,9 +3,14 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { type ComponentProps, type ElementType, createContext, forwardRef, useContext } from "react"
+import { useCurrentBreakpoint } from "./breakpoints"
 import { cn } from "./cn"
 
+type ScreenSizes = "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl"
+
 type Recipe = (props: any) => any
+type ComponentPropsWithVariants<C extends ElementType, StylesFunction extends Recipe> = ComponentProps<C>
+
 type VariantProps<R extends Recipe> = Parameters<R>[0]
 
 /**
@@ -19,9 +24,26 @@ export const createStyleContext = <StylesFunction extends Recipe, Slot extends k
 	const StyleContext = createContext<ReturnType<typeof createStyles> | null>(null)
 
 	const withProvider = <C extends ElementType>(Component: C, slot?: Slot) => {
-		const Comp = forwardRef((props: ComponentProps<C> & VariantProps<StylesFunction>, ref) => {
-			const styles = createStyles(props)
+		const Comp = forwardRef((props: ComponentPropsWithVariants<C, StylesFunction>, ref) => {
+			const currentBreakpoint = useCurrentBreakpoint()
+
+			const breakpointValuesObject = Object.keys(props)?.reduce((obj, value) => {
+				const breakpointValue = props[value]?.[currentBreakpoint || "default"]
+
+				if (breakpointValue === undefined) {
+					return obj
+				}
+
+				// @ts-expect-error
+				obj[value] = props[value]?.[currentBreakpoint || "default"]
+
+				return obj
+			}, {})
+
+			const styles = createStyles({ ...props, ...breakpointValuesObject })
+
 			const variantClassNames = styles[slot ?? ""]?.()
+
 			return (
 				<StyleContext.Provider value={styles}>
 					<Component ref={ref} {...props} className={cn(variantClassNames, props.className)} />
@@ -34,27 +56,15 @@ export const createStyleContext = <StylesFunction extends Recipe, Slot extends k
 		return Comp
 	}
 
-	const withContext = <C extends ElementType>(
-		Component: C,
-		slot?: Slot,
-		options?: { valuesWithBreakpoints?: any[]; activeScreenSize?: any },
-	) => {
-		type ComponentPropsWithVariants = ComponentProps<C> & VariantProps<StylesFunction>
-
-		const Comp = forwardRef((props: ComponentPropsWithVariants, ref) => {
+	const withContext = <C extends ElementType>(Component: C, slot?: Slot) => {
+		const Comp = forwardRef((props: ComponentPropsWithVariants<C, StylesFunction>, ref) => {
 			const slotRecipe = useContext(StyleContext)
-
-			const breakpointValues = props[options?.valuesWithBreakpoints?.[0]]
-
-			const currentOrientation = breakpointValues?.[options?.activeScreenSize?.name] ?? ""
-			const orientationSlotRecipe = slotRecipe?.[slot ?? ""]?.(currentOrientation)
 
 			const variantClassNames = slotRecipe
 				? slotRecipe?.[slot ?? ""]?.(props)
 				: createStyles(props)?.[slot ?? ""]?.()
-			// console.log("variantClassNames w orientation", variantClassNames, currentOrientation)
-			// console.log("direction", props)
-			return <Component ref={ref} {...(props as any)} className={cn(variantClassNames, props.className)} />
+
+			return <Component ref={ref} {...props} className={cn(variantClassNames, props.className)} />
 		})
 
 		// @ts-expect-error JSX.IntrinsicElements do not have a displayName but Function and Class components do

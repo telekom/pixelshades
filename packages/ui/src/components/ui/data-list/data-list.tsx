@@ -8,15 +8,8 @@ import { dataListVariants } from "@pixelshades/styles/components/data-list"
 import { forwardRef } from "@pixelshades/utils/jsx"
 import { createStyleContext } from "@pixelshades/utils/styles"
 import type { HTMLAttributes } from "react"
-import { getActiveBreakpoint } from "../../../utils"
 
 export type DataListProps = HTMLAttributes<HTMLDListElement>
-
-type ScreenSizes = "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl"
-
-type Orientation = "horizontal" | "vertical"
-
-type OrientationByBreakpoint = Record<ScreenSizes, Orientation>
 
 const { withContext, withProvider } = createStyleContext(dataListVariants)
 
@@ -24,9 +17,7 @@ const UnstyledDataList = forwardRef((props: DataListProps) => {
 	return <dl {...props} />
 })
 
-export type DataListItemProps = HTMLAttributes<HTMLDivElement> & {
-	orientation?: Orientation | OrientationByBreakpoint
-}
+export type DataListItemProps = HTMLAttributes<HTMLDivElement>
 
 const UnstyledDataListItem = forwardRef((props: DataListItemProps) => {
 	return <div {...props} />
@@ -45,10 +36,7 @@ const UnstyledDataListValue = forwardRef(({ ...props }: DataListValueProps) => {
 })
 
 const DataListRoot = withProvider(UnstyledDataList, "root")
-const DataListItem = withContext(UnstyledDataListItem, "item", {
-	valuesWithBreakpoints: ["orientation"],
-	activeScreenSize: getActiveBreakpoint(),
-})
+const DataListItem = withContext(UnstyledDataListItem, "item")
 const DataListLabel = withContext(UnstyledDataListLabel, "label")
 const DataListValue = withContext(UnstyledDataListValue, "value")
 
