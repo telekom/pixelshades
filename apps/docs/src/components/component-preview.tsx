@@ -23,6 +23,10 @@ export function ComponentPreview({
 }: ComponentPreviewProps) {
 	const component = Demos[name]
 
+	if (!component) {
+		return null
+	}
+
 	return (
 		<div className={cn("group relative my-4 flex flex-col space-y-2", className)} {...props}>
 			<Tabs>

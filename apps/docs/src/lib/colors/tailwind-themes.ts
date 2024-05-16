@@ -61,9 +61,9 @@ export const generateColorPalette = ({
 	})
 
 	if (preserve) {
-		const [closestShade] = Object.keys(lightnessDelta).sort((a, b) => lightnessDelta[a] - lightnessDelta[b])
+		const [closestShade] = Object.keys(lightnessDelta).sort((a, b) => lightnessDelta[a]! - lightnessDelta[b]!)
 
-		palette[palette.findIndex((shade) => shade.name === closestShade)].color = startColor
+		palette[palette.findIndex((shade) => shade.name === closestShade)]!.color = startColor
 	}
 
 	return palette
@@ -123,25 +123,25 @@ export const generateTheme = ({
 
 	const primaryScale = generateColorPalette({ color: primary })
 	const primaryHighcontrastScale = generateColorPalette({ color: primary, highcontrast: true })
-	const primaryContrast = getContrastColor({ color: primaryScale[5].color, white, black })
+	const primaryContrast = getContrastColor({ color: primaryScale[5]!.color, white, black })
 
 	console.log(primaryContrast.to("srgb").toString({ format: "hex" }))
 
 	const neutralScale = generateColorPalette({ color: neutral })
 	const neutralHighcontrastScale = generateColorPalette({ color: neutral, highcontrast: true })
-	const neutralContrast = getContrastColor({ color: neutralScale[5].color, white, black })
+	const neutralContrast = getContrastColor({ color: neutralScale[5]!.color, white, black })
 
 	const successScale = generateColorPalette({ color: success })
 	const successHighcontrastScale = generateColorPalette({ color: success, highcontrast: true })
-	const successContrast = getContrastColor({ color: successScale[5].color, white, black })
+	const successContrast = getContrastColor({ color: successScale[5]!.color, white, black })
 
 	const infoScale = generateColorPalette({ color: info })
 	const infoHighcontrastScale = generateColorPalette({ color: info, highcontrast: true })
-	const infoContrast = getContrastColor({ color: infoScale[5].color, white, black })
+	const infoContrast = getContrastColor({ color: infoScale[5]!.color, white, black })
 
 	const destructiveScale = generateColorPalette({ color: destructive })
 	const destructiveHighcontrastScale = generateColorPalette({ color: destructive, highcontrast: true })
-	const destructiveContrast = getContrastColor({ color: destructiveScale[5].color, white, black })
+	const destructiveContrast = getContrastColor({ color: destructiveScale[5]!.color, white, black })
 
 	return {
 		primaryScale,

@@ -1,5 +1,5 @@
 {
-	"extends": "@pixelshades/typescript-config/react-library.json",
+	"extends": "@total-typescript/tsconfig/bundler/dom/library-monorepo",
 	"compilerOptions": {
 		"outDir": "dist",
 		"paths": {

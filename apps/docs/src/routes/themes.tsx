@@ -65,7 +65,7 @@ const primaryColors = [
 
 function Index() {
 	const [primaryColor, setPrimaryColor] = useState("hsl(329 100% 44%)")
-	const [neutralColor, setNeutralColor] = useState(neutralColors[0])
+	const [neutralColor, setNeutralColor] = useState(neutralColors[0]!)
 	const [successColor, setSuccessColor] = useState("hsl(144 100% 44%)")
 	const [infoColor, setInfoColor] = useState("hsl(210 100% 32%)")
 	const [destructiveColor, setDestructiveColor] = useState("hsl(350 89% 60%)")

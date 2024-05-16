@@ -56,7 +56,7 @@ export function rehypeNpmCommand() {
 			}
 
 			const [codeEl] = node.children
-			if (codeEl.tagName !== "code") {
+			if (codeEl!.tagName !== "code") {
 				return
 			}
 
