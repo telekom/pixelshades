@@ -1,0 +1,40 @@
+{
+	"name": "@pixelshades/auto-form",
+	"version": "0.0.0",
+	"private": false,
+	"type": "module",
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "bunchee",
+		"dev": "bunchee --watch --no-clean"
+	},
+	"dependencies": {
+		"@pixelshades/utils": "workspace:*",
+		"react-hook-form": "^7.51.4",
+		"zod": "link:@hookform/resolvers/zod"
+	},
+	"peerDependencies": {
+		"@pixelshades/ui": "workspace:*",
+		"react": ">18.0.0",
+		"react-dom": ">18.0.0",
+		"sonner": ">1.4.0"
+	},
+	"devDependencies": {
+		"@pixelshades/ui": "workspace:*",
+		"@total-typescript/tsconfig": "^1.0.4",
+		"@types/node": "^20.12.12",
+		"@types/react": "^18.3.2",
+		"@types/react-dom": "^18.3.0",
+		"bunchee": "5.1.5",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"sonner": "^1.4.41",
+		"typescript": "^5.4.5"
+	},
+	"files": [
+		"dist"
+	],
+	"exports": {}
+}
