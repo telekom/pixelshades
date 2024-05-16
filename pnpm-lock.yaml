@@ -48,8 +48,8 @@ importers:
         specifier: 1.32.5
         version: 1.32.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-devtools':
-        specifier: 1.32.5
-        version: 1.32.5(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 1.32.12
+        version: 1.32.12(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-vite-plugin':
         specifier: ^1.32.2
         version: 1.32.2(vite@5.2.11(@types/node@20.12.8)(terser@5.31.0))
@@ -1899,6 +1899,13 @@ packages:
     resolution: {integrity: sha512-rahAZXlR879P7dngDH7BZwGYiODA9D5Hqo6nUHn9GAURcqZU5IW0ZiT54dPtV5EPES7muZZmknReYueDHs7FFQ==}
     engines: {node: '>=12'}
 
+  '@tanstack/react-router@1.32.12':
+    resolution: {integrity: sha512-oKnpFyzC4821JJXLlE+UHL3QhtZUHKmm20v3+MrzTmeJlz2bqx+WnwF71rVxWTf9gVexy8eH169AG2t635hMFQ==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+
   '@tanstack/react-router@1.32.5':
     resolution: {integrity: sha512-3W8db+P2KAJRY+zwxDzVUS99SFbs0wT8/je8yS1i3OExXm9BRCPD8EQX8+wk3EDxrEJ0SYjkGExutzSb7m58jA==}
     engines: {node: '>=12'}
@@ -1912,8 +1919,8 @@ packages:
       react: '>=16'
       react-dom: '>=16'
 
-  '@tanstack/router-devtools@1.32.5':
-    resolution: {integrity: sha512-f02dogfO1s041Fuk7pbRKNjYfEkWkWe2lZJd6ZLwICZ2HkQwRPVzVO41gX7462hKtqnPccavu0ATpboJt44W2Q==}
+  '@tanstack/router-devtools@1.32.12':
+    resolution: {integrity: sha512-VE67RNDFWBpf5A41vQ1b/elTXosNXW/ZPxjcRDEhZspp0iFPYXq6CK990Bm9uO41n0iTjI+o+N1UZ+5wKzDBEw==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=16.8'
@@ -6753,6 +6760,15 @@ snapshots:
 
   '@tanstack/history@1.31.16': {}
 
+  '@tanstack/react-router@1.32.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@tanstack/history': 1.31.16
+      '@tanstack/react-store': 0.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      tiny-invariant: 1.3.3
+      tiny-warning: 1.0.3
+
   '@tanstack/react-router@1.32.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tanstack/history': 1.31.16
@@ -6769,9 +6785,9 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       use-sync-external-store: 1.2.0(react@18.3.1)
 
-  '@tanstack/router-devtools@1.32.5(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/router-devtools@1.32.12(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@tanstack/react-router': 1.32.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-router': 1.32.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.0
       date-fns: 2.30.0
       goober: 2.1.14(csstype@3.1.3)
