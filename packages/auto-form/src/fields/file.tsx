@@ -1,9 +1,7 @@
-import { Input } from "@pixelshades/ui/components"
+import { If, Input, Label } from "@pixelshades/ui/components"
 import { DeleteIcon } from "@pixelshades/ui/icons"
 import { type ChangeEvent, useState } from "react"
-import { FormControl, FormItem, FormMessage } from "~/components/ui/form"
-import AutoFormLabel from "../common/label"
-import AutoFormTooltip from "../common/tooltip"
+import { FormControl, FormItem, FormMessage } from "../commons/hook-form"
 import type { AutoFormInputComponentProps } from "../types"
 export default function AutoFormFile({
 	label,
@@ -36,7 +34,11 @@ export default function AutoFormFile({
 
 	return (
 		<FormItem>
-			{showLabel && <AutoFormLabel label={label} isRequired={isRequired} />}
+			<If condition={showLabel}>
+				<Label isRequired={isRequired} tooltip={fieldConfigItem.description}>
+					{label}
+				</Label>
+			</If>
 			{!file && (
 				<FormControl>
 					<Input type="file" {...fieldPropsWithoutShowLabel} onChange={handleFileChange} value={""} />
@@ -50,7 +52,6 @@ export default function AutoFormFile({
 					</button>
 				</div>
 			)}
-			<AutoFormTooltip fieldConfigItem={fieldConfigItem} />
 			<FormMessage />
 		</FormItem>
 	)

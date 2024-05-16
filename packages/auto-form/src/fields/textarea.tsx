@@ -1,5 +1,5 @@
 import { TextField } from "@pixelshades/ui/components"
-import { FormControl, FormItem } from "~/components/ui/form"
+import { FormControl, FormItem } from "../commons/hook-form"
 import type { AutoFormInputComponentProps } from "../types"
 
 export default function AutoFormTextarea({

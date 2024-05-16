@@ -11,9 +11,11 @@
 		"dev": "bunchee --watch --no-clean"
 	},
 	"dependencies": {
+		"@hookform/resolvers": "^3.4.0",
 		"@pixelshades/utils": "workspace:*",
+		"@radix-ui/react-accordion": "^1.1.2",
 		"react-hook-form": "^7.51.4",
-		"zod": "link:@hookform/resolvers/zod"
+		"zod": "^3.23.8"
 	},
 	"peerDependencies": {
 		"@pixelshades/ui": "workspace:*",

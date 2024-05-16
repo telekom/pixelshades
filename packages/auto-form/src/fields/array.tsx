@@ -2,7 +2,7 @@ import { Button, Separator } from "@pixelshades/ui/components"
 import { DeleteIcon, PlusIcon } from "@pixelshades/ui/icons"
 import { useFieldArray, type useForm } from "react-hook-form"
 import * as z from "zod"
-import { AccordionContent, AccordionItem, AccordionTrigger } from "~/components/ui/accordion"
+import { AccordionContent, AccordionItem, AccordionTrigger } from "../commons/temp/accordion"
 import { beautifyObjectName } from "../utils"
 import AutoFormObject from "./object"
 
