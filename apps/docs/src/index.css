@@ -82,7 +82,10 @@
           --spacing-layout-lg: 3rem;
           --spacing-layout-xl: 4rem;
           --spacing-layout-2xl: 6rem;
-      
+
+		  --breakpoint-xs: 320px;
+		  --breakpoint-sm: 520px;
+		  --breakpoint-md: 720px;
       
           --background: 228.57 84% 4.902%;
           --foreground: 215.44 25.82% 93.74%;
