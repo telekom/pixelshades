@@ -2,7 +2,7 @@
 	"extends": "@total-typescript/tsconfig/bundler/dom/library-monorepo",
 	"compilerOptions": {
 		"outDir": "dist",
-		"jsx": "preserve"
+		"jsx": "react-jsx"
 	},
 	"include": ["src"],
 	"exclude": ["node_modules", "dist"]
