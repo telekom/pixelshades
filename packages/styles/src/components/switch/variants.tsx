@@ -15,8 +15,12 @@ export const switchVariants = tv({
 		selected: {
 			true: { indicator: "bg-primary before:translate-x-4 before:bg-primary-foreground" },
 		},
+		isDisabled: {
+			true: { indicator: "opacity-50 cursor-not-allowed" },
+		},
 	},
 	defaultVariants: {
 		selected: false,
+		isDisabled: false,
 	},
 })

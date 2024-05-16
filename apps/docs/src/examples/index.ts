@@ -1854,12 +1854,65 @@ export function Example() {
 }
 `,
   },
+  "switch/controlled": {
+	  component: lazy(() => import("~/examples/switch/controlled.tsx")),
+	  code: `import { Switch } from "@pixelshades/ui/components"
+import { useState } from "react"
+
+export function Example() {
+	const [value, setValue] = useState(false)
+
+	return (
+		<div className="flex flex-col gap-xl">
+			<div>value: {value ? "true" : "false"}</div>
+			<Switch label="Label" defaultSelected={value} onChange={(value) => setValue(value as boolean)} />
+		</div>
+	)
+}
+`,
+  },
+  "switch/disabled": {
+	  component: lazy(() => import("~/examples/switch/disabled.tsx")),
+	  code: `import { Switch } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Switch label="Label" isDisabled />
+}
+`,
+  },
+  "switch/errorMessage": {
+	  component: lazy(() => import("~/examples/switch/errorMessage.tsx")),
+	  code: `import { Switch } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Switch label="Label" errorMessage="Error" />
+}
+`,
+  },
+  "switch/helperText": {
+	  component: lazy(() => import("~/examples/switch/helperText.tsx")),
+	  code: `import { Switch } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Switch label="Label" helperText="Helper text" />
+}
+`,
+  },
   "switch/preview": {
 	  component: lazy(() => import("~/examples/switch/preview.tsx")),
 	  code: `import { Switch } from "@pixelshades/ui/components"
 
 export function Example() {
-	return <Switch defaultSelected={true} />
+	return <Switch defaultSelected={true} label="Label" description="Description text" tooltip="Tooltip" />
+}
+`,
+  },
+  "switch/readOnly": {
+	  component: lazy(() => import("~/examples/switch/readOnly.tsx")),
+	  code: `import { Switch } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Switch label="Label" isReadOnly />
 }
 `,
   },
