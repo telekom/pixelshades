@@ -12,6 +12,7 @@
 			"~/*": ["./src/*"],
 			"@pixelshades/ui/*": ["../../packages/ui/src/*"],
 			"@pixelshades/styles/components/*": ["../../packages/styles/src/components/*"],
+			"@pixelshades/auto-form/*": ["../../packages/auto-form/src/*"],
 			"#site/content": ["./.velite"]
 		}
 	},
