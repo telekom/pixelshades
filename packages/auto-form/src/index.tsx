@@ -11,10 +11,10 @@ import { cn } from "@pixelshades/utils/styles"
 import { toast } from "sonner"
 import { FormProvider } from "./commons/hook-form"
 import AutoFormObject from "./fields/object"
-import type { Dependency, FieldConfig } from "./types"
-import { type ZodObjectOrWrapped, getDefaultValues, getObjectFormSchema, minDelay } from "./utils"
+import type { Dependency, FieldConfig, ZodObjectOrWrapped } from "./types"
+import { getDefaultValues, getObjectFormSchema, minDelay } from "./utils"
 
-export function AutoFormSubmit({
+function AutoFormSubmit({
 	children,
 	className,
 	isDisabled,
@@ -138,4 +138,8 @@ function fixedForwardRef<T, P = {}>(
 	return forwardRef(render) as any
 }
 
-export const AutoForm = fixedForwardRef(BaseAutoForm)
+const AutoForm = fixedForwardRef(BaseAutoForm)
+
+export { AutoForm, AutoFormSubmit }
+
+export type * from "./types"

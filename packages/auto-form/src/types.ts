@@ -2,6 +2,9 @@ import type { ControllerRenderProps, FieldValues } from "react-hook-form"
 import type * as z from "zod"
 import type { INPUT_COMPONENTS } from "./config"
 
+// TODO: This should support recursive ZodEffects but TypeScript doesn't allow circular type definitions.
+export type ZodObjectOrWrapped = z.ZodObject<any, any> | z.ZodEffects<z.ZodObject<any, any>>
+
 export type FieldConfigItem = {
 	description?: React.ReactNode
 	inputProps?: React.InputHTMLAttributes<HTMLInputElement> & {
