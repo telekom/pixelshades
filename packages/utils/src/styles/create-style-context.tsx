@@ -34,16 +34,26 @@ export const createStyleContext = <StylesFunction extends Recipe, Slot extends k
 		return Comp
 	}
 
-	const withContext = <C extends ElementType>(Component: C, slot?: Slot) => {
+	const withContext = <C extends ElementType>(
+		Component: C,
+		slot?: Slot,
+		options?: { valuesWithBreakpoints?: any[]; activeScreenSize?: any },
+	) => {
 		type ComponentPropsWithVariants = ComponentProps<C> & VariantProps<StylesFunction>
 
 		const Comp = forwardRef((props: ComponentPropsWithVariants, ref) => {
 			const slotRecipe = useContext(StyleContext)
 
+			const breakpointValues = props[options?.valuesWithBreakpoints?.[0]]
+
+			const currentOrientation = breakpointValues?.[options?.activeScreenSize?.name] ?? ""
+			const orientationSlotRecipe = slotRecipe?.[slot ?? ""]?.(currentOrientation)
+
 			const variantClassNames = slotRecipe
 				? slotRecipe?.[slot ?? ""]?.(props)
 				: createStyles(props)?.[slot ?? ""]?.()
-
+			// console.log("variantClassNames w orientation", variantClassNames, currentOrientation)
+			// console.log("direction", props)
 			return <Component ref={ref} {...(props as any)} className={cn(variantClassNames, props.className)} />
 		})
 
