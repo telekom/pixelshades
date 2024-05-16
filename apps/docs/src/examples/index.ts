@@ -2100,7 +2100,27 @@ export function Example() {
 	  code: `import { TimeField } from "@pixelshades/ui/components"
 
 export function Example() {
-	return <TimeField label="Start Date" />
+	return <TimeField label="Start Time" />
+}
+`,
+  },
+  "time-field/readonly": {
+	  component: lazy(() => import("~/examples/time-field/readonly.tsx")),
+	  code: `import { Time } from "@internationalized/date"
+import { TimeField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <TimeField label="Start Time" defaultValue={new Time(9)} isReadOnly />
+}
+`,
+  },
+  "toggle-button/disabled": {
+	  component: lazy(() => import("~/examples/toggle-button/disabled.tsx")),
+	  code: `import { ToggleButton } from "@pixelshades/ui/components"
+import { Snail } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return <ToggleButton isDisabled>Toggle</ToggleButton>
 }
 `,
   },
