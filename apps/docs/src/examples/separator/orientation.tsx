@@ -8,6 +8,11 @@ export default function Example() {
 				<Separator />
 				Content below
 			</div>
+			<div className="mt-5 flex h-10 items-center">
+				Content left
+				<Separator orientation="vertical" />
+				Content right
+			</div>
 		</div>
 	)
 }

@@ -1742,8 +1742,8 @@ export function Example() {
 }
 `,
   },
-  "separator/preview": {
-	  component: lazy(() => import("~/examples/separator/preview.tsx")),
+  "separator/orientation": {
+	  component: lazy(() => import("~/examples/separator/orientation.tsx")),
 	  code: `import { Separator } from "@pixelshades/ui/components"
 
 export function Example() {
@@ -1758,6 +1758,23 @@ export function Example() {
 				Content left
 				<Separator orientation="vertical" />
 				Content right
+			</div>
+		</div>
+	)
+}
+`,
+  },
+  "separator/preview": {
+	  component: lazy(() => import("~/examples/separator/preview.tsx")),
+	  code: `import { Separator } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<div className="flex flex-col">
+			<div className="flex flex-col">
+				Content above
+				<Separator />
+				Content below
 			</div>
 		</div>
 	)
