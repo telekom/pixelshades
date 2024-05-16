@@ -1,5 +1,11 @@
 # @pixelshades/ui
 
+## 0.3.14
+
+### Patch Changes
+
+- fab11f0: fix: ts missconfiguration
+
 ## 0.3.13
 
 ### Patch Changes
