@@ -2,6 +2,7 @@
 	"extends": "@total-typescript/tsconfig/bundler/dom/library-monorepo",
 	"compilerOptions": {
 		"outDir": "dist",
+		"jsx": "react-jsx",
 		"paths": {
 			"tailwind-variants": ["../../node_modules/tailwind-variants"]
 		}
