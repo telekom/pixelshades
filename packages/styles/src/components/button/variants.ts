@@ -12,7 +12,7 @@ export const buttonVariants = tv({
 		variant: {
 			solid: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
 			outline: "border border-border bg-transparent shadow-sm hover:bg-subtle hover:text-subtle-foreground",
-			ghost: "hover:bg-subtle hover:text-subtle-foreground",
+			ghost: "hover:bg-subtle",
 			link: "text-primary underline-offset-4 hover:underline",
 			subtle: "bg-subtle text-subtle-foreground shadow-sm hover:bg-subtle/80",
 			destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
