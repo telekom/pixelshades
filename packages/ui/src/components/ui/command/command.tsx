@@ -95,7 +95,7 @@ const UnstyledCommand = ({
 				</CommandTrigger>
 			</If>
 			<Dialog isOpen={open} onOpenChange={setOpen} className={className} aria-label="Command Dialog">
-				<Dialog.Content className="flex w-full flex-col items-start">
+				<Dialog.Content hideCloseButton className="flex w-full flex-col items-start">
 					<div className="sticky w-full">{searchField}</div>
 
 					<AriaListBox
