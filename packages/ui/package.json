@@ -7,7 +7,7 @@
 		"access": "public"
 	},
 	"scripts": {
-		"test": "jest",
+		"test:unit": "jest --verbose ./src/components",
 		"test:vrt": "playwright test",
 		"lint": "eslint . --max-warnings 0",
 		"generate:component": "turbo gen react-component",
