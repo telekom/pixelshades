@@ -5,5 +5,5 @@
 import { tv } from "tailwind-variants"
 
 export const dateFieldVariants = tv({
-	base: "rounded-md px-sm py-px text-end outline-none focus:bg-black/5 focus:dark:bg-black/10",
+	base: "rounded-md px-xs py-px text-end outline-none aria-hidden:text-subtle-foreground focus:bg-black/5 focus:dark:bg-black/10",
 })

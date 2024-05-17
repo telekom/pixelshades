@@ -51,7 +51,7 @@ const SelectRoot = <T extends object>({
 	...props
 }: SelectProps<T>) => (
 	<AriaSelect className={root({ className })} isRequired={isRequired} {...props}>
-		<If condition={label || description || tooltip || errorMessage}>
+		<If condition={label || description || tooltip}>
 			<Label tooltip={tooltip} description={description} isRequired={isRequired}>
 				{label}
 			</Label>
