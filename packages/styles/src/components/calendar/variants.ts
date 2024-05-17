@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { tv } from "tailwind-variants"
+import { focusRing } from "../../utils"
 import { buttonVariants } from "../button"
 
 export const calendarVariants = tv({
@@ -14,7 +15,10 @@ export const calendarVariants = tv({
 		gridHeaderCell: "pb-2 text-sm text-subtle-foreground",
 		iconButton: buttonVariants({ variant: "ghost", size: "icon" }),
 		cell: [
-			"relative -m-px mb-1 flex size-9 text-foreground items-center justify-center rounded-md text-center text-sm outline-none ring-focus data-[hovered]:bg-subtle data-[pressed]:bg-subtle data-[selected]:bg-primary data-[selected]:text-primary-foreground data-[unavailable]:text-destructive data-[unavailable]:line-through data-[focus-visible]:ring-2 [&[data-outside-month]]:hidden data-[disabled]:text-subtle-foreground/80",
+			"relative -m-px mb-1 flex size-9 text-foreground items-center justify-center rounded-md text-center text-sm",
+			focusRing(),
+			"data-[selected]:bg-primary data-[selected]:text-primary-foreground data-[unavailable]:text-destructive data-[unavailable]:line-through [&[data-outside-month]]:hidden data-[disabled]:text-subtle-foreground/80",
+			"data-[hovered]:bg-subtle data-[pressed]:bg-subtle",
 			"data-[today]:underline underline-offset-2",
 		],
 	},

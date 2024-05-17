@@ -119,7 +119,7 @@
 
   @layer base {
     * {
-      @apply border-border ring-ring;
+      @apply border-border ring-ring outline-ring;
     }
     body {
       @apply bg-background text-foreground;
