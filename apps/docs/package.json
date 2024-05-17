@@ -18,7 +18,7 @@
 		"@pixelshades/auto-form": "workspace:*",
 		"@pixelshades/utils": "workspace:*",
 		"@radix-ui/colors": "^3.0.0",
-		"@tanstack/react-router": "1.32.12",
+		"@tanstack/react-router": "1.32.13",
 		"@tanstack/router-devtools": "1.32.12",
 		"@tanstack/router-vite-plugin": "1.32.10",
 		"bezier-easing": "^2.1.0",
