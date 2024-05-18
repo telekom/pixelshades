@@ -7,11 +7,11 @@ import { tv } from "tailwind-variants"
 export const commandVariants = tv({
 	slots: {
 		command: "h-[600px] max-w-[425px] overflow-y-auto overflow-x-hidden",
-		item: "flex cursor-pointer flex-row items-start gap-md p-md text-[16px] hover:rounded-md hover:bg-subtle-foreground/40 focus:outline focus:outline-primary focus:rounded-md",
+		item: "relative flex cursor-pointer select-none items-center gap-md px-md py-sm outline-none focus:bg-subtle data-[disabled]:pointer-events-none data-[disabled]:opacity-40 dark:focus:bg-white/5 [&:has(>svg:first-child)]:pl-md",
 		icon: "text-foreground",
 		itemList: "",
 		itemDescription: "text-start text-subtle-foreground",
 		itemTitle: "text-start text-foreground",
-		group: "flex flex-col gap-md",
+		group: "flex flex-col gap-md overflow-hidden px-lg py-md text-xs text-subtle-foreground",
 	},
 })

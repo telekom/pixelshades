@@ -11,6 +11,9 @@ import {
 	ListBox as AriaListBox,
 	ListBoxItem as AriaListBoxItem,
 	Section as AriaSection,
+	Text as AriaText,
+	ComboBox,
+	type ComboBoxProps,
 	type ListBoxItemProps,
 	type SectionProps,
 } from "react-aria-components"
@@ -26,13 +29,13 @@ import { Dialog } from "../dialog"
 import { Highlight } from "../highlight"
 import { Input, type InputProps } from "../input"
 import { Typography, type TypographyProps } from "../typography"
-import { CommandContext, useCommand } from "./command-context"
+import { useCommand } from "./command-context"
 
 const { icon } = commandVariants()
 
 const { withContext, withProvider } = createStyleContext(commandVariants)
 
-interface CommandProps {
+export interface CommandDialogProps {
 	/** The children of the command. */
 	children?: React.ReactNode
 	/** Class name to apply to the command. */
@@ -41,36 +44,16 @@ interface CommandProps {
 	onOpenChange?: (isOpen: boolean) => void
 	/** Shortcut keys to open the command. */
 	shortcut?: Array<Keys>
-	/** The search field to display in the command. */
-	searchField?: ReactNode
 	/** Whether the command is open. */
 	open?: boolean
-	/** Callback when the search value changes. */
-	onSearchChange?: (value: string) => void
-	/** The values to search for. */
-	searchValue?: string
-	/** Whether to disable the integrated search. */
-	disableIntegratedSearch?: boolean
 }
-/** Displays a command with a title and a list of actions. */
-const UnstyledCommand = ({
+
+const CommandDialog = ({
 	children,
 	shortcut = ["Meta", "KeyK"],
-	searchField,
-	className,
 	onOpenChange,
 	open: controlledOpen,
-
-	onSearchChange,
-	searchValue: controlledSearchValue,
-	disableIntegratedSearch = false,
-}: CommandProps) => {
-	const [searchValue, setSearchValue] = useControllableState({
-		value: controlledSearchValue,
-		onChange: onSearchChange,
-		defaultValue: "",
-	})
-
+}: CommandDialogProps) => {
 	const [open, setOpen] = useControllableState({
 		value: controlledOpen,
 		onChange: onOpenChange,
@@ -87,28 +70,46 @@ const UnstyledCommand = ({
 	})
 
 	return (
-		<CommandContext.Provider value={{ open, setOpen, searchValue, setSearchValue, disableIntegratedSearch }}>
-			<If condition={!onOpenChange}>
-				<CommandTrigger>
-					Search...
-					<CommandIcon className="size-4" /> {shortcut[1]?.charAt(shortcut[1].length - 1)}
-				</CommandTrigger>
-			</If>
-			<Dialog isOpen={open} onOpenChange={setOpen} className={className} aria-label="Command Dialog">
-				<Dialog.Content hideCloseButton className="flex w-full flex-col items-start">
-					<div className="sticky w-full">{searchField}</div>
+		<Dialog.Trigger onOpenChange={setOpen} isOpen={open}>
+			<Button variant="outline">Search...</Button>
+			<Dialog>{children}</Dialog>
+		</Dialog.Trigger>
+	)
+}
 
-					<AriaListBox
-						className={"flex flex-col items-start gap-4 font-light text-primary-foreground text-xs"}
-						orientation="vertical"
-						selectionMode="single"
-						aria-label="Components Search Results"
-					>
-						{children}
-					</AriaListBox>
-				</Dialog.Content>
-			</Dialog>
-		</CommandContext.Provider>
+interface CommandProps<T extends object> extends ComboBoxProps<T> {
+	/** The children of the command. */
+	children?: React.ReactNode
+	/** Class name to apply to the command. */
+	className?: string
+	/** The search field to display in the command. */
+	searchField?: ReactNode
+	/** Callback when the search value changes. */
+	onSearchChange?: (value: string) => void
+	/** The values to search for. */
+	searchValue?: string
+	/** Whether to disable the integrated search. */
+	disableIntegratedSearch?: boolean
+}
+/** Displays a command with a title and a list of actions. */
+const UnstyledCommand = <T extends object>({
+	children,
+	searchField,
+	onSearchChange,
+	searchValue: controlledSearchValue,
+	...props
+}: CommandProps<T>) => {
+	const [searchValue, setSearchValue] = useControllableState({
+		value: controlledSearchValue,
+		onChange: onSearchChange,
+		defaultValue: "",
+	})
+
+	return (
+		<ComboBox aria-label="CMDK Search" className="flex flex-col gap-md" {...props}>
+			{searchField}
+			<AriaListBox className="max-h-[300px] overflow-y-auto overflow-x-hidden">{children}</AriaListBox>
+		</ComboBox>
 	)
 }
 
@@ -128,19 +129,7 @@ export interface CommandSearchProps extends Omit<InputProps, "className" | "onCh
 
 /** Displays a search field for the command. */
 const CommandSearch = ({ placeholder = "Search...", ...props }: CommandSearchProps) => {
-	const { setSearchValue, searchValue } = useCommand()
-
-	return (
-		<Input
-			value={searchValue}
-			onChange={(e) => {
-				setSearchValue(e.target.value)
-			}}
-			placeholder={placeholder}
-			autoFocus
-			{...props}
-		/>
-	)
+	return <Input placeholder={placeholder} {...props} />
 }
 
 export interface CommandItemDescriptionProps extends TypographyProps<"p"> {
@@ -159,7 +148,7 @@ const UnstyledCommandItemDescription = ({
 	const { searchValue, disableIntegratedSearch } = useCommand()
 
 	return (
-		<Typography size="xs" {...props}>
+		<Typography size="xs" {...props} as={AriaText} slot="description">
 			<Highlight
 				highlight={!disableIntegratedSearch ? searchValue : controlledHighlight}
 				minLengthToHighlight={2}
@@ -191,15 +180,15 @@ const UnstyledCommandItemTitle = ({ children, highlight: controlledHighlight, ..
 	)
 }
 
-export interface CommandGroupProps<T> extends SectionProps<T> {
+export interface CommandGroupProps<T> extends SectionProps<any> {
 	/** The heading of the group. */
 	heading: string
 	/** The items of the group. */
 	children?: ReactNode
 }
 /** Displays a group of command items. */
-const UnstyledCommandGroup = <T,>({ heading, children }: CommandGroupProps<T>) => (
-	<AriaSection>
+const UnstyledCommandGroup = <T,>({ heading, children, ...rest }: CommandGroupProps<T>) => (
+	<AriaSection {...rest}>
 		<AriaHeader slot="title">{heading}</AriaHeader>
 		{children}
 	</AriaSection>
@@ -216,10 +205,21 @@ type CommandItemProps = Omit<ListBoxItemProps, "children" | "textValue"> & {
 	before?: React.ReactElement<HTMLElement>
 	/** Element shown after the child */
 	after?: React.ReactElement<HTMLElement>
+
+	title: ReactNode
+	description?: ReactNode
 }
 
 /** Displays a command item. */
-const UnstyledCommandItem = ({ children, before, searchValues = [], after, ...props }: CommandItemProps) => {
+const UnstyledCommandItem = ({
+	children,
+	before,
+	title,
+	description,
+	searchValues = [],
+	after,
+	...props
+}: CommandItemProps) => {
 	const { searchValue: searchInputValue, disableIntegratedSearch } = useCommand()
 
 	const isMatched = useMemo(
@@ -232,12 +232,21 @@ const UnstyledCommandItem = ({ children, before, searchValues = [], after, ...pr
 	}
 
 	return (
-		<AriaListBoxItem {...props} textValue={searchValues?.join(".") || ""}>
+		<AriaListBoxItem {...props}>
 			<>
 				<If condition={before}>
 					<RenderSlot item={before!} className={icon()} />
 				</If>
-				{children}
+				<div className="flex flex-col items-start gap-md">
+					<Typography as={AriaText} slot="label">
+						{title}
+					</Typography>
+					{description && (
+						<Typography as={AriaText} slot="description" className="text-xs">
+							{description}
+						</Typography>
+					)}
+				</div>
 				<If condition={after}>
 					<RenderSlot item={after!} className={icon()} />
 				</If>
@@ -308,4 +317,15 @@ export const Command = Object.assign(CommandRoot, {
 	Search: CommandSearch,
 	Trigger: CommandTrigger,
 	Icon: CommandIcon,
+	Dialog: CommandDialog,
 })
+
+export {
+	CommandDialog,
+	CommandItem,
+	CommandItemTitle,
+	CommandItemDescription,
+	CommandSearch,
+	CommandTrigger,
+	CommandIcon,
+}
