@@ -1,7 +1,7 @@
-import { Command, If, Typography } from "@pixelshades/ui/components"
+import { Command, If } from "@pixelshades/ui/components"
 import { components, dvds_pages } from "#site/content"
 
-import Fuse, { type FuseResultMatch } from "fuse.js"
+import Fuse from "fuse.js"
 
 import { useState } from "react"
 
@@ -49,18 +49,9 @@ export const SearchDialog = ({ open, handleOpenChange }: SearchDialogProps) => {
 	const componentSearchResults = componentSearch.search(inputValue)
 	const dvdsSearchResults = dvdsSearch.search(inputValue)
 
-	const getMatches = (match: FuseResultMatch | undefined) => {
-		if (!match || !match.value) {
-			return []
-		}
-		const matchedSubstrings = match.indices.map(([start, end]) => match.value!.substring(start, end + 1))
-
-		return matchedSubstrings
-	}
-
 	return (
 		<Command.Dialog open={open} onOpenChange={handleOnOpen}>
-			<Command searchField={<Command.Search />} onSearchChange={setInputValue} searchValue={inputValue}>
+			<Command searchField={<Command.Search />}>
 				<Command.Group heading="Components">
 					<If
 						condition={componentSearchResults.length > 0 || inputValue.length !== 0}
