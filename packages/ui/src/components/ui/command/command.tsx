@@ -91,7 +91,7 @@ interface CommandProps<T extends object> extends ComboBoxProps<T> {
 /** Displays a command with a title and a list of actions. */
 const UnstyledCommand = <T extends object>({ children, searchField, ...props }: CommandProps<T>) => {
 	return (
-		<ComboBox aria-label="CMDK Search" className="flex flex-col gap-md" {...props}>
+		<ComboBox aria-label="CMDK Search" {...props}>
 			{searchField}
 			<AriaListBox
 				className="max-h-[300px] overflow-y-auto overflow-x-hidden"

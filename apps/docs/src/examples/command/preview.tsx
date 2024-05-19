@@ -13,7 +13,7 @@ export default function Example() {
 		{ name: "Apple juice", description: "A bottle of apple juice." },
 	]
 	return (
-		<Command shortcut={["Meta", "KeyX"]} searchField={<Command.Search />}>
+		<Command searchField={<Command.Search />}>
 			<Command.Group heading="Fruits">
 				{fruits.map((fruit, index) => (
 					<Command.Item
@@ -21,14 +21,9 @@ export default function Example() {
 						before={<Apple />}
 						searchValues={[fruit.name, fruit.description || ""]}
 						className={"items-center"}
-					>
-						<div className="flex flex-col items-center gap-2">
-							<Command.ItemTitle>{fruit.name}</Command.ItemTitle>
-							{fruit.description && (
-								<Command.ItemDescription>{fruit.description}</Command.ItemDescription>
-							)}
-						</div>
-					</Command.Item>
+						title={fruit.name}
+						description={fruit.description}
+					/>
 				))}
 			</Command.Group>
 			<Command.Group heading="Drinks">
@@ -36,15 +31,9 @@ export default function Example() {
 					<Command.Item
 						key={drink.name}
 						before={<GlassWater />}
-						searchValues={[drink.name, drink.description || ""]}
-					>
-						<div className="flex flex-col gap-2">
-							<Command.ItemTitle>{drink.name}</Command.ItemTitle>
-							{drink.description && (
-								<Command.ItemDescription>{drink.description}</Command.ItemDescription>
-							)}
-						</div>
-					</Command.Item>
+						title={drink.name}
+						description={drink.description}
+					/>
 				))}
 			</Command.Group>
 		</Command>
