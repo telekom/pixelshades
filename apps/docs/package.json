@@ -12,7 +12,7 @@
 	},
 	"dependencies": {
 		"@fontsource/fira-sans": "^5.0.20",
-		"@internationalized/date": "^3.5.3",
+		"@internationalized/date": "^3.5.4",
 		"@pixelshades/styles": "workspace:*",
 		"@pixelshades/ui": "workspace:*",
 		"@pixelshades/auto-form": "workspace:*",

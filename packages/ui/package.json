@@ -14,7 +14,7 @@
 		"dev": "bunchee --watch --no-clean"
 	},
 	"dependencies": {
-		"@internationalized/date": "^3.5.3",
+		"@internationalized/date": "^3.5.4",
 		"@pixelshades/styles": "workspace:*",
 		"@pixelshades/utils": "workspace:*",
 		"@radix-ui/react-slot": "1.0.2",
