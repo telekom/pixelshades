@@ -48,8 +48,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       '@tanstack/react-router':
-        specifier: 1.32.12
-        version: 1.32.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 1.33.6
+        version: 1.33.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/router-devtools':
         specifier: 1.32.12
         version: 1.32.12(csstype@3.1.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2080,6 +2080,13 @@ packages:
 
   '@tanstack/react-router@1.32.12':
     resolution: {integrity: sha512-oKnpFyzC4821JJXLlE+UHL3QhtZUHKmm20v3+MrzTmeJlz2bqx+WnwF71rVxWTf9gVexy8eH169AG2t635hMFQ==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+
+  '@tanstack/react-router@1.33.6':
+    resolution: {integrity: sha512-69AhTpFWImQQOkEXL8nh3rcD066r2RybjfzVy0okG9O04jZXb1Wzcbwp+lNgt6h5Eqb25v/iaGhfiCkdQOQk5Q==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '>=16.8'
@@ -7069,6 +7076,15 @@ snapshots:
   '@tanstack/history@1.31.16': {}
 
   '@tanstack/react-router@1.32.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@tanstack/history': 1.31.16
+      '@tanstack/react-store': 0.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      tiny-invariant: 1.3.3
+      tiny-warning: 1.0.3
+
+  '@tanstack/react-router@1.33.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@tanstack/history': 1.31.16
       '@tanstack/react-store': 0.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
