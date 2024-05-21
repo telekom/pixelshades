@@ -9,6 +9,7 @@ SPDX-License-Identifier: CC0-1.0
 ## About
 
 This project is a cross Framework Component Library and Design System. It is used to create a consistent look and feel for the different applications through mutliple platforms and web frameworks..
+Check out our [Component Docs page](https://pixelshades.dev/) to see its capabilities.
 
 ## Setup
 
