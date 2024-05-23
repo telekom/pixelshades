@@ -17,20 +17,6 @@ export function SiteHeader() {
 
 				<div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
 					<div className="w-full flex-1 md:w-auto md:min-w-min md:flex-none">
-						<Button
-							variant="outline"
-							onPress={() => {
-								setOpen(true)
-							}}
-							className={"w-full justify-between self-end text-subtle-foreground"}
-							after={
-								<Kbd className="w-min" keys={["command"]}>
-									K
-								</Kbd>
-							}
-						>
-							Search...
-						</Button>
 						<SearchDialog open={open} handleOpenChange={setOpen} />
 					</div>
 					<ThemeSwitch />
