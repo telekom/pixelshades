@@ -1,5 +1,17 @@
 # @pixelshades/ui
 
+## 0.3.15
+
+### Patch Changes
+
+- 5aabf01: improve command component
+- 9f7cfc7: feat: improve select and calendar styling
+- Updated dependencies [c42882e]
+- Updated dependencies [7b425fa]
+- Updated dependencies [5aabf01]
+- Updated dependencies [9f7cfc7]
+  - @pixelshades/styles@0.3.7
+
 ## 0.3.14
 
 ### Patch Changes
