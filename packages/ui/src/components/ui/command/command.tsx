@@ -19,7 +19,6 @@ import {
 } from "react-aria-components"
 
 import { commandVariants } from "@pixelshades/styles/components/command"
-import { inputVariants } from "@pixelshades/styles/components/input"
 import { RenderSlot } from "@pixelshades/utils/jsx"
 import { createStyleContext } from "@pixelshades/utils/styles"
 import { useControllableState } from "../../../hooks/use-controlled-state"
@@ -30,7 +29,6 @@ import { Dialog } from "../dialog"
 import { Input, type InputProps } from "../input"
 import { Kbd } from "../kbd"
 import { Typography, type TypographyProps } from "../typography"
-import { useCommand } from "./command-context"
 
 const { icon } = commandVariants()
 
@@ -85,13 +83,11 @@ interface CommandProps<T extends object> extends ComboBoxProps<T> {
 	className?: string
 	/** The search field to display in the command. */
 	searchField?: ReactNode
-	/** Whether to disable the integrated search. */
-	disableIntegratedSearch?: boolean
 }
 /** Displays a command with a title and a list of actions. */
 const UnstyledCommand = <T extends object>({ children, searchField, ...props }: CommandProps<T>) => {
 	return (
-		<ComboBox aria-label="CMDK Search" {...props}>
+		<ComboBox aria-label="CMDK Search" {...props} allowsEmptyCollection menuTrigger="focus">
 			{searchField}
 			<AriaListBox
 				className="max-h-[300px] overflow-y-auto overflow-x-hidden"
@@ -183,8 +179,9 @@ type CommandItemProps = Omit<ListBoxItemProps, "children" | "textValue"> & {
 	before?: React.ReactElement<HTMLElement>
 	/** Element shown after the child */
 	after?: React.ReactElement<HTMLElement>
-
+	/** The command item's title. */
 	title: string
+	/** The command item's description. */
 	description?: ReactNode
 }
 
@@ -216,7 +213,6 @@ const UnstyledCommandItem = ({
 	)
 }
 
-/** Displays a command with a title and a list of actions. */
 const CommandRoot = withProvider(UnstyledCommand, "command")
 const CommandItemDescription = withContext(UnstyledCommandItemDescription, "itemDescription")
 const CommandItemTitle = withContext(UnstyledCommandItemTitle, "itemTitle")
@@ -236,10 +232,10 @@ export const Command = Object.assign(CommandRoot, {
 
 export {
 	CommandDialog,
+	CommandIcon,
 	CommandItem,
-	CommandItemTitle,
 	CommandItemDescription,
+	CommandItemTitle,
 	CommandSearch,
 	CommandTrigger,
-	CommandIcon,
 }

@@ -67,58 +67,34 @@ const DocsComponentsSlugIndexRoute = DocsComponentsSlugIndexImport.update({
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
     '/auto-form': {
-      id: '/auto-form'
-      path: '/auto-form'
-      fullPath: '/auto-form'
       preLoaderRoute: typeof AutoFormImport
       parentRoute: typeof rootRoute
     }
     '/docs': {
-      id: '/docs'
-      path: '/docs'
-      fullPath: '/docs'
       preLoaderRoute: typeof DocsImport
       parentRoute: typeof rootRoute
     }
     '/examples': {
-      id: '/examples'
-      path: '/examples'
-      fullPath: '/examples'
       preLoaderRoute: typeof ExamplesImport
       parentRoute: typeof rootRoute
     }
     '/themes': {
-      id: '/themes'
-      path: '/themes'
-      fullPath: '/themes'
       preLoaderRoute: typeof ThemesImport
       parentRoute: typeof rootRoute
     }
     '/docs/$slug': {
-      id: '/docs/$slug'
-      path: '/$slug'
-      fullPath: '/docs/$slug'
       preLoaderRoute: typeof DocsSlugImport
       parentRoute: typeof DocsImport
     }
     '/docs/': {
-      id: '/docs/'
-      path: '/'
-      fullPath: '/docs/'
       preLoaderRoute: typeof DocsIndexImport
       parentRoute: typeof DocsImport
     }
     '/docs/components/$slug/': {
-      id: '/docs/components/$slug/'
-      path: '/components/$slug'
-      fullPath: '/docs/components/$slug'
       preLoaderRoute: typeof DocsComponentsSlugIndexImport
       parentRoute: typeof DocsImport
     }
@@ -127,16 +103,16 @@ declare module '@tanstack/react-router' {
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren({
+export const routeTree = rootRoute.addChildren([
   IndexRoute,
   AutoFormRoute,
-  DocsRoute: DocsRoute.addChildren({
+  DocsRoute.addChildren([
     DocsSlugRoute,
     DocsIndexRoute,
     DocsComponentsSlugIndexRoute,
-  }),
+  ]),
   ExamplesRoute,
   ThemesRoute,
-})
+])
 
 /* prettier-ignore-end */
