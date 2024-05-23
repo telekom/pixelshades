@@ -170,8 +170,6 @@ const UnstyledCommandGroup = <T,>({ heading, children, ...rest }: CommandGroupPr
 )
 
 type CommandItemProps = Omit<ListBoxItemProps, "children" | "textValue"> & {
-	/** The children of the command item. */
-	children?: ReactNode | ReactNode[]
 	/** Class name to apply to the command item. */
 	className?: string
 	/** The values to search for. */
@@ -187,15 +185,7 @@ type CommandItemProps = Omit<ListBoxItemProps, "children" | "textValue"> & {
 }
 
 /** Displays a command item. */
-const UnstyledCommandItem = ({
-	children,
-	before,
-	title,
-	description,
-	searchValues = [],
-	after,
-	...props
-}: CommandItemProps) => {
+const UnstyledCommandItem = ({ before, title, description, searchValues = [], after, ...props }: CommandItemProps) => {
 	return (
 		<AriaListBoxItem textValue={title} {...props}>
 			<>
