@@ -1,5 +1,13 @@
 # @pixelshades/utils
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies [5aabf01]
+- Updated dependencies [9f7cfc7]
+  - @pixelshades/ui@0.3.15
+
 ## 0.0.4
 
 ### Patch Changes

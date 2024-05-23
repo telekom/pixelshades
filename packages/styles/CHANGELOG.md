@@ -1,5 +1,14 @@
 # @pixelshades/styles
 
+## 0.3.7
+
+### Patch Changes
+
+- c42882e: fix: ghost button hover styling
+- 7b425fa: fix: calendar focus style
+- 5aabf01: improve command component
+- 9f7cfc7: feat: improve select and calendar styling
+
 ## 0.3.6
 
 ### Patch Changes
