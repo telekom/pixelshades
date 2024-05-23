@@ -1,11 +1,7 @@
-import { Button, Command } from "@pixelshades/ui/components"
-import { Apple, CommandIcon, GlassWater } from "@pixelshades/ui/icons"
-import { useState } from "react"
+import { Command } from "@pixelshades/ui/components"
+import { Apple, GlassWater } from "@pixelshades/ui/icons"
 
 export default function Example() {
-	const [inputValue, setInputValue] = useState("")
-	const [open, setOpen] = useState(false)
-
 	const fruits = [
 		{ name: "Apple", description: "Red apple" },
 		{ name: "Apple", description: "Green apple" },
@@ -16,15 +12,16 @@ export default function Example() {
 		{ name: "Water", description: "A bottle of water." },
 		{ name: "Apple juice", description: "A bottle of apple juice." },
 	]
-
 	return (
-		<Command.Dialog shortcut={["Meta", "KeyB"]} open={open} onOpenChange={setOpen}>
+		<Command.Dialog shortcut={["Meta", "KeyJ"]}>
 			<Command searchField={<Command.Search />}>
 				<Command.Group heading="Fruits">
-					{fruits.map((fruit, index) => (
+					{fruits.map((fruit) => (
 						<Command.Item
-							key={fruit.name + index}
+							key={fruit.name}
 							before={<Apple />}
+							className={"items-center"}
+							searchValues={[fruit.name, fruit.description || ""]}
 							title={fruit.name}
 							description={fruit.description}
 						/>
@@ -33,11 +30,12 @@ export default function Example() {
 				<Command.Group heading="Drinks">
 					{drinks.map((drink) => (
 						<Command.Item
-							title={drink.name}
-							description={drink.description}
 							key={drink.name}
 							before={<GlassWater />}
 							className={"items-center"}
+							searchValues={[drink.name, drink.description || ""]}
+							title={drink.name}
+							description={drink.description}
 						/>
 					))}
 				</Command.Group>

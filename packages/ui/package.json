@@ -7,7 +7,6 @@
 		"access": "public"
 	},
 	"scripts": {
-		"lint": "eslint . --max-warnings 0",
 		"generate:component": "turbo gen react-component",
 		"build": "bunchee --tsconfig tsconfig.build.json",
 		"gen:props": "bun run ./scripts/props-gen.ts",

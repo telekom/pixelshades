@@ -14,12 +14,15 @@ export const inputVariants = tv({
 		"disabled:cursor-not-allowed disabled:opacity-50",
 		"data-[invalid]:border-destructive data-[invalid]:text-destructive data-[invalid]:bg-destructive/10",
 	],
-	defaultVariants: { size: "md" },
+	defaultVariants: { size: "md", focusRing: true },
 	variants: {
 		size: {
 			none: "",
 			...baseInputSizes.variants.size,
 		},
+		focusRing: {
+			true: focusRing(),
+			false: "outline-0",
+		},
 	},
-	extend: focusRing,
 })
