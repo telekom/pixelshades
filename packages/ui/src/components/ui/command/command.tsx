@@ -127,6 +127,7 @@ const CommandSearch = ({ placeholder = "Search...", ...props }: CommandSearchPro
 	return (
 		<Input
 			autoFocus
+			focusRing={false}
 			className="rounded-b-none border-0 border-b bg-transparent"
 			placeholder={placeholder}
 			{...props}
