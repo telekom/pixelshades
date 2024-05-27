@@ -8,6 +8,7 @@ import { forwardRef } from "@pixelshades/utils/jsx"
 import type { ReactNode } from "react"
 import type { TextFieldProps as AriaTextFieldProps } from "react-aria-components"
 import { TextField as AriaTextField } from "react-aria-components"
+import { If } from "../../utils"
 import { FormDescription, FormFieldError } from "../form"
 import { Input } from "../input"
 import { type FormComponentLabelProps, Label } from "../label"
@@ -41,9 +42,12 @@ const TextField = forwardRef(
 		...props
 	}: TextFieldProps & { ref?: any }) => (
 		<AriaTextField className={"flex flex-col gap-sm"} isRequired={isRequired} {...props}>
-			<Label tooltip={tooltip} description={description} isRequired={isRequired}>
-				{label}
-			</Label>
+			<If condition={label || description || tooltip}>
+				<Label tooltip={tooltip} description={description} isRequired={isRequired}>
+					{label}
+				</Label>
+			</If>
+
 			{multiLine ? <TextArea ref={ref} cols={cols} rows={rows} /> : <Input ref={ref} />}
 			{helperText && <FormDescription>{helperText}</FormDescription>}
 			<FormFieldError>{errorMessage}</FormFieldError>
