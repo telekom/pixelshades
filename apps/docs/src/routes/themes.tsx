@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router"
 import { ColorPreview } from "~/components/color-preview"
 
 import { cn } from "@pixelshades/utils/styles"
+import Color from "colorjs.io"
 import { useState } from "react"
 import {
 	amber,
@@ -28,7 +29,7 @@ import {
 	yellow,
 	zinc,
 } from "tailwindcss/colors"
-import { exportTheme, generateTheme } from "~/lib/colors/tailwind-themes"
+import { exportTheme, generateTheme, transformTailwindColor } from "~/lib/colors/tailwind-themes"
 
 export const Route = createFileRoute("/themes")({
 	component: Index,
@@ -77,6 +78,8 @@ function Index() {
 		destructive: destructiveColor,
 		neutral: neutralColor.value,
 	})
+
+	console.log(transformTailwindColor("primary", violet))
 
 	// console.log(exportTheme(theme))
 

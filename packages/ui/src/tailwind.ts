@@ -4,11 +4,12 @@
 
 import { fontFamily } from "tailwindcss/defaultTheme.js"
 import plugin from "tailwindcss/plugin.js"
+import { getBaseColors } from "./tw-plugin/base"
+import { getThemeVariables } from "./tw-plugin/theme"
 
 export const pixelShadesPlugin = plugin(
-	() => {
-		// Call the ariaPlugin and add its utilities
-		// You can add your own utilities or call other plugins here
+	({ addBase }) => {
+		addBase(getBaseColors())
 	},
 	{
 		darkMode: "class",
@@ -37,32 +38,7 @@ export const pixelShadesPlugin = plugin(
 					"layout-xl": "var(--spacing-layout-xl)",
 					"layout-2xl": "var(--spacing-layout-2xl)",
 				},
-				colors: {
-					border: "hsl(var(--border))",
-					ring: "hsl(var(--ring))",
-					background: "hsl(var(--background))",
-					foreground: "hsl(var(--foreground))",
-					primary: {
-						DEFAULT: "hsl(var(--primary))",
-						foreground: "hsl(var(--primary-foreground))",
-					},
-					secondary: {
-						DEFAULT: "hsl(var(--secondary))",
-						foreground: "hsl(var(--secondary-foreground))",
-					},
-					destructive: {
-						DEFAULT: "hsl(var(--destructive))",
-						foreground: "hsl(var(--destructive-foreground))",
-					},
-					info: {
-						DEFAULT: "hsl(var(--info))",
-						foreground: "hsl(var(--info-foreground))",
-					},
-					subtle: {
-						DEFAULT: "hsl(var(--subtle))",
-						foreground: "hsl(var(--subtle-foreground))",
-					},
-				},
+				colors: getThemeVariables(),
 				borderRadius: {
 					xl: "calc(var(--radius) + 4px)",
 					lg: "var(--radius)",
