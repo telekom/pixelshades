@@ -44,6 +44,7 @@
   --neutral-scale-800: 240 3.8298% 14%;
   --neutral-scale-900: 240 3.8298% 7%;
   --neutral-scale-950: 240 3.8298% 4%;
+  --neutral-constrast: #ffffff;
 	  --success-scale-50: 144 100% 98%;
   --success-scale-100: 144 100% 95%;
   --success-scale-200: 144 100% 90%;
@@ -79,17 +80,35 @@
   --destructive-scale-950: 350 89% 4%;
 
 	  /* General Variables */
-	  --background: var(--neutral-scale-50);
-	  --foreground: var(--neutral-scale-950);
+	  --background: var(--neutral-contrast);
+	  --background-hover: var(--neutral-100);
+	  --background-active: var(--neutral-200);
+
+    --subtle-background: var(--neutral-scale-50);
+	  --subtle-foreground: var(--neutral-scale-600);
+	  --subtle-foreground-disabled: var(--neutral-scale-400);
+
+	  --foreground: var(--neutral-scale-900);
 	  --ring: var(--primary);
 	  --radius: 0.5rem;
-	  --subtle: var(--neutral-scale-100);
-	  --subtle-foreground: var(--neutral-scale-600);
+	 
 	  --border: var(--neutral-scale-300);
 
 	  /* Primary Colors */
-	  --primary: var(--primary-scale-500);
-	  --primary-foreground: none 0% 100%;
+    
+    // Solid
+	  --primary-solid: var(--primary-scale-600);
+	  --primary-solid-hover: var(--primary-scale-900);
+	  --primary-solid-active: var(--primary-scale-950);
+	  --primary-solid-disabled: var(--primary-neutral-200);
+
+    --primary-solid-foreground: var(--primary-contrast);
+    --primary-solid-foreground-hover: var(--primary-contrast);
+    --primary-solid-foreground-active: var(--primary-neutral-100);
+    --primary-solid-foreground-disabled: var(--primary-neutral-400);
+
+
+	  --primary-solid-foreground: none 0% 100%;
 
 	  /* Destructive Colors */
 	  --destructive: var(--destructive-scale-500);

@@ -4,11 +4,11 @@
 
 import { fontFamily } from "tailwindcss/defaultTheme.js"
 import plugin from "tailwindcss/plugin.js"
+import { getBaseColors } from "./tw-plugin/base"
 
 export const pixelShadesPlugin = plugin(
-	() => {
-		// Call the ariaPlugin and add its utilities
-		// You can add your own utilities or call other plugins here
+	({ addBase }) => {
+		addBase(getBaseColors())
 	},
 	{
 		darkMode: "class",
