@@ -10,8 +10,6 @@ import { getThemeVariables } from "./tw-plugin/theme"
 export const pixelShadesPlugin = plugin(
 	({ addBase }) => {
 		addBase(getBaseColors())
-
-		console.log(getThemeVariables())
 	},
 	{
 		darkMode: "class",
