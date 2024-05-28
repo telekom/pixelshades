@@ -12,8 +12,8 @@ importers:
         specifier: 1.7.3
         version: 1.7.3
       '@changesets/cli':
-        specifier: ^2.27.1
-        version: 2.27.1
+        specifier: ^2.27.3
+        version: 2.27.3
       concurrently:
         specifier: ^8.2.2
         version: 8.2.2
@@ -573,8 +573,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@changesets/apply-release-plan@7.0.0':
-    resolution: {integrity: sha512-vfi69JR416qC9hWmFGSxj7N6wA5J222XNBmezSVATPWDVPIF7gkd4d8CpbEbXmRWbVrkoli3oerGS6dcL/BGsQ==}
+  '@changesets/apply-release-plan@7.0.1':
+    resolution: {integrity: sha512-aPdSq/R++HOyfEeBGjEe6LNG8gs0KMSyRETD/J2092OkNq8mOioAxyKjMbvVUdzgr/HTawzMOz7lfw339KnsCA==}
 
   '@changesets/assemble-release-plan@6.0.0':
     resolution: {integrity: sha512-4QG7NuisAjisbW4hkLCmGW2lRYdPrKzro+fCtZaILX+3zdUELSvYjpL4GTv0E4aM9Mef3PuIQp89VmHJ4y2bfw==}
@@ -582,8 +582,8 @@ packages:
   '@changesets/changelog-git@0.2.0':
     resolution: {integrity: sha512-bHOx97iFI4OClIT35Lok3sJAwM31VbUM++gnMBV16fdbtBhgYu4dxsphBF/0AZZsyAHMrnM0yFcj5gZM1py6uQ==}
 
-  '@changesets/cli@2.27.1':
-    resolution: {integrity: sha512-iJ91xlvRnnrJnELTp4eJJEOPjgpF3NOh4qeQehM6Ugiz9gJPRZ2t+TsXun6E3AMN4hScZKjqVXl0TX+C7AB3ZQ==}
+  '@changesets/cli@2.27.3':
+    resolution: {integrity: sha512-ve/VpWApILlSs8cr0okNx5C2LKRawI9XZgvfmf58S8sar2nhx5DPJREFXYZBahs0FeTfvH0rdVl+nGe8QF45Ig==}
     hasBin: true
 
   '@changesets/config@3.0.0':
@@ -622,8 +622,8 @@ packages:
   '@changesets/types@6.0.0':
     resolution: {integrity: sha512-b1UkfNulgKoWfqyHtzKS5fOZYSJO+77adgL7DLRDr+/7jhChN+QcHnbjiQVOz/U+Ts3PGNySq7diAItzDgugfQ==}
 
-  '@changesets/write@0.3.0':
-    resolution: {integrity: sha512-slGLb21fxZVUYbyea+94uFiD6ntQW0M2hIKNznFizDhZPDgn2c/fv1UzzlW43RVzh1BEDuIqW6hzlJ1OflNmcw==}
+  '@changesets/write@0.3.1':
+    resolution: {integrity: sha512-SyGtMXzH3qFqlHKcvFY2eX+6b0NGiFcNav8AFsYwy5l8hejOeoeTDemu5Yjmke2V5jpzY+pBvM0vCCQ3gdZpfw==}
 
   '@commitlint/config-validator@19.0.3':
     resolution: {integrity: sha512-2D3r4PKjoo59zBc2auodrSCaUnCSALCx54yveOFwwP/i2kfEAQrygwOleFWswLqK0UL/F9r07MFi5ev2ohyM4Q==}
@@ -3037,10 +3037,12 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   glob@8.1.0:
     resolution: {integrity: sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==}
     engines: {node: '>=12'}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   global-directory@4.0.1:
     resolution: {integrity: sha512-wHTUcDUoZ1H5/0iVqEudYW4/kAlN5cZ3j/bXn0Dpbizl9iaUVeWSHqiOjsgk6OW2bkLclbBjzewBz6weQ1zA2Q==}
@@ -3209,6 +3211,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -4258,6 +4261,7 @@ packages:
 
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   rollup-plugin-dts@6.1.0:
@@ -5229,7 +5233,7 @@ snapshots:
   '@biomejs/cli-win32-x64@1.7.3':
     optional: true
 
-  '@changesets/apply-release-plan@7.0.0':
+  '@changesets/apply-release-plan@7.0.1':
     dependencies:
       '@babel/runtime': 7.24.4
       '@changesets/config': 3.0.0
@@ -5258,10 +5262,10 @@ snapshots:
     dependencies:
       '@changesets/types': 6.0.0
 
-  '@changesets/cli@2.27.1':
+  '@changesets/cli@2.27.3':
     dependencies:
       '@babel/runtime': 7.24.4
-      '@changesets/apply-release-plan': 7.0.0
+      '@changesets/apply-release-plan': 7.0.1
       '@changesets/assemble-release-plan': 6.0.0
       '@changesets/changelog-git': 0.2.0
       '@changesets/config': 3.0.0
@@ -5273,7 +5277,7 @@ snapshots:
       '@changesets/pre': 2.0.0
       '@changesets/read': 0.6.0
       '@changesets/types': 6.0.0
-      '@changesets/write': 0.3.0
+      '@changesets/write': 0.3.1
       '@manypkg/get-packages': 1.1.3
       '@types/semver': 7.5.8
       ansi-colors: 4.1.3
@@ -5369,7 +5373,7 @@ snapshots:
 
   '@changesets/types@6.0.0': {}
 
-  '@changesets/write@0.3.0':
+  '@changesets/write@0.3.1':
     dependencies:
       '@babel/runtime': 7.24.4
       '@changesets/types': 6.0.0
