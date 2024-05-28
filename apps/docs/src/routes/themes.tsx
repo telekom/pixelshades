@@ -79,8 +79,7 @@ function Index() {
 		neutral: neutralColor.value,
 	})
 
-	console.log(transformTailwindColor("success", emerald))
-	console.log(transformTailwindColor("info", sky))
+	console.log(transformTailwindColor("primary", violet))
 
 	// console.log(exportTheme(theme))
 
