@@ -1,4 +1,4 @@
-const baseColors = ["primary", "destructive", "info", "success", "warning", "neutral"]
+import { baseColors } from "./const"
 
 const getColorTokens = (color: string) => {
 	return {
@@ -40,7 +40,14 @@ const getColorTokens = (color: string) => {
 }
 
 export const getBaseColors = () => {
-	const colors = Object.assign({}, ...baseColors.map(getColorTokens))
+	const colors = baseColors.reduce(
+		(acc, color) => ({
+			// biome-ignore lint/performance/noAccumulatingSpread: <explanation>
+			...acc,
+			...getColorTokens(color),
+		}),
+		{},
+	)
 
 	return {
 		html: {
