@@ -5,12 +5,12 @@ const getColorTokens = (color: string) => {
 		[`--${color}-solid`]: `var(--${color}-scale-600)`,
 		[`--${color}-solid-hover`]: `var(--${color}-scale-900)`,
 		[`--${color}-solid-active`]: `var(--${color}-scale-950)`,
-		[`--${color}-solid-disabled`]: `var(--${color}-neutral-200)`,
+		[`--${color}-solid-disabled`]: "var(--neutral-scale-200)",
 
 		[`--${color}-solid-foreground`]: `var(--${color}-contrast)`,
 		[`--${color}-solid-foreground-hover`]: `var(--${color}-contrast)`,
-		[`--${color}-solid-foreground-active`]: `var(--${color}-neutral-100)`,
-		[`--${color}-solid-foreground-disabled`]: `var(--${color}-neutral-400)`,
+		[`--${color}-solid-foreground-active`]: `var(--${color}-scale-100)`,
+		[`--${color}-solid-foreground-disabled`]: "var(--neutral-scale-400)",
 
 		[`--${color}-body`]: `var(--${color}-contrast)`,
 		[`--${color}-body-hover`]: `var(--${color}-scale-100)`,
@@ -43,6 +43,10 @@ export const getBaseColors = () => {
 	const colors = Object.assign({}, ...baseColors.map(getColorTokens))
 
 	return {
+		html: {
+			color: "hsl(var(--foreground))",
+			backgroundColor: "hsl(var(--background))",
+		},
 		":root": {
 			"--background": "var(--neutral-contrast)",
 			"--background-hover": "var(--neutral-100)",
