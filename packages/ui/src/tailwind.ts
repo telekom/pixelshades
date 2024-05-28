@@ -38,13 +38,7 @@ export const pixelShadesPlugin = plugin(
 					"layout-xl": "var(--spacing-layout-xl)",
 					"layout-2xl": "var(--spacing-layout-2xl)",
 				},
-				colors: {
-					border: "hsl(var(--border))",
-					ring: "hsl(var(--ring))",
-					background: "hsl(var(--background))",
-					foreground: "hsl(var(--foreground))",
-					...getThemeVariables(),
-				},
+				colors: getThemeVariables(),
 				borderRadius: {
 					xl: "calc(var(--radius) + 4px)",
 					lg: "var(--radius)",

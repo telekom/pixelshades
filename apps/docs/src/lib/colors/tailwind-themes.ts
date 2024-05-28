@@ -125,8 +125,6 @@ export const generateTheme = ({
 	const primaryHighcontrastScale = generateColorPalette({ color: primary, highcontrast: true })
 	const primaryContrast = getContrastColor({ color: primaryScale[5]!.color, white, black })
 
-	console.log(primaryContrast.to("srgb").toString({ format: "hex" }))
-
 	const neutralScale = generateColorPalette({ color: neutral })
 	const neutralHighcontrastScale = generateColorPalette({ color: neutral, highcontrast: true })
 	const neutralContrast = getContrastColor({ color: neutralScale[5]!.color, white, black })
@@ -169,6 +167,10 @@ export const generateTheme = ({
 	}
 }
 
+const transformColor = (color: Color) => {
+	return color.to("hsl").toString({ format: "hsl" }).replace("hsl(", "").replace(")", "")
+}
+
 export const exportTheme = ({
 	primaryScale,
 	primaryContrast,
@@ -181,10 +183,6 @@ export const exportTheme = ({
 	neutralScale,
 	neutralContrast,
 }: Theme) => {
-	const transformColor = (color: Color) => {
-		return color.to("hsl").toString({ format: "hsl" }).replace("hsl(", "").replace(")", "")
-	}
-
 	const primaryScaleString = primaryScale
 		.map((shade) => `--primary-scale-${shade.name}: ${transformColor(shade.color)};`)
 		.join("\n\t\t")
@@ -209,18 +207,6 @@ export const exportTheme = ({
 		@layer base {
 		  :root {
 			/* Spacing Variables */
-			--spacing-xs: 0.125rem;
-			--spacing-sm: 0.25rem;
-			--spacing-md: 0.5rem;
-			--spacing-lg: 1rem;
-			--spacing-xl: 1.5rem;
-	  
-			--spacing-layout-xs: 1rem;
-			--spacing-layout-sm: 1.5rem;
-			--spacing-layout-md: 2rem;
-			--spacing-layout-lg: 3rem;
-			--spacing-layout-xl: 4rem;
-			--spacing-layout-2xl: 6rem;
 	  
 			/* Color Scales */
 			${primaryScaleString}
@@ -228,45 +214,14 @@ export const exportTheme = ({
 			${successScaleString}
 			${infoScaleString}
 			${destructiveScaleString}
-	  
-			/* General Variables */
-			--background: var(--neutral-scale-50);
-			--foreground: var(--neutral-scale-950);
-			--ring: var(--primary);
-			--radius: 0.5rem;
-			--subtle: var(--neutral-scale-100);
-			--subtle-foreground: var(--neutral-scale-900);
-			--border: var(--neutral-scale-300);
-	  
-			/* Primary Colors */
-			--primary: var(--primary-scale-500);
-			--primary-foreground: ${transformColor(primaryContrast)};
-	  
-			/* Destructive Colors */
-			--destructive: var(--destructive-scale-500);
-			--destructive-foreground: ${transformColor(destructiveContrast)};
-	  
-			/* Info Colors */
-			--info: var(--info-scale-500);
-			--info-foreground: ${transformColor(infoContrast)};
-	  
-			/* Success Colors */
-			--success: var(--success-scale-500);
-			--success-foreground: ${transformColor(successContrast)};
-		  }
-	  
-		  .dark {
-			/* Dark Mode Variables */
-			--background: var(--neutral-scale-950);
-			--foreground: var(--neutral-scale-50);
-			--ring: var(--primary);
-			--radius: 0.5rem;
-			--subtle: var(--neutral-scale-800);
-			--subtle-foreground: var(--neutral-scale-400);
-			--border: var(--neutral-scale-700);
-		  }
 		}
 	  `
 
 	return base
+}
+
+export const transformTailwindColor = (prefix: string, color: { [key: string]: string }) => {
+	return Object.entries(color)
+		.map(([key, value]) => `--${prefix}-scale-${key}: ${transformColor(new Color(value))};`)
+		.join("\n\t\t")
 }

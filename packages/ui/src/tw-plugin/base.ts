@@ -1,4 +1,21 @@
-import { baseColors } from "./const"
+import { baseColors, defaultColorTokens } from "./const"
+
+const getLayoutTokens = () => {
+	return {
+		"--spacing-xs": "0.125rem",
+		"--spacing-sm": "0.25rem",
+		"--spacing-md": "0.5rem",
+		"--spacing-lg": "1rem",
+		"--spacing-xl": "1.5rem",
+
+		"--spacing-layout-xs": "1rem",
+		"--spacing-layout-sm": "1.5rem",
+		"--spacing-layout-md": "2rem",
+		"--spacing-layout-lg": "3rem",
+		"--spacing-layout-xl": "4rem",
+		"--spacing-layout-2xl": "6rem",
+	}
+}
 
 const getColorTokens = (color: string) => {
 	return {
@@ -56,15 +73,15 @@ export const getBaseColors = () => {
 		},
 		":root": {
 			"--background": "var(--neutral-contrast)",
-			"--background-hover": "var(--neutral-100)",
-			"--background-active": "var(--neutral-200)",
+			"--background-hover": "var(--neutral-scale-100)",
+			"--background-active": "var(--neutral-scale-200)",
 
 			"--subtle-background": "var(--neutral-scale-50)",
 			"--subtle-foreground": "var(--neutral-scale-600)",
 			"--subtle-foreground-disabled": "var(--neutral-scale-400)",
 
 			"--foreground": "var(--neutral-scale-900)",
-			"--ring": "var(--primary)",
+			"--ring": "var(--primary--scale-600)",
 			"--radius": "0.5rem",
 
 			"--border": "var(--neutral-scale-300)",
@@ -72,6 +89,10 @@ export const getBaseColors = () => {
 			/* Primary Colors */
 
 			...colors,
+
+			...getLayoutTokens(),
+
+			...defaultColorTokens,
 		},
 	}
 }

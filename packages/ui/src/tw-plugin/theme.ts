@@ -54,5 +54,21 @@ export const getThemeVariables = () => {
 		{},
 	)
 
-	return themeColors
+	return {
+		background: {
+			DEFAULT: "hsl(var(--background))",
+			hover: "hsl(var(--background-hover))",
+			active: "hsl(var(--background-active))",
+		},
+		foreground: "hsl(var(--foreground))",
+		ring: "hsl(var(--ring))",
+		border: "hsl(var(--border))",
+		subtle: {
+			DEFAULT: "hsl(var(--subtle))",
+			foreground: "hsl(var(--subtle-foreground))",
+			"foreground-disabled": "hsl(var(--subtle-foreground-disabled))",
+		},
+
+		...themeColors,
+	}
 }
