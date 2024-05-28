@@ -13,18 +13,18 @@
 		"dev": "bunchee --watch --no-clean"
 	},
 	"dependencies": {
-		"@internationalized/date": "^3.5.3",
+		"@internationalized/date": "^3.5.4",
 		"@pixelshades/styles": "workspace:*",
 		"@pixelshades/utils": "workspace:*",
 		"@radix-ui/react-slot": "1.0.2",
-		"lucide-react": "0.378.0",
-		"react-aria": "3.33.0",
-		"react-aria-components": "1.2.0",
-		"react-stately": "3.31.0",
+		"lucide-react": "0.379.0",
+		"react-aria": "3.33.1",
+		"react-aria-components": "1.2.1",
+		"react-stately": "3.31.1",
 		"tailwind-merge": "2.3.0",
 		"tailwind-variants": "0.2.1",
 		"tailwindcss-animate": "1.0.7",
-		"tailwindcss-react-aria-components": "1.1.2"
+		"tailwindcss-react-aria-components": "1.1.3"
 	},
 	"peerDependencies": {
 		"react": ">18.0.0",
@@ -35,9 +35,9 @@
 		"@tailwindcss/typography": "^0.5.13",
 		"@total-typescript/tsconfig": "^1.0.4",
 		"@turbo/gen": "^1.13.3",
-		"@types/bun": "^1.1.1",
-		"@types/node": "^20.12.8",
-		"@types/react": "^18.3.2",
+		"@types/bun": "^1.1.3",
+		"@types/node": "^20.12.12",
+		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
 		"bunchee": "5.1.5",
 		"react": "^18.3.1",
