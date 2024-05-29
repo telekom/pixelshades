@@ -29,7 +29,13 @@ import {
 	yellow,
 	zinc,
 } from "tailwindcss/colors"
-import { exportTheme, extendColorScale, generateTheme, transformTailwindColor } from "~/lib/colors/tailwind-themes"
+import {
+	exportTheme,
+	extendColorScale,
+	generateScale,
+	generateTheme,
+	transformTailwindColor,
+} from "~/lib/colors/tailwind-themes"
 import { invertValues } from "~/lib/colors/utils"
 
 export const Route = createFileRoute("/themes")({
@@ -80,9 +86,9 @@ function Index() {
 		neutral: neutralColor.value,
 	})
 
-	// console.info(transformTailwindColor("primary", indigo), "LIGHT")
-	console.info(invertValues(extendColorScale(neutral, [850, 1000])))
-	console.info(transformTailwindColor("neutral", invertValues(extendColorScale(neutral, [850, 1000]))), "DARK")
+	const scale = generateScale(indigo[800], [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950])
+	// console.info(invertValues(extendColorScale(neutral, [850, 1000])))
+	// console.info(transformTailwindColor("neutral", invertValues(extendColorScale(neutral, [850, 1000]))), "DARK")
 
 	// console.log(exportTheme(theme))
 
@@ -91,6 +97,15 @@ function Index() {
 	return (
 		<div className="container flex min-h-screen w-full flex-col items-center gap-layout-md py-layout-lg">
 			<Heading level={1}>Create a new theme</Heading>
+
+			<div>
+				{Object.entries(scale).map(([key, value]) => (
+					<div key={key} className="flex items-center gap-md" style={{ backgroundColor: value }}>
+						<div className="w-[100px]">{key}</div>
+						<div className="w-[200px]">{value}</div>
+					</div>
+				))}
+			</div>
 
 			<RadioGroup value={primaryColor} orientation="horizontal" onChange={(value) => setPrimaryColor(value)}>
 				{primaryColors.map((color, i) => (

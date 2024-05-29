@@ -27,6 +27,19 @@ const baseShades: Shade[] = [
 
 type ColorScale = Record<string, string>
 
+export function generateScale(baseColor: string, shades: number[]): ColorScale {
+	const baseColorObj = new Color(baseColor).to("oklch")
+
+	const newShades: ColorScale = {}
+	for (const shade of shades) {
+		const tempColor = new Color(baseColorObj)
+		const adjustedColor = new Color(tempColor.darken((shade - 500) / 700))
+		newShades[shade] = adjustedColor.to("hsl").toString({ format: "hsl" })
+	}
+
+	return newShades
+}
+
 export function extendColorScale(scale: ColorScale, shades: number[]): ColorScale {
 	const baseColor = new Color(scale[500]!)
 

@@ -31,7 +31,19 @@ interface ButtonProps extends ButtonVariantProps, AriaButtonProps {
 }
 
 const Button = forwardRef(
-	({ size, variant, className, children, isLoading, isDisabled, before, after, withRing, ...props }: ButtonProps) => {
+	({
+		size,
+		variant,
+		className,
+		children,
+		isLoading,
+		color,
+		isDisabled,
+		before,
+		after,
+		withRing,
+		...props
+	}: ButtonProps) => {
 		const buttonGroupState = buttonGroupContext.useStyleContext()
 
 		/* If Button is in Button Group apply Button Group Styles, this can still be overwritten on button layer **/
@@ -40,6 +52,7 @@ const Button = forwardRef(
 				? buttonGroupState.base({
 						variant,
 						withRing,
+						color,
 						...values,
 						size,
 						className,
@@ -47,6 +60,7 @@ const Button = forwardRef(
 				: buttonVariants({
 						variant,
 						withRing,
+						color,
 						...values,
 						size,
 						className,

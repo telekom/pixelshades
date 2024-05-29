@@ -6,25 +6,23 @@ import { tv } from "tailwind-variants"
 import { focusRing } from "../../utils"
 
 export const buttonVariants = tv({
-	base: `group inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 ${focusRing()}`,
-	defaultVariants: { variant: "solid", size: "md" },
+	base: [
+		"appearance-none",
+		"group inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-50",
+		focusRing(),
+	],
+	defaultVariants: { variant: "solid", size: "md", color: "primary" },
 	variants: {
 		variant: {
-			solid: [
-				"bg-primary text-primary-foreground shadow",
-				"hover:bg-primary-hover hover:text-primary-foreground-hover",
-				"disabled:bg-primary-disabled disabled:text-primary-foreground-disabled",
-			],
-			outline: [
-				"border border-primary-border text-primary bg-transparent shadow-sm",
-				"hover:bg-primary-background-hover hover:text-primary-background-foreground-hover hover:border-primary-border-hover",
-			],
+			solid: "shadow",
+			outline: "border bg-transparent shadow-sm",
 			ghost: "hover:bg-subtle",
 			link: "text-primary underline-offset-4 hover:underline",
-			destructive: [
-				"bg-destructive text-destructive-foreground shadow-sm",
-				"hover:bg-destructive-hover hover:text-destructive-foreground-hover",
-			],
+		},
+		color: {
+			primary: "",
+			destructive: "",
+			warning: "",
 		},
 		withRing: {
 			true: "transition-all duration-300 ring-offset-background  hover:ring-2 hover:ring-primary/90 hover:ring-offset-2",
@@ -38,5 +36,61 @@ export const buttonVariants = tv({
 			lg: "h-10 px-xl rounded-md gap-md",
 		},
 	},
+	compoundVariants: [
+		// Solid
+		{
+			variant: "solid",
+			color: "primary",
+			className: [
+				"bg-primary text-primary-foreground",
+				"hover:bg-primary-hover hover:text-primary-foreground-hover",
+				"disabled:bg-primary-disabled disabled:text-primary-foreground-disabled",
+			],
+		},
+		{
+			variant: "solid",
+			color: "destructive",
+			className: [
+				"bg-destructive text-destructive-foreground",
+				"hover:bg-destructive-hover hover:text-destructive-foreground-hover",
+				"disabled:bg-destructive-disabled disabled:text-destructive-foreground-disabled",
+			],
+		},
+		{
+			variant: "solid",
+			color: "warning",
+			className: [
+				"bg-warning text-warning-foreground",
+				"hover:bg-warning-hover hover:text-warning-foreground-hover",
+				"disabled:bg-warning-disabled disabled:text-warning-foreground-disabled",
+			],
+		},
+
+		// Outline
+		{
+			variant: "outline",
+			color: "primary",
+			className: [
+				"border-primary-border text-primary",
+				"hover:bg-primary-background-hover hover:text-primary-background-foreground-hover hover:border-primary-border-hover",
+			],
+		},
+		{
+			variant: "outline",
+			color: "destructive",
+			className: [
+				"border-destructive-border text-destructive",
+				"hover:bg-destructive-background-hover hover:text-destructive-background-foreground-hover hover:border-destructive-border-hover",
+			],
+		},
+		{
+			variant: "outline",
+			color: "warning",
+			className: [
+				"border-warning-border text-warning",
+				"hover:bg-warning-background-hover hover:text-warning-background-foreground-hover hover:border-warning-border-hover",
+			],
+		},
+	],
 	extend: focusRing,
 })

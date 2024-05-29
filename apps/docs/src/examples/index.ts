@@ -173,12 +173,18 @@ export function Example() {
 }
 `,
   },
-  "button/destructive": {
-	  component: lazy(() => import("~/examples/button/destructive.tsx")),
+  "button/colors": {
+	  component: lazy(() => import("~/examples/button/colors.tsx")),
 	  code: `import { Button } from "@pixelshades/ui/components"
 
 export function Example() {
-	return <Button variant="destructive">Button</Button>
+	return (
+		<div className="flex flex-row flex-wrap gap-md">
+			<Button color="primary">Primary</Button>
+			<Button color="destructive">Destructive</Button>
+			<Button color="warning">Warning</Button>
+		</div>
+	)
 }
 `,
   },
@@ -229,7 +235,7 @@ export function Example() {
 import { SnailIcon } from "@pixelshades/ui/icons"
 
 export function Example() {
-	return <Button before={<SnailIcon />}>Button</Button>
+	return <Button before={<SnailIcon />} color="primary">Button</Button>
 }
 `,
   },
