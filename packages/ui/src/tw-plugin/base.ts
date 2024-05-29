@@ -1,4 +1,10 @@
-import { baseColors, defaultColorTokens } from "./const"
+import { baseColors, defaultColorTokens, defaultDarkModeColorTokens } from "./const"
+
+const getUtilTokens = () => {
+	return {
+		"--radius": "0.5rem",
+	}
+}
 
 const getLayoutTokens = () => {
 	return {
@@ -19,7 +25,7 @@ const getLayoutTokens = () => {
 
 const getColorTokens = (color: string) => {
 	return {
-		[`--${color}-solid`]: `var(--${color}-scale-600)`,
+		[`--${color}-solid`]: `var(--${color}-scale-500)`,
 		[`--${color}-solid-hover`]: `var(--${color}-scale-900)`,
 		[`--${color}-solid-active`]: `var(--${color}-scale-950)`,
 		[`--${color}-solid-disabled`]: "var(--neutral-scale-200)",
@@ -34,9 +40,9 @@ const getColorTokens = (color: string) => {
 		[`--${color}-body-active`]: `var(--${color}-contrast)`,
 		[`--${color}-body-disabled`]: "var(--neutral-scale-50)",
 
-		[`--${color}-body-foreground`]: `var(--${color}-scale-600)`,
+		[`--${color}-body-foreground`]: `var(--${color}-scale-500)`,
 		[`--${color}-body-foreground-hover`]: `var(--${color}-scale-900)`,
-		[`--${color}-body-foreground-active`]: `var(--${color}-scale-600)`,
+		[`--${color}-body-foreground-active`]: `var(--${color}-scale-500)`,
 		[`--${color}-body-foreground-disabled`]: "var(--neutral-scale-400)",
 
 		[`--${color}-subtle`]: `var(--${color}-scale-50)`,
@@ -49,7 +55,7 @@ const getColorTokens = (color: string) => {
 		[`--${color}-subtle-foreground-active`]: `var(--${color}-scale-800)`,
 		[`--${color}-subtle-foreground-disabled`]: "var(--neutral-scale-400)",
 
-		[`--${color}-border`]: `var(--${color}-scale-600)`,
+		[`--${color}-border`]: `var(--${color}-scale-500)`,
 		[`--${color}-border-hover`]: `var(--${color}-scale-800)`,
 		[`--${color}-border-active`]: `var(--${color}-scale-900)`,
 		[`--${color}-border-disabled`]: "var(--neutral-scale-300)",
@@ -72,7 +78,7 @@ export const getBaseColors = () => {
 			backgroundColor: "hsl(var(--background))",
 		},
 		":root": {
-			"--background": "var(--neutral-contrast)",
+			"--background": "var(--neutral-scale-50)",
 			"--background-hover": "var(--neutral-scale-100)",
 			"--background-active": "var(--neutral-scale-200)",
 
@@ -82,17 +88,19 @@ export const getBaseColors = () => {
 
 			"--foreground": "var(--neutral-scale-900)",
 			"--ring": "var(--primary--scale-600)",
-			"--radius": "0.5rem",
 
 			"--border": "var(--neutral-scale-300)",
-
-			/* Primary Colors */
 
 			...colors,
 
 			...getLayoutTokens(),
+			...getUtilTokens(),
 
 			...defaultColorTokens,
+		},
+
+		".dark": {
+			...defaultDarkModeColorTokens,
 		},
 	}
 }

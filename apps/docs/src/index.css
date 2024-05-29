@@ -19,17 +19,8 @@
 		--primary-scale-900: 263.5 67.416% 34.902%;
 		--primary-scale-950: 261.18 72.65% 22.941%;
 	} */
-	.dark {
-	  /* Dark Mode Variables */
-	  --background: var(--neutral-scale-950);
-	  --foreground: var(--neutral-scale-50);
-	  --ring: var(--primary);
-	  --radius: 0.5rem;
-	  --subtle: var(--neutral-scale-800);
-	  --subtle-foreground: var(--neutral-scale-400);
-	  --border: var(--neutral-scale-700);
-	}
-  }
+
+}
 
 
   @layer base {
