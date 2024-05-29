@@ -40,7 +40,7 @@ const ComboBoxRoot = <T extends object>({
 	...props
 }: ComboBoxProps<T>) => (
 	<AriaComboBox className={root({ className })} {...props} shouldFocusWrap>
-		<Label tooltip={tooltip} description={description}>
+		<Label tooltip={tooltip} description={description} isRequired={props.isRequired}>
 			{label}
 		</Label>
 		<div className={inputRoot()}>
