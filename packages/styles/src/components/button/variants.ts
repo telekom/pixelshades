@@ -16,7 +16,7 @@ export const buttonVariants = tv({
 		variant: {
 			solid: "shadow",
 			outline: "border bg-transparent shadow-sm",
-			ghost: "hover:bg-subtle",
+			ghost: "",
 			link: "text-primary underline-offset-4 hover:underline",
 		},
 		color: {
@@ -90,6 +90,23 @@ export const buttonVariants = tv({
 				"border-warning-border text-warning",
 				"hover:bg-warning-background-hover hover:text-warning-background-foreground-hover hover:border-warning-border-hover",
 			],
+		},
+
+		// Ghost
+		{
+			variant: "ghost",
+			color: "primary",
+			className: "hover:bg-primary-subtle",
+		},
+		{
+			variant: "ghost",
+			color: "destructive",
+			className: "hover:bg-destructive-subtle",
+		},
+		{
+			variant: "ghost",
+			color: "warning",
+			className: "hover:bg-warning-subtle",
 		},
 	],
 	extend: focusRing,
