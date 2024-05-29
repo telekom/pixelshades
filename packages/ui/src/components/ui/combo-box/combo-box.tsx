@@ -5,7 +5,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type { ComboBoxProps as AriaComboBoxProps, ListBoxItemProps } from "react-aria-components"
-import { ComboBox as AriaComboBox, Button, ListBox, ListBoxItem, Text } from "react-aria-components"
+import { ComboBox as AriaComboBox, Button, ListBox, ListBoxItem } from "react-aria-components"
 
 import { comboboxVaraints } from "@pixelshades/styles/components/combo-box"
 import { ChevronDown } from "lucide-react"
@@ -16,7 +16,7 @@ import { Input } from "../input"
 import { type FormComponentLabelProps, Label } from "../label"
 import { Popover } from "../popover"
 
-const { button, item, popover, root } = comboboxVaraints()
+const { button, item, popover, root, inputRoot } = comboboxVaraints()
 
 interface ComboBoxProps<T extends object> extends Omit<AriaComboBoxProps<T>, "children">, FormComponentLabelProps {
 	/** The styles of the combo box. */
@@ -43,7 +43,7 @@ const ComboBoxRoot = <T extends object>({
 		<Label tooltip={tooltip} description={description}>
 			{label}
 		</Label>
-		<div className="relative flex w-fit items-center rounded-2xl bg-background">
+		<div className={inputRoot()}>
 			<Input />
 			<Button className={button()}>
 				<ChevronDown aria-hidden className="size-4 text-subtle-foreground" />
