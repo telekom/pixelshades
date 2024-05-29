@@ -25,6 +25,22 @@ const baseShades: Shade[] = [
 	{ name: "950", lightness: 4, highContrastLightness: 3 },
 ]
 
+type ColorScale = Record<string, string>
+
+export function extendColorScale(scale: ColorScale, shades: number[]): ColorScale {
+	const baseColor = new Color(scale[500]!)
+
+	const newShades: ColorScale = {}
+	for (const shade of shades) {
+		const adjustedColor = new Color(baseColor.darken((shade - 500) / 1000))
+		newShades[shade] = adjustedColor.toString({ format: "hex" })
+	}
+
+	return {
+		...scale,
+		...newShades,
+	}
+}
 // This generates a color palette based on the provided color and shades.
 // It takes a color string and an array of shades as input, and returns an array of palette objects.
 export const generateColorPalette = ({

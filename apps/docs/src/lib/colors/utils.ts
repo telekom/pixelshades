@@ -579,3 +579,10 @@ function toOklchString(color: Color) {
 		.toString({ precision: 4 })
 		.replace(/(\S+)(.+)/, `oklch(${L}%$2`)
 }
+
+export function invertValues<T extends Record<string, any>>(obj: T): T {
+	const values = Object.values(obj)
+	const invertedValues = values.reverse()
+
+	return Object.fromEntries(Object.keys(obj).map((key, index) => [key, invertedValues[index]])) as T
+}

@@ -29,7 +29,8 @@ import {
 	yellow,
 	zinc,
 } from "tailwindcss/colors"
-import { exportTheme, generateTheme, transformTailwindColor } from "~/lib/colors/tailwind-themes"
+import { exportTheme, extendColorScale, generateTheme, transformTailwindColor } from "~/lib/colors/tailwind-themes"
+import { invertValues } from "~/lib/colors/utils"
 
 export const Route = createFileRoute("/themes")({
 	component: Index,
@@ -79,7 +80,9 @@ function Index() {
 		neutral: neutralColor.value,
 	})
 
-	console.log(transformTailwindColor("primary", violet))
+	// console.info(transformTailwindColor("primary", indigo), "LIGHT")
+	console.info(invertValues(extendColorScale(neutral, [850, 1000])))
+	console.info(transformTailwindColor("neutral", invertValues(extendColorScale(neutral, [850, 1000]))), "DARK")
 
 	// console.log(exportTheme(theme))
 

@@ -8,7 +8,7 @@ export const labelVariants = tv({
 	slots: {
 		description: "text-subtle-foreground text-sm",
 		helperText: "text-subtle-foreground text-sm",
-		required: "text-info text-sm",
+		required: "text-primary text-sm",
 	},
-	base: "text-sm font-medium inline-flex shrink-0 items-center gap-sm antialiased leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70 data-[required]:after:content-[_*]",
+	base: "text-sm font-medium text-foreground inline-flex shrink-0 items-center gap-sm antialiased leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70 data-[required]:after:content-[_*]",
 })

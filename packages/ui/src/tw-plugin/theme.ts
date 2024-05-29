@@ -13,16 +13,16 @@ const getThemeColorToken = (color: string) => {
 			"foreground-active": `hsl(var(--${color}-solid-foreground-active))`,
 			"foreground-disabled": `hsl(var(--${color}-solid-foreground-disabled))`,
 		},
-		[`${color}-body`]: {
-			DEFAULT: `hsl(var(--${color}-body))`,
-			hover: `hsl(var(--${color}-body-hover))`,
-			active: `hsl(var(--${color}-body-active))`,
-			disabled: `hsl(var(--${color}-body-disabled))`,
+		[`${color}-background`]: {
+			DEFAULT: `hsl(var(--${color}-background))`,
+			hover: `hsl(var(--${color}-background-hover))`,
+			active: `hsl(var(--${color}-background-active))`,
+			disabled: `hsl(var(--${color}-background-disabled))`,
 
-			foreground: `hsl(var(--${color}-body-foreground))`,
-			"foreground-hover": `hsl(var(--${color}-body-foreground-hover))`,
-			"foreground-active": `hsl(var(--${color}-body-foreground-active))`,
-			"foreground-disabled": `hsl(var(--${color}-body-foreground-disabled))`,
+			foreground: `hsl(var(--${color}-background-foreground))`,
+			"foreground-hover": `hsl(var(--${color}-background-foreground-hover))`,
+			"foreground-active": `hsl(var(--${color}-background-foreground-active))`,
+			"foreground-disabled": `hsl(var(--${color}-background-foreground-disabled))`,
 		},
 		[`${color}-subtle`]: {
 			DEFAULT: `hsl(var(--${color}-subtle))`,
@@ -64,7 +64,7 @@ export const getThemeVariables = () => {
 		ring: "hsl(var(--ring))",
 		border: "hsl(var(--border))",
 		subtle: {
-			DEFAULT: "hsl(var(--subtle))",
+			DEFAULT: "hsl(var(--subtle-background))",
 			foreground: "hsl(var(--subtle-foreground))",
 			"foreground-disabled": "hsl(var(--subtle-foreground-disabled))",
 		},

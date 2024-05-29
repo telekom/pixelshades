@@ -173,6 +173,15 @@ export function Example() {
 }
 `,
   },
+  "button/destructive": {
+	  component: lazy(() => import("~/examples/button/destructive.tsx")),
+	  code: `import { Button } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Button variant="destructive">Button</Button>
+}
+`,
+  },
   "button/ghost": {
 	  component: lazy(() => import("~/examples/button/ghost.tsx")),
 	  code: `import { Button } from "@pixelshades/ui/components"
@@ -237,24 +246,6 @@ export function Example() {
 			<Button size="lg">LG Button</Button>
 		</div>
 	)
-}
-`,
-  },
-  "button/solid": {
-	  component: lazy(() => import("~/examples/button/solid.tsx")),
-	  code: `import { Button } from "@pixelshades/ui/components"
-
-export function Example() {
-	return <Button variant="solid">Button</Button>
-}
-`,
-  },
-  "button/subtle": {
-	  component: lazy(() => import("~/examples/button/subtle.tsx")),
-	  code: `import { Button } from "@pixelshades/ui/components"
-
-export function Example() {
-	return <Button variant="subtle">Button</Button>
 }
 `,
   },

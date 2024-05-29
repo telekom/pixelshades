@@ -81,17 +81,17 @@ export const defaultColorTokens = {
 }
 
 export const defaultDarkModeColorTokens = {
-	"--primary-scale-950": "225.88 100% 96.667%",
-	"--primary-scale-900": "226.45 100% 93.922%",
-	"--primary-scale-800": "228 96.491% 88.824%",
-	"--primary-scale-700": "229.66 93.548% 81.765%",
-	"--primary-scale-600": "234.45 89.474% 73.922%",
-	"--primary-scale-500": "238.73 83.529% 66.667%",
-	"--primary-scale-400": "243.4 75.355% 58.627%",
-	"--primary-scale-300": "244.52 57.937% 50.588%",
-	"--primary-scale-200": "243.65 54.502% 41.373%",
-	"--primary-scale-100": "242.17 47.429% 34.314%",
-	"--primary-scale-50": "243.75 47.059% 20%",
+	"--primary-scale-50": "252 100% 15.686%",
+	"--primary-scale-100": "243.75 47.059% 20%",
+	"--primary-scale-200": "242.17 47.429% 34.314%",
+	"--primary-scale-300": "248.57 69.307% 39.608%",
+	"--primary-scale-400": "243.65 54.502% 41.373%",
+	"--primary-scale-500": "244.52 57.937% 50.588%",
+	"--primary-scale-600": "243.4 75.355% 58.627%",
+	"--primary-scale-700": "238.73 83.529% 66.667%",
+	"--primary-scale-800": "234.45 89.474% 73.922%",
+	"--primary-scale-900": "228 96.491% 88.824%",
+	"--primary-scale-950": "226.45 100% 93.922%",
 	"--primary-contrast": "0 0 100%",
 
 	"--neutral-scale-950": "none 0% 98.039%",
