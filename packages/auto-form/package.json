@@ -20,9 +20,9 @@
 	},
 	"peerDependencies": {
 		"@pixelshades/ui": "workspace:*",
+		"@pixelshades/toast": "workspace:*",
 		"react": ">18.0.0",
-		"react-dom": ">18.0.0",
-		"sonner": ">1.4.0"
+		"react-dom": ">18.0.0"
 	},
 	"devDependencies": {
 		"@pixelshades/ui": "workspace:*",
@@ -33,7 +33,6 @@
 		"bunchee": "5.1.5",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"sonner": "^1.4.41",
 		"typescript": "^5.4.5"
 	},
 	"files": [
