@@ -27,7 +27,7 @@
 	"devDependencies": {
 		"@pixelshades/ui": "workspace:*",
 		"@total-typescript/tsconfig": "^1.0.4",
-		"@types/node": "^20.12.12",
+		"@types/node": "^20.12.13",
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
 		"bunchee": "5.1.5",
