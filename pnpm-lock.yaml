@@ -144,9 +144,6 @@ importers:
       '@hookform/resolvers':
         specifier: ^3.4.2
         version: 3.4.2(react-hook-form@7.51.5(react@18.3.1))
-      '@pixelshades/toast':
-        specifier: workspace:*
-        version: link:../toast
       '@pixelshades/utils':
         specifier: workspace:*
         version: link:../utils
@@ -160,6 +157,9 @@ importers:
         specifier: ^3.23.8
         version: 3.23.8
     devDependencies:
+      '@pixelshades/toast':
+        specifier: workspace:*
+        version: link:../toast
       '@pixelshades/ui':
         specifier: workspace:*
         version: link:../ui
