@@ -1,5 +1,11 @@
 # @pixelshades/utils
 
+## 1.0.2
+
+### Patch Changes
+
+- 263994f: use @pixelshades/toast for toasting
+
 ## 1.0.1
 
 ### Patch Changes
