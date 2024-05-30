@@ -78,6 +78,11 @@ export const getBaseColors = () => {
 			color: "hsl(var(--foreground))",
 			backgroundColor: "hsl(var(--background))",
 		},
+		"*": {
+			"border-color": "hsl(var(--border))",
+			"--tw-ring-color": "hsl(var(--ring))",
+			"outline-color": "hsl(var(--ring))",
+		},
 		":root": {
 			"--background": "var(--neutral-scale-50)",
 			"--background-hover": "var(--neutral-scale-100)",
