@@ -71,7 +71,7 @@ export const buttonVariants = tv({
 			variant: "outline",
 			color: "primary",
 			className: [
-				"border-primary-border text-primary",
+				"border-primary-border text-primary-background-foreground",
 				"hover:bg-primary-background-hover hover:text-primary-background-foreground-hover hover:border-primary-border-hover",
 			],
 		},
@@ -79,7 +79,7 @@ export const buttonVariants = tv({
 			variant: "outline",
 			color: "destructive",
 			className: [
-				"border-destructive-border text-destructive",
+				"border-destructive-border text-destructive-background-foreground",
 				"hover:bg-destructive-background-hover hover:text-destructive-background-foreground-hover hover:border-destructive-border-hover",
 			],
 		},
@@ -87,7 +87,7 @@ export const buttonVariants = tv({
 			variant: "outline",
 			color: "warning",
 			className: [
-				"border-warning-border text-warning",
+				"border-warning-border text-info-background-foreground",
 				"hover:bg-warning-background-hover hover:text-warning-background-foreground-hover hover:border-warning-border-hover",
 			],
 		},

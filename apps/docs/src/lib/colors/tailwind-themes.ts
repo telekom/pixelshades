@@ -33,7 +33,7 @@ export function generateScale(baseColor: string, shades: number[]): ColorScale {
 	const newShades: ColorScale = {}
 	for (const shade of shades) {
 		const tempColor = new Color(baseColorObj)
-		const adjustedColor = new Color(tempColor.darken((shade - 500) / 700))
+		const adjustedColor = new Color(tempColor.darken((shade - 500) / 1000))
 		newShades[shade] = adjustedColor.to("hsl").toString({ format: "hsl" })
 	}
 

@@ -24,6 +24,7 @@ const getLayoutTokens = () => {
 }
 
 const getColorTokens = (color: string) => {
+	const isNeutral = color === "neutral"
 	return {
 		[`--${color}-solid`]: `var(--${color}-scale-600)`,
 		[`--${color}-solid-hover`]: `var(--${color}-scale-700)`,
@@ -50,14 +51,14 @@ const getColorTokens = (color: string) => {
 		[`--${color}-subtle-active`]: `var(--${color}-scale-200)`,
 		[`--${color}-subtle-disabled`]: "var(--neutral-scale-50)",
 
-		[`--${color}-subtle-foreground`]: `var(--${color}-scale-700)`,
-		[`--${color}-subtle-foreground-hover`]: `var(--${color}-scale-800)`,
-		[`--${color}-subtle-foreground-active`]: `var(--${color}-scale-800)`,
+		[`--${color}-subtle-foreground`]: `var(--${color}-scale-${isNeutral ? "900" : "700"})`,
+		[`--${color}-subtle-foreground-hover`]: `var(--${color}-scale-${isNeutral ? "950" : "900"})`,
+		[`--${color}-subtle-foreground-active`]: `var(--${color}-scale-${isNeutral ? "900" : "700"})`,
 		[`--${color}-subtle-foreground-disabled`]: "var(--neutral-scale-400)",
 
-		[`--${color}-border`]: `var(--${color}-scale-600)`,
-		[`--${color}-border-hover`]: `var(--${color}-scale-800)`,
-		[`--${color}-border-active`]: `var(--${color}-scale-900)`,
+		[`--${color}-border`]: `var(--${color}-scale-${isNeutral ? "300" : "600"})`,
+		[`--${color}-border-hover`]: `var(--${color}-scale-${isNeutral ? "500" : "800"})`,
+		[`--${color}-border-active`]: `var(--${color}-scale-${isNeutral ? "500" : "800"})`,
 		[`--${color}-border-disabled`]: "var(--neutral-scale-300)",
 	}
 }

@@ -86,11 +86,13 @@ function Index() {
 		neutral: neutralColor.value,
 	})
 
-	const scale = generateScale(indigo[800], [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950])
-	// console.info(invertValues(extendColorScale(neutral, [850, 1000])))
-	// console.info(transformTailwindColor("neutral", invertValues(extendColorScale(neutral, [850, 1000]))), "DARK")
+	const extendedBlue = extendColorScale(blue, [850, 1000])
+	const scale = invertValues(extendColorScale(rose, [850, 1000]))
+	const scale2 = rose
 
-	// console.log(exportTheme(theme))
+	// console.info(transformTailwindColor("", invertValues(extendColorScale(neutral, [850, 1000]))), "DARK")
+
+	console.log(transformTailwindColor("warning", scale))
 
 	navigator.clipboard.writeText(exportTheme(theme))
 
@@ -100,6 +102,26 @@ function Index() {
 
 			<div>
 				{Object.entries(scale).map(([key, value]) => (
+					<div key={key} className="flex items-center gap-md px-md py-sm" style={{ backgroundColor: value }}>
+						<div className="w-[100px]">{key}</div>
+						<div className="w-[200px]">{value}</div>
+						<div>{new Color("hsl(0 0% 3.9216%)").contrastWCAG21(new Color(value).lighten(0.0))}</div>
+					</div>
+				))}
+			</div>
+
+			<div>
+				{Object.entries(scale2).map(([key, value]) => (
+					<div key={key} className="flex items-center gap-md px-md py-sm" style={{ backgroundColor: value }}>
+						<div className="w-[100px]">{key}</div>
+						<div className="w-[200px]">{value}</div>
+						<div>{new Color("hsl(0 0% 100%)").contrastWCAG21(new Color(value))}</div>
+					</div>
+				))}
+			</div>
+
+			<div>
+				{Object.entries(extendedBlue).map(([key, value]) => (
 					<div key={key} className="flex items-center gap-md" style={{ backgroundColor: value }}>
 						<div className="w-[100px]">{key}</div>
 						<div className="w-[200px]">{value}</div>
