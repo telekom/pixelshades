@@ -1,5 +1,12 @@
 # @pixelshades/styles
 
+## 0.4.1
+
+### Patch Changes
+
+- abe3321: fix: input styling
+- 6077f8b: fix badge variants
+
 ## 0.4.0
 
 ### Minor Changes
