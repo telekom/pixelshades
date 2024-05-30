@@ -1,5 +1,14 @@
 # @pixelshades/ui
 
+## 0.4.1
+
+### Patch Changes
+
+- 7b6c0ac: apply global styles on library level
+- Updated dependencies [abe3321]
+- Updated dependencies [6077f8b]
+  - @pixelshades/styles@0.4.1
+
 ## 0.4.0
 
 ### Minor Changes
