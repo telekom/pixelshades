@@ -1,5 +1,16 @@
 # @pixelshades/styles
 
+## 0.4.0
+
+### Minor Changes
+
+- 5cf4467: add color attribut to Button Component
+- 11edbff: fix: neutral colors
+
+### Patch Changes
+
+- bb962ff: fix: combobox base styling
+
 ## 0.3.7
 
 ### Patch Changes

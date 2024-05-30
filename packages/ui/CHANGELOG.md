@@ -1,5 +1,24 @@
 # @pixelshades/ui
 
+## 0.4.0
+
+### Minor Changes
+
+- ce22f56: feat: new reworked design tokens
+- 5cf4467: add color attribut to Button Component
+- 11edbff: fix: neutral colors
+
+### Patch Changes
+
+- 7907a9f: rework button styling
+- bb962ff: fix: combobox base styling
+- 2d0ce18: fix: combobox label required prop not applying
+- 544e1b8: fix: TextField required label visual bug
+- Updated dependencies [bb962ff]
+- Updated dependencies [5cf4467]
+- Updated dependencies [11edbff]
+  - @pixelshades/styles@0.4.0
+
 ## 0.3.15
 
 ### Patch Changes
