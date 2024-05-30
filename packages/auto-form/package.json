@@ -26,6 +26,7 @@
 	},
 	"devDependencies": {
 		"@pixelshades/ui": "workspace:*",
+		"@pixelshades/toast": "workspace:*",
 		"@total-typescript/tsconfig": "^1.0.4",
 		"@types/node": "^20.12.13",
 		"@types/react": "^18.3.3",
