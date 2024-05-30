@@ -26,7 +26,9 @@ export const tabsVariants = tv({
 			line: {
 				root: "",
 				list: "",
-				tab: "box-border border-primary aria-selected:rounded-none outline-none aria-selected:border-b-2 aria-selected:hover:bg-transparent data-[hovered]:bg-subtle",
+				tab: [
+					"box-border border-primary-border px-xl pb-xl aria-selected:rounded-none outline-none aria-selected:border-b-2 aria-selected:hover:bg-transparent data-[hovered]:bg-subtle",
+				],
 			},
 			pill: {
 				root: "",

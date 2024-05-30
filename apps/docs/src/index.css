@@ -6,6 +6,17 @@
 
 
 
+@layer base {
+    * {
+      @apply border-border ring-ring outline-ring;
+    }
+    body {
+      @apply bg-background text-foreground;
+      font-feature-settings: "rlig" 1, "calt" 1;
+    }
+}
+
+
 [data-rehype-pretty-code-figure] code {
   @apply text-sm !leading-loose md:text-base;
 }
