@@ -50,6 +50,20 @@ const neutralColors = [
 	{ name: "stone", value: stone[500] },
 ]
 
+const shark = {
+	"50": "#f5f6f6",
+	"100": "#e5e7e8",
+	"200": "#cdd0d4",
+	"300": "#abafb5",
+	"400": "#81868f",
+	"500": "#666b74",
+	"600": "#575b63",
+	"700": "#4a4d54",
+	"800": "#424448",
+	"900": "#3a3c3f",
+	"950": "#222326",
+}
+
 const primaryColors = [
 	neutral[300],
 	red[400],
@@ -90,9 +104,9 @@ function Index() {
 	const scale = invertValues(extendColorScale(rose, [850, 1000]))
 	const scale2 = rose
 
-	// console.info(transformTailwindColor("", invertValues(extendColorScale(neutral, [850, 1000]))), "DARK")
+	console.info(transformTailwindColor("neutral", invertValues(extendColorScale(shark, [850, 1000]))))
 
-	console.log(transformTailwindColor("warning", scale))
+	// console.log(transformTailwindColor("neutral", shark))
 
 	navigator.clipboard.writeText(exportTheme(theme))
 

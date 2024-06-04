@@ -140,3 +140,52 @@ export const routeTree = rootRoute.addChildren({
 })
 
 /* prettier-ignore-end */
+
+/* ROUTE_MANIFEST_START
+{
+  "routes": {
+    "__root__": {
+      "filePath": "__root.tsx",
+      "children": [
+        "/",
+        "/auto-form",
+        "/docs",
+        "/examples",
+        "/themes"
+      ]
+    },
+    "/": {
+      "filePath": "index.tsx"
+    },
+    "/auto-form": {
+      "filePath": "auto-form.tsx"
+    },
+    "/docs": {
+      "filePath": "docs.tsx",
+      "children": [
+        "/docs/$slug",
+        "/docs/",
+        "/docs/components/$slug/"
+      ]
+    },
+    "/examples": {
+      "filePath": "examples.tsx"
+    },
+    "/themes": {
+      "filePath": "themes.tsx"
+    },
+    "/docs/$slug": {
+      "filePath": "docs/$slug.tsx",
+      "parent": "/docs"
+    },
+    "/docs/": {
+      "filePath": "docs/index.tsx",
+      "parent": "/docs"
+    },
+    "/docs/components/$slug/": {
+      "filePath": "docs/components/$slug/index.tsx",
+      "parent": "/docs"
+    }
+  }
+}
+ROUTE_MANIFEST_END */

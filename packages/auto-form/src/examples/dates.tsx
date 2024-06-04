@@ -1,6 +1,5 @@
 "use client"
 
-import { Button } from "@pixelshades/ui/components"
 import * as z from "zod"
 import { AutoForm, AutoFormSubmit } from ".."
 

@@ -14,7 +14,7 @@ const { root, image } = avatarVariants()
 
 export const Avatar = ({ src = null, initials, alt = "", className, ...props }: AvatarProps) => {
 	return (
-		<span className={root({ className })} {...props}>
+		<span className={root({ className, ...props })} {...props}>
 			{initials && (
 				// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
 				<svg
