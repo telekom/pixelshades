@@ -35,7 +35,7 @@ export const Avatar = ({ src = null, initials, alt = "", className, ...props }: 
 					</text>
 				</svg>
 			)}
-			{src && <img className={image()} src={src} alt={alt} />}
+			{src && <img className={image(props)} src={src} alt={alt} />}
 		</span>
 	)
 }
