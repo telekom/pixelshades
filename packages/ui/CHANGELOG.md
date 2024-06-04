@@ -1,5 +1,12 @@
 # @pixelshades/ui
 
+## 0.4.3
+
+### Patch Changes
+
+- e0d5381: expose TextArea Primitive
+- e0d5381: add placeholder prop to TextField
+
 ## 0.4.2
 
 ### Patch Changes
