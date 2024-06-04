@@ -25,6 +25,24 @@ export interface TextFieldProps extends AriaTextFieldProps, FormComponentLabelPr
 	cols?: number
 	/** The number of rows in the text area. */
 	rows?: number
+	/** The number of rows in the text area. */
+	placeholder?: string
+}
+
+export interface TextAreaFieldProps extends AriaTextFieldProps, FormComponentLabelProps {
+	/** A helper text to be displayed below the text field. */
+	helperText?: ReactNode
+	/** The error message to be displayed when the text field is in an error state. */
+	errorMessage?: string
+	/** Toggle between a text field and a text area. */
+	multiLine?: boolean
+	/** The number of columns in the text area. */
+	cols?: number
+	/** The number of rows in the text area. */
+	rows?: number
+
+	/** The number of rows in the text area. */
+	placeholder?: string
 }
 
 const TextField = forwardRef(
@@ -34,6 +52,7 @@ const TextField = forwardRef(
 		description,
 		tooltip,
 		errorMessage,
+		placeholder,
 		ref,
 		isRequired,
 		multiLine,
@@ -48,7 +67,11 @@ const TextField = forwardRef(
 				</Label>
 			</If>
 
-			{multiLine ? <TextArea ref={ref} cols={cols} rows={rows} /> : <Input ref={ref} />}
+			{multiLine ? (
+				<TextArea ref={ref} placeholder={placeholder} cols={cols} rows={rows} />
+			) : (
+				<Input placeholder={placeholder} ref={ref} />
+			)}
 			{helperText && <FormDescription>{helperText}</FormDescription>}
 			<FormFieldError>{errorMessage}</FormFieldError>
 		</AriaTextField>
