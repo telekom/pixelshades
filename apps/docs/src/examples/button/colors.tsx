@@ -4,11 +4,15 @@ export default function Example() {
 	return (
 		<div className="flex flex-col gap-lg">
 			<div className="flex flex-row flex-wrap gap-md">
+				<Button color="default">Default</Button>
 				<Button color="primary">Primary</Button>
 				<Button color="destructive">Destructive</Button>
 				<Button color="warning">Warning</Button>
 			</div>
 			<div className="flex flex-row flex-wrap gap-md">
+				<Button color="default" variant="outline">
+					Default
+				</Button>
 				<Button color="primary" variant="outline">
 					Primary
 				</Button>
@@ -20,6 +24,9 @@ export default function Example() {
 				</Button>
 			</div>
 			<div className="flex flex-row flex-wrap gap-md">
+				<Button color="default" variant="ghost">
+					Default
+				</Button>
 				<Button color="primary" variant="ghost">
 					Primary
 				</Button>

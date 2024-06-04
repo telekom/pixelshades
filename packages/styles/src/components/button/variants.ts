@@ -11,7 +11,7 @@ export const buttonVariants = tv({
 		"group inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-50",
 		focusRing(),
 	],
-	defaultVariants: { variant: "solid", size: "md", color: "primary" },
+	defaultVariants: { variant: "solid", size: "md", color: "default" },
 	variants: {
 		variant: {
 			solid: "shadow",
@@ -23,6 +23,7 @@ export const buttonVariants = tv({
 			primary: "",
 			destructive: "",
 			warning: "",
+			default: "",
 		},
 		withRing: {
 			true: "transition-all duration-300 ring-offset-background  hover:ring-2 hover:ring-primary/90 hover:ring-offset-2",
@@ -38,6 +39,15 @@ export const buttonVariants = tv({
 	},
 	compoundVariants: [
 		// Solid
+		{
+			variant: "solid",
+			color: "default",
+			className: [
+				"bg-primary text-primary-foreground",
+				"hover:bg-primary-hover hover:text-primary-foreground-hover",
+				"disabled:bg-primary-disabled disabled:text-primary-foreground-disabled",
+			],
+		},
 		{
 			variant: "solid",
 			color: "primary",
@@ -69,6 +79,14 @@ export const buttonVariants = tv({
 		// Outline
 		{
 			variant: "outline",
+			color: "default",
+			className: [
+				"border-neutral-border text-neutral-background-foreground",
+				"hover:bg-neutral-background-hover hover:text-neutral-background-foreground-hover hover:border-neutral-border-hover",
+			],
+		},
+		{
+			variant: "outline",
 			color: "primary",
 			className: [
 				"border-primary-border text-primary-background-foreground",
@@ -93,6 +111,11 @@ export const buttonVariants = tv({
 		},
 
 		// Ghost
+		{
+			variant: "ghost",
+			color: "default",
+			className: "hover:bg-neutral-subtle",
+		},
 		{
 			variant: "ghost",
 			color: "primary",
