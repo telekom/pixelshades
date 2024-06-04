@@ -1,5 +1,13 @@
 # @pixelshades/ui
 
+## 0.4.2
+
+### Patch Changes
+
+- 2b8bc56: fix: avatar ignoring size
+- Updated dependencies [7f70aff]
+  - @pixelshades/styles@0.4.2
+
 ## 0.4.1
 
 ### Patch Changes

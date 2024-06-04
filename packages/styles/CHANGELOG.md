@@ -1,5 +1,11 @@
 # @pixelshades/styles
 
+## 0.4.2
+
+### Patch Changes
+
+- 7f70aff: feat: add default button color prop
+
 ## 0.4.1
 
 ### Patch Changes
