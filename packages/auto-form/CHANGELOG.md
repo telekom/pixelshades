@@ -1,5 +1,14 @@
 # @pixelshades/utils
 
+## 1.0.4
+
+### Patch Changes
+
+- Updated dependencies [e0d5381]
+- Updated dependencies [e0d5381]
+  - @pixelshades/ui@0.4.3
+  - @pixelshades/toast@0.0.1
+
 ## 1.0.3
 
 ### Patch Changes
