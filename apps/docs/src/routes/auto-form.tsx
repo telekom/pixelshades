@@ -6,8 +6,8 @@ import { DatesAutoFormExample } from "@pixelshades/auto-form/examples/dates.tsx"
 export const Route = createFileRoute("/auto-form")({
 	component: () => (
 		<div className="container mx-auto max-w-md space-y-4">
-			{/* <BasicAutoFormExample /> */}
-			<DatesAutoFormExample />
+			<BasicAutoFormExample />
+			{/* <DatesAutoFormExample /> */}
 		</div>
 	),
 })

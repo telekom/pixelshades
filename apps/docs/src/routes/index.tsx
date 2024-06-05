@@ -13,7 +13,7 @@ function HomePage() {
 			<section className="w-full py-12 lg:py-32 md:py-24 xl:py-48">
 				<div className="container px-4 md:px-6">
 					<div className="flex flex-col items-center space-y-4 text-center">
-						<div className="space-y-2">
+						<div className="space-y-md">
 							<Heading
 								level={1}
 								className="font-bold text-3xl tracking-tighter lg:text-6xl/none md:text-5xl sm:text-4xl"

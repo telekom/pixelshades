@@ -83,7 +83,7 @@ const formSchema = z.object({
 export function BasicAutoFormExample() {
 	return (
 		<>
-			<div className="mx-auto my-6 max-w-lg">
+			<div className="mx-auto my-layout-md max-w-lg">
 				<AutoForm
 					formSchema={formSchema}
 					onSubmit={async (e) => console.log(e)}

@@ -41,6 +41,7 @@ function BaseAutoForm<SchemaType extends ZodObjectOrWrapped>(
 		fieldConfig,
 		children,
 		className,
+		innerClassName,
 		dependencies,
 		minSubmitDelay = 1000,
 		defaultValues: cDefaultValues,
@@ -53,6 +54,7 @@ function BaseAutoForm<SchemaType extends ZodObjectOrWrapped>(
 		fieldConfig?: FieldConfig<z.infer<SchemaType>>
 		children?: ReactNode | ((val: { minSubmitDelay: number } & FormState<any>) => ReactNode)
 		className?: string
+		innerClassName?: string
 		dependencies?: Dependency<z.infer<SchemaType>>[]
 		defaultValues?: Partial<z.infer<SchemaType>>
 		minSubmitDelay?: number
@@ -114,10 +116,11 @@ function BaseAutoForm<SchemaType extends ZodObjectOrWrapped>(
 					onSubmit={(e) => {
 						form.handleSubmit(onSubmit)(e)
 					}}
-					className={cn("space-y-5", className)}
+					className={cn("space-y-layout-sm", className)}
 					ref={ref}
 				>
 					<AutoFormObject
+						className={innerClassName}
 						schema={objectFormSchema}
 						form={form}
 						dependencies={dependencies}

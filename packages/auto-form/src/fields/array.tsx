@@ -42,21 +42,15 @@ export default function AutoFormArray({
 				{fields.map((_field, index) => {
 					const key = _field.id
 					return (
-						<div className="mt-4 flex flex-col" key={`${key}`}>
+						<div className="mt-lg flex flex-col" key={`${key}`}>
 							<AutoFormObject
 								schema={itemDefType as z.ZodObject<any, any>}
 								form={form}
 								fieldConfig={fieldConfig}
 								path={[...path, index.toString()]}
 							/>
-							<div className="my-4 flex justify-end">
-								<Button
-									variant="outline"
-									size="icon"
-									type="button"
-									className="dark:bg-white dark:hover:bg-zinc-300 hover:bg-zinc-300 dark:hover:text-black dark:text-black hover:text-black dark:focus-visible:ring-0 dark:hover:ring-0 focus-visible:ring-0 focus:ring-0 dark:focus-visible:ring-offset-0 dark:hover:ring-offset-0 focus-visible:ring-offset-0 focus:ring-offset-0"
-									onPress={() => remove(index)}
-								>
+							<div className="my-lg flex justify-end">
+								<Button variant="outline" size="icon" type="button" onPress={() => remove(index)}>
 									<DeleteIcon className="size-4" />
 								</Button>
 							</div>
@@ -70,7 +64,7 @@ export default function AutoFormArray({
 					type="button"
 					variant="outline"
 					onPress={() => append({})}
-					className="mt-4 flex items-center"
+					className="mt-lg flex items-center"
 				>
 					Add
 				</Button>

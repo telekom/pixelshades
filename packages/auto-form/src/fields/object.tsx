@@ -1,3 +1,4 @@
+import { cn } from "@pixelshades/utils/styles"
 import { type useForm, useFormContext } from "react-hook-form"
 import * as z from "zod"
 import { FormField } from "../commons/hook-form"
@@ -18,7 +19,9 @@ export default function AutoFormObject<SchemaType extends z.ZodObject<any, any>>
 	fieldConfig,
 	path = [],
 	dependencies = [],
+	className,
 }: {
+	className?: string
 	schema: SchemaType | z.ZodEffects<SchemaType>
 	form: ReturnType<typeof useForm>
 	fieldConfig?: FieldConfig<z.infer<SchemaType>>
@@ -50,7 +53,7 @@ export default function AutoFormObject<SchemaType extends z.ZodObject<any, any>>
 	}
 
 	return (
-		<Accordion type="multiple" className="space-y-5 border-none">
+		<Accordion type="multiple" className={cn("space-y-layout-sm border-none", className)}>
 			{Object.keys(shape).map((name) => {
 				let item = shape[name] as z.ZodAny
 				item = handleIfZodNumber(item) as z.ZodAny
@@ -72,7 +75,7 @@ export default function AutoFormObject<SchemaType extends z.ZodObject<any, any>>
 					return (
 						<AccordionItem value={name} key={key} className="border-none">
 							<AccordionTrigger>{itemName}</AccordionTrigger>
-							<AccordionContent className="p-2">
+							<AccordionContent className="p-md">
 								<AutoFormObject
 									schema={item as unknown as z.ZodObject<any, any>}
 									form={form}

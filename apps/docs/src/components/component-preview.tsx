@@ -28,7 +28,7 @@ export function ComponentPreview({
 	}
 
 	return (
-		<div className={cn("group relative my-4 flex flex-col space-y-2", className)} {...props}>
+		<div className={cn("group relative my-4 flex flex-col space-y-md", className)} {...props}>
 			<Tabs>
 				<Tabs.List aria-label="Dashbord Panels">
 					<Tabs.Tab id="preview">Preview</Tabs.Tab>
