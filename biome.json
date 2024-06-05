@@ -1,10 +1,12 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.7.0/schema.json",
+	"$schema": "https://biomejs.dev/schemas/1.8.0/schema.json",
 	"organizeImports": {
 		"enabled": true
 	},
 	"files": {
-		"ignore": ["**/*.js"]
+		"ignore": [
+			"**/*.js"
+		]
 	},
 	"linter": {
 		"enabled": true,
@@ -30,14 +32,22 @@
 				"useSortedClasses": "error"
 			}
 		},
-		"ignore": ["node_modules", ".next", "dist"]
+		"ignore": [
+			"node_modules",
+			".next",
+			"dist"
+		]
 	},
 	"formatter": {
 		"enabled": true,
 		"indentStyle": "tab",
 		"indentWidth": 4,
 		"lineWidth": 120,
-		"ignore": ["node_modules", ".next", "dist"]
+		"ignore": [
+			"node_modules",
+			".next",
+			"dist"
+		]
 	},
 	"javascript": {
 		"formatter": {

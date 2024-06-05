@@ -13,7 +13,7 @@
     "changeset": "changeset"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.7.3",
+    "@biomejs/biome": "1.8.0",
     "@changesets/cli": "^2.27.5",
     "concurrently": "^8.2.2",
     "cz-conventional-changelog": "^3.3.0",
@@ -34,5 +34,6 @@
   },
   "volta": {
     "node": "20.12.2"
-  }
+  },
+  "dependencies": {}
 }
