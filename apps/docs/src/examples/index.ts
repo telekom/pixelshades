@@ -2043,6 +2043,20 @@ export function Example() {
 }
 `,
   },
+  "time-field/controlled": {
+	  component: lazy(() => import("~/examples/time-field/controlled.tsx")),
+	  code: `import { TimeField, type TimeValue } from "@pixelshades/ui/components"
+import { useState } from "react"
+
+import { Time } from "@internationalized/date"
+
+export function Example() {
+	const [value, setValue] = useState<TimeValue>(new Time(11, 45))
+
+	return <TimeField label="Start Date" value={value} onChange={setValue} />
+}
+`,
+  },
   "time-field/granularity": {
 	  component: lazy(() => import("~/examples/time-field/granularity.tsx")),
 	  code: `import { TimeField } from "@pixelshades/ui/components"

@@ -45,4 +45,6 @@ const TimeField = <T extends TimeValue>({
 
 TimeField.displayName = "TimeField"
 
+export type { TimeValue }
+
 export { TimeField }
