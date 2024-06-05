@@ -1,5 +1,11 @@
 # @pixelshades/styles
 
+## 0.4.3
+
+### Patch Changes
+
+- 475d08b: add icon variant to button
+
 ## 0.4.2
 
 ### Patch Changes

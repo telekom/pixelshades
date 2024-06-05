@@ -1,5 +1,15 @@
 # @pixelshades/utils
 
+## 1.0.6
+
+### Patch Changes
+
+- ff82c21: fix spacing inconsitencies
+- ff82c21: add innerClassname for custom spacings
+- Updated dependencies [26fc2a6]
+  - @pixelshades/ui@0.4.5
+  - @pixelshades/toast@0.0.1
+
 ## 1.0.5
 
 ### Patch Changes
