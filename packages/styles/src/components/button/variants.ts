@@ -18,6 +18,7 @@ export const buttonVariants = tv({
 			outline: "border bg-transparent shadow-sm",
 			ghost: "",
 			link: "text-primary underline-offset-4 hover:underline",
+			icon: "aspect-square",
 		},
 		color: {
 			primary: "",
@@ -108,6 +109,28 @@ export const buttonVariants = tv({
 				"border-warning-border text-info-background-foreground",
 				"hover:bg-warning-background-hover hover:text-warning-background-foreground-hover hover:border-warning-border-hover",
 			],
+		},
+
+		// Icon
+		{
+			variant: "icon",
+			color: "default",
+			className: "text-subtle-foreground hover:text-foreground",
+		},
+		{
+			variant: "icon",
+			color: "primary",
+			className: "text-primary-subtle hover:text-primary",
+		},
+		{
+			variant: "icon",
+			color: "destructive",
+			className: "text-destructive-subtle hover:text-destructive",
+		},
+		{
+			variant: "icon",
+			color: "warning",
+			className: "text-warning-subtle hover:text-warning",
 		},
 
 		// Ghost

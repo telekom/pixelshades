@@ -228,6 +228,31 @@ export function Example() {
 }
 `,
   },
+  "button/icon": {
+	  component: lazy(() => import("~/examples/button/icon.tsx")),
+	  code: `import { Button } from "@pixelshades/ui/components"
+import { AlarmClock } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return (
+		<div className="flex flex-row flex-wrap gap-md">
+			<Button variant="icon" size="icon" color="default">
+				<AlarmClock />
+			</Button>
+			<Button variant="icon" size="icon" color="primary">
+				<AlarmClock />
+			</Button>
+			<Button variant="icon" size="icon" color="destructive">
+				<AlarmClock />
+			</Button>
+			<Button variant="icon" size="icon" color="warning">
+				<AlarmClock />
+			</Button>
+		</div>
+	)
+}
+`,
+  },
   "button/link": {
 	  component: lazy(() => import("~/examples/button/link.tsx")),
 	  code: `import { Button } from "@pixelshades/ui/components"
