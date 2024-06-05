@@ -1,5 +1,11 @@
 # @pixelshades/ui
 
+## 0.4.4
+
+### Patch Changes
+
+- 7762e00: expose TimeField type
+
 ## 0.4.3
 
 ### Patch Changes
