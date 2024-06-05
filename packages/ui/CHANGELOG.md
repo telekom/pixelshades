@@ -1,5 +1,13 @@
 # @pixelshades/ui
 
+## 0.4.5
+
+### Patch Changes
+
+- 26fc2a6: fix heading having no level if in no context
+- Updated dependencies [475d08b]
+  - @pixelshades/styles@0.4.3
+
 ## 0.4.4
 
 ### Patch Changes
