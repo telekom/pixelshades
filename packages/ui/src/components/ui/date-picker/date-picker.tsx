@@ -61,7 +61,7 @@ const DatePicker = <T extends DateValue>({
 			<FormDescription>{helperText}</FormDescription>
 		</If>
 		<FormFieldError>{errorMessage}</FormFieldError>
-		<Popover className="w-fit border-none">
+		<Popover className="w-fit overflow-hidden border-none bg-transparent shadow-none">
 			<AriaDialog>
 				<Calendar />
 			</AriaDialog>

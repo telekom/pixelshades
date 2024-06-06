@@ -8,7 +8,7 @@ import { buttonVariants } from "../button"
 
 export const calendarVariants = tv({
 	slots: {
-		root: "w-fit max-w-full rounded-xl border border-border bg-background p-lg text-foreground shadow-lg",
+		root: "w-fit max-w-full rounded-md border border-border bg-background p-lg text-foreground shadow-lg",
 		header: "mb-layout-xs flex items-center",
 		heading: "m-0 flex-1 text-center text-lg font-bold",
 		grid: "flex flex-row gap-layout-md overflow-auto",
