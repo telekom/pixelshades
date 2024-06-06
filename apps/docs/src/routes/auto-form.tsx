@@ -7,7 +7,7 @@ export const Route = createFileRoute("/auto-form")({
 	component: () => (
 		<div className="container mx-auto max-w-md space-y-4">
 			<BasicAutoFormExample />
-			{/* <DatesAutoFormExample /> */}
+			<DatesAutoFormExample />
 		</div>
 	),
 })

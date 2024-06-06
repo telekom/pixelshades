@@ -38,7 +38,7 @@ const NumberField = forwardRef(
 				{label}
 			</Label>
 			<FormFieldGroup>
-				<Input className="appearance-none border-none bg-transparent shadow-none" ref={ref} />
+				<AriaInput className="w-full bg-transparent outline-none ring-0" ref={ref} />
 				<div className="flex flex-col">
 					<Button className="size-3" slot="increment" size="icon" variant="ghost">
 						<ChevronUpIcon />
