@@ -1,5 +1,11 @@
 # @pixelshades/styles
 
+## 0.4.4
+
+### Patch Changes
+
+- ecc5e9b: fix date picker popover styles
+
 ## 0.4.3
 
 ### Patch Changes
