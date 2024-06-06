@@ -1,15 +1,15 @@
 import { Button, Drawer } from "@pixelshades/ui/components"
 import { FlameIcon, Menu } from "@pixelshades/ui/icons"
-import React from "react"
-import { SidebarNavContent } from "./sidebar-nav-content"
-import { siteConfig } from "~/config/site"
 import { Link } from "@tanstack/react-router"
+import React from "react"
+import { siteConfig } from "~/config/site"
+import { SidebarNavContent } from "./sidebar-nav-content"
 
 export const MobileNav = () => {
 	return (
 		<div className="block md:hidden">
 			<Drawer.Trigger>
-				<Button variant="outline">
+				<Button variant="icon" size="icon">
 					<Menu />
 				</Button>
 				<Drawer placement="left">
