@@ -1900,7 +1900,7 @@ export function Example() {
 	  code: `import { Switch } from "@pixelshades/ui/components"
 
 export function Example() {
-	return <Switch defaultSelected={true} />
+	return <Switch defaultSelected={true} label="Am I on?" description="This is a description" />
 }
 `,
   },

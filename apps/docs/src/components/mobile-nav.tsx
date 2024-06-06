@@ -1,7 +1,6 @@
 import { Button, Drawer } from "@pixelshades/ui/components"
 import { FlameIcon, Menu } from "@pixelshades/ui/icons"
 import { Link } from "@tanstack/react-router"
-import React from "react"
 import { siteConfig } from "~/config/site"
 import { SidebarNavContent } from "./sidebar-nav-content"
 
