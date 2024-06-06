@@ -1,5 +1,13 @@
 # @pixelshades/ui
 
+## 0.4.8
+
+### Patch Changes
+
+- 498e973: reworked switch component
+- Updated dependencies [498e973]
+  - @pixelshades/styles@0.4.6
+
 ## 0.4.7
 
 ### Patch Changes

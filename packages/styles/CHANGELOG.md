@@ -1,5 +1,11 @@
 # @pixelshades/styles
 
+## 0.4.6
+
+### Patch Changes
+
+- 498e973: reworked switch component
+
 ## 0.4.5
 
 ### Patch Changes
