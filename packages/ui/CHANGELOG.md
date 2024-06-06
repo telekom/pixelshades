@@ -1,5 +1,14 @@
 # @pixelshades/ui
 
+## 0.4.6
+
+### Patch Changes
+
+- ecc5e9b: fix date picker popover styles
+- e4e994f: fix number field styling
+- Updated dependencies [ecc5e9b]
+  - @pixelshades/styles@0.4.4
+
 ## 0.4.5
 
 ### Patch Changes
