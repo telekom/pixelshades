@@ -1,5 +1,11 @@
 # @pixelshades/styles
 
+## 0.4.5
+
+### Patch Changes
+
+- 866f1be: fix combobox focus styles
+
 ## 0.4.4
 
 ### Patch Changes
