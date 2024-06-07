@@ -1,5 +1,12 @@
 # @pixelshades/ui
 
+## 0.4.9
+
+### Patch Changes
+
+- Updated dependencies [4b1f9ed]
+  - @pixelshades/styles@0.4.7
+
 ## 0.4.8
 
 ### Patch Changes

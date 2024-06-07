@@ -1,5 +1,11 @@
 # @pixelshades/styles
 
+## 0.4.7
+
+### Patch Changes
+
+- 4b1f9ed: make Input Error State less in your face
+
 ## 0.4.6
 
 ### Patch Changes
