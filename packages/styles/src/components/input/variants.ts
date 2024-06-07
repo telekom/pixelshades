@@ -13,7 +13,7 @@ export const inputVariants = tv({
 		"file:border-0 file:bg-transparent file:text-sm file:font-medium",
 		"placeholder:text-subtle-foreground",
 		"disabled:cursor-not-allowed disabled:opacity-50",
-		"data-[invalid]:border-destructive-border hover:data-[invalid]:border-destructive-border-hover data-[invalid]:text-destructive data-[invalid]:bg-destructive-subtle dark:data-[invalid]:bg-destructive-subtle/40",
+		"data-[invalid]:border-destructive-border hover:data-[invalid]:border-destructive-border-hover",
 	],
 	defaultVariants: { size: "md", focusRing: true },
 	variants: {
