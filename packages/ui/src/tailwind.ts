@@ -8,7 +8,34 @@ import { getBaseColors } from "./tw-plugin/base"
 import { getThemeVariables } from "./tw-plugin/theme"
 
 export const pixelShadesPlugin = plugin(
-	({ addBase }) => {
+	({ addBase, addComponents, theme }) => {
+		addComponents({
+			h1: {
+				fontSize: theme("fontSize.5xl"),
+				fontWeight: theme("fontWeight.semibold"),
+			},
+			h2: {
+				fontSize: theme("fontSize.3xl"),
+				fontWeight: theme("fontWeight.semibold"),
+			},
+			h3: {
+				fontSize: theme("fontSize.xl"),
+				fontWeight: theme("fontWeight.medium"),
+			},
+			h4: {
+				fontSize: theme("fontSize.lg"),
+				fontWeight: theme("fontWeight.medium"),
+			},
+			h5: {
+				fontSize: theme("fontSize.base"),
+				fontWeight: theme("fontWeight.medium"),
+			},
+			h6: {
+				fontSize: theme("fontSize.sm"),
+				fontWeight: theme("fontWeight.medium"),
+			},
+		})
+
 		addBase(getBaseColors())
 	},
 	{
