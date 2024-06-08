@@ -12,7 +12,7 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"sonner": "^1.4.41"
+		"sonner": "^1.5.0"
 	},
 	"peerDependencies": {
 		"react": ">18.0.0",
@@ -21,7 +21,7 @@
 	"devDependencies": {
 		"@pixelshades/ui": "workspace:*",
 		"@total-typescript/tsconfig": "^1.0.4",
-		"@types/node": "^20.12.13",
+		"@types/node": "^20.14.2",
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
 		"bunchee": "5.1.5",
