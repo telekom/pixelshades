@@ -1,5 +1,5 @@
-import { Button, Command } from "@pixelshades/ui/components"
-import { Apple, CommandIcon, GlassWater } from "@pixelshades/ui/icons"
+import { Command } from "@pixelshades/ui/components"
+import { IconApple, IconGlass } from "@pixelshades/ui/icons"
 import { useState } from "react"
 
 export default function Example() {
@@ -24,7 +24,7 @@ export default function Example() {
 					{fruits.map((fruit, index) => (
 						<Command.Item
 							key={fruit.name + index}
-							before={<Apple />}
+							before={<IconApple />}
 							title={fruit.name}
 							description={fruit.description}
 						/>
@@ -36,7 +36,7 @@ export default function Example() {
 							title={drink.name}
 							description={drink.description}
 							key={drink.name}
-							before={<GlassWater />}
+							before={<IconGlass />}
 							className={"items-center"}
 						/>
 					))}

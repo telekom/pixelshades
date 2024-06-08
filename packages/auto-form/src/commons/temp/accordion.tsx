@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronDownIcon } from "@pixelshades/ui/icons"
+import { IconChevronDown } from "@pixelshades/ui/icons"
 import { cn } from "@pixelshades/utils/styles"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
 import * as React from "react"
@@ -29,7 +29,7 @@ const AccordionTrigger = React.forwardRef<
 			{...props}
 		>
 			{children}
-			<ChevronDownIcon className="size-4 shrink-0 text-surface-400 transition-transform duration-200" />
+			<IconChevronDown className="size-4 shrink-0 text-surface-400 transition-transform duration-200" />
 		</AccordionPrimitive.Trigger>
 	</AccordionPrimitive.Header>
 ))

@@ -1,5 +1,5 @@
 import { If, Input, Label } from "@pixelshades/ui/components"
-import { DeleteIcon } from "@pixelshades/ui/icons"
+import { IconTrash } from "@pixelshades/ui/icons"
 import { type ChangeEvent, useState } from "react"
 import { FormControl, FormItem, FormMessage } from "../commons/hook-form"
 import type { AutoFormInputComponentProps } from "../types"
@@ -48,7 +48,7 @@ export default function AutoFormFile({
 				<div className="flex h-[40px] w-full flex-row items-center justify-between space-x-md rounded-sm border bg-background p-md text-foreground dark:focus-visible:ring-0 focus-visible:ring-0 dark:focus-visible:ring-offset-0 focus-visible:ring-offset-0">
 					<p>{fileName}</p>
 					<button type="button" onClick={handleRemoveClick} aria-label="Remove image">
-						<DeleteIcon size={16} />
+						<IconTrash size={16} />
 					</button>
 				</div>
 			)}

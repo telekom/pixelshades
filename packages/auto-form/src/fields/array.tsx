@@ -1,5 +1,5 @@
 import { Button, Separator } from "@pixelshades/ui/components"
-import { DeleteIcon, PlusIcon } from "@pixelshades/ui/icons"
+import { IconPlus, IconTrash } from "@pixelshades/ui/icons"
 import { useFieldArray, type useForm } from "react-hook-form"
 import * as z from "zod"
 import { AccordionContent, AccordionItem, AccordionTrigger } from "../commons/temp/accordion"
@@ -51,7 +51,7 @@ export default function AutoFormArray({
 							/>
 							<div className="my-lg flex justify-end">
 								<Button variant="outline" size="icon" type="button" onPress={() => remove(index)}>
-									<DeleteIcon className="size-4" />
+									<IconTrash className="size-4" />
 								</Button>
 							</div>
 
@@ -60,7 +60,7 @@ export default function AutoFormArray({
 					)
 				})}
 				<Button
-					before={<PlusIcon className="size-4" />}
+					before={<IconPlus className="size-4" />}
 					type="button"
 					variant="outline"
 					onPress={() => append({})}

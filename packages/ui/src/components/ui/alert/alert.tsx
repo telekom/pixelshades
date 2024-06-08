@@ -7,7 +7,7 @@ import { RenderSlot } from "@pixelshades/utils/jsx"
 import { cn } from "@pixelshades/utils/styles"
 import { forwardRef, useCallback, useState } from "react"
 import type { PressEvent } from "react-aria"
-import { InfoIcon } from "../../../icons"
+import { IconInfoCircle } from "../../../icons"
 import { If } from "../../utils"
 import { Button } from "../button"
 
@@ -114,16 +114,16 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(
 				role="alert"
 				{...otherProps}
 			>
-				<If condition={before} fallback={<InfoIcon className={icon({ color, variant })} />}>
+				<If condition={before} fallback={<IconInfoCircle className={icon({ color, variant })} />}>
 					{(val) => <RenderSlot item={val} className={icon({ color, variant })} />}
 				</If>
 
 				<div
 					className={cn(
 						"flex grow flex-col items-start",
-						variant === "expanded" && "items-start gap-3 px-2",
-						variant === "inline" && "px-2 sm:flex-row sm:items-center sm:gap-2",
-						variant === "inline" && closable && "pr-1",
+						variant === "expanded" && "items-start gap-lg px-md",
+						variant === "inline" && "px-md sm:flex-row sm:items-center sm:gap-md",
+						variant === "inline" && closable && "pr-sm",
 					)}
 				>
 					<div

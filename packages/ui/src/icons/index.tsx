@@ -2,4 +2,4 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-export * from "lucide-react"
+export * from "@tabler/icons-react"

@@ -1,5 +1,4 @@
 import { Button, Drawer } from "@pixelshades/ui/components"
-import { SquareX } from "@pixelshades/ui/icons"
 
 export default function Example() {
 	return (

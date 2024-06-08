@@ -1,5 +1,5 @@
 import { Command } from "@pixelshades/ui/components"
-import { Apple, GlassWater } from "@pixelshades/ui/icons"
+import { IconApple, IconGlass } from "@pixelshades/ui/icons"
 
 export default function Example() {
 	const fruits = [
@@ -19,7 +19,7 @@ export default function Example() {
 					{fruits.map((fruit) => (
 						<Command.Item
 							key={fruit.name}
-							before={<Apple />}
+							before={<IconApple />}
 							className={"items-center"}
 							searchValues={[fruit.name, fruit.description || ""]}
 							title={fruit.name}
@@ -31,7 +31,7 @@ export default function Example() {
 					{drinks.map((drink) => (
 						<Command.Item
 							key={drink.name}
-							before={<GlassWater />}
+							before={<IconGlass />}
 							className={"items-center"}
 							searchValues={[drink.name, drink.description || ""]}
 							title={drink.name}

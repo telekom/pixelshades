@@ -1,20 +1,20 @@
 import { Button } from "@pixelshades/ui/components"
-import { AlarmClock } from "@pixelshades/ui/icons"
+import { IconAlarm } from "@pixelshades/ui/icons"
 
 export default function Example() {
 	return (
 		<div className="flex flex-row flex-wrap gap-md">
 			<Button variant="icon" size="icon" color="default">
-				<AlarmClock />
+				<IconAlarm />
 			</Button>
 			<Button variant="icon" size="icon" color="primary">
-				<AlarmClock />
+				<IconAlarm />
 			</Button>
 			<Button variant="icon" size="icon" color="destructive">
-				<AlarmClock />
+				<IconAlarm />
 			</Button>
 			<Button variant="icon" size="icon" color="warning">
-				<AlarmClock />
+				<IconAlarm />
 			</Button>
 		</div>
 	)

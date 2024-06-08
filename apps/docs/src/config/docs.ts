@@ -1,11 +1,11 @@
-import type { LucideIcon } from "@pixelshades/ui/icons"
+import type { IconProps } from "@pixelshades/ui/icons"
 
 export interface NavItem {
 	title: string
 	href?: string
 	disabled?: boolean
 	external?: boolean
-	icon?: LucideIcon
+	icon?: IconProps
 	label?: string
 	sortingIndex?: number
 }

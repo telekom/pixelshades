@@ -1,9 +1,9 @@
 import { Button } from "@pixelshades/ui/components"
-import { SnailIcon } from "@pixelshades/ui/icons"
+import { IconSailboat } from "@pixelshades/ui/icons"
 
 export default function Example() {
 	return (
-		<Button before={<SnailIcon />} isLoading>
+		<Button before={<IconSailboat />} isLoading>
 			Button
 		</Button>
 	)

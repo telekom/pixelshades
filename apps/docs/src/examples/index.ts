@@ -47,11 +47,11 @@ export function Example() {
   "badge/alert": {
 	  component: lazy(() => import("~/examples/badge/alert.tsx")),
 	  code: `import { Badge } from "@pixelshades/ui/components"
-import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
+import { IconArrowRight, IconMoodSmile } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
-		<Badge variant="alert" before={<SmileIcon />} after={<ArrowRightIcon />}>
+		<Badge variant="alert" before={<IconMoodSmile />} after={<IconArrowRight />}>
 			Badge Label
 		</Badge>
 	)
@@ -61,11 +61,11 @@ export function Example() {
   "badge/default": {
 	  component: lazy(() => import("~/examples/badge/default.tsx")),
 	  code: `import { Badge } from "@pixelshades/ui/components"
-import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
+import { IconArrowRight, IconMoodSmile } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
-		<Badge variant="default" before={<SmileIcon />} after={<ArrowRightIcon />}>
+		<Badge variant="default" before={<IconMoodSmile />} after={<IconArrowRight />}>
 			Badge Label
 		</Badge>
 	)
@@ -75,11 +75,11 @@ export function Example() {
   "badge/info": {
 	  component: lazy(() => import("~/examples/badge/info.tsx")),
 	  code: `import { Badge } from "@pixelshades/ui/components"
-import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
+import { IconArrowRight, IconMoodSmile } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
-		<Badge variant="info" before={<SmileIcon />} after={<ArrowRightIcon />}>
+		<Badge variant="info" before={<IconMoodSmile />} after={<IconArrowRight />}>
 			Badge Label
 		</Badge>
 	)
@@ -89,11 +89,11 @@ export function Example() {
   "badge/outline": {
 	  component: lazy(() => import("~/examples/badge/outline.tsx")),
 	  code: `import { Badge } from "@pixelshades/ui/components"
-import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
+import { IconArrowRight, IconMoodSmile } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
-		<Badge variant="outline" before={<SmileIcon />} after={<ArrowRightIcon />}>
+		<Badge variant="outline" before={<IconMoodSmile />} after={<IconArrowRight />}>
 			Badge Label
 		</Badge>
 	)
@@ -103,11 +103,11 @@ export function Example() {
   "badge/preview": {
 	  component: lazy(() => import("~/examples/badge/preview.tsx")),
 	  code: `import { Badge } from "@pixelshades/ui/components"
-import { ArrowRightIcon, SmileIcon } from "@pixelshades/ui/icons"
+import { IconArrowRight, IconMoodSmile } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
-		<Badge before={<SmileIcon />} after={<ArrowRightIcon />}>
+		<Badge before={<IconMoodSmile />} after={<IconArrowRight />}>
 			Badge Label
 		</Badge>
 	)
@@ -117,11 +117,11 @@ export function Example() {
   "badge/with-after": {
 	  component: lazy(() => import("~/examples/badge/with-after.tsx")),
 	  code: `import { Badge } from "@pixelshades/ui/components"
-import { ArrowRightIcon } from "@pixelshades/ui/icons"
+import { IconArrowRight } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
-		<Badge variant="default" after={<ArrowRightIcon />}>
+		<Badge variant="default" after={<IconArrowRight />}>
 			Badge Label
 		</Badge>
 	)
@@ -131,11 +131,11 @@ export function Example() {
   "badge/with-before": {
 	  component: lazy(() => import("~/examples/badge/with-before.tsx")),
 	  code: `import { Badge } from "@pixelshades/ui/components"
-import { Smile } from "@pixelshades/ui/icons"
+import { IconMoodSmile } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
-		<Badge variant="default" before={<Smile />}>
+		<Badge variant="default" before={<IconMoodSmile />}>
 			Badge Label
 		</Badge>
 	)
@@ -145,11 +145,11 @@ export function Example() {
   "breadcrumbs/custom": {
 	  component: lazy(() => import("~/examples/breadcrumbs/custom.tsx")),
 	  code: `import { Breadcrumbs } from "@pixelshades/ui/components"
-import { MoveRightIcon } from "@pixelshades/ui/icons"
+import { IconArrowMoveRight } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
-		<Breadcrumbs separator={<MoveRightIcon className="size-4 text-subtle" />}>
+		<Breadcrumbs separator={<IconArrowMoveRight className="size-4 text-subtle" />}>
 			<Breadcrumbs.Item>Products</Breadcrumbs.Item>
 			<Breadcrumbs.Item>Product</Breadcrumbs.Item>
 			<Breadcrumbs.Item last>Product A</Breadcrumbs.Item>
@@ -231,22 +231,22 @@ export function Example() {
   "button/icon": {
 	  component: lazy(() => import("~/examples/button/icon.tsx")),
 	  code: `import { Button } from "@pixelshades/ui/components"
-import { AlarmClock } from "@pixelshades/ui/icons"
+import { IconAlarm } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
 		<div className="flex flex-row flex-wrap gap-md">
 			<Button variant="icon" size="icon" color="default">
-				<AlarmClock />
+				<IconAlarm />
 			</Button>
 			<Button variant="icon" size="icon" color="primary">
-				<AlarmClock />
+				<IconAlarm />
 			</Button>
 			<Button variant="icon" size="icon" color="destructive">
-				<AlarmClock />
+				<IconAlarm />
 			</Button>
 			<Button variant="icon" size="icon" color="warning">
-				<AlarmClock />
+				<IconAlarm />
 			</Button>
 		</div>
 	)
@@ -265,11 +265,11 @@ export function Example() {
   "button/loading": {
 	  component: lazy(() => import("~/examples/button/loading.tsx")),
 	  code: `import { Button } from "@pixelshades/ui/components"
-import { SnailIcon } from "@pixelshades/ui/icons"
+import { IconSailboat } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
-		<Button before={<SnailIcon />} isLoading>
+		<Button before={<IconSailboat />} isLoading>
 			Button
 		</Button>
 	)
@@ -288,10 +288,14 @@ export function Example() {
   "button/preview": {
 	  component: lazy(() => import("~/examples/button/preview.tsx")),
 	  code: `import { Button } from "@pixelshades/ui/components"
-import { SnailIcon } from "@pixelshades/ui/icons"
+import { IconSailboat } from "@pixelshades/ui/icons"
 
 export function Example() {
-	return <Button before={<SnailIcon />} color="primary">Button</Button>
+	return (
+		<Button before={<IconSailboat />} color="primary">
+			Button
+		</Button>
+	)
 }
 `,
   },
@@ -591,8 +595,8 @@ export function Example() {
   },
   "command/controlled": {
 	  component: lazy(() => import("~/examples/command/controlled.tsx")),
-	  code: `import { Button, Command } from "@pixelshades/ui/components"
-import { Apple, CommandIcon, GlassWater } from "@pixelshades/ui/icons"
+	  code: `import { Command } from "@pixelshades/ui/components"
+import { IconApple, IconGlass } from "@pixelshades/ui/icons"
 import { useState } from "react"
 
 export function Example() {
@@ -617,7 +621,7 @@ export function Example() {
 					{fruits.map((fruit, index) => (
 						<Command.Item
 							key={fruit.name + index}
-							before={<Apple />}
+							before={<IconApple />}
 							title={fruit.name}
 							description={fruit.description}
 						/>
@@ -629,7 +633,7 @@ export function Example() {
 							title={drink.name}
 							description={drink.description}
 							key={drink.name}
-							before={<GlassWater />}
+							before={<IconGlass />}
 							className={"items-center"}
 						/>
 					))}
@@ -643,7 +647,7 @@ export function Example() {
   "command/dialog": {
 	  component: lazy(() => import("~/examples/command/dialog.tsx")),
 	  code: `import { Command } from "@pixelshades/ui/components"
-import { Apple, GlassWater } from "@pixelshades/ui/icons"
+import { IconApple, IconGlass } from "@pixelshades/ui/icons"
 
 export function Example() {
 	const fruits = [
@@ -663,7 +667,7 @@ export function Example() {
 					{fruits.map((fruit) => (
 						<Command.Item
 							key={fruit.name}
-							before={<Apple />}
+							before={<IconApple />}
 							className={"items-center"}
 							searchValues={[fruit.name, fruit.description || ""]}
 							title={fruit.name}
@@ -675,7 +679,7 @@ export function Example() {
 					{drinks.map((drink) => (
 						<Command.Item
 							key={drink.name}
-							before={<GlassWater />}
+							before={<IconGlass />}
 							className={"items-center"}
 							searchValues={[drink.name, drink.description || ""]}
 							title={drink.name}
@@ -692,7 +696,7 @@ export function Example() {
   "command/preview": {
 	  component: lazy(() => import("~/examples/command/preview.tsx")),
 	  code: `import { Command } from "@pixelshades/ui/components"
-import { Apple, GlassWater } from "@pixelshades/ui/icons"
+import { IconApple, IconGlass } from "@pixelshades/ui/icons"
 
 export function Example() {
 	const fruits = [
@@ -711,7 +715,7 @@ export function Example() {
 				{fruits.map((fruit, index) => (
 					<Command.Item
 						key={fruit.name + index}
-						before={<Apple />}
+						before={<IconApple />}
 						searchValues={[fruit.name, fruit.description || ""]}
 						className={"items-center"}
 						title={fruit.name}
@@ -723,7 +727,7 @@ export function Example() {
 				{drinks.map((drink) => (
 					<Command.Item
 						key={drink.name}
-						before={<GlassWater />}
+						before={<IconGlass />}
 						title={drink.name}
 						description={drink.description}
 					/>
@@ -737,7 +741,7 @@ export function Example() {
   "data-list/preview": {
 	  component: lazy(() => import("~/examples/data-list/preview.tsx")),
 	  code: `import { DataList, Link } from "@pixelshades/ui/components"
-import { GithubIcon } from "@pixelshades/ui/icons"
+import { IconBrandGithub } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
@@ -755,7 +759,7 @@ export function Example() {
 			<DataList.Item>
 				<DataList.Label>Source</DataList.Label>
 				<DataList.Value>
-					<GithubIcon className="size-3" />
+					<IconBrandGithub className="size-3" />
 					<Link
 						className="text-foreground"
 						href={"https://github.com/telekom/pixelshades/tree/main/packages/ui/src/components/ui/button"}
@@ -987,7 +991,6 @@ export function Example() {
   "drawer/hideCloseButton": {
 	  component: lazy(() => import("~/examples/drawer/hideCloseButton.tsx")),
 	  code: `import { Button, Drawer } from "@pixelshades/ui/components"
-import { SquareX } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
@@ -1011,7 +1014,6 @@ export function Example() {
   "drawer/preview": {
 	  component: lazy(() => import("~/examples/drawer/preview.tsx")),
 	  code: `import { Button, Drawer } from "@pixelshades/ui/components"
-import { SquareX } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
@@ -1281,13 +1283,13 @@ export function Example() {
   "loading-spinner/icons": {
 	  component: lazy(() => import("~/examples/loading-spinner/icons.tsx")),
 	  code: `import { LoadingSpinner } from "@pixelshades/ui/components"
-import { Loader } from "@pixelshades/ui/icons"
+import { IconLoader } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
 		<div className="flex justify-center gap-lg">
 			<LoadingSpinner />
-			<LoadingSpinner icon={<Loader />} />
+			<LoadingSpinner icon={<IconLoader />} />
 		</div>
 	)
 }
@@ -1337,7 +1339,7 @@ export function Example() {
   "menu/preview": {
 	  component: lazy(() => import("~/examples/menu/preview.tsx")),
 	  code: `import { Button, Menu } from "@pixelshades/ui/components"
-import { DownloadIcon, EyeOffIcon, MailIcon, PinIcon, RedoIcon } from "@pixelshades/ui/icons"
+import { IconArrowUp, IconDownload, IconEyeOff, IconMail, IconPin } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
@@ -1349,12 +1351,12 @@ export function Example() {
 					<Menu.Section aria-label="Actions">
 						<Menu.Label>Actions</Menu.Label>
 						<Menu.Item aria-label="Reply">
-							<RedoIcon className="size-4 text-subtle-foreground" />
+							<IconArrowUp className="size-4 text-subtle-foreground" />
 							<span>Reply</span>
 							<Menu.Shortcut keys={["option"]}>R</Menu.Shortcut>
 						</Menu.Item>
 						<Menu.Item aria-label="Pin">
-							<PinIcon className="size-4 text-subtle-foreground" />
+							<IconPin className="size-4 text-subtle-foreground" />
 							<span>Pin</span>
 							<Menu.Shortcut keys={["option"]}>P</Menu.Shortcut>
 						</Menu.Item>
@@ -1364,19 +1366,19 @@ export function Example() {
 
 					<Menu.Section>
 						<Menu.Item aria-label="Save this message">
-							<DownloadIcon className="size-4 text-subtle-foreground" />
+							<IconDownload className="size-4 text-subtle-foreground" />
 							<span>Save this message</span>
 							<Menu.Shortcut keys={["command"]}>S</Menu.Shortcut>
 						</Menu.Item>
 
 						<Menu.Item aria-label="Mark as unread">
-							<EyeOffIcon className="size-4 text-subtle-foreground" />
+							<IconEyeOff className="size-4 text-subtle-foreground" />
 							<span>Mark as unread</span>
 							<Menu.Shortcut keys={["command", "option"]}>U</Menu.Shortcut>
 						</Menu.Item>
 
 						<Menu.Item aria-label="Share via email">
-							<MailIcon className="size-4 text-subtle-foreground" />
+							<IconMail className="size-4 text-subtle-foreground" />
 							<span>Share via email</span>
 							<Menu.Shortcut keys={["command"]}>U</Menu.Shortcut>
 						</Menu.Item>
@@ -1391,7 +1393,7 @@ export function Example() {
   "menu/sub-menu": {
 	  component: lazy(() => import("~/examples/menu/sub-menu.tsx")),
 	  code: `import { Button, Menu } from "@pixelshades/ui/components"
-import { DownloadIcon, EyeOffIcon, MailIcon, PinIcon, RedoIcon } from "@pixelshades/ui/icons"
+import { IconArrowForwardUp, IconDownload, IconEyeOff, IconMail, IconPin } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
@@ -1403,12 +1405,12 @@ export function Example() {
 					<Menu.Section aria-label="Actions">
 						<Menu.Label>Actions</Menu.Label>
 						<Menu.Item aria-label="Reply">
-							<RedoIcon className="size-4 text-subtle-foreground" />
+							<IconArrowForwardUp className="size-4 text-subtle-foreground" />
 							<span>Reply</span>
 							<Menu.Shortcut keys={["option"]}>R</Menu.Shortcut>
 						</Menu.Item>
 						<Menu.Item aria-label="Pin">
-							<PinIcon className="size-4 text-subtle-foreground" />
+							<IconPin className="size-4 text-subtle-foreground" />
 							<span>Pin</span>
 							<Menu.Shortcut keys={["option"]}>P</Menu.Shortcut>
 						</Menu.Item>
@@ -1418,13 +1420,13 @@ export function Example() {
 
 					<Menu.Section>
 						<Menu.Item aria-label="Save this message">
-							<DownloadIcon className="size-4 text-subtle-foreground" />
+							<IconDownload className="size-4 text-subtle-foreground" />
 							<span>Save this message</span>
 							<Menu.Shortcut keys={["command"]}>S</Menu.Shortcut>
 						</Menu.Item>
 
 						<Menu.Item aria-label="Mark as unread">
-							<EyeOffIcon className="size-4 text-subtle-foreground" />
+							<IconEyeOff className="size-4 text-subtle-foreground" />
 							<span>Mark as unread</span>
 							<Menu.Shortcut keys={["command", "option"]}>U</Menu.Shortcut>
 						</Menu.Item>
@@ -1435,19 +1437,19 @@ export function Example() {
 								<Menu.Section>
 									<Menu.Label>Sub Menu</Menu.Label>
 									<Menu.Item aria-label="Save this message">
-										<DownloadIcon className="size-4 text-subtle-foreground" />
+										<IconDownload className="size-4 text-subtle-foreground" />
 										<span>Save this message</span>
 										<Menu.Shortcut keys={["command"]}>S</Menu.Shortcut>
 									</Menu.Item>
 
 									<Menu.Item aria-label="Mark as unread">
-										<EyeOffIcon className="size-4 text-subtle-foreground" />
+										<IconEyeOff className="size-4 text-subtle-foreground" />
 										<span>Mark as unread</span>
 										<Menu.Shortcut keys={["command", "option"]}>U</Menu.Shortcut>
 									</Menu.Item>
 
 									<Menu.Item aria-label="Share via email">
-										<MailIcon className="size-4 text-subtle-foreground" />
+										<IconMail className="size-4 text-subtle-foreground" />
 										<span>Share via email</span>
 										<Menu.Shortcut keys={["command"]}>U</Menu.Shortcut>
 									</Menu.Item>
@@ -1456,7 +1458,7 @@ export function Example() {
 						</Menu.SubMenu>
 
 						<Menu.Item aria-label="Share via email">
-							<MailIcon className="size-4 text-subtle-foreground" />
+							<IconMail className="size-4 text-subtle-foreground" />
 							<span>Share via email</span>
 							<Menu.Shortcut keys={["command"]}>U</Menu.Shortcut>
 						</Menu.Item>
@@ -2127,10 +2129,10 @@ export function Example() {
   "toggle-button/preview": {
 	  component: lazy(() => import("~/examples/toggle-button/preview.tsx")),
 	  code: `import { ToggleButton } from "@pixelshades/ui/components"
-import { Snail } from "@pixelshades/ui/icons"
+import { IconSailboat } from "@pixelshades/ui/icons"
 
 export function Example() {
-	return <ToggleButton before={<Snail />}>Toggle</ToggleButton>
+	return <ToggleButton before={<IconSailboat />}>Toggle</ToggleButton>
 }
 `,
   },
@@ -2162,13 +2164,13 @@ export function Example() {
   "tooltip/custom": {
 	  component: lazy(() => import("~/examples/tooltip/custom.tsx")),
 	  code: `import { Button, Tooltip } from "@pixelshades/ui/components"
-import { SaveIcon } from "@pixelshades/ui/icons"
+import { IconDeviceFloppy } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
 		<Tooltip.Root>
 			<Button variant="solid">
-				<SaveIcon />
+				<IconDeviceFloppy />
 			</Button>
 			<Tooltip.Content>Save</Tooltip.Content>
 		</Tooltip.Root>

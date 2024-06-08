@@ -1,7 +1,7 @@
 "use client"
 
 import { Button, type ButtonProps, Menu, type MenuProps } from "@pixelshades/ui/components"
-import { CheckIcon, CopyIcon } from "@pixelshades/ui/icons"
+import { IconCheck, IconCopy } from "@pixelshades/ui/icons"
 
 import { cn } from "@pixelshades/utils/styles"
 import { useCallback, useEffect, useState } from "react"
@@ -38,7 +38,7 @@ export function CopyButton({ value, className, src, ...props }: CopyButtonProps)
 			{...props}
 		>
 			<span className="sr-only">Copy</span>
-			{hasCopied ? <CheckIcon className="h-3 w-3" /> : <CopyIcon className="h-3 w-3" />}
+			{hasCopied ? <IconCheck className="h-3 w-3" /> : <IconCopy className="size-3" />}
 		</Button>
 	)
 }
@@ -71,7 +71,7 @@ export function CopyWithClassNames({ value, classNames, className, ...props }: C
 				variant="ghost"
 				className={cn("relative z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50", className)}
 			>
-				{hasCopied ? <CheckIcon className="h-3 w-3" /> : <CopyIcon className="h-3 w-3" />}
+				{hasCopied ? <IconCheck className="h-3 w-3" /> : <IconCopy className="h-3 w-3" />}
 				<span className="sr-only">Copy</span>
 			</Button>
 			<Menu.Content
@@ -122,7 +122,7 @@ export function CopyNpmCommandButton({ commands, className, ...props }: CopyNpmC
 				className={cn("relative z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50", className)}
 				{...props}
 			>
-				{hasCopied ? <CheckIcon className="h-3 w-3" /> : <CopyIcon className="h-3 w-3" />}
+				{hasCopied ? <IconCheck className="h-3 w-3" /> : <IconCopy className="h-3 w-3" />}
 				<span className="sr-only">Copy</span>
 			</Button>
 			<Menu.Content

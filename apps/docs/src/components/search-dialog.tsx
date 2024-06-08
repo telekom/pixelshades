@@ -5,7 +5,7 @@ import Fuse from "fuse.js"
 
 import { useState } from "react"
 
-import { Component, StickyNote } from "@pixelshades/ui/icons"
+import { IconComponents, IconNote } from "@pixelshades/ui/icons"
 
 type SearchDialogProps = {
 	open?: boolean
@@ -59,7 +59,7 @@ export const SearchDialog = ({ open, handleOpenChange }: SearchDialogProps) => {
 							<Command.Item
 								before={
 									<div className="rounded-md border border-border bg-subtle p-2">
-										<Component className="size-4 text-foreground" />
+										<IconComponents className="size-4 text-foreground" />
 									</div>
 								}
 								key={value.slug}
@@ -73,7 +73,7 @@ export const SearchDialog = ({ open, handleOpenChange }: SearchDialogProps) => {
 							<Command.Item
 								before={
 									<div className="rounded-md border border-border bg-subtle p-2">
-										<Component className="size-4" />
+										<IconComponents className="size-4" />
 									</div>
 								}
 								key={value.refIndex}
@@ -92,7 +92,7 @@ export const SearchDialog = ({ open, handleOpenChange }: SearchDialogProps) => {
 								key={value.slug}
 								before={
 									<div className="rounded-md border border-border bg-subtle p-2">
-										<StickyNote className="size-4" />
+										<IconNote className="size-4" />
 									</div>
 								}
 								title={value.title}

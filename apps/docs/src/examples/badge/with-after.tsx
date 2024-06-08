@@ -1,9 +1,9 @@
 import { Badge } from "@pixelshades/ui/components"
-import { ArrowRightIcon } from "@pixelshades/ui/icons"
+import { IconArrowRight } from "@pixelshades/ui/icons"
 
 export default function Example() {
 	return (
-		<Badge variant="default" after={<ArrowRightIcon />}>
+		<Badge variant="default" after={<IconArrowRight />}>
 			Badge Label
 		</Badge>
 	)

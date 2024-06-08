@@ -1,5 +1,5 @@
 import { Button, Typography } from "@pixelshades/ui/components"
-import { ArrowLeft, ArrowRight } from "@pixelshades/ui/icons"
+import { IconArrowLeft, IconArrowRight } from "@pixelshades/ui/icons"
 import { Link } from "@tanstack/react-router"
 import { getNavbarItems } from "~/config/navbar-items"
 
@@ -85,7 +85,7 @@ export const PagerButtons = ({ permalink }: PagerButtonsProps) => {
 					params={{ slug: prevComponent.slug }}
 				>
 					<Button className="flex h-full w-full flex-row justify-between p-md" variant="outline" size="lg">
-						<ArrowLeft className="size-3" />
+						<IconArrowLeft className="size-3" />
 						<div className="flex flex-col items-end">
 							<Typography>Previous</Typography>
 							<Typography className="text-subtle-foreground">
@@ -115,7 +115,7 @@ export const PagerButtons = ({ permalink }: PagerButtonsProps) => {
 								{`${nextCategoryTitle ? `${nextCategoryTitle} - ` : ""} ${nextComponent.title}`}
 							</Typography>
 						</div>
-						<ArrowRight className="size-3" />
+						<IconArrowRight className="size-3" />
 					</Button>
 				</Link>
 			)}

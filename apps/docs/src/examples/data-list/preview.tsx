@@ -1,5 +1,5 @@
 import { DataList, Link } from "@pixelshades/ui/components"
-import { GithubIcon } from "@pixelshades/ui/icons"
+import { IconBrandGithub } from "@pixelshades/ui/icons"
 
 export default function Example() {
 	return (
@@ -17,7 +17,7 @@ export default function Example() {
 			<DataList.Item>
 				<DataList.Label>Source</DataList.Label>
 				<DataList.Value>
-					<GithubIcon className="size-3" />
+					<IconBrandGithub className="size-3" />
 					<Link
 						className="text-foreground"
 						href={"https://github.com/telekom/pixelshades/tree/main/packages/ui/src/components/ui/button"}
