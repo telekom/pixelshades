@@ -8,7 +8,7 @@ import type { ComboBoxProps as AriaComboBoxProps, ListBoxItemProps } from "react
 import { ComboBox as AriaComboBox, Button, ListBox, ListBoxItem } from "react-aria-components"
 
 import { comboboxVaraints } from "@pixelshades/styles/components/combo-box"
-import { ChevronDown } from "lucide-react"
+import { IconChevronDown } from "@tabler/icons-react"
 import type React from "react"
 import type { ReactNode } from "react"
 import { FormDescription, FormFieldError } from "../form"
@@ -46,7 +46,7 @@ const ComboBoxRoot = <T extends object>({
 		<div className={inputRoot()}>
 			<Input />
 			<Button className={button()}>
-				<ChevronDown aria-hidden className="size-4 text-subtle-foreground" />
+				<IconChevronDown aria-hidden className="size-4 text-subtle-foreground" />
 			</Button>
 		</div>
 		{helperText && <FormDescription>{helperText}</FormDescription>}

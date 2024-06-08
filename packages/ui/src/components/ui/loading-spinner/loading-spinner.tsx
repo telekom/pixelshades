@@ -6,7 +6,7 @@
 
 import { loadingSpinnerVariants } from "@pixelshades/styles/components/loading-spinner"
 import { RenderSlot } from "@pixelshades/utils/jsx"
-import { LoaderCircle } from "lucide-react"
+import { IconLoader } from "@tabler/icons-react"
 import type React from "react"
 import type { VariantProps } from "tailwind-variants"
 import { If } from "../../utils"
@@ -20,10 +20,7 @@ interface LoadingSpinnerProps extends VariantProps<typeof loadingSpinnerVariants
 
 const LoadingSpinner = ({ className, size, variant, icon }: LoadingSpinnerProps) => {
 	return (
-		<If
-			condition={icon}
-			fallback={<LoaderCircle className={loadingSpinnerVariants({ size, variant, className })} />}
-		>
+		<If condition={icon} fallback={<IconLoader className={loadingSpinnerVariants({ size, variant, className })} />}>
 			<RenderSlot item={icon!} className={loadingSpinnerVariants({ size, variant, className })} />
 		</If>
 	)

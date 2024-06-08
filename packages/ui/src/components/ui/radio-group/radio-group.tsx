@@ -4,7 +4,6 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-import { Circle } from "lucide-react"
 import {
 	Radio as AriaRadio,
 	RadioGroup as AriaRadioGroup,
@@ -16,6 +15,7 @@ import {
 import { labelVariants } from "@pixelshades/styles/components/label"
 import { radioGroupVariants } from "@pixelshades/styles/components/radio-group"
 import { cn } from "@pixelshades/utils/styles"
+import { IconCircle } from "@tabler/icons-react"
 import type { ReactNode } from "react"
 import { If } from "../../utils"
 import { FormDescription, FormFieldError } from "../form"
@@ -85,7 +85,7 @@ const RadioItem = ({ className, children, showRadio = true, ...props }: RadioPro
 				<>
 					{showRadio && (
 						<span className={item()}>
-							{values.isSelected && <Circle className="size-2.5 fill-current text-current" />}
+							{values.isSelected && <IconCircle className="size-2.5 fill-current text-current" />}
 						</span>
 					)}
 					{typeof children === "function" ? children(values) : children}

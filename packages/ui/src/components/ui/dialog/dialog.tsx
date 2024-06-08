@@ -7,9 +7,9 @@
 import type React from "react"
 
 import { dialogVariants } from "@pixelshades/styles/components/dialog"
-import { XIcon } from "lucide-react"
 
 import { forwardRef } from "@pixelshades/utils/jsx"
+import { IconX } from "@tabler/icons-react"
 import { useContext } from "react"
 import { chain } from "react-aria"
 import {
@@ -57,7 +57,7 @@ const DialogContent = ({
 				{!hideCloseButton && (
 					<Button
 						className={closeButton({ className: closeButtonClassName })}
-						before={<XIcon />}
+						before={<IconX />}
 						variant="ghost"
 						size="xs-icon"
 						onPress={innerProps.close}

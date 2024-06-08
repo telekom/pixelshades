@@ -4,7 +4,6 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-import { Command as CommandIcon } from "lucide-react"
 import type { ReactNode } from "react"
 import {
 	Header as AriaHeader,
@@ -23,6 +22,7 @@ import { RenderSlot } from "@pixelshades/utils/jsx"
 import { createStyleContext } from "@pixelshades/utils/styles"
 import { useControllableState } from "../../../hooks/use-controlled-state"
 import { type Keys, useKeyPress } from "../../../hooks/use-keypress"
+import { IconCommand } from "../../../icons"
 import { If } from "../../utils/if"
 import { Button } from "../button"
 import { Dialog } from "../dialog"
@@ -217,13 +217,13 @@ export const Command = Object.assign(CommandRoot, {
 	ItemDescription: CommandItemDescription,
 	Search: CommandSearch,
 	Trigger: CommandTrigger,
-	Icon: CommandIcon,
+	Icon: IconCommand,
 	Dialog: CommandDialog,
 })
 
 export {
 	CommandDialog,
-	CommandIcon,
+	IconCommand as CommandIcon,
 	CommandItem,
 	CommandItemDescription,
 	CommandItemTitle,

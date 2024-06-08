@@ -14,9 +14,9 @@ import {
 } from "react-aria-components"
 
 import { selectVariants } from "@pixelshades/styles/components/select"
-import { ChevronDown } from "lucide-react"
 import type React from "react"
 import type { ReactNode } from "react"
+import { IconChevronDown } from "../../../icons"
 import { If } from "../../utils"
 import { FormDescription, FormFieldError } from "../form"
 import { type FormComponentLabelProps, Label } from "../label"
@@ -59,7 +59,7 @@ const SelectRoot = <T extends object>({
 
 		<AriaButton className={button()}>
 			<SelectValue className={value()} />
-			<ChevronDown className={icon()} />
+			<IconChevronDown className={icon()} />
 		</AriaButton>
 		{helperText && <FormDescription>{helperText}</FormDescription>}
 		<FormFieldError>{errorMessage}</FormFieldError>

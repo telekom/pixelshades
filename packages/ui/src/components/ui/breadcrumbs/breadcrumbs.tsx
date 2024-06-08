@@ -12,7 +12,7 @@ import { Breadcrumb as AriaBreadcrumb, Breadcrumbs as AriaBreadcrumbs } from "re
 
 import { breadcrumbsVariants } from "@pixelshades/styles/components/breadcrumbs"
 import { RenderSlot, forwardRef } from "@pixelshades/utils/jsx"
-import { ChevronRightIcon } from "lucide-react"
+import { IconChevronRight } from "@tabler/icons-react"
 import type React from "react"
 import { type ReactElement, createContext, useContext } from "react"
 import { If } from "../../utils"
@@ -23,7 +23,7 @@ type BreadcrumbContext = {
 }
 
 const BreadcrumbContext = createContext<BreadcrumbContext>({
-	separator: <ChevronRightIcon />,
+	separator: <IconChevronRight />,
 })
 
 const { breadcrumbs, breadcrumb, breadcrumbLink, seperator } = breadcrumbsVariants()
@@ -41,7 +41,7 @@ const BreadcrumbsRoot = forwardRef(<T extends object>({ className, separator, ..
 	return (
 		<BreadcrumbContext.Provider
 			value={{
-				separator: separator || <ChevronRightIcon />,
+				separator: separator || <IconChevronRight />,
 			}}
 		>
 			<AriaBreadcrumbs className={breadcrumbs({ className })} {...props} />

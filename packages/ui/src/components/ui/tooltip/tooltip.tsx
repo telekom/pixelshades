@@ -5,13 +5,13 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { tooltipVariants } from "@pixelshades/styles/components/tooltip"
-import { InfoIcon } from "lucide-react"
 import {
 	Tooltip as AriaTooltip,
 	type TooltipProps as AriaTooltipProps,
 	TooltipTrigger as AriaTooltipTrigger,
 	type TooltipTriggerComponentProps,
 } from "react-aria-components"
+import { IconInfoCircle } from "../../../icons"
 import { Button } from "../button"
 
 const TooltipRoot = (props: TooltipTriggerComponentProps) => <AriaTooltipTrigger {...props} />
@@ -40,7 +40,7 @@ const DefaultTooltipp = ({ children, className, ...props }: TooltipProps) => {
 	return (
 		<TooltipRoot delay={200} closeDelay={200}>
 			<Button className="size-4 hover:text-primary" variant="ghost" size="icon">
-				<InfoIcon className="size-3" />
+				<IconInfoCircle className="size-3" />
 			</Button>
 			<TooltipContent className={className} {...props}>
 				{children}

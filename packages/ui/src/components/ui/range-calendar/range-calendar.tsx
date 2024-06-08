@@ -4,8 +4,6 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-import { ChevronLeft, ChevronRight } from "lucide-react"
-
 import {
 	Button as AriaButton,
 	Heading as AriaHeading,
@@ -22,6 +20,7 @@ import {
 
 import { getLocalTimeZone, isToday } from "@internationalized/date"
 import { dateRangeCalendarVariants } from "@pixelshades/styles/components/range-calendar"
+import { IconChevronLeft, IconChevronRight } from "../../../icons"
 
 const { root, header, heading, gridHeaderCell, cell, grid, iconButton } = dateRangeCalendarVariants()
 
@@ -36,11 +35,11 @@ const RangeCalendar = ({ className, visibleDuration, error, ...props }: RangeCal
 	<AriaRangeCalendar className={root({ className })} visibleDuration={visibleDuration} {...props}>
 		<header className={header()}>
 			<AriaButton className={iconButton()} slot="previous">
-				<ChevronLeft className="h-6 w-6" />
+				<IconChevronLeft className="h-6 w-6" />
 			</AriaButton>
 			<AriaHeading className={heading()} />
 			<AriaButton className={iconButton()} slot="next">
-				<ChevronRight className="size-6" />
+				<IconChevronRight className="size-6" />
 			</AriaButton>
 		</header>
 		<div className={grid()}>

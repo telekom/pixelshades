@@ -22,7 +22,7 @@ import {
 
 import { tableVariants } from "@pixelshades/styles/components/table"
 import { createStyleContext } from "@pixelshades/utils/styles"
-import { ChevronDown, ChevronUp, Menu } from "lucide-react"
+import { IconChevronDown, IconChevronUp, IconMenu } from "../../../icons"
 import { Button } from "../button"
 import { Checkbox } from "../checkbox"
 
@@ -50,9 +50,9 @@ const TableColumn = ({ children, className, ...props }: ColumnProps & { classNam
 						(sortDirection === undefined ? (
 							<div className="w-6" />
 						) : sortDirection === "ascending" ? (
-							<ChevronUp />
+							<IconChevronUp />
 						) : (
-							<ChevronDown />
+							<IconChevronDown />
 						))}
 				</>
 			</div>
@@ -99,7 +99,7 @@ const TableRow = <T extends object>({
 			{allowsDragging && (
 				<AriaCell className="ring-focus data-[focus-visible]:ring-2">
 					<Button className="bg-transparent" slot="drag">
-						<Menu className="size-4 text-foreground" />
+						<IconMenu className="size-4 text-foreground" />
 					</Button>
 				</AriaCell>
 			)}

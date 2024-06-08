@@ -4,11 +4,10 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-import { Check } from "lucide-react"
-
 import { type ElementRef, type ReactNode, forwardRef } from "react"
 
 import { checkboxVariant } from "@pixelshades/styles/components/checkbox"
+import { IconCheck } from "@tabler/icons-react"
 import React from "react"
 import {
 	type CheckboxProps as AriaCheckBoxProps,
@@ -46,7 +45,7 @@ const Checkbox = forwardRef<ElementRef<typeof AriaCheckbox>, CheckBoxProps>(
 			<AriaCheckbox id={elId} className={checkboxVariant({ size }).root({ className })} ref={ref} {...props}>
 				{({ isSelected, isDisabled, isRequired }) => (
 					<>
-						<div className={checkboxVariant({ size }).box()}>{isSelected && <Check />}</div>
+						<div className={checkboxVariant({ size }).box()}>{isSelected && <IconCheck />}</div>
 						<span className="inline-flex flex-col">
 							<If condition={label || description || tooltip}>
 								<Label

@@ -5,10 +5,10 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { forwardRef } from "@pixelshades/utils/jsx"
-import { ChevronDownIcon, ChevronUpIcon } from "lucide-react"
 import type { ReactNode } from "react"
 import type { NumberFieldProps as AriaNumberFieldProps } from "react-aria-components"
 import { Input as AriaInput, NumberField as AriaNumberField } from "react-aria-components"
+import { IconChevronDown, IconChevronUp } from "../../../icons"
 import { Button } from "../button"
 import { FormDescription, FormFieldError, FormFieldGroup } from "../form"
 import { Input } from "../input"
@@ -41,10 +41,10 @@ const NumberField = forwardRef(
 				<AriaInput className="w-full bg-transparent outline-none ring-0" ref={ref} />
 				<div className="flex flex-col">
 					<Button className="size-3" slot="increment" size="icon" variant="ghost">
-						<ChevronUpIcon />
+						<IconChevronUp />
 					</Button>
 					<Button className="size-3" slot="decrement" size="icon" variant="ghost">
-						<ChevronDownIcon />
+						<IconChevronDown />
 					</Button>
 				</div>
 			</FormFieldGroup>

@@ -8,7 +8,7 @@ import { menuVariants } from "@pixelshades/styles/components/menu"
 import type { HTMLAttributes } from "react"
 
 import { createStyleContext } from "@pixelshades/utils/styles"
-import { ChevronRight } from "lucide-react"
+import { IconChevronRight } from "@tabler/icons-react"
 import {
 	Header as AriaHeader,
 	Menu as AriaMenu,
@@ -72,7 +72,7 @@ const MenuSubMenuTrigger = (props: MenuItemProps) => {
 				return (
 					<>
 						{typeof props.children === "function" ? props.children(value) : props.children}
-						<ChevronRight className={"ms-auto size-4 text-subtle-foreground"} />
+						<IconChevronRight className={"ms-auto size-4 text-subtle-foreground"} />
 					</>
 				)
 			}}

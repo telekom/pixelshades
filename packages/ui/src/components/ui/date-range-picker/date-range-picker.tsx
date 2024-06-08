@@ -6,7 +6,6 @@
 
 import type { DateRangePickerProps as AriaDateRangePickerProps, ValidationResult } from "react-aria-components"
 import {
-	Button as AriaButton,
 	DateRangePicker as AriaDateRangePicker,
 	Dialog as AriaDialog,
 	DateInput,
@@ -14,9 +13,8 @@ import {
 	type DateValue,
 } from "react-aria-components"
 
-import { ChevronDownIcon } from "lucide-react"
-
 import { datePickerVariants } from "@pixelshades/styles/components/date-picker"
+import { IconChevronDown } from "@tabler/icons-react"
 import type { ReactNode } from "react"
 import { If } from "../../utils"
 import { Button } from "../button"
@@ -58,7 +56,7 @@ const DateRangePicker = <T extends DateValue>({
 				{(segment) => <DateSegment className={base()} segment={segment} />}
 			</DateInput>
 			<Button size="xs-icon" variant="ghost">
-				<ChevronDownIcon aria-hidden className="size-4" />
+				<IconChevronDown aria-hidden className="size-4" />
 			</Button>
 		</FormFieldGroup>
 		<If condition={helperText}>
