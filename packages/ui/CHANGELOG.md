@@ -1,5 +1,15 @@
 # @pixelshades/ui
 
+## 0.5.0
+
+### Minor Changes
+
+- eeedfd4: replace icon library used to tabler
+
+### Patch Changes
+
+- 894f331: add heading headings
+
 ## 0.4.9
 
 ### Patch Changes
