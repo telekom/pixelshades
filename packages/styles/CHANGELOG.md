@@ -1,5 +1,11 @@
 # @pixelshades/styles
 
+## 0.4.8
+
+### Patch Changes
+
+- d35cecd: rework badges
+
 ## 0.4.7
 
 ### Patch Changes
