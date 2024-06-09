@@ -1,5 +1,13 @@
 # @pixelshades/ui
 
+## 0.5.1
+
+### Patch Changes
+
+- d35cecd: rework badges
+- Updated dependencies [d35cecd]
+  - @pixelshades/styles@0.4.8
+
 ## 0.5.0
 
 ### Minor Changes
