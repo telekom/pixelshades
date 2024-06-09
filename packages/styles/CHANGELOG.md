@@ -1,5 +1,11 @@
 # @pixelshades/styles
 
+## 0.4.9
+
+### Patch Changes
+
+- 24c9388: fix badge styles
+
 ## 0.4.8
 
 ### Patch Changes
