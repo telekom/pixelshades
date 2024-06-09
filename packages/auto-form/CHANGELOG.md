@@ -1,5 +1,12 @@
 # @pixelshades/utils
 
+## 2.0.2
+
+### Patch Changes
+
+- @pixelshades/ui@0.5.2
+- @pixelshades/toast@0.0.1
+
 ## 2.0.1
 
 ### Patch Changes
