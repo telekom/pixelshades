@@ -13,7 +13,7 @@ import { If } from "../../utils"
 
 type BadgeVariantsProps = VariantProps<typeof badgeVariants>
 
-interface BadgeProps extends HTMLAttributes<HTMLSpanElement>, BadgeVariantsProps {
+interface BadgeProps extends Omit<HTMLAttributes<HTMLSpanElement>, "color">, BadgeVariantsProps {
 	/** Element shown before the child */
 	before?: React.ReactElement<HTMLElement>
 	/** Element shown after the child */
@@ -23,17 +23,17 @@ interface BadgeProps extends HTMLAttributes<HTMLSpanElement>, BadgeVariantsProps
 const { badge, icon, child } = badgeVariants()
 
 /** Displays a Badge */
-const Badge = forwardRef(({ className, size, variant, children, before, after, ...props }: BadgeProps, ref) => {
+const Badge = forwardRef(({ className, children, before, after, ...props }: BadgeProps, ref) => {
 	return (
-		<span ref={ref} className={badge({ size, variant, className })} {...props}>
+		<span ref={ref} className={badge({ className, ...props })} {...props}>
 			<If condition={before}>
-				<RenderSlot item={before!} className={icon({ variant, size })} />
+				<RenderSlot item={before!} className={icon({ ...props })} />
 			</If>
 			<If condition={children}>
-				<span className={child({ variant, size })}>{children}</span>
+				<span className={child({ ...props })}>{children}</span>
 			</If>
 			<If condition={after}>
-				<RenderSlot item={after!} className={icon({ variant, size })} />
+				<RenderSlot item={after!} className={icon({ ...props })} />
 			</If>
 		</span>
 	)

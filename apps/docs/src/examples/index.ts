@@ -44,48 +44,6 @@ export function Example() {
 }
 `,
   },
-  "badge/alert": {
-	  component: lazy(() => import("~/examples/badge/alert.tsx")),
-	  code: `import { Badge } from "@pixelshades/ui/components"
-import { IconArrowRight, IconMoodSmile } from "@pixelshades/ui/icons"
-
-export function Example() {
-	return (
-		<Badge variant="alert" before={<IconMoodSmile />} after={<IconArrowRight />}>
-			Badge Label
-		</Badge>
-	)
-}
-`,
-  },
-  "badge/default": {
-	  component: lazy(() => import("~/examples/badge/default.tsx")),
-	  code: `import { Badge } from "@pixelshades/ui/components"
-import { IconArrowRight, IconMoodSmile } from "@pixelshades/ui/icons"
-
-export function Example() {
-	return (
-		<Badge variant="default" before={<IconMoodSmile />} after={<IconArrowRight />}>
-			Badge Label
-		</Badge>
-	)
-}
-`,
-  },
-  "badge/info": {
-	  component: lazy(() => import("~/examples/badge/info.tsx")),
-	  code: `import { Badge } from "@pixelshades/ui/components"
-import { IconArrowRight, IconMoodSmile } from "@pixelshades/ui/icons"
-
-export function Example() {
-	return (
-		<Badge variant="info" before={<IconMoodSmile />} after={<IconArrowRight />}>
-			Badge Label
-		</Badge>
-	)
-}
-`,
-  },
   "badge/outline": {
 	  component: lazy(() => import("~/examples/badge/outline.tsx")),
 	  code: `import { Badge } from "@pixelshades/ui/components"
@@ -93,9 +51,26 @@ import { IconArrowRight, IconMoodSmile } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
-		<Badge variant="outline" before={<IconMoodSmile />} after={<IconArrowRight />}>
-			Badge Label
-		</Badge>
+		<div className="flex flex-row flex-wrap justify-center gap-md">
+			<Badge variant="outline" color="default" before={<IconMoodSmile />} after={<IconArrowRight />}>
+				Default
+			</Badge>
+			<Badge variant="outline" color="primary" before={<IconMoodSmile />} after={<IconArrowRight />}>
+				Primary
+			</Badge>
+			<Badge variant="outline" color="info" before={<IconMoodSmile />} after={<IconArrowRight />}>
+				Info
+			</Badge>
+			<Badge variant="outline" color="success" before={<IconMoodSmile />} after={<IconArrowRight />}>
+				Success
+			</Badge>
+			<Badge variant="outline" color="warning" before={<IconMoodSmile />} after={<IconArrowRight />}>
+				Warning
+			</Badge>
+			<Badge variant="outline" color="destructive" before={<IconMoodSmile />} after={<IconArrowRight />}>
+				Destructive
+			</Badge>
+		</div>
 	)
 }
 `,
@@ -120,11 +95,7 @@ export function Example() {
 import { IconArrowRight } from "@pixelshades/ui/icons"
 
 export function Example() {
-	return (
-		<Badge variant="default" after={<IconArrowRight />}>
-			Badge Label
-		</Badge>
-	)
+	return <Badge after={<IconArrowRight />}>Badge Label</Badge>
 }
 `,
   },
@@ -134,11 +105,7 @@ export function Example() {
 import { IconMoodSmile } from "@pixelshades/ui/icons"
 
 export function Example() {
-	return (
-		<Badge variant="default" before={<IconMoodSmile />}>
-			Badge Label
-		</Badge>
-	)
+	return <Badge before={<IconMoodSmile />}>Badge Label</Badge>
 }
 `,
   },
