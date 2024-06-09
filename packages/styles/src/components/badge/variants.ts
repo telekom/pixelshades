@@ -45,8 +45,8 @@ export const badgeVariants = tv({
 			},
 		},
 		size: {
-			sm: { badge: "px-sm py-xs text-xs font-normal gap-xs", child: "text-xs", icon: "size-3" },
-			md: { badge: "px-md py-sm text-sm font-medium gap-sm", child: "text-sm", icon: "size-4" },
+			sm: { badge: "px-sm py-xs text-xs font-normal gap-sm rounded-lg", child: "", icon: "size-3" },
+			md: { badge: "px-md py-sm text-sm font-medium gap-sm", child: "", icon: "size-4" },
 		},
 	},
 
