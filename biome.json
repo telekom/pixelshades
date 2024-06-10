@@ -4,9 +4,7 @@
 		"enabled": true
 	},
 	"files": {
-		"ignore": [
-			"**/*.js"
-		]
+		"ignore": ["**/*.js"]
 	},
 	"linter": {
 		"enabled": true,
@@ -32,22 +30,14 @@
 				"useSortedClasses": "error"
 			}
 		},
-		"ignore": [
-			"node_modules",
-			".next",
-			"dist"
-		]
+		"ignore": ["node_modules", ".next", "dist"]
 	},
 	"formatter": {
 		"enabled": true,
 		"indentStyle": "tab",
 		"indentWidth": 4,
 		"lineWidth": 120,
-		"ignore": [
-			"node_modules",
-			".next",
-			"dist"
-		]
+		"ignore": ["node_modules", ".next", "dist"]
 	},
 	"javascript": {
 		"formatter": {
@@ -58,7 +48,7 @@
 			"jsxQuoteStyle": "double",
 			"quoteProperties": "asNeeded",
 			"semicolons": "asNeeded",
-			"trailingComma": "all"
+			"trailingCommas": "all"
 		}
 	},
 	"json": {
