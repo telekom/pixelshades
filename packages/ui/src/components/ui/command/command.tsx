@@ -30,7 +30,7 @@ import { Input, type InputProps } from "../input"
 import { Kbd } from "../kbd"
 import { Typography, type TypographyProps } from "../typography"
 
-const { icon } = commandVariants()
+const { icon, dialog } = commandVariants()
 
 const { withContext, withProvider } = createStyleContext(commandVariants)
 
@@ -71,7 +71,7 @@ const CommandDialog = ({
 	return (
 		<Dialog.Trigger onOpenChange={setOpen} isOpen={open}>
 			<CommandTrigger />
-			<Dialog>{children}</Dialog>
+			<Dialog className={dialog()}>{children}</Dialog>
 		</Dialog.Trigger>
 	)
 }

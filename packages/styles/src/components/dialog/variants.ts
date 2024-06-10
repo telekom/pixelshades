@@ -9,7 +9,7 @@ export const dialogVariants = tv({
 		closeButton: "absolute top-2 right-2",
 		container: "fixed inset-0 z-40 flex items-center justify-center",
 		content: "flex flex-col gap-md text-foreground outline-none relative",
-		modal: "max-w-3/4 w-3/4 rounded-xl bg-background border outline-none md:w-96 entering:animate-zoom",
+		modal: "rounded-xl max-w-full bg-background border outline-none md:max-w-2xl entering:animate-zoom",
 		overlay:
 			"fixed left-0 top-0 z-50 flex h-[var(--visual-viewport-height)] w-screen items-center justify-center bg-black/80 entering:animate-fade exiting:animate-fadeOut",
 
