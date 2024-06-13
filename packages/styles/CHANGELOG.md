@@ -1,5 +1,11 @@
 # @pixelshades/styles
 
+## 0.4.10
+
+### Patch Changes
+
+- 5303d11: remove min heights from dialog
+
 ## 0.4.9
 
 ### Patch Changes
