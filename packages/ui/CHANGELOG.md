@@ -1,5 +1,13 @@
 # @pixelshades/ui
 
+## 0.5.3
+
+### Patch Changes
+
+- 5303d11: remove min heights from dialog
+- Updated dependencies [5303d11]
+  - @pixelshades/styles@0.4.10
+
 ## 0.5.2
 
 ### Patch Changes
