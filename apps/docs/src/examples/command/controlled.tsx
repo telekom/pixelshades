@@ -7,8 +7,8 @@ export default function Example() {
 	const [open, setOpen] = useState(false)
 
 	const fruits = [
-		{ name: "Apple", description: "Red apple" },
-		{ name: "Apple", description: "Green apple" },
+		{ name: "Red Apple", description: "Red apple" },
+		{ name: "Green Apple", description: "Green apple" },
 		{ name: "Banana" },
 	]
 
@@ -19,7 +19,11 @@ export default function Example() {
 
 	return (
 		<Command.Dialog shortcut={["Meta", "KeyB"]} open={open} onOpenChange={setOpen}>
-			<Command searchField={<Command.Search />}>
+			<Command
+				searchField={
+					<Command.Search value={inputValue} onChange={(v) => setInputValue(v.currentTarget.value)} />
+				}
+			>
 				<Command.Group heading="Fruits">
 					{fruits.map((fruit, index) => (
 						<Command.Item

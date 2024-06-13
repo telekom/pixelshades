@@ -117,7 +117,7 @@ const CommandTrigger = ({ children }: { children?: ReactNode }) => {
 	)
 }
 
-export interface CommandSearchProps extends Omit<InputProps, "className" | "onChange" | "value"> {
+export interface CommandSearchProps extends Omit<InputProps, "className"> {
 	/** Class name to apply to the search field. */
 	className?: string
 }

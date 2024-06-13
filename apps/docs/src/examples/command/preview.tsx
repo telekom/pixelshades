@@ -3,8 +3,8 @@ import { IconApple, IconGlass } from "@pixelshades/ui/icons"
 
 export default function Example() {
 	const fruits = [
-		{ name: "Apple", description: "Red apple" },
-		{ name: "Apple", description: "Green apple" },
+		{ name: "Red Apple", description: "Red apple" },
+		{ name: "Green Apple", description: "Green apple" },
 		{ name: "Banana" },
 	]
 
@@ -19,6 +19,7 @@ export default function Example() {
 					<Command.Item
 						key={fruit.name + index}
 						before={<IconApple />}
+						onAction={() => alert(fruit.name)}
 						searchValues={[fruit.name, fruit.description || ""]}
 						className={"items-center"}
 						title={fruit.name}
@@ -31,6 +32,7 @@ export default function Example() {
 					<Command.Item
 						key={drink.name}
 						before={<IconGlass />}
+						onAction={() => alert(drink.name)}
 						title={drink.name}
 						description={drink.description}
 					/>

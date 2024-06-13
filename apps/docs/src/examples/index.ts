@@ -571,8 +571,8 @@ export function Example() {
 	const [open, setOpen] = useState(false)
 
 	const fruits = [
-		{ name: "Apple", description: "Red apple" },
-		{ name: "Apple", description: "Green apple" },
+		{ name: "Red Apple", description: "Red apple" },
+		{ name: "Green Apple", description: "Green apple" },
 		{ name: "Banana" },
 	]
 
@@ -583,7 +583,11 @@ export function Example() {
 
 	return (
 		<Command.Dialog shortcut={["Meta", "KeyB"]} open={open} onOpenChange={setOpen}>
-			<Command searchField={<Command.Search />}>
+			<Command
+				searchField={
+					<Command.Search value={inputValue} onChange={(v) => setInputValue(v.currentTarget.value)} />
+				}
+			>
 				<Command.Group heading="Fruits">
 					{fruits.map((fruit, index) => (
 						<Command.Item
@@ -618,8 +622,8 @@ import { IconApple, IconGlass } from "@pixelshades/ui/icons"
 
 export function Example() {
 	const fruits = [
-		{ name: "Apple", description: "Red apple" },
-		{ name: "Apple", description: "Green apple" },
+		{ name: "Red Apple", description: "Red apple" },
+		{ name: "Green Apple", description: "Green apple" },
 		{ name: "Banana" },
 	]
 
@@ -638,6 +642,7 @@ export function Example() {
 							className={"items-center"}
 							searchValues={[fruit.name, fruit.description || ""]}
 							title={fruit.name}
+							onAction={() => alert(fruit.name)}
 							description={fruit.description}
 						/>
 					))}
@@ -650,6 +655,7 @@ export function Example() {
 							className={"items-center"}
 							searchValues={[drink.name, drink.description || ""]}
 							title={drink.name}
+							onAction={() => alert(drink.name)}
 							description={drink.description}
 						/>
 					))}
@@ -667,8 +673,8 @@ import { IconApple, IconGlass } from "@pixelshades/ui/icons"
 
 export function Example() {
 	const fruits = [
-		{ name: "Apple", description: "Red apple" },
-		{ name: "Apple", description: "Green apple" },
+		{ name: "Red Apple", description: "Red apple" },
+		{ name: "Green Apple", description: "Green apple" },
 		{ name: "Banana" },
 	]
 
@@ -683,6 +689,7 @@ export function Example() {
 					<Command.Item
 						key={fruit.name + index}
 						before={<IconApple />}
+						onAction={() => alert(fruit.name)}
 						searchValues={[fruit.name, fruit.description || ""]}
 						className={"items-center"}
 						title={fruit.name}
@@ -695,6 +702,7 @@ export function Example() {
 					<Command.Item
 						key={drink.name}
 						before={<IconGlass />}
+						onAction={() => alert(drink.name)}
 						title={drink.name}
 						description={drink.description}
 					/>
