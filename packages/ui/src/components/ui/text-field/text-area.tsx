@@ -6,6 +6,7 @@
 
 import { inputVariants } from "@pixelshades/styles/components/input"
 import { forwardRef } from "@pixelshades/utils/jsx"
+import { cn } from "@pixelshades/utils/styles"
 import { TextArea as AriaTextArea, type TextAreaProps as AriaTextAreaProps } from "react-aria-components"
 
 import type { VariantProps } from "tailwind-variants"
@@ -22,7 +23,7 @@ const TextArea = forwardRef((props: TextAreaProps) => {
 		<AriaTextArea
 			className={(values) =>
 				inputVariants({
-					className: typeof className === "function" ? className(values) : className,
+					className: cn("px-md py-sm", typeof className === "function" ? className(values) : className),
 					size,
 					...values,
 				})
