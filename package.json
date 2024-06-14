@@ -13,7 +13,7 @@
 		"changeset": "changeset"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.8.0",
+		"@biomejs/biome": "1.8.1",
 		"@changesets/cli": "^2.27.5",
 		"concurrently": "^8.2.2",
 		"cz-conventional-changelog": "^3.3.0",
