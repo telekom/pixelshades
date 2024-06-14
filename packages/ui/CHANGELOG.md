@@ -1,5 +1,11 @@
 # @pixelshades/ui
 
+## 0.5.5
+
+### Patch Changes
+
+- b108742: fix numberfield missing height
+
 ## 0.5.4
 
 ### Patch Changes
