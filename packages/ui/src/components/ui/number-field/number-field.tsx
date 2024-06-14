@@ -4,7 +4,9 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
+import { baseInputSizes } from "@pixelshades/styles/utils"
 import { forwardRef } from "@pixelshades/utils/jsx"
+import { cn } from "@pixelshades/utils/styles"
 import type { ReactNode } from "react"
 import type { NumberFieldProps as AriaNumberFieldProps } from "react-aria-components"
 import { Input as AriaInput, NumberField as AriaNumberField } from "react-aria-components"
@@ -38,7 +40,10 @@ const NumberField = forwardRef(
 				{label}
 			</Label>
 			<FormFieldGroup>
-				<AriaInput className="w-full bg-transparent outline-none ring-0" ref={ref} />
+				<AriaInput
+					className={cn("w-full bg-transparent outline-none ring-0", baseInputSizes.variants.size)}
+					ref={ref}
+				/>
 				<div className="flex flex-col">
 					<Button className="size-3" slot="increment" size="icon" variant="ghost">
 						<IconChevronUp />
