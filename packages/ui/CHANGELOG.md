@@ -1,5 +1,11 @@
 # @pixelshades/ui
 
+## 0.5.4
+
+### Patch Changes
+
+- 577235f: add missing padding to text area
+
 ## 0.5.3
 
 ### Patch Changes
