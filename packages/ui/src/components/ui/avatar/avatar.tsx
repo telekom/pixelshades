@@ -1,6 +1,8 @@
 "use client"
 
 import { avatarVariants } from "@pixelshades/styles/components/avatar"
+import { focusRing } from "@pixelshades/styles/utils"
+import { Button as AriaButton } from "react-aria-components"
 import type { VariantProps } from "tailwind-variants"
 
 export interface AvatarProps extends React.ComponentPropsWithoutRef<"span">, VariantProps<typeof avatarVariants> {
@@ -8,12 +10,13 @@ export interface AvatarProps extends React.ComponentPropsWithoutRef<"span">, Var
 	initials?: string
 	alt?: string
 	className?: string
+	button?: boolean
 }
 
 const { root, image } = avatarVariants()
 
-export const Avatar = ({ src = null, initials, alt = "", className, ...props }: AvatarProps) => {
-	return (
+export const Avatar = ({ src = null, initials, alt = "", className, button, ...props }: AvatarProps) => {
+	const Comp = (
 		<span className={root({ className, ...props })} {...props}>
 			{initials && (
 				// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
@@ -38,4 +41,10 @@ export const Avatar = ({ src = null, initials, alt = "", className, ...props }: 
 			{src && <img className={image(props)} src={src} alt={alt} />}
 		</span>
 	)
+
+	if (button) {
+		return <AriaButton className={focusRing()}>{Comp}</AriaButton>
+	}
+
+	return Comp
 }
