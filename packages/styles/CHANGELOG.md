@@ -1,5 +1,11 @@
 # @pixelshades/styles
 
+## 0.4.11
+
+### Patch Changes
+
+- e149d9c: add avatar profile menu example
+
 ## 0.4.10
 
 ### Patch Changes
