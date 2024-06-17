@@ -1,5 +1,13 @@
 # @pixelshades/ui
 
+## 0.5.6
+
+### Patch Changes
+
+- e149d9c: add avatar profile menu example
+- Updated dependencies [e149d9c]
+  - @pixelshades/styles@0.4.11
+
 ## 0.5.5
 
 ### Patch Changes
