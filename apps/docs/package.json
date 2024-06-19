@@ -19,7 +19,7 @@
 		"@pixelshades/utils": "workspace:*",
 		"@radix-ui/colors": "^3.0.0",
 		"@tanstack/react-router": "1.38.1",
-		"@tanstack/router-devtools": "1.38.1",
+		"@tanstack/router-devtools": "1.39.4",
 		"@tanstack/router-vite-plugin": "1.38.0",
 		"bezier-easing": "^2.1.0",
 		"colorjs.io": "^0.5.0",
