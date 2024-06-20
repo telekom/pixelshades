@@ -1,6 +1,7 @@
 "use client"
 
 import { Button } from "@pixelshades/ui/components"
+import { useRef } from "react"
 import * as z from "zod"
 import { AutoForm, AutoFormSubmit } from ".."
 
@@ -81,10 +82,13 @@ const formSchema = z.object({
 })
 
 export function BasicAutoFormExample() {
+	const ref = useRef<HTMLFormElement>(null)
+
 	return (
 		<>
 			<div className="mx-auto my-layout-md max-w-lg">
 				<AutoForm
+					ref={ref}
 					formSchema={formSchema}
 					onSubmit={async (e) => console.log(e)}
 					fieldConfig={{
@@ -153,6 +157,15 @@ export function BasicAutoFormExample() {
 				>
 					<AutoFormSubmit>Send now</AutoFormSubmit>
 				</AutoForm>
+
+				<Button
+					type="button"
+					onPress={() => {
+						ref.current?.requestSubmit()
+					}}
+				>
+					Submit
+				</Button>
 			</div>
 		</>
 	)
