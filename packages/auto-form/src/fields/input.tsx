@@ -8,7 +8,7 @@ export default function AutoFormInput({ label, isRequired, fieldConfigItem, fiel
 	const type = fieldProps.type || "text"
 
 	return (
-		<FormItem className="flex w-full flex-col justify-start">
+		<FormItem>
 			<FormControl>
 				<TextField
 					type={type}

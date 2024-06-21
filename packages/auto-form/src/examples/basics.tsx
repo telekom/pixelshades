@@ -150,9 +150,9 @@ export function BasicAutoFormExample() {
 							),
 						},
 
-						color: {
-							fieldType: "combobox",
-						},
+						// color: {
+						// 	fieldType: "combobox",
+						// },
 
 						file: {
 							fieldType: "file",

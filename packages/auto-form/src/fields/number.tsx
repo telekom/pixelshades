@@ -12,7 +12,7 @@ export default function AutoFormNumber({
 	const showLabel = _showLabel === undefined ? true : _showLabel
 
 	return (
-		<FormItem className="flex w-full flex-col justify-start">
+		<FormItem>
 			<FormControl>
 				<NumberField
 					validationBehavior="aria"

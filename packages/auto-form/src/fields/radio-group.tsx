@@ -30,7 +30,7 @@ export default function AutoFormRadioGroup({
 					isRequired={isRequired}
 					helperText={fieldConfigItem.description}
 					onValueChange={field.onChange}
-					defaultValue={field.value}
+					value={field.value}
 					{...fieldProps}
 				>
 					{values?.map((value) => (

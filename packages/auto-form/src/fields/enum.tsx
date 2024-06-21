@@ -30,7 +30,7 @@ export default function AutoFormEnum({
 					isRequired={isRequired}
 					onSelectionChange={field.onChange}
 					placeholder="Select an option"
-					defaultValue={field.value}
+					selectedKey={field.value}
 					{...fieldProps}
 				>
 					{values.map(([value, label]) => (
