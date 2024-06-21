@@ -1,4 +1,5 @@
 import AutoFormCheckbox from "./fields/checkbox"
+import AutoFormComboBox from "./fields/combo-box"
 import AutoFormDate from "./fields/date"
 import AutoFormEnum from "./fields/enum"
 import AutoFormFile from "./fields/file"
@@ -12,6 +13,7 @@ export const INPUT_COMPONENTS = {
 	checkbox: AutoFormCheckbox,
 	date: AutoFormDate,
 	select: AutoFormEnum,
+	combobox: AutoFormComboBox,
 	radio: AutoFormRadioGroup,
 	switch: AutoFormSwitch,
 	textarea: AutoFormTextarea,

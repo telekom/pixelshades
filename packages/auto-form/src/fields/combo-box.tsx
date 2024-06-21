@@ -1,10 +1,10 @@
-import { Select } from "@pixelshades/ui/components"
+import { ComboBox, Select } from "@pixelshades/ui/components"
 import type * as z from "zod"
 import { FormControl, FormItem } from "../commons/hook-form"
 import type { AutoFormInputComponentProps } from "../types"
 import { getBaseSchema } from "../utils"
 
-export default function AutoFormEnum({
+export default function AutoFormComboBox({
 	label,
 	isRequired,
 	field,
@@ -24,21 +24,21 @@ export default function AutoFormEnum({
 	return (
 		<FormItem>
 			<FormControl>
-				<Select
+				<ComboBox
 					label={label}
 					helperText={fieldConfigItem.description}
 					isRequired={isRequired}
-					onSelectionChange={field.onChange}
 					placeholder="Select an option"
-					defaultValue={field.value}
+					onInputChange={field.onChange}
+					inputValue={field.value}
 					{...fieldProps}
 				>
 					{values.map(([value, label]) => (
-						<Select.Item key={value} id={value}>
+						<ComboBox.Item key={value} id={value}>
 							{label}
-						</Select.Item>
+						</ComboBox.Item>
 					))}
-				</Select>
+				</ComboBox>
 			</FormControl>
 		</FormItem>
 	)

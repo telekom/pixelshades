@@ -617,6 +617,25 @@ export function Example() {
 }
 `,
   },
+  "combobox/controlled": {
+	  component: lazy(() => import("~/examples/combobox/controlled.tsx")),
+	  code: `import { ComboBox } from "@pixelshades/ui/components"
+import { useState } from "react"
+
+export function Example() {
+	const [value, setValue] = useState("health")
+
+	return (
+		<ComboBox label="Project" inputValue={value} onInputChange={setValue}>
+			<ComboBox.Item id="health">Health Dashboard</ComboBox.Item>
+			<ComboBox.Item id="todo">To-Do App</ComboBox.Item>
+			<ComboBox.Item id="ui">UI Kit</ComboBox.Item>
+			<ComboBox.Item id="portfolio">Portfolio Site</ComboBox.Item>
+		</ComboBox>
+	)
+}
+`,
+  },
   "combobox/preview": {
 	  component: lazy(() => import("~/examples/combobox/preview.tsx")),
 	  code: `import { ComboBox } from "@pixelshades/ui/components"

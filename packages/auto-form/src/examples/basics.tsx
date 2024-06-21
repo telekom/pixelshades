@@ -86,7 +86,7 @@ export function BasicAutoFormExample() {
 
 	return (
 		<>
-			<div className="mx-auto my-layout-md max-w-lg">
+			<div className="mx-auto my-layout-md max-w-lg space-y-layout-sm">
 				<AutoForm
 					ref={ref}
 					formSchema={formSchema}
@@ -150,6 +150,10 @@ export function BasicAutoFormExample() {
 							),
 						},
 
+						color: {
+							fieldType: "combobox",
+						},
+
 						file: {
 							fieldType: "file",
 						},
@@ -164,7 +168,7 @@ export function BasicAutoFormExample() {
 						ref.current?.requestSubmit()
 					}}
 				>
-					Submit
+					Submit with Ref
 				</Button>
 			</div>
 		</>
