@@ -29,13 +29,7 @@ import {
 	yellow,
 	zinc,
 } from "tailwindcss/colors"
-import {
-	exportTheme,
-	extendColorScale,
-	generateScale,
-	generateTheme,
-	transformTailwindColor,
-} from "~/lib/colors/tailwind-themes"
+import { exportTheme, extendColorScale, generateTheme, transformTailwindColor } from "~/lib/colors/tailwind-themes"
 import { invertValues } from "~/lib/colors/utils"
 
 export const Route = createFileRoute("/themes")({
