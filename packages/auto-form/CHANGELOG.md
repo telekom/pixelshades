@@ -1,5 +1,18 @@
 # @pixelshades/utils
 
+## 2.1.0
+
+### Minor Changes
+
+- 0c8de7b: add combobox field type
+
+### Patch Changes
+
+- 68999d9: fix: select being unctrolled
+- Updated dependencies [63ffc97]
+  - @pixelshades/ui@0.5.7
+  - @pixelshades/toast@0.0.1
+
 ## 2.0.6
 
 ### Patch Changes

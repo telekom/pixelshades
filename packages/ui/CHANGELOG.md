@@ -1,5 +1,13 @@
 # @pixelshades/ui
 
+## 0.5.7
+
+### Patch Changes
+
+- 63ffc97: unify formfield label spacing, fix numberfield button overlap
+- Updated dependencies [63ffc97]
+  - @pixelshades/styles@0.4.12
+
 ## 0.5.6
 
 ### Patch Changes
