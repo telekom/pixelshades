@@ -45,10 +45,10 @@ const NumberField = forwardRef(
 					ref={ref}
 				/>
 				<div className="flex flex-col">
-					<Button className="size-3" slot="increment" size="icon" variant="ghost">
+					<Button className="size-3 overflow-hidden" slot="increment" size="icon" variant="ghost">
 						<IconChevronUp />
 					</Button>
-					<Button className="size-3" slot="decrement" size="icon" variant="ghost">
+					<Button className="size-3 overflow-hidden" slot="decrement" size="icon" variant="ghost">
 						<IconChevronDown />
 					</Button>
 				</div>
