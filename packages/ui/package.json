@@ -16,7 +16,7 @@
 		"@internationalized/date": "^3.5.4",
 		"@pixelshades/styles": "workspace:*",
 		"@pixelshades/utils": "workspace:*",
-		"@radix-ui/react-slot": "1.0.2",
+		"@radix-ui/react-slot": "1.1.0",
 		"@tabler/icons-react": "^3.6.0",
 		"react-aria": "3.33.1",
 		"react-aria-components": "1.2.1",
