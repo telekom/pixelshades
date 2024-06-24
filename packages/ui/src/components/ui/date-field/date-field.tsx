@@ -31,7 +31,7 @@ const DateField = <T extends DateValue>({
 	isRequired,
 	...props
 }: DateFieldProps<T>) => (
-	<AriaDateField className={cn("flex flex-col gap-md", className)} isRequired={isRequired} {...props}>
+	<AriaDateField className={cn("flex flex-col gap-sm", className)} isRequired={isRequired} {...props}>
 		<Label description={description} isRequired={isRequired} tooltip={tooltip}>
 			{label}
 		</Label>
