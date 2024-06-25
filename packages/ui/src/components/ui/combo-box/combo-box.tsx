@@ -4,13 +4,15 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
+import type React from "react"
+import type { ReactNode } from "react"
+
 import type { ComboBoxProps as AriaComboBoxProps, ListBoxItemProps } from "react-aria-components"
 import { ComboBox as AriaComboBox, Button, ListBox, ListBoxItem } from "react-aria-components"
 
 import { comboboxVaraints } from "@pixelshades/styles/components/combo-box"
 import { IconChevronDown } from "@tabler/icons-react"
-import type React from "react"
-import type { ReactNode } from "react"
+
 import { FormDescription, FormFieldError } from "../form"
 import { Input } from "../input"
 import { type FormComponentLabelProps, Label } from "../label"

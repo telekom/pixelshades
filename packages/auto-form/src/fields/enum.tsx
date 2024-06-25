@@ -4,6 +4,14 @@ import { FormControl, FormItem } from "../commons/hook-form"
 import type { AutoFormInputComponentProps } from "../types"
 import { getBaseSchema } from "../utils"
 
+export const transformEnumValues = (values: any) => {
+	if (!Array.isArray(values)) {
+		return Object.entries(values)
+	}
+
+	return values.map((value) => [value, value])
+}
+
 export default function AutoFormEnum({
 	label,
 	isRequired,
@@ -14,12 +22,7 @@ export default function AutoFormEnum({
 }: AutoFormInputComponentProps) {
 	const baseValues = (getBaseSchema(zodItem) as unknown as z.ZodEnum<any>)._def.values
 
-	let values: [string, string][] = []
-	if (!Array.isArray(baseValues)) {
-		values = Object.entries(baseValues)
-	} else {
-		values = baseValues.map((value) => [value, value])
-	}
+	const values = transformEnumValues(baseValues)
 
 	return (
 		<FormItem>
