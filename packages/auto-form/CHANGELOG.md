@@ -1,5 +1,14 @@
 # @pixelshades/utils
 
+## 2.1.2
+
+### Patch Changes
+
+- 26db78a: fix combobox output value
+- Updated dependencies [26db78a]
+  - @pixelshades/ui@0.5.9
+  - @pixelshades/toast@0.0.1
+
 ## 2.1.1
 
 ### Patch Changes
