@@ -1,5 +1,11 @@
 # @pixelshades/ui
 
+## 0.5.9
+
+### Patch Changes
+
+- 26db78a: fix combobox output value
+
 ## 0.5.8
 
 ### Patch Changes
