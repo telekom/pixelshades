@@ -1,5 +1,11 @@
 # @pixelshades/ui
 
+## 0.5.8
+
+### Patch Changes
+
+- 1c3078c: fix combobox havign wrong input for native enums
+
 ## 0.5.7
 
 ### Patch Changes
