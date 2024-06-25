@@ -1,5 +1,14 @@
 # @pixelshades/utils
 
+## 2.1.1
+
+### Patch Changes
+
+- 1c3078c: fix combobox havign wrong input for native enums
+- Updated dependencies [1c3078c]
+  - @pixelshades/ui@0.5.8
+  - @pixelshades/toast@0.0.1
+
 ## 2.1.0
 
 ### Minor Changes
