@@ -9,9 +9,16 @@ enum Color {
 	Blue = "blue",
 }
 
+const FakeEnum = {
+	Red: "red",
+	Green: "green",
+	Blue: "blue",
+}
+
 const formSchema = z.object({
 	basicEnum: z.enum(["a", "b", "c"]),
 	nativeEnum: z.nativeEnum(Color),
+	nativeEnumWinkWink: z.nativeEnum(FakeEnum),
 })
 
 export function BasicEnumAutoFormExample() {
