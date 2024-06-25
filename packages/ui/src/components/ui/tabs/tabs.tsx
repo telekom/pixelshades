@@ -34,3 +34,5 @@ export const Tabs = Object.assign(TabsRoot, {
 	List: TabsList,
 	Panel: TabPanel,
 })
+
+export { TabsList, TabPanel, Tab }

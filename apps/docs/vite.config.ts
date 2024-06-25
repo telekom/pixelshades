@@ -20,5 +20,6 @@ export default defineConfig({
 	optimizeDeps: {
 		exclude: ["@pixelshades/ui"],
 	},
+
 	plugins: [VeliteVitePlugin(), tsconfigPaths(), react(), dvUiVitePlugin(), TanStackRouterVite()],
 })

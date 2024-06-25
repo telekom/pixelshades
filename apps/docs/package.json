@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
-		"build": "vite build && tsc",
+		"build": "vite build",
 		"deploy": "wrangler pages deploy ./dist",
 		"preview": "vite preview",
 		"typecheck": "tsc --noEmit"

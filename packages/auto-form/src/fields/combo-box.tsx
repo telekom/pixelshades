@@ -33,7 +33,7 @@ export default function AutoFormComboBox({
 					inputValue={field.value}
 					{...fieldProps}
 				>
-					{values.map(([value, label]) => (
+					{values.map(([label, value]) => (
 						<ComboBox.Item key={value} id={value}>
 							{label}
 						</ComboBox.Item>

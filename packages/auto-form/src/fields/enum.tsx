@@ -33,7 +33,7 @@ export default function AutoFormEnum({
 					selectedKey={field.value}
 					{...fieldProps}
 				>
-					{values.map(([value, label]) => (
+					{values.map(([label, value]) => (
 						<Select.Item key={value} id={value}>
 							{label}
 						</Select.Item>
