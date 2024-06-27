@@ -308,8 +308,8 @@ importers:
         specifier: ^2.0.5
         version: 2.0.5(@swc/core@1.6.5(@swc/helpers@0.5.11))(@types/node@20.14.8)(typescript@5.5.2)
       '@types/bun':
-        specifier: ^1.1.5
-        version: 1.1.5
+        specifier: ^1.1.6
+        version: 1.1.6
       '@types/node':
         specifier: ^20.14.8
         version: 20.14.8
@@ -2070,8 +2070,8 @@ packages:
   '@types/babel__traverse@7.20.5':
     resolution: {integrity: sha512-WXCyOcRtH37HAUkpXhUduaxdm82b4GSlyTqajXviN4EfiuPgNYR109xMCKvpl6zPIpua0DGlMEDCq+g8EdoheQ==}
 
-  '@types/bun@1.1.5':
-    resolution: {integrity: sha512-7RprVDMF+1o+EWSo7F1+iJpkfNz+Ikw9K//vwambcY+D1QHXfb9l7jWY1hSBfuFEkW9yFAhkMzP2uTi1pQXoqw==}
+  '@types/bun@1.1.6':
+    resolution: {integrity: sha512-uJgKjTdX0GkWEHZzQzFsJkWp5+43ZS7HC8sZPFnOwnSo1AsNl2q9o2bFeS23disNDqbggEgyFkKCHl/w8iZsMA==}
 
   '@types/conventional-commits-parser@5.0.0':
     resolution: {integrity: sha512-loB369iXNmAZglwWATL+WRe+CRMmmBPtpolYzIebFaX4YA3x+BEfLqhUAV9WanycKI3TG1IMr5bMJDajDKLlUQ==}
@@ -2309,8 +2309,8 @@ packages:
   builtins@5.1.0:
     resolution: {integrity: sha512-SW9lzGTLvWTP1AY8xeAMZimqDrIaSdLQUcVr9DMef51niJ022Ri87SwRRKYm4A6iHfkPaiVUu/Duw2Wc4J7kKg==}
 
-  bun-types@1.1.14:
-    resolution: {integrity: sha512-esfxOvECTkjEuUEHBOoOo590Qggf4b9cz5h29AOB2SKt3yZwG3LbAX4iIYwWZX7GnO7vaY5hIdcQygwN0xGdNw==}
+  bun-types@1.1.17:
+    resolution: {integrity: sha512-Z4+OplcSd/YZq7ZsrfD00DKJeCwuNY96a1IDJyR73+cTBaFIS7SC6LhpY/W3AMEXO9iYq5NJ58WAwnwL1p5vKg==}
 
   bunchee@5.2.2:
     resolution: {integrity: sha512-Xc3Rms+VFXVM3ubfim0G7blq0zJxVsojmN3zyqzEgD2XaxpWduF2CsKCDrA8XvfbOjjMJ+z6rqBU3sNrXSOu7w==}
@@ -2839,6 +2839,7 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   glob@8.1.0:
     resolution: {integrity: sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==}
@@ -2977,6 +2978,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -6677,9 +6679,9 @@ snapshots:
     dependencies:
       '@babel/types': 7.24.0
 
-  '@types/bun@1.1.5':
+  '@types/bun@1.1.6':
     dependencies:
-      bun-types: 1.1.14
+      bun-types: 1.1.17
 
   '@types/conventional-commits-parser@5.0.0':
     dependencies:
@@ -6911,7 +6913,7 @@ snapshots:
     dependencies:
       semver: 7.6.0
 
-  bun-types@1.1.14:
+  bun-types@1.1.17:
     dependencies:
       '@types/node': 20.12.13
       '@types/ws': 8.5.10
