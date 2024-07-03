@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as ThemesImport } from './routes/themes'
 import { Route as GeneratorImport } from './routes/generator'
+import { Route as Form2Import } from './routes/form2'
 import { Route as ExamplesImport } from './routes/examples'
 import { Route as DocsImport } from './routes/docs'
 import { Route as AutoFormImport } from './routes/auto-form'
@@ -30,6 +31,11 @@ const ThemesRoute = ThemesImport.update({
 
 const GeneratorRoute = GeneratorImport.update({
   path: '/generator',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const Form2Route = Form2Import.update({
+  path: '/form2',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -100,6 +106,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExamplesImport
       parentRoute: typeof rootRoute
     }
+    '/form2': {
+      id: '/form2'
+      path: '/form2'
+      fullPath: '/form2'
+      preLoaderRoute: typeof Form2Import
+      parentRoute: typeof rootRoute
+    }
     '/generator': {
       id: '/generator'
       path: '/generator'
@@ -149,6 +162,7 @@ export const routeTree = rootRoute.addChildren({
     DocsComponentsSlugIndexRoute,
   }),
   ExamplesRoute,
+  Form2Route,
   GeneratorRoute,
   ThemesRoute,
 })
@@ -165,6 +179,7 @@ export const routeTree = rootRoute.addChildren({
         "/auto-form",
         "/docs",
         "/examples",
+        "/form2",
         "/generator",
         "/themes"
       ]
@@ -185,6 +200,9 @@ export const routeTree = rootRoute.addChildren({
     },
     "/examples": {
       "filePath": "examples.tsx"
+    },
+    "/form2": {
+      "filePath": "form2.tsx"
     },
     "/generator": {
       "filePath": "generator.tsx"

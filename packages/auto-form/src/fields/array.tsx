@@ -31,6 +31,7 @@ export default function AutoFormArray({
 		control: form.control,
 		name,
 	})
+
 	const title = item._def.description ?? beautifyObjectName(name)
 
 	const itemDefType = isZodArray(item) ? item._def.type : isZodDefault(item) ? item._def.innerType._def.type : null
