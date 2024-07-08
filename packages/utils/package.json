@@ -13,7 +13,7 @@
 	"dependencies": {
 		"@radix-ui/react-slot": "1.1.0",
 		"clsx": "^2.1.0",
-		"tailwind-merge": "2.3.0"
+		"tailwind-merge": "2.4.0"
 	},
 	"peerDependencies": {
 		"react": ">18.0.0",
@@ -21,7 +21,7 @@
 	},
 	"devDependencies": {
 		"@total-typescript/tsconfig": "^1.0.4",
-		"@types/node": "^20.14.8",
+		"@types/node": "^20.14.10",
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
 		"bunchee": "5.2.2",
