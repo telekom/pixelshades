@@ -1,7 +1,10 @@
 import { type FormApi, useForm } from "@tanstack/react-form"
 import { zodValidator } from "@tanstack/zod-form-adapter"
-import { z } from "zod"
+import type { z } from "zod"
 import type { ZodObjectOrWrapped } from "./types"
+
+import { NumberField } from "@pixelshades/ui/components"
+import { getObjectFormSchema } from "./utils"
 
 export type AutoFormProps<SchemaType extends ZodObjectOrWrapped> = {
 	formSchema: SchemaType
@@ -27,7 +30,7 @@ export const AutoForm = <SchemaType extends ZodObjectOrWrapped>({
 		validatorAdapter: zodValidator(),
 	})
 
-	console.log(form)
+	const objectSchema = getObjectFormSchema(formSchema)
 
 	return (
 		<div>
@@ -39,24 +42,33 @@ export const AutoForm = <SchemaType extends ZodObjectOrWrapped>({
 				}}
 			>
 				<div>
-					<form.Field
-						name="name"
-						validatorAdapter={zodValidator()}
-						validators={{
-							onChange: z.string().min(3, "First name must be at least 3 characters"),
-						}}
-					>
-						{(field) => (
-							<div>
-								<input
-									name={field.name}
-									value={field.state.value}
-									onBlur={field.handleBlur}
-									onChange={(e) => field.handleChange(e.target.value)}
-								/>
-							</div>
-						)}
-					</form.Field>
+					{Object.entries(objectSchema.shape).map(([key, value]) => {
+						console.log(value, key)
+						return (
+							<form.Field
+								key={key}
+								name={key}
+								validatorAdapter={zodValidator()}
+								validators={{
+									onChange: value as z.ZodAny,
+								}}
+							>
+								{(field) => (
+									<div>
+										<NumberField
+											name={field.name}
+											value={field.state.value}
+											onBlur={field.handleBlur}
+											type="number"
+											validationBehavior="aria"
+											onChange={(e) => field.handleChange(e)}
+										/>
+										<p>{field.state.meta.errors}</p>
+									</div>
+								)}
+							</form.Field>
+						)
+					})}
 				</div>
 				<button type="submit">Submit</button>
 			</form>
