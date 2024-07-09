@@ -14,7 +14,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.8.2",
-		"@changesets/cli": "^2.27.6",
+		"@changesets/cli": "^2.27.7",
 		"concurrently": "^8.2.2",
 		"cz-conventional-changelog": "^3.3.0",
 		"turbo": "2.0.5"
