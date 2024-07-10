@@ -11,7 +11,7 @@
 		"dev": "bunchee --watch --no-clean"
 	},
 	"dependencies": {
-		"tailwind-merge": "2.3.0",
+		"tailwind-merge": "2.4.0",
 		"tailwind-variants": "0.2.1"
 	},
 	"peerDependencies": {
@@ -20,7 +20,7 @@
 	},
 	"devDependencies": {
 		"@total-typescript/tsconfig": "^1.0.4",
-		"@types/node": "^20.14.9",
+		"@types/node": "^20.14.10",
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
 		"bunchee": "5.2.2",
@@ -29,9 +29,7 @@
 		"tailwindcss": "3.4.4",
 		"typescript": "^5.5.3"
 	},
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"exports": {
 		"./utils": {
 			"import": {
