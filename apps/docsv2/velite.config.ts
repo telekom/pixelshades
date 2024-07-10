@@ -5,6 +5,9 @@ import rehypeSlug from "rehype-slug"
 
 import rehypePrettyCode from "rehype-pretty-code"
 import remarkGfm from "remark-gfm"
+import { appendCodePreview } from "~/lib/rehype/append-code-preview"
+import { postProcess, preProcess, rehypeNpmCommand } from "~/lib/rehype/rehype-npm-command"
+import { beautifyObjectName } from "~/lib/utils"
 
 export default defineConfig({
 	collections: {
@@ -13,9 +16,7 @@ export default defineConfig({
 			pattern: "components/**/*.mdx",
 			schema: s
 				.object({
-					title: s.string().max(99),
 					description: s.string(),
-					slug: s.slug("components"),
 					content: s.mdx(),
 					docLink: s.string().optional(),
 					apiReferenceLink: s.string().optional(),
@@ -23,7 +24,16 @@ export default defineConfig({
 					primaryTag: s.string().optional(),
 					path: s.path(),
 				})
-				.transform((data) => ({ ...data, permalink: `/docs/${data.path}`, breadcrumbs: data.path.split("/") })),
+				.transform((data) => {
+					const breadcrumbs = data.path.split("/")
+
+					return {
+						...data,
+						permalink: `/docs/${data.path}`,
+						breadcrumbs,
+						title: beautifyObjectName(breadcrumbs[breadcrumbs.length - 1]),
+					}
+				}),
 		},
 		general_pages: {
 			name: "GeneralPages",
@@ -39,26 +49,15 @@ export default defineConfig({
 				})
 				.transform((data) => ({ ...data, permalink: `/docs/${data.slug}` })),
 		},
-		dvds_pages: {
-			name: "DVDSPages",
-			pattern: "dvds-cli/**/*.mdx",
-			schema: s
-				.object({
-					title: s.string().max(99),
-					description: s.string().optional(),
-					slug: s.slug("dvds-cli"),
-					content: s.mdx(),
-					toc: s.toc(),
-				})
-				.transform((data) => ({ ...data, permalink: `/docs/dvds-cli/${data.slug}` })),
-		},
 	},
 	mdx: {
 		remarkPlugins: [remarkGfm],
 		rehypePlugins: [
+			preProcess,
 			rehypeSlug,
 			rehypeAutolinkHeadings,
-
+			appendCodePreview,
+			rehypeNpmCommand,
 			[
 				rehypePrettyCode,
 				{
@@ -69,6 +68,7 @@ export default defineConfig({
 					grid: true,
 				},
 			],
+			postProcess,
 		],
 	},
 	markdown: {},

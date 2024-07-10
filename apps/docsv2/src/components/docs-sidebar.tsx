@@ -4,7 +4,7 @@ import { cn } from "@pixelshades/utils/styles"
 import { ChevronRightIcon } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import React from "react"
+import React, { useEffect } from "react"
 import type { DocsNav, Category as TCategory } from "~/types/docs-nav"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "./temp/collapsible"
 
@@ -14,6 +14,8 @@ export interface DocsSidebarProps {
 
 export function DocsSidebar({ items }: DocsSidebarProps) {
 	const pathname = usePathname()
+
+	console.log(items)
 
 	return items.length > 0 ? (
 		<div className="w-full space-y-4 pt-4 pr-4 pb-10 text-sm">
@@ -31,17 +33,17 @@ interface CategoryProps extends TCategory {
 const Category = ({ title, slug, items, pathname }: CategoryProps) => {
 	const [open, setOpen] = React.useState(pathname.startsWith(`/${slug}`))
 
-	React.useEffect(() => {
-		setOpen(pathname.startsWith(`/${slug}`))
+	useEffect(() => {
+		setOpen(pathname.replace("/docs", "").startsWith(`/${slug}`))
 	}, [pathname, slug])
 
 	return (
 		<Collapsible open={open} onOpenChange={setOpen}>
-			<CollapsibleTrigger className="flex items-center space-x-2 [&[data-state=open]>svg]:rotate-90">
-				<ChevronRightIcon className="h-4 w-4 shrink-0 transition-transform duration-200" />
+			<CollapsibleTrigger className="flex items-center space-x-md [&[data-state=open]>svg]:rotate-90">
+				<ChevronRightIcon className="size-4 shrink-0 transition-transform duration-200" />
 				<h4 className="rounded-md font-semibold text-sm">{title}</h4>
 			</CollapsibleTrigger>
-			<CollapsibleContent asChild className="space-y-2 pt-2">
+			<CollapsibleContent asChild className="space-y-md pt-md">
 				<ul>
 					{items.map((item, index) => {
 						if ("href" in item && item.href) {
@@ -50,9 +52,9 @@ const Category = ({ title, slug, items, pathname }: CategoryProps) => {
 									<Link
 										href={item.href}
 										className={cn(
-											"group ml-2 block border-bg-bg-muted border-l pl-4 text-fg-muted transition-colors hover:text-foreground",
+											"group ml-md block border-border border-l pl-4 text-subtle-foreground transition-colors hover:text-foreground",
 											{
-												"border-border font-medium text-fg": pathname === item.href,
+												"border-border font-medium text-foreground": pathname === item.href,
 											},
 										)}
 									>
@@ -65,8 +67,8 @@ const Category = ({ title, slug, items, pathname }: CategoryProps) => {
 						}
 						if ("items" in item && item.items.length > 0) {
 							return (
-								<li key={index} className="ml-2 space-y-2">
-									<h3 className="category pl-4 font-mono text-fg text-xs tracking-widest">
+								<li key={index} className="ml-md space-y-md">
+									<h3 className="category pl-lg font-mono text-foreground text-xs tracking-widest">
 										{item.title}
 									</h3>
 									<ul className="list-none">
@@ -76,36 +78,38 @@ const Category = ({ title, slug, items, pathname }: CategoryProps) => {
 													<li key={subIndex}>
 														<span
 															className={cn(
-																"block cursor-not-allowed border-muted border-l py-1 pl-4 text-fg-disabled",
+																"block cursor-not-allowed border-muted border-l py-xs pl-lg text-subtle-foreground",
 															)}
 														>
 															{subItem.title}
-															{subItem.label && (
-																<span className="ml-2 rounded-md bg-bg-disabled px-1.5 py-0.5 text-fg-disabled text-xs leading-none">
-																	{subItem.label}
+															{subItem.tag && (
+																<span className="ml-md rounded-md bg-neutral-background-disabled px-md py-0.5 text-neutral-foreground-disabled text-xs leading-none">
+																	{subItem.tag}
 																</span>
 															)}
 														</span>
 													</li>
 												)
 											}
+
+											console.log(subItem)
 											return (
 												<li key={subIndex}>
 													<Link
-														href={subItem.href}
+														href={subItem.href || ""}
 														className={cn(
-															"group block border-muted border-l py-1 pl-4 text-fg-muted transition-colors hover:text-foreground",
+															"group block border-border border-l py-xs pl-lg text-subtle-foreground transition-colors hover:text-foreground",
 															{
-																"border-fg font-medium text-fg":
+																"border-foreground font-medium text-foreground":
 																	pathname === subItem.href,
 															},
 														)}
 													>
 														<span className="block transition-transform duration-100 group-hover:translate-x-0.5">
 															{subItem.title}
-															{subItem.label && (
-																<span className="ml-2 rounded-md border bg-bg-muted px-1.5 py-0.5 text-fg-muted text-xs leading-none">
-																	{subItem.label}
+															{subItem.tag && (
+																<span className="ml-md rounded-md border bg-neutral-background px-md py-0.5 text-subtle-foreground text-xs leading-none">
+																	{subItem.tag}
 																</span>
 															)}
 														</span>

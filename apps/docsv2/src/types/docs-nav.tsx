@@ -3,11 +3,12 @@ export interface Item {
 	href: string
 	disabled?: boolean
 	external?: boolean
-	label?: string
+	tag?: string
 }
 
 export interface SubCategory {
 	title: string
+	slug: string
 	items: Item[]
 }
 

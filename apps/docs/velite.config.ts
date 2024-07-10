@@ -41,19 +41,6 @@ export default defineConfig({
 				})
 				.transform((data) => ({ ...data, permalink: `/docs/${data.slug}` })),
 		},
-		dvds_pages: {
-			name: "DVDSPages",
-			pattern: "dvds-cli/**/*.mdx",
-			schema: s
-				.object({
-					title: s.string().max(99),
-					description: s.string().optional(),
-					slug: s.slug("dvds-cli"),
-					content: s.mdx(),
-					toc: s.toc(),
-				})
-				.transform((data) => ({ ...data, permalink: `/docs/dvds-cli/${data.slug}` })),
-		},
 	},
 	mdx: {
 		remarkPlugins: [remarkGfm],

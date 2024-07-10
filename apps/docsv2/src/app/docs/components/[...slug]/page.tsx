@@ -11,6 +11,7 @@ import {
 	TabPanel,
 	Tabs,
 	TabsList,
+	Typography,
 } from "@pixelshades/ui/components"
 
 import { IconBrandAdobe, IconBrandGithub } from "@pixelshades/ui/icons"
@@ -49,11 +50,15 @@ export default function ComponentPage({ params }: PageProps) {
 
 	return (
 		<HeadingLevel>
-			<main className={"prose lg:prose-lg dark:prose-invert flex flex-col gap-lg py-6"}>
-				<div>
-					<Heading className="mb-4">{component.title}</Heading>
+			<main
+				className={cn("relative pt-layout-sm pb-layout-lg lg:gap-layout-sm", {
+					"xl:grid xl:grid-cols-[1fr_220px]": component.toc.length > 0,
+				})}
+			>
+				<div className="mx-auto w-full min-w-0">
+					<Heading className="mb-lg">{component.title}</Heading>
 
-					<p className="text-subtle-foreground">{component.description}</p>
+					<Typography className="text-subtle-foreground">{component.description}</Typography>
 
 					<div className="my-layout-md">
 						<DataList>
@@ -99,29 +104,33 @@ export default function ComponentPage({ params }: PageProps) {
 							</If>
 						</DataList>
 					</div>
-				</div>
 
-				<Tabs variant="pill">
-					<TabsList className="mb-layout-xs">
-						<Tab id="docs">Docs</Tab>
-						<Tab id="props">Props</Tab>
-					</TabsList>
+					<Tabs variant="pill">
+						<TabsList className="mb-layout-xs">
+							<Tab id="docs">Docs</Tab>
+							<Tab id="props">Props</Tab>
+						</TabsList>
 
-					<TabPanel id="docs" className={cn("relative grid w-full grid-cols-12 gap-layout-sm")}>
-						<div className="col-span-12 w-full md:col-span-9">
-							<MDXContent code={component.content} />
-							{/* <PagerButtons permalink={component.permalink} /> */}
-						</div>
-						<div className="sticky top-16 col-span-3 hidden self-start md:block">
-							<If condition={component.toc.length > 0}>
-								<TableOfContents toc={component.toc} />
-							</If>
-						</div>
-					</TabPanel>
-					{/* <Tabs.Panel id="props" className="w-full">
+						<TabPanel id="docs" className={cn("relative grid w-full grid-cols-12 gap-layout-sm")}>
+							<div className="col-span-12 w-full md:col-span-9">
+								<MDXContent code={component.content} />
+								{/* <PagerButtons permalink={component.permalink} /> */}
+							</div>
+						</TabPanel>
+						{/* <Tabs.Panel id="props" className="w-full">
 						<PropsTable slug={component.slug} />
 					</Tabs.Panel> */}
-				</Tabs>
+					</Tabs>
+				</div>
+				<div className="hidden text-sm xl:block">
+					<div className="sticky top-0">
+						<div className="h-screen pb-layout-md overflow-y-auto">
+							<div className="pt-lg pb-layout-md">
+								<TableOfContents toc={component.toc} />
+							</div>
+						</div>
+					</div>
+				</div>
 			</main>
 		</HeadingLevel>
 	)

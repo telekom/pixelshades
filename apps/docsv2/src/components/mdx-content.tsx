@@ -4,6 +4,7 @@ import { Heading, Tabs } from "@pixelshades/ui/components"
 import { cn } from "@pixelshades/utils/styles"
 import * as runtime from "react/jsx-runtime"
 import { ComponentPreview } from "./component-preview"
+import { ColorPreview } from "./temp/color-preview"
 
 interface MdxProps {
 	code: string
@@ -12,6 +13,7 @@ interface MdxProps {
 
 const defaultComponents = {
 	ComponentPreview,
+	ColorPreview,
 	Tabs,
 	code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
 		<code
@@ -40,6 +42,33 @@ const defaultComponents = {
 			{...props}
 		/>
 	),
+	pre: ({
+		className,
+		__rawString__,
+		__npmCommand__,
+		__yarnCommand__,
+		__pnpmCommand__,
+		__bunCommand__,
+		__withMeta__,
+		__src__,
+		...props
+	}: React.HTMLAttributes<HTMLPreElement> & {
+		__rawString__?: string
+		__withMeta__?: boolean
+		__src__?: string
+	}) => {
+		return (
+			<div className="relative h-full w-full">
+				<pre
+					className={cn(
+						"!bg-subtle/10 dark:!bg-subtle/10 max-h-[650px] overflow-x-auto rounded-lg border py-4",
+						className,
+					)}
+					{...props}
+				/>
+			</div>
+		)
+	},
 	h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
 		<Heading level={1} className={cn("mt-2 scroll-m-20", className)} {...props} />
 	),
