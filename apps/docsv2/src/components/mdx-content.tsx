@@ -3,6 +3,7 @@
 import { Heading, Tabs } from "@pixelshades/ui/components"
 import { cn } from "@pixelshades/utils/styles"
 import * as runtime from "react/jsx-runtime"
+import { ComponentPreview } from "./component-preview"
 
 interface MdxProps {
 	code: string
@@ -10,7 +11,7 @@ interface MdxProps {
 }
 
 const defaultComponents = {
-	ComponentPreview: () => <div>ComponentPreview</div>,
+	ComponentPreview,
 	Tabs,
 	code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
 		<code

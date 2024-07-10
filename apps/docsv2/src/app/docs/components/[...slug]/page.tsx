@@ -1,9 +1,24 @@
-import { Heading, HeadingLevel, If, Tab, TabPanel, TableOfContents, Tabs, TabsList } from "@pixelshades/ui/components"
+import {
+	DataList,
+	DataListItem,
+	DataListLabel,
+	DataListValue,
+	Heading,
+	HeadingLevel,
+	If,
+	Link,
+	Tab,
+	TabPanel,
+	Tabs,
+	TabsList,
+} from "@pixelshades/ui/components"
+
 import { IconBrandAdobe, IconBrandGithub } from "@pixelshades/ui/icons"
 import { cn } from "@pixelshades/utils/styles"
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { MDXContent } from "~/components/mdx-content"
+import { TableOfContents } from "~/components/toc"
 import { components } from "#site/content"
 
 interface PageProps {
@@ -41,7 +56,7 @@ export default function ComponentPage({ params }: PageProps) {
 					<p className="text-subtle-foreground">{component.description}</p>
 
 					<div className="my-layout-md">
-						{/* <DataList>
+						<DataList>
 							<DataListItem>
 								<DataListLabel>Import</DataListLabel>
 								<DataListValue>
@@ -67,24 +82,22 @@ export default function ComponentPage({ params }: PageProps) {
 								</DataListValue>
 							</DataListItem>
 							<If condition={component.docLink}>
-								{(docLink) => (
-									<DataListItem>
-										<DataListLabel>Aria Docs</DataListLabel>
-										<DataListValue>
-											<IconBrandAdobe className="size-3" />
-											<Link
-												className="text-foreground"
-												href={docLink}
-												target="_blank"
-												rel="noreferrer"
-											>
-												View Docs
-											</Link>
-										</DataListValue>
-									</DataListItem>
-								)}
+								<DataListItem>
+									<DataListLabel>Aria Docs</DataListLabel>
+									<DataListValue>
+										<IconBrandAdobe className="size-3" />
+										<Link
+											className="text-foreground"
+											href={component.docLink}
+											target="_blank"
+											rel="noreferrer"
+										>
+											View Docs
+										</Link>
+									</DataListValue>
+								</DataListItem>
 							</If>
-						</DataList> */}
+						</DataList>
 					</div>
 				</div>
 
