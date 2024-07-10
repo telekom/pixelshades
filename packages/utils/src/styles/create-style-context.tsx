@@ -1,9 +1,11 @@
+"use client"
+
 // SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
 //
 // SPDX-License-Identifier: Apache-2.0
 
 import { type ComponentProps, type ElementType, createContext, forwardRef, useContext } from "react"
-import { cn } from "./cn"
+import { cn } from "./cn.shared-runtime"
 
 type Recipe = (props: any) => any
 type VariantProps<R extends Recipe> = Parameters<R>[0]

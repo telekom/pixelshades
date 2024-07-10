@@ -1,3 +1,5 @@
+"use client"
+
 import { Heading, Tabs } from "@pixelshades/ui/components"
 import { cn } from "@pixelshades/utils/styles"
 import * as runtime from "react/jsx-runtime"

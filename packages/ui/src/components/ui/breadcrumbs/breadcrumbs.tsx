@@ -56,24 +56,26 @@ export interface BreadcrumbProps extends AriaBreadcrumbProps {
 	separator?: ReactElement<HTMLElement>
 }
 
-const Breadcrumb = forwardRef(({ children, last, linkProps, className, separator, ...props }: BreadcrumbProps) => {
-	const context = useContext(BreadcrumbContext)
+export const Breadcrumb = forwardRef(
+	({ children, last, linkProps, className, separator, ...props }: BreadcrumbProps) => {
+		const context = useContext(BreadcrumbContext)
 
-	return (
-		<AriaBreadcrumb className={breadcrumb({ className })} {...props}>
-			<Link
-				{...linkProps}
-				variant={last ? "active" : "default"}
-				className={breadcrumbLink({ className: linkProps?.className })}
-			>
-				{children}
-			</Link>
-			<If condition={!last}>
-				<RenderSlot className={seperator()} item={separator ? separator : context.separator} />
-			</If>
-		</AriaBreadcrumb>
-	)
-})
+		return (
+			<AriaBreadcrumb className={breadcrumb({ className })} {...props}>
+				<Link
+					{...linkProps}
+					variant={last ? "active" : "default"}
+					className={breadcrumbLink({ className: linkProps?.className })}
+				>
+					{children}
+				</Link>
+				<If condition={!last}>
+					<RenderSlot className={seperator()} item={separator ? separator : context.separator} />
+				</If>
+			</AriaBreadcrumb>
+		)
+	},
+)
 
 export const Breadcrumbs = Object.assign(BreadcrumbsRoot, {
 	Item: Breadcrumb,
