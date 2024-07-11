@@ -9,5 +9,6 @@ dist
 .idea
 *.log
 .velite
+.next
 apps/docs/tsconfig.tsbuildinfo
 apps/docs/tsconfig.tsbuildinfo

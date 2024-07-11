@@ -18,9 +18,9 @@ export const generateExamplesIndex = (examplesDir = path.resolve("src/examples")
   export const Demos: Record<string, Demo> = {
   `
 
-	const sluggify = (str: string): string => str.replace(/[\s_]+/g, "-").replace(/[^\w-]+/g, "")
+	const sluggify = (str) => str.replace(/[\s_]+/g, "-").replace(/[^\w-]+/g, "")
 
-	const processDirectory = (dir: string, prefix = "") => {
+	const processDirectory = (dir, prefix = "") => {
 		const entries = fs.readdirSync(dir)
 
 		// biome-ignore lint/complexity/noForEach: <explanation>
@@ -64,3 +64,4 @@ export const generateExamplesIndex = (examplesDir = path.resolve("src/examples")
 
 	console.info("✅ Component examples generated!")
 }
+

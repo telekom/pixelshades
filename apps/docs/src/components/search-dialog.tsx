@@ -1,9 +1,12 @@
+"use client"
+
 import { Command, If } from "@pixelshades/ui/components"
-import { components, dvds_pages } from "#site/content"
 
 import Fuse from "fuse.js"
 
 import { useState } from "react"
+
+import { components } from "#site/content"
 
 import { IconComponents, IconNote } from "@pixelshades/ui/icons"
 
@@ -31,23 +34,7 @@ export const SearchDialog = ({ open, handleOpenChange }: SearchDialogProps) => {
 		shouldSort: true,
 	})
 
-	const dvdsSearch = new Fuse(dvds_pages, {
-		keys: [
-			"title",
-			{ name: "description", weight: 0.15 },
-			{ name: "toc.title", weight: 0.3 },
-			{ name: "toc.items.title", weight: 0.3 },
-		],
-		threshold: 0.4,
-		distance: 80,
-		includeScore: true,
-		includeMatches: true,
-		findAllMatches: false,
-		shouldSort: true,
-	})
-
 	const componentSearchResults = componentSearch.search(inputValue)
-	const dvdsSearchResults = dvdsSearch.search(inputValue)
 
 	return (
 		<Command.Dialog open={open} onOpenChange={handleOnOpen}>
@@ -62,8 +49,8 @@ export const SearchDialog = ({ open, handleOpenChange }: SearchDialogProps) => {
 										<IconComponents className="size-4 text-foreground" />
 									</div>
 								}
-								key={value.slug}
-								href={`/docs/components/${value.slug}`}
+								key={value.path}
+								href={value.permalink}
 								title={value.title}
 								description={value.description}
 							/>
@@ -77,33 +64,7 @@ export const SearchDialog = ({ open, handleOpenChange }: SearchDialogProps) => {
 									</div>
 								}
 								key={value.refIndex}
-								href={`/docs/components/${value.item.slug}`}
-								title={value.item.title}
-								description={value.item.description}
-							/>
-						))}
-					</If>
-				</Command.Group>
-				<Command.Group heading="DVDS CLI Tool">
-					<If
-						condition={dvdsSearchResults.length > 0}
-						fallback={dvds_pages.map((value) => (
-							<Command.Item
-								key={value.slug}
-								before={
-									<div className="rounded-md border border-border bg-subtle p-2">
-										<IconNote className="size-4" />
-									</div>
-								}
-								title={value.title}
-								description={value.description}
-							/>
-						))}
-					>
-						{dvdsSearchResults.map((value) => (
-							<Command.Item
-								key={value.refIndex}
-								href={`/docs/dvds-cli/${value.item.slug}`}
+								href={value.item.permalink}
 								title={value.item.title}
 								description={value.item.description}
 							/>

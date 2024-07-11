@@ -1,4 +1,5 @@
-import { Alert, Button } from "@pixelshades/ui/components"
+import { Button } from "@pixelshades/ui/components"
+import { Alert } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
