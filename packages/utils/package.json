@@ -12,9 +12,7 @@
 	},
 	"dependencies": {
 		"@radix-ui/react-slot": "1.1.0",
-		"@pixelshades/cn": "workspace:*",
-		"clsx": "^2.1.1",
-		"tailwind-merge": "2.4.0"
+		"@pixelshades/cn": "workspace:*"
 	},
 	"peerDependencies": {
 		"react": ">18.0.0",
