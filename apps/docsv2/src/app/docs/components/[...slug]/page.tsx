@@ -51,7 +51,7 @@ export default function ComponentPage({ params }: PageProps) {
 	return (
 		<HeadingLevel>
 			<main
-				className={cn("relative pt-layout-sm pb-layout-lg lg:gap-layout-sm", {
+				className={cn("relative pb-layout-md lg:gap-layout-sm", {
 					"xl:grid xl:grid-cols-[1fr_220px]": component.toc.length > 0,
 				})}
 			>
@@ -111,7 +111,7 @@ export default function ComponentPage({ params }: PageProps) {
 							<Tab id="props">Props</Tab>
 						</TabsList>
 
-						<TabPanel id="docs" className={cn("relative grid w-full grid-cols-12 gap-layout-sm")}>
+						<TabPanel id="docs" className="w-full">
 							<div className="col-span-12 w-full md:col-span-9">
 								<MDXContent code={component.content} />
 								{/* <PagerButtons permalink={component.permalink} /> */}
@@ -122,7 +122,7 @@ export default function ComponentPage({ params }: PageProps) {
 					</Tabs.Panel> */}
 					</Tabs>
 				</div>
-				<div className="sticky top-14 max-h-screen overflow-y-auto">
+				<div className="sticky top-14 hidden max-h-screen overflow-y-auto xl:block">
 					<div className="pt-lg pb-layout-md">
 						<TableOfContents toc={component.toc} />
 					</div>
