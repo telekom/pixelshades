@@ -16,8 +16,8 @@ import {
 	Typography,
 } from "@pixelshades/ui/components"
 
-import { IconBrandAdobe, IconBrandGithub } from "@pixelshades/ui/icons"
 import { cn } from "@pixelshades/cn"
+import { IconBrandAdobe, IconBrandGithub } from "@pixelshades/ui/icons"
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { MDXContent } from "~/components/mdx-content"
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export const generateStaticParams = async () => {
 	const pages = components.map((page) => ({
-		slug: page.breadcrumbs.map((crumb) => crumb.crumb),
+		slug: page.breadcrumbs.slice(1).map((crumb) => crumb.crumb),
 	}))
 
 	return pages

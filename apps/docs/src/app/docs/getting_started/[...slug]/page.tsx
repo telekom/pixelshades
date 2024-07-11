@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export const generateStaticParams = async () => {
 	const pages = general_pages.map((page) => ({
-		slug: page.breadcrumbs.map((crumb) => crumb.crumb),
+		slug: page.breadcrumbs.slice(1).map((crumb) => crumb.crumb),
 	}))
 
 	return pages
