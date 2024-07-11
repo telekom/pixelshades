@@ -1,4 +1,6 @@
 import {
+	Breadcrumb,
+	Breadcrumbs,
 	DataList,
 	DataListItem,
 	DataListLabel,
@@ -51,14 +53,28 @@ export default function ComponentPage({ params }: PageProps) {
 	return (
 		<HeadingLevel>
 			<main
-				className={cn("relative pb-layout-md lg:gap-layout-sm", {
+				className={cn("relative pb-layout-md lg:gap-layout-lg", {
 					"xl:grid xl:grid-cols-[1fr_220px]": component.toc.length > 0,
 				})}
 			>
-				<div className="w-full min-w-0">
-					<Heading className="mb-lg">{component.title}</Heading>
+				<div className="w-full min-w-0 space-y-layout-sm pt-layout-sm">
+					<Breadcrumbs>
+						{component.breadcrumbs.map((breadcrumb, index) => (
+							<Breadcrumb
+								key={index}
+								linkProps={{
+									href: breadcrumb.url,
+								}}
+							>
+								{breadcrumb.name}
+							</Breadcrumb>
+						))}
+					</Breadcrumbs>
+					<div>
+						<Heading className="mb-lg">{component.title}</Heading>
 
-					<Typography className="text-subtle-foreground">{component.description}</Typography>
+						<Typography className="text-subtle-foreground">{component.description}</Typography>
+					</div>
 
 					<div className="my-layout-md">
 						<DataList>
@@ -123,7 +139,7 @@ export default function ComponentPage({ params }: PageProps) {
 					</Tabs>
 				</div>
 				<div className="sticky top-14 hidden max-h-screen overflow-y-auto xl:block">
-					<div className="pt-lg pb-layout-md">
+					<div className="pt-layout-sm pb-layout-md text-sm">
 						<TableOfContents toc={component.toc} />
 					</div>
 				</div>

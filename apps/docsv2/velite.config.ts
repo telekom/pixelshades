@@ -25,13 +25,19 @@ export default defineConfig({
 					path: s.path(),
 				})
 				.transform((data) => {
-					const breadcrumbs = data.path.split("/")
+					const breadcrumbs = data.path.split("/").map((crumb, index, array) => {
+						return {
+							name: beautifyObjectName(crumb),
+							crumb: crumb,
+							url: `/docs/${array.slice(0, index + 1).join("/")}`,
+						}
+					})
 
 					return {
 						...data,
 						permalink: `/docs/${data.path}`,
 						breadcrumbs,
-						title: beautifyObjectName(breadcrumbs[breadcrumbs.length - 1]),
+						title: breadcrumbs[breadcrumbs.length - 1].name,
 					}
 				}),
 		},

@@ -1,5 +1,5 @@
 import { DocsSidebar } from "~/components/navigation/docs-sidebar"
-import { beautifyObjectName } from "~/lib/utils"
+import { SearchDialog } from "~/components/search-dialog"
 import type { Category, DocsNav, Item, SubCategory } from "~/types/docs-nav"
 import { type Components, components } from "#site/content"
 
@@ -26,11 +26,13 @@ function convertToDocsNav(components: Components[]): DocsNav {
 
 			if (i === 0) {
 				// Top level category
-				let category = currentLevel.find((cat): cat is Category => "slug" in cat && cat.slug === breadcrumb)
+				let category = currentLevel.find(
+					(cat): cat is Category => "slug" in cat && cat.slug === breadcrumb.crumb,
+				)
 				if (!category) {
 					category = {
-						title: beautifyObjectName(breadcrumb),
-						slug: breadcrumb,
+						title: breadcrumb.name,
+						slug: breadcrumb.crumb,
 						items: [],
 					}
 					currentLevel.push(category)
@@ -42,12 +44,12 @@ function convertToDocsNav(components: Components[]): DocsNav {
 			} else {
 				// Intermediate levels: create or find subcategory
 				let subCategory = currentLevel.find(
-					(subCat): subCat is SubCategory => "items" in subCat && subCat.slug === breadcrumb,
+					(subCat): subCat is SubCategory => "items" in subCat && subCat.slug === breadcrumb.crumb,
 				)
 				if (!subCategory) {
 					subCategory = {
-						title: beautifyObjectName(breadcrumb),
-						slug: breadcrumb,
+						title: breadcrumb.name,
+						slug: breadcrumb.crumb,
 						items: [],
 					}
 					currentLevel.push(subCategory)
@@ -68,6 +70,7 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
 			<div className="container items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-lg">
 				<aside className="hidden space-y-md pt-layout-sm md:sticky md:top-14 md:block">
 					{/* <SearchDocs /> */}
+					<SearchDialog />
 					<div className="h-screen overflow-y-auto pb-layout-sm">
 						<DocsSidebar items={sidebarItems} />
 					</div>
