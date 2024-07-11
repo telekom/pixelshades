@@ -6,7 +6,7 @@
 
 import { inputVariants } from "@pixelshades/styles/components/input"
 import { forwardRef } from "@pixelshades/utils/jsx"
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/cn"
 import { TextArea as AriaTextArea, type TextAreaProps as AriaTextAreaProps } from "react-aria-components"
 
 import type { VariantProps } from "tailwind-variants"

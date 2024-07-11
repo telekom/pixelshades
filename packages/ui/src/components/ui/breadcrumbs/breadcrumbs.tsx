@@ -7,8 +7,9 @@
 import type {
 	BreadcrumbProps as AriaBreadcrumbProps,
 	BreadcrumbsProps as AriaBreadcrumbsProps,
+	LinkProps as AriaLinkProps,
 } from "react-aria-components"
-import { Breadcrumb as AriaBreadcrumb, Breadcrumbs as AriaBreadcrumbs } from "react-aria-components"
+import { Breadcrumb as AriaBreadcrumb, Breadcrumbs as AriaBreadcrumbs, Link as AriaLink } from "react-aria-components"
 
 import { breadcrumbsVariants } from "@pixelshades/styles/components/breadcrumbs"
 import { RenderSlot, forwardRef } from "@pixelshades/utils/jsx"
@@ -16,7 +17,6 @@ import { IconChevronRight } from "@tabler/icons-react"
 import type React from "react"
 import { type ReactElement, createContext, useContext } from "react"
 import { If } from "../../utils"
-import { Link, type LinkProps } from "../link"
 
 type BreadcrumbContext = {
 	separator: ReactElement<HTMLElement>
@@ -50,27 +50,22 @@ const BreadcrumbsRoot = forwardRef(<T extends object>({ className, separator, ..
 })
 
 export interface BreadcrumbProps extends AriaBreadcrumbProps {
-	last?: boolean
 	className?: string
-	linkProps?: LinkProps
+	linkProps?: AriaLinkProps & {
+		className?: string
+	}
 	separator?: ReactElement<HTMLElement>
 }
 
-const Breadcrumb = forwardRef(({ children, last, linkProps, className, separator, ...props }: BreadcrumbProps) => {
+export const Breadcrumb = forwardRef(({ children, linkProps, className, separator, ...props }: BreadcrumbProps) => {
 	const context = useContext(BreadcrumbContext)
 
 	return (
 		<AriaBreadcrumb className={breadcrumb({ className })} {...props}>
-			<Link
-				{...linkProps}
-				variant={last ? "active" : "default"}
-				className={breadcrumbLink({ className: linkProps?.className })}
-			>
+			<AriaLink {...linkProps} className={breadcrumbLink({ className: linkProps?.className })}>
 				{children}
-			</Link>
-			<If condition={!last}>
-				<RenderSlot className={seperator()} item={separator ? separator : context.separator} />
-			</If>
+			</AriaLink>
+			<RenderSlot className={seperator()} item={separator ? separator : context.separator} />
 		</AriaBreadcrumb>
 	)
 })

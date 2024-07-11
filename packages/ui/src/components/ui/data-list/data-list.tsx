@@ -36,9 +36,9 @@ const UnstyledDataListValue = forwardRef(({ ...props }: DataListValueProps) => {
 })
 
 const DataListRoot = withProvider(UnstyledDataList, "root")
-const DataListItem = withContext(UnstyledDataListItem, "item")
-const DataListLabel = withContext(UnstyledDataListLabel, "label")
-const DataListValue = withContext(UnstyledDataListValue, "value")
+export const DataListItem = withContext(UnstyledDataListItem, "item")
+export const DataListLabel = withContext(UnstyledDataListLabel, "label")
+export const DataListValue = withContext(UnstyledDataListValue, "value")
 
 export const DataList = Object.assign(DataListRoot, {
 	Item: DataListItem,

@@ -9,7 +9,7 @@ import { DateField as AriaDateField, DateInput, DateSegment } from "react-aria-c
 
 import { dateFieldVariants } from "@pixelshades/styles/components/date-field"
 import { inputVariants } from "@pixelshades/styles/components/input"
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/cn"
 import type { ReactNode } from "react"
 import { FormDescription, FormFieldError } from "../form"
 import { type FormComponentLabelProps, Label } from "../label"

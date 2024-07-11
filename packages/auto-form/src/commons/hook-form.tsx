@@ -1,5 +1,5 @@
 import { Label } from "@pixelshades/ui/components"
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/cn"
 import { Slot } from "@radix-ui/react-slot"
 import * as React from "react"
 import {

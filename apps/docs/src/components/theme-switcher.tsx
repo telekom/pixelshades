@@ -4,7 +4,7 @@ import { Button } from "@pixelshades/ui/components"
 import { IconMoonStars, IconSun } from "@pixelshades/ui/icons"
 import { useTheme } from "~/provider/theme-provider"
 
-function ThemeSwitch() {
+export function ThemeSwitch() {
 	const { computedTheme, setTheme } = useTheme()
 
 	const toggleTheme = () => {
@@ -18,5 +18,3 @@ function ThemeSwitch() {
 		</Button>
 	)
 }
-
-export default ThemeSwitch

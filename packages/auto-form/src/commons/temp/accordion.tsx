@@ -1,7 +1,7 @@
 "use client"
 
 import { IconChevronDown } from "@pixelshades/ui/icons"
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/cn"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
 import * as React from "react"
 

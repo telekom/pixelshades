@@ -6,7 +6,7 @@
 
 import { baseInputSizes } from "@pixelshades/styles/utils"
 import { forwardRef } from "@pixelshades/utils/jsx"
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/cn"
 import type { ReactNode } from "react"
 import type { NumberFieldProps as AriaNumberFieldProps } from "react-aria-components"
 import { Input as AriaInput, NumberField as AriaNumberField } from "react-aria-components"

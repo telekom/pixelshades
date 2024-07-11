@@ -6,7 +6,7 @@ export default function Example() {
 		<Breadcrumbs separator={<IconArrowMoveRight className="size-4 text-subtle" />}>
 			<Breadcrumbs.Item>Products</Breadcrumbs.Item>
 			<Breadcrumbs.Item>Product</Breadcrumbs.Item>
-			<Breadcrumbs.Item last>Product A</Breadcrumbs.Item>
+			<Breadcrumbs.Item>Product A</Breadcrumbs.Item>
 		</Breadcrumbs>
 	)
 }

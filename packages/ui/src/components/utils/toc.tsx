@@ -17,7 +17,7 @@ interface TocProps {
 	toc: TocItem[]
 }
 
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/cn"
 import { useMounted } from "../../hooks"
 import { Heading } from "../ui/heading/heading"
 

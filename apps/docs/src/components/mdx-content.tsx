@@ -1,10 +1,10 @@
+"use client"
+
 import { Heading, Tabs } from "@pixelshades/ui/components"
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/cn"
 import * as runtime from "react/jsx-runtime"
-import type { NpmCommands } from "~/lib/rehype/types/units"
-import { ColorPreview } from "./color-preview"
 import { ComponentPreview } from "./component-preview"
-import { CopyButton, CopyNpmCommandButton } from "./copy-button"
+import { ColorPreview } from "./temp/color-preview"
 
 interface MdxProps {
 	code: string
@@ -45,10 +45,6 @@ const defaultComponents = {
 	pre: ({
 		className,
 		__rawString__,
-		__npmCommand__,
-		__yarnCommand__,
-		__pnpmCommand__,
-		__bunCommand__,
 		__withMeta__,
 		__src__,
 		...props
@@ -56,7 +52,7 @@ const defaultComponents = {
 		__rawString__?: string
 		__withMeta__?: boolean
 		__src__?: string
-	} & NpmCommands) => {
+	}) => {
 		return (
 			<div className="relative h-full w-full">
 				<pre
@@ -66,24 +62,6 @@ const defaultComponents = {
 					)}
 					{...props}
 				/>
-				{__rawString__ && !__npmCommand__ && (
-					<CopyButton
-						value={__rawString__}
-						src={__src__}
-						className={cn("absolute top-4 right-4", __withMeta__ && "top-16")}
-					/>
-				)}
-				{__npmCommand__ && __yarnCommand__ && __pnpmCommand__ && __bunCommand__ && (
-					<CopyNpmCommandButton
-						commands={{
-							__npmCommand__,
-							__yarnCommand__,
-							__pnpmCommand__,
-							__bunCommand__,
-						}}
-						className={cn("absolute top-4 right-4", __withMeta__ && "top-16")}
-					/>
-				)}
 			</div>
 		)
 	},

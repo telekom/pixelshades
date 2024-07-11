@@ -4,7 +4,7 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/cn"
 import * as React from "react"
 
 const CardRoot = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(

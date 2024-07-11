@@ -1,31 +1,29 @@
-import { Button, Typography } from "@pixelshades/ui/components"
+import { Button, Link, Typography } from "@pixelshades/ui/components"
 import { IconArrowLeft, IconArrowRight } from "@pixelshades/ui/icons"
-import { Link } from "@tanstack/react-router"
-import { getNavbarItems } from "~/config/navbar-items"
+import { components } from "#site/content"
 
 type PagerButtonsProps = {
 	permalink: string
 }
-const mergedComponents = getNavbarItems()
 
 function getNextComponentByPermalink(permalink: string) {
-	const currentComponentIndex = mergedComponents.findIndex((component) => component.permalink === permalink)
+	const currentComponentIndex = components.findIndex((component) => component.permalink === permalink)
 
 	if (currentComponentIndex === -1) {
 		return null
 	}
 
-	return mergedComponents[currentComponentIndex + 1]
+	return components[currentComponentIndex + 1]
 }
 
 function getPrevComponentByPermalink(permalink: string) {
-	const currentComponentIndex = mergedComponents.findIndex((component) => component.permalink === permalink)
+	const currentComponentIndex = components.findIndex((component) => component.permalink === permalink)
 
 	if (currentComponentIndex === -1) {
 		return null
 	}
 
-	return mergedComponents[currentComponentIndex - 1]
+	return components[currentComponentIndex - 1]
 }
 
 const getComponentPath = (permalink: string) => {
@@ -66,6 +64,7 @@ const getSuccessorCategorySlug = ({
 export const PagerButtons = ({ permalink }: PagerButtonsProps) => {
 	const nextComponent = getNextComponentByPermalink(permalink)
 	const prevComponent = getPrevComponentByPermalink(permalink)
+
 	const prevCategoryTitle = getSuccessorCategorySlug({
 		permalinkCurrentComponent: permalink,
 		permalinkSuccessorComponent: prevComponent?.permalink,
@@ -77,13 +76,7 @@ export const PagerButtons = ({ permalink }: PagerButtonsProps) => {
 	return (
 		<div className="flex flex-col gap-layout-xs md:flex-row">
 			{prevComponent && (
-				<Link
-					className="h-full w-full"
-					aria-label="Previous Page"
-					to={getComponentPath(prevComponent.permalink)}
-					search={{ tab: "docs" }}
-					params={{ slug: prevComponent.slug }}
-				>
+				<Link className="h-full w-full" aria-label="Previous Page" href={prevComponent.permalink}>
 					<Button className="flex h-full w-full flex-row justify-between p-md" variant="outline" size="lg">
 						<IconArrowLeft className="size-3" />
 						<div className="flex flex-col items-end">
@@ -96,13 +89,7 @@ export const PagerButtons = ({ permalink }: PagerButtonsProps) => {
 				</Link>
 			)}
 			{nextComponent && (
-				<Link
-					className="h-full w-full"
-					aria-label="Next Page"
-					to={getComponentPath(nextComponent.permalink)}
-					search={{ tab: "docs" }}
-					params={{ slug: nextComponent.slug }}
-				>
+				<Link className="h-full w-full" aria-label="Next Page" href={nextComponent.permalink}>
 					<Button
 						aria-label="Next Page"
 						className="flex h-full w-full flex-row justify-between p-md"

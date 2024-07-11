@@ -1,3 +1,5 @@
+"use client"
+
 // SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
 //
 // SPDX-License-Identifier: Apache-2.0
@@ -5,7 +7,8 @@
 import type { ComponentProps, ElementType } from "react"
 import type { VariantProps } from "tailwind-variants"
 import { forwardRef } from "../jsx/jsx"
-import { cn } from "./cn"
+
+import { cn } from "@pixelshades/cn"
 
 type Recipe = (props: any) => any
 

@@ -9,7 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 
 import { toast } from "@pixelshades/toast"
 import { Button, Form } from "@pixelshades/ui/components"
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/cn"
 import { FormProvider } from "./commons/hook-form"
 import AutoFormObject from "./fields/object"
 import type { Dependency, FieldConfig, ZodObjectOrWrapped } from "./types"

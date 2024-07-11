@@ -1,3 +1,5 @@
+"use client"
+
 import { tv } from "tailwind-variants"
 
 export const focusRing = tv({

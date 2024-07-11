@@ -1,0 +1,71 @@
+---
+title: Installation
+description: How to install DV UI
+
+slug: installation
+
+sortingIndex: 2
+---
+
+## Requirements
+
+To be able to use Pixelshades you need to install Tailwind CSS. 
+To do so please follow the instructions on the [Tailwind CSS docs](https://tailwindcss.com/docs/installation).
+
+## Installation
+
+### 1. Create a Next.js App
+
+```bash
+bun create-next-app my-app
+cd my-app
+```
+
+
+### 2. Install Pixelshades Components & Styles
+
+```bash
+bun add @pixelshades/ui @pixelshades/styles
+```
+
+### 3. Extend Tailwind Config
+
+After adding Pixelshades components and styles, extend your Tailwind CSS configuration by importing the pixelShadesPlugin and adding it to your `tailwind.config.js/.ts` file. 
+
+```ts
+// tailwind.config.js
+import type { Config } from "tailwindcss"
+
+import { pixelShadesPlugin } from "@pixelshades/ui/tailwind"
+
+const config: Config = {
+	darkMode: ["class"],
+	content: [
+		"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+		"node_modules/@pixelshades/styles/dist/**/*.{mjs,js}",
+	],
+	theme: {
+		extend: {},
+	},
+	plugins: [pixelShadesPlugin],
+}
+
+export default config
+
+```
+
+### 4.  (Optional) Add Design Tokens to your global css file
+
+Replace the content of your global css file with the following:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {}
+}
+```

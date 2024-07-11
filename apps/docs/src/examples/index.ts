@@ -13,7 +13,7 @@
     "alert/preview": {
 	  component: lazy(() => import("~/examples/alert/preview.tsx")),
 	  code: `import { Button } from "@pixelshades/ui/components"
-import { Alert } from "@pixelshades/ui/components/ui"
+import { Alert } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -192,7 +192,7 @@ export function Example() {
 		<Breadcrumbs separator={<IconArrowMoveRight className="size-4 text-subtle" />}>
 			<Breadcrumbs.Item>Products</Breadcrumbs.Item>
 			<Breadcrumbs.Item>Product</Breadcrumbs.Item>
-			<Breadcrumbs.Item last>Product A</Breadcrumbs.Item>
+			<Breadcrumbs.Item>Product A</Breadcrumbs.Item>
 		</Breadcrumbs>
 	)
 }
@@ -207,7 +207,7 @@ export function Example() {
 		<Breadcrumbs>
 			<Breadcrumbs.Item>Products</Breadcrumbs.Item>
 			<Breadcrumbs.Item>Product</Breadcrumbs.Item>
-			<Breadcrumbs.Item last>Product A</Breadcrumbs.Item>
+			<Breadcrumbs.Item>Product A</Breadcrumbs.Item>
 		</Breadcrumbs>
 	)
 }
@@ -259,49 +259,6 @@ export function Example() {
 }
 `,
   },
-  "button/ghost": {
-	  component: lazy(() => import("~/examples/button/ghost.tsx")),
-	  code: `import { Button } from "@pixelshades/ui/components"
-
-export function Example() {
-	return <Button variant="ghost">Button</Button>
-}
-`,
-  },
-  "button/icon": {
-	  component: lazy(() => import("~/examples/button/icon.tsx")),
-	  code: `import { Button } from "@pixelshades/ui/components"
-import { IconAlarm } from "@pixelshades/ui/icons"
-
-export function Example() {
-	return (
-		<div className="flex flex-row flex-wrap gap-md">
-			<Button variant="icon" size="icon" color="default">
-				<IconAlarm />
-			</Button>
-			<Button variant="icon" size="icon" color="primary">
-				<IconAlarm />
-			</Button>
-			<Button variant="icon" size="icon" color="destructive">
-				<IconAlarm />
-			</Button>
-			<Button variant="icon" size="icon" color="warning">
-				<IconAlarm />
-			</Button>
-		</div>
-	)
-}
-`,
-  },
-  "button/link": {
-	  component: lazy(() => import("~/examples/button/link.tsx")),
-	  code: `import { Button } from "@pixelshades/ui/components"
-
-export function Example() {
-	return <Button variant="link">Button</Button>
-}
-`,
-  },
   "button/loading": {
 	  component: lazy(() => import("~/examples/button/loading.tsx")),
 	  code: `import { Button } from "@pixelshades/ui/components"
@@ -313,15 +270,6 @@ export function Example() {
 			Button
 		</Button>
 	)
-}
-`,
-  },
-  "button/outline": {
-	  component: lazy(() => import("~/examples/button/outline.tsx")),
-	  code: `import { Button } from "@pixelshades/ui/components"
-
-export function Example() {
-	return <Button variant="outline">Button</Button>
 }
 `,
   },
@@ -350,6 +298,27 @@ export function Example() {
 			<Button size="sm">SM Button</Button>
 			<Button size="md">MD Button</Button>
 			<Button size="lg">LG Button</Button>
+		</div>
+	)
+}
+`,
+  },
+  "button/variants": {
+	  component: lazy(() => import("~/examples/button/variants.tsx")),
+	  code: `import { Button } from "@pixelshades/ui/components"
+import { IconShip } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return (
+		<div className="flex flex-row flex-wrap gap-md">
+			<Button>Default</Button>
+			<Button variant="link">Link Button</Button>
+			<Button variant="solid">Solid Button</Button>
+			<Button variant="outline">Outlined Button</Button>
+			<Button variant="ghost">Ghost Button</Button>
+			<Button variant="icon" size="icon">
+				<IconShip />
+			</Button>
 		</div>
 	)
 }
