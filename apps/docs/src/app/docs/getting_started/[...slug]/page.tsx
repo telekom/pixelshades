@@ -1,6 +1,7 @@
 import { Breadcrumb, Breadcrumbs, Heading, HeadingLevel, Typography } from "@pixelshades/ui/components"
 
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/cn"
+
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { MDXContent } from "~/components/mdx-content"
@@ -24,6 +25,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 		title: doc.title,
 		description: doc.description,
 	}
+}
+
+export const generateStaticParams = async () => {
+	const pages = general_pages.map((page) => ({
+		slug: page.breadcrumbs.map((crumb) => crumb.crumb),
+	}))
+
+	return pages
 }
 
 export default function ComponentPage({ params }: PageProps) {

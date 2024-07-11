@@ -1,7 +1,8 @@
 "use client"
 
+import { cn } from "@pixelshades/cn"
 import { Tabs } from "@pixelshades/ui/components"
-import { cn } from "@pixelshades/utils/styles"
+
 import type * as React from "react"
 import { Demos } from "../examples"
 

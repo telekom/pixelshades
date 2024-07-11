@@ -1,6 +1,6 @@
 "use client"
 
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/cn"
 import { useEffect, useMemo, useState } from "react"
 import { useMounted } from "../hooks/use-mounted"
 

@@ -2,13 +2,12 @@
 
 import { Command, If } from "@pixelshades/ui/components"
 
-import Fuse from "fuse.js"
 
 import { useState } from "react"
 
 import { components } from "#site/content"
 
-import { IconComponents, IconNote } from "@pixelshades/ui/icons"
+import { IconComponents } from "@pixelshades/ui/icons"
 
 type SearchDialogProps = {
 	open?: boolean
@@ -25,23 +24,14 @@ export const SearchDialog = ({ open, handleOpenChange }: SearchDialogProps) => {
 		}
 	}
 
-	const componentSearch = new Fuse(components, {
-		keys: ["title", { name: "description", weight: 0.15 }, { name: "toc", weight: 0.3 }],
-		threshold: 0.4,
-		distance: 80,
-		includeScore: true,
-		includeMatches: true,
-		shouldSort: true,
-	})
 
-	const componentSearchResults = componentSearch.search(inputValue)
 
 	return (
 		<Command.Dialog open={open} onOpenChange={handleOnOpen}>
 			<Command searchField={<Command.Search />}>
 				<Command.Group heading="Components">
 					<If
-						condition={componentSearchResults.length > 0 || inputValue.length !== 0}
+						condition={components.length > 0 || inputValue.length !== 0}
 						fallback={components.map((value) => (
 							<Command.Item
 								before={
@@ -56,17 +46,17 @@ export const SearchDialog = ({ open, handleOpenChange }: SearchDialogProps) => {
 							/>
 						))}
 					>
-						{componentSearchResults.map((value) => (
+						{components.map((value) => (
 							<Command.Item
 								before={
 									<div className="rounded-md border border-border bg-subtle p-2">
 										<IconComponents className="size-4" />
 									</div>
 								}
-								key={value.refIndex}
-								href={value.item.permalink}
-								title={value.item.title}
-								description={value.item.description}
+								key={value.path}
+								href={value.permalink}
+								title={value.title}
+								description={value.description}
 							/>
 						))}
 					</If>

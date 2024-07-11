@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/cn"
 import type { Meta, StoryObj } from "@storybook/react"
 import { Inter } from "next/font/google"
 import { FileTrigger } from "../file-trigger"

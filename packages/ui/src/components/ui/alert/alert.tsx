@@ -4,7 +4,7 @@ import type { VariantProps } from "tailwind-variants"
 
 import { alertVariants } from "@pixelshades/styles/components/alert"
 import { RenderSlot } from "@pixelshades/utils/jsx"
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/cn"
 import { forwardRef, useCallback, useState } from "react"
 import type { PressEvent } from "react-aria"
 import { IconInfoCircle } from "../../../icons"

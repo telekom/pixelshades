@@ -1,7 +1,7 @@
 "use client"
 
 import { Heading, Tabs } from "@pixelshades/ui/components"
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/cn"
 import * as runtime from "react/jsx-runtime"
 import { ComponentPreview } from "./component-preview"
 import { ColorPreview } from "./temp/color-preview"
@@ -45,10 +45,6 @@ const defaultComponents = {
 	pre: ({
 		className,
 		__rawString__,
-		__npmCommand__,
-		__yarnCommand__,
-		__pnpmCommand__,
-		__bunCommand__,
 		__withMeta__,
 		__src__,
 		...props

@@ -14,7 +14,7 @@ import {
 
 import { labelVariants } from "@pixelshades/styles/components/label"
 import { radioGroupVariants } from "@pixelshades/styles/components/radio-group"
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/cn"
 import { IconCircle } from "@tabler/icons-react"
 import type { ReactNode } from "react"
 import { If } from "../../utils"

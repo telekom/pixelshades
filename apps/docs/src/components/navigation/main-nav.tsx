@@ -1,4 +1,4 @@
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/cn"
 import { siteConfig } from "~/config/site"
 
 import { Link } from "@pixelshades/ui/components"

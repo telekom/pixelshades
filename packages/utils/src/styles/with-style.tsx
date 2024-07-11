@@ -7,7 +7,8 @@
 import type { ComponentProps, ElementType } from "react"
 import type { VariantProps } from "tailwind-variants"
 import { forwardRef } from "../jsx/jsx"
-import { cn } from "./cn.shared-runtime"
+
+import { cn } from "@pixelshades/cn"
 
 type Recipe = (props: any) => any
 

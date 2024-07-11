@@ -1,4 +1,4 @@
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/cn"
 import { type useForm, useFormContext } from "react-hook-form"
 import * as z from "zod"
 import { FormField } from "../commons/hook-form"

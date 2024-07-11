@@ -1,12 +1,12 @@
 "use client"
 
-import { cn } from "@pixelshades/utils/styles"
-import { ChevronRightIcon } from "lucide-react"
+import { cn } from "@pixelshades/cn"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import React, { useEffect } from "react"
 import type { DocsNav, Category as TCategory } from "~/types/docs-nav"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../temp/collapsible"
+import { IconChevronRight } from "@pixelshades/ui/icons"
 
 export interface DocsSidebarProps {
 	items: DocsNav
@@ -38,7 +38,7 @@ const Category = ({ title, slug, items, pathname }: CategoryProps) => {
 	return (
 		<Collapsible open={open} onOpenChange={setOpen}>
 			<CollapsibleTrigger className="flex items-center space-x-md [&[data-state=open]>svg]:rotate-90">
-				<ChevronRightIcon className="size-4 shrink-0 transition-transform duration-200" />
+				<IconChevronRight className="size-4 shrink-0 transition-transform duration-200" />
 				<h4 className="rounded-md font-semibold text-sm">{title}</h4>
 			</CollapsibleTrigger>
 			<CollapsibleContent asChild className="space-y-md pt-md">

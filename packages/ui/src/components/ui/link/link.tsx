@@ -7,7 +7,7 @@
 import { Link as AriaLink, type LinkProps as AriaLinkProps } from "react-aria-components"
 
 import { linkVariants } from "@pixelshades/styles/components/link"
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/cn"
 import type { VariantProps } from "tailwind-variants"
 
 export interface LinkProps extends AriaLinkProps, VariantProps<typeof linkVariants> {

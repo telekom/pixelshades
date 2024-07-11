@@ -7,12 +7,14 @@ if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
 	await build({ watch: isDev, clean: !isDev })
 }
 
-const { generateExamplesIndex } = await import("./generate-examples.mjs")
+if (isDev || isBuild) {
+	const { generateExamplesIndex } = await import("./generate-examples.mjs")
 
-generateExamplesIndex()
-
+	generateExamplesIndex()
+}
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	output: "export",
 	transpilePackages: ["@pixelshades/ui", "@pixelshades/styles", "@pixelshades/utils"],
 }
 

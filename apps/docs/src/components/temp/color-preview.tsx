@@ -1,4 +1,4 @@
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/cn"
 
 export const ColorPreview = ({
 	className,

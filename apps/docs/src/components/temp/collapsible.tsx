@@ -1,6 +1,6 @@
 "use client"
 
-import { cn } from "@pixelshades/utils/styles"
+import { cn } from "@pixelshades/cn"
 import * as CollapsiblePrimitive from "@radix-ui/react-collapsible"
 import React from "react"
 

@@ -12,3 +12,5 @@ dist
 .next
 apps/docs/tsconfig.tsbuildinfo
 apps/docs/tsconfig.tsbuildinfo
+
+out
