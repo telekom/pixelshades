@@ -17,11 +17,11 @@ export const buttonGroupVariants = tv({
 		orientation: {
 			horizontal: {
 				buttonGroup: "flex-row",
-				base: "first:!rounded-r-none last:rounded-l-none [&:not(:first-child):not(:last-child)]:rounded-none [&:not(:first-child):not(:last-child)]:border-x-0",
+				base: "first:!rounded-r-none last:rounded-l-none [&:not(:first-child):not(:last-child)]:rounded-none [&:not(:first-child):not(:last-child)]:border-x-0 [&:nth-child(2):last-child]:border-l-0",
 			},
 			vertical: {
 				buttonGroup: "flex-col",
-				base: "first:!rounded-b-none last:rounded-t-none [&:not(:first-child):not(:last-child)]:rounded-none [&:not(:first-child):not(:last-child)]:border-y-0 w-full",
+				base: "first:!rounded-b-none last:rounded-t-none [&:not(:first-child):not(:last-child)]:rounded-none [&:not(:first-child):not(:last-child)]:border-y-0 [&:nth-child(2):last-child]:border-t-0 w-full",
 			},
 		},
 	},
