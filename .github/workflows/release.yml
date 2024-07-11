@@ -18,17 +18,13 @@ jobs:
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9.1.3
 
       - name: Install Dependencies
-        run: pnpm install
+        run: bun install
       - name: Build packages
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
-        run: pnpm run build --filter='./packages/*'
+        run: bun run build --filter='./packages/*'
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
