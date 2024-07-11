@@ -30,7 +30,6 @@ export function DocsSidebarNavItems({ items }: DocsSidebarNavItemsProps) {
 	return items?.length ? (
 		<div className="grid grid-flow-row auto-rows-max text-sm">
 			{items.map((item) =>
-				// biome-ignore lint/correctness/useJsxKeyInIterable: <explanation>
 				item.href && !item.disabled ? (
 					<Link
 						key={item.href}

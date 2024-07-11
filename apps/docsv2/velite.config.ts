@@ -42,18 +42,33 @@ export default defineConfig({
 				}),
 		},
 		general_pages: {
-			name: "GeneralPages",
-			pattern: "general/**/*.mdx",
+			name: "GettingStarted",
+			pattern: "getting_started/**/*.mdx",
 			schema: s
 				.object({
 					title: s.string().max(99),
 					description: s.string(),
-					slug: s.slug("docs"),
 					content: s.mdx(),
 					toc: s.toc(),
 					sortingIndex: s.number().optional(),
+					path: s.path(),
 				})
-				.transform((data) => ({ ...data, permalink: `/docs/${data.slug}` })),
+				.transform((data) => {
+					const breadcrumbs = data.path.split("/").map((crumb, index, array) => {
+						return {
+							name: beautifyObjectName(crumb),
+							crumb: crumb,
+							url: `/docs/${array.slice(0, index + 1).join("/")}`,
+						}
+					})
+
+					return {
+						...data,
+						permalink: `/docs/${data.path}`,
+						breadcrumbs,
+						title: breadcrumbs[breadcrumbs.length - 1].name,
+					}
+				}),
 		},
 	},
 	mdx: {

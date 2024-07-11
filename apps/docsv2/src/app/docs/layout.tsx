@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { DocsSidebar } from "~/components/navigation/docs-sidebar"
 import { SearchDialog } from "~/components/search-dialog"
 import type { Category, DocsNav, Item, SubCategory } from "~/types/docs-nav"
-import { type Components, components } from "#site/content"
+import { type Components, components, general_pages } from "#site/content"
 
 interface DocsLayoutProps {
 	children: React.ReactNode
@@ -71,7 +71,10 @@ function convertToDocsNav(components: Components[]): DocsNav {
 }
 
 export default function DocsLayout({ children }: DocsLayoutProps) {
-	const sidebarItems = convertToDocsNav(components)
+	const sidebarItems = convertToDocsNav([
+		...general_pages.sort((a, b) => (a.sortingIndex || 0) - (b.sortingIndex || 0)),
+		...components,
+	])
 
 	return (
 		<div className="min-h-[90vh]">

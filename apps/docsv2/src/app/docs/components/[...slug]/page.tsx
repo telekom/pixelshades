@@ -21,6 +21,7 @@ import { cn } from "@pixelshades/utils/styles"
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { MDXContent } from "~/components/mdx-content"
+import { PagerButtons } from "~/components/pager-buttons"
 import { TableOfContents } from "~/components/toc"
 import { components } from "#site/content"
 
@@ -130,7 +131,7 @@ export default function ComponentPage({ params }: PageProps) {
 						<TabPanel id="docs" className="w-full">
 							<div className="col-span-12 w-full md:col-span-9">
 								<MDXContent code={component.content} />
-								{/* <PagerButtons permalink={component.permalink} /> */}
+								<PagerButtons permalink={component.permalink} />
 							</div>
 						</TabPanel>
 						{/* <Tabs.Panel id="props" className="w-full">
