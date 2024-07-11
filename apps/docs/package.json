@@ -10,14 +10,15 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@pixelshades/styles": "workspace:*",
     "@pixelshades/cn": "workspace:*",
+    "@pixelshades/styles": "workspace:*",
     "@pixelshades/ui": "workspace:*",
     "@pixelshades/utils": "workspace:*",
     "@radix-ui/react-collapsible": "^1.1.0",
     "next": "14.2.5",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "safesight": "^0.7.3"
   },
   "devDependencies": {
     "@types/node": "^20.14.10",
