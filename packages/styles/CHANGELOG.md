@@ -1,5 +1,11 @@
 # @pixelshades/styles
 
+## 0.4.13
+
+### Patch Changes
+
+- 5edc863: Cleanup dep tree
+
 ## 0.4.12
 
 ### Patch Changes

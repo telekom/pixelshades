@@ -1,5 +1,15 @@
 # @pixelshades/utils
 
+## 2.1.3
+
+### Patch Changes
+
+- 5edc863: Cleanup dep tree
+- Updated dependencies [5edc863]
+  - @pixelshades/toast@0.0.2
+  - @pixelshades/ui@0.5.10
+  - @pixelshades/utils@0.1.3
+
 ## 2.1.2
 
 ### Patch Changes
