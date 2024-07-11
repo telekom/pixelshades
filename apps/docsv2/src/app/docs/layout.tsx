@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { DocsSidebar } from "~/components/navigation/docs-sidebar"
 import { SearchDialog } from "~/components/search-dialog"
 import type { Category, DocsNav, Item, SubCategory } from "~/types/docs-nav"
@@ -5,6 +6,13 @@ import { type Components, components } from "#site/content"
 
 interface DocsLayoutProps {
 	children: React.ReactNode
+}
+
+export const metadata: Metadata = {
+	title: {
+		template: "%s | Pixelshades",
+		default: "Pixelshades",
+	},
 }
 
 function convertToDocsNav(components: Components[]): DocsNav {

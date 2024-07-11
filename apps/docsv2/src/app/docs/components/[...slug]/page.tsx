@@ -31,7 +31,7 @@ interface PageProps {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-	const doc = components.find((component) => component.path === params.slug.join("/"))
+	const doc = components.find((component) => component.path === `components/${params.slug.join("/")}`)
 
 	if (!doc) {
 		return {}
