@@ -1824,6 +1824,15 @@ export function Example() {
 }
 `,
   },
+  "search-field/preview": {
+	  component: lazy(() => import("~/examples/search-field/preview.tsx")),
+	  code: `import { SearchField } from "../../../../../packages/ui/src/components/ui/search-field"
+
+export function Example() {
+	return <SearchField label="Projects" description="Search for a project" helperText="Helper Text" />
+}
+`,
+  },
   "select/preview": {
 	  component: lazy(() => import("~/examples/select/preview.tsx")),
 	  code: `import { Select } from "@pixelshades/ui/components"
