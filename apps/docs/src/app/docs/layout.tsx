@@ -82,7 +82,7 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
 				<aside className="hidden space-y-md pt-layout-sm md:sticky md:top-14 md:block">
 					{/* <SearchDocs /> */}
 					<SearchDialog />
-					<div className="h-screen overflow-y-auto pb-layout-sm">
+					<div className="h-[90vh] overflow-y-auto">
 						<DocsSidebar items={sidebarItems} />
 					</div>
 				</aside>

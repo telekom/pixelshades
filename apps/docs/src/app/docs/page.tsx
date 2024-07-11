@@ -1,3 +1,7 @@
+import { redirect } from "next/navigation"
+
 export default function Page() {
-	return <div>Page</div>
+	redirect("/docs/getting_started/introduction")
+
+	return <main className="pt-layout-sm">Page</main>
 }

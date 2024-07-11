@@ -17,7 +17,7 @@ To do so please follow the instructions on the [Tailwind CSS docs](https://tailw
 ### 1. Create a Next.js App
 
 ```bash
-npx create-next-app my-app
+bun create-next-app my-app
 cd my-app
 ```
 
@@ -25,7 +25,7 @@ cd my-app
 ### 2. Install Pixelshades Components & Styles
 
 ```bash
-npm install @pixelshades/ui @pixelshades/styles
+bun add @pixelshades/ui @pixelshades/styles
 ```
 
 ### 3. Extend Tailwind Config
@@ -43,7 +43,6 @@ const config: Config = {
 	content: [
 		"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
 		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-		"node_modules/@lemonsqueezy/wedges/dist/**/*.{js,ts,jsx,tsx}",
 		"node_modules/@pixelshades/styles/dist/**/*.{mjs,js}",
 	],
 	theme: {

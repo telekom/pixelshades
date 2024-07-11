@@ -1,12 +1,12 @@
 "use client"
 
 import { cn } from "@pixelshades/cn"
+import { IconChevronRight } from "@pixelshades/ui/icons"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import React, { useEffect } from "react"
 import type { DocsNav, Category as TCategory } from "~/types/docs-nav"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../temp/collapsible"
-import { IconChevronRight } from "@pixelshades/ui/icons"
 
 export interface DocsSidebarProps {
 	items: DocsNav
@@ -15,13 +15,17 @@ export interface DocsSidebarProps {
 export function DocsSidebar({ items }: DocsSidebarProps) {
 	const pathname = usePathname()
 
-	return items.length > 0 ? (
+	if (items.length === 0) {
+		return null
+	}
+
+	return (
 		<div className="w-full space-y-4 pt-4 pr-4 pb-10 text-sm">
 			{items.map((item, index) => (
 				<Category key={index} title={item.title} items={item.items} slug={item.slug} pathname={pathname} />
 			))}
 		</div>
-	) : null
+	)
 }
 
 interface CategoryProps extends TCategory {
@@ -90,7 +94,6 @@ const Category = ({ title, slug, items, pathname }: CategoryProps) => {
 												)
 											}
 
-											console.log(subItem)
 											return (
 												<li key={subIndex}>
 													<Link
