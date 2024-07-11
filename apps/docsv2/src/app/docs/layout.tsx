@@ -1,5 +1,4 @@
-import { DocsSidebar } from "~/components/docs-sidebar"
-
+import { DocsSidebar } from "~/components/navigation/docs-sidebar"
 import { beautifyObjectName } from "~/lib/utils"
 import type { Category, DocsNav, Item, SubCategory } from "~/types/docs-nav"
 import { type Components, components } from "#site/content"
@@ -18,7 +17,6 @@ function convertToDocsNav(components: Components[]): DocsNav {
 		const item: Item = {
 			title,
 			href: permalink,
-			label: description,
 		}
 
 		// Navigate through the breadcrumbs to place the item in the correct category/subcategory
@@ -66,9 +64,9 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
 	const sidebarItems = convertToDocsNav(components)
 
 	return (
-		<div className="min-h-[90vh] border-b">
-			<div className="container items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6">
-				<aside className="z-30 hidden space-y-2 pt-6 md:sticky md:top-0 md:block">
+		<div className="min-h-[90vh]">
+			<div className="container items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-lg">
+				<aside className="hidden space-y-md pt-layout-sm md:sticky md:top-14 md:block">
 					{/* <SearchDocs /> */}
 					<div className="h-screen overflow-y-auto pb-layout-sm">
 						<DocsSidebar items={sidebarItems} />

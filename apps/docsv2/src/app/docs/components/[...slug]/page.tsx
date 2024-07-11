@@ -55,7 +55,7 @@ export default function ComponentPage({ params }: PageProps) {
 					"xl:grid xl:grid-cols-[1fr_220px]": component.toc.length > 0,
 				})}
 			>
-				<div className="mx-auto w-full min-w-0">
+				<div className="w-full min-w-0">
 					<Heading className="mb-lg">{component.title}</Heading>
 
 					<Typography className="text-subtle-foreground">{component.description}</Typography>
@@ -78,7 +78,7 @@ export default function ComponentPage({ params }: PageProps) {
 									<IconBrandGithub className="size-3" />
 									<Link
 										className="text-foreground"
-										href={`https://github.com/telekom/pixelshades/tree/main/packages/ui/src/components/ui/${component.slug}`}
+										href={`https://github.com/telekom/pixelshades/tree/main/packages/ui/src/components/ui/${component.breadcrumbs[component.breadcrumbs.length - 1]}`}
 										target="_blank"
 										rel="noreferrer"
 									>
@@ -122,13 +122,9 @@ export default function ComponentPage({ params }: PageProps) {
 					</Tabs.Panel> */}
 					</Tabs>
 				</div>
-				<div className="hidden text-sm xl:block">
-					<div className="sticky top-0">
-						<div className="h-screen pb-layout-md overflow-y-auto">
-							<div className="pt-lg pb-layout-md">
-								<TableOfContents toc={component.toc} />
-							</div>
-						</div>
+				<div className="sticky top-14 max-h-screen overflow-y-auto">
+					<div className="pt-lg pb-layout-md">
+						<TableOfContents toc={component.toc} />
 					</div>
 				</div>
 			</main>

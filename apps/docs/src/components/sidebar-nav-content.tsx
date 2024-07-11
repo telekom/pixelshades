@@ -1,7 +1,6 @@
-import React from "react"
-import { DocsSidebarNav } from "./sidebar-nav"
 import type { SidebarNavItem } from "~/config/docs"
 import { components, general_pages } from "#site/content"
+import { DocsSidebarNav } from "./sidebar-nav"
 
 const sidebarItems: SidebarNavItem[] = []
 

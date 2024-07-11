@@ -1,8 +1,7 @@
 "use client"
 
-import * as React from "react"
-
 import { cn } from "@pixelshades/utils/styles"
+import { useEffect, useMemo, useState } from "react"
 import { useMounted } from "../hooks/use-mounted"
 
 interface TocEntry {
@@ -26,9 +25,9 @@ interface TocProps {
 }
 
 export function TableOfContents({ toc }: TocProps) {
-	const itemIds = React.useMemo(
+	const itemIds = useMemo(
 		() =>
-			toc
+			toc.length > 0
 				? toc
 						.flatMap((item) => [item.url, item?.items?.map((item) => item.url)])
 						.flat()
@@ -40,7 +39,7 @@ export function TableOfContents({ toc }: TocProps) {
 	const activeHeading = useActiveItem(itemIds as string[])
 	const mounted = useMounted()
 
-	if (!toc || !mounted) {
+	if (toc.length === 0 || !mounted) {
 		return null
 	}
 
@@ -53,9 +52,9 @@ export function TableOfContents({ toc }: TocProps) {
 }
 
 function useActiveItem(itemIds: string[]) {
-	const [activeId, setActiveId] = React.useState<string | null>(null)
+	const [activeId, setActiveId] = useState<string | null>(null)
 
-	React.useEffect(() => {
+	useEffect(() => {
 		const observer = new IntersectionObserver(
 			(entries) => {
 				for (const entry of entries) {

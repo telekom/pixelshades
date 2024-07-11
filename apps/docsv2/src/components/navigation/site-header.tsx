@@ -1,8 +1,9 @@
+"use client"
+
 import { useState } from "react"
+import { ThemeSwitch } from "../theme-switcher"
 import { MainNav } from "./main-nav"
 import { MobileNav } from "./mobile-nav"
-import { SearchDialog } from "./search-dialog"
-import ThemeSwitch from "./theme-switcher"
 
 export function SiteHeader() {
 	const [open, setOpen] = useState(false)
@@ -15,7 +16,7 @@ export function SiteHeader() {
 
 				<div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
 					<div className="w-full flex-1 md:w-auto md:min-w-min md:flex-none">
-						<SearchDialog open={open} handleOpenChange={setOpen} />
+						{/* <SearchDialog open={open} handleOpenChange={setOpen} /> */}
 					</div>
 					<ThemeSwitch />
 				</div>

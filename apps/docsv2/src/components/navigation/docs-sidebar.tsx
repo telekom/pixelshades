@@ -6,7 +6,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import React, { useEffect } from "react"
 import type { DocsNav, Category as TCategory } from "~/types/docs-nav"
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "./temp/collapsible"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../temp/collapsible"
 
 export interface DocsSidebarProps {
 	items: DocsNav
@@ -14,8 +14,6 @@ export interface DocsSidebarProps {
 
 export function DocsSidebar({ items }: DocsSidebarProps) {
 	const pathname = usePathname()
-
-	console.log(items)
 
 	return items.length > 0 ? (
 		<div className="w-full space-y-4 pt-4 pr-4 pb-10 text-sm">
