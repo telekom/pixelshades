@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { cn } from "@pixelshades/cn"
+import { Analytics } from "safesight/react"
 import { SiteHeader } from "~/components/navigation/site-header"
 import { ThemeProvider } from "~/provider/theme-provider"
 
@@ -21,6 +22,8 @@ export default function RootLayout({
 		<html className="dark" lang="en">
 			<body className={cn(inter.className, "border-border bg-background text-foreground")}>
 				<ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+					<Analytics token={"wbs_QBSp3A5tNE69tEYJ7"} />
+
 					<div vaul-drawer-wrapper="">
 						<div className="relative flex min-h-screen flex-col bg-background font-sans">
 							<SiteHeader />
