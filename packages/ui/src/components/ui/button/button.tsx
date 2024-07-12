@@ -14,6 +14,7 @@ import type { LegacyRef } from "react"
 import {
 	Button as AriaButton,
 	type ButtonProps as AriaButtonProps,
+	Link as AriaLink,
 	type ButtonRenderProps,
 } from "react-aria-components"
 import { If } from "../../utils"
@@ -28,6 +29,8 @@ interface ButtonProps extends ButtonVariantProps, AriaButtonProps {
 	isLoading?: boolean
 	before?: React.ReactElement<HTMLElement>
 	after?: React.ReactElement<HTMLElement>
+
+	href?: string
 }
 
 const Button = forwardRef(
@@ -66,19 +69,21 @@ const Button = forwardRef(
 						className,
 					})
 
+		const Element: React.ElementType = props.href ? AriaLink : AriaButton
+
 		return (
-			<AriaButton className={buttonStyles} isDisabled={isDisabled || isLoading} {...props}>
+			<Element className={buttonStyles} isDisabled={isDisabled} {...props}>
 				<>
 					{isLoading && <LoadingSpinner className="size-4 text-inherit" />}
 					<If condition={before && !isLoading}>
 						<RenderSlot item={before!} className={"size-4 text-inherit"} />
 					</If>
-					{children}
+					{typeof children === "string" ? <span className="truncate">{children}</span> : children}
 					<If condition={after}>
 						<RenderSlot item={after!} className={"size-4 text-inherit"} />
 					</If>
 				</>
-			</AriaButton>
+			</Element>
 		)
 	},
 )

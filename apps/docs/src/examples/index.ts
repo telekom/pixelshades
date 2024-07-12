@@ -213,6 +213,22 @@ export function Example() {
 }
 `,
   },
+  "button/before-after": {
+	  component: lazy(() => import("~/examples/button/before-after.tsx")),
+	  code: `import { Button } from "@pixelshades/ui/components"
+import { IconSailboat } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return (
+		<div className="flex flex-wrap gap-lg">
+			<Button before={<IconSailboat />}>Before</Button>
+
+			<Button after={<IconSailboat />}>After</Button>
+		</div>
+	)
+}
+`,
+  },
   "button/colors": {
 	  component: lazy(() => import("~/examples/button/colors.tsx")),
 	  code: `import { Button } from "@pixelshades/ui/components"
@@ -255,6 +271,20 @@ export function Example() {
 				</Button>
 			</div>
 		</div>
+	)
+}
+`,
+  },
+  "button/link": {
+	  component: lazy(() => import("~/examples/button/link.tsx")),
+	  code: `import { Button } from "@pixelshades/ui/components"
+import { IconSailboat } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return (
+		<Button href="/docs" before={<IconSailboat />} isLoading>
+			Button
+		</Button>
 	)
 }
 `,
