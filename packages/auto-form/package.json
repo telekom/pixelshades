@@ -12,10 +12,10 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@hookform/resolvers": "^3.4.2",
-		"@pixelshades/utils": "workspace:*",
-		"@radix-ui/react-accordion": "^1.1.2",
-		"react-hook-form": "^7.51.5",
+		"@hookform/resolvers": "^3.9.0",
+		"@pixelshades/cn": "workspace:*",
+		"@radix-ui/react-accordion": "^1.2.0",
+		"react-hook-form": "^7.52.1",
 		"zod": "^3.23.8"
 	},
 	"peerDependencies": {
@@ -36,9 +36,7 @@
 		"react-dom": "^18.3.1",
 		"typescript": "^5.5.3"
 	},
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"exports": {
 		".": {
 			"import": {
