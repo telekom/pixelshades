@@ -1,5 +1,11 @@
 # @pixelshades/toast
 
+## 0.0.3
+
+### Patch Changes
+
+- efa8a72: stuff
+
 ## 0.0.2
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @pixelshades/utils
 
+## 2.1.5
+
+### Patch Changes
+
+- efa8a72: stuff
+- Updated dependencies [efa8a72]
+  - @pixelshades/toast@0.0.3
+  - @pixelshades/ui@0.5.12
+  - @pixelshades/utils@0.1.4
+
 ## 2.1.4
 
 ### Patch Changes
