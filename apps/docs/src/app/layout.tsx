@@ -25,8 +25,7 @@ export default function RootLayout({
 				className={cn(
 					GeistSans.variable,
 					GeistMono.variable,
-					GeistSans.className,
-					"border-border bg-background text-foreground",
+					"border-border bg-background font-sans text-foreground",
 				)}
 			>
 				<ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
