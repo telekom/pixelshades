@@ -6,7 +6,8 @@ import { Analytics } from "safesight/react"
 import { SiteHeader } from "~/components/navigation/site-header"
 import { ThemeProvider } from "~/provider/theme-provider"
 
-const inter = Inter({ subsets: ["latin"] })
+import { GeistMono } from "geist/font/mono"
+import { GeistSans } from "geist/font/sans"
 
 export const metadata: Metadata = {
 	title: "Pixelshades",
@@ -20,7 +21,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html className="dark" lang="en">
-			<body className={cn(inter.className, "border-border bg-background text-foreground")}>
+			<body className={cn(GeistSans.variable, GeistMono.variable, "border-border bg-background text-foreground")}>
 				<ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
 					<Analytics token={"wbs_QBSp3A5tNE69tEYJ7"} />
 
