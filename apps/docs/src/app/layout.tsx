@@ -21,7 +21,14 @@ export default function RootLayout({
 }>) {
 	return (
 		<html className="dark" lang="en">
-			<body className={cn(GeistSans.variable, GeistMono.variable, "border-border bg-background text-foreground")}>
+			<body
+				className={cn(
+					GeistSans.variable,
+					GeistMono.variable,
+					GeistSans.className,
+					"border-border bg-background text-foreground",
+				)}
+			>
 				<ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
 					<Analytics token={"wbs_QBSp3A5tNE69tEYJ7"} />
 
