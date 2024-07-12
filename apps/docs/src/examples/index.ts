@@ -282,7 +282,7 @@ import { IconSailboat } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
-		<Button href="/docs" before={<IconSailboat />} isLoading>
+		<Button href="/docs" before={<IconSailboat />}>
 			Button
 		</Button>
 	)
@@ -556,7 +556,7 @@ export function Example() {
   },
   "card/preview": {
 	  component: lazy(() => import("~/examples/card/preview.tsx")),
-	  code: `import { Button, Card, Input, Label, Select } from "@pixelshades/ui/components"
+	  code: `import { Button, Card, Select, TextField } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -569,8 +569,7 @@ export function Example() {
 				<form>
 					<div className="grid w-full items-center gap-lg">
 						<div className="flex flex-col space-y-1.5">
-							<Label htmlFor="name">Name</Label>
-							<Input id="name" placeholder="Name of your project" />
+							<TextField label="Name" id="name" placeholder="Name of your project" />
 						</div>
 						<div className="flex flex-col space-y-1.5">
 							<Select label="Framework">
@@ -920,7 +919,7 @@ export function Example() {
   },
   "dialog/hideCloseButton": {
 	  component: lazy(() => import("~/examples/dialog/hideCloseButton.tsx")),
-	  code: `import { Button, Dialog, Input, Label } from "@pixelshades/ui/components"
+	  code: `import { Button, Dialog, TextField } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -938,16 +937,20 @@ export function Example() {
 							</Dialog.Header>
 							<div className="grid gap-lg py-4">
 								<div className="grid grid-cols-4 items-center gap-lg">
-									<Label htmlFor="name" className="text-right">
-										Name
-									</Label>
-									<Input id="name" defaultValue="Pedro Duarte" className="col-span-3" />
+									<TextField
+										label="Name"
+										id="name"
+										defaultValue="Pedro Duarte"
+										className="col-span-3"
+									/>
 								</div>
 								<div className="grid grid-cols-4 items-center gap-lg">
-									<Label htmlFor="username" className="text-right">
-										Username
-									</Label>
-									<Input id="username" defaultValue="@peduarte" className="col-span-3" />
+									<TextField
+										label="Username"
+										id="username"
+										defaultValue="@peduarte"
+										className="col-span-3"
+									/>
 								</div>
 							</div>
 							<Dialog.Footer>
@@ -966,7 +969,7 @@ export function Example() {
   },
   "dialog/preview": {
 	  component: lazy(() => import("~/examples/dialog/preview.tsx")),
-	  code: `import { Button, Dialog, Input, Label } from "@pixelshades/ui/components"
+	  code: `import { Button, Dialog, TextField } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -984,16 +987,20 @@ export function Example() {
 							</Dialog.Header>
 							<div className="grid gap-lg py-4">
 								<div className="grid grid-cols-4 items-center gap-lg">
-									<Label htmlFor="name" className="text-right">
-										Name
-									</Label>
-									<Input id="name" defaultValue="Pedro Duarte" className="col-span-3" />
+									<TextField
+										label="Name"
+										id="name"
+										defaultValue="Pedro Duarte"
+										className="col-span-3"
+									/>
 								</div>
 								<div className="grid grid-cols-4 items-center gap-lg">
-									<Label htmlFor="username" className="text-right">
-										Username
-									</Label>
-									<Input id="username" defaultValue="@peduarte" className="col-span-3" />
+									<TextField
+										label="Username"
+										id="username"
+										defaultValue="@peduarte"
+										className="col-span-3"
+									/>
 								</div>
 							</div>
 							<Dialog.Footer>
@@ -1254,7 +1261,7 @@ export function Example() {
   },
   "highlight/search": {
 	  component: lazy(() => import("~/examples/highlight/search.tsx")),
-	  code: `import { Highlight, Input, Label, Typography } from "@pixelshades/ui/components"
+	  code: `import { Highlight, Input, TextField, Typography } from "@pixelshades/ui/components"
 import { useState } from "react"
 
 export function Example() {
@@ -1266,8 +1273,7 @@ export function Example() {
 	return (
 		<div className="flex flex-col gap-lg">
 			<div>
-				<Label>Search</Label>
-				<Input value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+				<TextField label="Search" value={inputValue} onChange={(value) => setInputValue(value)} />
 			</div>
 			<div className="flex flex-col gap-sm">
 				{fruits.map((fruit) => (
@@ -1608,7 +1614,7 @@ export function Example() {
   },
   "popover/preview": {
 	  component: lazy(() => import("~/examples/popover/preview.tsx")),
-	  code: `import { Button, Input, Label, Popover } from "@pixelshades/ui/components"
+	  code: `import { Button, Popover, TextField } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
@@ -1623,20 +1629,26 @@ export function Example() {
 						</div>
 						<div className="grid gap-md">
 							<div className="grid grid-cols-3 items-center gap-lg">
-								<Label htmlFor="width">Width</Label>
-								<Input id="width" defaultValue="100%" className="col-span-2 h-8" />
+								<TextField label="Width" id="width" defaultValue="100%" className="col-span-2 h-8" />
 							</div>
 							<div className="grid grid-cols-3 items-center gap-lg">
-								<Label htmlFor="maxWidth">Max. width</Label>
-								<Input id="maxWidth" defaultValue="300px" className="col-span-2 h-8" />
+								<TextField
+									label="Max. width"
+									id="maxWidth"
+									defaultValue="300px"
+									className="col-span-2 h-8"
+								/>
 							</div>
 							<div className="grid grid-cols-3 items-center gap-lg">
-								<Label htmlFor="height">Height</Label>
-								<Input id="height" defaultValue="25px" className="col-span-2 h-8" />
+								<TextField label="Height" id="height" defaultValue="25px" className="col-span-2 h-8" />
 							</div>
 							<div className="grid grid-cols-3 items-center gap-lg">
-								<Label htmlFor="maxHeight">Max. height</Label>
-								<Input id="maxHeight" defaultValue="none" className="col-span-2 h-8" />
+								<TextField
+									label="Max. height"
+									id="maxHeight"
+									defaultValue="none"
+									className="col-span-2 h-8"
+								/>
 							</div>
 						</div>
 					</div>
@@ -1749,12 +1761,11 @@ export function Example() {
   },
   "radio-group/preview": {
 	  component: lazy(() => import("~/examples/radio-group/preview.tsx")),
-	  code: `import { Label, RadioGroup } from "@pixelshades/ui/components"
+	  code: `import { RadioGroup } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
-		<RadioGroup defaultValue="dog">
-			<Label>Favorite pet</Label>
+		<RadioGroup label="Favorite pet" defaultValue="dog">
 			<RadioGroup.Item value="dog">Dog</RadioGroup.Item>
 			<RadioGroup.Item value="cat">Cat</RadioGroup.Item>
 			<RadioGroup.Item value="dragon">Dragon</RadioGroup.Item>

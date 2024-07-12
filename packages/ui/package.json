@@ -10,7 +10,8 @@
 		"generate:component": "turbo gen react-component",
 		"build": "bunchee --tsconfig tsconfig.build.json",
 		"gen:props": "bun run ./scripts/props-gen.ts",
-		"dev": "bunchee --watch --no-clean"
+		"dev": "bunchee --watch",
+		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
 		"@internationalized/date": "^3.5.4",
@@ -47,10 +48,7 @@
 		"tailwindcss": "3.4.4",
 		"typescript": "^5.5.3"
 	},
-	"files": [
-		"dist",
-		"src/index.css"
-	],
+	"files": ["dist", "src/index.css"],
 	"exports": {
 		"./tailwind": {
 			"import": {

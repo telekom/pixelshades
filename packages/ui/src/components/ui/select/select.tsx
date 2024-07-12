@@ -15,25 +15,18 @@ import {
 
 import { selectVariants } from "@pixelshades/styles/components/select"
 import type React from "react"
-import type { ReactNode } from "react"
 import { IconChevronDown } from "../../../icons"
-import { If } from "../../utils"
-import { FormDescription, FormFieldError } from "../form"
-import { type FormComponentLabelProps, Label } from "../label"
+import { FormField, type FormFieldProps } from "../../core/form"
 import { MenuLabel, MenuSection } from "../menu"
 import { Popover } from "../popover"
 
 const { button, item, popover, root, icon, value } = selectVariants()
 
-interface SelectProps<T extends object> extends Omit<AriaSelectProps<T>, "children">, FormComponentLabelProps {
+interface SelectProps<T extends object> extends Omit<AriaSelectProps<T>, "children">, FormFieldProps {
 	/** The styles to be applied to the select field. */
 	className?: string
 	/** Array of select options. */
 	items?: Iterable<T>
-	/** A helper text to be displayed below the select field. */
-	helperText?: ReactNode
-	/** The tooltip to be displayed when hovering over the select field. */
-	errorMessage?: string
 	/** Children of the select field. */
 	children: React.ReactNode | ((item: T) => React.ReactNode)
 }
@@ -51,18 +44,12 @@ const SelectRoot = <T extends object>({
 	...props
 }: SelectProps<T>) => (
 	<AriaSelect className={root({ className })} isRequired={isRequired} {...props}>
-		<If condition={label || description || tooltip}>
-			<Label tooltip={tooltip} description={description} isRequired={isRequired}>
-				{label}
-			</Label>
-		</If>
-
-		<AriaButton className={button()}>
-			<SelectValue className={value()} />
-			<IconChevronDown className={icon()} />
-		</AriaButton>
-		{helperText && <FormDescription>{helperText}</FormDescription>}
-		<FormFieldError>{errorMessage}</FormFieldError>
+		<FormField label={label} description={description} tooltip={tooltip} isRequired={isRequired}>
+			<AriaButton className={button()}>
+				<SelectValue className={value()} />
+				<IconChevronDown className={icon()} />
+			</AriaButton>
+		</FormField>
 		<Popover className={popover()}>
 			<AriaListBox className="outline-none" items={items}>
 				{children}

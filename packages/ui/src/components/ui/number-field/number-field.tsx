@@ -4,24 +4,18 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
+import { cn } from "@pixelshades/cn"
 import { baseInputSizes } from "@pixelshades/styles/utils"
 import { forwardRef } from "@pixelshades/utils/jsx"
-import { cn } from "@pixelshades/cn"
 import type { ReactNode } from "react"
 import type { NumberFieldProps as AriaNumberFieldProps } from "react-aria-components"
 import { Input as AriaInput, NumberField as AriaNumberField } from "react-aria-components"
 import { IconChevronDown, IconChevronUp } from "../../../icons"
+import { FormField, type FormFieldProps } from "../../core/form"
 import { Button } from "../button"
 import { FormDescription, FormFieldError, FormFieldGroup } from "../form"
-import { Input } from "../input"
-import { type FormComponentLabelProps, Label } from "../label"
 
-export interface NumberFieldProps extends AriaNumberFieldProps, FormComponentLabelProps {
-	/** A helper text to display below the date picker. */
-	helperText?: ReactNode
-	/** The error message to display when the number field is invalid. */
-	errorMessage?: string
-}
+export interface NumberFieldProps extends AriaNumberFieldProps, FormFieldProps {}
 
 const NumberField = forwardRef(
 	({
@@ -36,10 +30,7 @@ const NumberField = forwardRef(
 		...props
 	}: NumberFieldProps & { ref?: any }) => (
 		<AriaNumberField className={"flex flex-col gap-sm"} isRequired={isRequired} {...props}>
-			<Label tooltip={tooltip} description={description} isRequired={isRequired}>
-				{label}
-			</Label>
-			<FormFieldGroup>
+			<FormField label={label} description={description} tooltip={tooltip} isRequired={isRequired}>
 				<AriaInput
 					className={cn("w-full bg-transparent outline-none ring-0", baseInputSizes.variants.size)}
 					ref={ref}
@@ -52,10 +43,7 @@ const NumberField = forwardRef(
 						<IconChevronDown />
 					</Button>
 				</div>
-			</FormFieldGroup>
-
-			{helperText && <FormDescription>{helperText}</FormDescription>}
-			<FormFieldError>{errorMessage}</FormFieldError>
+			</FormField>
 		</AriaNumberField>
 	),
 )

@@ -12,22 +12,18 @@ import {
 	type ValidationResult,
 } from "react-aria-components"
 
+import { cn } from "@pixelshades/cn"
 import { labelVariants } from "@pixelshades/styles/components/label"
 import { radioGroupVariants } from "@pixelshades/styles/components/radio-group"
-import { cn } from "@pixelshades/cn"
 import { IconCircle } from "@tabler/icons-react"
 import type { ReactNode } from "react"
+import { FormField, type FormFieldProps } from "../../core/form"
 import { If } from "../../utils"
 import { FormDescription, FormFieldError } from "../form"
-import { type FormComponentLabelProps, Label } from "../label"
 
-export interface RadioGroupProps extends AriaRadioGroupProps, FormComponentLabelProps {
+export interface RadioGroupProps extends AriaRadioGroupProps, FormFieldProps {
 	/** The children of the radio group. */
 	children?: ReactNode
-	/** The helper text to display below the radio group. */
-	helperText?: ReactNode
-	/** The error message to display below the radio group. */
-	errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
 const { item, group, root, card } = radioGroupVariants()
@@ -49,15 +45,9 @@ const RadioGroupRoot = ({
 			isRequired={isRequired}
 			{...props}
 		>
-			<If condition={label || description || tooltip}>
-				<Label description={description} tooltip={tooltip} isRequired={isRequired}>
-					{label}
-				</Label>
-			</If>
-
-			<div className={group()}>{children}</div>
-			{helperText && <FormDescription>{helperText}</FormDescription>}
-			<FormFieldError>{errorMessage}</FormFieldError>
+			<FormField label={label} description={description} tooltip={tooltip} isRequired={isRequired}>
+				<div className={group()}>{children}</div>
+			</FormField>
 		</AriaRadioGroup>
 	)
 }

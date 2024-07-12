@@ -4,34 +4,18 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-import { type ElementRef, type ReactNode, forwardRef } from "react"
+import { type ElementRef, forwardRef } from "react"
 
 import { checkboxVariant } from "@pixelshades/styles/components/checkbox"
 import { IconCheck } from "@tabler/icons-react"
 import React from "react"
-import {
-	type CheckboxProps as AriaCheckBoxProps,
-	Checkbox as AriaCheckbox,
-	type ValidationResult,
-} from "react-aria-components"
+import { type CheckboxProps as AriaCheckBoxProps, Checkbox as AriaCheckbox } from "react-aria-components"
 import type { VariantProps } from "tailwind-variants"
-import { If } from "../../utils"
-import { FormDescription, FormFieldError } from "../form"
-import { Label } from "../label"
+import { FormField, type FormFieldProps } from "../../core/form"
 
 type CheckboxVariantProps = VariantProps<typeof checkboxVariant>
 
-interface CheckBoxProps extends CheckboxVariantProps, AriaCheckBoxProps {
-	/** The label of the checkbox. */
-	label?: ReactNode
-	/** The description of the checkbox. */
-	description?: ReactNode
-	/** A subtle description next to the checkbox groups label. */
-	helperText?: ReactNode
-	/** The error message of the checkbox. */
-	errorMessage?: string | ((validation: ValidationResult) => string)
-	/** The tooltip of the checkbox. */
-	tooltip?: ReactNode
+interface CheckBoxProps extends CheckboxVariantProps, AriaCheckBoxProps, FormFieldProps {
 	/** The className of the checkbox. */
 	className?: string
 }
@@ -47,19 +31,13 @@ const Checkbox = forwardRef<ElementRef<typeof AriaCheckbox>, CheckBoxProps>(
 					<>
 						<div className={checkboxVariant({ size }).box()}>{isSelected && <IconCheck />}</div>
 						<span className="inline-flex flex-col">
-							<If condition={label || description || tooltip}>
-								<Label
-									aria-disabled={isDisabled}
-									htmlFor={elId}
-									description={description}
-									tooltip={tooltip}
-									isRequired={isRequired}
-								>
-									{label}
-								</Label>
-							</If>
-							<FormDescription aria-disabled={isDisabled}>{helperText}</FormDescription>
-							<FormFieldError>{errorMessage}</FormFieldError>
+							<FormField
+								label={label}
+								description={description}
+								tooltip={tooltip}
+								isRequired={isRequired}
+								isDisabled={isDisabled}
+							/>
 						</span>
 
 						{children}

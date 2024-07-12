@@ -15,22 +15,15 @@ import {
 
 import { datePickerVariants } from "@pixelshades/styles/components/date-picker"
 import { IconChevronDown } from "@tabler/icons-react"
-import type { ReactNode } from "react"
-import { If } from "../../utils"
+import { FormField, type FormFieldProps } from "../../core/form"
 import { Button } from "../button"
-import { FormDescription, FormFieldError, FormFieldGroup } from "../form"
-import { type FormComponentLabelProps, Label } from "../label"
+import { FormFieldGroup } from "../form"
 import { Popover } from "../popover"
 import { RangeCalendar } from "../range-calendar"
 
 const { base, dateInput } = datePickerVariants()
 
-interface DateRangePickerProps<T extends DateValue> extends AriaDateRangePickerProps<T>, FormComponentLabelProps {
-	/** A helper text to display below the date picker. */
-	helperText?: ReactNode
-	/** The error message to display when the date picker is invalid. */
-	errorMessage?: string | ((validation: ValidationResult) => string)
-}
+interface DateRangePickerProps<T extends DateValue> extends AriaDateRangePickerProps<T>, FormFieldProps {}
 
 const DateRangePicker = <T extends DateValue>({
 	className,
@@ -44,25 +37,21 @@ const DateRangePicker = <T extends DateValue>({
 	...props
 }: DateRangePickerProps<T>) => (
 	<AriaDateRangePicker className="flex flex-col gap-md" isRequired={isRequired} {...props}>
-		<Label description={description} tooltip={tooltip} isRequired={isRequired}>
-			{label}
-		</Label>
-		<FormFieldGroup className={"relative flex items-center"}>
-			<DateInput className={dateInput()} slot="start">
-				{(segment) => <DateSegment className={base()} segment={segment} />}
-			</DateInput>
-			<span aria-hidden="true">–</span>
-			<DateInput className={dateInput()} slot="end">
-				{(segment) => <DateSegment className={base()} segment={segment} />}
-			</DateInput>
-			<Button size="xs-icon" variant="ghost">
-				<IconChevronDown aria-hidden className="size-4" />
-			</Button>
-		</FormFieldGroup>
-		<If condition={helperText}>
-			<FormDescription>{helperText}</FormDescription>
-		</If>
-		<FormFieldError>{errorMessage}</FormFieldError>
+		<FormField label={label} description={description} tooltip={tooltip} isRequired={isRequired}>
+			<FormFieldGroup className={"relative flex items-center"}>
+				<DateInput className={dateInput()} slot="start">
+					{(segment) => <DateSegment className={base()} segment={segment} />}
+				</DateInput>
+				<span aria-hidden="true">–</span>
+				<DateInput className={dateInput()} slot="end">
+					{(segment) => <DateSegment className={base()} segment={segment} />}
+				</DateInput>
+				<Button size="xs-icon" variant="ghost">
+					<IconChevronDown aria-hidden className="size-4" />
+				</Button>
+			</FormFieldGroup>
+		</FormField>
+
 		<Popover className="w-fit border-none p-0">
 			<AriaDialog>
 				<RangeCalendar />

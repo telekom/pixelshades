@@ -8,17 +8,13 @@ import { forwardRef } from "@pixelshades/utils/jsx"
 import type { ReactNode } from "react"
 import type { TextFieldProps as AriaTextFieldProps } from "react-aria-components"
 import { TextField as AriaTextField } from "react-aria-components"
+import { FormField, type FormFieldProps } from "../../core/form"
 import { If } from "../../utils"
 import { FormDescription, FormFieldError } from "../form"
 import { Input } from "../input"
-import { type FormComponentLabelProps, Label } from "../label"
 import { TextArea } from "./text-area"
 
-export interface TextFieldProps extends AriaTextFieldProps, FormComponentLabelProps {
-	/** A helper text to be displayed below the text field. */
-	helperText?: ReactNode
-	/** The error message to be displayed when the text field is in an error state. */
-	errorMessage?: string
+export interface TextFieldProps extends AriaTextFieldProps, FormFieldProps {
 	/** Toggle between a text field and a text area. */
 	multiLine?: boolean
 	/** The number of columns in the text area. */
@@ -29,11 +25,7 @@ export interface TextFieldProps extends AriaTextFieldProps, FormComponentLabelPr
 	placeholder?: string
 }
 
-export interface TextAreaFieldProps extends AriaTextFieldProps, FormComponentLabelProps {
-	/** A helper text to be displayed below the text field. */
-	helperText?: ReactNode
-	/** The error message to be displayed when the text field is in an error state. */
-	errorMessage?: string
+export interface TextAreaFieldProps extends AriaTextFieldProps, FormFieldProps {
 	/** Toggle between a text field and a text area. */
 	multiLine?: boolean
 	/** The number of columns in the text area. */
@@ -61,19 +53,13 @@ const TextField = forwardRef(
 		...props
 	}: TextFieldProps & { ref?: any }) => (
 		<AriaTextField className={"flex flex-col gap-sm"} isRequired={isRequired} {...props}>
-			<If condition={label || description || tooltip}>
-				<Label tooltip={tooltip} description={description} isRequired={isRequired}>
-					{label}
-				</Label>
-			</If>
-
-			{multiLine ? (
-				<TextArea ref={ref} placeholder={placeholder} cols={cols} rows={rows} />
-			) : (
-				<Input placeholder={placeholder} ref={ref} />
-			)}
-			{helperText && <FormDescription>{helperText}</FormDescription>}
-			<FormFieldError>{errorMessage}</FormFieldError>
+			<FormField label={label} description={description} tooltip={tooltip} isRequired={isRequired}>
+				{multiLine ? (
+					<TextArea ref={ref} placeholder={placeholder} cols={cols} rows={rows} />
+				) : (
+					<Input placeholder={placeholder} ref={ref} />
+				)}
+			</FormField>
 		</AriaTextField>
 	),
 )

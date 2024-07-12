@@ -1,4 +1,4 @@
-import { Button, Dialog, Input, Label } from "@pixelshades/ui/components"
+import { Button, Dialog, TextField } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
@@ -16,16 +16,20 @@ export default function Example() {
 							</Dialog.Header>
 							<div className="grid gap-lg py-4">
 								<div className="grid grid-cols-4 items-center gap-lg">
-									<Label htmlFor="name" className="text-right">
-										Name
-									</Label>
-									<Input id="name" defaultValue="Pedro Duarte" className="col-span-3" />
+									<TextField
+										label="Name"
+										id="name"
+										defaultValue="Pedro Duarte"
+										className="col-span-3"
+									/>
 								</div>
 								<div className="grid grid-cols-4 items-center gap-lg">
-									<Label htmlFor="username" className="text-right">
-										Username
-									</Label>
-									<Input id="username" defaultValue="@peduarte" className="col-span-3" />
+									<TextField
+										label="Username"
+										id="username"
+										defaultValue="@peduarte"
+										className="col-span-3"
+									/>
 								</div>
 							</div>
 							<Dialog.Footer>

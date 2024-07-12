@@ -20,7 +20,8 @@
 		],
 		"paths": {
 			"~/*": ["./src/*"],
-			"#site/content": ["./.velite"]
+			"#site/content": ["./.velite"],
+			"@pixelshades/styles": ["../../packages/styles/src"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

@@ -5,21 +5,21 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { sliderVariants } from "@pixelshades/styles/components/slider"
+import type { ReactNode } from "react"
 import type { SliderProps as AriaSliderProps } from "react-aria-components"
 import {
 	Slider as AriaSlider,
 	SliderOutput as AriaSliderOutput,
-	SliderTrack as AriaSliderTrack,
 	SliderThumb as AriaSliderThumb,
+	SliderTrack as AriaSliderTrack,
 } from "react-aria-components"
 import type { VariantProps } from "tailwind-variants"
-import { type FormComponentLabelProps, Label } from "../label"
+import { FormField, type FormFieldProps } from "../../core/form"
 import { FormDescription, FormFieldError } from "../form"
-import type { ReactNode } from "react"
 
 const { sliderRoot, sliderHeader, sliderTrack, sliderThumb, sliderOutput, sliderDescription } = sliderVariants()
 
-interface SliderProps extends AriaSliderProps, FormComponentLabelProps, VariantProps<typeof sliderVariants> {
+interface SliderProps extends AriaSliderProps, FormFieldProps, VariantProps<typeof sliderVariants> {
 	className?: string
 	helperText?: ReactNode
 	errorMessage?: string
@@ -44,27 +44,24 @@ const Slider = ({
 			isDisabled={isDisabled}
 			{...props}
 		>
-			<div className={sliderHeader({ className, orientation })}>
-				<Label tooltip={tooltip} description={description}>
-					{label}
-				</Label>
-				<AriaSliderOutput className={sliderOutput({ className, orientation })}>
-					{({ state }) => state.values.map((_, i) => state.getThumbValueLabel(i)).join(" – ")}
-				</AriaSliderOutput>
-			</div>
-			<AriaSliderTrack className={sliderTrack({ className, orientation })}>
-				{({ state }) =>
-					state.values.map((_, i) => (
-						<AriaSliderThumb
-							key={i}
-							index={i}
-							className={sliderThumb({ className, orientation, isDisabled })}
-						/>
-					))
-				}
-			</AriaSliderTrack>
-			{helperText && !errorMessage && <FormDescription>{helperText}</FormDescription>}
-			<FormFieldError>{errorMessage}</FormFieldError>
+			<FormField label={label} description={description} tooltip={tooltip} isDisabled={isDisabled}>
+				<div className={sliderHeader({ className, orientation })}>
+					<AriaSliderOutput className={sliderOutput({ className, orientation })}>
+						{({ state }) => state.values.map((_, i) => state.getThumbValueLabel(i)).join(" – ")}
+					</AriaSliderOutput>
+				</div>
+				<AriaSliderTrack className={sliderTrack({ className, orientation })}>
+					{({ state }) =>
+						state.values.map((_, i) => (
+							<AriaSliderThumb
+								key={i}
+								index={i}
+								className={sliderThumb({ className, orientation, isDisabled })}
+							/>
+						))
+					}
+				</AriaSliderTrack>
+			</FormField>
 		</AriaSlider>
 	)
 }

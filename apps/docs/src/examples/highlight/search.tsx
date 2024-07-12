@@ -1,4 +1,4 @@
-import { Highlight, Input, Label, Typography } from "@pixelshades/ui/components"
+import { Highlight, Input, TextField, Typography } from "@pixelshades/ui/components"
 import { useState } from "react"
 
 export default function Example() {
@@ -10,8 +10,7 @@ export default function Example() {
 	return (
 		<div className="flex flex-col gap-lg">
 			<div>
-				<Label>Search</Label>
-				<Input value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+				<TextField label="Search" value={inputValue} onChange={(value) => setInputValue(value)} />
 			</div>
 			<div className="flex flex-col gap-sm">
 				{fruits.map((fruit) => (

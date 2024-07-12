@@ -1,4 +1,4 @@
-import { Button, Card, Input, Label, Select } from "@pixelshades/ui/components"
+import { Button, Card, Select, TextField } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
@@ -11,8 +11,7 @@ export default function Example() {
 				<form>
 					<div className="grid w-full items-center gap-lg">
 						<div className="flex flex-col space-y-1.5">
-							<Label htmlFor="name">Name</Label>
-							<Input id="name" placeholder="Name of your project" />
+							<TextField label="Name" id="name" placeholder="Name of your project" />
 						</div>
 						<div className="flex flex-col space-y-1.5">
 							<Select label="Framework">

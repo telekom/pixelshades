@@ -1,4 +1,4 @@
-import { Button, Input, Label, Popover } from "@pixelshades/ui/components"
+import { Button, Popover, TextField } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
@@ -13,20 +13,26 @@ export default function Example() {
 						</div>
 						<div className="grid gap-md">
 							<div className="grid grid-cols-3 items-center gap-lg">
-								<Label htmlFor="width">Width</Label>
-								<Input id="width" defaultValue="100%" className="col-span-2 h-8" />
+								<TextField label="Width" id="width" defaultValue="100%" className="col-span-2 h-8" />
 							</div>
 							<div className="grid grid-cols-3 items-center gap-lg">
-								<Label htmlFor="maxWidth">Max. width</Label>
-								<Input id="maxWidth" defaultValue="300px" className="col-span-2 h-8" />
+								<TextField
+									label="Max. width"
+									id="maxWidth"
+									defaultValue="300px"
+									className="col-span-2 h-8"
+								/>
 							</div>
 							<div className="grid grid-cols-3 items-center gap-lg">
-								<Label htmlFor="height">Height</Label>
-								<Input id="height" defaultValue="25px" className="col-span-2 h-8" />
+								<TextField label="Height" id="height" defaultValue="25px" className="col-span-2 h-8" />
 							</div>
 							<div className="grid grid-cols-3 items-center gap-lg">
-								<Label htmlFor="maxHeight">Max. height</Label>
-								<Input id="maxHeight" defaultValue="none" className="col-span-2 h-8" />
+								<TextField
+									label="Max. height"
+									id="maxHeight"
+									defaultValue="none"
+									className="col-span-2 h-8"
+								/>
 							</div>
 						</div>
 					</div>

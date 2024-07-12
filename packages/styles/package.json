@@ -28,9 +28,7 @@
 		"tailwindcss": "3.4.4",
 		"typescript": "^5.5.3"
 	},
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"exports": {
 		"./utils": {
 			"import": {
@@ -168,6 +166,12 @@
 			"import": {
 				"types": "./dist/es/components/link/index.d.mts",
 				"default": "./dist/es/components/link/index.mjs"
+			}
+		},
+		"./components/list-box": {
+			"import": {
+				"types": "./dist/es/components/list-box/index.d.mts",
+				"default": "./dist/es/components/list-box/index.mjs"
 			}
 		},
 		"./components/loading-spinner": {

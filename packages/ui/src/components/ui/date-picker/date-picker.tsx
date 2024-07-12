@@ -16,22 +16,15 @@ import {
 
 import { datePickerVariants } from "@pixelshades/styles/components/date-picker"
 import { IconChevronDown } from "@tabler/icons-react"
-import type { ReactNode } from "react"
-import { If } from "../../utils"
+import { FormField, type FormFieldProps } from "../../core/form"
 import { Button } from "../button"
 import { Calendar } from "../calendar"
-import { FormDescription, FormFieldError, FormFieldGroup } from "../form"
-import { type FormComponentLabelProps, Label } from "../label"
+import { FormFieldGroup } from "../form"
 import { Popover } from "../popover"
 
 const { base, dateInput } = datePickerVariants()
 
-interface DatePickerProps<T extends DateValue> extends AriaDatePickerProps<T>, FormComponentLabelProps {
-	/** A helper text to display below the date picker. */
-	helperText?: ReactNode
-	/** The error message to display when the date picker is invalid. */
-	errorMessage?: string | ((validation: ValidationResult) => string)
-}
+interface DatePickerProps<T extends DateValue> extends AriaDatePickerProps<T>, FormFieldProps {}
 
 const DatePicker = <T extends DateValue>({
 	className,
@@ -45,21 +38,17 @@ const DatePicker = <T extends DateValue>({
 	...props
 }: DatePickerProps<T>) => (
 	<AriaDatePicker className="flex flex-col gap-sm" isRequired={isRequired} {...props}>
-		<Label description={description} tooltip={tooltip} isRequired={isRequired}>
-			{label}
-		</Label>
-		<FormFieldGroup className={"relative flex items-center"}>
-			<DateInput className={dateInput()}>
-				{(segment) => <DateSegment className={base()} segment={segment} />}
-			</DateInput>
-			<Button size="xs-icon" variant="ghost">
-				<IconChevronDown className="size-4" />
-			</Button>
-		</FormFieldGroup>
-		<If condition={helperText}>
-			<FormDescription>{helperText}</FormDescription>
-		</If>
-		<FormFieldError>{errorMessage}</FormFieldError>
+		<FormField label={label} description={description} tooltip={tooltip} isRequired={isRequired}>
+			<FormFieldGroup className={"relative flex items-center"}>
+				<DateInput className={dateInput()}>
+					{(segment) => <DateSegment className={base()} segment={segment} />}
+				</DateInput>
+				<Button size="xs-icon" variant="ghost">
+					<IconChevronDown className="size-4" />
+				</Button>
+			</FormFieldGroup>
+		</FormField>
+
 		<Popover className="w-fit overflow-hidden border-none bg-transparent shadow-none">
 			<AriaDialog>
 				<Calendar />

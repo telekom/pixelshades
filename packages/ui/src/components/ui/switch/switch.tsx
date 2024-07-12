@@ -10,12 +10,11 @@ import { Switch as AriaSwitch, type SwitchProps as AriaSwitchProps } from "react
 
 import type { ReactNode } from "react"
 import React from "react"
-import { type VariantProps, tv } from "tailwind-variants"
+import { FormField, type FormFieldProps } from "../../core/form"
 import { If } from "../../utils"
 import { FormDescription, FormFieldError } from "../form"
-import { type FormComponentLabelProps, Label } from "../label"
 
-interface SwitchProps extends AriaSwitchProps, FormComponentLabelProps {
+interface SwitchProps extends AriaSwitchProps, FormFieldProps {
 	/** The styles to be applied to the switch field, */
 	className?: string
 	/** A helper text to be displayed below the switch field. */
@@ -45,18 +44,12 @@ const Switch = ({
 					<div className={switchTrack(renderProps)}>
 						<span className={switchHandle(renderProps)} />
 					</div>
-					<If condition={label || description || tooltip}>
-						<Label
-							aria-disabled={renderProps.isDisabled}
-							htmlFor={elId}
-							description={description}
-							tooltip={tooltip}
-						>
-							{label}
-						</Label>
-					</If>
-					{helperText && <FormDescription>{helperText}</FormDescription>}
-					<FormFieldError>{errorMessage}</FormFieldError>
+					<FormField
+						label={label}
+						description={description}
+						tooltip={tooltip}
+						isDisabled={renderProps.isDisabled}
+					/>
 				</>
 			)}
 		</AriaSwitch>
