@@ -1,5 +1,13 @@
 # @pixelshades/utils
 
+## 0.1.5
+
+### Patch Changes
+
+- 6b0f54f: rework form field based components
+- Updated dependencies [6b0f54f]
+  - @pixelshades/cn@0.1.6
+
 ## 0.1.4
 
 ### Patch Changes

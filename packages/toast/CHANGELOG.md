@@ -1,5 +1,11 @@
 # @pixelshades/toast
 
+## 0.0.4
+
+### Patch Changes
+
+- 6b0f54f: rework form field based components
+
 ## 0.0.3
 
 ### Patch Changes
