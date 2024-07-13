@@ -1,4 +1,3 @@
-import { Label } from "@pixelshades/ui/components"
 import { cn } from "@pixelshades/cn"
 import { Slot } from "@radix-ui/react-slot"
 import * as React from "react"
@@ -76,18 +75,6 @@ const FormItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
 	},
 )
 FormItem.displayName = "FormItem"
-
-const FormLabel = React.forwardRef<React.ElementRef<typeof Label>, React.ComponentPropsWithoutRef<typeof Label>>(
-	({ className, ...props }, ref) => {
-		const { error, formItemId } = useFormField()
-
-		return (
-			// @ts-expect-error
-			<Label ref={ref} className={cn(error && "text-destructive", className)} htmlFor={formItemId} {...props} />
-		)
-	},
-)
-FormLabel.displayName = "FormLabel"
 
 const FormControl = React.forwardRef<React.ElementRef<typeof Slot>, React.ComponentPropsWithoutRef<typeof Slot>>(
 	({ ...props }, ref) => {
