@@ -1261,7 +1261,7 @@ export function Example() {
   },
   "highlight/search": {
 	  component: lazy(() => import("~/examples/highlight/search.tsx")),
-	  code: `import { Highlight, Input, TextField, Typography } from "@pixelshades/ui/components"
+	  code: `import { Highlight, TextField, Typography } from "@pixelshades/ui/components"
 import { useState } from "react"
 
 export function Example() {
@@ -2174,7 +2174,13 @@ export function Example() {
 	  code: `import { TextField } from "@pixelshades/ui/components"
 
 export function Example() {
-	return <TextField isLoading />
+	return (
+		<div className="flex flex-col gap-lg">
+			<TextField isLoading placeholder="Default" />
+			<TextField isLoading loaderPosition="before" placeholder="Before" />
+			<TextField isLoading loaderPosition="after" placeholder="After" />
+		</div>
+	)
 }
 `,
   },

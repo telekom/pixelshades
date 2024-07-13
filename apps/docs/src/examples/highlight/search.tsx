@@ -1,4 +1,4 @@
-import { Highlight, Input, TextField, Typography } from "@pixelshades/ui/components"
+import { Highlight, TextField, Typography } from "@pixelshades/ui/components"
 import { useState } from "react"
 
 export default function Example() {
