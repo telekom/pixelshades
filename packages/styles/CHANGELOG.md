@@ -1,5 +1,15 @@
 # @pixelshades/styles
 
+## 0.5.0
+
+### Minor Changes
+
+- 21472a1: rework listbox based components
+
+### Patch Changes
+
+- 8e18984: remove experimental tabs variant
+
 ## 0.4.16
 
 ### Patch Changes

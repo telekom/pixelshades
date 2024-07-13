@@ -1,5 +1,17 @@
 # @pixelshades/ui
 
+## 0.6.0
+
+### Minor Changes
+
+- 21472a1: rework listbox based components
+
+### Patch Changes
+
+- Updated dependencies [8e18984]
+- Updated dependencies [21472a1]
+  - @pixelshades/styles@0.5.0
+
 ## 0.5.13
 
 ### Patch Changes
