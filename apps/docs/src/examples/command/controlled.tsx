@@ -29,7 +29,7 @@ export default function Example() {
 						<Command.Item
 							key={fruit.name + index}
 							before={<IconApple />}
-							title={fruit.name}
+							label={fruit.name}
 							description={fruit.description}
 						/>
 					))}
