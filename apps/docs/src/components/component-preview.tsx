@@ -38,7 +38,7 @@ export function ComponentPreview({
 				<div className="flex w-full gap-md pt-layout-xs">
 					<Tabs.Panel id="preview" className="w-full">
 						<div className="flex min-h-[200px] w-full grow flex-row rounded-lg border bg-subtle/10 p-md">
-							<div className="flex h-full min-h-[200px] w-full grow flex-row items-center justify-center p-12">
+							<div className="relative flex h-full min-h-[200px] w-full grow flex-row items-center justify-center p-12">
 								<component.component />
 							</div>
 						</div>

@@ -17,12 +17,6 @@ export const tabsVariants = tv({
 	},
 	variants: {
 		variant: {
-			outline: {
-				root: "",
-				list: "border-blue-500 border-b",
-				tab: "-mb-px border-red-500 rounded-b-none aria-selected:border aria-selected:bg-subtle aria-selected:border-b-transparent data-[hovered]:bg-subtle",
-				panel: "bg-subtle",
-			},
 			line: {
 				root: "",
 				list: "",

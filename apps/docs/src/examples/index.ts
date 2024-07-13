@@ -2061,33 +2061,16 @@ export function Example() {
 }
 `,
   },
-  "tabs/outline": {
-	  component: lazy(() => import("~/examples/tabs/outline.tsx")),
+  "tabs/controlled": {
+	  component: lazy(() => import("~/examples/tabs/controlled.tsx")),
 	  code: `import { Tabs } from "@pixelshades/ui/components"
+import { useState } from "react"
 
 export function Example() {
-	return (
-		<Tabs variant="outline">
-			<Tabs.List aria-label="Dashbord Panels">
-				<Tabs.Tab id="panel-1">Panel 1</Tabs.Tab>
-				<Tabs.Tab id="panel-2">Panel 2</Tabs.Tab>
-				<Tabs.Tab id="panel-3">Panel 3</Tabs.Tab>
-			</Tabs.List>
-			<Tabs.Panel id="panel-1">Panel 1</Tabs.Panel>
-			<Tabs.Panel id="panel-2">Panel 2</Tabs.Panel>
-			<Tabs.Panel id="panel-3">Panel 3</Tabs.Panel>
-		</Tabs>
-	)
-}
-`,
-  },
-  "tabs/pill": {
-	  component: lazy(() => import("~/examples/tabs/pill.tsx")),
-	  code: `import { Tabs } from "@pixelshades/ui/components"
+	const [value, setValue] = useState("panel-1")
 
-export function Example() {
 	return (
-		<Tabs variant="pill">
+		<Tabs variant="pill" selectedKey={value} onSelectionChange={(value) => setValue(value.toString())}>
 			<Tabs.List aria-label="Dashbord Panels">
 				<Tabs.Tab id="panel-1">Panel 1</Tabs.Tab>
 				<Tabs.Tab id="panel-2">Panel 2</Tabs.Tab>
@@ -2117,6 +2100,39 @@ export function Example() {
 			<Tabs.Panel id="panel-2">Panel 2</Tabs.Panel>
 			<Tabs.Panel id="panel-3">Panel 3</Tabs.Panel>
 		</Tabs>
+	)
+}
+`,
+  },
+  "tabs/variants": {
+	  component: lazy(() => import("~/examples/tabs/variants.tsx")),
+	  code: `import { Tabs } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<div className="flex size-full flex-row flex-wrap items-center justify-center gap-md">
+			<Tabs variant="pill">
+				<Tabs.List aria-label="Dashbord Panels">
+					<Tabs.Tab id="panel-1">Panel 1</Tabs.Tab>
+					<Tabs.Tab id="panel-2">Panel 2</Tabs.Tab>
+					<Tabs.Tab id="panel-3">Panel 3</Tabs.Tab>
+				</Tabs.List>
+				<Tabs.Panel id="panel-1">Panel 1</Tabs.Panel>
+				<Tabs.Panel id="panel-2">Panel 2</Tabs.Panel>
+				<Tabs.Panel id="panel-3">Panel 3</Tabs.Panel>
+			</Tabs>
+
+			<Tabs variant="line">
+				<Tabs.List aria-label="Dashbord Panels">
+					<Tabs.Tab id="panel-1">Panel 1</Tabs.Tab>
+					<Tabs.Tab id="panel-2">Panel 2</Tabs.Tab>
+					<Tabs.Tab id="panel-3">Panel 3</Tabs.Tab>
+				</Tabs.List>
+				<Tabs.Panel id="panel-1">Panel 1</Tabs.Panel>
+				<Tabs.Panel id="panel-2">Panel 2</Tabs.Panel>
+				<Tabs.Panel id="panel-3">Panel 3</Tabs.Panel>
+			</Tabs>
+		</div>
 	)
 }
 `,
