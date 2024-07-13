@@ -1,5 +1,12 @@
 # @pixelshades/styles
 
+## 0.4.16
+
+### Patch Changes
+
+- 6b0f54f: rework form field based components
+- 6b0f54f: rework all input based components
+
 ## 0.4.15
 
 ### Patch Changes

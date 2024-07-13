@@ -1,5 +1,18 @@
 # @pixelshades/utils
 
+## 2.1.6
+
+### Patch Changes
+
+- 6b0f54f: rework form field based components
+- 6b0f54f: rework all input based components
+- Updated dependencies [6b0f54f]
+- Updated dependencies [dbcdf4f]
+- Updated dependencies [6b0f54f]
+  - @pixelshades/cn@0.1.6
+  - @pixelshades/toast@0.0.4
+  - @pixelshades/ui@0.5.13
+
 ## 2.1.5
 
 ### Patch Changes

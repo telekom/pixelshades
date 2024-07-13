@@ -1,5 +1,11 @@
 # @pixelshades/cn
 
+## 0.1.6
+
+### Patch Changes
+
+- 6b0f54f: rework form field based components
+
 ## 0.1.4
 
 ### Patch Changes
