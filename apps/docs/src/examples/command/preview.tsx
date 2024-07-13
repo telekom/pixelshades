@@ -20,9 +20,9 @@ export default function Example() {
 						key={fruit.name + index}
 						before={<IconApple />}
 						onAction={() => alert(fruit.name)}
-						searchValues={[fruit.name, fruit.description || ""]}
+						textValue={fruit.name}
 						className={"items-center"}
-						title={fruit.name}
+						label={fruit.name}
 						description={fruit.description}
 					/>
 				))}
@@ -33,7 +33,7 @@ export default function Example() {
 						key={drink.name}
 						before={<IconGlass />}
 						onAction={() => alert(drink.name)}
-						title={drink.name}
+						label={drink.name}
 						description={drink.description}
 					/>
 				))}

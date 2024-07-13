@@ -21,8 +21,8 @@ export default function Example() {
 							key={fruit.name}
 							before={<IconApple />}
 							className={"items-center"}
-							searchValues={[fruit.name, fruit.description || ""]}
-							title={fruit.name}
+							textValue={fruit.name}
+							label={fruit.name}
 							onAction={() => alert(fruit.name)}
 							description={fruit.description}
 						/>
@@ -34,8 +34,8 @@ export default function Example() {
 							key={drink.name}
 							before={<IconGlass />}
 							className={"items-center"}
-							searchValues={[drink.name, drink.description || ""]}
-							title={drink.name}
+							textValue={drink.name}
+							label={drink.name}
 							onAction={() => alert(drink.name)}
 							description={drink.description}
 						/>

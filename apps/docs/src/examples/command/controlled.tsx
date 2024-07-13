@@ -37,7 +37,7 @@ export default function Example() {
 				<Command.Group heading="Drinks">
 					{drinks.map((drink) => (
 						<Command.Item
-							title={drink.name}
+							label={drink.name}
 							description={drink.description}
 							key={drink.name}
 							before={<IconGlass />}
