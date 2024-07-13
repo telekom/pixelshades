@@ -1,3 +1,7 @@
+// The following code is from dotui by mehdibha
+// Source: https://github.com/mehdibha/dotui
+// Used under the MIT License
+
 import { TextField } from "@pixelshades/ui/components"
 import { FormControl, FormItem } from "../commons/hook-form"
 import type { AutoFormInputComponentProps } from "../types"
