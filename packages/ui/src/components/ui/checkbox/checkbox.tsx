@@ -11,7 +11,7 @@ import { IconCheck } from "@tabler/icons-react"
 import React from "react"
 import { type CheckboxProps as AriaCheckBoxProps, Checkbox as AriaCheckbox } from "react-aria-components"
 import type { VariantProps } from "tailwind-variants"
-import { FormField, type FormFieldProps } from "../../core/form"
+import { FormField, type FormFieldProps } from "../../core/form-field"
 
 type CheckboxVariantProps = VariantProps<typeof checkboxVariant>
 

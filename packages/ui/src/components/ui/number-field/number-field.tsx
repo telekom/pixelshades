@@ -4,46 +4,59 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-import { cn } from "@pixelshades/cn"
-import { baseInputSizes } from "@pixelshades/styles/utils"
 import { forwardRef } from "@pixelshades/utils/jsx"
-import type { ReactNode } from "react"
 import type { NumberFieldProps as AriaNumberFieldProps } from "react-aria-components"
-import { Input as AriaInput, NumberField as AriaNumberField } from "react-aria-components"
+import { NumberField as AriaNumberField } from "react-aria-components"
 import { IconChevronDown, IconChevronUp } from "../../../icons"
-import { FormField, type FormFieldProps } from "../../core/form"
+import { FormField, type FormFieldProps } from "../../core/form-field"
+import { Input, type InputBasedCompBaseProps, InputRoot } from "../../core/input"
 import { Button } from "../button"
-import { FormDescription, FormFieldError, FormFieldGroup } from "../form"
 
-export interface NumberFieldProps extends AriaNumberFieldProps, FormFieldProps {}
+export interface NumberFieldProps
+	extends AriaNumberFieldProps,
+		FormFieldProps,
+		Omit<InputBasedCompBaseProps, "after" | "loaderPosition"> {}
 
 const NumberField = forwardRef(
 	({
-		label,
-		helperText,
-		description,
-		tooltip,
-		errorMessage,
 		ref,
 		isRequired,
 
+		// FormField Props
+		label,
+		helperText,
+		tooltip,
+		description,
+		errorMessage,
+
+		// Input Root Props
+		before,
+		isLoading,
+
 		...props
 	}: NumberFieldProps & { ref?: any }) => (
-		<AriaNumberField className={"flex flex-col gap-sm"} isRequired={isRequired} {...props}>
-			<FormField label={label} description={description} tooltip={tooltip} isRequired={isRequired}>
-				<AriaInput
-					className={cn("w-full bg-transparent outline-none ring-0", baseInputSizes.variants.size)}
-					ref={ref}
-				/>
-				<div className="flex flex-col">
-					<Button className="size-3 overflow-hidden" slot="increment" size="icon" variant="ghost">
-						<IconChevronUp />
-					</Button>
-					<Button className="size-3 overflow-hidden" slot="decrement" size="icon" variant="ghost">
-						<IconChevronDown />
-					</Button>
-				</div>
-			</FormField>
+		<AriaNumberField className="flex flex-col items-start gap-md" isRequired={isRequired} {...props}>
+			{(innerProps) => (
+				<FormField
+					label={label}
+					description={description}
+					tooltip={tooltip}
+					isRequired={isRequired}
+					isDisabled={innerProps.isDisabled}
+				>
+					<Input.Root before={before} isLoading={isLoading} loaderPosition={"before"}>
+						<Input ref={ref} />
+						<div className="flex flex-col">
+							<Button className="size-3 overflow-hidden" slot="increment" size="icon" variant="ghost">
+								<IconChevronUp />
+							</Button>
+							<Button className="size-3 overflow-hidden" slot="decrement" size="icon" variant="ghost">
+								<IconChevronDown />
+							</Button>
+						</div>
+					</Input.Root>
+				</FormField>
+			)}
 		</AriaNumberField>
 	),
 )

@@ -14,7 +14,7 @@ import {
 	SliderTrack as AriaSliderTrack,
 } from "react-aria-components"
 import type { VariantProps } from "tailwind-variants"
-import { FormField, type FormFieldProps } from "../../core/form"
+import { FormField, type FormFieldProps } from "../../core/form-field"
 import { FormDescription, FormFieldError } from "../form"
 
 const { sliderRoot, sliderHeader, sliderTrack, sliderThumb, sliderOutput, sliderDescription } = sliderVariants()

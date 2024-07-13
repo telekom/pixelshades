@@ -10,7 +10,7 @@ import { Switch as AriaSwitch, type SwitchProps as AriaSwitchProps } from "react
 
 import type { ReactNode } from "react"
 import React from "react"
-import { FormField, type FormFieldProps } from "../../core/form"
+import { FormField, type FormFieldProps } from "../../core/form-field"
 import { If } from "../../utils"
 import { FormDescription, FormFieldError } from "../form"
 

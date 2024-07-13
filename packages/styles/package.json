@@ -8,7 +8,8 @@
 	},
 	"scripts": {
 		"build": " NODE_OPTIONS=--max-old-space-size=8192 bunchee",
-		"dev": "bunchee --watch --no-clean"
+		"dev": "bunchee --watch --no-clean",
+		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
 		"tailwind-variants": "0.2.1"
@@ -108,22 +109,10 @@
 				"default": "./dist/es/components/data-list/index.mjs"
 			}
 		},
-		"./components/date-field": {
-			"import": {
-				"types": "./dist/es/components/date-field/index.d.mts",
-				"default": "./dist/es/components/date-field/index.mjs"
-			}
-		},
 		"./components/range-calendar": {
 			"import": {
 				"types": "./dist/es/components/date-range-calendar/index.d.mts",
 				"default": "./dist/es/components/date-range-calendar/index.mjs"
-			}
-		},
-		"./components/date-picker": {
-			"import": {
-				"types": "./dist/es/components/date-picker/index.d.mts",
-				"default": "./dist/es/components/date-picker/index.mjs"
 			}
 		},
 		"./components/dialog": {

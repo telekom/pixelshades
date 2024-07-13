@@ -4,32 +4,49 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-import type { TimeFieldProps as AriaTimeFieldProps, TimeValue, ValidationResult } from "react-aria-components"
-import { TimeField as AriaTimeField, DateInput, DateSegment, Text } from "react-aria-components"
+import type { TimeFieldProps as AriaTimeFieldProps, TimeValue } from "react-aria-components"
+import { TimeField as AriaTimeField } from "react-aria-components"
 
-import { dateFieldVariants } from "@pixelshades/styles/components/date-field"
-import { inputVariants } from "@pixelshades/styles/components/input"
-import type { ReactNode } from "react"
-import { FormField, type FormFieldProps } from "../../core/form"
-import { FormDescription, FormFieldError } from "../form"
+import { DateInput, DateSegment } from "../../core/date-input/date-input"
+import { FormField, type FormFieldProps } from "../../core/form-field"
+import { type InputBasedCompBaseProps, InputRoot } from "../../core/input"
 
-export interface TimeFieldProps<T extends TimeValue> extends AriaTimeFieldProps<T>, FormFieldProps {}
+export interface TimeFieldProps<T extends TimeValue>
+	extends AriaTimeFieldProps<T>,
+		FormFieldProps,
+		InputBasedCompBaseProps {}
 
 const TimeField = <T extends TimeValue>({
+	isRequired,
+	// FormField Props
 	label,
 	helperText,
-	errorMessage,
-	description,
 	tooltip,
-	isRequired,
+	description,
+	errorMessage,
+
+	// Input Root Props
+	before,
+	after,
+	isLoading,
+	loaderPosition,
 	...props
 }: TimeFieldProps<T>) => (
-	<AriaTimeField className="flex flex-col gap-md" isRequired={isRequired} {...props}>
-		<FormField>
-			<DateInput className={inputVariants()}>
-				{(segment) => <DateSegment className={dateFieldVariants()} segment={segment} />}
-			</DateInput>
-		</FormField>
+	<AriaTimeField isRequired={isRequired} {...props}>
+		{(innerProps) => (
+			<FormField
+				label={label}
+				description={description}
+				helperText={helperText}
+				tooltip={tooltip}
+				isDisabled={innerProps.isDisabled}
+				isRequired={isRequired}
+			>
+				<InputRoot before={before} after={after} isLoading={isLoading} loaderPosition={loaderPosition}>
+					<DateInput>{(segment) => <DateSegment segment={segment} />}</DateInput>
+				</InputRoot>
+			</FormField>
+		)}
 	</AriaTimeField>
 )
 

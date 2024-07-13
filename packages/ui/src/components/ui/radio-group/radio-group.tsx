@@ -17,7 +17,7 @@ import { labelVariants } from "@pixelshades/styles/components/label"
 import { radioGroupVariants } from "@pixelshades/styles/components/radio-group"
 import { IconCircle } from "@tabler/icons-react"
 import type { ReactNode } from "react"
-import { FormField, type FormFieldProps } from "../../core/form"
+import { FormField, type FormFieldProps } from "../../core/form-field"
 import { If } from "../../utils"
 import { FormDescription, FormFieldError } from "../form"
 

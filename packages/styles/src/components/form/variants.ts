@@ -36,7 +36,6 @@ export const fieldBorderStyles = tv({
 })
 
 export const formGroupVariants = tv({
-	base: inputVariants({ className: "group" }),
 	variants: fieldBorderStyles.variants,
 	extend: focusRing,
 })

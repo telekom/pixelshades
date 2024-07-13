@@ -2121,19 +2121,20 @@ export function Example() {
 }
 `,
   },
-  "text-field/multi-line": {
-	  component: lazy(() => import("~/examples/text-field/multi-line.tsx")),
+  "text-field/before-after": {
+	  component: lazy(() => import("~/examples/text-field/before-after.tsx")),
 	  code: `import { TextField } from "@pixelshades/ui/components"
+import { IconAlertTriangle } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
-		<TextField
-			label="Project"
-			description="Deploy your new project in one-click."
-			helperText="Helper Text"
-			rows={5}
-			multiLine
-		/>
+		<div className="flex flex-col gap-lg">
+			<TextField before={<span>https://</span>} />
+
+			<TextField after={<span>@gmail.com</span>} />
+
+			<TextField before={<IconAlertTriangle className="text-warning" />} />
+		</div>
 	)
 }
 `,

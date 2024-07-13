@@ -23,10 +23,10 @@ import { createStyleContext } from "@pixelshades/utils/styles"
 import { useControllableState } from "../../../hooks/use-controlled-state"
 import { type Keys, useKeyPress } from "../../../hooks/use-keypress"
 import { IconCommand } from "../../../icons"
+import { Input, type InputProps } from "../../core/input"
 import { If } from "../../utils/if"
 import { Button } from "../button"
 import { Dialog } from "../dialog"
-import { Input, type InputProps } from "../input"
 import { Kbd } from "../kbd"
 import { Typography, type TypographyProps } from "../typography"
 
@@ -127,7 +127,7 @@ const CommandSearch = ({ placeholder = "Search...", ...props }: CommandSearchPro
 	return (
 		<Input
 			autoFocus
-			focusRing={false}
+			// focusRing={false}
 			className="rounded-b-none border-0 border-b bg-transparent"
 			placeholder={placeholder}
 			{...props}

@@ -5,16 +5,16 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import type React from "react"
-import type { ReactNode } from "react"
 
 import type { ComboBoxProps as AriaComboBoxProps, ListBoxItemProps } from "react-aria-components"
-import { ComboBox as AriaComboBox, Button } from "react-aria-components"
+import { ComboBox as AriaComboBox } from "react-aria-components"
 
 import { comboboxVaraints } from "@pixelshades/styles/components/combo-box"
 import { IconChevronDown } from "@tabler/icons-react"
 
-import { FormField, type FormFieldProps } from "../../core/form"
-import { Input } from "../input"
+import { FormField, type FormFieldProps } from "../../core/form-field"
+import { Input } from "../../core/input"
+import { Button } from "../button"
 import { ListBox, ListBoxItem } from "../listbox/listbox"
 import { Popover } from "../popover"
 
@@ -42,12 +42,12 @@ const ComboBoxRoot = <T extends object>({
 		{({ isRequired, isDisabled }) => (
 			<>
 				<FormField tooltip={tooltip} description={description} isRequired={isRequired} isDisabled={isDisabled}>
-					<div className={inputRoot()}>
+					<Input.Root>
 						<Input />
-						<Button className={button()}>
+						<Button variant="ghost">
 							<IconChevronDown aria-hidden className="size-4 text-subtle-foreground" />
 						</Button>
-					</div>
+					</Input.Root>
 				</FormField>
 				<Popover className={popover()} isNonModal>
 					<ListBox items={items}>{children}</ListBox>
