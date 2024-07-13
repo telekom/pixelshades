@@ -35,21 +35,25 @@ export interface TextAreaFieldProps extends AriaTextFieldProps, InputBasedCompBa
 
 const TextField = forwardRef(
 	({
-		label,
-		helperText,
-		description,
-		tooltip,
-		errorMessage,
 		placeholder,
 		ref,
 		isRequired,
 		multiLine,
 		cols,
 		rows,
-		before,
+
+		// FormField Props
+		label,
+		helperText,
+		tooltip,
+		description,
+		errorMessage,
+
+		// Input Root Props
 		after,
-		loaderPosition,
+		before,
 		isLoading,
+		loaderPosition,
 		...props
 	}: TextFieldProps & { ref?: any }) => (
 		<AriaTextField className={"flex flex-col gap-sm"} isRequired={isRequired} {...props}>
@@ -59,6 +63,7 @@ const TextField = forwardRef(
 				description={description}
 				tooltip={tooltip}
 				isRequired={isRequired}
+				errorMessage={errorMessage}
 			>
 				<Input.Root before={before} after={after} loaderPosition={loaderPosition} isLoading={isLoading}>
 					<Input ref={ref} placeholder={placeholder} />

@@ -2139,6 +2139,45 @@ export function Example() {
 }
 `,
   },
+  "text-field/controlled": {
+	  component: lazy(() => import("~/examples/text-field/controlled.tsx")),
+	  code: `import { TextField } from "@pixelshades/ui/components"
+import { useState } from "react"
+
+export function Example() {
+	const [value, setValue] = useState("")
+
+	return <TextField value={value} onChange={setValue} placeholder="Controlled" />
+}
+`,
+  },
+  "text-field/disabled": {
+	  component: lazy(() => import("~/examples/text-field/disabled.tsx")),
+	  code: `import { TextField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <TextField isDisabled />
+}
+`,
+  },
+  "text-field/error": {
+	  component: lazy(() => import("~/examples/text-field/error.tsx")),
+	  code: `import { TextField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <TextField errorMessage="Error Message" />
+}
+`,
+  },
+  "text-field/loading": {
+	  component: lazy(() => import("~/examples/text-field/loading.tsx")),
+	  code: `import { TextField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <TextField isLoading />
+}
+`,
+  },
   "text-field/preview": {
 	  component: lazy(() => import("~/examples/text-field/preview.tsx")),
 	  code: `import { TextField } from "@pixelshades/ui/components"

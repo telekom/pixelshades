@@ -98,7 +98,7 @@ const InputRoot = ({
 	before,
 	after,
 	isLoading,
-	loaderPosition,
+	loaderPosition = "after",
 	size,
 	multiline,
 	...props
