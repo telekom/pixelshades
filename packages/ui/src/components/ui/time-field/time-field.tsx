@@ -30,6 +30,7 @@ const TimeField = <T extends TimeValue>({
 	after,
 	isLoading,
 	loaderPosition,
+
 	...props
 }: TimeFieldProps<T>) => (
 	<AriaTimeField isRequired={isRequired} {...props}>

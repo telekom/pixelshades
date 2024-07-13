@@ -7,30 +7,26 @@
 import type { ReactNode } from "react"
 import {
 	Header as AriaHeader,
-	ListBox as AriaListBox,
-	ListBoxItem as AriaListBoxItem,
 	Section as AriaSection,
 	Text as AriaText,
 	ComboBox,
 	type ComboBoxProps,
-	type ListBoxItemProps,
 	type SectionProps,
 } from "react-aria-components"
 
 import { commandVariants } from "@pixelshades/styles/components/command"
-import { RenderSlot } from "@pixelshades/utils/jsx"
 import { createStyleContext } from "@pixelshades/utils/styles"
 import { useControllableState } from "../../../hooks/use-controlled-state"
 import { type Keys, useKeyPress } from "../../../hooks/use-keypress"
 import { IconCommand } from "../../../icons"
 import { Input, type InputProps } from "../../core/input"
-import { If } from "../../utils/if"
 import { Button } from "../button"
 import { Dialog } from "../dialog"
 import { Kbd } from "../kbd"
+import { ListBox, ListBoxItem } from "../listbox/listbox"
 import { Typography, type TypographyProps } from "../typography"
 
-const { icon, dialog } = commandVariants()
+const { dialog } = commandVariants()
 
 const { withContext, withProvider } = createStyleContext(commandVariants)
 
@@ -89,14 +85,14 @@ const UnstyledCommand = <T extends object>({ children, searchField, ...props }: 
 	return (
 		<ComboBox aria-label="CMDK Search" {...props} allowsEmptyCollection menuTrigger="focus">
 			{searchField}
-			<AriaListBox
+			<ListBox
 				className="max-h-[300px] overflow-y-auto overflow-x-hidden"
 				renderEmptyState={() => (
 					<Typography className="py-xl text-center text-sm">No results found.</Typography>
 				)}
 			>
 				{children}
-			</AriaListBox>
+			</ListBox>
 		</ComboBox>
 	)
 }
@@ -125,35 +121,20 @@ export interface CommandSearchProps extends Omit<InputProps, "className"> {
 /** Displays a search field for the command. */
 const CommandSearch = ({ placeholder = "Search...", ...props }: CommandSearchProps) => {
 	return (
-		<Input
-			autoFocus
-			// focusRing={false}
-			className="rounded-b-none border-0 border-b bg-transparent"
-			placeholder={placeholder}
-			{...props}
-		/>
+		<Input.Root className="rounded-b-none border-0 border-b bg-transparent">
+			<Input
+				autoFocus
+				// focusRing={false}
+				placeholder={placeholder}
+				{...props}
+			/>
+		</Input.Root>
 	)
 }
 
 export interface CommandItemDescriptionProps extends TypographyProps<"p"> {}
 
-/** Displays a description of a command item. */
-const UnstyledCommandItemDescription = ({ children, ...props }: CommandItemDescriptionProps) => {
-	return (
-		<Typography size="xs" {...props} as={AriaText} slot="description">
-			{children}
-		</Typography>
-	)
-}
 export interface CommandItemTitleProps extends TypographyProps<"p"> {}
-/** Displays a title of a command item. */
-const UnstyledCommandItemTitle = ({ children, ...props }: CommandItemTitleProps) => {
-	return (
-		<Typography {...props} as={AriaText} slot="label">
-			{children}
-		</Typography>
-	)
-}
 
 export interface CommandGroupProps<T> extends SectionProps<any> {
 	/** The heading of the group. */
@@ -169,64 +150,17 @@ const UnstyledCommandGroup = <T,>({ heading, children, ...rest }: CommandGroupPr
 	</AriaSection>
 )
 
-type CommandItemProps = Omit<ListBoxItemProps, "children" | "textValue"> & {
-	/** Class name to apply to the command item. */
-	className?: string
-	/** The values to search for. */
-	searchValues?: string[]
-	/** Element shown before the child */
-	before?: React.ReactElement<HTMLElement>
-	/** Element shown after the child */
-	after?: React.ReactElement<HTMLElement>
-	/** The command item's title. */
-	title: string
-	/** The command item's description. */
-	description?: ReactNode
-}
-
-/** Displays a command item. */
-const UnstyledCommandItem = ({ before, title, description, searchValues = [], after, ...props }: CommandItemProps) => {
-	return (
-		<AriaListBoxItem textValue={title} {...props}>
-			<>
-				<If condition={before}>
-					<RenderSlot item={before!} className={icon()} />
-				</If>
-				<div className="flex flex-col">
-					<CommandItemTitle>{title}</CommandItemTitle>
-					{description && <CommandItemDescription>{description}</CommandItemDescription>}
-				</div>
-				<If condition={after}>
-					<RenderSlot item={after!} className={icon()} />
-				</If>
-			</>
-		</AriaListBoxItem>
-	)
-}
-
 const CommandRoot = withProvider(UnstyledCommand, "command")
-const CommandItemDescription = withContext(UnstyledCommandItemDescription, "itemDescription")
-const CommandItemTitle = withContext(UnstyledCommandItemTitle, "itemTitle")
 const CommandGroup = withContext(UnstyledCommandGroup, "group")
-const CommandItem = withContext(UnstyledCommandItem, "item")
+const CommandItem = ListBoxItem
 
 export const Command = Object.assign(CommandRoot, {
 	Group: CommandGroup,
 	Item: CommandItem,
-	ItemTitle: CommandItemTitle,
-	ItemDescription: CommandItemDescription,
 	Search: CommandSearch,
 	Trigger: CommandTrigger,
 	Icon: IconCommand,
 	Dialog: CommandDialog,
 })
 
-export {
-	CommandDialog,
-	IconCommand as CommandIcon,
-	CommandItem,
-	CommandItemDescription,
-	CommandItemTitle,
-	CommandSearch,
-	CommandTrigger,
-}
+export { CommandDialog, IconCommand as CommandIcon, CommandItem, CommandSearch, CommandTrigger }

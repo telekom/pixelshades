@@ -39,17 +39,17 @@ const ListBoxRoot = <T extends object>({ children, isLoading, ...props }: ListBo
 
 interface ItemProps<T> extends AriaListBoxItemProps<T>, VariantProps<typeof listBoxItemStyles> {
 	label?: string
-	description?: string
-	prefix?: React.ReactNode
-	suffix?: React.ReactNode
+	description?: React.ReactNode
+	before?: React.ReactNode
+	after?: React.ReactNode
 }
 
 export const ListBoxItem = <T extends object>({
 	variant,
 	label,
 	description,
-	prefix,
-	suffix,
+	before,
+	after,
 	...props
 }: ItemProps<T>) => {
 	const textValue = props.textValue || (typeof props.children === "string" ? props.children : undefined)
@@ -67,13 +67,13 @@ export const ListBoxItem = <T extends object>({
 						</span>
 					)}
 					<span className="flex items-center gap-3">
-						{prefix}
+						{before}
 						<span className="flex flex-1 flex-col">
 							{label && <Text slot="label">{label}</Text>}
 							{description && <Text slot="description">{description}</Text>}
 							{children}
 						</span>
-						{suffix}
+						{after}
 					</span>
 				</>
 			))}

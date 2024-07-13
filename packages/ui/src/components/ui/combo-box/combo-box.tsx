@@ -7,20 +7,23 @@
 import type React from "react"
 
 import type { ComboBoxProps as AriaComboBoxProps, ListBoxItemProps } from "react-aria-components"
-import { ComboBox as AriaComboBox } from "react-aria-components"
+import { Button as AriaButton, ComboBox as AriaComboBox } from "react-aria-components"
 
 import { comboboxVaraints } from "@pixelshades/styles/components/combo-box"
 import { IconChevronDown } from "@tabler/icons-react"
 
 import { FormField, type FormFieldProps } from "../../core/form-field"
-import { Input } from "../../core/input"
-import { Button } from "../button"
+import { Input, type InputBasedCompBaseProps } from "../../core/input"
+
 import { ListBox, ListBoxItem } from "../listbox/listbox"
 import { Popover } from "../popover"
 
-const { button, item, popover, root, inputRoot } = comboboxVaraints()
+const { popover, root } = comboboxVaraints()
 
-interface ComboBoxProps<T extends object> extends Omit<AriaComboBoxProps<T>, "children">, FormFieldProps {
+interface ComboBoxProps<T extends object>
+	extends Omit<AriaComboBoxProps<T>, "children">,
+		FormFieldProps,
+		InputBasedCompBaseProps {
 	/** The styles of the combo box. */
 	className?: string
 	/** The combo box items. */
@@ -28,29 +31,50 @@ interface ComboBoxProps<T extends object> extends Omit<AriaComboBoxProps<T>, "ch
 }
 
 const ComboBoxRoot = <T extends object>({
-	label,
 	className,
-	description,
-	helperText,
-	tooltip,
-	errorMessage,
+
 	children,
 	items,
+
+	// FormField Props
+	label,
+	helperText,
+	tooltip,
+	description,
+	errorMessage,
+
+	// Input Root Props
+	before,
+	after,
+	isLoading,
+	loaderPosition,
 	...props
 }: ComboBoxProps<T>) => (
 	<AriaComboBox className={root({ className })} {...props} shouldFocusWrap>
 		{({ isRequired, isDisabled }) => (
 			<>
-				<FormField tooltip={tooltip} description={description} isRequired={isRequired} isDisabled={isDisabled}>
-					<Input.Root>
+				<FormField
+					label={label}
+					tooltip={tooltip}
+					description={description}
+					isRequired={isRequired}
+					isDisabled={isDisabled}
+				>
+					<Input.Root before={before} after={after} isLoading={isLoading} loaderPosition={loaderPosition}>
 						<Input />
-						<Button variant="ghost">
+						<AriaButton
+							className={
+								"m-0 flex appearance-none items-center justify-between border-none bg-transparent p-0 focus:outline-none"
+							}
+						>
 							<IconChevronDown aria-hidden className="size-4 text-subtle-foreground" />
-						</Button>
+						</AriaButton>
 					</Input.Root>
 				</FormField>
 				<Popover className={popover()} isNonModal>
-					<ListBox items={items}>{children}</ListBox>
+					<ListBox items={items} isLoading={isLoading}>
+						{children}
+					</ListBox>
 				</Popover>
 			</>
 		)}

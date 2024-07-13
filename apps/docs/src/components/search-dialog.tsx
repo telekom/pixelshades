@@ -36,7 +36,8 @@ export const SearchDialog = ({ open, handleOpenChange }: SearchDialogProps) => {
 							}
 							key={value.path}
 							href={value.permalink}
-							title={value.title}
+							label={value.title}
+							textValue={value.title}
 							description={value.description}
 						/>
 					))}

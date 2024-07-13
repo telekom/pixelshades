@@ -23,9 +23,9 @@ export const listBoxStyles = tv({
 
 export const listBoxItemStyles = tv({
 	base: [
-		"flex cursor-pointer items-center rounded-sm px-md py-lg text-sm outline-none transition-colors",
+		"flex cursor-pointer items-center rounded-sm px-sm py-md text-sm outline-none transition-colors",
 		"disabled:pointer-default disabled:cursor-default",
-		"hover:bg-background-hover focus:bg-background-active disabled:bg-neutral-background-disabled disabled:text-subtle-foreground-disabled",
+		"hover:bg-background-hover data-[focused]:bg-background-active disabled:bg-neutral-background-disabled disabled:text-subtle-foreground-disabled",
 		"selection-single:pl-0 selection-multiple:pl-0",
 		"[&_svg]:size-4",
 	],

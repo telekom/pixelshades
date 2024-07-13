@@ -4,25 +4,19 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-import type { SelectProps as AriaSelectProps, ListBoxItemProps } from "react-aria-components"
-import {
-	Button as AriaButton,
-	ListBox as AriaListBox,
-	Select as AriaSelect,
-	ListBoxItem,
-	SelectValue,
-} from "react-aria-components"
+import type { SelectProps as AriaSelectProps } from "react-aria-components"
+import { Button as AriaButton, Select as AriaSelect, SelectValue } from "react-aria-components"
 
 import { selectVariants } from "@pixelshades/styles/components/select"
 import type React from "react"
 import { IconChevronDown } from "../../../icons"
 import { FormField, type FormFieldProps } from "../../core/form-field"
 import { type InputBasedCompBaseProps, InputRoot } from "../../core/input"
-import { Button } from "../button"
+import { ListBox, ListBoxItem, type ListBoxProps } from "../listbox/listbox"
 import { MenuLabel, MenuSection } from "../menu"
 import { Popover } from "../popover"
 
-const { button, item, popover, root, icon, value } = selectVariants()
+const { popover, root, value } = selectVariants()
 
 interface SelectProps<T extends object>
 	extends Omit<AriaSelectProps<T>, "children">,
@@ -34,6 +28,8 @@ interface SelectProps<T extends object>
 	items?: Iterable<T>
 	/** Children of the select field. */
 	children: React.ReactNode | ((item: T) => React.ReactNode)
+
+	dependencies?: ListBoxProps<T>["dependencies"]
 }
 
 const SelectRoot = <T extends object>({
@@ -42,6 +38,7 @@ const SelectRoot = <T extends object>({
 
 	children,
 	isRequired,
+	dependencies,
 	// FormField Props
 	label,
 	helperText,
@@ -62,30 +59,26 @@ const SelectRoot = <T extends object>({
 						"m-0 flex w-full appearance-none items-center justify-between border-none bg-transparent p-0 focus:outline-none"
 					}
 				>
-					<SelectValue />
+					<SelectValue className={value()} />
 					<IconChevronDown className="size-4" />
 				</AriaButton>
 			</InputRoot>
 		</FormField>
 		<Popover className={popover()}>
-			<AriaListBox className="outline-none" items={items}>
+			<ListBox isLoading={isLoading} items={items} dependencies={dependencies}>
 				{children}
-			</AriaListBox>
+			</ListBox>
 		</Popover>
 	</AriaSelect>
 )
 
 SelectRoot.displayName = "Select"
 
-const SelectItem = (props: ListBoxItemProps) => {
-	return <ListBoxItem {...props} className={item()} />
-}
+const SelectItem = ListBoxItem
 
 const SelectSection = MenuSection
 
 const SelectLabel = MenuLabel
-
-SelectItem.displayName = "SelectItem"
 
 export const Select = Object.assign(SelectRoot, {
 	Item: SelectItem,
