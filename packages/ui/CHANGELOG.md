@@ -1,5 +1,11 @@
 # @pixelshades/ui
 
+## 0.6.1
+
+### Patch Changes
+
+- 7507911: readd text area
+
 ## 0.6.0
 
 ### Minor Changes
