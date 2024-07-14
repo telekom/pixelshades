@@ -24,6 +24,8 @@ interface LabelProps extends AriaLabelProps {
 }
 
 const LabelRoot = forwardRef(({ className, children, description, isRequired, tooltip, ...props }: LabelProps) => {
+	if (!children) return null
+
 	return (
 		<AriaLabel className={labelVariants(className).base()} {...props}>
 			<span>{children}</span>
