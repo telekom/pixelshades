@@ -1,6 +1,6 @@
 {
 	"name": "@pixelshades/ui",
-	"version": "0.6.1",
+	"version": "0.6.2",
 	"private": false,
 	"type": "module",
 	"publishConfig": {
@@ -50,7 +50,10 @@
 		"tailwindcss": "3.4.4",
 		"typescript": "^5.5.3"
 	},
-	"files": ["dist", "src/index.css"],
+	"files": [
+		"dist",
+		"src/index.css"
+	],
 	"exports": {
 		".": {
 			"import": {
