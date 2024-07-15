@@ -85,6 +85,8 @@ ComboBoxRoot.displayName = "ComboBox"
 
 export type ComboBoxItemProps = ListBoxItemProps
 
+export const ComboBoxItem = ListBoxItem
+
 export const ComboBox = Object.assign(ComboBoxRoot, {
-	Item: ListBoxItem,
+	Item: ComboBoxItem,
 })
