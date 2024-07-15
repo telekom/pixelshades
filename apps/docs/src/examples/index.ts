@@ -634,6 +634,29 @@ export function Example() {
 }
 `,
   },
+  "combobox/loading": {
+	  component: lazy(() => import("~/examples/combobox/loading.tsx")),
+	  code: `import { ComboBox } from "@pixelshades/ui/components"
+
+import { useAsyncList } from "react-stately"
+
+export function Example() {
+	const list = useAsyncList<any>({
+		async load({ signal }) {
+			const res = await fetch("https://pokeapi.co/api/v2/pokemon", { signal })
+			const json = await res.json()
+			return { items: json.results }
+		},
+	})
+
+	return (
+		<ComboBox label="Project" items={list.items} isLoading={list.isLoading}>
+			{(item) => <ComboBox.Item key={item.name}>{item.name}</ComboBox.Item>}
+		</ComboBox>
+	)
+}
+`,
+  },
   "combobox/preview": {
 	  component: lazy(() => import("~/examples/combobox/preview.tsx")),
 	  code: `import { ComboBox } from "@pixelshades/ui/components"
@@ -683,7 +706,7 @@ export function Example() {
 						<Command.Item
 							key={fruit.name + index}
 							before={<IconApple />}
-							title={fruit.name}
+							label={fruit.name}
 							description={fruit.description}
 						/>
 					))}
@@ -691,7 +714,7 @@ export function Example() {
 				<Command.Group heading="Drinks">
 					{drinks.map((drink) => (
 						<Command.Item
-							title={drink.name}
+							label={drink.name}
 							description={drink.description}
 							key={drink.name}
 							before={<IconGlass />}
@@ -730,8 +753,8 @@ export function Example() {
 							key={fruit.name}
 							before={<IconApple />}
 							className={"items-center"}
-							searchValues={[fruit.name, fruit.description || ""]}
-							title={fruit.name}
+							textValue={fruit.name}
+							label={fruit.name}
 							onAction={() => alert(fruit.name)}
 							description={fruit.description}
 						/>
@@ -743,8 +766,8 @@ export function Example() {
 							key={drink.name}
 							before={<IconGlass />}
 							className={"items-center"}
-							searchValues={[drink.name, drink.description || ""]}
-							title={drink.name}
+							textValue={drink.name}
+							label={drink.name}
 							onAction={() => alert(drink.name)}
 							description={drink.description}
 						/>
@@ -780,9 +803,9 @@ export function Example() {
 						key={fruit.name + index}
 						before={<IconApple />}
 						onAction={() => alert(fruit.name)}
-						searchValues={[fruit.name, fruit.description || ""]}
+						textValue={fruit.name}
 						className={"items-center"}
-						title={fruit.name}
+						label={fruit.name}
 						description={fruit.description}
 					/>
 				))}
@@ -793,7 +816,7 @@ export function Example() {
 						key={drink.name}
 						before={<IconGlass />}
 						onAction={() => alert(drink.name)}
-						title={drink.name}
+						label={drink.name}
 						description={drink.description}
 					/>
 				))}
