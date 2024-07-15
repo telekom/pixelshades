@@ -26,6 +26,9 @@ importers:
 
   apps/docs:
     dependencies:
+      '@internationalized/date':
+        specifier: ^3.5.4
+        version: 3.5.4
       '@pixelshades/cn':
         specifier: workspace:*
         version: link:../../packages/cn
