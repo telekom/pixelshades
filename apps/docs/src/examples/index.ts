@@ -898,6 +898,42 @@ export function Example() {
 }
 `,
   },
+  "date-field/before-after": {
+	  component: lazy(() => import("~/examples/date-field/before-after.tsx")),
+	  code: `import { DateField } from "@pixelshades/ui/components"
+import { IconClock } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return (
+		<div className="flex flex-col gap-lg">
+			<DateField before={<IconClock />} />
+			<DateField after={<IconClock />} />
+		</div>
+	)
+}
+`,
+  },
+  "date-field/controlled": {
+	  component: lazy(() => import("~/examples/date-field/controlled.tsx")),
+	  code: `import { DateField, type DateValue } from "@pixelshades/ui/components"
+import { useState } from "react"
+
+export function Example() {
+	const [value, setValue] = useState<DateValue>()
+
+	return <DateField value={value} onChange={setValue} />
+}
+`,
+  },
+  "date-field/error-message": {
+	  component: lazy(() => import("~/examples/date-field/error-message.tsx")),
+	  code: `import { DateField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <DateField errorMessage="Invalid Date" isInvalid />
+}
+`,
+  },
   "date-field/granularity": {
 	  component: lazy(() => import("~/examples/date-field/granularity.tsx")),
 	  code: `import { DateField } from "@pixelshades/ui/components"
@@ -914,12 +950,45 @@ export function Example() {
 }
 `,
   },
+  "date-field/hour-cycle": {
+	  component: lazy(() => import("~/examples/date-field/hour-cycle.tsx")),
+	  code: `import { DateField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <DateField hourCycle={24} />
+}
+`,
+  },
+  "date-field/loading": {
+	  component: lazy(() => import("~/examples/date-field/loading.tsx")),
+	  code: `import { DateField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<div className="flex flex-col gap-lg">
+			<DateField isLoading />
+			<DateField isLoading loaderPosition="before" />
+			<DateField isLoading loaderPosition="after" />
+		</div>
+	)
+}
+`,
+  },
   "date-field/preview": {
 	  component: lazy(() => import("~/examples/date-field/preview.tsx")),
 	  code: `import { DateField } from "@pixelshades/ui/components"
 
 export function Example() {
-	return <DateField label="Start Date" />
+	return <DateField />
+}
+`,
+  },
+  "date-field/with-label": {
+	  component: lazy(() => import("~/examples/date-field/with-label.tsx")),
+	  code: `import { DateField } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <DateField label="Start Date" description="Description" helperText="Helper Text" />
 }
 `,
   },

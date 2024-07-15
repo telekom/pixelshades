@@ -1,5 +1,5 @@
 import { DateField } from "@pixelshades/ui/components"
 
 export default function Example() {
-	return <DateField />
+	return <DateField errorMessage="Invalid Date" isInvalid />
 }
