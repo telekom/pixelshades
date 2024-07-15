@@ -354,32 +354,34 @@ export function Example() {
 }
 `,
   },
-  "button-group/ghost": {
-	  component: lazy(() => import("~/examples/button-group/ghost.tsx")),
+  "button-group/colors": {
+	  component: lazy(() => import("~/examples/button-group/colors.tsx")),
 	  code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
-		<ButtonGroup variant="ghost">
-			<Button>One</Button>
-			<Button>Two</Button>
-			<Button>Three</Button>
-		</ButtonGroup>
-	)
-}
-`,
-  },
-  "button-group/link": {
-	  component: lazy(() => import("~/examples/button-group/link.tsx")),
-	  code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
-
-export function Example() {
-	return (
-		<ButtonGroup variant="link">
-			<Button>One</Button>
-			<Button>Two</Button>
-			<Button>Three</Button>
-		</ButtonGroup>
+		<div className="flex flex-col gap-lg">
+			<ButtonGroup color="default">
+				<Button>One</Button>
+				<Button>Two</Button>
+				<Button>Three</Button>
+			</ButtonGroup>
+			<ButtonGroup color="primary">
+				<Button>One</Button>
+				<Button>Two</Button>
+				<Button>Three</Button>
+			</ButtonGroup>
+			<ButtonGroup color="destructive">
+				<Button>One</Button>
+				<Button>Two</Button>
+				<Button>Three</Button>
+			</ButtonGroup>
+			<ButtonGroup color="warning">
+				<Button>One</Button>
+				<Button>Two</Button>
+				<Button>Three</Button>
+			</ButtonGroup>
+		</div>
 	)
 }
 `,
@@ -419,21 +421,6 @@ export function Example() {
 }
 `,
   },
-  "button-group/outline": {
-	  component: lazy(() => import("~/examples/button-group/outline.tsx")),
-	  code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
-
-export function Example() {
-	return (
-		<ButtonGroup variant="outline">
-			<Button>One</Button>
-			<Button>Two</Button>
-			<Button>Three</Button>
-		</ButtonGroup>
-	)
-}
-`,
-  },
   "button-group/preview": {
 	  component: lazy(() => import("~/examples/button-group/preview.tsx")),
 	  code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
@@ -449,42 +436,61 @@ export function Example() {
 }
 `,
   },
-  "button-group/solid": {
-	  component: lazy(() => import("~/examples/button-group/solid.tsx")),
+  "button-group/sizes": {
+	  component: lazy(() => import("~/examples/button-group/sizes.tsx")),
 	  code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
-		<ButtonGroup variant="solid">
-			<Button>One</Button>
-			<Button>Two</Button>
-			<Button>Three</Button>
-		</ButtonGroup>
+		<div className="flex flex-col items-center justify-center gap-md">
+			<ButtonGroup size="xs">
+				<Button>One</Button>
+				<Button>Two</Button>
+				<Button>Three</Button>
+			</ButtonGroup>
+			<ButtonGroup size="sm">
+				<Button>One</Button>
+				<Button>Two</Button>
+				<Button>Three</Button>
+			</ButtonGroup>
+			<ButtonGroup size="md">
+				<Button>One</Button>
+				<Button>Two</Button>
+				<Button>Three</Button>
+			</ButtonGroup>
+			<ButtonGroup size="lg">
+				<Button>One</Button>
+				<Button>Two</Button>
+				<Button>Three</Button>
+			</ButtonGroup>
+		</div>
 	)
 }
 `,
   },
   "button-group/variants": {
 	  component: lazy(() => import("~/examples/button-group/variants.tsx")),
-	  code: `import { Button, ButtonGroup, Heading } from "@pixelshades/ui/components"
+	  code: `import { Button, ButtonGroup } from "@pixelshades/ui/components"
 
 export function Example() {
 	return (
-		<div className="flex flex-col gap-4">
-			<Heading level={3}>Solid Button Group</Heading>
+		<div className="flex flex-col gap-lg">
 			<ButtonGroup variant="solid">
 				<Button>One</Button>
 				<Button>Two</Button>
 				<Button>Three</Button>
 			</ButtonGroup>
-			<Heading level={3}>Ghost Button Group</Heading>
 			<ButtonGroup variant="ghost">
 				<Button>One</Button>
 				<Button>Two</Button>
 				<Button>Three</Button>
 			</ButtonGroup>
-			<Heading level={3}>Outline Button Group</Heading>
 			<ButtonGroup variant="outline">
+				<Button>One</Button>
+				<Button>Two</Button>
+				<Button>Three</Button>
+			</ButtonGroup>
+			<ButtonGroup variant="link">
 				<Button>One</Button>
 				<Button>Two</Button>
 				<Button>Three</Button>
@@ -651,7 +657,7 @@ export function Example() {
 
 	return (
 		<ComboBox label="Project" items={list.items} isLoading={list.isLoading}>
-			{(item) => <ComboBox.Item key={item.name}>{item.name}</ComboBox.Item>}
+			{(item) => <ComboBox.Item id={item.name}>{item.name}</ComboBox.Item>}
 		</ComboBox>
 	)
 }
@@ -2276,24 +2282,6 @@ export function Example() {
 }
 `,
   },
-  "toggle-button/ghost": {
-	  component: lazy(() => import("~/examples/toggle-button/ghost.tsx")),
-	  code: `import { ToggleButton } from "@pixelshades/ui/components"
-
-export function Example() {
-	return <ToggleButton variant="ghost">Toggle</ToggleButton>
-}
-`,
-  },
-  "toggle-button/outline": {
-	  component: lazy(() => import("~/examples/toggle-button/outline.tsx")),
-	  code: `import { ToggleButton } from "@pixelshades/ui/components"
-
-export function Example() {
-	return <ToggleButton variant="outline">Toggle</ToggleButton>
-}
-`,
-  },
   "toggle-button/preview": {
 	  component: lazy(() => import("~/examples/toggle-button/preview.tsx")),
 	  code: `import { ToggleButton } from "@pixelshades/ui/components"
@@ -2320,12 +2308,18 @@ export function Example() {
 }
 `,
   },
-  "toggle-button/subtle": {
-	  component: lazy(() => import("~/examples/toggle-button/subtle.tsx")),
+  "toggle-button/variants": {
+	  component: lazy(() => import("~/examples/toggle-button/variants.tsx")),
 	  code: `import { ToggleButton } from "@pixelshades/ui/components"
 
 export function Example() {
-	return <ToggleButton variant="subtle">Toggle</ToggleButton>
+	return (
+		<div className="flex flex-wrap gap-lg">
+			<ToggleButton>Toggle</ToggleButton>
+			<ToggleButton variant="subtle">Toggle</ToggleButton>
+			<ToggleButton variant="ghost">Toggle</ToggleButton>
+		</div>
+	)
 }
 `,
   },

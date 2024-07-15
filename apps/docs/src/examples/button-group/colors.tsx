@@ -3,22 +3,22 @@ import { Button, ButtonGroup } from "@pixelshades/ui/components"
 export default function Example() {
 	return (
 		<div className="flex flex-col gap-lg">
-			<ButtonGroup variant="solid">
+			<ButtonGroup color="default">
 				<Button>One</Button>
 				<Button>Two</Button>
 				<Button>Three</Button>
 			</ButtonGroup>
-			<ButtonGroup variant="ghost">
+			<ButtonGroup color="primary">
 				<Button>One</Button>
 				<Button>Two</Button>
 				<Button>Three</Button>
 			</ButtonGroup>
-			<ButtonGroup variant="outline">
+			<ButtonGroup color="destructive">
 				<Button>One</Button>
 				<Button>Two</Button>
 				<Button>Three</Button>
 			</ButtonGroup>
-			<ButtonGroup variant="link">
+			<ButtonGroup color="warning">
 				<Button>One</Button>
 				<Button>Two</Button>
 				<Button>Three</Button>
