@@ -117,32 +117,17 @@ export function Example() {
 }
 `,
   },
-  "badge/outline": {
-	  component: lazy(() => import("~/examples/badge/outline.tsx")),
+  "badge/before-after": {
+	  component: lazy(() => import("~/examples/badge/before-after.tsx")),
 	  code: `import { Badge } from "@pixelshades/ui/components"
-import { IconArrowRight, IconMoodSmile } from "@pixelshades/ui/icons"
+import { IconArrowRight } from "@pixelshades/ui/icons"
 
 export function Example() {
 	return (
 		<div className="flex flex-row flex-wrap justify-center gap-md">
-			<Badge variant="outline" color="default" before={<IconMoodSmile />} after={<IconArrowRight />}>
-				Default
-			</Badge>
-			<Badge variant="outline" color="primary" before={<IconMoodSmile />} after={<IconArrowRight />}>
-				Primary
-			</Badge>
-			<Badge variant="outline" color="info" before={<IconMoodSmile />} after={<IconArrowRight />}>
-				Info
-			</Badge>
-			<Badge variant="outline" color="success" before={<IconMoodSmile />} after={<IconArrowRight />}>
-				Success
-			</Badge>
-			<Badge variant="outline" color="warning" before={<IconMoodSmile />} after={<IconArrowRight />}>
-				Warning
-			</Badge>
-			<Badge variant="outline" color="destructive" before={<IconMoodSmile />} after={<IconArrowRight />}>
-				Destructive
-			</Badge>
+			<Badge before={<IconArrowRight />}>Before Badge</Badge>
+
+			<Badge after={<IconArrowRight />}>After Badge</Badge>
 		</div>
 	)
 }
@@ -162,23 +147,36 @@ export function Example() {
 }
 `,
   },
-  "badge/with-after": {
-	  component: lazy(() => import("~/examples/badge/with-after.tsx")),
+  "badge/variants": {
+	  component: lazy(() => import("~/examples/badge/variants.tsx")),
 	  code: `import { Badge } from "@pixelshades/ui/components"
-import { IconArrowRight } from "@pixelshades/ui/icons"
+import { IconArrowRight, IconMoodSmile } from "@pixelshades/ui/icons"
 
 export function Example() {
-	return <Badge after={<IconArrowRight />}>Badge Label</Badge>
-}
-`,
-  },
-  "badge/with-before": {
-	  component: lazy(() => import("~/examples/badge/with-before.tsx")),
-	  code: `import { Badge } from "@pixelshades/ui/components"
-import { IconMoodSmile } from "@pixelshades/ui/icons"
-
-export function Example() {
-	return <Badge before={<IconMoodSmile />}>Badge Label</Badge>
+	return (
+		<div className="flex flex-col gap-md">
+			<div className="flex flex-row flex-wrap justify-center gap-md">
+				<Badge variant="outline" color="default" before={<IconMoodSmile />} after={<IconArrowRight />}>
+					Default
+				</Badge>
+				<Badge variant="outline" color="primary" before={<IconMoodSmile />} after={<IconArrowRight />}>
+					Primary
+				</Badge>
+				<Badge variant="outline" color="info" before={<IconMoodSmile />} after={<IconArrowRight />}>
+					Info
+				</Badge>
+				<Badge variant="outline" color="success" before={<IconMoodSmile />} after={<IconArrowRight />}>
+					Success
+				</Badge>
+				<Badge variant="outline" color="warning" before={<IconMoodSmile />} after={<IconArrowRight />}>
+					Warning
+				</Badge>
+				<Badge variant="outline" color="destructive" before={<IconMoodSmile />} after={<IconArrowRight />}>
+					Destructive
+				</Badge>
+			</div>
+		</div>
+	)
 }
 `,
   },
@@ -500,6 +498,17 @@ export function Example() {
 }
 `,
   },
+  "calendar/controlled": {
+	  component: lazy(() => import("~/examples/calendar/controlled.tsx")),
+	  code: `import { Calendar, type DateValue } from "@pixelshades/ui/components"
+import { useState } from "react"
+
+export function Example() {
+	const [value, setValue] = useState<DateValue>()
+	return <Calendar value={value} onChange={setValue} />
+}
+`,
+  },
   "calendar/custom-duration": {
 	  component: lazy(() => import("~/examples/calendar/custom-duration.tsx")),
 	  code: `import { Calendar } from "@pixelshades/ui/components"
@@ -524,6 +533,15 @@ export function Example() {
 }
 `,
   },
+  "calendar/error-message": {
+	  component: lazy(() => import("~/examples/calendar/error-message.tsx")),
+	  code: `import { Calendar } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Calendar errorMessage="Invalid Date" isInvalid={true} />
+}
+`,
+  },
   "calendar/min-dates": {
 	  component: lazy(() => import("~/examples/calendar/min-dates.tsx")),
 	  code: `import { getLocalTimeZone, today } from "@internationalized/date"
@@ -542,6 +560,15 @@ export function Example() {
 
 export function Example() {
 	return <Calendar />
+}
+`,
+  },
+  "calendar/read-only": {
+	  component: lazy(() => import("~/examples/calendar/read-only.tsx")),
+	  code: `import { Calendar } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <Calendar isReadOnly />
 }
 `,
   },

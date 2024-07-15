@@ -24,26 +24,28 @@ import { isToday } from "@internationalized/date"
 
 import { getLocalTimeZone } from "@internationalized/date"
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react"
+import { Button } from "../button"
+import { FormFieldError } from "../form"
 
-const { root, header, heading, gridHeaderCell, cell, grid, iconButton } = calendarVariants()
+const { root, header, heading, gridHeaderCell, cell, grid } = calendarVariants()
 
 export interface CalendarProps<T extends DateValue> extends Omit<AriaCalendarProps<T>, "className"> {
 	/** The error message to display if the calendar is invalid. */
-	error?: string
+	errorMessage?: string
 	/** The styles of the calendar. */
 	className?: string
 }
 
-const Calendar = ({ className, visibleDuration, error, ...props }: CalendarProps<DateValue>) => (
+const Calendar = ({ className, visibleDuration, errorMessage, ...props }: CalendarProps<DateValue>) => (
 	<AriaCalendar className={root({ className })} visibleDuration={visibleDuration} {...props}>
 		<header className={header()}>
-			<AriaButton className={iconButton()} slot="previous">
-				<IconChevronLeft className="h-6 w-6" />
-			</AriaButton>
+			<Button variant="ghost" size="icon" slot="previous">
+				<IconChevronLeft className="size-6" />
+			</Button>
 			<AriaHeading className={heading()} />
-			<AriaButton className={iconButton()} slot="next">
+			<Button variant="ghost" size="icon" slot="next">
 				<IconChevronRight className="size-6" />
-			</AriaButton>
+			</Button>
 		</header>
 		<div className={grid()}>
 			{new Array(visibleDuration?.months || 1).fill(0).map((_, index) => (
@@ -64,10 +66,16 @@ const Calendar = ({ className, visibleDuration, error, ...props }: CalendarProps
 			))}
 		</div>
 
-		{error && <Text slot="errorMessage">{error}</Text>}
+		{errorMessage && (
+			<Text className="text-destructive text-xs" slot="errorMessage">
+				{errorMessage}
+			</Text>
+		)}
 	</AriaCalendar>
 )
 
 Calendar.displayName = "Calendar"
+
+export type { DateValue }
 
 export { Calendar }
