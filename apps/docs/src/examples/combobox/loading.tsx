@@ -13,7 +13,7 @@ export default function Example() {
 
 	return (
 		<ComboBox label="Project" items={list.items} isLoading={list.isLoading}>
-			{(item) => <ComboBox.Item key={item.name}>{item.name}</ComboBox.Item>}
+			{(item) => <ComboBox.Item id={item.name}>{item.name}</ComboBox.Item>}
 		</ComboBox>
 	)
 }
