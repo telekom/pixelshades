@@ -992,6 +992,37 @@ export function Example() {
 }
 `,
   },
+  "date-picker/before-after": {
+	  component: lazy(() => import("~/examples/date-picker/before-after.tsx")),
+	  code: `import { DatePicker } from "@pixelshades/ui/components"
+import { IconClock } from "@pixelshades/ui/icons"
+
+export function Example() {
+	return <DatePicker before={<IconClock />} />
+}
+`,
+  },
+  "date-picker/controlled": {
+	  component: lazy(() => import("~/examples/date-picker/controlled.tsx")),
+	  code: `import { DatePicker, type DateValue } from "@pixelshades/ui/components"
+import { useState } from "react"
+
+export function Example() {
+	const [value, setValue] = useState<DateValue>()
+
+	return <DatePicker value={value} onChange={setValue} />
+}
+`,
+  },
+  "date-picker/error-message": {
+	  component: lazy(() => import("~/examples/date-picker/error-message.tsx")),
+	  code: `import { DatePicker } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <DatePicker errorMessage="Invalid Date" isInvalid />
+}
+`,
+  },
   "date-picker/granularity": {
 	  component: lazy(() => import("~/examples/date-picker/granularity.tsx")),
 	  code: `import { DatePicker } from "@pixelshades/ui/components"
@@ -1008,12 +1039,39 @@ export function Example() {
 }
 `,
   },
+  "date-picker/hour-cycle": {
+	  component: lazy(() => import("~/examples/date-picker/hour-cycle.tsx")),
+	  code: `import { DatePicker } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <DatePicker hourCycle={24} />
+}
+`,
+  },
+  "date-picker/loading": {
+	  component: lazy(() => import("~/examples/date-picker/loading.tsx")),
+	  code: `import { DatePicker } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <DatePicker isLoading />
+}
+`,
+  },
   "date-picker/preview": {
 	  component: lazy(() => import("~/examples/date-picker/preview.tsx")),
 	  code: `import { DatePicker } from "@pixelshades/ui/components"
 
 export function Example() {
-	return <DatePicker label="Start Date" />
+	return <DatePicker />
+}
+`,
+  },
+  "date-picker/with-label": {
+	  component: lazy(() => import("~/examples/date-picker/with-label.tsx")),
+	  code: `import { DatePicker } from "@pixelshades/ui/components"
+
+export function Example() {
+	return <DatePicker label="Start Date" description="Description" helperText="Helper Text" />
 }
 `,
   },
