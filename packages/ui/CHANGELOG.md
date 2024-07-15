@@ -1,5 +1,11 @@
 # @pixelshades/ui
 
+## 0.6.4
+
+### Patch Changes
+
+- 093b472: small fixes
+
 ## 0.6.3
 
 ### Patch Changes
