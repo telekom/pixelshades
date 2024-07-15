@@ -1,5 +1,12 @@
 # @pixelshades/ui
 
+## 0.6.3
+
+### Patch Changes
+
+- d025c22: fix combobox loading state
+- 77b9998: fix combobox exports
+
 ## 0.6.2
 
 ### Patch Changes
