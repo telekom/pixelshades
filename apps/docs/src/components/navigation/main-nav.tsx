@@ -6,8 +6,8 @@ import { IconFlame } from "@pixelshades/ui/icons"
 
 export function MainNav() {
 	return (
-		<div className="mr-4 hidden md:flex md:justify-between">
-			<Link href="/" className="mr-6 flex items-center space-x-2">
+		<div className="container mr-lg hidden md:flex md:justify-between">
+			<Link href="/" className="mr-xl flex items-center space-x-md">
 				<IconFlame className="size-6 text-primary" />
 				<span className="hidden font-bold sm:inline-block">{siteConfig.name}</span>
 			</Link>
