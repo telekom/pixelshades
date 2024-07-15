@@ -23,7 +23,7 @@ const { popover, root } = comboboxVaraints()
 interface ComboBoxProps<T extends object>
 	extends Omit<AriaComboBoxProps<T>, "children">,
 		FormFieldProps,
-		InputBasedCompBaseProps {
+		Omit<InputBasedCompBaseProps, "after" | "loaderPosition"> {
 	/** The styles of the combo box. */
 	className?: string
 	/** The combo box items. */
@@ -45,9 +45,7 @@ const ComboBoxRoot = <T extends object>({
 
 	// Input Root Props
 	before,
-	after,
 	isLoading,
-	loaderPosition,
 	...props
 }: ComboBoxProps<T>) => (
 	<AriaComboBox className={root({ className })} {...props} shouldFocusWrap>
@@ -60,7 +58,7 @@ const ComboBoxRoot = <T extends object>({
 					isRequired={isRequired}
 					isDisabled={isDisabled}
 				>
-					<Input.Root before={before} after={after} isLoading={isLoading} loaderPosition={loaderPosition}>
+					<Input.Root before={before} isLoading={isLoading} loaderPosition={"before"}>
 						<Input />
 						<AriaButton
 							className={
