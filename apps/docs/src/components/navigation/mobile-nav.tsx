@@ -1,6 +1,8 @@
 import { Button, Drawer, Link } from "@pixelshades/ui/components"
 import { IconFlame, IconMenu } from "@pixelshades/ui/icons"
 import { siteConfig } from "~/config/site"
+import { sidebarItems } from "~/lib/data"
+import { DocsSidebar } from "./docs-sidebar"
 
 export const MobileNav = () => {
 	return (
@@ -19,6 +21,7 @@ export const MobileNav = () => {
 								</Link>
 							</Drawer.Title>
 						</Drawer.Header>
+						<DocsSidebar items={sidebarItems} />
 					</Drawer.Content>
 				</Drawer>
 			</Drawer.Trigger>

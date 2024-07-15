@@ -20,7 +20,7 @@ export function DocsSidebar({ items }: DocsSidebarProps) {
 	}
 
 	return (
-		<div className="w-full space-y-4 pt-4 pr-4 pb-10 text-sm">
+		<div className="w-full space-y-lg pt-md pr-lg pb-layout-md text-sm">
 			{items.map((item, index) => (
 				<Category key={index} title={item.title} items={item.items} slug={item.slug} pathname={pathname} />
 			))}
