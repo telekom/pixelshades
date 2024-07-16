@@ -9,7 +9,7 @@ import type { NumberFieldProps as AriaNumberFieldProps } from "react-aria-compon
 import { NumberField as AriaNumberField } from "react-aria-components"
 import { IconChevronDown, IconChevronUp } from "../../../icons"
 import { FormField, type FormFieldProps } from "../../core/form-field"
-import { Input, type InputBasedCompBaseProps, InputRoot } from "../../core/input"
+import { Input, type InputBasedCompBaseProps } from "../../core/input"
 import { Button } from "../button"
 
 export interface NumberFieldProps
@@ -40,6 +40,7 @@ const NumberField = forwardRef(
 				<FormField
 					label={label}
 					description={description}
+					errorMessage={errorMessage}
 					tooltip={tooltip}
 					isRequired={isRequired}
 					isDisabled={innerProps.isDisabled}
