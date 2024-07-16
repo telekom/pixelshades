@@ -22,11 +22,8 @@ interface CheckBoxProps extends CheckboxVariantProps, AriaCheckBoxProps, FormFie
 
 const Checkbox = forwardRef<ElementRef<typeof AriaCheckbox>, CheckBoxProps>(
 	({ className, label, id, helperText, errorMessage, description, tooltip, size, children, ...props }, ref) => {
-		const generatedId = React.useId()
-		const elId = id ?? generatedId
-
 		return (
-			<AriaCheckbox id={elId} className={checkboxVariant({ size }).root({ className })} ref={ref} {...props}>
+			<AriaCheckbox className={checkboxVariant({ size }).root({ className })} ref={ref} {...props}>
 				{({ isSelected, isDisabled, isRequired }) => (
 					<>
 						<div className={checkboxVariant({ size }).box()}>{isSelected && <IconCheck />}</div>
@@ -37,6 +34,7 @@ const Checkbox = forwardRef<ElementRef<typeof AriaCheckbox>, CheckBoxProps>(
 								tooltip={tooltip}
 								isRequired={isRequired}
 								isDisabled={isDisabled}
+								errorMessage={errorMessage}
 							/>
 						</span>
 

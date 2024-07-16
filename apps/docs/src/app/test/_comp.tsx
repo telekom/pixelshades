@@ -34,13 +34,10 @@ const formSchema = z.object({
 		.default(1)
 		.optional(),
 
-	// acceptTerms: z
-	// 	.boolean()
-	// 	.describe("Accept terms and conditions.")
-	// 	.refine((value) => value, {
-	// 		message: "You must accept the terms and conditions.",
-	// 		path: ["acceptTerms"],
-	// 	}),
+	acceptTerms: z
+		.boolean()
+		.describe("Accept terms and conditions.")
+		.refine((value) => value === true, "You must accept the terms and conditions."),
 
 	// sendMeMails: z.boolean().optional(),
 

@@ -123,7 +123,7 @@ export function AutoFormObject<SchemaType extends z.ZodObject<any, any>>({
 							const ParentElement = fieldConfigItem.renderParent ?? DefaultParent
 
 							const fieldProps = {
-								...zodToHtmlInputProps(item),
+								...zodInputProps,
 								...fieldConfigItem.inputProps,
 
 								errorMessage: field.state.meta.errors.length ? field.state.meta.errors.join(",") : null,

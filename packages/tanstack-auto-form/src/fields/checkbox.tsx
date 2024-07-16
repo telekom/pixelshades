@@ -8,11 +8,12 @@ export default function AutoFormCheckbox({
 	fieldConfigItem,
 	fieldProps,
 }: AutoFormInputComponentProps) {
+	console.log(fieldProps)
 	return (
 		<Checkbox
 			onChange={field.handleChange}
 			onBlur={field.handleBlur}
-			checked={field.state.value}
+			defaultSelected={field.state.value}
 			label={label}
 			isRequired={isRequired}
 			helperText={fieldConfigItem.description}
