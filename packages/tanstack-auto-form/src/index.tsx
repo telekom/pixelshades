@@ -3,7 +3,7 @@ import { zodValidator } from "@tanstack/zod-form-adapter"
 import type { z } from "zod"
 import type { FieldConfig, ZodObjectOrWrapped } from "./types"
 
-import { Form } from "@pixelshades/ui/components"
+import { Button, Form } from "@pixelshades/ui/components"
 import type { ReactNode } from "react"
 import { AutoFormObject } from "./fields/auto-form-object"
 import { FormProvider } from "./form-provider"
@@ -57,6 +57,23 @@ export const AutoForm = <SchemaType extends ZodObjectOrWrapped>({
 					<AutoFormObject className={innerClassName} schema={objectFormSchema} fieldConfig={fieldConfig} />
 
 					{children}
+
+					<form.Subscribe
+						selector={(state) => [state.canSubmit, state.isSubmitting]}
+						// biome-ignore lint/correctness/noChildrenProp: <explanation>
+						children={([canSubmit, isSubmitting]) => {
+							return (
+								<>
+									<Button type="submit" isDisabled={!canSubmit}>
+										{isSubmitting ? "..." : "Submit"}
+									</Button>
+									<Button type="reset" onPress={() => form.reset()}>
+										Reset
+									</Button>
+								</>
+							)
+						}}
+					/>
 				</Form>
 			</FormProvider>
 		</div>

@@ -11,8 +11,6 @@ export default function AutoFormNumber({
 	const { showLabel: _showLabel, ...fieldPropsWithoutShowLabel } = fieldProps
 	const showLabel = _showLabel === undefined ? true : _showLabel
 
-	console.log(fieldPropsWithoutShowLabel)
-
 	return (
 		<NumberField
 			value={field.state.value}

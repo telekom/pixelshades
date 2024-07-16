@@ -16,12 +16,10 @@ export default function AutoFormInput({
 	const showLabel = _showLabel === undefined ? true : _showLabel
 	const type = fieldProps.type || "text"
 
-	console.log(fieldPropsWithoutShowLabel)
-
 	return (
 		<TextField
 			type={type}
-			defaultValue={field.state.value}
+			value={field.state.value}
 			onChange={field.handleChange}
 			onBlur={field.handleBlur}
 			validationBehavior="aria"

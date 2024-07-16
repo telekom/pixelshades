@@ -128,9 +128,12 @@ export function AutoFormObject<SchemaType extends z.ZodObject<any, any>>({
 
 								errorMessage: field.state.meta.errors.length ? field.state.meta.errors.join(",") : null,
 								isDisabled: fieldConfigItem.inputProps?.disabled,
-								isInvalid: !!(field.state.meta.isTouched && field.state.meta.errors.length),
+								isInvalid: field.state.meta.errors.length > 0,
 								// || isDisabled,
 								ref: undefined,
+
+								id: field.name,
+								name: field.name,
 							}
 
 							if (InputComponent === undefined) {
@@ -149,6 +152,7 @@ export function AutoFormObject<SchemaType extends z.ZodObject<any, any>>({
 										fieldProps={fieldProps}
 										className={fieldProps.className}
 									/>
+									{field.state.meta.isValidating ? "Validating..." : null}
 								</ParentElement>
 							)
 						}}

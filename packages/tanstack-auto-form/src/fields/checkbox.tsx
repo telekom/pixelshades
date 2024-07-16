@@ -10,6 +10,8 @@ export default function AutoFormCheckbox({
 }: AutoFormInputComponentProps) {
 	return (
 		<Checkbox
+			onChange={field.handleChange}
+			onBlur={field.handleBlur}
 			checked={field.state.value}
 			label={label}
 			isRequired={isRequired}
