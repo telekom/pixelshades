@@ -8,7 +8,6 @@ export default function AutoFormCheckbox({
 	fieldConfigItem,
 	fieldProps,
 }: AutoFormInputComponentProps) {
-	console.log(fieldProps)
 	return (
 		<Checkbox
 			onChange={field.handleChange}

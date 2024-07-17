@@ -93,7 +93,7 @@ export const getBaseColors = () => {
 			"--subtle-foreground-disabled": "var(--neutral-scale-400)",
 
 			"--foreground": "var(--neutral-scale-900)",
-			"--ring": "var(--primary--scale-600)",
+			"--ring": "var(--primary-scale-600)",
 
 			"--border": "var(--neutral-scale-300)",
 

@@ -6,7 +6,7 @@ import { tv } from "tailwind-variants"
 
 export const selectVariants = tv({
 	slots: {
-		root: "max-h-inherit flex flex-col gap-sm overflow-auto outline-none",
+		root: "flex flex-col items-start gap-md",
 		value: "text-sm",
 		popover: "min-w-[var(--trigger-width)] w-fit p-xs",
 	},

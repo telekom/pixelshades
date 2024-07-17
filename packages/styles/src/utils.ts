@@ -5,9 +5,26 @@ import { tv } from "tailwind-variants"
 export const focusRing = tv({
 	base: [
 		"outline outline-0 outline-ring forced-colors:outline-[Highlight] outline-offset-2",
+		"data-[focus-visible]:outline-2",
+		"data-[focus-visible]:outline-offset-2",
+		"data-[focus-visible]:relative data-[focus-visible]:z-50",
+	],
+})
+
+export const focusInput = tv({
+	base: [
+		"outline outline-0 outline-ring forced-colors:outline-[Highlight] outline-offset-2",
 		"data-[focus-visible]:outline-2 data-[focus-visible]:relative data-[focus-visible]:z-50",
-		// "data-[focused]:outline-2",
-		// "data-[invalid]:outline-2 data-[invalid]:outline-destructive",
+	],
+})
+
+export const focusRingGroup = tv({
+	base: [
+		"outline outline-0 outline-ring forced-colors:outline-[Highlight] outline-offset-2",
+		"group-focus-visible:outline-2",
+		"group-focus-visible:outline-offset-2",
+		"group-focus-visible:relative group-focus-visible:z-50",
+		"forced-colors:group-focus-visible:outline-[Highlight]",
 	],
 })
 

@@ -1,6 +1,7 @@
 "use client"
 
 import { cn } from "@pixelshades/cn"
+import { focusRing } from "@pixelshades/styles/utils"
 import { IconChevronRight } from "@pixelshades/ui/icons"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -54,7 +55,8 @@ const Category = ({ title, slug, items, pathname }: CategoryProps) => {
 									<Link
 										href={item.href}
 										className={cn(
-											"group ml-md block border-border border-l pl-4 text-subtle-foreground transition-colors hover:text-foreground",
+											"group ml-md block border-border border-l pl-xl text-subtle-foreground transition-colors hover:text-foreground",
+											focusRing(),
 											{
 												"border-border font-medium text-foreground": pathname === item.href,
 											},
@@ -100,6 +102,7 @@ const Category = ({ title, slug, items, pathname }: CategoryProps) => {
 														href={subItem.href || ""}
 														className={cn(
 															"group block border-border border-l py-xs pl-lg text-subtle-foreground transition-colors hover:text-foreground",
+															focusRing(),
 															{
 																"border-foreground font-medium text-foreground":
 																	pathname === subItem.href,
