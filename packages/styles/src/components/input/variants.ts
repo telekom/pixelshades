@@ -3,12 +3,12 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { tv } from "tailwind-variants"
-import { focusRing } from "../../utils"
+import { focusInput } from "../../utils"
 
 export const inputVariants = tv({
 	slots: {
 		root: [
-			"flex gap-md w-full items-center",
+			"inline-flex gap-md w-full items-center",
 			"rounded-md border text-subtle-foreground border-neutral-border bg-neutral-subtle shadow-sm transition-colors",
 			"hover:bg-neutral-subtle-hover hover:border-neutral-border-hover",
 			"file:border-0 file:bg-transparent file:text-sm file:font-medium",
@@ -17,7 +17,7 @@ export const inputVariants = tv({
 			"[&_svg]:size-4",
 		],
 		input: [
-			"bg-transparent outline-none w-full h-full text-foreground placeholder:text-subtle-foreground disabled:text-subtle-foreground-disabled disabled:cursor-default",
+			"bg-transparent outline-none size-full text-foreground placeholder:text-subtle-foreground disabled:text-subtle-foreground-disabled disabled:cursor-default",
 		],
 	},
 
@@ -28,8 +28,8 @@ export const inputVariants = tv({
 			md: { root: "h-9 px-md rounded-md gap-sm" },
 		},
 		focusRing: {
-			true: { root: focusRing() },
-			false: { root: "outline-0" },
+			true: { root: focusInput() },
+			false: { root: "" },
 		},
 		multiline: {
 			true: {

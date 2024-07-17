@@ -21,7 +21,7 @@
 		"@radix-ui/react-slot": "1.1.0",
 		"@react-aria/utils": "^3.24.1",
 		"@react-stately/utils": "^3.10.1",
-		"@tabler/icons-react": "^3.10.0",
+		"@tabler/icons-react": "^3.11.0",
 		"react-aria": "3.33.1",
 		"react-aria-components": "1.2.1",
 		"react-stately": "3.31.1",
@@ -47,7 +47,7 @@
 		"react-docgen": "^7.0.3",
 		"react-docgen-typescript": "^2.2.2",
 		"react-dom": "^18.3.1",
-		"tailwindcss": "3.4.4",
+		"tailwindcss": "3.4.5",
 		"typescript": "^5.5.3"
 	},
 	"files": [

@@ -52,7 +52,13 @@ const SelectRoot = <T extends object>({
 	...props
 }: SelectProps<T>) => (
 	<AriaSelect className={root({ className })} isRequired={isRequired} {...props}>
-		<FormField label={label} description={description} tooltip={tooltip} isRequired={isRequired}>
+		<FormField
+			label={label}
+			description={description}
+			tooltip={tooltip}
+			isRequired={isRequired}
+			errorMessage={errorMessage}
+		>
 			<InputRoot before={before} isLoading={isLoading} loaderPosition={"before"}>
 				<AriaButton
 					className={
