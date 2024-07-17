@@ -1,5 +1,15 @@
 # @pixelshades/ui
 
+## 0.6.5
+
+### Patch Changes
+
+- 90fba18: fix: numberfield not showing error message
+- ea4e5c7: fix component error states
+- Updated dependencies [90fba18]
+- Updated dependencies [ea4e5c7]
+  - @pixelshades/styles@0.5.1
+
 ## 0.6.4
 
 ### Patch Changes
