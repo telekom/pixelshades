@@ -1,5 +1,12 @@
 # @pixelshades/styles
 
+## 0.5.1
+
+### Patch Changes
+
+- 90fba18: fix: numberfield not showing error message
+- ea4e5c7: fix component error states
+
 ## 0.5.0
 
 ### Minor Changes
