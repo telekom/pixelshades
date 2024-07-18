@@ -13,7 +13,7 @@
 		"@internationalized/date": "^3.5.4",
 		"@pixelshades/cn": "workspace:*",
 		"@pixelshades/styles": "workspace:*",
-		"@pixelshades/tanstack-auto-form": "workspace:*",
+		"@pixelshades/auto-form": "workspace:*",
 		"@pixelshades/ui": "workspace:*",
 		"@radix-ui/react-collapsible": "^1.1.0",
 		"geist": "^1.3.1",

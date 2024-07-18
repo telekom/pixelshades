@@ -1,6 +1,6 @@
 "use client"
 
-import { AutoForm } from "@pixelshades/tanstack-auto-form"
+import { AutoForm } from "@pixelshades/auto-form"
 import { z } from "zod"
 
 const formSchema = z.object({
