@@ -49,7 +49,7 @@ export const BaseAutoForm = <SchemaType extends ZodObjectOrWrapped>(
 
 	return (
 		<div className="w-full">
-			<FormProvider form={form as ReturnType<typeof useForm>}>
+			<FormProvider form={form}>
 				<Form
 					ref={ref}
 					onSubmit={(e) => {
