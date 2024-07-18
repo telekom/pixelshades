@@ -3,7 +3,7 @@ import { zodValidator } from "@tanstack/zod-form-adapter"
 import type { z } from "zod"
 import type { FieldConfig, ZodObjectOrWrapped } from "./types"
 
-import { Button, Form, If } from "@pixelshades/ui/components"
+import { Button, Form } from "@pixelshades/ui/components"
 import { forwardRef } from "@pixelshades/utils/jsx"
 import type { ForwardedRef, ReactNode } from "react"
 import { AutoFormObject } from "./fields/auto-form-object"
