@@ -1,5 +1,11 @@
 # @pixelshades/utils
 
+## 4.0.0
+
+### Major Changes
+
+- 48744da: Rework AutoForm
+
 ## 3.0.5
 
 ### Patch Changes
