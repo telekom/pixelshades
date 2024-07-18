@@ -1,13 +1,7 @@
 import { NumberField } from "@pixelshades/ui/components"
 import type { AutoFormInputComponentProps } from "../types"
 
-export default function AutoFormNumber({
-	field,
-	label,
-	isRequired,
-	fieldConfigItem,
-	fieldProps,
-}: AutoFormInputComponentProps) {
+export function AutoFormNumber({ field, label, isRequired, fieldConfigItem, fieldProps }: AutoFormInputComponentProps) {
 	const { showLabel: _showLabel, ...fieldPropsWithoutShowLabel } = fieldProps
 	const showLabel = _showLabel === undefined ? true : _showLabel
 

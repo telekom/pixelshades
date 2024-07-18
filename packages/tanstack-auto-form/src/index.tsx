@@ -3,10 +3,11 @@ import { zodValidator } from "@tanstack/zod-form-adapter"
 import type { z } from "zod"
 import type { FieldConfig, ZodObjectOrWrapped } from "./types"
 
-import { Button, Form } from "@pixelshades/ui/components"
-import type { ReactNode } from "react"
+import { Button, Form, If } from "@pixelshades/ui/components"
+import { forwardRef } from "@pixelshades/utils/jsx"
+import type { ForwardedRef, ReactNode } from "react"
 import { AutoFormObject } from "./fields/auto-form-object"
-import { FormProvider } from "./form-provider"
+import { FormProvider, useFormContext } from "./form-provider"
 import { getObjectFormSchema } from "./utils"
 
 export type AutoFormProps<SchemaType extends ZodObjectOrWrapped> = {
@@ -25,15 +26,18 @@ export type AutoFormProps<SchemaType extends ZodObjectOrWrapped> = {
 	fieldConfig?: FieldConfig<z.infer<SchemaType>>
 }
 
-export const AutoForm = <SchemaType extends ZodObjectOrWrapped>({
-	formSchema,
-	debounceMs,
-	defaultValues,
-	children,
-	innerClassName,
-	fieldConfig,
-	onSubmit,
-}: AutoFormProps<SchemaType>) => {
+export const BaseAutoForm = <SchemaType extends ZodObjectOrWrapped>(
+	{
+		formSchema,
+		debounceMs,
+		defaultValues,
+		children,
+		innerClassName,
+		fieldConfig,
+		onSubmit,
+	}: AutoFormProps<SchemaType>,
+	ref: ForwardedRef<HTMLFormElement>,
+) => {
 	const form = useForm({
 		asyncDebounceMs: debounceMs,
 		defaultValues,
@@ -47,6 +51,7 @@ export const AutoForm = <SchemaType extends ZodObjectOrWrapped>({
 		<div className="w-full">
 			<FormProvider form={form as ReturnType<typeof useForm>}>
 				<Form
+					ref={ref}
 					onSubmit={(e) => {
 						e.preventDefault()
 						e.stopPropagation()
@@ -79,3 +84,38 @@ export const AutoForm = <SchemaType extends ZodObjectOrWrapped>({
 		</div>
 	)
 }
+
+function AutoFormSubmit({
+	children,
+	className,
+	isDisabled,
+}: {
+	children?: React.ReactNode
+	className?: string
+	isDisabled?: boolean
+}) {
+	const form = useFormContext()
+
+	return (
+		<form.Subscribe
+			selector={(state) => [state.canSubmit, state.isSubmitting]}
+			// biome-ignore lint/correctness/noChildrenProp: <explanation>
+			children={([canSubmit, isSubmitting]) => (
+				<Button isLoading={isSubmitting} type="submit" isDisabled={!canSubmit} className={className}>
+					{children ?? "Submit"}
+				</Button>
+			)}
+		/>
+	)
+}
+
+// biome-ignore lint/complexity/noBannedTypes: <explanation>
+function fixedForwardRef<T, P = {}>(
+	render: (props: P, ref: React.Ref<T>) => React.ReactNode,
+): (props: P & React.RefAttributes<T>) => React.ReactNode {
+	return forwardRef(render) as any
+}
+
+const AutoForm = fixedForwardRef(BaseAutoForm)
+
+export { AutoForm, AutoFormSubmit }

@@ -69,5 +69,5 @@ const formSchema = z.object({
 })
 
 export function Test() {
-	return <AutoForm onSubmit={async (v) => console.log("Submitted", v)} formSchema={formSchema} />
+	return <AutoForm fieldConfig={{}} onSubmit={async (v) => console.log("Submitted", v)} formSchema={formSchema} />
 }

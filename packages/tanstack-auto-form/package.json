@@ -1,7 +1,12 @@
 {
-	"name": "@pixelshades/tanstack-auto-form",
-	"version": "0.0.1",
+	"name": "@pixelshades/auto-form",
+	"version": "3.0.5",
 	"private": true,
+	"scripts": {
+		"build": "bunchee",
+		"dev": "bunchee --watch --no-clean",
+		"typecheck": "tsc --noEmit"
+	},
 	"dependencies": {
 		"@pixelshades/ui": "workspace:*",
 		"@tanstack/react-form": "^0.26.4",

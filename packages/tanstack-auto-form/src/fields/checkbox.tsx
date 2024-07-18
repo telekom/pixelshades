@@ -1,7 +1,7 @@
 import { Checkbox } from "@pixelshades/ui/components"
 import type { AutoFormInputComponentProps } from "../types"
 
-export default function AutoFormCheckbox({
+export function AutoFormCheckbox({
 	label,
 	isRequired,
 	field,

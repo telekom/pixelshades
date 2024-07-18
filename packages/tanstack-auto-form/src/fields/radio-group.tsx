@@ -1,10 +1,9 @@
 import { RadioGroup } from "@pixelshades/ui/components"
 import type * as z from "zod"
-import { FormControl, FormItem } from "../commons/hook-form"
 import type { AutoFormInputComponentProps } from "../types"
 import { getBaseSchema } from "../utils"
 
-export default function AutoFormRadioGroup({
+export function AutoFormRadioGroup({
 	label,
 	isRequired,
 	field,
@@ -22,24 +21,20 @@ export default function AutoFormRadioGroup({
 	}
 
 	return (
-		<FormItem>
-			<FormControl>
-				<RadioGroup
-					orientation="vertical"
-					label={label}
-					isRequired={isRequired}
-					helperText={fieldConfigItem.description}
-					onValueChange={field.onChange}
-					value={field.value}
-					{...fieldProps}
-				>
-					{values?.map((value) => (
-						<RadioGroup.Item value={value} key={value} id={value}>
-							{value}
-						</RadioGroup.Item>
-					))}
-				</RadioGroup>
-			</FormControl>
-		</FormItem>
+		<RadioGroup
+			orientation="vertical"
+			label={label}
+			isRequired={isRequired}
+			helperText={fieldConfigItem.description}
+			onValueChange={field.handleChange}
+			onBlur={field.handleBlur}
+			{...fieldProps}
+		>
+			{values?.map((value) => (
+				<RadioGroup.Item value={value} key={value} id={value}>
+					{value}
+				</RadioGroup.Item>
+			))}
+		</RadioGroup>
 	)
 }

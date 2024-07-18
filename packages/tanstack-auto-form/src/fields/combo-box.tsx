@@ -1,17 +1,10 @@
-import { Select } from "@pixelshades/ui/components"
+import { ComboBox, Select } from "@pixelshades/ui/components"
 import type * as z from "zod"
 import type { AutoFormInputComponentProps } from "../types"
 import { getBaseSchema } from "../utils"
+import { transformEnumValues } from "./enum"
 
-export const transformEnumValues = (values: any) => {
-	if (!Array.isArray(values)) {
-		return Object.entries(values)
-	}
-
-	return values.map((value) => [value, value])
-}
-
-export function AutoFormEnum({
+export function AutoFormComboBox({
 	label,
 	isRequired,
 	field,
@@ -24,21 +17,21 @@ export function AutoFormEnum({
 	const values = transformEnumValues(baseValues)
 
 	return (
-		<Select
+		<ComboBox
 			label={label}
 			helperText={fieldConfigItem.description}
 			isRequired={isRequired}
+			placeholder="Select an option"
 			onSelectionChange={field.handleChange}
 			onBlur={field.handleBlur}
-			placeholder="Select an option"
-			defaultSelectedKey={field.state.value}
+			selectedKey={field.state.value}
 			{...fieldProps}
 		>
 			{values.map(([label, value]) => (
-				<Select.Item key={value} id={value}>
+				<ComboBox.Item key={value} id={value} value={value}>
 					{label}
-				</Select.Item>
+				</ComboBox.Item>
 			))}
-		</Select>
+		</ComboBox>
 	)
 }
