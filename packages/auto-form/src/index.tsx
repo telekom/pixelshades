@@ -64,23 +64,6 @@ export const BaseAutoForm = <SchemaType extends ZodObjectOrWrapped>(
 					<AutoFormObject className={innerClassName} schema={objectFormSchema} fieldConfig={fieldConfig} />
 
 					{children}
-
-					<form.Subscribe
-						selector={(state) => [state.canSubmit, state.isSubmitting]}
-						// biome-ignore lint/correctness/noChildrenProp: <explanation>
-						children={([canSubmit, isSubmitting]) => {
-							return (
-								<>
-									<Button type="submit" isDisabled={!canSubmit}>
-										{isSubmitting ? "..." : "Submit"}
-									</Button>
-									<Button type="reset" onPress={() => form.reset()}>
-										Reset
-									</Button>
-								</>
-							)
-						}}
-					/>
 				</Form>
 			</FormProvider>
 		</div>
@@ -103,7 +86,12 @@ function AutoFormSubmit({
 			selector={(state) => [state.canSubmit, state.isSubmitting]}
 			// biome-ignore lint/correctness/noChildrenProp: <explanation>
 			children={([canSubmit, isSubmitting]) => (
-				<Button isLoading={isSubmitting} type="submit" isDisabled={!canSubmit} className={className}>
+				<Button
+					isLoading={isSubmitting}
+					type="submit"
+					isDisabled={isDisabled || !canSubmit}
+					className={className}
+				>
 					{children ?? "Submit"}
 				</Button>
 			)}
