@@ -1,5 +1,11 @@
 # @pixelshades/utils
 
+## 4.0.4
+
+### Patch Changes
+
+- b35e751: fix date default value
+
 ## 4.0.3
 
 ### Patch Changes
