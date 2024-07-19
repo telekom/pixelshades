@@ -1,5 +1,11 @@
 # @pixelshades/utils
 
+## 4.0.2
+
+### Patch Changes
+
+- c9de027: fix autoform regression
+
 ## 4.0.1
 
 ### Patch Changes
