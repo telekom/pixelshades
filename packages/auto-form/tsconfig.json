@@ -3,9 +3,7 @@
 	"compilerOptions": {
 		"outDir": "dist",
 		"jsx": "react-jsx",
-		"paths": {
-			"@pixelshades/ui/*": ["../ui/src/*"]
-		}
+		"paths": {}
 	},
 	"include": ["src"],
 	"exclude": ["node_modules", "dist"]
