@@ -1,5 +1,11 @@
 # @pixelshades/utils
 
+## 4.0.5
+
+### Patch Changes
+
+- bc0d691: fix autoform ref
+
 ## 4.0.4
 
 ### Patch Changes
