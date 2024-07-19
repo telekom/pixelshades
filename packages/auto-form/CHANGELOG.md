@@ -1,5 +1,11 @@
 # @pixelshades/utils
 
+## 4.0.3
+
+### Patch Changes
+
+- c20cbf7: fix date field value change
+
 ## 4.0.2
 
 ### Patch Changes
