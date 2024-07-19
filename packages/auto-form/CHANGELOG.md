@@ -1,5 +1,11 @@
 # @pixelshades/utils
 
+## 4.0.1
+
+### Patch Changes
+
+- fbc50cb: fix AutoForm bundling issue
+
 ## 4.0.0
 
 ### Major Changes
