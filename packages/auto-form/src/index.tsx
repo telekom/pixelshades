@@ -1,3 +1,5 @@
+"use client"
+
 import { type FormApi, useForm } from "@tanstack/react-form"
 import { zodValidator } from "@tanstack/zod-form-adapter"
 import type { z } from "zod"
