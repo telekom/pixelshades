@@ -1,5 +1,11 @@
 # @pixelshades/utils
 
+## 4.0.7
+
+### Patch Changes
+
+- 972cc4c: add fieldValidators Props
+
 ## 4.0.6
 
 ### Patch Changes
