@@ -1,5 +1,13 @@
 # @pixelshades/ui
 
+## 0.6.6
+
+### Patch Changes
+
+- 38aaf15: Upgrade to React-Aria 3.34.0
+- Updated dependencies [38aaf15]
+  - @pixelshades/styles@0.5.2
+
 ## 0.6.5
 
 ### Patch Changes

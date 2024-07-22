@@ -1,5 +1,15 @@
 # @pixelshades/utils
 
+## 4.0.6
+
+### Patch Changes
+
+- 38aaf15: Upgrade to React-Aria 3.34.0
+- 8086233: readd toast to AutoForm
+- Updated dependencies [38aaf15]
+  - @pixelshades/ui@0.6.6
+  - @pixelshades/toast@0.0.4
+
 ## 4.0.5
 
 ### Patch Changes
