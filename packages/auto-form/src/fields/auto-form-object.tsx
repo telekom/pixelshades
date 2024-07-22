@@ -111,6 +111,7 @@ export function AutoFormObject<SchemaType extends z.ZodObject<any, any>>({
 						key={key}
 						validators={{
 							onChange: item,
+							...fieldConfigItem.fieldValidators,
 						}}
 						// biome-ignore lint/correctness/noChildrenProp: <explanation>
 						children={(field) => {

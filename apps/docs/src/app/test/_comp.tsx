@@ -4,13 +4,13 @@ import { AutoForm, AutoFormSubmit } from "@pixelshades/auto-form"
 import { z } from "zod"
 
 const formSchema = z.object({
-	// username: z
-	// 	.string({
-	// 		required_error: "Username is required.",
-	// 	})
-	// 	.min(2, {
-	// 		message: "Username must be at least 2 characters.",
-	// 	}),
+	username: z
+		.string({
+			required_error: "Username is required.",
+		})
+		.min(2, {
+			message: "Username must be at least 2 characters.",
+		}),
 
 	// password: z
 	// 	.string({
@@ -71,7 +71,6 @@ const formSchema = z.object({
 export function Test() {
 	return (
 		<AutoForm
-			fieldConfig={{}}
 			defaultValues={{
 				birthday: new Date("Tue Jul 23 2024 00:00:00 GMT+0200"),
 			}}

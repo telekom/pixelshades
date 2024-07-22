@@ -1,8 +1,7 @@
-import type { FieldApi } from "@tanstack/react-form"
+import type { FieldApi, FieldValidators } from "@tanstack/react-form"
 import type * as z from "zod"
 import type { INPUT_COMPONENTS } from "./config"
 
-// TODO: Renable zodEffects
 export type ZodObjectOrWrapped = z.ZodObject<any, any> | z.ZodEffects<z.ZodObject<any, any>>
 
 export type FieldConfigItem = {
@@ -15,6 +14,8 @@ export type FieldConfigItem = {
 	renderParent?: (props: {
 		children: React.ReactNode
 	}) => React.ReactElement | null
+
+	fieldValidators?: Omit<FieldValidators<any, any>, "onChange">
 }
 
 export type FieldConfig<SchemaType extends z.infer<z.ZodObject<any, any>>> = {
