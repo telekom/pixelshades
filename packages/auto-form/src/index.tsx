@@ -5,11 +5,12 @@ import { zodValidator } from "@tanstack/zod-form-adapter"
 import type { z } from "zod"
 import type { FieldConfig, ZodObjectOrWrapped } from "./types"
 
+import { toast } from "@pixelshades/toast"
 import { Button, Form } from "@pixelshades/ui/components"
 import { type ForwardedRef, type ReactNode, forwardRef } from "react"
 import { AutoFormObject } from "./fields/auto-form-object"
 import { FormProvider, useFormContext } from "./form-provider"
-import { getObjectFormSchema } from "./utils"
+import { getObjectFormSchema, minDelay } from "./utils"
 
 export type AutoFormProps<SchemaType extends ZodObjectOrWrapped> = {
 	formSchema: SchemaType
@@ -23,6 +24,13 @@ export type AutoFormProps<SchemaType extends ZodObjectOrWrapped> = {
 	innerClassName?: string
 
 	debounceMs?: number
+	minSubmitDelay?: number
+
+	toastValues?: {
+		loading: string
+		success: string
+		error: string
+	}
 
 	fieldConfig?: FieldConfig<z.infer<SchemaType>>
 }
@@ -35,7 +43,9 @@ export const BaseAutoForm = <SchemaType extends ZodObjectOrWrapped>(
 		children,
 		innerClassName,
 		fieldConfig,
-		onSubmit,
+		onSubmit: onSubmitProp,
+		minSubmitDelay = 1000,
+		toastValues,
 	}: AutoFormProps<SchemaType>,
 	ref: ForwardedRef<HTMLFormElement>,
 ) => {
@@ -45,6 +55,25 @@ export const BaseAutoForm = <SchemaType extends ZodObjectOrWrapped>(
 		onSubmit: onSubmit,
 		validatorAdapter: zodValidator(),
 	})
+
+	function onSubmit(data: {
+		value: z.infer<SchemaType>
+		formApi: FormApi<z.infer<SchemaType>, ReturnType<typeof zodValidator>>
+	}) {
+		if (onSubmitProp) {
+			toast.promise(minDelay(onSubmitProp(data), minSubmitDelay), {
+				loading: toastValues?.loading || "Saving Data...",
+				success: toastValues?.success || "Sucessfully Saved",
+				error: (error) => {
+					return (
+						String(error) ||
+						toastValues?.error ||
+						"There was an error saving... Please try again and contact us if it persists."
+					)
+				},
+			})
+		}
+	}
 
 	const objectFormSchema = getObjectFormSchema(formSchema)
 

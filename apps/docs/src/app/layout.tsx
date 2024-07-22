@@ -6,6 +6,7 @@ import { Analytics } from "safesight/react"
 import { SiteHeader } from "~/components/navigation/site-header"
 import { ThemeProvider } from "~/provider/theme-provider"
 
+import { Toaster } from "@pixelshades/toast"
 import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
 
@@ -30,6 +31,8 @@ export default function RootLayout({
 			>
 				<ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
 					<Analytics token={"wbs_QBSp3A5tNE69tEYJ7"} />
+
+					<Toaster />
 
 					<div vaul-drawer-wrapper="">
 						<div className="relative flex min-h-screen flex-col bg-background font-sans">
