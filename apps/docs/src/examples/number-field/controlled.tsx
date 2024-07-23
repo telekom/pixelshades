@@ -1,3 +1,5 @@
+"use client"
+
 import { NumberField } from "@pixelshades/ui/components"
 import { useState } from "react"
 

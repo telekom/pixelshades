@@ -1,3 +1,5 @@
+"use client"
+
 import { ComboBox } from "@pixelshades/ui/components"
 import { useState } from "react"
 

@@ -1,3 +1,5 @@
+"use client"
+
 import { DateField, type DateValue } from "@pixelshades/ui/components"
 import { useState } from "react"
 

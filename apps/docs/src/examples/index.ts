@@ -12,7 +12,9 @@
   export const Demos: Record<string, Demo> = {
     "alert/preview": {
 	  component: lazy(() => import("~/examples/alert/preview.tsx")),
-	  code: `import { Button } from "@pixelshades/ui/components"
+	  code: `"use client"
+
+import { Button } from "@pixelshades/ui/components"
 import { Alert } from "@pixelshades/ui/components"
 
 export function Example() {
@@ -500,7 +502,9 @@ export function Example() {
   },
   "calendar/controlled": {
 	  component: lazy(() => import("~/examples/calendar/controlled.tsx")),
-	  code: `import { Calendar, type DateValue } from "@pixelshades/ui/components"
+	  code: `"use client"
+
+import { Calendar, type DateValue } from "@pixelshades/ui/components"
 import { useState } from "react"
 
 export function Example() {
@@ -650,7 +654,9 @@ export function Example() {
   },
   "combobox/controlled": {
 	  component: lazy(() => import("~/examples/combobox/controlled.tsx")),
-	  code: `import { ComboBox } from "@pixelshades/ui/components"
+	  code: `"use client"
+
+import { ComboBox } from "@pixelshades/ui/components"
 import { useState } from "react"
 
 export function Example() {
@@ -708,7 +714,9 @@ export function Example() {
   },
   "command/controlled": {
 	  component: lazy(() => import("~/examples/command/controlled.tsx")),
-	  code: `import { Command } from "@pixelshades/ui/components"
+	  code: `"use client"
+
+import { Command } from "@pixelshades/ui/components"
 import { IconApple, IconGlass } from "@pixelshades/ui/icons"
 import { useState } from "react"
 
@@ -915,7 +923,9 @@ export function Example() {
   },
   "date-field/controlled": {
 	  component: lazy(() => import("~/examples/date-field/controlled.tsx")),
-	  code: `import { DateField, type DateValue } from "@pixelshades/ui/components"
+	  code: `"use client"
+
+import { DateField, type DateValue } from "@pixelshades/ui/components"
 import { useState } from "react"
 
 export function Example() {
@@ -1004,7 +1014,9 @@ export function Example() {
   },
   "date-picker/controlled": {
 	  component: lazy(() => import("~/examples/date-picker/controlled.tsx")),
-	  code: `import { DatePicker, type DateValue } from "@pixelshades/ui/components"
+	  code: `"use client"
+
+import { DatePicker, type DateValue } from "@pixelshades/ui/components"
 import { useState } from "react"
 
 export function Example() {
@@ -1444,7 +1456,9 @@ export function Example() {
   },
   "highlight/search": {
 	  component: lazy(() => import("~/examples/highlight/search.tsx")),
-	  code: `import { Highlight, TextField, Typography } from "@pixelshades/ui/components"
+	  code: `"use client"
+
+import { Highlight, TextField, Typography } from "@pixelshades/ui/components"
 import { useState } from "react"
 
 export function Example() {
@@ -1727,7 +1741,9 @@ export function Example() {
   },
   "number-field/controlled": {
 	  component: lazy(() => import("~/examples/number-field/controlled.tsx")),
-	  code: `import { NumberField } from "@pixelshades/ui/components"
+	  code: `"use client"
+
+import { NumberField } from "@pixelshades/ui/components"
 import { useState } from "react"
 
 export function Example() {
@@ -2062,7 +2078,9 @@ export function Example() {
   },
   "slider/controlled": {
 	  component: lazy(() => import("~/examples/slider/controlled.tsx")),
-	  code: `import { Slider } from "@pixelshades/ui/components"
+	  code: `"use client"
+
+import { Slider } from "@pixelshades/ui/components"
 import { useState } from "react"
 
 export function Example() {
@@ -2246,7 +2264,9 @@ export function Example() {
   },
   "tabs/controlled": {
 	  component: lazy(() => import("~/examples/tabs/controlled.tsx")),
-	  code: `import { Tabs, Typography } from "@pixelshades/ui/components"
+	  code: `"use client"
+
+import { Tabs, Typography } from "@pixelshades/ui/components"
 import { useState } from "react"
 
 export function Example() {
@@ -2346,7 +2366,9 @@ export function Example() {
   },
   "text-field/controlled": {
 	  component: lazy(() => import("~/examples/text-field/controlled.tsx")),
-	  code: `import { TextField } from "@pixelshades/ui/components"
+	  code: `"use client"
+
+import { TextField } from "@pixelshades/ui/components"
 import { useState } from "react"
 
 export function Example() {
@@ -2400,7 +2422,9 @@ export function Example() {
   },
   "time-field/controlled": {
 	  component: lazy(() => import("~/examples/time-field/controlled.tsx")),
-	  code: `import { TimeField, type TimeValue } from "@pixelshades/ui/components"
+	  code: `"use client"
+
+import { TimeField, type TimeValue } from "@pixelshades/ui/components"
 import { useState } from "react"
 
 import { Time } from "@internationalized/date"

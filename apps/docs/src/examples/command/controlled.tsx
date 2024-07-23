@@ -1,3 +1,5 @@
+"use client"
+
 import { Command } from "@pixelshades/ui/components"
 import { IconApple, IconGlass } from "@pixelshades/ui/icons"
 import { useState } from "react"

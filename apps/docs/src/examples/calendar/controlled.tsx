@@ -1,3 +1,5 @@
+"use client"
+
 import { Calendar, type DateValue } from "@pixelshades/ui/components"
 import { useState } from "react"
 

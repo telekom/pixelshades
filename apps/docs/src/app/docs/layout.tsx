@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { ComponentPreview } from "~/components/component-preview"
 import { DocsSidebar } from "~/components/navigation/docs-sidebar"
 import { SearchDialog } from "~/components/search-dialog"
 import { sidebarItems } from "~/lib/data"

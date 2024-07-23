@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@pixelshades/ui/components"
 import { Alert } from "@pixelshades/ui/components"
 

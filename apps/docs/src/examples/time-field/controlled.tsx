@@ -1,3 +1,5 @@
+"use client"
+
 import { TimeField, type TimeValue } from "@pixelshades/ui/components"
 import { useState } from "react"
 

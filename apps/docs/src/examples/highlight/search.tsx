@@ -1,3 +1,5 @@
+"use client"
+
 import { Highlight, TextField, Typography } from "@pixelshades/ui/components"
 import { useState } from "react"
 

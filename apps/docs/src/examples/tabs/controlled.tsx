@@ -1,3 +1,5 @@
+"use client"
+
 import { Tabs, Typography } from "@pixelshades/ui/components"
 import { useState } from "react"
 

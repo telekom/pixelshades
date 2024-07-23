@@ -1,10 +1,7 @@
-"use client"
-
 import { cn } from "@pixelshades/cn"
-import { Tabs } from "@pixelshades/ui/components"
+import { Tab, TabPanel, Tabs, TabsList } from "@pixelshades/ui/components"
 
 import type * as React from "react"
-import { useMemo } from "react"
 import { Demos } from "../examples"
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -23,7 +20,7 @@ export function ComponentPreview({
 	align = "center",
 	...props
 }: ComponentPreviewProps) {
-	const component = useMemo(() => {
+	const component = (() => {
 		const Component = Demos[name].component
 
 		if (!Component) {
@@ -31,26 +28,26 @@ export function ComponentPreview({
 		}
 
 		return <Component />
-	}, [name])
+	})()
 
 	return (
 		<div className={cn("group relative my-4 flex flex-col space-y-md", className)} {...props}>
-			<Tabs>
-				<Tabs.List aria-label="Dashbord Panels">
-					<Tabs.Tab id="preview">Preview</Tabs.Tab>
-					<Tabs.Tab id="code">Code</Tabs.Tab>
-				</Tabs.List>
+			<Tabs variant="pill">
+				<TabsList aria-label={name}>
+					<Tab id="preview">Preview</Tab>
+					<Tab id="code">Code</Tab>
+				</TabsList>
 				<div className="flex w-full gap-md pt-layout-xs">
-					<Tabs.Panel id="preview" className="w-full">
+					<TabPanel id="preview" className="w-full">
 						<div className="flex min-h-[200px] w-full grow flex-row rounded-lg border bg-subtle/10 p-md">
 							<div className="relative flex h-full min-h-[200px] w-full grow flex-row items-center justify-center p-12">
 								{component}
 							</div>
 						</div>
-					</Tabs.Panel>
-					<Tabs.Panel id="code" className="w-full">
+					</TabPanel>
+					<TabPanel id="code" className="w-full">
 						<div className="not-prose w-full">{children}</div>
-					</Tabs.Panel>
+					</TabPanel>
 				</div>
 			</Tabs>
 		</div>
