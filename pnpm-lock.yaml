@@ -281,8 +281,8 @@ importers:
         specifier: 1.2.1
         version: 1.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-stately:
-        specifier: 3.31.1
-        version: 3.31.1(react@18.3.1)
+        specifier: 3.32.0
+        version: 3.32.0(react@18.3.1)
       tailwindcss-animate:
         specifier: 1.0.7
         version: 1.0.7(tailwindcss@3.4.6(ts-node@10.9.2(@swc/core@1.6.13)(@types/node@20.14.11)(typescript@5.5.3)))
@@ -3796,11 +3796,6 @@ packages:
     resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
       react: ^18.3.1
-
-  react-stately@3.31.1:
-    resolution: {integrity: sha512-wuq673NHkYSdoceGryjtMJJvB9iQgyDkQDsnTN0t2v91pXjGDsN/EcOvnUrxXSBtY9eLdIw74R54z9GX5cJNEg==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0
 
   react-stately@3.32.0:
     resolution: {integrity: sha512-wG7K6piG8hy/6wGouIKUCnMqMDmrVat37xrxnbvo6I52zuseN5/EyGv5gXJQXXU5YwjfmuuoJ1ILJrKGHO/++Q==}
@@ -8904,33 +8899,6 @@ snapshots:
       loose-envify: 1.4.0
       react: 18.3.1
       scheduler: 0.23.2
-
-  react-stately@3.31.1(react@18.3.1):
-    dependencies:
-      '@react-stately/calendar': 3.5.2(react@18.3.1)
-      '@react-stately/checkbox': 3.6.6(react@18.3.1)
-      '@react-stately/collections': 3.10.8(react@18.3.1)
-      '@react-stately/combobox': 3.9.0(react@18.3.1)
-      '@react-stately/data': 3.11.5(react@18.3.1)
-      '@react-stately/datepicker': 3.10.0(react@18.3.1)
-      '@react-stately/dnd': 3.4.0(react@18.3.1)
-      '@react-stately/form': 3.0.4(react@18.3.1)
-      '@react-stately/list': 3.10.6(react@18.3.1)
-      '@react-stately/menu': 3.8.0(react@18.3.1)
-      '@react-stately/numberfield': 3.9.4(react@18.3.1)
-      '@react-stately/overlays': 3.6.8(react@18.3.1)
-      '@react-stately/radio': 3.10.5(react@18.3.1)
-      '@react-stately/searchfield': 3.5.4(react@18.3.1)
-      '@react-stately/select': 3.6.5(react@18.3.1)
-      '@react-stately/selection': 3.16.0(react@18.3.1)
-      '@react-stately/slider': 3.5.5(react@18.3.1)
-      '@react-stately/table': 3.12.0(react@18.3.1)
-      '@react-stately/tabs': 3.6.7(react@18.3.1)
-      '@react-stately/toggle': 3.7.5(react@18.3.1)
-      '@react-stately/tooltip': 3.4.10(react@18.3.1)
-      '@react-stately/tree': 3.8.2(react@18.3.1)
-      '@react-types/shared': 3.24.0(react@18.3.1)
-      react: 18.3.1
 
   react-stately@3.32.0(react@18.3.1):
     dependencies:
