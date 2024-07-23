@@ -1,7 +1,7 @@
 "use client"
 
-import { Heading, Tabs } from "@pixelshades/ui/components"
 import { cn } from "@pixelshades/cn"
+import { Heading, Tabs } from "@pixelshades/ui/components"
 import * as runtime from "react/jsx-runtime"
 import { ComponentPreview } from "./component-preview"
 import { ColorPreview } from "./temp/color-preview"
