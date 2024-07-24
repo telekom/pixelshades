@@ -5,6 +5,7 @@ import { zodValidator } from "@tanstack/zod-form-adapter"
 import type { z } from "zod"
 import type { FieldConfig, ZodObjectOrWrapped } from "./types"
 
+import { cn } from "@pixelshades/cn"
 import { toast } from "@pixelshades/toast"
 import { Button, Form } from "@pixelshades/ui/components"
 import { type ForwardedRef, type ReactNode, forwardRef } from "react"
@@ -12,7 +13,10 @@ import { AutoFormObject } from "./fields/auto-form-object"
 import { FormProvider, useFormContext } from "./form-provider"
 import { getObjectFormSchema, minDelay } from "./utils"
 
+export type { ZodObjectOrWrapped }
+
 export type AutoFormProps<SchemaType extends ZodObjectOrWrapped> = {
+	className?: string
 	formSchema: SchemaType
 	defaultValues?: Partial<z.infer<SchemaType>>
 	onSubmit?: (data: {
@@ -37,6 +41,7 @@ export type AutoFormProps<SchemaType extends ZodObjectOrWrapped> = {
 
 export const BaseAutoForm = <SchemaType extends ZodObjectOrWrapped>(
 	{
+		className,
 		formSchema,
 		debounceMs,
 		defaultValues,
@@ -78,7 +83,7 @@ export const BaseAutoForm = <SchemaType extends ZodObjectOrWrapped>(
 	const objectFormSchema = getObjectFormSchema(formSchema)
 
 	return (
-		<div className="w-full">
+		<div className={cn("w-full", className)}>
 			<FormProvider form={form}>
 				<Form
 					ref={ref}
