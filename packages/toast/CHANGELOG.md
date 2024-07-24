@@ -1,5 +1,11 @@
 # @pixelshades/toast
 
+## 0.0.5
+
+### Patch Changes
+
+- 75f1639: bump react aria
+
 ## 0.0.4
 
 ### Patch Changes

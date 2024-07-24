@@ -1,5 +1,15 @@
 # @pixelshades/ui
 
+## 0.6.7
+
+### Patch Changes
+
+- 75f1639: bump react aria
+- Updated dependencies [75f1639]
+  - @pixelshades/cn@0.1.7
+  - @pixelshades/styles@0.5.3
+  - @pixelshades/utils@0.1.6
+
 ## 0.6.6
 
 ### Patch Changes
