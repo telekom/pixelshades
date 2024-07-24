@@ -11,9 +11,9 @@
 	},
 	"dependencies": {
 		"@internationalized/date": "^3.5.5",
+		"@pixelshades/auto-form": "workspace:*",
 		"@pixelshades/cn": "workspace:*",
 		"@pixelshades/styles": "workspace:*",
-		"@pixelshades/auto-form": "workspace:*",
 		"@pixelshades/ui": "workspace:*",
 		"@radix-ui/react-collapsible": "^1.1.0",
 		"geist": "^1.3.1",
