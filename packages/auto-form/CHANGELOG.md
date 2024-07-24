@@ -1,5 +1,11 @@
 # @pixelshades/utils
 
+## 4.0.9
+
+### Patch Changes
+
+- 81f45bc: run parsing to apply transforms
+
 ## 4.0.8
 
 ### Patch Changes
