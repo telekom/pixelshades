@@ -1,5 +1,11 @@
 # @pixelshades/cn
 
+## 0.1.7
+
+### Patch Changes
+
+- 75f1639: bump react aria
+
 ## 0.1.6
 
 ### Patch Changes

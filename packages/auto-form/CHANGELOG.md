@@ -1,5 +1,17 @@
 # @pixelshades/utils
 
+## 4.0.8
+
+### Patch Changes
+
+- 75f1639: bump react aria
+- 706bbd1: readd classname and export type
+- Updated dependencies [75f1639]
+  - @pixelshades/cn@0.1.7
+  - @pixelshades/toast@0.0.5
+  - @pixelshades/ui@0.6.7
+  - @pixelshades/utils@0.1.6
+
 ## 4.0.7
 
 ### Patch Changes
