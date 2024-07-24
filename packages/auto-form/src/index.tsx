@@ -2,7 +2,7 @@
 
 import { type FormApi, useForm } from "@tanstack/react-form"
 import { zodValidator } from "@tanstack/zod-form-adapter"
-import type { z } from "zod"
+import { ZodError, type z } from "zod"
 import type { FieldConfig, ZodObjectOrWrapped } from "./types"
 
 import { cn } from "@pixelshades/cn"
@@ -65,18 +65,27 @@ export const BaseAutoForm = <SchemaType extends ZodObjectOrWrapped>(
 		value: z.infer<SchemaType>
 		formApi: FormApi<z.infer<SchemaType>, ReturnType<typeof zodValidator>>
 	}) {
-		if (onSubmitProp) {
-			toast.promise(minDelay(onSubmitProp(data), minSubmitDelay), {
-				loading: toastValues?.loading || "Saving Data...",
-				success: toastValues?.success || "Sucessfully Saved",
-				error: (error) => {
-					return (
-						String(error) ||
-						toastValues?.error ||
-						"There was an error saving... Please try again and contact us if it persists."
-					)
-				},
-			})
+		try {
+			const parsedData = formSchema.parse(data.value)
+
+			if (onSubmitProp) {
+				toast.promise(minDelay(onSubmitProp({ formApi: data.formApi, value: parsedData }), minSubmitDelay), {
+					loading: toastValues?.loading || "Saving Data...",
+					success: toastValues?.success || "Sucessfully Saved",
+					error: (error) => {
+						return (
+							String(error) ||
+							toastValues?.error ||
+							"There was an error saving... Please try again and contact us if it persists."
+						)
+					},
+				})
+			}
+		} catch (error: unknown) {
+			if (error instanceof ZodError) {
+				toast.error(error.message)
+				return
+			}
 		}
 	}
 

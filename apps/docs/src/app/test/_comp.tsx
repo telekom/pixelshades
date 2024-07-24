@@ -71,6 +71,11 @@ const formSchema = z.object({
 export function Test() {
 	return (
 		<AutoForm
+			fieldConfig={{
+				username: {
+					fieldValidators: {},
+				},
+			}}
 			defaultValues={{
 				birthday: new Date("Tue Jul 23 2024 00:00:00 GMT+0200"),
 			}}
