@@ -120,3 +120,5 @@ export const Table = Object.assign(TableRoot, {
 	Header: TableHeader,
 	Row: TableRow,
 })
+
+export { TableBody, TableCell, TableColumn, TableHeader, TableRow }
