@@ -1,5 +1,11 @@
 # @pixelshades/ui
 
+## 0.6.8
+
+### Patch Changes
+
+- c7708f7: export Table elements seperatly
+
 ## 0.6.7
 
 ### Patch Changes
