@@ -1,5 +1,12 @@
 # @pixelshades/styles
 
+## 0.5.4
+
+### Patch Changes
+
+- c5a503f: fix checkbox styling
+  fix table styling
+
 ## 0.5.3
 
 ### Patch Changes

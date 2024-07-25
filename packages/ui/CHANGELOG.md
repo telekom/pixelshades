@@ -1,5 +1,14 @@
 # @pixelshades/ui
 
+## 0.6.9
+
+### Patch Changes
+
+- c5a503f: fix checkbox styling
+  fix table styling
+- Updated dependencies [c5a503f]
+  - @pixelshades/styles@0.5.4
+
 ## 0.6.8
 
 ### Patch Changes
