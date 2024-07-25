@@ -7,8 +7,8 @@ import { focusRing } from "../../utils"
 
 export const tableVariants = tv({
 	slots: {
-		root: "relative w-[550px] scroll-pt-[2.281rem] overflow-auto rounded-lg border border-border",
-		table: "border-separate border-spacing-0",
+		root: "relative w-full scroll-pt-[2.281rem] overflow-auto rounded-lg border border-border",
+		table: "border-separate border-spacing-0 table-auto w-full",
 		columnRoot:
 			"cursor-default text-start font-semibold text-foreground text-sm [&:focus-within]:z-20 [&:hover]:z-20",
 		column: ["px-md h-7 flex-1 flex gap-sm items-center overflow-hidden", focusRing()],

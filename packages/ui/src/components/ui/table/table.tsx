@@ -35,9 +35,9 @@ export type TableProps = AriaTableProps
 
 export function TableRoot(props: TableProps) {
 	return (
-		<AriaResizableTableContainer className={root()}>
+		<div className={root()}>
 			<AriaTable {...props} className={table()} />
-		</AriaResizableTableContainer>
+		</div>
 	)
 }
 
@@ -63,7 +63,6 @@ function TableColumn(props: ColumnProps) {
 							</span>
 						)}
 					</Group>
-					{/* {!props.width && <ColumnResizer className={resizerStyles} />} */}
 				</div>
 			))}
 		</AriaColumn>
