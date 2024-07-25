@@ -7,8 +7,7 @@
 import { type ElementRef, forwardRef } from "react"
 
 import { checkboxVariant } from "@pixelshades/styles/components/checkbox"
-import { IconCheck } from "@tabler/icons-react"
-import React from "react"
+import { IconCheck, IconMinus } from "@tabler/icons-react"
 import { type CheckboxProps as AriaCheckBoxProps, Checkbox as AriaCheckbox } from "react-aria-components"
 import type { VariantProps } from "tailwind-variants"
 import { FormField, type FormFieldProps } from "../../core/form-field"
@@ -20,13 +19,18 @@ interface CheckBoxProps extends CheckboxVariantProps, AriaCheckBoxProps, FormFie
 	className?: string
 }
 
+const { indicator, root } = checkboxVariant()
+
 const Checkbox = forwardRef<ElementRef<typeof AriaCheckbox>, CheckBoxProps>(
-	({ className, label, id, helperText, errorMessage, description, tooltip, size, children, ...props }, ref) => {
+	({ className, label, id, helperText, errorMessage, description, tooltip, children, ...props }, ref) => {
 		return (
-			<AriaCheckbox className={checkboxVariant({ size }).root({ className })} ref={ref} {...props}>
-				{({ isSelected, isDisabled, isRequired }) => (
+			<AriaCheckbox className={root({ className })} ref={ref} {...props}>
+				{({ isDisabled, isRequired, isIndeterminate }) => (
 					<>
-						<div className={checkboxVariant({ size }).box()}>{isSelected && <IconCheck />}</div>
+						<div className={indicator()}>
+							{isIndeterminate ? <IconMinus className="size-2.5" /> : <IconCheck className="size-3" />}
+						</div>
+
 						<span className="inline-flex flex-col">
 							<FormField
 								label={label}

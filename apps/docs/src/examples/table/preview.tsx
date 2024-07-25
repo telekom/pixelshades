@@ -2,9 +2,11 @@ import { Table } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
-		<Table aria-label="Tokens">
+		<Table aria-label="Tokens" onSortChange={(v) => console.log(v)}>
 			<Table.Header>
-				<Table.Column isRowHeader>Name</Table.Column>
+				<Table.Column isRowHeader allowsSorting>
+					Name
+				</Table.Column>
 				<Table.Column>Token</Table.Column>
 				<Table.Column>Env</Table.Column>
 				<Table.Column>Cost</Table.Column>

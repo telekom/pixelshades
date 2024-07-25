@@ -8,109 +8,109 @@ import {
 	Cell as AriaCell,
 	type CellProps as AriaCellProps,
 	Column as AriaColumn,
+	ResizableTableContainer as AriaResizableTableContainer,
+	Row as AriaRow,
 	Table as AriaTable,
 	TableBody as AriaTableBody,
+	TableHeader as AriaTableHeader,
 	type TableProps as AriaTableProps,
-	TableHeader as AriaTableheader,
 	Collection,
 	type ColumnProps,
-	Row,
+	Group,
 	type RowProps,
 	type TableHeaderProps,
+	composeRenderProps,
 	useTableOptions,
 } from "react-aria-components"
 
+import { cn } from "@pixelshades/cn"
 import { tableVariants } from "@pixelshades/styles/components/table"
-import { createStyleContext } from "@pixelshades/utils/styles"
-import { IconChevronDown, IconChevronUp, IconMenu } from "../../../icons"
+import { IconChevronUp } from "@tabler/icons-react"
 import { Button } from "../button"
 import { Checkbox } from "../checkbox"
 
-const { header, column, row } = tableVariants()
-
-const { withContext, withProvider } = createStyleContext(tableVariants)
-
-const TableBody = AriaTableBody
+const { header, column, row, root, table, columnRoot, cell } = tableVariants()
 
 export type TableProps = AriaTableProps
 
-const TableRoot = withProvider(AriaTable, "root")
-
-export type TableCellProps = AriaCellProps
-
-const TableCell = withContext(AriaCell, "cell")
-
-const TableColumn = ({ children, className, ...props }: ColumnProps & { className?: string }) => (
-	<AriaColumn {...props} className={column({ className })}>
-		{({ allowsSorting, sortDirection }) => (
-			<div className="flex items-center gap-md">
-				<>
-					{children}
-					{allowsSorting &&
-						(sortDirection === undefined ? (
-							<div className="w-6" />
-						) : sortDirection === "ascending" ? (
-							<IconChevronUp />
-						) : (
-							<IconChevronDown />
-						))}
-				</>
-			</div>
-		)}
-	</AriaColumn>
-)
-
-const TableHeader = <T extends object>({
-	/** The children of the table header */
-	children,
-	/** The styles to be applied to the table header */
-	className,
-	/** The columns of the table header */
-	columns,
-	...props
-}: TableHeaderProps<T> & { className?: string }) => {
-	const { selectionBehavior, selectionMode, allowsDragging } = useTableOptions()
+export function TableRoot(props: TableProps) {
 	return (
-		<AriaTableheader {...props} className={header()}>
-			{/* Add extra columns for drag and drop and selection. */}
-			{allowsDragging && <TableColumn />}
-			{selectionBehavior === "toggle" && (
-				<TableColumn>{selectionMode === "multiple" && <Checkbox slot="selection" />}</TableColumn>
-			)}
-			<Collection items={columns}>{children}</Collection>
-		</AriaTableheader>
+		<AriaResizableTableContainer className={root()}>
+			<AriaTable {...props} className={table()} />
+		</AriaResizableTableContainer>
 	)
 }
 
-const TableRow = <T extends object>({
-	/** The children of the table row */
-	children,
-	/** The styles to be applied to the table row */
-	className,
-	/** The columns of the table row */
-	columns,
-	/** The id of the table row */
-	id,
-	...props
-}: RowProps<T> & { className?: string }) => {
-	const { selectionBehavior, allowsDragging } = useTableOptions()
+function TableColumn(props: ColumnProps) {
 	return (
-		<Row id={id} {...props} className={row({ className })}>
+		<AriaColumn {...props} className={cn(props.className, columnRoot())}>
+			{composeRenderProps(props.children, (children, { allowsSorting, sortDirection }) => (
+				<div className="flex items-center">
+					<Group role="presentation" tabIndex={-1} className={column()}>
+						<span className="truncate">{children}</span>
+						{allowsSorting && (
+							<span
+								className={cn("flex size-4 items-center justify-center transition", {
+									"rotate-180": sortDirection === "descending",
+								})}
+							>
+								{sortDirection && (
+									<IconChevronUp
+										aria-hidden
+										className="size-4 text-subtle-foreground forced-colors:text-[ButtonText]"
+									/>
+								)}
+							</span>
+						)}
+					</Group>
+					{/* {!props.width && <ColumnResizer className={resizerStyles} />} */}
+				</div>
+			))}
+		</AriaColumn>
+	)
+}
+
+const TableBody = AriaTableBody
+
+function TableHeader<T extends object>(props: TableHeaderProps<T>) {
+	const { selectionBehavior, selectionMode, allowsDragging } = useTableOptions()
+
+	return (
+		<AriaTableHeader {...props} className={cn(header(), props.className)}>
+			{/* Add extra columns for drag and drop and selection. */}
+			{allowsDragging && <TableColumn />}
+			{selectionBehavior === "toggle" && (
+				<AriaColumn width={36} minWidth={36} className="cursor-default p-md text-start font-semibold text-sm">
+					{selectionMode === "multiple" && <Checkbox slot="selection" />}
+				</AriaColumn>
+			)}
+			<Collection items={props.columns}>{props.children}</Collection>
+		</AriaTableHeader>
+	)
+}
+
+function TableRow<T extends object>({ id, columns, children, ...otherProps }: RowProps<T>) {
+	const { selectionBehavior, allowsDragging } = useTableOptions()
+
+	return (
+		<AriaRow id={id} {...otherProps} className={row()}>
 			{allowsDragging && (
-				<AriaCell className="ring-focus data-[focus-visible]:ring-2">
-					<Button className="bg-transparent" slot="drag">
-						<IconMenu className="size-4 text-foreground" />
-					</Button>
-				</AriaCell>
+				<TableCell>
+					<Button slot="drag">≡</Button>
+				</TableCell>
 			)}
 			{selectionBehavior === "toggle" && (
-				<AriaCell>
+				<TableCell>
 					<Checkbox slot="selection" />
-				</AriaCell>
+				</TableCell>
 			)}
 			<Collection items={columns}>{children}</Collection>
-		</Row>
+		</AriaRow>
 	)
+}
+
+function TableCell(props: AriaCellProps) {
+	return <AriaCell {...props} className={cell()} />
 }
 
 export const Table = Object.assign(TableRoot, {
