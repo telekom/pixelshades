@@ -1,5 +1,11 @@
 # @pixelshades/utils
 
+## 4.0.12
+
+### Patch Changes
+
+- d01d8a4: feat: add validation loading indicators
+
 ## 4.0.11
 
 ### Patch Changes
