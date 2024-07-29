@@ -143,8 +143,8 @@ importers:
         specifier: ^18.3.0
         version: 18.3.0
       bunchee:
-        specifier: 5.2.2
-        version: 5.2.2(typescript@5.5.4)
+        specifier: 5.3.0
+        version: 5.3.0(typescript@5.5.4)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -177,8 +177,8 @@ importers:
         specifier: ^18.3.0
         version: 18.3.0
       bunchee:
-        specifier: 5.2.2
-        version: 5.2.2(typescript@5.5.4)
+        specifier: 5.3.0
+        version: 5.3.0(typescript@5.5.4)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -202,8 +202,8 @@ importers:
         specifier: ^18.3.0
         version: 18.3.0
       bunchee:
-        specifier: 5.2.2
-        version: 5.2.2(typescript@5.5.4)
+        specifier: 5.3.0
+        version: 5.3.0(typescript@5.5.4)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -239,8 +239,8 @@ importers:
         specifier: ^18.3.0
         version: 18.3.0
       bunchee:
-        specifier: 5.2.2
-        version: 5.2.2(typescript@5.5.4)
+        specifier: 5.3.0
+        version: 5.3.0(typescript@5.5.4)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -315,8 +315,8 @@ importers:
         specifier: ^18.3.0
         version: 18.3.0
       bunchee:
-        specifier: 5.2.2
-        version: 5.2.2(typescript@5.5.4)
+        specifier: 5.3.0
+        version: 5.3.0(typescript@5.5.4)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -361,8 +361,8 @@ importers:
         specifier: ^18.3.0
         version: 18.3.0
       bunchee:
-        specifier: 5.2.2
-        version: 5.2.2(typescript@5.5.4)
+        specifier: 5.3.0
+        version: 5.3.0(typescript@5.5.4)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -2248,8 +2248,8 @@ packages:
   bun-types@1.1.17:
     resolution: {integrity: sha512-Z4+OplcSd/YZq7ZsrfD00DKJeCwuNY96a1IDJyR73+cTBaFIS7SC6LhpY/W3AMEXO9iYq5NJ58WAwnwL1p5vKg==}
 
-  bunchee@5.2.2:
-    resolution: {integrity: sha512-Xc3Rms+VFXVM3ubfim0G7blq0zJxVsojmN3zyqzEgD2XaxpWduF2CsKCDrA8XvfbOjjMJ+z6rqBU3sNrXSOu7w==}
+  bunchee@5.3.0:
+    resolution: {integrity: sha512-p9Vc+biUHGsTQ9CBvDy3UIJzcDEFRFdWX6hX8BfjYjwwt1ie4PSfG/XpmAiaiXMrhBqwFEVDkZNA/h+hAihI6A==}
     engines: {node: '>= 18.0.0'}
     hasBin: true
     peerDependencies:
@@ -6862,7 +6862,7 @@ snapshots:
       '@types/node': 20.12.14
       '@types/ws': 8.5.10
 
-  bunchee@5.2.2(typescript@5.5.4):
+  bunchee@5.3.0(typescript@5.5.4):
     dependencies:
       '@rollup/plugin-commonjs': 25.0.8(rollup@4.18.1)
       '@rollup/plugin-json': 6.1.0(rollup@4.18.1)
