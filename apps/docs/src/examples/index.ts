@@ -1539,6 +1539,22 @@ export function Example() {
 }
 `,
   },
+  "list-box/preview": {
+	  component: lazy(() => import("~/examples/list-box/preview.tsx")),
+	  code: `import { ListBox } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<ListBox>
+			<ListBox.Item>Next.js</ListBox.Item>
+			<ListBox.Item>Remix</ListBox.Item>
+			<ListBox.Item>Astro</ListBox.Item>
+			<ListBox.Item>Gatsby</ListBox.Item>
+		</ListBox>
+	)
+}
+`,
+  },
   "loading-spinner/button": {
 	  component: lazy(() => import("~/examples/loading-spinner/button.tsx")),
 	  code: `import { LoadingSpinner } from "@pixelshades/ui/components"
@@ -1828,25 +1844,25 @@ export function Example() {
 						</div>
 						<div className="grid gap-md">
 							<div className="grid grid-cols-3 items-center gap-lg">
-								<TextField label="Width" id="width" defaultValue="100%" className="col-span-2 h-8" />
+								<TextField label="Width" id="width" defaultValue="100%" className="col-span-2" />
 							</div>
 							<div className="grid grid-cols-3 items-center gap-lg">
 								<TextField
 									label="Max. width"
 									id="maxWidth"
 									defaultValue="300px"
-									className="col-span-2 h-8"
+									className="col-span-2"
 								/>
 							</div>
 							<div className="grid grid-cols-3 items-center gap-lg">
-								<TextField label="Height" id="height" defaultValue="25px" className="col-span-2 h-8" />
+								<TextField label="Height" id="height" defaultValue="25px" className="col-span-2" />
 							</div>
 							<div className="grid grid-cols-3 items-center gap-lg">
 								<TextField
 									label="Max. height"
 									id="maxHeight"
 									defaultValue="none"
-									className="col-span-2 h-8"
+									className="col-span-2"
 								/>
 							</div>
 						</div>
