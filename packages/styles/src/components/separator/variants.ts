@@ -5,12 +5,12 @@
 import { tv } from "tailwind-variants"
 
 export const separatorVariants = tv({
-	base: "bg-border rounded-full",
+	base: "bg-border rounded-full shrink-0",
 	defaultVariants: { orientation: "horizontal" },
 	variants: {
 		orientation: {
-			vertical: "w-px mx-md h-full",
-			horizontal: "h-px my-md w-full",
+			vertical: "w-px h-full",
+			horizontal: "h-px w-full",
 		},
 	},
 })
