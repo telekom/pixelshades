@@ -130,6 +130,7 @@ export function AutoFormObject<SchemaType extends z.ZodObject<any, any>>({
 								errorMessage: field.state.meta.errors.length ? field.state.meta.errors.join(",") : null,
 								isDisabled: fieldConfigItem.inputProps?.disabled,
 								isInvalid: field.state.meta.errors.length > 0,
+								isLoading: field.state.meta.isValidating,
 								// || isDisabled,
 								ref: undefined,
 
