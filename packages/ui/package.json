@@ -38,7 +38,7 @@
 		"@total-typescript/tsconfig": "^1.0.4",
 		"@turbo/gen": "^2.0.9",
 		"@types/bun": "^1.1.6",
-		"@types/node": "^20.14.12",
+		"@types/node": "^22.0.0",
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
 		"bunchee": "5.2.2",
@@ -47,7 +47,7 @@
 		"react-docgen-typescript": "^2.2.2",
 		"react-dom": "^18.3.1",
 		"tailwind-variants": "0.2.1",
-		"tailwindcss": "3.4.6",
+		"tailwindcss": "3.4.7",
 		"typescript": "^5.5.4"
 	},
 	"files": [

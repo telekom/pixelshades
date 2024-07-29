@@ -13,25 +13,25 @@ export default function Example() {
 						</div>
 						<div className="grid gap-md">
 							<div className="grid grid-cols-3 items-center gap-lg">
-								<TextField label="Width" id="width" defaultValue="100%" className="col-span-2 h-8" />
+								<TextField label="Width" id="width" defaultValue="100%" className="col-span-2" />
 							</div>
 							<div className="grid grid-cols-3 items-center gap-lg">
 								<TextField
 									label="Max. width"
 									id="maxWidth"
 									defaultValue="300px"
-									className="col-span-2 h-8"
+									className="col-span-2"
 								/>
 							</div>
 							<div className="grid grid-cols-3 items-center gap-lg">
-								<TextField label="Height" id="height" defaultValue="25px" className="col-span-2 h-8" />
+								<TextField label="Height" id="height" defaultValue="25px" className="col-span-2" />
 							</div>
 							<div className="grid grid-cols-3 items-center gap-lg">
 								<TextField
 									label="Max. height"
 									id="maxHeight"
 									defaultValue="none"
-									className="col-span-2 h-8"
+									className="col-span-2"
 								/>
 							</div>
 						</div>
