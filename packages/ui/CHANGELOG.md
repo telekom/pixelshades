@@ -1,5 +1,11 @@
 # @pixelshades/ui
 
+## 0.6.10
+
+### Patch Changes
+
+- 4650f9b: feat: add Listbox component
+
 ## 0.6.9
 
 ### Patch Changes
