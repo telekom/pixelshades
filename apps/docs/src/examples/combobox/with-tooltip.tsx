@@ -2,11 +2,11 @@ import { ComboBox } from "@pixelshades/ui/components"
 
 export default function Example() {
 	return (
-		<ComboBox label="Project" tooltip="You can display anything here" defaultSelectedKey="health">
-			<ComboBox.Item id="health">Health Dashboard</ComboBox.Item>
-			<ComboBox.Item id="todo">To-Do App</ComboBox.Item>
-			<ComboBox.Item id="ui">UI Kit</ComboBox.Item>
-			<ComboBox.Item id="portfolio">Portfolio Site</ComboBox.Item>
+		<ComboBox label="Project" tooltip="You can display anything here">
+			<ComboBox.Item>Health Dashboard</ComboBox.Item>
+			<ComboBox.Item>To-Do App</ComboBox.Item>
+			<ComboBox.Item>UI Kit</ComboBox.Item>
+			<ComboBox.Item>Portfolio Site</ComboBox.Item>
 		</ComboBox>
 	)
 }
