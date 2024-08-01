@@ -673,6 +673,22 @@ export function Example() {
 }
 `,
   },
+  "combobox/default-selected": {
+	  component: lazy(() => import("~/examples/combobox/default-selected.tsx")),
+	  code: `import { ComboBox } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<ComboBox label="Project" defaultSelectedKey="health">
+			<ComboBox.Item id="health">Health Dashboard</ComboBox.Item>
+			<ComboBox.Item id="todo">To-Do App</ComboBox.Item>
+			<ComboBox.Item id="ui">UI Kit</ComboBox.Item>
+			<ComboBox.Item id="portfolio">Portfolio Site</ComboBox.Item>
+		</ComboBox>
+	)
+}
+`,
+  },
   "combobox/loading": {
 	  component: lazy(() => import("~/examples/combobox/loading.tsx")),
 	  code: `import { ComboBox } from "@pixelshades/ui/components"
