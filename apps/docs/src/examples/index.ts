@@ -728,6 +728,38 @@ export function Example() {
 }
 `,
   },
+  "combobox/with-helper-text": {
+	  component: lazy(() => import("~/examples/combobox/with-helper-text.tsx")),
+	  code: `import { ComboBox } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<ComboBox label="Project" helperText="You can display anything here" defaultSelectedKey="health">
+			<ComboBox.Item id="health">Health Dashboard</ComboBox.Item>
+			<ComboBox.Item id="todo">To-Do App</ComboBox.Item>
+			<ComboBox.Item id="ui">UI Kit</ComboBox.Item>
+			<ComboBox.Item id="portfolio">Portfolio Site</ComboBox.Item>
+		</ComboBox>
+	)
+}
+`,
+  },
+  "combobox/with-tooltip": {
+	  component: lazy(() => import("~/examples/combobox/with-tooltip.tsx")),
+	  code: `import { ComboBox } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<ComboBox label="Project" tooltip="You can display anything here" defaultSelectedKey="health">
+			<ComboBox.Item id="health">Health Dashboard</ComboBox.Item>
+			<ComboBox.Item id="todo">To-Do App</ComboBox.Item>
+			<ComboBox.Item id="ui">UI Kit</ComboBox.Item>
+			<ComboBox.Item id="portfolio">Portfolio Site</ComboBox.Item>
+		</ComboBox>
+	)
+}
+`,
+  },
   "command/controlled": {
 	  component: lazy(() => import("~/examples/command/controlled.tsx")),
 	  code: `"use client"
