@@ -1,6 +1,6 @@
 {
 	"name": "@pixelshades/auto-form",
-	"version": "4.0.14",
+	"version": "4.0.15",
 	"private": false,
 	"type": "module",
 	"scripts": {
@@ -35,7 +35,9 @@
 		"react": ">18.0.0",
 		"react-dom": ">18.0.0"
 	},
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"exports": {
 		".": {
 			"import": {
