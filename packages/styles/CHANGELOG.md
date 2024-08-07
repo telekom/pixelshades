@@ -1,5 +1,11 @@
 # @pixelshades/styles
 
+## 0.5.5
+
+### Patch Changes
+
+- e0a8790: remove margin from seprarator
+
 ## 0.5.4
 
 ### Patch Changes
