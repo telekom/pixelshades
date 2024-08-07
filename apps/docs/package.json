@@ -27,7 +27,7 @@
 		"@types/node": "^22.0.2",
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
-		"postcss": "^8.4.40",
+		"postcss": "^8.4.41",
 		"rehype-autolink-headings": "^7.1.0",
 		"rehype-pretty-code": "^0.13.2",
 		"rehype-slug": "^6.0.0",
