@@ -17,7 +17,7 @@
 		"@changesets/cli": "^2.27.7",
 		"concurrently": "^8.2.2",
 		"cz-conventional-changelog": "^3.3.0",
-		"turbo": "2.0.9"
+		"turbo": "2.0.12"
 	},
 	"engines": {
 		"node": ">=18"
