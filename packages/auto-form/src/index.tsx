@@ -15,14 +15,18 @@ import { getObjectFormSchema, minDelay } from "./utils"
 
 export type { ZodObjectOrWrapped }
 
+export type OnSubmit<SchemaType extends ZodObjectOrWrapped> = (data: {
+	value: z.infer<SchemaType>
+	formApi: FormApi<z.infer<SchemaType>, ReturnType<typeof zodValidator>>
+}) => Promise<any>
+
 export type AutoFormProps<SchemaType extends ZodObjectOrWrapped> = {
 	className?: string
 	formSchema: SchemaType
 	defaultValues?: Partial<z.infer<SchemaType>>
-	onSubmit?: (data: {
-		value: z.infer<SchemaType>
-		formApi: FormApi<z.infer<SchemaType>, ReturnType<typeof zodValidator>>
-	}) => Promise<any>
+
+	onSubmit?: OnSubmit<SchemaType>
+	onSubmitInvalid?: OnSubmit<SchemaType>
 
 	children?: ReactNode
 	innerClassName?: string
@@ -49,6 +53,7 @@ export const BaseAutoForm = <SchemaType extends ZodObjectOrWrapped>(
 		innerClassName,
 		fieldConfig,
 		onSubmit: onSubmitProp,
+		onSubmitInvalid,
 		minSubmitDelay = 1000,
 		toastValues,
 	}: AutoFormProps<SchemaType>,
@@ -58,6 +63,7 @@ export const BaseAutoForm = <SchemaType extends ZodObjectOrWrapped>(
 		asyncDebounceMs: debounceMs,
 		defaultValues,
 		onSubmit: onSubmit,
+		onSubmitInvalid: onSubmitInvalid,
 		validatorAdapter: zodValidator(),
 	})
 
@@ -153,3 +159,5 @@ const AutoForm = fixedForwardRef(BaseAutoForm)
 export { AutoForm, AutoFormSubmit }
 
 export type * from "./types"
+
+export { getBaseSchema, getBaseType } from "./utils"
