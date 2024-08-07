@@ -151,3 +151,5 @@ function fixedForwardRef<T, P = {}>(
 const AutoForm = fixedForwardRef(BaseAutoForm)
 
 export { AutoForm, AutoFormSubmit }
+
+export type * from "./types"
