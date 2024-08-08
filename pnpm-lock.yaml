@@ -294,8 +294,8 @@ importers:
         version: 1.1.4(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.6.13)(@types/node@22.1.0)(typescript@5.5.4)))
     devDependencies:
       '@tailwindcss/typography':
-        specifier: ^0.5.13
-        version: 0.5.13(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.6.13)(@types/node@22.1.0)(typescript@5.5.4)))
+        specifier: ^0.5.14
+        version: 0.5.14(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.6.13)(@types/node@22.1.0)(typescript@5.5.4)))
       '@total-typescript/tsconfig':
         specifier: ^1.0.4
         version: 1.0.4
@@ -1935,8 +1935,8 @@ packages:
   '@tabler/icons@3.11.0':
     resolution: {integrity: sha512-/vZinJNvCYhdAB+RUsyCpanSPuOEKHHIZi4Uu0Bw7ilewHnQhCWUPrT704uHCRli2ROl7spADPmWzAqOganA5A==}
 
-  '@tailwindcss/typography@0.5.13':
-    resolution: {integrity: sha512-ADGcJ8dX21dVVHIwTRgzrcunY6YY9uSlAHHGVKvkA+vLc5qLwEszvKts40lx7z0qc4clpjclwLeK5rVCV2P/uw==}
+  '@tailwindcss/typography@0.5.14':
+    resolution: {integrity: sha512-ZvOCjUbsJBjL9CxQBn+VEnFpouzuKhxh2dH8xMIWHILL+HfOYtlAkWcyoon8LlzE53d2Yo6YO6pahKKNW3q1YQ==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
 
@@ -6511,7 +6511,7 @@ snapshots:
 
   '@tabler/icons@3.11.0': {}
 
-  '@tailwindcss/typography@0.5.13(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.6.13)(@types/node@22.1.0)(typescript@5.5.4)))':
+  '@tailwindcss/typography@0.5.14(tailwindcss@3.4.7(ts-node@10.9.2(@swc/core@1.6.13)(@types/node@22.1.0)(typescript@5.5.4)))':
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
