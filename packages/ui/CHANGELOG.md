@@ -1,5 +1,11 @@
 # @pixelshades/ui
 
+## 0.6.12
+
+### Patch Changes
+
+- 86d176a: add error message to ComboBox
+
 ## 0.6.11
 
 ### Patch Changes
