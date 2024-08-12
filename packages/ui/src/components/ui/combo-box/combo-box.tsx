@@ -58,6 +58,7 @@ const ComboBoxRoot = <T extends object>({
 					isRequired={isRequired}
 					isDisabled={isDisabled}
 					helperText={helperText}
+					errorMessage={errorMessage}
 				>
 					<Input.Root before={before} isLoading={isLoading} loaderPosition={"before"}>
 						<Input />
