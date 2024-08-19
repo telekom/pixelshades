@@ -118,8 +118,8 @@ importers:
         specifier: ^0.28.0
         version: 0.28.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
       '@tanstack/zod-form-adapter':
-        specifier: ^0.28.0
-        version: 0.28.0(zod@3.23.8)
+        specifier: ^0.29.2
+        version: 0.29.2(zod@3.23.8)
       zod:
         specifier: ^3.23.8
         version: 3.23.8
@@ -1943,6 +1943,9 @@ packages:
   '@tanstack/form-core@0.28.0':
     resolution: {integrity: sha512-HU1MDIZmhB635BJfL73fLAdTVOE1xseYrbMJKywbnwY2cEpIjKcu/5gC656bSI1jF//+NJEWRL68ZgrUevWc2A==}
 
+  '@tanstack/form-core@0.29.2':
+    resolution: {integrity: sha512-ElWBS4IwR9sJEFuW98RysAQf9DYDzqzq6Po9CFWTmND653FONnv6s+ERyt5EjshZUh26KYz6GO7QUcxfCVpXJg==}
+
   '@tanstack/react-form@0.28.0':
     resolution: {integrity: sha512-BXAnN61gSFFl8XtGnf3CSXD5BZZI3kQbL5AR3zLVE5ingY8mie9rXL+rpBSXsX6lv4STkwviG+oDH5riakIMCg==}
     peerDependencies:
@@ -1961,8 +1964,8 @@ packages:
   '@tanstack/store@0.5.5':
     resolution: {integrity: sha512-EOSrgdDAJExbvRZEQ/Xhh9iZchXpMN+ga1Bnk8Nmygzs8TfiE6hbzThF+Pr2G19uHL6+DTDTHhJ8VQiOd7l4tA==}
 
-  '@tanstack/zod-form-adapter@0.28.0':
-    resolution: {integrity: sha512-KbwVlgGu54ZF3wJbNbYPNen4OYbVe0nuwmPObm+v/BwiCdE7Yv3wA/iHzQqB2wY+DdjWIeHl6o4m/kyuiTVqwg==}
+  '@tanstack/zod-form-adapter@0.29.2':
+    resolution: {integrity: sha512-DoIxISWekSCYlNEFLdrOHqw+8MP6AjzHkXZyVXZs8plkq50+3XpgF/dQgdjsohGoN9atB0NYdPXSfQ2sGQuETA==}
     peerDependencies:
       zod: ^3.x
 
@@ -6523,6 +6526,10 @@ snapshots:
     dependencies:
       '@tanstack/store': 0.5.5
 
+  '@tanstack/form-core@0.29.2':
+    dependencies:
+      '@tanstack/store': 0.5.5
+
   '@tanstack/react-form@0.28.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)':
     dependencies:
       '@remix-run/node': 2.11.1(typescript@5.5.4)
@@ -6543,9 +6550,9 @@ snapshots:
 
   '@tanstack/store@0.5.5': {}
 
-  '@tanstack/zod-form-adapter@0.28.0(zod@3.23.8)':
+  '@tanstack/zod-form-adapter@0.29.2(zod@3.23.8)':
     dependencies:
-      '@tanstack/form-core': 0.28.0
+      '@tanstack/form-core': 0.29.2
       zod: 3.23.8
 
   '@tootallnate/quickjs-emscripten@0.23.0': {}
