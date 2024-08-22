@@ -1,5 +1,11 @@
 # @pixelshades/toast
 
+## 0.0.6
+
+### Patch Changes
+
+- fe9c9ca: bump deps
+
 ## 0.0.5
 
 ### Patch Changes
