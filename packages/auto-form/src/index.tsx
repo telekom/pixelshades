@@ -161,3 +161,5 @@ export { AutoForm, AutoFormSubmit }
 export type * from "./types"
 
 export { getBaseSchema, getBaseType } from "./utils"
+
+export { useFormContext}
