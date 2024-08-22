@@ -1,5 +1,13 @@
 # @pixelshades/utils
 
+## 0.1.7
+
+### Patch Changes
+
+- fe9c9ca: bump deps
+- Updated dependencies [fe9c9ca]
+  - @pixelshades/cn@0.1.8
+
 ## 0.1.6
 
 ### Patch Changes
