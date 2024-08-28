@@ -20,7 +20,7 @@
 	},
 	"devDependencies": {
 		"@total-typescript/tsconfig": "^1.0.4",
-		"@types/node": "^22.5.0",
+		"@types/node": "^22.5.1",
 		"@types/react": "^18.3.4",
 		"@types/react-dom": "^18.3.0",
 		"bunchee": "5.3.2",
