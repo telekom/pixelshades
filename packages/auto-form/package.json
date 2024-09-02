@@ -21,23 +21,21 @@
 		"@pixelshades/toast": "workspace:*",
 		"@pixelshades/ui": "workspace:*",
 		"@total-typescript/tsconfig": "^1.0.4",
-		"@types/node": "^22.5.0",
-		"@types/react": "^18.3.4",
+		"@types/node": "^22.5.2",
+		"@types/react": "^18.3.5",
 		"@types/react-dom": "^18.3.0",
-		"bunchee": "5.3.2",
+		"bunchee": "5.4.0",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"typescript": "^5.5.4"
 	},
 	"peerDependencies": {
-		"@pixelshades/ui": "workspace:*",
 		"@pixelshades/toast": "workspace:*",
+		"@pixelshades/ui": "workspace:*",
 		"react": ">18.0.0",
 		"react-dom": ">18.0.0"
 	},
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"exports": {
 		".": {
 			"import": {
