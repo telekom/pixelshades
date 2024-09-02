@@ -22,12 +22,14 @@ export const createStyleContext = <StylesFunction extends Recipe, Slot extends k
 	const StyleContext = createContext<ReturnType<typeof createStyles> | null>(null)
 
 	const withProvider = <C extends ElementType>(Component: C, slot?: Slot) => {
-		const Comp = forwardRef((props: ComponentProps<C> & VariantProps<StylesFunction>, ref) => {
+		type ComponentPropsWithVariants = ComponentProps<C> & VariantProps<StylesFunction>
+
+		const Comp = forwardRef<any, ComponentPropsWithVariants>((props, ref) => {
 			const styles = createStyles(props)
 			const variantClassNames = styles[slot ?? ""]?.()
 			return (
 				<StyleContext.Provider value={styles}>
-					<Component ref={ref} {...props} className={cn(variantClassNames, props.className)} />
+					<Component ref={ref} {...(props as any)} className={cn(variantClassNames, props.className)} />
 				</StyleContext.Provider>
 			)
 		})
@@ -40,7 +42,7 @@ export const createStyleContext = <StylesFunction extends Recipe, Slot extends k
 	const withContext = <C extends ElementType>(Component: C, slot?: Slot) => {
 		type ComponentPropsWithVariants = ComponentProps<C> & VariantProps<StylesFunction>
 
-		const Comp = forwardRef((props: ComponentPropsWithVariants, ref) => {
+		const Comp = forwardRef<any, ComponentPropsWithVariants>((props, ref) => {
 			const slotRecipe = useContext(StyleContext)
 
 			const variantClassNames = slotRecipe
