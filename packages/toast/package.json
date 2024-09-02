@@ -1,6 +1,6 @@
 {
 	"name": "@pixelshades/toast",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"private": false,
 	"type": "module",
 	"publishConfig": {
@@ -29,7 +29,9 @@
 		"react-dom": "^18.3.1",
 		"typescript": "^5.5.4"
 	},
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"exports": {
 		".": {
 			"import": {

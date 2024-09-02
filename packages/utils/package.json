@@ -1,6 +1,6 @@
 {
 	"name": "@pixelshades/utils",
-	"version": "0.1.7",
+	"version": "0.1.8",
 	"private": false,
 	"type": "module",
 	"publishConfig": {
@@ -29,7 +29,9 @@
 		"tailwind-variants": "0.2.1",
 		"typescript": "^5.5.4"
 	},
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"exports": {
 		"./jsx": {
 			"import": {

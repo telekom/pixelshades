@@ -1,5 +1,11 @@
 # @pixelshades/styles
 
+## 0.5.7
+
+### Patch Changes
+
+- 25fad43: bump deps
+
 ## 0.5.6
 
 ### Patch Changes

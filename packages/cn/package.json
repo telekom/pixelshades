@@ -1,6 +1,6 @@
 {
 	"name": "@pixelshades/cn",
-	"version": "0.1.8",
+	"version": "0.1.9",
 	"private": false,
 	"type": "module",
 	"publishConfig": {
@@ -22,7 +22,9 @@
 		"bunchee": "5.4.0",
 		"typescript": "^5.5.4"
 	},
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "./dist/es/index.js",
 	"module": "./dist/es/index.js",
 	"types": "./dist/es/index.d.ts",
