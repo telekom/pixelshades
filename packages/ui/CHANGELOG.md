@@ -1,5 +1,15 @@
 # @pixelshades/ui
 
+## 0.6.14
+
+### Patch Changes
+
+- 25fad43: bump deps
+- Updated dependencies [25fad43]
+  - @pixelshades/styles@0.5.7
+  - @pixelshades/utils@0.1.8
+  - @pixelshades/cn@0.1.9
+
 ## 0.6.13
 
 ### Patch Changes

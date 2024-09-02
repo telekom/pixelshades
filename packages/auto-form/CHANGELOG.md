@@ -1,5 +1,18 @@
 # @pixelshades/utils
 
+## 4.0.18
+
+### Patch Changes
+
+- 25fad43: bump deps
+- 0121ca4: add onSubmitInvalid prop
+- 0121ca4: export getBaseSchema
+- Updated dependencies [25fad43]
+  - @pixelshades/toast@0.0.7
+  - @pixelshades/utils@0.1.8
+  - @pixelshades/cn@0.1.9
+  - @pixelshades/ui@0.6.14
+
 ## 4.0.17
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @pixelshades/utils
 
+## 0.1.8
+
+### Patch Changes
+
+- 25fad43: bump deps
+- Updated dependencies [25fad43]
+  - @pixelshades/cn@0.1.9
+
 ## 0.1.7
 
 ### Patch Changes
