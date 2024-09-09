@@ -13,15 +13,15 @@
 		"@pixelshades/cn": "workspace:*",
 		"@pixelshades/utils": "workspace:*",
 		"@radix-ui/react-accordion": "^1.2.0",
-		"@tanstack/react-form": "^0.28.0",
-		"@tanstack/zod-form-adapter": "^0.28.0",
+		"@tanstack/react-form": "^0.32.0",
+		"@tanstack/zod-form-adapter": "^0.32.0",
 		"zod": "^3.23.8"
 	},
 	"devDependencies": {
 		"@pixelshades/toast": "workspace:*",
 		"@pixelshades/ui": "workspace:*",
 		"@total-typescript/tsconfig": "^1.0.4",
-		"@types/node": "^22.5.2",
+		"@types/node": "^22.5.4",
 		"@types/react": "^18.3.5",
 		"@types/react-dom": "^18.3.0",
 		"bunchee": "5.4.0",
