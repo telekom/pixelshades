@@ -1,5 +1,11 @@
 # @pixelshades/utils
 
+## 4.0.19
+
+### Patch Changes
+
+- cec8c25: feat: add optional label prop
+
 ## 4.0.18
 
 ### Patch Changes
