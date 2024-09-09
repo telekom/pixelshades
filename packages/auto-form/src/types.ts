@@ -6,6 +6,7 @@ export type ZodObjectOrWrapped = z.ZodObject<any, any> | z.ZodEffects<z.ZodObjec
 
 export type FieldConfigItem = {
 	description?: React.ReactNode
+	label?: string
 	inputProps?: React.InputHTMLAttributes<HTMLInputElement> & {
 		showLabel?: boolean
 	}

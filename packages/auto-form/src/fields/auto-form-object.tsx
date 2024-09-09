@@ -54,6 +54,10 @@ export function AutoFormObject<SchemaType extends z.ZodObject<any, any>>({
 				const itemName = item._def.description ?? beautifyObjectName(name)
 				const key = [...path, name].join(".")
 
+				const fieldConfigItem: FieldConfigItem = fieldConfig?.[name] ?? {}
+
+				const label = fieldConfigItem.label ?? itemName
+
 				// TODO: Enable dependency resolution
 				// const {
 				// 	isHidden,
@@ -68,7 +72,7 @@ export function AutoFormObject<SchemaType extends z.ZodObject<any, any>>({
 				if (zodBaseType === "ZodObject") {
 					return (
 						<AccordionItem value={name} key={key} className="border-none">
-							<AccordionTrigger>{itemName}</AccordionTrigger>
+							<AccordionTrigger>{label}</AccordionTrigger>
 							<AccordionContent className="p-md">
 								<AutoFormObject
 									schema={item as unknown as z.ZodObject<any, any>}
@@ -92,7 +96,6 @@ export function AutoFormObject<SchemaType extends z.ZodObject<any, any>>({
 					// )
 				}
 
-				const fieldConfigItem: FieldConfigItem = fieldConfig?.[name] ?? {}
 				const zodInputProps = zodToHtmlInputProps(item)
 
 				// TODO:
@@ -148,7 +151,7 @@ export function AutoFormObject<SchemaType extends z.ZodObject<any, any>>({
 										zodInputProps={zodInputProps}
 										field={field}
 										fieldConfigItem={fieldConfigItem}
-										label={itemName}
+										label={label}
 										isRequired={isRequired}
 										zodItem={item}
 										fieldProps={fieldProps}
