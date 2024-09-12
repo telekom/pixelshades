@@ -1,5 +1,13 @@
 # @pixelshades/utils
 
+## 4.0.20
+
+### Patch Changes
+
+- 38d0255: add flattenNestedObject prop
+
+  This prop will flatten all nested objects into a viusally single object, while keeping the same structure.
+
 ## 4.0.19
 
 ### Patch Changes
