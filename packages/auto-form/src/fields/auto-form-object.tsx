@@ -14,11 +14,13 @@ export function AutoFormObject<SchemaType extends z.ZodObject<any, any>>({
 	schema,
 	fieldConfig,
 	path = [],
+	flattenNestedObjects,
 	className,
 }: {
 	className?: string
 	schema: SchemaType | z.ZodEffects<SchemaType>
 	fieldConfig?: FieldConfig<z.infer<SchemaType>>
+	flattenNestedObjects: boolean
 	path?: string[]
 }) {
 	const { Field } = useFormContext()
@@ -70,6 +72,17 @@ export function AutoFormObject<SchemaType extends z.ZodObject<any, any>>({
 				// }
 
 				if (zodBaseType === "ZodObject") {
+					if (flattenNestedObjects) {
+						return (
+							<AutoFormObject
+								schema={item as unknown as z.ZodObject<any, any>}
+								fieldConfig={(fieldConfig?.[name] ?? {}) as FieldConfig<z.infer<typeof item>>}
+								flattenNestedObjects={flattenNestedObjects}
+								path={[...path, name]}
+							/>
+						)
+					}
+
 					return (
 						<AccordionItem value={name} key={key} className="border-none">
 							<AccordionTrigger>{label}</AccordionTrigger>
@@ -77,6 +90,7 @@ export function AutoFormObject<SchemaType extends z.ZodObject<any, any>>({
 								<AutoFormObject
 									schema={item as unknown as z.ZodObject<any, any>}
 									fieldConfig={(fieldConfig?.[name] ?? {}) as FieldConfig<z.infer<typeof item>>}
+									flattenNestedObjects={flattenNestedObjects}
 									path={[...path, name]}
 								/>
 							</AccordionContent>

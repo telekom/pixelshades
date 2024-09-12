@@ -40,6 +40,8 @@ export type AutoFormProps<SchemaType extends ZodObjectOrWrapped> = {
 		error: string
 	}
 
+	flattenNestedObjects?: boolean
+
 	fieldConfig?: FieldConfig<z.infer<SchemaType>>
 }
 
@@ -55,6 +57,7 @@ export const BaseAutoForm = <SchemaType extends ZodObjectOrWrapped>(
 		onSubmit: onSubmitProp,
 		onSubmitInvalid,
 		minSubmitDelay = 1000,
+		flattenNestedObjects = false,
 		toastValues,
 	}: AutoFormProps<SchemaType>,
 	ref: ForwardedRef<HTMLFormElement>,
@@ -109,7 +112,12 @@ export const BaseAutoForm = <SchemaType extends ZodObjectOrWrapped>(
 						form.handleSubmit()
 					}}
 				>
-					<AutoFormObject className={innerClassName} schema={objectFormSchema} fieldConfig={fieldConfig} />
+					<AutoFormObject
+						flattenNestedObjects={flattenNestedObjects}
+						className={innerClassName}
+						schema={objectFormSchema}
+						fieldConfig={fieldConfig}
+					/>
 
 					{children}
 				</Form>
