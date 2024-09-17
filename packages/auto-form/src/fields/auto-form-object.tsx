@@ -75,6 +75,7 @@ export function AutoFormObject<SchemaType extends z.ZodObject<any, any>>({
 					if (flattenNestedObjects) {
 						return (
 							<AutoFormObject
+								key={key}
 								schema={item as unknown as z.ZodObject<any, any>}
 								fieldConfig={(fieldConfig?.[name] ?? {}) as FieldConfig<z.infer<typeof item>>}
 								flattenNestedObjects={flattenNestedObjects}
@@ -98,7 +99,8 @@ export function AutoFormObject<SchemaType extends z.ZodObject<any, any>>({
 					)
 				}
 				if (zodBaseType === "ZodArray") {
-					return <div>ARRAY HERE</div>
+					// TODO:
+					// return <div>ARRAY HERE</div>
 					// return (
 					// 	<AutoFormArray
 					// 		key={key}
