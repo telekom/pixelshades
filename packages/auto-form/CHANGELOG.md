@@ -1,5 +1,11 @@
 # @pixelshades/utils
 
+## 4.0.21
+
+### Patch Changes
+
+- 30eb0b5: remove array field type temporary
+
 ## 4.0.20
 
 ### Patch Changes
