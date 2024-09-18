@@ -26,7 +26,7 @@
 		"bunchee": "5.4.0",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"tailwindcss": "3.4.10",
+		"tailwindcss": "3.4.12",
 		"typescript": "^5.5.4"
 	},
 	"files": [
