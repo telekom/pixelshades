@@ -68,6 +68,9 @@ export const BaseAutoForm = <SchemaType extends ZodObjectOrWrapped>(
 		onSubmit: onSubmit,
 		onSubmitInvalid: onSubmitInvalid,
 		validatorAdapter: zodValidator(),
+		validators: {
+			onChange: formSchema,
+		},
 	})
 
 	function onSubmit(data: {
