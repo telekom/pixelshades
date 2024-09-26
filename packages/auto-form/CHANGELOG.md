@@ -1,5 +1,11 @@
 # @pixelshades/utils
 
+## 4.0.22
+
+### Patch Changes
+
+- 86470e8: bump autoform
+
 ## 4.0.21
 
 ### Patch Changes
