@@ -41,7 +41,93 @@ export function Example() {
 
 export function Example() {
 	return (
-		<Avatar src="https://pbs.twimg.com/profile_images/1271783863614873600/DozTdIj7_400x400.jpg" alt="@makisuo__" />
+		<Avatar.Group>
+			<Avatar
+				src="https://pbs.twimg.com/profile_images/1271783863614873600/DozTdIj7_400x400.jpg"
+				alt="@makisuo__"
+			/>
+			<Avatar
+				src="https://pbs.twimg.com/profile_images/1271783863614873600/DozTdIj7_400x400.jpg"
+				alt="@makisuo__"
+			/>
+			<Avatar
+				src="https://pbs.twimg.com/profile_images/1271783863614873600/DozTdIj7_400x400.jpg"
+				alt="@makisuo__"
+			/>
+		</Avatar.Group>
+	)
+}
+`,
+  },
+  "avatar/sizes": {
+	  component: lazy(() => import("~/examples/avatar/sizes.tsx")),
+	  code: `import React from "react"
+
+import { Avatar } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<div className="flex flex-col gap-md">
+			<Avatar
+				variant="square"
+				src="https://pbs.twimg.com/profile_images/1271783863614873600/DozTdIj7_400x400.jpg"
+				alt="@makisuo__"
+				size="xxs"
+			/>
+			<Avatar
+				variant="square"
+				src="https://pbs.twimg.com/profile_images/1271783863614873600/DozTdIj7_400x400.jpg"
+				alt="@makisuo__"
+				size="xs"
+			/>
+			<Avatar
+				variant="square"
+				src="https://pbs.twimg.com/profile_images/1271783863614873600/DozTdIj7_400x400.jpg"
+				alt="@makisuo__"
+				size="sm"
+			/>
+			<Avatar
+				variant="square"
+				src="https://pbs.twimg.com/profile_images/1271783863614873600/DozTdIj7_400x400.jpg"
+				alt="@makisuo__"
+				size="md"
+			/>
+			<Avatar
+				variant="square"
+				src="https://pbs.twimg.com/profile_images/1271783863614873600/DozTdIj7_400x400.jpg"
+				alt="@makisuo__"
+				size="lg"
+			/>
+			<Avatar
+				variant="square"
+				src="https://pbs.twimg.com/profile_images/1271783863614873600/DozTdIj7_400x400.jpg"
+				alt="@makisuo__"
+				size="xl"
+			/>
+			<Avatar
+				variant="square"
+				src="https://pbs.twimg.com/profile_images/1271783863614873600/DozTdIj7_400x400.jpg"
+				alt="@makisuo__"
+				size="2xl"
+			/>
+		</div>
+	)
+}
+`,
+  },
+  "avatar/square": {
+	  component: lazy(() => import("~/examples/avatar/square.tsx")),
+	  code: `import React from "react"
+
+import { Avatar } from "@pixelshades/ui/components"
+
+export function Example() {
+	return (
+		<Avatar
+			variant="square"
+			src="https://pbs.twimg.com/profile_images/1271783863614873600/DozTdIj7_400x400.jpg"
+			alt="@makisuo__"
+		/>
 	)
 }
 `,

@@ -5,31 +5,31 @@
 import { tv } from "tailwind-variants"
 
 export const avatarVariants = tv({
-	slots: {
-		root: "inline-grid align-middle aspect-square ring-1 ring-border ring-inset forced-colors:outline",
-		image: "rounded-full",
-	},
-
+	base: [
+		"inline-grid relative shrink-0 bg-secondary align-middle [--avatar-radius:20%] [--ring-opacity:20%] *:col-start-1 *:row-start-1",
+		"outline outline-1 -outline-offset-1 outline-foreground/[--ring-opacity]",
+	],
 	variants: {
 		size: {
-			xxs: { root: "size-4 text-xs" },
-			xs: { root: "size-6 text-sm" },
-			sm: { root: "size-8 text-md" },
-			md: { root: "size-10 text-lg" },
-			lg: { root: "size-12 text-xl" },
-			xl: { root: "size-16 text-2xl" },
-			"2xl": { root: "size-20 text-3xl" },
+			xxs: "size-4",
+			xs: "size-6",
+			sm: "size-8",
+			md: "size-10",
+			lg: "size-12",
+			xl: "size-16",
+			"2xl": "size-20",
 		},
 		variant: {
-			rounded: {
-				root: "rounded-full",
-				image: "rounded-full",
-			},
+			square: "rounded-[--avatar-radius] *:rounded-[--avatar-radius] [&_[data-slot=badge]]:rounded-full",
+			rounded: "rounded-full *:rounded-full",
 		},
 	},
-
 	defaultVariants: {
 		variant: "rounded",
 		size: "md",
 	},
+})
+
+export const avatarGroupVariants = tv({
+	base: "flex items-center justify-center -space-x-md [&_[data-slot=avatar]]:ring-2 [&_[data-slot=avatar]]:ring-background",
 })
