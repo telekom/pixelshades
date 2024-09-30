@@ -303,8 +303,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1(@swc/core@1.7.22)(@types/node@22.7.4)(typescript@5.6.2)
       '@types/bun':
-        specifier: ^1.1.8
-        version: 1.1.8
+        specifier: ^1.1.10
+        version: 1.1.10
       '@types/node':
         specifier: ^22.7.4
         version: 22.7.4
@@ -2007,8 +2007,8 @@ packages:
   '@types/babel__traverse@7.20.6':
     resolution: {integrity: sha512-r1bzfrm0tomOI8g1SzvCaQHo6Lcv6zu0EA+W2kHrt8dyrHQxGzBBL4kdkzIS+jBMV+EYcMAEAqXqYaLJq5rOZg==}
 
-  '@types/bun@1.1.8':
-    resolution: {integrity: sha512-PIwVFQKPviksiibobyvcWtMvMFMTj91T8dQEh9l1P3Ypr3ZuVn9w7HSr+5mTNrPqD1xpdDLEErzZPU8gqHBu6g==}
+  '@types/bun@1.1.10':
+    resolution: {integrity: sha512-76KYVSwrHwr9zsnk6oLXOGs9KvyBg3U066GLO4rk6JZk1ypEPGCUDZ5yOiESyIHWs9cx9iC8r01utYN32XdmgA==}
 
   '@types/conventional-commits-parser@5.0.0':
     resolution: {integrity: sha512-loB369iXNmAZglwWATL+WRe+CRMmmBPtpolYzIebFaX4YA3x+BEfLqhUAV9WanycKI3TG1IMr5bMJDajDKLlUQ==}
@@ -2245,8 +2245,8 @@ packages:
     resolution: {integrity: sha512-zhaCDicdLuWN5UbN5IMnFqNMhNfo919sH85y2/ea+5Yg9TsTkeZxpL+JLbp6cgYFS4sRLp3YV4S6yDuqVWHYOw==}
     engines: {node: '>=6'}
 
-  bun-types@1.1.26:
-    resolution: {integrity: sha512-n7jDe62LsB2+WE8Q8/mT3azkPaatKlj/2MyP6hi3mKvPz9oPpB6JW/Ll6JHtNLudasFFuvfgklYSE+rreGvBjw==}
+  bun-types@1.1.29:
+    resolution: {integrity: sha512-En3/TzSPMPyl5UlUB1MHzHpcrZDakTm7mS203eLoX1fBoEa3PW+aSS8GAqVJ7Is/m34Z5ogL+ECniLY0uDaCPw==}
 
   bunchee@5.5.0:
     resolution: {integrity: sha512-lzR0h4wSToQaBqJx0EGTJftOQ+iX90MLmEPG1G0cEBlW4r13MB9qbeAol9ZQu8KRWqjIxJzklDMIekSgAUsZZA==}
@@ -6572,9 +6572,9 @@ snapshots:
     dependencies:
       '@babel/types': 7.24.8
 
-  '@types/bun@1.1.8':
+  '@types/bun@1.1.10':
     dependencies:
-      bun-types: 1.1.26
+      bun-types: 1.1.29
 
   '@types/conventional-commits-parser@5.0.0':
     dependencies:
@@ -6800,7 +6800,7 @@ snapshots:
 
   builtin-modules@3.3.0: {}
 
-  bun-types@1.1.26:
+  bun-types@1.1.29:
     dependencies:
       '@types/node': 20.12.14
       '@types/ws': 8.5.10
