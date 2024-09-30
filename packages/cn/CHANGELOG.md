@@ -1,5 +1,11 @@
 # @pixelshades/cn
 
+## 0.1.10
+
+### Patch Changes
+
+- f7a2897: Bump deps
+
 ## 0.1.9
 
 ### Patch Changes

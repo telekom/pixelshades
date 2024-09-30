@@ -1,5 +1,16 @@
 # @pixelshades/utils
 
+## 5.0.1
+
+### Patch Changes
+
+- f7a2897: Bump deps
+- Updated dependencies [f7a2897]
+  - @pixelshades/cn@0.1.10
+  - @pixelshades/toast@0.0.8
+  - @pixelshades/ui@0.7.1
+  - @pixelshades/utils@0.1.9
+
 ## 5.0.0
 
 ### Patch Changes
