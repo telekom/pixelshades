@@ -59,7 +59,7 @@ const AvatarBase = ({
 					</text>
 				</svg>
 			)}
-			{src && <img src={src} alt={alt} />}
+			{src && <img className="aspect-square" src={src} alt={alt} />}
 		</span>
 	)
 
