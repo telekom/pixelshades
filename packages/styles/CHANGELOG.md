@@ -1,5 +1,11 @@
 # @pixelshades/styles
 
+## 0.6.0
+
+### Minor Changes
+
+- 986adf9: fix avatar overflow
+
 ## 0.5.8
 
 ### Patch Changes

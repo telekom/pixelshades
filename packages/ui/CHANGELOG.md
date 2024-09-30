@@ -1,5 +1,13 @@
 # @pixelshades/ui
 
+## 0.7.2
+
+### Patch Changes
+
+- 8ad8296: fix avatar aspect ratio
+- Updated dependencies [986adf9]
+  - @pixelshades/styles@0.6.0
+
 ## 0.7.1
 
 ### Patch Changes
