@@ -36,7 +36,7 @@
 	"devDependencies": {
 		"@tailwindcss/typography": "^0.5.15",
 		"@total-typescript/tsconfig": "^1.0.4",
-		"@turbo/gen": "^2.1.1",
+		"@turbo/gen": "^2.1.2",
 		"@types/bun": "^1.1.8",
 		"@types/node": "^22.7.4",
 		"@types/react": "^18.3.10",
