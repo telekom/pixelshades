@@ -6,7 +6,7 @@ import { tv } from "tailwind-variants"
 
 export const avatarVariants = tv({
 	base: [
-		"inline-grid relative shrink-0 bg-secondary align-middle [--avatar-radius:20%] [--ring-opacity:20%] *:col-start-1 *:row-start-1",
+		"overflow-hidden inline-grid relative shrink-0 bg-secondary align-middle [--avatar-radius:20%] [--ring-opacity:20%] *:col-start-1 *:row-start-1",
 		"outline outline-1 -outline-offset-1 outline-foreground/[--ring-opacity]",
 	],
 	variants: {
