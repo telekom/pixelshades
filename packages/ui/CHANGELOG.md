@@ -1,5 +1,16 @@
 # @pixelshades/ui
 
+## 0.7.1
+
+### Patch Changes
+
+- f7a2897: Bump deps
+- Updated dependencies [f7a2897]
+- Updated dependencies [f7a2897]
+  - @pixelshades/styles@0.5.8
+  - @pixelshades/cn@0.1.10
+  - @pixelshades/utils@0.1.9
+
 ## 0.7.0
 
 ### Minor Changes

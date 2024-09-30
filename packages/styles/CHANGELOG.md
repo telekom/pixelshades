@@ -1,5 +1,12 @@
 # @pixelshades/styles
 
+## 0.5.8
+
+### Patch Changes
+
+- f7a2897: update avatar stykes
+- f7a2897: Bump deps
+
 ## 0.5.7
 
 ### Patch Changes
