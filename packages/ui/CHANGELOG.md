@@ -1,5 +1,11 @@
 # @pixelshades/ui
 
+## 0.7.0
+
+### Minor Changes
+
+- 388cc95: rework Avatar, now supports squared and groups
+
 ## 0.6.14
 
 ### Patch Changes
