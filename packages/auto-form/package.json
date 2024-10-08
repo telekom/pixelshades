@@ -9,7 +9,7 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@internationalized/date": "^3.5.5",
+		"@internationalized/date": "^3.5.6",
 		"@pixelshades/cn": "workspace:*",
 		"@pixelshades/utils": "workspace:*",
 		"@radix-ui/react-accordion": "^1.2.0",
@@ -21,10 +21,10 @@
 		"@pixelshades/toast": "workspace:*",
 		"@pixelshades/ui": "workspace:*",
 		"@total-typescript/tsconfig": "^1.0.4",
-		"@types/node": "^22.7.4",
-		"@types/react": "^18.3.10",
+		"@types/node": "^22.7.5",
+		"@types/react": "^18.3.11",
 		"@types/react-dom": "^18.3.0",
-		"bunchee": "5.5.0",
+		"bunchee": "5.5.1",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"typescript": "^5.6.2"
