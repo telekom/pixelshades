@@ -62,7 +62,7 @@ const TreeItemContent = (props: React.ComponentProps<typeof AriaTreeItemContent>
 const TreeItemIndicator = () => {
 	return (
 		<Button className="relative shrink-0" slot="chevron">
-			<IconChevronRight className="size-5" />
+			<IconChevronRight className="size-5" data-slot="icon" />
 		</Button>
 	)
 }
