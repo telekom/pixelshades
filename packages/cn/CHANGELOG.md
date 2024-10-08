@@ -1,5 +1,11 @@
 # @pixelshades/cn
 
+## 0.1.11
+
+### Patch Changes
+
+- dd5fc28: bump deps
+
 ## 0.1.10
 
 ### Patch Changes
