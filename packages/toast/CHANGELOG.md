@@ -1,5 +1,11 @@
 # @pixelshades/toast
 
+## 0.0.9
+
+### Patch Changes
+
+- dd5fc28: bump deps
+
 ## 0.0.8
 
 ### Patch Changes

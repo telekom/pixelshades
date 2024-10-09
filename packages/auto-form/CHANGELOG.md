@@ -1,5 +1,16 @@
 # @pixelshades/utils
 
+## 5.0.3
+
+### Patch Changes
+
+- dd5fc28: bump deps
+- Updated dependencies [dd5fc28]
+  - @pixelshades/toast@0.0.9
+  - @pixelshades/utils@0.1.10
+  - @pixelshades/cn@0.1.11
+  - @pixelshades/ui@0.7.3
+
 ## 5.0.2
 
 ### Patch Changes

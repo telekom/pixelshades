@@ -1,5 +1,11 @@
 # @pixelshades/styles
 
+## 0.6.1
+
+### Patch Changes
+
+- dd5fc28: bump deps
+
 ## 0.6.0
 
 ### Minor Changes
