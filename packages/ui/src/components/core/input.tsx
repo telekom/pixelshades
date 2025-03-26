@@ -108,7 +108,7 @@ const InputRoot = ({
 	const inputContext = useSlottedContext(AriaInputContext)
 	const textAreaContext = useSlottedContext(AriaTextAreaContext)
 
-	const inputRef = React.useRef(null)
+	const inputRef = React.useRef<HTMLInputElement | HTMLTextAreaElement>(null)
 	const isDisabled = props.isDisabled || inputContext?.disabled || textAreaContext?.disabled
 
 	const isInvalid =
@@ -119,7 +119,7 @@ const InputRoot = ({
 	const handlePointerDown = (event: React.PointerEvent<HTMLElement>) => {
 		const target = event.target as HTMLElement
 		if (target.closest("input, button, a")) return
-		const input = (inputRef as React.RefObject<HTMLInputElement | HTMLTextAreaElement>).current
+		const input = inputRef.current
 		if (!input) return
 		requestAnimationFrame(() => {
 			input.focus()
@@ -138,10 +138,13 @@ const InputRoot = ({
 			{composeRenderProps(props.children, (children) => (
 				<Provider
 					values={[
-						[AriaInputContext, { ...inputContext, ref: mergeRefs(inputRef, inputContext?.ref ?? null) }],
+						[
+							AriaInputContext,
+							{ ...inputContext, ref: mergeRefs(inputRef as any, inputContext?.ref ?? null) },
+						],
 						[
 							AriaTextAreaContext,
-							{ ...textAreaContext, ref: mergeRefs(inputRef, textAreaContext?.ref ?? null) },
+							{ ...textAreaContext, ref: mergeRefs(inputRef as any, textAreaContext?.ref ?? null) },
 						],
 					]}
 				>

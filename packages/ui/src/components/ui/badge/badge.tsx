@@ -18,12 +18,14 @@ interface BadgeProps extends Omit<HTMLAttributes<HTMLSpanElement>, "color">, Bad
 	before?: React.ReactElement<HTMLElement>
 	/** Element shown after the child */
 	after?: React.ReactElement<HTMLElement>
+
+	ref?: React.ForwardedRef<HTMLSpanElement>
 }
 
 const { badge, icon, child } = badgeVariants()
 
 /** Displays a Badge */
-const Badge = forwardRef(({ className, children, before, after, ...props }: BadgeProps, ref) => {
+const Badge = ({ className, children, before, after, ref, ...props }: BadgeProps) => {
 	return (
 		<span ref={ref} className={badge({ className, ...props })} {...props}>
 			<If condition={before}>
@@ -37,6 +39,6 @@ const Badge = forwardRef(({ className, children, before, after, ...props }: Badg
 			</If>
 		</span>
 	)
-})
+}
 
 export { type BadgeProps, Badge }

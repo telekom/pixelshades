@@ -3,9 +3,9 @@
 import type * as React from "react"
 
 import {
-	UNSTABLE_Tree as AriaTree,
-	UNSTABLE_TreeItem as AriaTreeItem,
-	UNSTABLE_TreeItemContent as AriaTreeItemContent,
+	Tree as AriaTree,
+	TreeItem as AriaTreeItem,
+	TreeItemContent as AriaTreeItemContent,
 	type TreeItemProps as AriaTreeItemProps,
 	Button,
 	type TreeProps,

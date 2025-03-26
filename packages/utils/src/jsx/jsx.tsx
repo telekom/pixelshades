@@ -12,6 +12,7 @@ import { cn } from "@pixelshades/cn"
  * component with the same generic type.
  */
 export function forwardRef<T extends React.FC<any>>(render: T) {
+	// @ts-expect-error
 	const Role = React.forwardRef((props, ref) => render({ ...props, ref }))
 	Role.displayName = render.displayName || render.name
 	return Role as unknown as T

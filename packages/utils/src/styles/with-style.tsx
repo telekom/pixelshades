@@ -21,6 +21,7 @@ export const withStyle = <
 	createStyles: StylesFunction,
 	slot?: Slot,
 ) => {
+	// @ts-expect-error
 	const StyledComponent = forwardRef(({ ...props }: ComponentProps<C> & VariantProps<StylesFunction>, ref) => {
 		const styles = createStyles(props)
 		const variantClassNames = typeof styles === "function" ? styles[slot ?? ""]?.() : styles

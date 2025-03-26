@@ -33,6 +33,7 @@ export type MenuProps = AriaMenuTriggerProps
 
 export type MenuContentProps<T extends object> = {
 	placement?: PopoverProps["placement"]
+	className?: string
 } & AriaMenuProps<T>
 
 const MenuContent = <T extends object>({ children, className, placement, ...props }: MenuContentProps<T>) => (
