@@ -16,11 +16,11 @@
 	},
 	"devDependencies": {
 		"@total-typescript/tsconfig": "^1.0.4",
-		"@types/node": "^22.7.5",
+		"@types/node": "^22.13.13",
 		"@types/react": "^18.3.11",
 		"@types/react-dom": "^18.3.0",
-		"bunchee": "5.5.1",
-		"typescript": "^5.6.2"
+		"bunchee": "6.5.0",
+		"typescript": "5.8.2"
 	},
 	"files": [
 		"dist"
