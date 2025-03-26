@@ -13,14 +13,14 @@
 		"changeset": "changeset"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.2",
-		"@changesets/cli": "^2.27.8",
-		"concurrently": "^9.0.1",
+		"@biomejs/biome": "1.9.4",
+		"@changesets/cli": "^2.28.1",
+		"concurrently": "^9.1.2",
 		"cz-conventional-changelog": "^3.3.0",
-		"turbo": "2.1.2"
+		"turbo": "2.4.4"
 	},
 	"engines": {
-		"node": ">=18"
+		"node": ">=20"
 	},
 	"packageManager": "pnpm@9.6.0",
 	"workspaces": ["packages/*", "apps/*"],
