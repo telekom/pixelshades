@@ -26,13 +26,14 @@ import { TableOfContents } from "~/components/toc"
 import { components } from "#site/content"
 
 interface PageProps {
-	params: {
+	params: Promise<{
 		slug: string[]
-	}
+	}>
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-	const doc = components.find((component) => component.path === `components/${params.slug.join("/")}`)
+	const { slug } = await params
+	const doc = components.find((component) => component.path === `components/${slug.join("/")}`)
 
 	if (!doc) {
 		return {}
@@ -52,8 +53,9 @@ export const generateStaticParams = async () => {
 	return pages
 }
 
-export default function ComponentPage({ params }: PageProps) {
-	const component = components.find((component) => component.path === `components/${params.slug.join("/")}`)
+export default async function ComponentPage({ params }: PageProps) {
+	const { slug } = await params
+	const component = components.find((component) => component.path === `components/${slug.join("/")}`)
 
 	if (!component) {
 		return notFound()

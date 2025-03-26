@@ -8,8 +8,8 @@ const config: Config = {
 		"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
 		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
 		"../../packages/ui/src/**/*.{js,ts,jsx,tsx,mdx,md}",
-		"../../packages/styles/**/*.{js,ts,jsx,tsx,mdx,md}",
-		"../../packages/auto-form/**/*.{js,ts,jsx,tsx,mdx,md}",
+		"../../packages/styles/src/**/*.{js,ts,jsx,tsx,mdx,md}",
+		"../../packages/auto-form/src/**/*.{js,ts,jsx,tsx,mdx,md}",
 	],
 	theme: {
 		extend: {
