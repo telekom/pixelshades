@@ -2,7 +2,7 @@
   /* -------------------------------------------------------------------------- */
   /*                    GENERATED FILE, DO NOT EDIT MANUALLY!                   */
   /* -------------------------------------------------------------------------- */
-  import { lazy, type LazyExoticComponent } from "react";
+  import { type JSX, type LazyExoticComponent, lazy } from "react"
   
   type Demo = {
 	component: LazyExoticComponent<() => JSX.Element>;
@@ -1072,7 +1072,7 @@ import { DateField, type DateValue } from "@pixelshades/ui/components"
 import { useState } from "react"
 
 export function Example() {
-	const [value, setValue] = useState<DateValue>()
+	const [value, setValue] = useState<DateValue | null>(null)
 
 	return <DateField value={value} onChange={setValue} />
 }
@@ -1163,7 +1163,7 @@ import { DatePicker, type DateValue } from "@pixelshades/ui/components"
 import { useState } from "react"
 
 export function Example() {
-	const [value, setValue] = useState<DateValue>()
+	const [value, setValue] = useState<DateValue | null>(null)
 
 	return <DatePicker value={value} onChange={setValue} />
 }
@@ -2591,7 +2591,7 @@ import { useState } from "react"
 import { Time } from "@internationalized/date"
 
 export function Example() {
-	const [value, setValue] = useState<TimeValue>(new Time(11, 45))
+	const [value, setValue] = useState<TimeValue | null>(new Time(11, 45))
 
 	return <TimeField label="Start Date" value={value} onChange={setValue} />
 }

@@ -8,7 +8,7 @@ export const generateExamplesIndex = (examplesDir = path.resolve("src/examples")
   /* -------------------------------------------------------------------------- */
   /*                    GENERATED FILE, DO NOT EDIT MANUALLY!                   */
   /* -------------------------------------------------------------------------- */
-  import { lazy, type LazyExoticComponent } from "react";
+  import { type JSX, type LazyExoticComponent, lazy } from "react"
   
   type Demo = {
 	component: LazyExoticComponent<() => JSX.Element>;
@@ -64,4 +64,3 @@ export const generateExamplesIndex = (examplesDir = path.resolve("src/examples")
 
 	console.info("✅ Component examples generated!")
 }
-
